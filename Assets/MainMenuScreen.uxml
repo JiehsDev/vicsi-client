@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/buttonstyle.uss?fileID=7433441132597879392&amp;guid=bfa6ef94bb3448442a153d12ae3f7cc5&amp;type=3#buttonstyle"/>
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:Label text="ViCSI" name="title-label" style="-unity-text-align: middle-center; height: 52px; -unity-font-style: bold; font-size: 24px;"/>
+        <ui:Button text="Start" name="start-button" class="buttonstyle" style="height: 45px; font-size: 24px; background-color: rgb(135, 206, 250); border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px;"/>
+    </ui:VisualElement>
+</ui:UXML>
