@@ -14,6 +14,13 @@ public class HudFollowCamera : MonoBehaviour
     [SerializeField] private float distance = 0.4f;
     [SerializeField] private Camera targetCamera;
 
+    /// <summary>How far in front of the camera this HUD sits. Settable for HUDs built/sized at runtime.</summary>
+    public float Distance
+    {
+        get => distance;
+        set => distance = value;
+    }
+
     private void LateUpdate()
     {
         if (targetCamera == null)

@@ -6,32 +6,34 @@ public class UIManager : MonoBehaviour
 {
     [Header("Panels")]
     [SerializeField] private GameObject mainMenuPanel;
-    [SerializeField] private GameObject roleSelectPanel;
+    [SerializeField] private GameObject settingsPanel;
 
-    [Header("Environment scene to load after role selection")]
+    [Header("Environment scene to load on Start")]
     [SerializeField] private string environmentSceneName = "CSI_Environment";
 
     private void Start()
     {
         mainMenuPanel.SetActive(true);
-        roleSelectPanel.SetActive(false);
+        settingsPanel.SetActive(false);
     }
 
+    // Which tool the player starts with is now chosen in-scene via the tool
+    // wheel, not a pre-game role pick - Start just drops the player straight
+    // into the environment.
     public void OnStartPressed()
     {
+        SceneManager.LoadScene(environmentSceneName);
+    }
+
+    public void OnSettingsPressed()
+    {
         mainMenuPanel.SetActive(false);
-        roleSelectPanel.SetActive(true);
+        settingsPanel.SetActive(true);
     }
 
-    public void SelectPhotographerRole()
+    public void OnBackFromSettingsPressed()
     {
-        RoleConfig.SetRole(RoleId.Photographer);
-        SceneManager.LoadScene(environmentSceneName);
-    }
-
-    public void SelectIOCRole()
-    {
-        RoleConfig.SetRole(RoleId.IOC);
-        SceneManager.LoadScene(environmentSceneName);
+        settingsPanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
     }
 }

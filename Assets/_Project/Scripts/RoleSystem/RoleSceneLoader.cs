@@ -1,28 +1,24 @@
 // Assets/_Project/Scripts/RoleSystem/RoleSceneLoader.cs
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Runs once when CSI_Environment loads. Used to load a separate scene per role
+/// (Role_Photographer / Role_IOC); now every tool prop lives directly in this one
+/// scene, so there's nothing to load. This just fires the scene-entered STCS beat
+/// and, if the player picked a role with a matching PlayerTool, marks that tool as
+/// the character's starting one. Roles without a physical tool (IOC, TeamLeader,
+/// CaseAnalyst, ...) are skipped silently - that's an expected case, not an error.
+/// </summary>
 public class RoleSceneLoader : MonoBehaviour
 {
-    private const string PhotographerScene = "Role_Photographer";
-    private const string IOCScene = "Role_IOC";
-
     private void Start()
     {
-        string sceneToLoad = RoleConfig.SelectedRole switch
+        var startingRole = RoleConfig.SelectedRole;
+        if (startingRole != RoleId.None && PlayerToolRegistry.GetTool(startingRole) != null)
         {
-            RoleId.Photographer => PhotographerScene,
-            RoleId.IOC => IOCScene,
-            _ => null
-        };
-
-        if (sceneToLoad == null)
-        {
-            Debug.LogWarning("[RoleSceneLoader] No role was selected before entering the environment scene.");
-            return;
+            PlayerToolRegistry.RequestEquip(startingRole);
         }
 
-        var loadOp = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
-        loadOp.completed += _ => STCSManager.Instance?.Fire("scene_entered");
+        STCSManager.Instance?.Fire("scene_entered");
     }
 }

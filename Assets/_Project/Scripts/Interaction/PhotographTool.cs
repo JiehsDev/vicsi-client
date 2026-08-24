@@ -2,7 +2,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Oculus.Interaction;
 using Oculus.Interaction.Locomotion;
 
 /// <summary>
@@ -13,9 +12,12 @@ using Oculus.Interaction.Locomotion;
 /// aiming does the assigned Activate input raycast from the prop's forward
 /// direction; if it hits an EvidenceProp, that evidence is marked
 /// Photographed and a flash/shutter cue plays for feedback.
+///
+/// The Photographer capability itself - PlayerTool.ToolRole, registration,
+/// held-state - lives in the PlayerTool base so every other tool (sketchpad,
+/// evidence bag, recorder, ...) shares the exact same contract.
 /// </summary>
-[RequireComponent(typeof(Grabbable))]
-public class PhotographTool : MonoBehaviour
+public class PhotographTool : PlayerTool
 {
     [Header("Input (XRI Input Reader pattern)")]
     [SerializeField] private InputActionReference leftActivateAction;
@@ -49,7 +51,8 @@ public class PhotographTool : MonoBehaviour
     [SerializeField] private AudioSource shutterAudioSource;
     [SerializeField] private AudioClip shutterClip;
 
-    private Grabbable grabbable;
+    public override RoleId ToolRole => RoleId.Photographer;
+
     private InputAction leftAimAction;
     private InputAction rightAimAction;
     private bool isAiming;
@@ -64,9 +67,9 @@ public class PhotographTool : MonoBehaviour
     private float restRunningSpeedFactor;
     private bool locomotorSpeedCached;
 
-    private void Awake()
+    protected override void Awake()
     {
-        grabbable = GetComponent<Grabbable>();
+        base.Awake();
         if (aimOrigin == null)
         {
             aimOrigin = transform;
@@ -120,16 +123,18 @@ public class PhotographTool : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         leftActivateAction?.action.Enable();
         rightActivateAction?.action.Enable();
         leftAimAction.Enable();
         rightAimAction.Enable();
     }
 
-    private void OnDisable()
+    protected override void OnDisable()
     {
+        base.OnDisable();
         leftActivateAction?.action.Disable();
         rightActivateAction?.action.Disable();
         leftAimAction.Disable();
@@ -144,7 +149,7 @@ public class PhotographTool : MonoBehaviour
 
     private void Update()
     {
-        bool held = grabbable != null && grabbable.SelectingPointsCount > 0;
+        bool held = IsHeld;
 
         if (!held)
         {
@@ -291,15 +296,7 @@ public class PhotographTool : MonoBehaviour
             var evidence = hit.collider.GetComponentInParent<EvidenceProp>();
             if (evidence != null && !string.IsNullOrEmpty(evidence.evidenceId))
             {
-                if (EvidenceStateManager.Instance != null)
-                {
-                    EvidenceStateManager.Instance.MarkPhotographed(evidence.evidenceId, RoleId.Photographer);
-                    FireSTCSPhotographedTrigger(evidence.evidenceId);
-                }
-                else
-                {
-                    Debug.LogWarning("[PhotographTool] No EvidenceStateManager.Instance in scene.");
-                }
+                ReportEvidence(evidence.evidenceId, (id, role) => EvidenceStateManager.Instance.MarkPhotographed(id, role), "photographed");
                 return;
             }
         }
@@ -327,21 +324,4 @@ public class PhotographTool : MonoBehaviour
         flashLight.enabled = false;
     }
 
-    // "evidence_014_photographed" for evidenceId "EVD-014" - the digits of the
-    // id form the STCS trigger id so any EVD-NNN item wires up automatically.
-    private static void FireSTCSPhotographedTrigger(string evidenceId)
-    {
-        if (STCSManager.Instance == null || string.IsNullOrEmpty(evidenceId))
-        {
-            return;
-        }
-
-        var digits = System.Array.FindAll(evidenceId.ToCharArray(), char.IsDigit);
-        if (digits.Length == 0)
-        {
-            return;
-        }
-
-        STCSManager.Instance.Fire($"evidence_{new string(digits)}_photographed");
-    }
 }

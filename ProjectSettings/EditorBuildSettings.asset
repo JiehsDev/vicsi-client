@@ -11,12 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Scenarios/CSI_Environment.unity
     guid: e8f9121e92111104db1e1f46b30ccc26
-  - enabled: 1
-    path: Assets/_Project/Scenes/Scenarios/Role_Photographer.unity
-    guid: 4b1f8785d47039f47b55309a8d436fd3
-  - enabled: 1
-    path: Assets/_Project/Scenes/Scenarios/Role_IOC.unity
-    guid: 64c22055910ee424081dd3ed8d8f66c8
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
