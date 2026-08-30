@@ -1,4 +1,5 @@
 // Assets/_Project/Scripts/Interaction/PhotographTool.cs
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,12 +7,16 @@ using Oculus.Interaction.Locomotion;
 
 /// <summary>
 /// Sits on a grabbable camera prop (built on GrabbableEvidenceBase). Holding
-/// it isn't enough to shoot: the player must press the controller's primary
-/// (A/X) button to raise the camera to eye level first - this animates the
-/// visual mesh into an aiming pose and shows the viewfinder HUD. Only while
-/// aiming does the assigned Activate input raycast from the prop's forward
-/// direction; if it hits an EvidenceProp, that evidence is marked
-/// Photographed and a flash/shutter cue plays for feedback.
+/// it isn't enough to shoot: the player must press the left controller's X
+/// button to raise the camera to eye level first - this animates the
+/// visual mesh into an aiming pose and shows the viewfinder HUD. While
+/// aiming, a raycast from the prop's forward direction runs every frame to
+/// track whether an EvidenceProp is currently in frame (see CanCapture /
+/// CurrentAimTarget below) - other components (a viewfinder red/green dot,
+/// a white outline on the target) read that state via events instead of
+/// duplicating the raycast. Pressing the assigned Activate input only takes
+/// a photo - marking that evidence Photographed and playing a flash/shutter
+/// cue - while CanCapture is true; otherwise the shutter is a no-op.
 ///
 /// The Photographer capability itself - PlayerTool.ToolRole, registration,
 /// held-state - lives in the PlayerTool base so every other tool (sketchpad,
@@ -28,7 +33,7 @@ public class PhotographTool : PlayerTool
     [SerializeField] private float maxDistance = 5f;
 
     [Header("Aiming (raise-to-eye)")]
-    [Tooltip("The shutter only works while aiming. Press the controller's primary (A/X) button to toggle raising the camera to eye level, like lifting it to look through the viewfinder.")]
+    [Tooltip("The shutter only works while aiming. Press the left controller's X button to toggle raising the camera to eye level, like lifting it to look through the viewfinder.")]
     [SerializeField] private Transform visualPivot;
     [SerializeField] private Vector3 aimLocalPositionOffset = new Vector3(0f, 0.05f, 0.08f);
     [SerializeField] private Vector3 aimLocalEulerOffset = new Vector3(-15f, 0f, 0f);
@@ -53,8 +58,22 @@ public class PhotographTool : PlayerTool
 
     public override RoleId ToolRole => RoleId.Photographer;
 
+    /// <summary>True while aiming and the forward raycast is currently hitting a valid EvidenceProp within maxDistance. False (and the shutter is a no-op) at every other time, including while not aiming.</summary>
+    public bool CanCapture { get; private set; }
+
+    /// <summary>The EvidenceProp currently in frame, or null. Only ever non-null while aiming and CanCapture is true.</summary>
+    public EvidenceProp CurrentAimTarget { get; private set; }
+
+    /// <summary>Fired whenever CanCapture changes, including transitions caused by starting/stopping aiming.</summary>
+    public event Action<bool> OnAimValidityChanged;
+
+    /// <summary>Fired whenever CurrentAimTarget changes (including to/from null).</summary>
+    public event Action<EvidenceProp> OnAimTargetChanged;
+
+    /// <summary>Fired right after a photo is successfully taken (evidence was in frame) - drives shutter VFX/SFX that don't want to duplicate the flash/audio already in PlayShutterFeedback.</summary>
+    public event Action OnPhotoCaptured;
+
     private InputAction leftAimAction;
-    private InputAction rightAimAction;
     private bool isAiming;
     private Vector3 restLocalPosition;
     private Quaternion restLocalRotation;
@@ -88,9 +107,9 @@ public class PhotographTool : PlayerTool
 
         // Not asset-backed (no "A/X button" action exists in the shared XRI Default
         // Input Actions asset) - built directly against the generic XR controller
-        // primary-button control so either hand can trigger it.
+        // primary-button control. Left hand (X) only: the right hand's A button is
+        // reserved for other tools now, so the camera no longer responds to it.
         leftAimAction = new InputAction("PhotographTool_LeftAim", InputActionType.Button, "<XRController>{LeftHand}/primaryButton");
-        rightAimAction = new InputAction("PhotographTool_RightAim", InputActionType.Button, "<XRController>{RightHand}/primaryButton");
 
         if (viewfinderOverlay != null)
         {
@@ -129,7 +148,6 @@ public class PhotographTool : PlayerTool
         leftActivateAction?.action.Enable();
         rightActivateAction?.action.Enable();
         leftAimAction.Enable();
-        rightAimAction.Enable();
     }
 
     protected override void OnDisable()
@@ -138,13 +156,11 @@ public class PhotographTool : PlayerTool
         leftActivateAction?.action.Disable();
         rightActivateAction?.action.Disable();
         leftAimAction.Disable();
-        rightAimAction.Disable();
     }
 
     private void OnDestroy()
     {
         leftAimAction?.Dispose();
-        rightAimAction?.Dispose();
     }
 
     private void Update()
@@ -160,7 +176,7 @@ public class PhotographTool : PlayerTool
             return;
         }
 
-        if (leftAimAction.WasPressedThisFrame() || rightAimAction.WasPressedThisFrame())
+        if (leftAimAction.WasPressedThisFrame())
         {
             SetAiming(!isAiming);
         }
@@ -169,6 +185,8 @@ public class PhotographTool : PlayerTool
         {
             return;
         }
+
+        UpdateAimTarget();
 
         bool trigger =
             (leftActivateAction != null && leftActivateAction.action.WasPressedThisFrame()) ||
@@ -180,9 +198,58 @@ public class PhotographTool : PlayerTool
         }
     }
 
+    // Runs every frame while aiming so a viewfinder indicator / target outline
+    // can react in real time instead of only learning the result when the
+    // shutter is pressed.
+    private void UpdateAimTarget()
+    {
+        EvidenceProp target = null;
+
+        // Raycasts from the player's head/eye (the HMD), not the hand holding the
+        // camera prop - "what's in the viewfinder" should track where the player
+        // is actually looking, not wherever the controller happens to be pointed.
+        // Falls back to aimOrigin (the prop itself) if no POV camera is found.
+        EnsurePovCamera();
+        Transform rayOrigin = (povCameraReady && povCamera != null) ? povCamera.transform : aimOrigin;
+
+        if (Physics.Raycast(rayOrigin.position, rayOrigin.forward, out var hit, maxDistance, ~0, QueryTriggerInteraction.Ignore))
+        {
+            var evidence = hit.collider.GetComponentInParent<EvidenceProp>();
+            if (evidence != null && !string.IsNullOrEmpty(evidence.evidenceId))
+            {
+                target = evidence;
+            }
+        }
+
+        SetAimTarget(target);
+    }
+
+    private void SetAimTarget(EvidenceProp target)
+    {
+        if (target != CurrentAimTarget)
+        {
+            CurrentAimTarget = target;
+            OnAimTargetChanged?.Invoke(target);
+        }
+
+        bool canCapture = target != null;
+        if (canCapture != CanCapture)
+        {
+            CanCapture = canCapture;
+            OnAimValidityChanged?.Invoke(canCapture);
+        }
+    }
+
     private void SetAiming(bool aiming)
     {
         isAiming = aiming;
+
+        if (!aiming)
+        {
+            // No target while not aiming - clears any stale red/green dot or
+            // outline left over from the moment aiming stopped.
+            SetAimTarget(null);
+        }
 
         if (viewfinderOverlay != null)
         {
@@ -289,19 +356,18 @@ public class PhotographTool : PlayerTool
 
     private void TakePhoto()
     {
-        PlayShutterFeedback();
-
-        if (Physics.Raycast(aimOrigin.position, aimOrigin.forward, out var hit, maxDistance, ~0, QueryTriggerInteraction.Ignore))
+        if (!CanCapture || CurrentAimTarget == null)
         {
-            var evidence = hit.collider.GetComponentInParent<EvidenceProp>();
-            if (evidence != null && !string.IsNullOrEmpty(evidence.evidenceId))
-            {
-                ReportEvidence(evidence.evidenceId, (id, role) => EvidenceStateManager.Instance.MarkPhotographed(id, role), "photographed");
-                return;
-            }
+            // Shutter is fully blocked while nothing valid is in frame - no
+            // flash, no sound, no evidence marked. The red viewfinder dot is
+            // the player-facing reason why.
+            Debug.Log("[PhotographTool] Shutter pressed, but no evidence was in frame.");
+            return;
         }
 
-        Debug.Log("[PhotographTool] Shutter pressed, but no evidence was in frame.");
+        PlayShutterFeedback();
+        OnPhotoCaptured?.Invoke();
+        ReportEvidence(CurrentAimTarget.evidenceId, (id, role) => EvidenceStateManager.Instance.MarkPhotographed(id, role), "photographed");
     }
 
     private void PlayShutterFeedback()

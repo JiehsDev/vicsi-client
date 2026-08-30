@@ -16,7 +16,8 @@ public enum RoleId
     EvidenceCollector,
     Recorder,
     TeamLeader,
-    CaseAnalyst
+    CaseAnalyst,
+    EvidenceMarker
 }
 
 /// <summary>

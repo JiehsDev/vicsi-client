@@ -142,11 +142,18 @@ public abstract class PlayerTool : MonoBehaviour
         SetEquippedVisualState(false);
     }
 
-    // Shows/hides this tool and turns its grab interactables on/off to match: visible
-    // and interactive while equipped, invisible and inert otherwise. The Rigidbody
-    // always stays kinematic - there's no physical grab-and-throw path anymore, and a
-    // dynamic Rigidbody parented under a hand anchor would just sag out of the hand
-    // under gravity instead of following it rigidly.
+    // Shows/hides this tool: visible while equipped, invisible and inert otherwise.
+    // The Rigidbody always stays kinematic - there's no physical grab-and-throw path
+    // anymore, and a dynamic Rigidbody parented under a hand anchor would just sag
+    // out of the hand under gravity instead of following it rigidly.
+    //
+    // Collider/HandGrabInteractable/GrabInteractable stay disabled in BOTH states,
+    // not just while hidden. Equipping is exclusively the tool wheel's job (see
+    // EquipToHand) - if these stayed enabled while equipped, a hand passing near the
+    // tool (or ToggleGrab's sticky-select on it) could grab it mid-air, and Oculus's
+    // own grab-follow transform would then fight the wheel's fixed hand-anchor
+    // pinning, leaving the tool floating wherever that grab let go instead of
+    // resetting to its equip pose.
     private void SetEquippedVisualState(bool equipped)
     {
         if (toolRigidbody != null)
@@ -158,7 +165,7 @@ public abstract class PlayerTool : MonoBehaviour
         {
             if (collider != null)
             {
-                collider.enabled = equipped;
+                collider.enabled = false;
             }
         }
 
@@ -172,12 +179,12 @@ public abstract class PlayerTool : MonoBehaviour
 
         if (handGrabInteractable != null)
         {
-            handGrabInteractable.enabled = equipped;
+            handGrabInteractable.enabled = false;
         }
 
         if (grabInteractable != null)
         {
-            grabInteractable.enabled = equipped;
+            grabInteractable.enabled = false;
         }
     }
 
