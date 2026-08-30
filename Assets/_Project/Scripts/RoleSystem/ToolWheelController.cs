@@ -1,20 +1,23 @@
 // Assets/_Project/Scripts/RoleSystem/ToolWheelController.cs
 using System.Collections.Generic;
 using System.Linq;
+using Oculus.Interaction.Locomotion;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 /// <summary>
-/// GTA-style radial tool-select menu. Hold the secondary button on either controller
-/// to pop the wheel open in front of the player; tilt that controller's thumbstick
-/// toward a wedge to highlight it, release the button to equip it. Segments are built
-/// fresh from PlayerToolRegistry.AllTools every time the wheel opens, so adding a new
-/// PlayerTool to the scene just makes it show up here - nothing on this script needs
-/// to change. Picking the tool already in-hand holsters it instead (toggle-off, empty
-/// hands); a dedicated "Empty Hands" wedge does the same regardless of which tool is
-/// currently equipped.
+/// GTA-style radial tool-select menu. Hold the left controller's Y button to pop the
+/// wheel open in front of the player; tilt the RIGHT thumbstick toward a wedge to
+/// highlight it, release Y to equip it into the right hand. While the wheel is open,
+/// normal locomotion is suspended - walking (left stick) and turning (right stick,
+/// which the wheel is now using for selection) both pause so they can't fight the
+/// menu. Segments are built fresh from PlayerToolRegistry.AllTools every time the
+/// wheel opens, so adding a new PlayerTool to the scene just makes it show up here -
+/// nothing on this script needs to change. Picking the tool already in-hand holsters
+/// it instead (toggle-off, empty hands); a dedicated "Empty Hands" wedge does the same
+/// regardless of which tool is currently equipped.
 /// </summary>
 public class ToolWheelController : MonoBehaviour
 {
@@ -26,23 +29,33 @@ public class ToolWheelController : MonoBehaviour
     [SerializeField] private Color hoverWedgeColor = new Color(0.16f, 0.55f, 0.85f, 0.92f);
     [SerializeField] private Color dimBadgeColor = new Color(1f, 1f, 1f, 0.35f);
     [SerializeField] private Color hoverBadgeColor = new Color(1f, 1f, 1f, 1f);
+    [Tooltip("Badge tint for roles with no PlayerTool built/placed yet - shown so the wheel previews every role, but visually muted since picking one does nothing yet.")]
+    [SerializeField] private Color placeholderBadgeColor = new Color(1f, 1f, 1f, 0.15f);
 
-    private enum Handed { Left, Right }
+    [System.Serializable]
+    private class RoleIcon
+    {
+        public RoleId role;
+        public Sprite icon;
+    }
+
+    [Tooltip("Optional icon per role, shown in the badge instead of the monogram fallback. Roles left unassigned here just keep the generated two-letter monogram.")]
+    [SerializeField] private List<RoleIcon> roleIcons = new();
 
     private class WheelSegmentView
     {
         public RoleId Role;
         public string DisplayName;
+        public bool HasTool;
         public Image Wedge;
         public Image Badge;
     }
 
-    private InputAction leftOpenAction;
-    private InputAction rightOpenAction;
-    private InputAction leftThumbstickAction;
-    private InputAction rightThumbstickAction;
+    private InputAction openAction;
+    private InputAction selectStickAction;
 
     private OVRCameraRig cameraRig;
+    private readonly List<GameObject> suspendedLocomotionObjects = new();
 
     private GameObject wheelRoot;
     private RectTransform segmentsRoot;
@@ -53,8 +66,6 @@ public class ToolWheelController : MonoBehaviour
     private readonly List<WheelSegmentView> segmentViews = new();
 
     private bool isOpen;
-    private Handed openHand;
-    private Transform handAnchor;
     private int hoveredIndex;
 
     private void Awake()
@@ -62,62 +73,50 @@ public class ToolWheelController : MonoBehaviour
         BuildUI();
         wheelRoot.SetActive(false);
 
-        leftOpenAction = new InputAction("ToolWheel_LeftOpen", InputActionType.Button, "<XRController>{LeftHand}/secondaryButton");
-        rightOpenAction = new InputAction("ToolWheel_RightOpen", InputActionType.Button, "<XRController>{RightHand}/secondaryButton");
-        leftThumbstickAction = new InputAction("ToolWheel_LeftStick", InputActionType.Value, "<XRController>{LeftHand}/thumbstick", expectedControlType: "Vector2");
-        rightThumbstickAction = new InputAction("ToolWheel_RightStick", InputActionType.Value, "<XRController>{RightHand}/thumbstick", expectedControlType: "Vector2");
+        // Y on the left controller opens the wheel; the right stick (normally
+        // turning) selects from it instead while it's open.
+        openAction = new InputAction("ToolWheel_Open", InputActionType.Button, "<XRController>{LeftHand}/secondaryButton");
+        selectStickAction = new InputAction("ToolWheel_SelectStick", InputActionType.Value, "<XRController>{RightHand}/thumbstick", expectedControlType: "Vector2");
     }
 
     private void OnEnable()
     {
-        leftOpenAction.Enable();
-        rightOpenAction.Enable();
-        leftThumbstickAction.Enable();
-        rightThumbstickAction.Enable();
+        openAction.Enable();
+        selectStickAction.Enable();
     }
 
     private void OnDisable()
     {
-        leftOpenAction.Disable();
-        rightOpenAction.Disable();
-        leftThumbstickAction.Disable();
-        rightThumbstickAction.Disable();
+        openAction.Disable();
+        selectStickAction.Disable();
     }
 
     private void OnDestroy()
     {
-        leftOpenAction?.Dispose();
-        rightOpenAction?.Dispose();
-        leftThumbstickAction?.Dispose();
-        rightThumbstickAction?.Dispose();
+        openAction?.Dispose();
+        selectStickAction?.Dispose();
     }
 
     private void Update()
     {
         if (!isOpen)
         {
-            bool leftPressed = leftOpenAction.WasPressedThisFrame();
-            bool rightPressed = rightOpenAction.WasPressedThisFrame();
-            if (leftPressed || rightPressed)
+            if (openAction.WasPressedThisFrame())
             {
-                OpenWheel(leftPressed ? Handed.Left : Handed.Right);
+                OpenWheel();
             }
             return;
         }
 
         UpdateHoveredSegment();
 
-        bool releasedOpeningHand = openHand == Handed.Left
-            ? leftOpenAction.WasReleasedThisFrame()
-            : rightOpenAction.WasReleasedThisFrame();
-
-        if (releasedOpeningHand)
+        if (openAction.WasReleasedThisFrame())
         {
             CloseWheel();
         }
     }
 
-    private void OpenWheel(Handed hand)
+    private void OpenWheel()
     {
         EnsureCameraRig();
         if (cameraRig == null)
@@ -126,8 +125,7 @@ public class ToolWheelController : MonoBehaviour
             return;
         }
 
-        openHand = hand;
-        handAnchor = hand == Handed.Left ? cameraRig.leftHandAnchor : cameraRig.rightHandAnchor;
+        SuspendLocomotion();
 
         BuildSegments();
         hoveredIndex = IndexOfCurrentlyEquipped();
@@ -141,6 +139,7 @@ public class ToolWheelController : MonoBehaviour
     {
         isOpen = false;
         wheelRoot.SetActive(false);
+        ResumeLocomotion();
 
         if (segmentViews.Count == 0)
         {
@@ -154,7 +153,14 @@ public class ToolWheelController : MonoBehaviour
             return;
         }
 
-        PlayerToolRegistry.ToggleEquip(selected.Role, handAnchor);
+        // Roles previewed on the wheel before their PlayerTool exists yet - nothing
+        // to equip, so picking one is silently a no-op rather than a warning spam.
+        if (!selected.HasTool)
+        {
+            return;
+        }
+
+        PlayerToolRegistry.ToggleEquip(selected.Role, cameraRig.rightHandAnchor);
     }
 
     private void EnsureCameraRig()
@@ -165,9 +171,45 @@ public class ToolWheelController : MonoBehaviour
         }
     }
 
+    // Turning normally reads the same right stick the wheel now uses for selection,
+    // and walking would otherwise keep dragging the player around a menu they're
+    // trying to browse - both pause for as long as the wheel is open. Found by type
+    // rather than by scene path so this keeps working if the rig's hand assignment
+    // ever changes; only components active right now (i.e. actually in use) match.
+    private void SuspendLocomotion()
+    {
+        suspendedLocomotionObjects.Clear();
+
+        foreach (var turner in FindObjectsByType<LocomotionAxisTurnerInteractor>(FindObjectsInactive.Exclude))
+        {
+            suspendedLocomotionObjects.Add(turner.gameObject);
+        }
+        foreach (var slider in FindObjectsByType<SlideLocomotionBroadcaster>(FindObjectsInactive.Exclude))
+        {
+            suspendedLocomotionObjects.Add(slider.gameObject);
+        }
+
+        foreach (var go in suspendedLocomotionObjects)
+        {
+            go.SetActive(false);
+        }
+    }
+
+    private void ResumeLocomotion()
+    {
+        foreach (var go in suspendedLocomotionObjects)
+        {
+            if (go != null)
+            {
+                go.SetActive(true);
+            }
+        }
+        suspendedLocomotionObjects.Clear();
+    }
+
     private void UpdateHoveredSegment()
     {
-        Vector2 stick = (openHand == Handed.Left ? leftThumbstickAction : rightThumbstickAction).ReadValue<Vector2>();
+        Vector2 stick = selectStickAction.ReadValue<Vector2>();
 
         if (stick.sqrMagnitude < Deadzone * Deadzone)
         {
@@ -207,7 +249,9 @@ public class ToolWheelController : MonoBehaviour
         {
             bool hovered = i == hoveredIndex;
             segmentViews[i].Wedge.color = hovered ? hoverWedgeColor : dimWedgeColor;
-            segmentViews[i].Badge.color = hovered ? hoverBadgeColor : dimBadgeColor;
+            segmentViews[i].Badge.color = hovered
+                ? hoverBadgeColor
+                : (segmentViews[i].HasTool ? dimBadgeColor : placeholderBadgeColor);
         }
 
         var current = segmentViews[hoveredIndex];
@@ -215,7 +259,9 @@ public class ToolWheelController : MonoBehaviour
         bool isCurrentlyEquipped = current.Role == PlayerToolRegistry.VirtuallyEquippedRole;
 
         centerTitle.text = isHolsterEntry ? "Empty Hands" : current.DisplayName;
-        centerSubtitle.text = isHolsterEntry || !isCurrentlyEquipped ? "Release to equip" : "Release to holster";
+        centerSubtitle.text = !isHolsterEntry && !current.HasTool
+            ? "Not available yet"
+            : (isHolsterEntry || !isCurrentlyEquipped ? "Release to equip" : "Release to holster");
     }
 
     // --- UI construction -------------------------------------------------
@@ -266,10 +312,18 @@ public class ToolWheelController : MonoBehaviour
         }
         segmentViews.Clear();
 
-        var entries = new List<(RoleId role, string name)> { (RoleId.None, "Empty Hands") };
-        entries.AddRange(PlayerToolRegistry.AllTools
-            .OrderBy(kv => (int)kv.Key)
-            .Select(kv => (kv.Key, ToDisplayName(kv.Key))));
+        // Every role gets a wedge, not just ones with a PlayerTool placed in the scene
+        // yet - roles without one just preview their icon with no function for now
+        // (see HasTool below), so the wheel reads as the full roster from day one.
+        var entries = new List<(RoleId role, string name, bool hasTool)> { (RoleId.None, "Empty Hands", true) };
+        foreach (RoleId role in System.Enum.GetValues(typeof(RoleId)))
+        {
+            if (role == RoleId.None)
+            {
+                continue;
+            }
+            entries.Add((role, ToDisplayName(role), PlayerToolRegistry.GetTool(role) != null));
+        }
 
         int count = entries.Count;
         float segmentAngle = 360f / count;
@@ -277,11 +331,11 @@ public class ToolWheelController : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            CreateWedge(i, segmentAngle, gapAngle, entries[i].role, entries[i].name);
+            CreateWedge(i, segmentAngle, gapAngle, entries[i].role, entries[i].name, entries[i].hasTool);
         }
     }
 
-    private void CreateWedge(int index, float segmentAngle, float gapAngle, RoleId role, string displayName)
+    private void CreateWedge(int index, float segmentAngle, float gapAngle, RoleId role, string displayName, bool hasTool)
     {
         float startAngle = index * segmentAngle + gapAngle * 0.5f;
         float visibleAngle = segmentAngle - gapAngle;
@@ -303,15 +357,26 @@ public class ToolWheelController : MonoBehaviour
 
         var badge = CreateImageChild(segmentsRoot, "Badge", new Vector2(BadgeDiameter, BadgeDiameter), badgePos);
         badge.sprite = circleSprite;
-        badge.color = dimBadgeColor;
+        badge.color = hasTool ? dimBadgeColor : placeholderBadgeColor;
 
-        var monogram = CreateLabel(badge.rectTransform, "Monogram", Vector2.zero, new Vector2(BadgeDiameter, BadgeDiameter), 48f, FontStyles.Bold);
-        monogram.text = Monogram(role, displayName);
+        var icon = FindIcon(role);
+        if (icon != null)
+        {
+            var iconImage = CreateImageChild(badge.rectTransform, "Icon", new Vector2(BadgeDiameter * 0.62f, BadgeDiameter * 0.62f), Vector2.zero);
+            iconImage.sprite = icon;
+            iconImage.color = Color.white;
+            iconImage.preserveAspect = true;
+        }
+        else
+        {
+            var monogram = CreateLabel(badge.rectTransform, "Monogram", Vector2.zero, new Vector2(BadgeDiameter, BadgeDiameter), 48f, FontStyles.Bold);
+            monogram.text = Monogram(role, displayName);
+        }
 
         var label = CreateLabel(segmentsRoot, "Label", labelPos, new Vector2(220f, 50f), 26f, FontStyles.Normal);
         label.text = displayName;
 
-        segmentViews.Add(new WheelSegmentView { Role = role, DisplayName = displayName, Wedge = wedge, Badge = badge });
+        segmentViews.Add(new WheelSegmentView { Role = role, DisplayName = displayName, HasTool = hasTool, Wedge = wedge, Badge = badge });
     }
 
     private static Image CreateImageChild(RectTransform parent, string name, Vector2 size, Vector2 anchoredPosition)
@@ -374,17 +439,32 @@ public class ToolWheelController : MonoBehaviour
         return Sprite.Create(texture, new Rect(0f, 0f, diameter, diameter), new Vector2(0.5f, 0.5f), 100f);
     }
 
+    // The wheel names the physical item in your hand, not the job title that carries
+    // it - roles without a defined piece of equipment yet just fall back to their role
+    // name until one exists.
     private static string ToDisplayName(RoleId role) => role switch
     {
-        RoleId.Photographer => "Photographer",
-        RoleId.Sketcher => "Sketcher",
-        RoleId.EvidenceCollector => "Evidence Collector",
+        RoleId.Photographer => "Camera",
+        RoleId.Sketcher => "Sketchpad",
+        RoleId.EvidenceCollector => "Magnifying Glass",
         RoleId.Recorder => "Recorder",
-        RoleId.IOC => "IOC",
+        RoleId.IOC => "Flashlight",
         RoleId.TeamLeader => "Team Leader",
         RoleId.CaseAnalyst => "Case Analyst",
         _ => role.ToString(),
     };
+
+    private Sprite FindIcon(RoleId role)
+    {
+        foreach (var entry in roleIcons)
+        {
+            if (entry.role == role)
+            {
+                return entry.icon;
+            }
+        }
+        return null;
+    }
 
     private static string Monogram(RoleId role, string displayName)
     {

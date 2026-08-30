@@ -142,14 +142,16 @@ public abstract class PlayerTool : MonoBehaviour
         SetEquippedVisualState(false);
     }
 
-    // Shows/hides this tool and turns its physics + grab interactables on/off to
-    // match: visible and interactive while equipped (in-hand or, in principle, a
-    // future physical pickup), invisible and inert otherwise.
+    // Shows/hides this tool and turns its grab interactables on/off to match: visible
+    // and interactive while equipped, invisible and inert otherwise. The Rigidbody
+    // always stays kinematic - there's no physical grab-and-throw path anymore, and a
+    // dynamic Rigidbody parented under a hand anchor would just sag out of the hand
+    // under gravity instead of following it rigidly.
     private void SetEquippedVisualState(bool equipped)
     {
         if (toolRigidbody != null)
         {
-            toolRigidbody.isKinematic = !equipped;
+            toolRigidbody.isKinematic = true;
         }
 
         foreach (var collider in toolColliders)
