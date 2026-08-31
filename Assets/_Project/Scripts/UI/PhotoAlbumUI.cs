@@ -111,6 +111,7 @@ public class PhotoAlbumUI : MonoBehaviour
         navStickAction.Disable();
         selectAction.Disable();
         closeAction.Disable();
+        PlayerUIGate.Exit(this);
 
         if (albumManager != null)
         {
@@ -300,9 +301,19 @@ public class PhotoAlbumUI : MonoBehaviour
 
     public void Show()
     {
+        // Defers to whatever else already owns the screen right now (the
+        // camera viewfinder, the utility menu, ...) instead of stacking this
+        // panel on top of it - same contract as UtilityMenuController/
+        // ToolWheelController.
+        if (!panelRoot.activeSelf && PlayerUIGate.IsBlocked)
+        {
+            return;
+        }
+
         if (!panelRoot.activeSelf)
         {
             LocomotionSuspender.Suspend();
+            PlayerUIGate.Enter(this);
         }
         panelRoot.SetActive(true);
         stickWasNeutral = true;
@@ -313,6 +324,7 @@ public class PhotoAlbumUI : MonoBehaviour
         if (panelRoot.activeSelf)
         {
             LocomotionSuspender.Resume();
+            PlayerUIGate.Exit(this);
         }
         panelRoot.SetActive(false);
 

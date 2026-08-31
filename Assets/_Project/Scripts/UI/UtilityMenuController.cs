@@ -14,9 +14,10 @@ using UnityEngine.UI;
 /// of being tied to RoleId/PlayerToolRegistry, since these are UI screens to
 /// open, not tools to equip. Hold the LEFT controller's X button to open it,
 /// tilt the RIGHT thumbstick toward an entry to highlight it, release X to
-/// open that entry's screen. Note this shares the left X button with
-/// PhotographTool's aim toggle and EvidenceTentPickup's pickup action -
-/// holding X while the camera or a nearby tent is in play will trigger both.
+/// open that entry's screen. This shares the left X button with
+/// PhotographTool's aim toggle, and both defer to PlayerUIGate, so holding X
+/// while the camera is already up (or this menu itself is already open) only
+/// ever triggers one of them.
 /// An entry with no listener wired yet (e.g. Notes/Item Logs before they
 /// exist) still shows up, just dimmed and inert, exactly like an unbuilt
 /// role on the tool wheel - add its OnSelect listener later and it lights up
@@ -100,6 +101,7 @@ public class UtilityMenuController : MonoBehaviour
     {
         openAction.Disable();
         selectStickAction.Disable();
+        PlayerUIGate.Exit(this);
     }
 
     private void OnDestroy()
@@ -135,6 +137,14 @@ public class UtilityMenuController : MonoBehaviour
             return;
         }
 
+        // Defers to whatever else already owns the screen right now - most
+        // often the camera viewfinder, since PhotographTool's aim toggle and
+        // this menu's open button are both bound to the left controller's X.
+        if (PlayerUIGate.IsBlocked)
+        {
+            return;
+        }
+
         LocomotionSuspender.Suspend();
         BuildSegments();
         hoveredIndex = 0;
@@ -142,6 +152,7 @@ public class UtilityMenuController : MonoBehaviour
 
         isOpen = true;
         wheelRoot.SetActive(true);
+        PlayerUIGate.Enter(this);
     }
 
     private void CloseMenu()
@@ -149,6 +160,7 @@ public class UtilityMenuController : MonoBehaviour
         isOpen = false;
         wheelRoot.SetActive(false);
         LocomotionSuspender.Resume();
+        PlayerUIGate.Exit(this);
 
         if (segmentViews.Count == 0)
         {

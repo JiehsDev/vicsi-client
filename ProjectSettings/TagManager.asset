@@ -33,6 +33,7 @@ TagManager:
   - QDSUIToggleThumbnail
   - Door
   - Anchor
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX

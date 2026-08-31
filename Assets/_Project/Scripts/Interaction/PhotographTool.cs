@@ -58,6 +58,9 @@ public class PhotographTool : PlayerTool
 
     public override RoleId ToolRole => RoleId.Photographer;
 
+    /// <summary>The viewfinder canvas (aim reticle, 4:3 crop mask, HUD text) - exposed so a photo-capture listener can hide it for the instant it renders a shot, so the crop mask's black bars and HUD chrome never get baked into the saved photo.</summary>
+    public GameObject ViewfinderOverlay => viewfinderOverlay;
+
     /// <summary>True while aiming and the forward raycast is currently hitting a valid EvidenceProp within maxDistance. False (and the shutter is a no-op) at every other time, including while not aiming.</summary>
     public bool CanCapture { get; private set; }
 
@@ -156,6 +159,7 @@ public class PhotographTool : PlayerTool
         leftActivateAction?.action.Disable();
         rightActivateAction?.action.Disable();
         leftAimAction.Disable();
+        PlayerUIGate.Exit(this);
     }
 
     private void OnDestroy()
@@ -178,7 +182,15 @@ public class PhotographTool : PlayerTool
 
         if (leftAimAction.WasPressedThisFrame())
         {
-            SetAiming(!isAiming);
+            bool turningOn = !isAiming;
+            // Turning off is always allowed (it's this tool's own gate entry
+            // to release); turning on defers to whatever else - the utility
+            // menu, the tool wheel - might already have the same X/Y button
+            // held down for its own screen this frame.
+            if (!turningOn || !PlayerUIGate.IsBlocked)
+            {
+                SetAiming(turningOn);
+            }
         }
 
         if (!isAiming)
@@ -243,6 +255,15 @@ public class PhotographTool : PlayerTool
     private void SetAiming(bool aiming)
     {
         isAiming = aiming;
+
+        if (aiming)
+        {
+            PlayerUIGate.Enter(this);
+        }
+        else
+        {
+            PlayerUIGate.Exit(this);
+        }
 
         if (!aiming)
         {

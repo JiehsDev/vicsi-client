@@ -2302,6 +2302,73 @@ Transform:
   - {fileID: 1827532281}
   m_Father: {fileID: 863257718}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &43383413
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LiberationSans SDF Material (Instance)
+  m_Shader: {fileID: 4800000, guid: fe393ace9b354375a9cb14cdbbc28be4, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 28684132378477856, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _CullMode: 0
+    - _FaceDilate: 0
+    - _GradientScale: 10
+    - _MaskSoftnessX: 0
+    - _MaskSoftnessY: 0
+    - _OutlineSoftness: 0
+    - _OutlineWidth: 0.167
+    - _PerspectiveFilter: 0.875
+    - _ScaleRatioA: 0.9
+    - _ScaleRatioB: 1
+    - _ScaleRatioC: 0.73125
+    - _ScaleX: 1
+    - _ScaleY: 1
+    - _ShaderFlags: 0
+    - _Sharpness: 0
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _TextureHeight: 1024
+    - _TextureWidth: 1024
+    - _UnderlayDilate: 0
+    - _UnderlayOffsetX: 0
+    - _UnderlayOffsetY: 0
+    - _UnderlaySoftness: 0
+    - _VertexOffsetX: 0
+    - _VertexOffsetY: 0
+    - _WeightBold: 0.75
+    - _WeightNormal: 0
+    m_Colors:
+    - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
+    - _FaceColor: {r: 0.9921569, g: 0.9607844, b: 1, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &44682294
 GameObject:
   m_ObjectHideFlags: 0
@@ -74780,10 +74847,12 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
+  m_sharedMaterial: {fileID: 43383413}
+  m_fontSharedMaterials:
+  - {fileID: 43383413}
+  m_fontMaterial: {fileID: 43383413}
+  m_fontMaterials:
+  - {fileID: 43383413}
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
@@ -74803,9 +74872,9 @@ MonoBehaviour:
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+    rgba: 4294964733
+  m_fontSize: 29
+  m_fontSizeBase: 29
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -87842,8 +87911,8 @@ MonoBehaviour:
     iconBlack: {fileID: 21300000, guid: 77d58200928c21649879540070a9542b, type: 3}
     description: 
   - role: 2
-    iconWhite: {fileID: 21300000, guid: 8824f283cf3f0bc4f89823cb73c6e36b, type: 3}
-    iconBlack: {fileID: 21300000, guid: d509cfb4d847154449581aed69a38adc, type: 3}
+    iconWhite: {fileID: 21300000, guid: 3338532d9e10d784aa1f0c4a77ee918d, type: 3}
+    iconBlack: {fileID: 21300000, guid: 530924c17e380e3498dad6aadcc430b2, type: 3}
     description: 
   - role: 4
     iconWhite: {fileID: 21300000, guid: c4e574e2fb6011f499b329714aaa3757, type: 3}
@@ -114308,7 +114377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HudFollowCamera
   distance: 0.6
   targetCamera: {fileID: 971505588}
-  localOffset: {x: 0, y: 0.22, z: 0}
+  localOffset: {x: 0, y: 0.14, z: 0}
 --- !u!225 &1971713084
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -114387,7 +114456,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0.36}
-  m_SizeDelta: {x: 600, y: 150}
+  m_SizeDelta: {x: 480, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1973898706
 GameObject:

@@ -32,6 +32,9 @@ public class ViewfinderFrameMask : MonoBehaviour
     [SerializeField] private RectTransform frameBorderLeft;
     [SerializeField] private RectTransform frameBorderRight;
 
+    /// <summary>The width/height ratio of the visible crop window (aspectWidth / aspectHeight) - exposed so a photo-capture listener can size its render texture to match exactly what this mask actually shows, instead of duplicating the ratio as a separate hardcoded value that could silently drift out of sync with it.</summary>
+    public float Aspect => aspectHeight > 0f ? aspectWidth / aspectHeight : 1f;
+
     private RectTransform selfRect;
     private RectTransform topBar;
     private RectTransform bottomBar;

@@ -137,6 +137,7 @@ public class ToolWheelController : MonoBehaviour
     {
         openAction.Disable();
         selectStickAction.Disable();
+        PlayerUIGate.Exit(this);
     }
 
     private void OnDestroy()
@@ -167,6 +168,14 @@ public class ToolWheelController : MonoBehaviour
 
     private void OpenWheel()
     {
+        // Defers to whatever else already owns the screen right now (the
+        // camera viewfinder, the utility menu, ...) instead of stacking this
+        // wheel on top of it.
+        if (PlayerUIGate.IsBlocked)
+        {
+            return;
+        }
+
         EnsureCameraRig();
         if (cameraRig == null)
         {
@@ -182,6 +191,7 @@ public class ToolWheelController : MonoBehaviour
 
         isOpen = true;
         wheelRoot.SetActive(true);
+        PlayerUIGate.Enter(this);
     }
 
     private void CloseWheel()
@@ -189,6 +199,7 @@ public class ToolWheelController : MonoBehaviour
         isOpen = false;
         wheelRoot.SetActive(false);
         LocomotionSuspender.Resume();
+        PlayerUIGate.Exit(this);
 
         if (segmentViews.Count == 0)
         {
