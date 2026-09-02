@@ -56,7 +56,7 @@ public class ToolWheelController : MonoBehaviour
     [System.Serializable]
     private class WheelIconEntry
     {
-        public RoleId role;
+        public ToolType role;
         [Tooltip("Shown by default (dim/unhovered wedge, black background).")]
         public Sprite iconWhite;
         [Tooltip("Shown while this wedge is hovered (wedge flips to a white background).")]
@@ -81,7 +81,7 @@ public class ToolWheelController : MonoBehaviour
 
     private class WheelSegmentView
     {
-        public RoleId Role;
+        public ToolType Role;
         public string DisplayName;
         public string Description;
         public bool HasTool;
@@ -207,7 +207,7 @@ public class ToolWheelController : MonoBehaviour
         }
 
         var selected = segmentViews[hoveredIndex];
-        if (selected.Role == RoleId.None)
+        if (selected.Role == ToolType.None)
         {
             PlayerToolRegistry.HolsterCurrent();
             return;
@@ -292,7 +292,7 @@ public class ToolWheelController : MonoBehaviour
         }
 
         var current = segmentViews[hoveredIndex];
-        bool isHolsterEntry = current.Role == RoleId.None;
+        bool isHolsterEntry = current.Role == ToolType.None;
 
         centerTitle.text = isHolsterEntry ? "Empty Hands" : current.DisplayName.ToUpperInvariant();
         centerSubtitle.text = current.Description;
@@ -514,13 +514,13 @@ public class ToolWheelController : MonoBehaviour
         // Every role gets a wedge, not just ones with a PlayerTool placed in the scene
         // yet - roles without one just preview their icon with no function for now
         // (see HasTool below), so the wheel reads as the full roster from day one.
-        var entries = new List<(RoleId role, string name, string description, bool hasTool)>
+        var entries = new List<(ToolType role, string name, string description, bool hasTool)>
         {
-            (RoleId.None, "Empty Hands", ResolveDescription(RoleId.None), true)
+            (ToolType.None, "Empty Hands", ResolveDescription(ToolType.None), true)
         };
-        foreach (RoleId role in System.Enum.GetValues(typeof(RoleId)))
+        foreach (ToolType role in System.Enum.GetValues(typeof(ToolType)))
         {
-            if (role == RoleId.None)
+            if (role == ToolType.None)
             {
                 continue;
             }
@@ -537,7 +537,7 @@ public class ToolWheelController : MonoBehaviour
         }
     }
 
-    private void CreateWedge(int index, float segmentAngle, float gapAngle, RoleId role, string displayName, string description, bool hasTool)
+    private void CreateWedge(int index, float segmentAngle, float gapAngle, ToolType role, string displayName, string description, bool hasTool)
     {
         float startAngle = index * segmentAngle + gapAngle * 0.5f;
         float visibleAngle = segmentAngle - gapAngle;
@@ -726,37 +726,33 @@ public class ToolWheelController : MonoBehaviour
     // The wheel names the physical item in your hand, not the job title that carries
     // it - roles without a defined piece of equipment yet just fall back to their role
     // name until one exists.
-    private static string ToDisplayName(RoleId role) => role switch
+    private static string ToDisplayName(ToolType role) => role switch
     {
-        RoleId.Photographer => "Camera",
-        RoleId.Sketcher => "Sketchpad",
-        RoleId.EvidenceCollector => "Magnifying Glass",
-        RoleId.Recorder => "Recorder",
-        RoleId.IOC => "Flashlight",
-        RoleId.TeamLeader => "Team Leader",
-        RoleId.CaseAnalyst => "Case Analyst",
-        RoleId.EvidenceMarker => "Evidence Tent",
+        ToolType.Photographer => "Camera",
+        ToolType.Sketcher => "Sketchpad",
+        ToolType.EvidenceCollector => "Magnifying Glass",
+        ToolType.Recorder => "Recorder",
+        ToolType.IOC => "Flashlight",
+        ToolType.EvidenceMarker => "Evidence Tent",
         _ => role.ToString(),
     };
 
     // Shown in the center hub while a wedge is hovered. An inspector override (see
     // WheelIconEntry.description) always wins; this is just the fallback so the wheel
     // still reads sensibly before anyone fills those in.
-    private static string DefaultDescription(RoleId role) => role switch
+    private static string DefaultDescription(ToolType role) => role switch
     {
-        RoleId.None => "Put away your current tool.",
-        RoleId.Photographer => "Captures photographic evidence at the scene.",
-        RoleId.IOC => "Illuminates dark areas to reveal hidden evidence.",
-        RoleId.Sketcher => "Sketches the crime scene layout by hand.",
-        RoleId.EvidenceCollector => "Magnifies and collects trace evidence.",
-        RoleId.Recorder => "Records verbal notes and witness statements.",
-        RoleId.TeamLeader => "Coordinates the investigation team.",
-        RoleId.CaseAnalyst => "Analyzes evidence to help build the case.",
-        RoleId.EvidenceMarker => "Places numbered evidence tents at the scene.",
+        ToolType.None => "Put away your current tool.",
+        ToolType.Photographer => "Captures photographic evidence at the scene.",
+        ToolType.IOC => "Illuminates dark areas to reveal hidden evidence.",
+        ToolType.Sketcher => "Sketches the crime scene layout by hand.",
+        ToolType.EvidenceCollector => "Magnifies and collects trace evidence.",
+        ToolType.Recorder => "Records verbal notes and witness statements.",
+        ToolType.EvidenceMarker => "Places numbered evidence tents at the scene.",
         _ => string.Empty,
     };
 
-    private string ResolveDescription(RoleId role)
+    private string ResolveDescription(ToolType role)
     {
         foreach (var entry in roleIcons)
         {
@@ -768,7 +764,7 @@ public class ToolWheelController : MonoBehaviour
         return DefaultDescription(role);
     }
 
-    private (Sprite white, Sprite black) FindIcons(RoleId role)
+    private (Sprite white, Sprite black) FindIcons(ToolType role)
     {
         foreach (var entry in roleIcons)
         {
@@ -780,9 +776,9 @@ public class ToolWheelController : MonoBehaviour
         return (null, null);
     }
 
-    private static string Monogram(RoleId role, string displayName)
+    private static string Monogram(ToolType role, string displayName)
     {
-        if (role == RoleId.None)
+        if (role == ToolType.None)
         {
             return "-";
         }

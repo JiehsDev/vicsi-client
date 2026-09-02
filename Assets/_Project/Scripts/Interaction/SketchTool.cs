@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 /// item, press to act - but the sketching interaction/UI itself hasn't been designed
 /// yet, so activating just marks the evidence Sketched. Fill in the real drawing
 /// interaction later; EvidenceStateManager/ProceduralGateValidator already work
-/// against RoleId.Sketcher as-is.
+/// against ToolType.Sketcher as-is.
 /// </summary>
 public class SketchTool : PlayerTool
 {
@@ -20,7 +20,7 @@ public class SketchTool : PlayerTool
     [SerializeField] private Transform aimOrigin;
     [SerializeField] private float maxDistance = 5f;
 
-    public override RoleId ToolRole => RoleId.Sketcher;
+    public override ToolType ToolRole => ToolType.Sketcher;
 
     protected override void Awake()
     {
@@ -75,6 +75,14 @@ public class SketchTool : PlayerTool
             return;
         }
 
-        ReportEvidence(evidence.evidenceId, (id, role) => EvidenceStateManager.Instance.MarkSketched(id, role), "sketched");
+        if (ProceduralGateValidator.Instance != null && !ProceduralGateValidator.Instance.CanTransition(evidence.evidenceId, EvidenceStatus.Sketched))
+        {
+            string reason = ProceduralGateValidator.Instance.GetBlockReason(evidence.evidenceId, EvidenceStatus.Sketched);
+            Debug.Log($"[SketchTool] Can't mark {evidence.evidenceId} Sketched: {reason}");
+            NotificationManager.Notify(reason);
+            return;
+        }
+
+        ReportEvidence(evidence.evidenceId, (id, tool) => EvidenceStateManager.Instance.MarkSketched(id, tool), "sketched");
     }
 }

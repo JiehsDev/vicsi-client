@@ -39,7 +39,7 @@ public class EvidenceTentTool : PlayerTool
     [Tooltip("How close the player's head has to get to a placed tent for it to be reclaimed (freeing its number back up).")]
     [SerializeField] private float pickupRadius = 0.4f;
 
-    public override RoleId ToolRole => RoleId.EvidenceMarker;
+    public override ToolType ToolRole => ToolType.EvidenceMarker;
 
     /// <summary>True if some tent number is currently unused and can be placed next.</summary>
     public bool HasAvailableTent => FindLowestAvailableIndex() >= 0;

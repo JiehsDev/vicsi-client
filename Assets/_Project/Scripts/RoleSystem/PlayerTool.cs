@@ -6,7 +6,7 @@ using Oculus.Interaction.HandGrab;
 /// <summary>
 /// Base class for every capability the single player character can pick up and use -
 /// camera, sketchpad, evidence bag, recorder, and whatever comes after. There is no
-/// separate playable character per role: RoleId just tags which capability a given
+/// separate playable character per role: ToolType just tags which capability a given
 /// tool represents, and every tool self-registers with PlayerToolRegistry on enable.
 /// Adding a new tool means subclassing this and dropping it in the scene - no other
 /// script needs to change.
@@ -23,8 +23,8 @@ public abstract class PlayerTool : MonoBehaviour
     [SerializeField] private Vector3 equipLocalPosition;
     [SerializeField] private Vector3 equipLocalEulerAngles;
 
-    /// <summary>Which role/capability this tool represents. Must not be RoleId.None.</summary>
-    public abstract RoleId ToolRole { get; }
+    /// <summary>Which role/capability this tool represents. Must not be ToolType.None.</summary>
+    public abstract ToolType ToolRole { get; }
 
     protected Grabbable Grabbable { get; private set; }
 
@@ -61,9 +61,9 @@ public abstract class PlayerTool : MonoBehaviour
         // sitting out in the world to find.
         SetEquippedVisualState(false);
 
-        if (ToolRole == RoleId.None)
+        if (ToolRole == ToolType.None)
         {
-            Debug.LogWarning($"[{GetType().Name}] ToolRole is RoleId.None; this tool won't be reachable through PlayerToolRegistry.", this);
+            Debug.LogWarning($"[{GetType().Name}] ToolRole is ToolType.None; this tool won't be reachable through PlayerToolRegistry.", this);
         }
     }
 
@@ -194,7 +194,7 @@ public abstract class PlayerTool : MonoBehaviour
     /// matching STCS trigger. Safe to call even if those managers aren't in the scene
     /// yet - logs a warning instead of throwing, so a new tool can never NRE here.
     /// </summary>
-    protected void ReportEvidence(string evidenceId, System.Action<string, RoleId> markMethod, string stcsSuffix = null)
+    protected void ReportEvidence(string evidenceId, System.Action<string, ToolType> markMethod, string stcsSuffix = null)
     {
         if (string.IsNullOrEmpty(evidenceId) || markMethod == null)
         {

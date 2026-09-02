@@ -11,7 +11,7 @@ using UnityEngine.UI;
 /// Album, ...) - visually and mechanically the same GTA-style wheel as
 /// ToolWheelController (ring wedges, hover-lift, "release to select"), but
 /// generic: entries are a plain list of name/description/UnityEvent instead
-/// of being tied to RoleId/PlayerToolRegistry, since these are UI screens to
+/// of being tied to ToolType/PlayerToolRegistry, since these are UI screens to
 /// open, not tools to equip. Hold the LEFT controller's X button to open it,
 /// tilt the RIGHT thumbstick toward an entry to highlight it, release X to
 /// open that entry's screen. This shares the left X button with

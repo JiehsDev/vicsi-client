@@ -18,7 +18,7 @@ public class EvidenceCollectorTool : PlayerTool
     [SerializeField] private Transform aimOrigin;
     [SerializeField] private float maxDistance = 5f;
 
-    public override RoleId ToolRole => RoleId.EvidenceCollector;
+    public override ToolType ToolRole => ToolType.EvidenceCollector;
 
     protected override void Awake()
     {
@@ -75,10 +75,12 @@ public class EvidenceCollectorTool : PlayerTool
 
         if (ProceduralGateValidator.Instance != null && !ProceduralGateValidator.Instance.CanCollect(evidence.evidenceId))
         {
-            Debug.Log($"[EvidenceCollectorTool] Can't collect {evidence.evidenceId}: {ProceduralGateValidator.Instance.GetBlockReason(evidence.evidenceId)}");
+            string reason = ProceduralGateValidator.Instance.GetBlockReason(evidence.evidenceId);
+            Debug.Log($"[EvidenceCollectorTool] Can't collect {evidence.evidenceId}: {reason}");
+            NotificationManager.Notify(reason);
             return;
         }
 
-        ReportEvidence(evidence.evidenceId, (id, role) => EvidenceStateManager.Instance.MarkCollected(id, role), "collected");
+        ReportEvidence(evidence.evidenceId, (id, tool) => EvidenceStateManager.Instance.MarkCollected(id, tool), "collected");
     }
 }

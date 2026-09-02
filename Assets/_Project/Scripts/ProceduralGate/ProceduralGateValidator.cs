@@ -12,15 +12,19 @@ public struct ProceduralGateLogEntry
 {
     public string evidenceId;
     public EvidenceStatus status;
-    public RoleId role;
+    public ToolType tool;
     public float time;
 }
 
 /// <summary>
-/// Generic gate for "collect" actions. Not tied to any specific role's
-/// interaction script (there's no playable Collector yet) - anything that
-/// wants to allow a collect action should check CanCollect() first and use
-/// GetBlockReason() to explain why it's blocked.
+/// Generic gate for any evidence status transition, not just "collect" - anything
+/// that wants to perform a transition (photograph, sketch, log, collect, ...) should
+/// check CanTransition() first and use GetBlockReason() to explain why it's blocked.
+/// Delegates the actual sequence knowledge to EvidenceStateManager's
+/// IsValidNextStep/GetNextRequiredStatus (see EvidenceStateManager.RequiredSequence)
+/// so there is exactly one place the required order is defined - this class used to
+/// carry its own hand-written copy of that order as English strings (ReasonFor), which
+/// could silently drift from the real sequence; that's gone now.
 /// </summary>
 public class ProceduralGateValidator : MonoBehaviour
 {
@@ -46,18 +50,26 @@ public class ProceduralGateValidator : MonoBehaviour
         EvidenceStateManager.OnEvidenceStatusChanged -= HandleEvidenceStatusChanged;
     }
 
-    /// <summary>Whether the given evidence item may currently be collected.</summary>
-    public bool CanCollect(string evidenceId)
+    /// <summary>Whether the given evidence item may currently transition to target (i.e. target is exactly the next required step).</summary>
+    public bool CanTransition(string evidenceId, EvidenceStatus target)
     {
-        return EvidenceStateManager.Instance != null
-            && EvidenceStateManager.Instance.IsReadyForCollection(evidenceId);
+        if (EvidenceStateManager.Instance == null)
+        {
+            return false;
+        }
+
+        var record = EvidenceStateManager.Instance.GetRecord(evidenceId);
+        return record != null && EvidenceStateManager.IsValidNextStep(record.status, target);
     }
 
+    /// <summary>Backward-compatible convenience wrapper - equivalent to CanTransition(evidenceId, EvidenceStatus.Collected).</summary>
+    public bool CanCollect(string evidenceId) => CanTransition(evidenceId, EvidenceStatus.Collected);
+
     /// <summary>
-    /// Short human-readable reason CanCollect() is currently false, e.g. "Not yet logged."
-    /// Returns null if the item is collectible or already collected/processed is not the concern here.
+    /// Short human-readable reason CanTransition(evidenceId, target) is currently false, e.g.
+    /// "Not yet Photographed." Returns null if the transition is currently valid.
     /// </summary>
-    public string GetBlockReason(string evidenceId)
+    public string GetBlockReason(string evidenceId, EvidenceStatus target)
     {
         if (EvidenceStateManager.Instance == null)
         {
@@ -70,48 +82,37 @@ public class ProceduralGateValidator : MonoBehaviour
             return "Unknown evidence item.";
         }
 
-        if (record.status == EvidenceStatus.ReadyForCollection)
+        if (EvidenceStateManager.IsValidNextStep(record.status, target))
         {
             return null;
         }
 
-        return ReasonFor(record.status);
+        var nextRequired = EvidenceStateManager.GetNextRequiredStatus(record.status);
+        return nextRequired.HasValue ? $"Not yet {nextRequired}." : "No further steps required.";
     }
 
-    private static string ReasonFor(EvidenceStatus status)
-    {
-        switch (status)
-        {
-            case EvidenceStatus.NotFound: return "Not yet found.";
-            case EvidenceStatus.Found: return "Not yet photographed.";
-            case EvidenceStatus.Photographed: return "Not yet sketched.";
-            case EvidenceStatus.Sketched: return "Not yet logged.";
-            case EvidenceStatus.Logged: return "Not yet logged.";
-            case EvidenceStatus.Collected: return "Already collected.";
-            case EvidenceStatus.Processed: return "Already processed and collected.";
-            default: return "Not ready for collection.";
-        }
-    }
+    /// <summary>Backward-compatible convenience wrapper - equivalent to GetBlockReason(evidenceId, EvidenceStatus.Collected).</summary>
+    public string GetBlockReason(string evidenceId) => GetBlockReason(evidenceId, EvidenceStatus.Collected);
 
     private void HandleEvidenceStatusChanged(string evidenceId, EvidenceStatus newStatus)
     {
-        RoleId role = RoleId.None;
+        ToolType tool = ToolType.None;
         var record = EvidenceStateManager.Instance != null
             ? EvidenceStateManager.Instance.GetRecord(evidenceId)
             : null;
         if (record != null)
         {
-            role = record.lastInteractedBy;
+            tool = record.lastToolUsed;
         }
 
         eventLog.Add(new ProceduralGateLogEntry
         {
             evidenceId = evidenceId,
             status = newStatus,
-            role = role,
+            tool = tool,
             time = Time.time
         });
 
-        Debug.Log($"[ProceduralGateValidator] {evidenceId} -> {newStatus} (by {role})");
+        Debug.Log($"[ProceduralGateValidator] {evidenceId} -> {newStatus} (via {tool})");
     }
 }

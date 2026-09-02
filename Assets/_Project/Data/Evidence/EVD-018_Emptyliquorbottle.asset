@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e77d02079bdcf42975e822ccf668f1, type: 3}
+  m_Name: EVD-018_Emptyliquorbottle
+  m_EditorClassIdentifier: Assembly-CSharp::EvidenceDefinition
+  evidenceId: EVD-018
+  displayName: Empty liquor bottle
+  requiresFingerprinting: 1
+  description: DISTRACTOR / FALSE LEAD. Prominently placed near the entry so it is
+    usually the first thing encountered. Invites the inference that intoxication
+    explains a fall without a second party - an inference the physical evidence does
+    not actually support.

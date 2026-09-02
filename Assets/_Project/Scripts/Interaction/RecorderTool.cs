@@ -18,7 +18,7 @@ public class RecorderTool : PlayerTool
     [SerializeField] private Transform aimOrigin;
     [SerializeField] private float maxDistance = 5f;
 
-    public override RoleId ToolRole => RoleId.Recorder;
+    public override ToolType ToolRole => ToolType.Recorder;
 
     protected override void Awake()
     {
@@ -73,6 +73,14 @@ public class RecorderTool : PlayerTool
             return;
         }
 
-        ReportEvidence(evidence.evidenceId, (id, role) => EvidenceStateManager.Instance.MarkLogged(id, role), "logged");
+        if (ProceduralGateValidator.Instance != null && !ProceduralGateValidator.Instance.CanTransition(evidence.evidenceId, EvidenceStatus.Logged))
+        {
+            string reason = ProceduralGateValidator.Instance.GetBlockReason(evidence.evidenceId, EvidenceStatus.Logged);
+            Debug.Log($"[RecorderTool] Can't mark {evidence.evidenceId} Logged: {reason}");
+            NotificationManager.Notify(reason);
+            return;
+        }
+
+        ReportEvidence(evidence.evidenceId, (id, tool) => EvidenceStateManager.Instance.MarkLogged(id, tool), "logged");
     }
 }

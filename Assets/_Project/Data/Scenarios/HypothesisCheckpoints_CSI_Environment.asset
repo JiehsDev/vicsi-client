@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 387f85c44740d0244a030fc7ce602b58, type: 3}
+  m_Name: HypothesisCheckpoints_CSI_Environment
+  m_EditorClassIdentifier: Assembly-CSharp::HypothesisCheckpointSet
+  scenarioId: CSI_Environment
+  checkpoints:
+  - id: HYP-01
+    promptText: You have completed your first walkthrough of the scene. Before you
+      process anything, what is your working theory of what happened here?
+    options:
+    - Accidental fall
+    - Homicide
+    - Undetermined
+    requiresReasoning: 0
+    reasoningOptions: []
+    trigger:
+      type: 0
+      thresholdStatus: 1
+      thresholdCount: 3
+  - id: HYP-02
+    promptText: You have now collected physical evidence from the scene. Has your
+      theory changed? Commit to a position.
+    options:
+    - Accidental fall
+    - Homicide
+    - Undetermined
+    requiresReasoning: 1
+    reasoningOptions:
+    - text: The recovered evidence is inconsistent with an accidental mechanism
+      isCorrect: 1
+    - text: Signs of intoxication adequately explain a fall without a second party
+      isCorrect: 0
+    - text: The position of the body accounts for the injuries on its own
+      isCorrect: 0
+    - text: The physical evidence so far is equally consistent with either account
+      isCorrect: 0
+    trigger:
+      type: 0
+      thresholdStatus: 6
+      thresholdCount: 2
+  - id: HYP-03
+    promptText: You are submitting your case. State your final conclusion.
+    options:
+    - Accidental fall
+    - Homicide
+    - Undetermined
+    requiresReasoning: 1
+    reasoningOptions:
+    - text: Physical evidence contradicts the accidental account
+      isCorrect: 1
+    - text: Witness testimony is the strongest evidence available
+      isCorrect: 0
+    - text: Key evidence remains uncollected, so no conclusion is supportable
+      isCorrect: 0
+    trigger:
+      type: 1
+      thresholdStatus: 6
+      thresholdCount: 1

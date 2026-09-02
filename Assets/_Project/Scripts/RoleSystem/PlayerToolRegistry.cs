@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Static directory of every PlayerTool currently in the scene, keyed by RoleId.
+/// Static directory of every PlayerTool currently in the scene, keyed by ToolType.
 /// This is what makes "one character, many roles" work in code: instead of a
 /// separate playable character per role, any system asks this registry for
 /// "the Photographer tool" or "whatever tool is currently in hand" and always gets
@@ -14,22 +14,22 @@ using UnityEngine;
 /// </summary>
 public static class PlayerToolRegistry
 {
-    private static readonly Dictionary<RoleId, PlayerTool> tools = new();
+    private static readonly Dictionary<ToolType, PlayerTool> tools = new();
 
-    public static RoleId CurrentRole { get; private set; } = RoleId.None;
+    public static ToolType CurrentRole { get; private set; } = ToolType.None;
     public static PlayerTool CurrentTool { get; private set; }
 
     /// <summary>The role currently attached to a hand via ToggleEquip (the tool wheel), or None if hands are empty.</summary>
-    public static RoleId VirtuallyEquippedRole { get; private set; } = RoleId.None;
+    public static ToolType VirtuallyEquippedRole { get; private set; } = ToolType.None;
 
     /// <summary>Every PlayerTool currently registered, keyed by role - e.g. for a tool wheel to list what's available.</summary>
-    public static IReadOnlyDictionary<RoleId, PlayerTool> AllTools => tools;
+    public static IReadOnlyDictionary<ToolType, PlayerTool> AllTools => tools;
 
     /// <summary>Fired whenever a tool becomes the character's current tool (grabbed, or RequestEquip()'d).</summary>
-    public static event Action<RoleId, PlayerTool> OnToolGrabbed;
+    public static event Action<ToolType, PlayerTool> OnToolGrabbed;
 
     /// <summary>Fired whenever a virtually-equipped tool is holstered (empty hands) via ToggleEquip/HolsterCurrent.</summary>
-    public static event Action<RoleId, PlayerTool> OnToolHolstered;
+    public static event Action<ToolType, PlayerTool> OnToolHolstered;
 
     /// <summary>Fired whenever a tool registers itself (e.g. a HUD wants to list available roles).</summary>
     public static event Action<PlayerTool> OnToolRegistered;
@@ -42,9 +42,9 @@ public static class PlayerToolRegistry
     private static void ResetOnPlaySessionStart()
     {
         tools.Clear();
-        CurrentRole = RoleId.None;
+        CurrentRole = ToolType.None;
         CurrentTool = null;
-        VirtuallyEquippedRole = RoleId.None;
+        VirtuallyEquippedRole = ToolType.None;
         OnToolGrabbed = null;
         OnToolHolstered = null;
         OnToolRegistered = null;
@@ -52,7 +52,7 @@ public static class PlayerToolRegistry
 
     public static void Register(PlayerTool tool)
     {
-        if (tool == null || tool.ToolRole == RoleId.None)
+        if (tool == null || tool.ToolRole == ToolType.None)
         {
             return;
         }
@@ -83,17 +83,17 @@ public static class PlayerToolRegistry
         if (CurrentTool == tool)
         {
             CurrentTool = null;
-            CurrentRole = RoleId.None;
+            CurrentRole = ToolType.None;
         }
 
         if (VirtuallyEquippedRole == tool.ToolRole)
         {
-            VirtuallyEquippedRole = RoleId.None;
+            VirtuallyEquippedRole = ToolType.None;
         }
     }
 
     /// <summary>Returns the tool registered for a role, or null if none exists yet - never throws.</summary>
-    public static PlayerTool GetTool(RoleId role) => tools.TryGetValue(role, out var tool) ? tool : null;
+    public static PlayerTool GetTool(ToolType role) => tools.TryGetValue(role, out var tool) ? tool : null;
 
     /// <summary>Returns the first registered tool assignable to T, or null - never throws.</summary>
     public static T GetTool<T>() where T : PlayerTool
@@ -113,7 +113,7 @@ public static class PlayerToolRegistry
     /// logs a warning) instead of throwing when no tool for that role exists yet, so
     /// wiring up a future role's menu entry early can never break the build.
     /// </summary>
-    public static bool RequestEquip(RoleId role)
+    public static bool RequestEquip(ToolType role)
     {
         var tool = GetTool(role);
         if (tool == null)
@@ -133,7 +133,7 @@ public static class PlayerToolRegistry
     /// Returns false (and logs a warning) instead of throwing when no tool for that
     /// role exists yet.
     /// </summary>
-    public static bool ToggleEquip(RoleId role, Transform handAnchor)
+    public static bool ToggleEquip(ToolType role, Transform handAnchor)
     {
         var tool = GetTool(role);
         if (tool == null)
@@ -158,7 +158,7 @@ public static class PlayerToolRegistry
     /// <summary>Holsters whatever tool is currently virtually equipped, if any. Safe no-op otherwise.</summary>
     public static void HolsterCurrent()
     {
-        if (VirtuallyEquippedRole == RoleId.None)
+        if (VirtuallyEquippedRole == ToolType.None)
         {
             return;
         }
@@ -166,12 +166,12 @@ public static class PlayerToolRegistry
         var role = VirtuallyEquippedRole;
         var tool = GetTool(role);
         tool?.Holster();
-        VirtuallyEquippedRole = RoleId.None;
+        VirtuallyEquippedRole = ToolType.None;
 
         if (CurrentTool == tool)
         {
             CurrentTool = null;
-            CurrentRole = RoleId.None;
+            CurrentRole = ToolType.None;
         }
 
         if (tool != null)
@@ -190,10 +190,10 @@ public static class PlayerToolRegistry
         // A physical grab (or a different wheel selection) always wins over whatever
         // was virtually equipped before - holster it so it doesn't sit mid-air
         // attached to a hand anchor while a different tool is now in use.
-        if (VirtuallyEquippedRole != RoleId.None && VirtuallyEquippedRole != tool.ToolRole)
+        if (VirtuallyEquippedRole != ToolType.None && VirtuallyEquippedRole != tool.ToolRole)
         {
             GetTool(VirtuallyEquippedRole)?.Holster();
-            VirtuallyEquippedRole = RoleId.None;
+            VirtuallyEquippedRole = ToolType.None;
         }
 
         CurrentTool = tool;

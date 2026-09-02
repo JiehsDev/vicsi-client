@@ -30,7 +30,7 @@ public class FlashlightTool : PlayerTool
     [SerializeField] private Transform beamOrigin;
     [SerializeField] private float maxDistance = 5f;
 
-    public override RoleId ToolRole => RoleId.IOC;
+    public override ToolType ToolRole => ToolType.IOC;
 
     /// <summary>The EvidenceProp currently in the beam's path, or null. Only ever non-null while the beam is on.</summary>
     public EvidenceProp CurrentBeamTarget { get; private set; }

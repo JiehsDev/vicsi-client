@@ -91,11 +91,11 @@ public class STCSManager : MonoBehaviour
         {
             if (lineIndex == 0)
             {
-                EvidenceStateManager.Instance.MarkSketched("EVD-014", RoleId.None);
+                EvidenceStateManager.Instance.MarkSketched("EVD-014", ToolType.None);
             }
             else if (lineIndex == 1)
             {
-                EvidenceStateManager.Instance.MarkLogged("EVD-014", RoleId.None);
+                EvidenceStateManager.Instance.MarkLogged("EVD-014", ToolType.None);
             }
         }
     }

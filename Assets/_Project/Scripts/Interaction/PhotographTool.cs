@@ -56,7 +56,7 @@ public class PhotographTool : PlayerTool
     [SerializeField] private AudioSource shutterAudioSource;
     [SerializeField] private AudioClip shutterClip;
 
-    public override RoleId ToolRole => RoleId.Photographer;
+    public override ToolType ToolRole => ToolType.Photographer;
 
     /// <summary>The viewfinder canvas (aim reticle, 4:3 crop mask, HUD text) - exposed so a photo-capture listener can hide it for the instant it renders a shot, so the crop mask's black bars and HUD chrome never get baked into the saved photo.</summary>
     public GameObject ViewfinderOverlay => viewfinderOverlay;
@@ -386,9 +386,17 @@ public class PhotographTool : PlayerTool
             return;
         }
 
+        if (ProceduralGateValidator.Instance != null && !ProceduralGateValidator.Instance.CanTransition(CurrentAimTarget.evidenceId, EvidenceStatus.Photographed))
+        {
+            string reason = ProceduralGateValidator.Instance.GetBlockReason(CurrentAimTarget.evidenceId, EvidenceStatus.Photographed);
+            Debug.Log($"[PhotographTool] Can't mark {CurrentAimTarget.evidenceId} Photographed: {reason}");
+            NotificationManager.Notify(reason);
+            return;
+        }
+
         PlayShutterFeedback();
         OnPhotoCaptured?.Invoke();
-        ReportEvidence(CurrentAimTarget.evidenceId, (id, role) => EvidenceStateManager.Instance.MarkPhotographed(id, role), "photographed");
+        ReportEvidence(CurrentAimTarget.evidenceId, (id, tool) => EvidenceStateManager.Instance.MarkPhotographed(id, tool), "photographed");
     }
 
     private void PlayShutterFeedback()

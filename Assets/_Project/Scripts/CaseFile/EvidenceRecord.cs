@@ -6,6 +6,6 @@ public class EvidenceRecord
 {
     public EvidenceDefinition definition;
     public EvidenceStatus status = EvidenceStatus.NotFound;
-    public RoleId lastInteractedBy = RoleId.None;
+    public ToolType lastToolUsed = ToolType.None;
     public float statusChangedAtTime; // Time.time when last transitioned, for time-on-task logging later
 }
