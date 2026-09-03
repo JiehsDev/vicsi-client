@@ -213,24 +213,31 @@ mid-headset-pass, so they are line items rather than "probably fine".
       still decides *where* the tent visually lands, which is a rendering concern with
       no scoring consequence.
 
-- [ ] **NEXT DECISION — which difficulty tier is this scene? `Found` toasts name the
-      evidence id.** `EvidenceNotifier` raises "EVD-014 found" when the player walks
-      within an item's `interactionRadius`; non-evidence objects raise nothing. A player
-      can therefore map the entire evidence roster passively — by walking the room and
-      reading toasts, without searching and without judging anything. Structurally this
-      is the same side-channel leak §7b closes for *marking*, one layer earlier, at
-      *discovery*.
+- [x] **RESOLVED — discovery toasts are now gated per scenario, and OFF for
+      `CSI_Environment`.** The tier question is answered for this scene: it is
+      assessment-grade, no hints. `EvidenceNotifier.announceDiscovery` (serialized,
+      defaults **true**) gates the `Found` toast; `CSI_Environment` sets it **false**.
 
-      **It is not automatically a bug, and must not be silently "fixed" either.** Unlike
-      the marking cue — where revealing correctness is never acceptable — naming
-      discovered items could be a legitimate, deliberate scaffold under the hint-tier
-      design from the guided-vs-open decision: tier 1 gets scaffolding, tier 3 gets
-      none. So the real question is not "leak, yes/no" but **which tier this scenario
-      is**.
+      Deliberately data-driven rather than a hardcoded "Found is always silent" rule,
+      because it is a per-scenario policy: `Tutorial_ToolTest` is a tool testbed where
+      naming the item you walked up to is a teaching aid, not a leak, and it keeps the
+      toast (field absent from its YAML, so it takes the `true` initializer). The
+      default is `true` specifically so no other scene changes behaviour.
 
-      For the current assessment-grade scenario the answer is almost certainly that it
-      should go quiet, or generic ("something nearby"), rather than naming the item.
-      Needs an explicit decision before the scenario is used for assessment.
+      For `CSI_Environment` the toast is suppressed **entirely** — no substitute cue,
+      not even a nameless "something nearby". Directional information the player did
+      not generate themselves is still a hint. `Found` is a passive backend signal with
+      no required player-facing consequence, unlike marking or a blocked gate, which
+      the player must be able to read.
+
+      Presentation-only, same boundary as the marking-cue fix: `MarkFound` still fires,
+      the record still advances, `SessionLogger` still writes its `EvidenceStatusChanged`
+      entry, and the gate still opens. Only the sentence on screen is suppressed —
+      verified against the session log.
+
+      No `Generic` enum case was built. A non-naming presence cue is a plausible future
+      option for some other scenario, but building an unused branch now would leave it
+      to rot.
 
 - [ ] **`interactionRadius` has never been tuned in a headset.** Every item is on the
       1.5 m default, inherited from the old hardcoded `EvidenceProp.noticeRadius` so

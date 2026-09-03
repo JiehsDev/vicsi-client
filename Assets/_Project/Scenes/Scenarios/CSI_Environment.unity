@@ -29076,6 +29076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aef0bfd87087594684e94b122700297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceNotifier
+  announceDiscovery: 0
 --- !u!114 &1422889318
 MonoBehaviour:
   m_ObjectHideFlags: 0
