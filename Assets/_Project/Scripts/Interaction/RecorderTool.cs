@@ -78,6 +78,10 @@ public class RecorderTool : PlayerTool
             string reason = ProceduralGateValidator.Instance.GetBlockReason(evidence.evidenceId, EvidenceStatus.Logged);
             Debug.Log($"[RecorderTool] Can't mark {evidence.evidenceId} Logged: {reason}");
             NotificationManager.Notify(reason);
+            // A refusal by the procedural gate. Distinguishable from a confirmed action
+            // on purpose - the game declined, which is not the same as the player
+            // having picked the wrong item.
+            InteractionFeedback.Blocked();
             return;
         }
 

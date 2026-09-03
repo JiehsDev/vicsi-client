@@ -29,6 +29,10 @@ public class GreyboxFlowTest : MonoBehaviour
     [SerializeField]
     private string[] evidenceIds = { "EVD-014", "EVD-015", "EVD-016", "EVD-017", "EVD-018" };
 
+    [Header("Debug visualisation")]
+    [Tooltip("Draw a yellow ring on the ground at each evidence item's interactionRadius — the distance at which it is Found and within which a tent counts as marking it. MUST stay off for any real play session: showing a student where the evidence is destroys the free-roam search this scenario exists to measure. Compiled out entirely of release builds.")]
+    [SerializeField] private bool showEvidenceRadii;
+
     private void Start()
     {
         if (runOnStart)
@@ -36,6 +40,116 @@ public class GreyboxFlowTest : MonoBehaviour
             Debug.Log(RunFullFlow());
         }
     }
+
+    // ---------------------------------------------------------------------
+    // Evidence radius rings.
+    //
+    // This lives on the greybox test component rather than in its own script so
+    // there is exactly ONE switch for debug visibility, on the one component that
+    // already means "this scene is being tested, not played". A scene with no
+    // GreyboxFlowTest in it has no code path that can draw a ring at all.
+    //
+    // The #if is the actual guarantee, not the default-false field: a scene saved
+    // with the box accidentally ticked still ships nothing, because in a release
+    // build none of this compiles. Default-false only protects the editor.
+    // ---------------------------------------------------------------------
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+    private const int RingSegments = 48;
+    private static readonly Color RingColor = new Color(1f, 0.92f, 0.2f, 0.5f);
+
+    private readonly List<GameObject> radiusRings = new();
+    private bool ringsVisible;
+
+    private void Update()
+    {
+        // Rebuilt on a count change as well as on the toggle, so rings appear for
+        // props that registered after the toggle was flipped.
+        bool stale = ringsVisible && radiusRings.Count != EvidenceProp.All.Count;
+
+        if (showEvidenceRadii == ringsVisible && !stale)
+        {
+            return;
+        }
+
+        ClearRings();
+        ringsVisible = showEvidenceRadii;
+
+        if (ringsVisible)
+        {
+            BuildRings();
+        }
+    }
+
+    private void OnDisable()
+    {
+        ClearRings();
+        ringsVisible = false;
+    }
+
+    private void BuildRings()
+    {
+        foreach (var prop in EvidenceProp.All)
+        {
+            if (prop == null)
+            {
+                continue;
+            }
+
+            var go = new GameObject($"RadiusRing_{prop.evidenceId}", typeof(LineRenderer));
+            go.transform.SetParent(transform, false);
+
+            var line = go.GetComponent<LineRenderer>();
+            line.useWorldSpace = true;
+            line.loop = true;
+            line.positionCount = RingSegments;
+            line.widthMultiplier = 0.02f;
+            line.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            line.receiveShadows = false;
+            line.material = new Material(Shader.Find("Sprites/Default"));
+            line.startColor = RingColor;
+            line.endColor = RingColor;
+
+            float radius = prop.InteractionRadius;
+            Vector3 centre = GroundUnder(prop.transform.position);
+
+            for (int i = 0; i < RingSegments; i++)
+            {
+                float angle = i * Mathf.PI * 2f / RingSegments;
+                line.SetPosition(i, centre + new Vector3(Mathf.Cos(angle) * radius, 0f, Mathf.Sin(angle) * radius));
+            }
+
+            radiusRings.Add(go);
+        }
+
+        Debug.Log($"[GreyboxFlowTest] Evidence radius rings ON ({radiusRings.Count} item(s)). Turn this off before any real play session.", this);
+    }
+
+    private void ClearRings()
+    {
+        foreach (var ring in radiusRings)
+        {
+            if (ring != null)
+            {
+                Destroy(ring);
+            }
+        }
+        radiusRings.Clear();
+    }
+
+    // The ring is meant to read as a footprint on the floor, so it drops to whatever
+    // surface is under the item rather than floating at the item's own height. Falls
+    // back to a hair below the prop if nothing is beneath it (an item on a shelf with
+    // open air under the raycast).
+    private static Vector3 GroundUnder(Vector3 position)
+    {
+        Vector3 from = position + Vector3.up * 0.25f;
+        if (Physics.Raycast(from, Vector3.down, out var hit, 6f, ~0, QueryTriggerInteraction.Ignore))
+        {
+            return hit.point + Vector3.up * 0.01f;
+        }
+        return position - Vector3.up * 0.01f;
+    }
+#endif
 
     /// <summary>
     /// Walks every configured item from NotFound to Processed in the canonical order,

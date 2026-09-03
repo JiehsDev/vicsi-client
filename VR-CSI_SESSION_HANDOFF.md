@@ -12,6 +12,48 @@ Rolando's thesis at Partido State University – Lagonoy Campus: a VR-based Crim
 
 ---
 
+## 0a. STANDING RULE for every task: ad-hoc editor code is not a deliverable
+
+**If a report calls something a feature, it is in a file, or it isn't a feature.**
+
+Anything typed into Unity's `execute_code` (or any other scratch execution buffer) is
+a *probe*, not an implementation. It vanishes when the session ends. It must never be
+described in a report as something that was built, added, or now exists. Either write
+it to a real source file that gets committed, or describe it accurately as a throwaway
+check.
+
+This is a rule governing **future reports**, not a note about past ones. It is here
+rather than in §8 because it is not a debt on any one task.
+
+### Why it is a rule
+
+The same failure has now happened twice in this project, with an identical signature:
+
+1. An ad-hoc greybox lifecycle walkthrough was typed into `execute_code`, reported as
+   a working end-to-end test, and lost with the session. When the `Marked` status was
+   later inserted and the old flow stopped being valid, there was no script left to
+   fail — only the memory of one. `Assets/_Project/Scripts/Testing/GreyboxFlowTest.cs`
+   was written to close exactly this, and says so in its own class comment.
+2. A greybox debug-label visibility toggle was reported as existing from that same
+   session. The radius-visualisation task went to reuse it, per an explicit
+   instruction not to build a second switch, and it was not there — not in the working
+   tree, not in the scene, and not in any commit on any branch in the repository's
+   history (`git log --all -S` returns nothing; `GreyboxFlowTest.cs` is the only file
+   ever added under `Testing/`).
+
+The cost is not a lost test. It is that the *next* task gets planned around something
+that does not exist, and only finds out by going looking.
+
+### In practice
+
+- Before writing that something was implemented, confirm the file exists on disk.
+- Write helpers and test harnesses to real source files rather than evaluating them
+  inline, whenever they are meant to persist or be reused.
+- In reports, keep "I verified X with a throwaway probe" clearly separate from "I
+  built X." The first is evidence; only the second is a deliverable.
+
+---
+
 ## 1. Actual project location and structure (verified, not assumed)
 
 - **Project root:** `C:\Users\Roduf Eleu\My project (1)` — the Unity project files live directly here, not under a `unity-client/` subfolder.
@@ -119,21 +161,115 @@ After the Building Blocks/prefab task above lands:
 - Grab interaction stays on Meta ISDK Building Blocks (Grabbable/HandGrabInteractable/GrabInteractable), not raw XRI `XRGrabInteractable` — this was the live tension flagged in the original doc; this session's approach (Building Blocks path) is the de facto resolution
 - No in-VR authenticated dashboard; in-headset "Scores" stays a QR/URL pointer to the web dashboard
 
+## 7b. DO NOT "FIX": identification feedback is deliberately identical
+
+Placing an evidence tent produces exactly the same cue — same tone, same haptic
+pattern, same scale pop, same toast wording — whether it lands on the murder weapon,
+on the designed distractor, or on bare floor. **This is deliberate and must not be
+"corrected" during a polish pass.**
+
+Differentiating them would reveal identification correctness in real time. A player
+could tent every object in the room and listen for which ones sounded positive,
+which is the same hint-giving the free-placement design has ruled out since the
+guided-vs-open decision — arriving through a side channel instead of through a
+highlight or a restriction. Silence counts as a cue: a confirmation that fires only
+for real evidence is a complete identification oracle.
+
+Two signals behave **oppositely** here, and conflating them is the likely mistake:
+
+| Signal | Requirement | Why |
+|---|---|---|
+| Procedural refusal (out-of-order action, blocked marker reclaim) | **Must be obvious** — clearly distinct from an accepted action | Protocol compliance is a hard-gated, transparent requirement; signalling it leaks nothing about which objects matter |
+| Identification correctness (was that really evidence?) | **Must be hidden** — indistinguishable outcomes | It is the competency being assessed |
+
+Three places enforce this, each carrying a do-not-change comment:
+
+- `EvidenceTentTool.PlaceTent` raises the cue **unconditionally**, after
+  `RecordPlacement` has returned — never from inside either branch — and its toast
+  names the tent number, never an evidence id.
+- `FeedbackDirector.HandleStatusChanged` **skips `EvidenceStatus.Marked`**. It only
+  ever runs for registered evidence (only registered evidence has a status to
+  change), so a cue routed through it would be silent on a miss by construction.
+- `EvidenceNotifier` has **no `Marked` entry**, for the same reason. A toast reading
+  "EVD-018 marked" on a hit and showing nothing on a miss is the same oracle in text.
+
+**Known remaining leak, not addressed here:** `EvidenceNotifier` still toasts
+"EVD-014 found" on proximity. Walking the room and watching which objects raise a
+toast identifies the full evidence roster without marking anything. That is
+pre-existing behaviour and changing discovery feedback is a design decision, not a
+bug fix — it needs an owner. See §8.
+
 ## 8. Open verification debts (added after the evidence-tenting / fingerprinting pass)
 
 These are things that are *implemented and passing today* but whose real code path
 has never actually executed. They are cheap to note now and expensive to rediscover
 mid-headset-pass, so they are line items rather than "probably fine".
 
-- [ ] **`GetComponentInParent<EvidenceProp>()` in `EvidenceTentTool.RecordPlacement`
-      has never run its parent-walk.** It resolves a raycast hit back to the evidence
-      item it belongs to, and it was written for real art props where the collider
-      sits on a child mesh. Every current prop is a greybox primitive with the collider
-      on the *root*, so the call degenerates to a plain `GetComponent` and the walk-up
-      branch is untested. **Re-verify the moment real art props replace the greyboxes** —
-      if a prop ends up with `EvidenceProp` on a child rather than the root, or with
-      nested `EvidenceProp` components, this resolution silently returns the wrong item
-      or null, and a mis-mark looks identical to a correct one in the log.
+- [x] **RESOLVED — `GetComponentInParent<EvidenceProp>()` no longer decides which item
+      a tent marks.** The parent-walk debt is gone because the call is gone: tent
+      attribution is now proximity-based (`EvidenceProp.FindNearestWithinRadius`,
+      nearest item whose own `interactionRadius` contains the placement point), so a
+      prop's collider hierarchy no longer affects which item gets marked. The raycast
+      still decides *where* the tent visually lands, which is a rendering concern with
+      no scoring consequence.
+
+- [ ] **NEXT DECISION — which difficulty tier is this scene? `Found` toasts name the
+      evidence id.** `EvidenceNotifier` raises "EVD-014 found" when the player walks
+      within an item's `interactionRadius`; non-evidence objects raise nothing. A player
+      can therefore map the entire evidence roster passively — by walking the room and
+      reading toasts, without searching and without judging anything. Structurally this
+      is the same side-channel leak §7b closes for *marking*, one layer earlier, at
+      *discovery*.
+
+      **It is not automatically a bug, and must not be silently "fixed" either.** Unlike
+      the marking cue — where revealing correctness is never acceptable — naming
+      discovered items could be a legitimate, deliberate scaffold under the hint-tier
+      design from the guided-vs-open decision: tier 1 gets scaffolding, tier 3 gets
+      none. So the real question is not "leak, yes/no" but **which tier this scenario
+      is**.
+
+      For the current assessment-grade scenario the answer is almost certainly that it
+      should go quiet, or generic ("something nearby"), rather than naming the item.
+      Needs an explicit decision before the scenario is used for assessment.
+
+- [ ] **`interactionRadius` has never been tuned in a headset.** Every item is on the
+      1.5 m default, inherited from the old hardcoded `EvidenceProp.noticeRadius` so
+      that moving the number into data changed nothing about how the scene plays. That
+      default was chosen for *discovery* ("close enough to notice this exists") and is
+      now also doing *attribution* ("close enough that a tent here means this item").
+      1.5 m is plausibly too generous for the second job — two tents a metre apart both
+      resolve to the same item — but the right value is a playtest finding, not a guess.
+      Turn on `GreyboxFlowTest.showEvidenceRadii`, walk the scene, and set them per item.
+      **Treat 1.5 m as unverified until that happens.** Discovery and attribution
+      sharing one number was a coincidence of the old hardcoded field, not a design
+      decision; now that it is an explicit tunable it has to be shown to feel right for
+      *both* jobs, not just the one it was originally sized for.
+
+- [ ] **`EvidenceProp` is a runtime registry now, so scene-loading order matters.**
+      Props register in `OnEnable` and unregister in `OnDisable`, and
+      `InteractionRadius` deliberately does *not* cache while
+      `EvidenceStateManager.Instance` is still null (its definition isn't reachable
+      yet), falling back to the serialized `noticeRadius` for that window. If a scenario
+      ever spawns evidence additively or after the managers, confirm the radius that
+      ends up on the trigger collider is the one from the definition, not the fallback.
+
+- [x] **RESOLVED — `EVD-014` (kitchen knife) no longer falls out of the world.** Two
+      things were wrong and both are fixed. It was the only evidence prop in the scene
+      with a `Rigidbody` at all (it is the only *grabbable* one — `Grabbable` +
+      `HandGrabInteractable` + `GrabInteractable` + `ToggleGrab` — which is why it has
+      one), and it was non-kinematic with gravity on: now `isKinematic = true`,
+      `useGravity = false`, matching the kinematic-grabbable rule `PlayerTool` already
+      applies to every tool for the same reason. Separately it was standing at
+      z = 3.97, which is **1.06 m past the floor `Plane`'s edge** (the plane spans
+      z ∈ [−7.09, 2.91]) — there was genuinely no floor under it, removed or otherwise.
+      Moved 1.43 m to (1.28, 0.089, 2.70): on the plane, collider resting at
+      y = −0.0002, and positioned so no two items' 1.5 m radii overlap (closest pair is
+      now 3.11 m against a 3.0 m sum). Verified stable across a 33 s Play session with
+      the `Rigidbody` asleep.
+
+      The other four (`EVD-015`–`EVD-018`) have **no `Rigidbody` at all** and so carry
+      no version of this risk — they cannot be simulated, cannot fall, and all four sit
+      within the plane's bounds.
 
 - [ ] **No VR-input pass on evidence tenting.** The placement branch was verified by
       invoking `RecordPlacement` directly and the reclaim rules by invoking

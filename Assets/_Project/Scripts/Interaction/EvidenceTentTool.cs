@@ -266,10 +266,17 @@ public class EvidenceTentTool : PlayerTool
         var source = tentVisuals[index];
         if (source != null)
         {
-            // What the tent landed on is the whole point of the placement, not just
-            // where. GetComponentInParent because the collider the raycast hits is
-            // typically on a child mesh, while EvidenceProp sits on the root object.
-            var prop = hit.collider != null ? hit.collider.GetComponentInParent<EvidenceProp>() : null;
+            // WHERE the tent lands is the raycast's job (hit.point, above). WHICH item
+            // it marks is decided by proximity instead, because those are different
+            // questions and the raycast only answered the first one well.
+            //
+            // This used to be hit.collider.GetComponentInParent<EvidenceProp>(), i.e.
+            // the ray had to physically strike the evidence's own mesh. In VR that
+            // turned a near-miss on a small object - the knife, the phone - into a
+            // logged NonEvidenceMarked, so the data recorded a mis-identification the
+            // student never made. Aim precision is not the variable this scenario is
+            // trying to measure.
+            var prop = EvidenceProp.FindNearestWithinRadius(hit.point);
             string markedEvidenceId = RecordPlacement(prop, hit.collider);
 
             var placed = Instantiate(source, hit.point, ComputeStandingFacingRotation(hit.point));
@@ -277,6 +284,32 @@ public class EvidenceTentTool : PlayerTool
             placed.SetActive(true);
             placed.AddComponent<EvidenceTentPickup>().Initialize(this, pickupRadius, index, markedEvidenceId);
             tentInUse[index] = true;
+
+            // DELIBERATELY IDENTICAL ON BOTH BRANCHES. DO NOT DIFFERENTIATE.
+            //
+            // Distinguishing a mark on real evidence from a mark on a decoy or on bare
+            // floor - by tone, by haptic pattern, by wording, or by showing a toast in
+            // one case and not the other - would reveal identification correctness in
+            // real time and defeat the competency this scenario assesses. A player
+            // could tent every object in the room and simply listen for which ones
+            // sounded positive. That is the same hint-giving the free-placement design
+            // has ruled out from the start, arriving through a side channel instead of
+            // through a highlight or a restriction.
+            //
+            // Concretely: the cue is raised HERE, unconditionally, after
+            // RecordPlacement has already returned - never from inside either branch -
+            // and the toast names the tent number, never an evidence id. This is also
+            // why FeedbackDirector explicitly skips EvidenceStatus.Marked and why
+            // EvidenceNotifier has no Marked entry: if either of them owned this cue,
+            // a mark on non-evidence would produce no status change and therefore no
+            // feedback, and the silence itself would be the answer.
+            //
+            // The one signal that MAY differ is a procedural refusal (acting out of
+            // order, reclaiming a marker off documented evidence). Protocol compliance
+            // is a hard-gated, transparent requirement and should be obvious to the
+            // player; whether an item was really evidence must stay hidden.
+            InteractionFeedback.Confirm(placed.transform);
+            NotificationManager.Notify($"Evidence tent {index + 1} placed.");
         }
 
         UpdateHeldVisual();
@@ -295,6 +328,12 @@ public class EvidenceTentTool : PlayerTool
     /// before. Tenting is the player's CLAIM that something is evidence, and a claim
     /// the scene refuses to let you make isn't a claim - the wrong ones have to be
     /// possible or there is nothing to score.
+    ///
+    /// The blank-evidenceId guard below is now belt-and-braces rather than the only
+    /// defence: EvidenceProp never registers a blank-id prop in the first place, so
+    /// the held tool models (camera, UV light, magnifier) cannot be returned by
+    /// FindNearestWithinRadius at all. The guard stays because this method must remain
+    /// correct for any caller, not just the one proximity search that feeds it today.
     /// </summary>
     private string RecordPlacement(EvidenceProp prop, Collider hitCollider)
     {

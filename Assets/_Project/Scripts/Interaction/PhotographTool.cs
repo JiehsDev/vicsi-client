@@ -391,6 +391,10 @@ public class PhotographTool : PlayerTool
             string reason = ProceduralGateValidator.Instance.GetBlockReason(CurrentAimTarget.evidenceId, EvidenceStatus.Photographed);
             Debug.Log($"[PhotographTool] Can't mark {CurrentAimTarget.evidenceId} Photographed: {reason}");
             NotificationManager.Notify(reason);
+            // A refusal by the procedural gate. Distinguishable from a confirmed action
+            // on purpose - the game declined, which is not the same as the player
+            // having picked the wrong item.
+            InteractionFeedback.Blocked();
             return;
         }
 

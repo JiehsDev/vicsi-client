@@ -175,6 +175,14 @@ public class EvidenceTentPickup : MonoBehaviour
                 { "statusReverted", (!string.IsNullOrEmpty(revertedEvidenceId)).ToString() }
             });
 
+        // Only when nothing changed status. A genuine revert already raised
+        // OnEvidenceStatusChanged(Found), which FeedbackDirector acknowledges - firing
+        // here as well would double the cue on that path and on that path only.
+        if (string.IsNullOrEmpty(revertedEvidenceId))
+        {
+            InteractionFeedback.Confirm();
+        }
+
         NotificationManager.HidePrompt();
         promptShown = false;
         owner?.ReclaimSlot(tentIndex);

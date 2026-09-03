@@ -28,6 +28,12 @@ public class EvidenceNotifier : MonoBehaviour
         string verb = status switch
         {
             EvidenceStatus.Found => "found",
+            // Marked is deliberately absent from this list. A toast here would read
+            // "EVD-018 marked" when the tent lands on registered evidence and show
+            // NOTHING when it lands on anything else - which tells the player, at the
+            // instant they place it, whether the thing they just identified was real.
+            // EvidenceTentTool raises its own toast instead, worded identically on both
+            // branches and naming no evidence id. See the note there before changing this.
             EvidenceStatus.Photographed => "photographed",
             EvidenceStatus.Sketched => "sketched",
             EvidenceStatus.Logged => "logged",

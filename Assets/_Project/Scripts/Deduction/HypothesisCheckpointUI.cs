@@ -165,6 +165,11 @@ public class HypothesisCheckpointUI : MonoBehaviour
 
         panelRoot.SetActive(true);
         UpdateHint();
+
+        // The panel used to just exist between one frame and the next, with nothing
+        // to mark the transition. In a headset that reads as a glitch rather than as
+        // the scenario asking you a question.
+        InteractionFeedback.Confirm(panelRoot.transform);
     }
 
     private void Update()

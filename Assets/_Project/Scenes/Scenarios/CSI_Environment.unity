@@ -1278,7 +1278,7 @@ Transform:
   m_GameObject: {fileID: 70728755}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.2, y: 0.0175, z: -1}
+  m_LocalPosition: {x: 4.67, y: 0.0175, z: -3.76}
   m_LocalScale: {x: 0.07, y: 0.015, z: 0.14}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10293,7 +10293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -463689925048471867, guid: 50028b8a2705895499ff7ec54c0679c5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -9.98
       objectReference: {fileID: 0}
     - target: {fileID: -463689925048471867, guid: 50028b8a2705895499ff7ec54c0679c5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10949,6 +10949,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1766171631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &513733656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 513733657}
+  - component: {fileID: 513733658}
+  m_Layer: 0
+  m_Name: FingerprintStation_PLACEHOLDER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &513733657
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513733656}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1422889313}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &513733658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513733656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84d74afb1f9ef364a82a7de455485ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FingerprintStationPlaceholder
+  useRadius: 2.5
+  restrictToEvidenceIds:
+  - EVD-014
+  - EVD-016
+  - EVD-017
+  - EVD-018
 --- !u!1001 &518686000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23279,7 +23329,7 @@ Transform:
   m_GameObject: {fileID: 1129959680}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2, y: 0.15, z: -0.4}
+  m_LocalPosition: {x: 1.2, y: 0.15, z: -2.222}
   m_LocalScale: {x: 0.08, y: 0.28, z: 0.08}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24723,7 +24773,7 @@ Transform:
   m_GameObject: {fileID: 1180303189}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6, y: 0.02, z: 1.4}
+  m_LocalPosition: {x: 4.1, y: 0.02, z: 1.4}
   m_LocalScale: {x: 0.35, y: 0.02, z: 0.35}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28903,6 +28953,9 @@ GameObject:
   - component: {fileID: 1422889319}
   - component: {fileID: 1422889322}
   - component: {fileID: 1422889321}
+  - component: {fileID: 1422889325}
+  - component: {fileID: 1422889324}
+  - component: {fileID: 1422889323}
   m_Layer: 0
   m_Name: _Managers
   m_TagString: Untagged
@@ -28952,7 +29005,8 @@ Transform:
   m_LocalPosition: {x: 1.66267, y: 0, z: 6.63376}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 513733657}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1422889314
@@ -29089,6 +29143,59 @@ MonoBehaviour:
   selectedTint: {r: 0.95, g: 0.95, b: 0.95, a: 1}
   unselectedTextColor: {r: 0.85, g: 0.85, b: 0.85, a: 1}
   selectedTextColor: {r: 0.05, g: 0.05, b: 0.06, a: 1}
+--- !u!114 &1422889323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422889310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a98880bbf73f1304fa65280fdbb3ea2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GreyboxFlowTest
+  runOnStart: 0
+  evidenceIds:
+  - EVD-014
+  - EVD-015
+  - EVD-016
+  - EVD-017
+  - EVD-018
+  showEvidenceRadii: 0
+--- !u!114 &1422889324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422889310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b38ed37c7dec394db73e84efe717607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FeedbackDirector
+--- !u!114 &1422889325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422889310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07432379e1c9b5c48b99e3430eb88a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionFeedback
+  confirmClip: {fileID: 0}
+  blockedClip: {fileID: 0}
+  volume: 0.5
+  confirmAmplitude: 0.35
+  confirmDuration: 0.06
+  blockedAmplitude: 0.75
+  blockedDuration: 0.09
+  pulseScale: 1.25
+  pulseSeconds: 0.18
 --- !u!1 &1426068788
 GameObject:
   m_ObjectHideFlags: 0
