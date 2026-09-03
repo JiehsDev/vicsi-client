@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceDefinition
   evidenceId: EVD-016
   displayName: Broken handrail fragment
+  relevance: 1
   requiresFingerprinting: 1
   description: Fragment of handrail recovered near the body. Break surface may be
     fresh or weathered.

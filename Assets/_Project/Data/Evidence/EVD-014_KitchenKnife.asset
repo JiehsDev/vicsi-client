@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceDefinition
   evidenceId: EVD-014
   displayName: Kitchen knife
+  relevance: 0
   requiresFingerprinting: 1
   description: A kitchen knife recovered from the scene; a suspected weapon requiring
     fingerprint processing.

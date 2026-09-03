@@ -58,8 +58,11 @@ public class ProceduralGateValidator : MonoBehaviour
             return false;
         }
 
-        var record = EvidenceStateManager.Instance.GetRecord(evidenceId);
-        return record != null && EvidenceStateManager.IsValidNextStep(record.status, target);
+        // CanAdvanceTo rather than the static IsValidNextStep: the shared sequence is
+        // only part of the rule, and some preconditions are per-item (today,
+        // requiresFingerprinting standing between Collected and Processed). Asking the
+        // state manager keeps that knowledge in one place instead of duplicating it here.
+        return EvidenceStateManager.Instance.CanAdvanceTo(evidenceId, target);
     }
 
     /// <summary>Backward-compatible convenience wrapper - equivalent to CanTransition(evidenceId, EvidenceStatus.Collected).</summary>
@@ -84,7 +87,9 @@ public class ProceduralGateValidator : MonoBehaviour
 
         if (EvidenceStateManager.IsValidNextStep(record.status, target))
         {
-            return null;
+            // The sequence allows it, so any remaining objection is item-specific
+            // (e.g. fingerprinting). Null here means genuinely unblocked.
+            return EvidenceStateManager.Instance.GetItemBlockReason(evidenceId, target);
         }
 
         var nextRequired = EvidenceStateManager.GetNextRequiredStatus(record.status);

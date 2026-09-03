@@ -46,7 +46,7 @@ MonoBehaviour:
       isCorrect: 0
     trigger:
       type: 0
-      thresholdStatus: 6
+      thresholdStatus: 7
       thresholdCount: 2
   - id: HYP-03
     promptText: You are submitting your case. State your final conclusion.
@@ -64,5 +64,5 @@ MonoBehaviour:
       isCorrect: 0
     trigger:
       type: 1
-      thresholdStatus: 6
+      thresholdStatus: 7
       thresholdCount: 1

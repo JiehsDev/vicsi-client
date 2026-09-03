@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceDefinition
   evidenceId: EVD-015
   displayName: Blood spatter pattern
+  relevance: 0
   requiresFingerprinting: 0
   description: Spatter on the floor near the base of the stairs. Distribution and
     droplet shape are the diagnostic feature - a fall produces a different pattern

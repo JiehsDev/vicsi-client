@@ -1,4 +1,5 @@
 // Assets/_Project/Scripts/Interaction/EvidenceTentPickup.cs
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -27,17 +28,25 @@ public class EvidenceTentPickup : MonoBehaviour
     private EvidenceTentTool owner;
     private float pickupRadius;
     private int tentIndex;
+    private string markedEvidenceId;
     private InputAction pickupAction;
     private bool promptShown;
 
     /// <summary>pickupRadius squared, for the coordinator's cheap nearest-tent comparison.</summary>
     public float PickupRadiusSqr => pickupRadius * pickupRadius;
 
-    public void Initialize(EvidenceTentTool owningTool, float radius, int index)
+    /// <param name="evidenceId">
+    /// The evidence item this tent was placed on, or null/empty if it was placed on
+    /// something that isn't evidence. Determines whether reclaiming it has any state
+    /// consequence - a tent on untagged geometry never advanced anything, so there is
+    /// nothing to revert and nothing to block.
+    /// </param>
+    public void Initialize(EvidenceTentTool owningTool, float radius, int index, string evidenceId)
     {
         owner = owningTool;
         pickupRadius = radius;
         tentIndex = index;
+        markedEvidenceId = evidenceId;
     }
 
     private void Awake()
@@ -100,10 +109,75 @@ public class EvidenceTentPickup : MonoBehaviour
 
         if (promptShown && pickupAction.WasPressedThisFrame())
         {
-            NotificationManager.HidePrompt();
-            promptShown = false;
-            owner?.ReclaimSlot(tentIndex);
-            Destroy(gameObject);
+            TryReclaim();
         }
+    }
+
+    /// <summary>
+    /// Reclaiming is status-dependent, not uniformly allowed or uniformly locked.
+    ///
+    /// While the item is still only Marked, pulling the tent is a legitimate
+    /// correction - the player looked closer and decided this isn't evidence - so the
+    /// status reverts to Found and the tent comes back. Once the item has been
+    /// Photographed or later, the marker is already in the documentation and the
+    /// reclaim is refused, matching the one-way gates used everywhere else here.
+    ///
+    /// SCORING DEPENDS ON THIS: the revert rewinds state only. The original
+    /// MarkTented / NonEvidenceMarked event is never deleted or rewritten, and a
+    /// MarkerReclaimed event is appended next to it, so the log still shows that the
+    /// player marked this item and then changed their mind. Scoring must therefore read
+    /// the full event history rather than a final-state snapshot - otherwise tenting
+    /// everything, seeing what reacts, and quietly walking back the wrong ones would
+    /// look identical to identifying correctly the first time. See
+    /// EvidenceStateManager.TryReclaimMarker.
+    /// </summary>
+    private void TryReclaim()
+    {
+        // A tent on non-evidence never advanced any record, so there is nothing to
+        // revert and nothing to protect - let it come back freely. The original
+        // NonEvidenceMarked event already stands in the log regardless.
+        if (string.IsNullOrEmpty(markedEvidenceId) || EvidenceStateManager.Instance == null)
+        {
+            CompleteReclaim(null);
+            return;
+        }
+
+        var result = EvidenceStateManager.Instance.TryReclaimMarker(markedEvidenceId, ToolType.EvidenceMarker);
+
+        if (result == ReclaimResult.BlockedDocumented)
+        {
+            // Refused, but never silently - a blocked attempt is diagnostic in its own
+            // right, the same reasoning behind logging EvidenceTransitionBlocked.
+            NotificationManager.Notify("Already documented — the marker stays.");
+            SessionLogger.Instance?.LogEvent(
+                SessionEventType.MarkerReclaimBlocked,
+                markedEvidenceId,
+                new Dictionary<string, string>
+                {
+                    { "tentNumber", (tentIndex + 1).ToString() }
+                });
+            return;
+        }
+
+        CompleteReclaim(result == ReclaimResult.Reverted ? markedEvidenceId : null);
+    }
+
+    /// <summary>Frees the tent number, logs the reclaim, and removes the prop.</summary>
+    private void CompleteReclaim(string revertedEvidenceId)
+    {
+        SessionLogger.Instance?.LogEvent(
+            SessionEventType.MarkerReclaimed,
+            string.IsNullOrEmpty(markedEvidenceId) ? "(non-evidence)" : markedEvidenceId,
+            new Dictionary<string, string>
+            {
+                { "tentNumber", (tentIndex + 1).ToString() },
+                { "wasEvidence", (!string.IsNullOrEmpty(markedEvidenceId)).ToString() },
+                { "statusReverted", (!string.IsNullOrEmpty(revertedEvidenceId)).ToString() }
+            });
+
+        NotificationManager.HidePrompt();
+        promptShown = false;
+        owner?.ReclaimSlot(tentIndex);
+        Destroy(gameObject);
     }
 }

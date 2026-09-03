@@ -1,0 +1,12 @@
+{
+  "scenarioId": "CSI_Environment",
+  "generatedAt": "2026-09-03T03:17:43Z",
+  "lifecycleSequence": ["NotFound", "Found", "Marked", "Photographed", "Sketched", "Logged", "ReadyForCollection", "Collected", "Processed"],
+  "evidence": [
+    { "evidenceId": "EVD-014", "displayName": "Kitchen knife", "relevance": "Critical" },
+    { "evidenceId": "EVD-015", "displayName": "Blood spatter pattern", "relevance": "Critical" },
+    { "evidenceId": "EVD-016", "displayName": "Broken handrail fragment", "relevance": "Relevant" },
+    { "evidenceId": "EVD-017", "displayName": "Victim's mobile phone", "relevance": "Relevant" },
+    { "evidenceId": "EVD-018", "displayName": "Empty liquor bottle", "relevance": "Distractor" }
+  ]
+}

@@ -89,3 +89,13 @@ Thumbs.db
 /Assets/_Recovery.meta
 /Assets/TutorialInfo/
 /Assets/TutorialInfo.meta
+
+# Standalone .NET tooling under Tools/ (EvidenceScorer). Unity never compiles these,
+# and their build output must not enter the repo.
+Tools/**/bin/
+Tools/**/obj/
+
+# ...but Tools/ .csproj files are hand-written, not Unity-generated, and are the only
+# way the standalone scorer builds. Un-ignore them explicitly (line 23's *.csproj is
+# there for Unity's regenerated project files).
+!Tools/**/*.csproj

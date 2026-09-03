@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceDefinition
   evidenceId: EVD-018
   displayName: Empty liquor bottle
+  relevance: 3
   requiresFingerprinting: 1
-  description: DISTRACTOR / FALSE LEAD. Prominently placed near the entry so it is
-    usually the first thing encountered. Invites the inference that intoxication
-    explains a fall without a second party - an inference the physical evidence does
-    not actually support.
+  description: Prominently placed near the entry so it is usually the first thing
+    encountered. Invites the inference that intoxication explains a fall without a
+    second party - an inference the physical evidence does not actually support.
+    Classified via the relevance field (Distractor); it is a real evidence item and
+    tents, photographs and collects exactly like any other.

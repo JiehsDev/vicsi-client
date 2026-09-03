@@ -118,3 +118,50 @@ After the Building Blocks/prefab task above lands:
 - Deduction mechanic stays evidence-board drag-connect, not quiz-style
 - Grab interaction stays on Meta ISDK Building Blocks (Grabbable/HandGrabInteractable/GrabInteractable), not raw XRI `XRGrabInteractable` — this was the live tension flagged in the original doc; this session's approach (Building Blocks path) is the de facto resolution
 - No in-VR authenticated dashboard; in-headset "Scores" stays a QR/URL pointer to the web dashboard
+
+## 8. Open verification debts (added after the evidence-tenting / fingerprinting pass)
+
+These are things that are *implemented and passing today* but whose real code path
+has never actually executed. They are cheap to note now and expensive to rediscover
+mid-headset-pass, so they are line items rather than "probably fine".
+
+- [ ] **`GetComponentInParent<EvidenceProp>()` in `EvidenceTentTool.RecordPlacement`
+      has never run its parent-walk.** It resolves a raycast hit back to the evidence
+      item it belongs to, and it was written for real art props where the collider
+      sits on a child mesh. Every current prop is a greybox primitive with the collider
+      on the *root*, so the call degenerates to a plain `GetComponent` and the walk-up
+      branch is untested. **Re-verify the moment real art props replace the greyboxes** —
+      if a prop ends up with `EvidenceProp` on a child rather than the root, or with
+      nested `EvidenceProp` components, this resolution silently returns the wrong item
+      or null, and a mis-mark looks identical to a correct one in the log.
+
+- [ ] **No VR-input pass on evidence tenting.** The placement branch was verified by
+      invoking `RecordPlacement` directly and the reclaim rules by invoking
+      `EvidenceTentPickup.TryReclaim` directly. The state machine, the gates and the
+      logging are genuinely exercised; *nobody has pressed a physical trigger with the
+      dispenser in hand.* Trigger binding, ghost preview alignment and pickup radius
+      are unverified.
+
+- [ ] **`FingerprintStationPlaceholder` is a placeholder, and it is the only caller of
+      `MarkFingerprinted`.** It is now present in `CSI_Environment` under `_Managers`
+      (it was briefly a gate with no key — `requiresFingerprinting` was blocking
+      `Collected → Processed` on four of five items with nothing in any scene able to
+      satisfy it). It is deliberately crude: proximity + trigger, processes a fixed id
+      list at once, and cannot be failed. **A step that cannot be failed measures
+      nothing**, so this must be replaced by a real dusting/lifting interaction before
+      any procedural-compliance number derived from it means anything.
+
+- [ ] **`GreyboxFlowTest` drives the state machine, not the tools.** It proves the
+      sequence, the gates and the logging end to end (`Assets/_Project/Scripts/Testing/
+      GreyboxFlowTest.cs`, run `RunFullFlow()`), which is exactly why the earlier
+      ad-hoc version failing to exist mattered when `Marked` was inserted. It is not a
+      substitute for playing the scenario.
+
+- [x] **RESOLVED — `EvidenceScorer` no longer keeps its own copy of the lifecycle
+      order.** The canonical sequence is now an exported artifact: the ground-truth
+      export carries a `lifecycleSequence` field read (by reflection) straight from
+      `EvidenceStateManager.RequiredSequence`, and the scorer has no hardcoded order
+      left. A ground-truth file missing that field is a hard failure with a
+      regenerate-it message, never a silent fallback. Remaining soft spot: the
+      exporter reads a *private* field reflectively, so renaming `RequiredSequence`
+      is not caught by the compiler — it fails loudly at export time instead.

@@ -19,6 +19,22 @@ public enum TransitionResult
     Violation
 }
 
+/// <summary>
+/// Outcome of trying to pull a placed evidence tent back off an item.
+/// See EvidenceStateManager.TryReclaimMarker for the rule and its rationale.
+/// </summary>
+public enum ReclaimResult
+{
+    /// <summary>Status was exactly Marked; it has been reverted to Found and the tent may be removed.</summary>
+    Reverted,
+
+    /// <summary>Status is Photographed or later - documentation already happened with this marker in frame. The tent stays.</summary>
+    BlockedDocumented,
+
+    /// <summary>Nothing to revert (item unknown, or never reached Marked). The tent may be removed; no state changed.</summary>
+    NoChange
+}
+
 public class EvidenceStateManager : MonoBehaviour
 {
     public static EvidenceStateManager Instance { get; private set; }
@@ -45,10 +61,17 @@ public class EvidenceStateManager : MonoBehaviour
     // written out independently of EvidenceStatus's own declaration order (even
     // though the two currently match) so a future reorder/insert on the enum can't
     // silently change gating behaviour with no compiler warning.
+    //
+    // Marked sits between Found and Photographed on purpose: a real examiner sets the
+    // numbered tent BEFORE photographing, so the marker appears in the photograph.
+    // Because every tool checks CanTransition against this list rather than naming a
+    // predecessor status directly, inserting Marked here is all it took to make
+    // PhotographTool require it - no tool needed special-casing.
     private static readonly EvidenceStatus[] RequiredSequence =
     {
         EvidenceStatus.NotFound,
         EvidenceStatus.Found,
+        EvidenceStatus.Marked,
         EvidenceStatus.Photographed,
         EvidenceStatus.Sketched,
         EvidenceStatus.Logged,
@@ -98,6 +121,47 @@ public class EvidenceStateManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Whether this specific item may advance to target right now. This is the
+    /// item-aware check tools and ProceduralGateValidator should use, as opposed to
+    /// the static IsValidNextStep, which only knows the shared sequence: some
+    /// preconditions depend on the item's own definition rather than on its position
+    /// in the sequence. Today that means requiresFingerprinting gating Processed.
+    /// </summary>
+    public bool CanAdvanceTo(string evidenceId, EvidenceStatus target)
+    {
+        var record = GetRecord(evidenceId);
+        if (record == null || !IsValidNextStep(record.status, target))
+        {
+            return false;
+        }
+        return !IsBlockedByFingerprinting(record, target);
+    }
+
+    /// <summary>
+    /// Why CanAdvanceTo is false for an item-specific reason, or null if no
+    /// item-specific rule is blocking. Sequence-order reasons stay
+    /// ProceduralGateValidator's job; this covers only the per-item preconditions
+    /// that it cannot see from the shared sequence alone.
+    /// </summary>
+    public string GetItemBlockReason(string evidenceId, EvidenceStatus target)
+    {
+        var record = GetRecord(evidenceId);
+        if (record != null && IsBlockedByFingerprinting(record, target))
+        {
+            return "Fingerprint processing required first.";
+        }
+        return null;
+    }
+
+    private static bool IsBlockedByFingerprinting(EvidenceRecord record, EvidenceStatus target)
+    {
+        return target == EvidenceStatus.Processed
+            && record.definition != null
+            && record.definition.requiresFingerprinting
+            && !record.fingerprintingDone;
+    }
+
+    /// <summary>
     /// How many registered evidence items have reached at least threshold in the
     /// canonical sequence. A read-only aggregate so external systems
     /// (HypothesisCheckpointManager's count-threshold triggers) can ask "how much has
@@ -132,6 +196,16 @@ public class EvidenceStateManager : MonoBehaviour
     // why" - see TransitionResult. Existing callers that ignore the return value are unaffected. ---
 
     public TransitionResult MarkFound(string evidenceId, ToolType tool) => SetStatus(evidenceId, EvidenceStatus.Found, tool);
+
+    /// <summary>
+    /// The player deliberately placed a numbered evidence tent on this item. Distinct
+    /// from MarkFound, which fires automatically from proximity: Found means the
+    /// player was near it, Marked means the player judged it to be evidence. Only the
+    /// second is a claim, which is why evidence-identification scoring reads this one
+    /// and not Found.
+    /// </summary>
+    public TransitionResult MarkTented(string evidenceId, ToolType tool) => SetStatus(evidenceId, EvidenceStatus.Marked, tool);
+
     public TransitionResult MarkPhotographed(string evidenceId, ToolType tool) => SetStatus(evidenceId, EvidenceStatus.Photographed, tool);
     public TransitionResult MarkSketched(string evidenceId, ToolType tool) => SetStatus(evidenceId, EvidenceStatus.Sketched, tool);
 
@@ -144,6 +218,97 @@ public class EvidenceStateManager : MonoBehaviour
 
     public TransitionResult MarkCollected(string evidenceId, ToolType tool) => SetStatus(evidenceId, EvidenceStatus.Collected, tool);
     public TransitionResult MarkProcessed(string evidenceId, ToolType tool) => SetStatus(evidenceId, EvidenceStatus.Processed, tool);
+
+    /// <summary>
+    /// Records that fingerprint processing has been performed on a collected item.
+    /// Deliberately not a status of its own: only some items require it, so it is a
+    /// per-item flag that becomes an extra precondition on Collected -> Processed
+    /// rather than a step every item would have to walk through. Must happen while
+    /// the item is Collected.
+    /// </summary>
+    public TransitionResult MarkFingerprinted(string evidenceId, ToolType tool)
+    {
+        var record = GetRecord(evidenceId);
+        if (record == null)
+        {
+            Debug.LogWarning($"[EvidenceStateManager] Unknown evidenceId: {evidenceId}");
+            return TransitionResult.Violation;
+        }
+
+        if (record.definition != null && !record.definition.requiresFingerprinting)
+        {
+            // Harmless: this item simply doesn't need it. Not a procedural error.
+            return TransitionResult.Duplicate;
+        }
+
+        if (record.fingerprintingDone)
+        {
+            return TransitionResult.Duplicate;
+        }
+
+        if (record.status != EvidenceStatus.Collected)
+        {
+            Debug.LogWarning($"[EvidenceStateManager] Blocked fingerprinting of {evidenceId}: item is {record.status}, must be Collected first.");
+            OnEvidenceTransitionBlocked?.Invoke(evidenceId, EvidenceStatus.Processed, record.status);
+            return TransitionResult.Violation;
+        }
+
+        record.fingerprintingDone = true;
+        record.lastToolUsed = tool;
+        Debug.Log($"[EvidenceStateManager] {evidenceId} fingerprinted (via {tool}).");
+        return TransitionResult.Applied;
+    }
+
+    /// <summary>
+    /// Try to pull a placed evidence tent back off an item.
+    ///
+    /// Allowed only while the item is exactly Marked - i.e. before anything has been
+    /// documented with that marker in frame. That is a legitimate correction: the
+    /// player looked closer and decided this isn't evidence. Once the item is
+    /// Photographed or later, the marker is already in the record and the reclaim is
+    /// refused outright, matching every other one-way gate in the project.
+    ///
+    /// LOAD-BEARING ASSUMPTION FOR SCORING: reverting here rewinds STATE only. The
+    /// original MarkTented / NonEvidenceMarked event stays in the session log exactly
+    /// as it happened, and a MarkerReclaimed event is appended beside it - nothing is
+    /// deleted or rewritten. Scoring is therefore expected to read the full event
+    /// history, NOT a final-state snapshot taken at submission. If it ever reads only
+    /// the end state, a player could tent everything, see what reacts, quietly walk
+    /// back the wrong ones, and score as though they had identified correctly the
+    /// first time - which would erase exactly the identification signal this mechanic
+    /// exists to capture.
+    /// </summary>
+    public ReclaimResult TryReclaimMarker(string evidenceId, ToolType tool)
+    {
+        var record = GetRecord(evidenceId);
+        if (record == null)
+        {
+            return ReclaimResult.NoChange;
+        }
+
+        int currentIndex = Array.IndexOf(RequiredSequence, record.status);
+        int markedIndex = Array.IndexOf(RequiredSequence, EvidenceStatus.Marked);
+
+        if (currentIndex > markedIndex)
+        {
+            Debug.LogWarning($"[EvidenceStateManager] Blocked marker reclaim on {evidenceId}: already {record.status}.");
+            OnEvidenceTransitionBlocked?.Invoke(evidenceId, EvidenceStatus.Found, record.status);
+            return ReclaimResult.BlockedDocumented;
+        }
+
+        if (currentIndex < markedIndex)
+        {
+            return ReclaimResult.NoChange;
+        }
+
+        record.status = EvidenceStatus.Found;
+        record.lastToolUsed = tool;
+        record.statusChangedAtTime = Time.time;
+
+        OnEvidenceStatusChanged?.Invoke(evidenceId, EvidenceStatus.Found);
+        Debug.Log($"[EvidenceStateManager] {evidenceId} -> Found (marker reclaimed via {tool})");
+        return ReclaimResult.Reverted;
+    }
 
     private void CheckReadyForCollection(string evidenceId)
     {
@@ -187,6 +352,17 @@ public class EvidenceStateManager : MonoBehaviour
             return TransitionResult.Violation;
         }
 
+        // Sequence order is satisfied, but an item-specific precondition may still
+        // block - today that is requiresFingerprinting standing between Collected and
+        // Processed. Checked here as well as in CanAdvanceTo so a tool that forgets to
+        // pre-check still cannot skip it.
+        if (IsBlockedByFingerprinting(record, newStatus))
+        {
+            Debug.LogWarning($"[EvidenceStateManager] Blocked {evidenceId}: {newStatus} requires fingerprint processing first.");
+            OnEvidenceTransitionBlocked?.Invoke(evidenceId, newStatus, record.status);
+            return TransitionResult.Violation;
+        }
+
         record.status = newStatus;
         record.lastToolUsed = tool;
         record.statusChangedAtTime = Time.time;
@@ -195,4 +371,49 @@ public class EvidenceStateManager : MonoBehaviour
         Debug.Log($"[EvidenceStateManager] {evidenceId} → {newStatus} (via {tool})");
         return TransitionResult.Applied;
     }
+
+#if UNITY_EDITOR
+    /// <summary>
+    /// Author-time nudge: a scenario where every item is still the default Neutral has
+    /// almost certainly not been classified yet, rather than being a scenario in which
+    /// nothing discriminates. A warning, never a failure - Neutral is a legitimate
+    /// value and a small test scene may genuinely be all-Neutral, which is why this
+    /// only fires once there are enough items for the omission to matter.
+    /// </summary>
+    private void OnValidate()
+    {
+        const int MinimumItemsWorthClassifying = 3;
+
+        if (sceneEvidenceDefinitions == null || sceneEvidenceDefinitions.Count < MinimumItemsWorthClassifying)
+        {
+            return;
+        }
+
+        // Count what was actually inspected. OnValidate also runs mid-domain-reload,
+        // when these asset references can still be null - treating "couldn't tell" as
+        // "everything is Neutral" made this warn on a correctly-classified scene.
+        int inspected = 0;
+        foreach (var def in sceneEvidenceDefinitions)
+        {
+            if (def == null)
+            {
+                continue;
+            }
+
+            if (def.relevance != EvidenceRelevance.Neutral)
+            {
+                return;
+            }
+
+            inspected++;
+        }
+
+        if (inspected < MinimumItemsWorthClassifying)
+        {
+            return;
+        }
+
+        Debug.LogWarning($"[EvidenceStateManager] All {inspected} evidence items in this scene are still EvidenceRelevance.Neutral. Scoring cannot distinguish a correct identification from a false positive until at least some are classified.", this);
+    }
+#endif
 }

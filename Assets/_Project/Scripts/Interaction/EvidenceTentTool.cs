@@ -1,4 +1,5 @@
 // Assets/_Project/Scripts/Interaction/EvidenceTentTool.cs
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -265,14 +266,65 @@ public class EvidenceTentTool : PlayerTool
         var source = tentVisuals[index];
         if (source != null)
         {
+            // What the tent landed on is the whole point of the placement, not just
+            // where. GetComponentInParent because the collider the raycast hits is
+            // typically on a child mesh, while EvidenceProp sits on the root object.
+            var prop = hit.collider != null ? hit.collider.GetComponentInParent<EvidenceProp>() : null;
+            string markedEvidenceId = RecordPlacement(prop, hit.collider);
+
             var placed = Instantiate(source, hit.point, ComputeStandingFacingRotation(hit.point));
             placed.transform.localScale = source.transform.localScale;
             placed.SetActive(true);
-            placed.AddComponent<EvidenceTentPickup>().Initialize(this, pickupRadius, index);
+            placed.AddComponent<EvidenceTentPickup>().Initialize(this, pickupRadius, index, markedEvidenceId);
             tentInUse[index] = true;
         }
 
         UpdateHeldVisual();
+    }
+
+    /// <summary>
+    /// Gives the placement its forensic meaning and returns the evidenceId the tent is
+    /// now associated with, or null if it was placed on something that isn't evidence.
+    ///
+    /// Deliberately binary - evidence or not - with no third "marker on bare floor"
+    /// category. Every legitimately markable object in the scenario is backed by a real
+    /// EvidenceProp, including the designed distractor, so anything untagged is a
+    /// mis-identification rather than a different kind of correct action.
+    ///
+    /// Placement itself stays unrestricted: a tent can be dropped anywhere, exactly as
+    /// before. Tenting is the player's CLAIM that something is evidence, and a claim
+    /// the scene refuses to let you make isn't a claim - the wrong ones have to be
+    /// possible or there is nothing to score.
+    /// </summary>
+    private string RecordPlacement(EvidenceProp prop, Collider hitCollider)
+    {
+        bool isEvidence = prop != null && !string.IsNullOrEmpty(prop.evidenceId);
+
+        if (isEvidence)
+        {
+            // Relevance (Critical / Distractor / ...) is deliberately NOT consulted:
+            // the distractor must mark exactly like any other item, or the scene would
+            // be telling the player which items count.
+            EvidenceStateManager.Instance?.MarkTented(prop.evidenceId, ToolRole);
+            return prop.evidenceId;
+        }
+
+        // Nothing to transition - no record exists for untagged geometry - so this
+        // event is the only trace that the mis-mark happened.
+        if (SessionLogger.Instance != null)
+        {
+            string objectName = hitCollider != null ? hitCollider.gameObject.name : "(nothing)";
+            SessionLogger.Instance.LogEvent(
+                SessionEventType.NonEvidenceMarked,
+                objectName,
+                new Dictionary<string, string>
+                {
+                    { "objectName", objectName },
+                    { "tentNumber", NextTentNumber.ToString() }
+                });
+        }
+
+        return null;
     }
 
     /// <summary>Called by EvidenceTentPickup when the player reclaims a placed tent - frees that number back up.</summary>
