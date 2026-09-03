@@ -77,6 +77,7 @@ public class EvidenceStateManager : MonoBehaviour
         EvidenceStatus.Logged,
         EvidenceStatus.ReadyForCollection,
         EvidenceStatus.Collected,
+        EvidenceStatus.Sealed,
         EvidenceStatus.Processed
     };
 
@@ -217,14 +218,32 @@ public class EvidenceStateManager : MonoBehaviour
     }
 
     public TransitionResult MarkCollected(string evidenceId, ToolType tool) => SetStatus(evidenceId, EvidenceStatus.Collected, tool);
+
+    /// <summary>
+    /// A tamper-evident seal has been applied to the collected item at the scene.
+    ///
+    /// Sits between Collected and Processed because that is where it sits in real
+    /// procedure: the item is bagged, sealed on site, and the seal is broken later at
+    /// the lab to analyse it. Sealing is the step that actually protects custody over
+    /// that gap, so a lifecycle that went straight from Collected to Processed had no
+    /// representation of chain of custody at all.
+    ///
+    /// Deliberately a status in the shared sequence rather than a per-item flag like
+    /// fingerprintingDone: every item that is collected must be sealed, whereas only
+    /// some items need fingerprinting. That is the same test used when
+    /// requiresFingerprinting was added - shared step, shared sequence.
+    /// </summary>
+    public TransitionResult MarkSealed(string evidenceId, ToolType tool) => SetStatus(evidenceId, EvidenceStatus.Sealed, tool);
+
     public TransitionResult MarkProcessed(string evidenceId, ToolType tool) => SetStatus(evidenceId, EvidenceStatus.Processed, tool);
 
     /// <summary>
-    /// Records that fingerprint processing has been performed on a collected item.
+    /// Records that fingerprint processing has been performed on a sealed item.
     /// Deliberately not a status of its own: only some items require it, so it is a
-    /// per-item flag that becomes an extra precondition on Collected -> Processed
+    /// per-item flag that becomes an extra precondition on Sealed -> Processed
     /// rather than a step every item would have to walk through. Must happen while
-    /// the item is Collected.
+    /// the item is Sealed - see the comment on the status check below for why that is
+    /// Sealed and not Collected.
     /// </summary>
     public TransitionResult MarkFingerprinted(string evidenceId, ToolType tool)
     {
@@ -246,9 +265,16 @@ public class EvidenceStateManager : MonoBehaviour
             return TransitionResult.Duplicate;
         }
 
-        if (record.status != EvidenceStatus.Collected)
+        // Sealed, not Collected. Fingerprinting is the last thing before Processed, and
+        // Sealed is now what immediately precedes Processed, so the prerequisite moved
+        // with it. Reading off Collected instead would create TWO gates on the way to
+        // Processed that could be satisfied in either order - fingerprint-then-seal, or
+        // seal-then-fingerprint - and a chain of custody that can be established after
+        // the item was already opened and dusted is not a chain of custody. The path is
+        // strictly Collected -> Sealed -> (fingerprint if required) -> Processed.
+        if (record.status != EvidenceStatus.Sealed)
         {
-            Debug.LogWarning($"[EvidenceStateManager] Blocked fingerprinting of {evidenceId}: item is {record.status}, must be Collected first.");
+            Debug.LogWarning($"[EvidenceStateManager] Blocked fingerprinting of {evidenceId}: item is {record.status}, must be Sealed first.");
             OnEvidenceTransitionBlocked?.Invoke(evidenceId, EvidenceStatus.Processed, record.status);
             return TransitionResult.Violation;
         }

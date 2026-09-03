@@ -88,6 +88,7 @@ public class EvidenceNotifier : MonoBehaviour
             EvidenceStatus.Logged => "logged",
             EvidenceStatus.ReadyForCollection => "ready for collection",
             EvidenceStatus.Collected => "collected",
+            EvidenceStatus.Sealed => "sealed",
             EvidenceStatus.Processed => "processed",
             _ => null,
         };

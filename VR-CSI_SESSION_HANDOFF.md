@@ -199,6 +199,34 @@ toast identifies the full evidence roster without marking anything. That is
 pre-existing behaviour and changing discovery feedback is a design decision, not a
 bug fix — it needs an owner. See §8.
 
+## 7c. Chain of custody: `Sealed` sits between `Collected` and `Processed`
+
+Real procedure bags evidence, applies a tamper-evident seal at the scene, and breaks
+that seal later at the lab to analyse it. Sealing is what protects custody across that
+gap, and the lifecycle previously had no representation of it at all — `Collected` went
+straight to `Processed`.
+
+`EvidenceStatus.Sealed = 8` now sits between them, with `Processed` moved to `9`.
+
+**The fingerprint requirement moved with it.** `MarkFingerprinted` requires the item to
+be `Sealed`, not `Collected`. This is deliberate and load-bearing: leaving it on
+`Collected` would have created two gates on the way to `Processed` that could be
+satisfied in either order — seal-then-dust, or dust-then-seal — and a chain of custody
+that can be established *after* the item was already opened and dusted is not a chain of
+custody. The path is strictly:
+
+    Collected -> Sealed -> (fingerprint, if requiresFingerprinting) -> Processed
+
+`GreyboxFlowTest` asserts both halves: that `Processed` is refused straight from
+`Collected`, and that `MarkFingerprinted` is refused while the item is only `Collected`.
+Either assertion failing means the ordering has been broken.
+
+Sealing is a **deliberate player action**, not an automatic bump when `Collected` is
+reached — same reasoning that made tenting deliberate rather than passive like `Found`.
+A step the game performs on the player's behalf records nothing about whether the
+player knew to perform it, and a student who bags evidence and walks away without
+sealing it has made a real chain-of-custody error the log has to be able to show.
+
 ## 8. Open verification debts (added after the evidence-tenting / fingerprinting pass)
 
 These are things that are *implemented and passing today* but whose real code path

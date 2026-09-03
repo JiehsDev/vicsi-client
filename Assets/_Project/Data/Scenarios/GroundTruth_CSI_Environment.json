@@ -1,7 +1,7 @@
 {
   "scenarioId": "CSI_Environment",
-  "generatedAt": "2026-09-03T03:17:43Z",
-  "lifecycleSequence": ["NotFound", "Found", "Marked", "Photographed", "Sketched", "Logged", "ReadyForCollection", "Collected", "Processed"],
+  "generatedAt": "2026-09-03T11:58:41Z",
+  "lifecycleSequence": ["NotFound", "Found", "Marked", "Photographed", "Sketched", "Logged", "ReadyForCollection", "Collected", "Sealed", "Processed"],
   "evidence": [
     { "evidenceId": "EVD-014", "displayName": "Kitchen knife", "relevance": "Critical" },
     { "evidenceId": "EVD-015", "displayName": "Blood spatter pattern", "relevance": "Critical" },

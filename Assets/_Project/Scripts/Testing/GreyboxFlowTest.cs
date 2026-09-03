@@ -210,6 +210,30 @@ public class GreyboxFlowTest : MonoBehaviour
 
             Step(esm, gate, failures, report, id, EvidenceStatus.Collected);
 
+            // Chain of custody: Processed must be refused until the item is sealed,
+            // for the same reason Photographed is refused until it is Marked. This
+            // assertion is the thing that fails if Sealed is ever removed from
+            // RequiredSequence, or quietly reordered around the fingerprint step.
+            if (gate.CanTransition(id, EvidenceStatus.Processed))
+            {
+                Fail(failures, report, id + ": Processed was allowed straight from Collected - Sealed is not being required.");
+            }
+            else
+            {
+                report.AppendLine("    gate correctly refuses Processed: " + gate.GetBlockReason(id, EvidenceStatus.Processed));
+            }
+
+            // Fingerprinting must ALSO be refused before the seal, so the two cannot be
+            // satisfied in either order - the path is strictly
+            // Collected -> Sealed -> (fingerprint) -> Processed.
+            if (record.definition.requiresFingerprinting
+                && esm.MarkFingerprinted(id, ToolType.IOC) != TransitionResult.Violation)
+            {
+                Fail(failures, report, id + ": fingerprinting was accepted while only Collected - it must require Sealed first.");
+            }
+
+            Step(esm, gate, failures, report, id, EvidenceStatus.Sealed);
+
             if (record.definition.requiresFingerprinting)
             {
                 if (gate.CanTransition(id, EvidenceStatus.Processed))
@@ -238,6 +262,7 @@ public class GreyboxFlowTest : MonoBehaviour
         report.AppendLine("at/above Found:     " + esm.CountAtOrAbove(EvidenceStatus.Found));
         report.AppendLine("at/above Marked:    " + esm.CountAtOrAbove(EvidenceStatus.Marked));
         report.AppendLine("at/above Collected: " + esm.CountAtOrAbove(EvidenceStatus.Collected));
+        report.AppendLine("at/above Sealed:    " + esm.CountAtOrAbove(EvidenceStatus.Sealed));
         report.AppendLine("at/above Processed: " + esm.CountAtOrAbove(EvidenceStatus.Processed));
 
         report.AppendLine(failures.Count == 0
@@ -265,6 +290,7 @@ public class GreyboxFlowTest : MonoBehaviour
             case EvidenceStatus.Sketched: result = esm.MarkSketched(id, ToolType.Sketcher); break;
             case EvidenceStatus.Logged: result = esm.MarkLogged(id, ToolType.Recorder); break;
             case EvidenceStatus.Collected: result = esm.MarkCollected(id, ToolType.EvidenceCollector); break;
+            case EvidenceStatus.Sealed: result = esm.MarkSealed(id, ToolType.EvidenceCollector); break;
             case EvidenceStatus.Processed: result = esm.MarkProcessed(id, ToolType.IOC); break;
             default:
                 Fail(failures, report, id + ": no transition method for " + target);

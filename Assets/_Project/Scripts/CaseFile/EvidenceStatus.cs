@@ -17,6 +17,14 @@
 /// had persisted an old ordinal had to be corrected by hand in the same change.
 /// Prefer appending at the end; if you must insert mid-sequence, grep the asset
 /// files for the affected ints before you do.
+///
+/// Insertion log, so the next person can see what the check actually involves:
+///   Marked = 2   shifted Photographed..Processed by one. Checkpoint asset needed
+///                manual correction.
+///   Sealed = 8   shifted only Processed (8 -> 9). The checkpoint asset persists
+///                thresholdStatus 1, 7, 7 - none at or above 8 - so nothing needed
+///                correcting. That was confirmed by reading the asset, not assumed
+///                from the fact that the values are explicit.
 /// </summary>
 public enum EvidenceStatus
 {
@@ -28,5 +36,6 @@ public enum EvidenceStatus
     Logged = 5,
     ReadyForCollection = 6, // all of the above are done - Collector's gate opens here
     Collected = 7,
-    Processed = 8           // fingerprint dusting complete, where requiresFingerprinting demands it
+    Sealed = 8,             // tamper-evident seal applied at the scene - what actually protects custody between collection and the lab
+    Processed = 9           // seal broken at the lab and analysis done; fingerprint dusting complete where requiresFingerprinting demands it
 }
