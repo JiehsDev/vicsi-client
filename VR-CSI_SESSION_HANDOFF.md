@@ -227,6 +227,248 @@ A step the game performs on the player's behalf records nothing about whether th
 player knew to perform it, and a student who bags evidence and walks away without
 sealing it has made a real chain-of-custody error the log has to be able to show.
 
+## 7d. Notification priority: ambient prompts are always preemptable
+
+One label, one canvas group, two classes of message competing for them:
+
+- **State-driven** (`NotificationManager.Notify`) — gate-block reasons, confirmations,
+  status changes. Reports an event that already happened.
+- **Ambient** (`NotificationManager.ShowPrompt` / `HidePrompt`) — a standing affordance
+  hint, true while some context holds ("[B] Pick Up Evidence Tent").
+
+**A state-driven message always preempts an ambient prompt. Never the reverse.** The
+prompt resumes on its own once the queue drains, if its context is still true.
+
+The reasoning, so this is not re-inverted: an ambient prompt restates something still
+true and still visible — walk two steps and it comes back. A state-driven message is
+the only report of an event, and not showing it at the moment it fires does not delay
+it, it loses it.
+
+`NotificationUI` originally had this backwards: `ShowPrompt()` paused the toast queue,
+and `Show()` refused to start it while a prompt was active. Standing anywhere near a
+tent therefore swallowed **every** refusal the player triggered — silently, with no
+error and no log. Pulling a trigger and getting nothing back reads as a broken tool
+rather than a refused action, which is exactly how it was reported.
+
+The rule is expressed as two classes of message, never as checks on message text:
+everything posted through `Show()` outranks everything posted through `ShowPrompt()`,
+whatever either says, including messages added later. `NotificationPriorityTest` (in
+the scene, run via `RunAndLog()`) samples the real label every frame across a real
+posting sequence and asserts both the preemption and the resume, because internal
+state is not the question — what the player actually saw is.
+
+## 7e. Real art wired for three evidence items (EVD-015, 017, 018)
+
+`Evidence_Bloodspatterpattern`, `Evidence_Victimsmobilephone` and
+`Evidence_Emptyliquorbottle` no longer render as greybox cubes. Each now uses the real
+asset from `Assets/_Project/Art/Props/`:
+
+- **`EVD-018` (bottle)** → `GIN_30K.glb`. Raw mesh already stands upright (Y is the
+  tall axis in both the raw model and the old greybox), so no rotation was needed —
+  only a per-axis scale fit to the footprint the old cube used.
+- **`EVD-017` (phone)** → `PHONE_100K.glb`. Raw mesh is authored standing on end;
+  rotated `-90°` on X to lie flat, long axis along Z, thickness along Y. First
+  attempt at the scale mapping swapped which local axis corresponds to length vs.
+  thickness after the rotation, producing a badly stretched phone — caught and fixed
+  by an actual screenshot, not by trusting the arithmetic.
+- **`EVD-015` (blood spatter)** → `BLOOD.png` as a decal, not a mesh swap. Checked the
+  texture's alpha channel first (2048×1024, ~82% transparent / 13% opaque / 5% soft
+  edge — a real spatter mask, not an opaque square) before treating it as usable.
+  Applied to a flat `Quad` (saved as a real asset, `Art/Meshes/Quad_FlatDecal.asset`,
+  since a primitive's runtime mesh is not scene-persistent) via a new
+  `Art/Materials/Mat_BloodSpatter.mat` (URP Lit, alpha-blend, double-sided, `_ZWrite`
+  off), rotated to face up and laid flush on the floor.
+
+Every change was confirmed with an actual Scene View screenshot
+(`manage_camera` action=screenshot) after each step, not just by reasoning about the
+numbers — the phone mis-scale above would have shipped unnoticed otherwise. `EvidenceProp.evidenceId` and world XZ position were left untouched on all three; only the mesh, material, transform scale/rotation, and the aim `BoxCollider` (resized to the new visual bounds) changed. Re-verified after: raycast from directly above each item still resolves the correct `EvidenceProp` through the resized collider, `GreyboxFlowTest.RunFullFlow()` still passes, and the radius/overlap table is unchanged (only vertical position shifted by 1.5cm on the blood decal, negligible against a 1.5m radius).
+
+`EVD-014` (knife) was already wired to `knife-model.glb` from an earlier, unrecorded
+pass — found while checking whether the other Props assets were already in use. It
+uses a different convention: mesh/material live on a child `Visual` object rather than
+directly on the evidence root. Worth converging on one convention before wiring the
+remaining item, `EVD-016` (handrail fragment), which still has no matching prop file
+in `Art/Props/` and is still a plain greybox cube.
+
+**`Assets/_Project/Art/Props/` was never in version control until this change.** Every
+`.glb`/`.png` in that folder — including `GIN_30K.glb`, `PHONE_100K.glb`, `BLOOD.png`,
+and the ones NOT touched this pass (`SOCO_VAN_100K.glb`, `camera-model.glb`,
+`camera-model2.glb`, `knife-model.glb`) — exists only on this machine, with no history.
+Same class of exposure `HeacyASF.unity` was flagged for earlier this session: losing
+this machine loses the source art with no way to reconstruct GIN_30K/PHONE_100K's
+scale-fit numbers above except by re-deriving them from scratch against a different
+mesh export. Should be committed alongside everything else in `Art/Props/`, not just
+the three files this task touched.
+
+## 7f. `Sketched` redesigned around one shared master sketch; two tools were never reachable
+
+`Sketched` was, until this pass, a trivial instant call to `MarkSketched` — no real
+interaction behind it, same as tenting and fingerprinting before their own fixes. Real
+crime-scene sketching produces one spatial document with every item's numbered marker
+plotted onto it, not a per-item drawing (unlike photography, which genuinely is
+per-item). `Sketched`'s position in the sequence and its gate (still requires
+`Photographed`, transitively `Marked`) are unchanged.
+
+New: `MasterSketchManager` (data singleton, same shape as `PhotoAlbumManager`) holds one
+shared `List<SketchAnnotation>`; `MasterSketchUI` reviews it (`Show`/`Hide`/`Toggle`,
+`PlayerUIGate`, `LocomotionSuspender` — `PhotoAlbumUI`'s *behavioral* contract reused,
+not its hand-authored prefab, since there's no artist-authored floor-plan background to
+inherit; the panel is built at runtime instead, the way `UtilityMenuController` builds
+its wheel). Wired into the utility menu as a new "Sketch" entry. `SketchTool.TrySketch`
+now stamps the aimed item's position onto the shared sketch (auto-projected, not
+freehand — this isn't assessing drawing skill) before reporting `MarkSketched`, same
+gate-then-report shape every other tool already used.
+
+This depended on a gap that had never been closed: nothing persisted which tent number
+an item was marked with (`EvidenceTentTool` only ever computed it transiently for the
+reclaim flow). Added `EvidenceRecord.tentNumber` — set by `MarkTented`, cleared by
+`TryReclaimMarker` on a genuine revert — so the sketch can label an item by the same
+number the player already sees on its physical tent.
+
+**Two tools were never placed in any scene.** Checking whether `GreyboxFlowTest`'s
+direct calls were hiding the same reachability gap the collector-wheel incident found
+(see §8) turned up that `SketchTool` had never been placed anywhere — no prefab, zero
+instances in `CSI_Environment` or `Tutorial_ToolTest` — and neither had `RecorderTool`,
+which is not dead code: it's the only path from `Sketched`/`Logged` to
+`ReadyForCollection`, i.e. load-bearing for reaching `Collected`/`Sealed`/`Processed` at
+all. Both were fully-implemented, gate-integrated aim-and-activate tools with nowhere to
+exist in the world. Fixed by duplicating a working tool (`EvidenceCollectorMagnifier`,
+chosen because its structure — no per-item visuals, no aim/raise animation — is the
+closest match) rather than hand-authoring from scratch, specifically to inherit its
+exact `InputActionReference` bindings (`XRI Left/Right Interaction/Activate`) and
+Oculus Interaction setup (`Grabbable`/`HandGrabInteractable`/`GrabInteractable`) rather
+than risk a subtly-wrong recreation. Placed as `SketcherSketchpad` (X=0.6) and
+`RecorderDictaphone` (X=0.9), continuing the existing prop-shelf row
+(`EvidenceTentDispenser` X=-0.6, `PhotographerCamera` X=0, `EvidenceCollectorMagnifier`
+X=0.3, all Y=0.945 Z=-1).
+
+Verified genuinely reachable, not just state-machine correct: `PlayerToolRegistry.GetTool`
+resolves both after entering Play mode; `PlayerToolRegistry.ToggleEquip` (the exact call
+the tool wheel makes on release) attaches each to the hand anchor for real; and — since
+the whole point of this check is that a direct method call proves nothing about real
+input, per the wheel-wiring correction earlier this session — a genuine simulated
+trigger pull (an `OculusTouchController` device added via `InputSystem.AddDevice`,
+`{TriggerButton}`-usage press queued via `StateEvent`/`QueueEvent`, **not** followed by
+a manual `InputSystem.Update()` call, which would consume the event before Unity's own
+autonomous frame loop — the one `SketchTool.Update()`/`RecorderTool.Update()` actually
+run on — ever sees it; confirmed with a real wall-clock wait between queuing and
+checking the result) drove `EVD-014` from `Photographed` through `Sketched` and
+`Logged` to `ReadyForCollection` for real, through `SketchTool.TrySketch` and
+`RecorderTool.TryLog` exactly as a player's controller would. `GreyboxFlowTest` then
+re-ran clean (`PASS`, 5/5, master sketch shows 5 distinct annotations) in a fresh Play
+session against the now-correct scene.
+
+## 7g. Sketch auto-fire flag; Collect/Seal redesigned as two-handed bagging
+
+**Part 1 - `EvidenceStateManager.autoSketchAfterPhotograph` (default `true`).** Temporary,
+not a removal: `MasterSketchManager`/`MasterSketchUI`/`SketchTool` are byte-for-byte
+unchanged and still fully functional the moment the flag flips back to `false`. When
+`true`, a successful `MarkPhotographed` immediately calls `MarkSketched` for the same
+item with the same tool - no `SketchTool` interaction, and deliberately no
+`MasterSketchManager.RecordAnnotation` call, since there was no player action to derive
+a sketch position from. Exists because tenting has a clear, distinct assessment signal
+(a judgment call about identity) and sketching, as currently scoped, doesn't yet have
+one of its own separate from documentation already covered by Photographed/Logged.
+
+`GreyboxFlowTest` branches on the flag rather than checking only final state: with it
+`true`, it asserts `Sketched` already applied immediately after `Photographed` alone
+AND that no annotation exists; with it `false`, it exercises the exact real-interaction
+path from the previous task unchanged. Re-run clean under both states.
+
+**Part 2 - Collect/Seal are now a two-handed bagging gesture, not aim-and-press.**
+`EvidenceCollectorTool` (raycast, single-button, self-disambiguating by record status)
+is **deleted outright**, not repurposed - its interaction shape shared nothing with the
+new one. `ToolType.EvidenceCollector` is unchanged; only the physical object and
+gesture behind it changed (magnifying glass -> bag), so the tool wheel's flavor text
+for that role was updated to match.
+
+Investigated before building anything: evidence props (`EVD-015`-`018`) were NOT
+grabbable at all before this task - no `Grabbable`/`HandGrabInteractable`/
+`GrabInteractable`, no `Rigidbody`. Only `EVD-014` was, and it carried `ToggleGrab`
+(sticky grab-until-second-press) - the right model for a *tool* held indefinitely, the
+wrong one for "carry a few feet to a bag, release naturally on arrival," so it was
+removed from `EVD-014` and not added to the other four. All five evidence props got
+`Rigidbody` (kinematic, no gravity - the exact configuration `EVD-014`'s own
+fall-through-world fix already proved stable), `Grabbable`, `HandGrabInteractable`,
+`GrabInteractable` (fields wired via `SerializedObject`, copied from `EVD-014`'s own
+already-working values rather than guessed - `HandGrabPoses`/`_grabSource` both confirmed
+optional by reading the SDK source, so no hand-pose authoring was needed), and a new
+`EvidenceGrabGate` component that keeps `HandGrabInteractable`/`GrabInteractable`
+disabled until `EvidenceStateManager.OnEvidenceStatusChanged` reports `ReadyForCollection`
+- consistent with every other action in this project waiting until the moment it's
+actually valid.
+
+`EvidenceBagTool` (replaces the old class on the same prop, renamed `EvidenceCollectorMagnifier`
+-> `EvidenceBag`) reads left/right trigger HELD state (`IsPressed()`, not
+`WasPressedThisFrame()` - continuous, not one-shot) via the same `XRI Left/Right
+Interaction/Activate` references every other tool uses. A child `ReceivingZone` trigger
+collider (`EvidenceBagReceiver` forwarding `OnTriggerEnter`/`OnTriggerStay`) checks, on
+overlap: left trigger held (open), right trigger held AND `Grabbable.SelectingPointsCount
+> 0` on the specific item (right hand genuinely grasping it, not just touching it),
+and the item's status is `ReadyForCollection`. All three true -> `TryInsert`: gate-check
+(same `ProceduralGateValidator` every tool uses), swap mesh/material to a runtime-generated
+translucent placeholder cube (no art dependency), force-release whatever hand grab holds
+it (`HandGrabInteractable`/`GrabInteractable.SelectingInteractors` -> `ForceRelease()`,
+same technique `ToggleGrab` already uses), disable every collider and grab component on
+it, parent it to the bag, call `MarkCollected`. Releasing the left trigger while
+something is inserted calls `TrySeal` -> `MarkSealed`, then auto-detaches the item into
+a new placeholder `EvidenceHoldingCrate` (no table/crate/station existed anywhere in the
+scene to attach to instead - checked the full root hierarchy first), freeing the bag.
+`insertedItem != null` guards insertion to exactly once per overlap.
+
+**A real bug found only by physically verifying this, not by reading the code:** the
+receiving zone's trigger collider never fired, because `PlayerTool.Awake()`'s
+`SetEquippedVisualState(false)` disables *every* collider under the tool's GameObject
+via `GetComponentsInChildren<Collider>(true)` - the zone included, since it's a child.
+`EvidenceBagTool` now overrides `EquipToHand`/`Holster` to explicitly re-enable/disable
+the receiving zone's collider in step with equip state, since it's a detector, not the
+tool's own "don't let a hand grab this mid-air" collider that rule was written for.
+
+**Verification, both parts, at increasing rigor:**
+- `GreyboxFlowTest.RunFullFlow()` passes clean under both `autoSketchAfterPhotograph`
+  states, and its Collect/Seal steps now route through `EvidenceBagTool.TryInsert`/
+  `TrySeal` (public specifically for this) rather than `MarkCollected`/`MarkSealed`
+  directly - the same discipline applied to the Sketched step last task.
+- Grab-gating confirmed genuinely off before `ReadyForCollection` and on after, by
+  reading `HandGrabInteractable.enabled`/`GrabInteractable.enabled` directly.
+- The full physical gesture was driven for real in Play mode: genuine `InputSystem`
+  device-level trigger presses (the proven recipe from the wheel-wiring work), a real
+  collider-overlap (the item physically moved into the zone), and confirmed that
+  overlapping with no trigger held, and with only the right trigger held, both produce
+  no state change - only both together inserts. Releasing the left trigger afterward
+  produced a real `Sealed` and a real reparent into the crate.
+- **One disclosed substitution, not a full pass:** the controller-to-`GrabInteractor`
+  activation chain (`ActiveStateTracker` -> `ControllerGrabInteractor`) reports `State:
+  Disabled` in this headless, no-XR-device Editor session, so `ForceSelect` on it had no
+  effect. "Right hand grasping" was instead driven directly through `Grabbable`'s own
+  production pointer-tracking (`PointableElement.ProcessPointerEvent` with a real
+  `Select` event) - genuinely produces `SelectingPointsCount > 0` through real SDK code,
+  the same field `EvidenceBagTool` reads, but bypasses the controller-input layer
+  specifically. Everything downstream of "is this genuinely grasped" was exercised for
+  real; the controller-to-grasp link itself was not, and can't be in this environment
+  without an actual or simulated XR device.
+
+## 7h. Evidence grab rebound to an explicit grip action; hand assignment enforced
+
+Closes the gap §8 used to carry as its top-priority headset-only item - see the
+`[x] RESOLVED` entry there for the full technical account (what the grip signal
+actually was, why it was untestable, what replaced it, and everything the simulated
+verification confirmed). Two smaller, independently useful things came out of it:
+
+- **`PlayerTool.PreferredHand`** (new, defaults to `Right`) - `ToolWheelController`
+  now resolves which hand anchor to equip a tool to from the tool itself, rather than
+  hardcoding `rightHandAnchor` for every role. `EvidenceBagTool` is the first override
+  (`Left`). Adding a future left-hand tool means overriding one property, not teaching
+  the wheel a new special case.
+- **`RightHandOnlyFilter`** (new, `IGameObjectFilter`) - a small, reusable component for
+  "this interactable may only be selected by the right hand's interactor," usable
+  anywhere else in the project a similar restriction is ever needed, not just here.
+
+`EvidenceBagTool.TryInsert`/`TrySeal` and everything after a grasp is confirmed are
+byte-for-byte unchanged - `GreyboxFlowTest.RunFullFlow()` re-ran clean, confirming this
+was a pure substitution of what feeds `IsFirmlyGrasped`, not a change to anything
+downstream of it.
+
 ## 8. Open verification debts (added after the evidence-tenting / fingerprinting pass)
 
 These are things that are *implemented and passing today* but whose real code path
@@ -280,6 +522,48 @@ mid-headset-pass, so they are line items rather than "probably fine".
       decision; now that it is an explicit tunable it has to be shown to feel right for
       *both* jobs, not just the one it was originally sized for.
 
+- [x] **RESOLVED — the controller-to-grab activation chain gap is genuinely closed,
+      not just narrowed.** Traced (not guessed): the grab signal was
+      `Oculus.Interaction.ControllerSelector` (GameObject `GripButtonSelector`, a
+      child of each `ControllerGrabInteractor`) reading `ControllerButtonUsage.GripButton`
+      via Meta's own `IController`/OVR abstraction - a genuinely separate pipeline from
+      this project's `InputSystem`/XRI actions, confirmed by reading the SDK source, not
+      assumed. Deeper still: the whole interactor is gated by `ActiveStateTracker`
+      reading `ControllerRef.Active => IsConnected` - a controller-*presence* gate one
+      layer beneath the grip button itself, which is the real reason `ForceSelect` was a
+      no-op in the no-device Editor session that found this gap originally, and why
+      fixing "what button" alone could never have closed it.
+
+      Fixed by no longer trusting that opaque chain for the bagging feature's own gate:
+      `EvidenceBagTool.IsFirmlyGrasped` now reads an explicit `rightGripAction`
+      (`XRI Right Interaction/Select` - reused, not invented; the same action
+      `ToggleGrab` already read for its release button) plus a real, self-computed
+      proximity check (`Vector3.Distance` between the right hand anchor and the item,
+      ≤15cm - deliberately tight, "real reach and touch," not `interactionRadius`-scale).
+      Both halves are now things this project's own `InputSystem` device injection can
+      drive for real, and both were: simulated right grip pressed near a
+      `ReadyForCollection` item produced a genuine `Collected`, sealed, and detached to
+      the crate - the full gesture, grasp signal included, with zero SDK-opaque
+      substitution. Confirmed the negative cases too: grip held far from the item does
+      nothing until real proximity; a simulated *left*-grip press does nothing at all
+      (the check never reads it); releasing grip drops the "grasped" signal on the very
+      next check, no stickiness (the check is stateless, recomputed fresh every time -
+      there was never anything to latch).
+
+      Hand assignment is now enforced, not incidental, on both sides: `EvidenceBagTool`
+      overrides `PreferredHand`/`EquipToHand` and hard-refuses attaching to anything but
+      the left hand anchor (confirmed by direct call, not just inspection - a right-hand
+      attach attempt is a no-op); every evidence prop carries a new `RightHandOnlyFilter`
+      (`IGameObjectFilter`, checking `IController.Handedness`) on its
+      `GrabInteractable`/`HandGrabInteractable`, confirmed via the scene that there
+      genuinely are separate left/right `GrabInteractor` instances in this rig (checked,
+      not assumed) so the filter has something real to distinguish.
+
+      `Grabbable`/`HandGrabInteractable`/`GrabInteractable` stay on evidence props
+      unchanged, still real physical-carry components for whenever this runs on actual
+      hardware (where `IsConnected` will be true and that whole chain will work as
+      designed) - only the bagging feature's own gate stopped depending on them.
+
 - [ ] **`EvidenceProp` is a runtime registry now, so scene-loading order matters.**
       Props register in `OnEnable` and unregister in `OnDisable`, and
       `InteractionRadius` deliberately does *not* cache while
@@ -321,6 +605,30 @@ mid-headset-pass, so they are line items rather than "probably fine".
       list at once, and cannot be failed. **A step that cannot be failed measures
       nothing**, so this must be replaced by a real dusting/lifting interaction before
       any procedural-compliance number derived from it means anything.
+
+- [ ] **REACHABILITY IS NOT COVERED BY ANY AUTOMATED TEST — weigh "PASS" accordingly.**
+      `GreyboxFlowTest` calls `EvidenceStateManager` methods directly. It never equips
+      a tool, never opens the tool wheel, and never sends input. So a green run proves
+      the **gated logic is correct**; it proves nothing about whether a player can
+      **reach** that logic. Two live examples of the gap, both found by hand and
+      neither by the test:
+
+      1. `SketchTool` and `RecorderTool` are absent from `CSI_Environment`, so nothing
+         a player can hold produces `Sketched` or `Logged`. Every collection-related
+         PASS this project has recorded was validating a transition no player could
+         actually trigger, because the run is hard-blocked two steps earlier.
+      2. The notification priority inversion (§7d) silently discarded every refusal
+         message while an ambient prompt was up. Nothing errored; the test could not
+         see it, because the test never reads the UI.
+
+      Treat an automated-only pass as evidence about logic, never about playability.
+      Anything claimed as reachable needs a real input path exercised end to end.
+
+      Example 1 update: `SketchTool` and `RecorderTool` are now placed in
+      `CSI_Environment` (§7f) and confirmed reachable — but by hand, via a genuine
+      simulated `InputSystem` device event, not by any automated test. The general
+      point stands: `GreyboxFlowTest` still doesn't send input and still can't catch a
+      third instance of this on its own. Don't add a fourth tool without placing it.
 
 - [ ] **`GreyboxFlowTest` drives the state machine, not the tools.** It proves the
       sequence, the gates and the logging end to end (`Assets/_Project/Scripts/Testing/

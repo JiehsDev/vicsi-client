@@ -220,7 +220,16 @@ public class ToolWheelController : MonoBehaviour
             return;
         }
 
-        PlayerToolRegistry.ToggleEquip(selected.Role, cameraRig.rightHandAnchor);
+        // Every tool defaults to the right hand; a tool that must occupy a specific
+        // hand (e.g. the evidence bag, which needs the right hand free for grabbing
+        // evidence) says so itself via PlayerTool.PreferredHand, rather than this
+        // wheel special-casing individual ToolTypes.
+        var tool = PlayerToolRegistry.GetTool(selected.Role);
+        Transform handAnchor = tool != null && tool.PreferredHand == PlayerTool.Hand.Left
+            ? cameraRig.leftHandAnchor
+            : cameraRig.rightHandAnchor;
+
+        PlayerToolRegistry.ToggleEquip(selected.Role, handAnchor);
     }
 
     private void EnsureCameraRig()
@@ -730,7 +739,7 @@ public class ToolWheelController : MonoBehaviour
     {
         ToolType.Photographer => "Camera",
         ToolType.Sketcher => "Sketchpad",
-        ToolType.EvidenceCollector => "Magnifying Glass",
+        ToolType.EvidenceCollector => "Evidence Bag",
         ToolType.Recorder => "Recorder",
         ToolType.IOC => "Flashlight",
         ToolType.EvidenceMarker => "Evidence Tent",
@@ -746,7 +755,7 @@ public class ToolWheelController : MonoBehaviour
         ToolType.Photographer => "Captures photographic evidence at the scene.",
         ToolType.IOC => "Illuminates dark areas to reveal hidden evidence.",
         ToolType.Sketcher => "Sketches the crime scene layout by hand.",
-        ToolType.EvidenceCollector => "Magnifies and collects trace evidence.",
+        ToolType.EvidenceCollector => "Bags and seals collected evidence.",
         ToolType.Recorder => "Records verbal notes and witness statements.",
         ToolType.EvidenceMarker => "Places numbered evidence tents at the scene.",
         _ => string.Empty,

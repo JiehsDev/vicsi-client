@@ -6,7 +6,7 @@ using UnityEngine;
 /// NotificationManager, so every evidence status change already flowing through
 /// this project - photographed, sketched, logged, collected, whichever tool
 /// caused it - surfaces a toast without any of those tools (PhotographTool,
-/// SketchTool, EvidenceCollectorTool, ...) needing to know notifications exist.
+/// SketchTool, EvidenceBagTool, ...) needing to know notifications exist.
 /// Sample wiring for the reusable NotificationManager/NotificationUI pair; drop
 /// this on any GameObject in a scene that has both an EvidenceStateManager and a
 /// NotificationManager to enable it.

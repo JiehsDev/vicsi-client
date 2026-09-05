@@ -26,6 +26,12 @@ public abstract class PlayerTool : MonoBehaviour
     /// <summary>Which role/capability this tool represents. Must not be ToolType.None.</summary>
     public abstract ToolType ToolRole { get; }
 
+    /// <summary>Which hand anchor the tool wheel should equip this tool to. Right for every existing tool; a tool that must occupy a specific hand (e.g. the evidence bag, which needs the right hand free for grabbing evidence) overrides this instead of the wheel special-casing it by ToolType.</summary>
+    public enum Hand { Left, Right }
+
+    /// <summary>Defaults to Right, matching every tool built so far. Override to Left for a tool that must sit in the other hand.</summary>
+    public virtual Hand PreferredHand => Hand.Right;
+
     protected Grabbable Grabbable { get; private set; }
 
     /// <summary>True while a hand/controller is actively selecting this tool's Grabbable, or while it's attached to a hand anchor via EquipToHand (the tool wheel).</summary>

@@ -42,6 +42,27 @@ public class EvidenceStateManager : MonoBehaviour
     [Tooltip("All evidence definitions used in this scenario — drag every EvidenceDefinition asset here.")]
     [SerializeField] private List<EvidenceDefinition> sceneEvidenceDefinitions;
 
+    /// <summary>
+    /// TEMPORARY bypass, not a removal. When true, a successful MarkPhotographed
+    /// immediately and automatically calls MarkSketched for the same item with the
+    /// same tool - no separate SketchTool interaction, and critically no
+    /// MasterSketchManager.RecordAnnotation call, since there was no player action to
+    /// derive a position from. Exists because tenting has a clear, distinct
+    /// assessment signal (a judgment call about identity) and sketching, as currently
+    /// scoped, does not yet have one of its own separate from documentation that's
+    /// already covered by Photographed/Logged - rather than ship a step whose purpose
+    /// is unresolved, it's bypassed until that's decided.
+    ///
+    /// MasterSketchManager/MasterSketchUI/SketchTool are completely untouched by this
+    /// flag. Flipping it back to false makes the real interaction the only way
+    /// Sketched is ever reached again, exactly as it worked before this flag existed.
+    /// </summary>
+    [Tooltip("TEMPORARY: when true, Sketched fires automatically right after a successful Photographed, with no SketchTool interaction and no master-sketch annotation. Flip to false to require the real sketchpad interaction again (unchanged, still fully built). Default true - the sketch step's own assessment signal is still undecided.")]
+    [SerializeField] private bool autoSketchAfterPhotograph = true;
+
+    /// <summary>Current value of the temporary autoSketchAfterPhotograph bypass - see its field comment.</summary>
+    public bool AutoSketchAfterPhotograph => autoSketchAfterPhotograph;
+
     private readonly Dictionary<string, EvidenceRecord> records = new();
 
     // Anything (STCS, ProceduralGate, DeductionBoard, Logger) can subscribe to this
@@ -225,7 +246,22 @@ public class EvidenceStateManager : MonoBehaviour
         return result;
     }
 
-    public TransitionResult MarkPhotographed(string evidenceId, ToolType tool) => SetStatus(evidenceId, EvidenceStatus.Photographed, tool);
+    public TransitionResult MarkPhotographed(string evidenceId, ToolType tool)
+    {
+        var result = SetStatus(evidenceId, EvidenceStatus.Photographed, tool);
+
+        // See autoSketchAfterPhotograph's field comment. Deliberately calls MarkSketched
+        // directly rather than anything MasterSketchManager owns - the whole point of
+        // this bypass is that no player action happened, so there is no position to
+        // stamp and no annotation should appear.
+        if (result == TransitionResult.Applied && autoSketchAfterPhotograph)
+        {
+            MarkSketched(evidenceId, tool);
+        }
+
+        return result;
+    }
+
     public TransitionResult MarkSketched(string evidenceId, ToolType tool) => SetStatus(evidenceId, EvidenceStatus.Sketched, tool);
 
     public TransitionResult MarkLogged(string evidenceId, ToolType tool)

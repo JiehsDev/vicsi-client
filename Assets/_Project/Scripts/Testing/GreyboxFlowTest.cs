@@ -215,27 +215,67 @@ public class GreyboxFlowTest : MonoBehaviour
 
             Step(esm, gate, failures, report, id, EvidenceStatus.Marked, tentCounter);
             Step(esm, gate, failures, report, id, EvidenceStatus.Photographed);
-            Step(esm, gate, failures, report, id, EvidenceStatus.Sketched);
 
-            if (MasterSketchManager.Instance == null)
+            bool autoSketch = esm.AutoSketchAfterPhotograph;
+            bool hasAnnotation = MasterSketchManager.Instance != null
+                && MasterSketchManager.Instance.Annotations.Any(a => a.evidenceId == id);
+
+            if (autoSketch)
             {
-                Fail(failures, report, id + ": no MasterSketchManager in scene - sketch annotation cannot be verified.");
-            }
-            else
-            {
-                var annotation = MasterSketchManager.Instance.Annotations.FirstOrDefault(a => a.evidenceId == id);
-                if (string.IsNullOrEmpty(annotation.evidenceId))
+                // No separate step call here on purpose - MarkPhotographed's own
+                // auto-sketch bypass is what's supposed to have already applied
+                // Sketched. Checking only the final status would pass just as happily
+                // if MarkPhotographed's bypass were silently broken and something else
+                // (a stray direct MarkSketched call) produced the same end state - so
+                // this asserts the SPECIFIC thing the flag claims: Sketched already
+                // applied, with no annotation, immediately after Photographed alone.
+                if (record.status != EvidenceStatus.Sketched)
                 {
-                    Fail(failures, report, id + ": Sketched succeeded but no annotation was recorded on the master sketch.");
-                }
-                else if (annotation.tentNumber != tentCounter)
-                {
-                    Fail(failures, report, id + ": annotation tent number " + annotation.tentNumber + " does not match the tent placed (" + tentCounter + ").");
+                    Fail(failures, report, id + ": autoSketchAfterPhotograph is true but status is "
+                        + record.status + " right after Photographed - the auto-fire did not apply.");
                 }
                 else
                 {
-                    report.AppendLine("    master sketch annotated at (" + annotation.normalizedPosition.x.ToString("F2")
-                        + ", " + annotation.normalizedPosition.y.ToString("F2") + ") with tent #" + annotation.tentNumber);
+                    report.AppendLine("    -> Sketched (auto-fired by autoSketchAfterPhotograph, no separate action)");
+                }
+
+                if (hasAnnotation)
+                {
+                    Fail(failures, report, id + ": autoSketchAfterPhotograph fired, but a master-sketch annotation "
+                        + "exists anyway - the auto path must not touch MasterSketchManager.");
+                }
+                else
+                {
+                    report.AppendLine("    no master-sketch annotation recorded for the auto-fired sketch, as expected");
+                }
+            }
+            else
+            {
+                // Real-interaction path, unchanged from before this task: routes
+                // through MasterSketchManager.RecordAnnotation exactly as SketchTool
+                // does, then asserts the annotation actually landed.
+                Step(esm, gate, failures, report, id, EvidenceStatus.Sketched);
+
+                if (MasterSketchManager.Instance == null)
+                {
+                    Fail(failures, report, id + ": no MasterSketchManager in scene - sketch annotation cannot be verified.");
+                }
+                else
+                {
+                    var annotation = MasterSketchManager.Instance.Annotations.FirstOrDefault(a => a.evidenceId == id);
+                    if (string.IsNullOrEmpty(annotation.evidenceId))
+                    {
+                        Fail(failures, report, id + ": Sketched succeeded but no annotation was recorded on the master sketch.");
+                    }
+                    else if (annotation.tentNumber != tentCounter)
+                    {
+                        Fail(failures, report, id + ": annotation tent number " + annotation.tentNumber + " does not match the tent placed (" + tentCounter + ").");
+                    }
+                    else
+                    {
+                        report.AppendLine("    master sketch annotated at (" + annotation.normalizedPosition.x.ToString("F2")
+                            + ", " + annotation.normalizedPosition.y.ToString("F2") + ") with tent #" + annotation.tentNumber);
+                    }
                 }
             }
 
@@ -299,14 +339,19 @@ public class GreyboxFlowTest : MonoBehaviour
 
         // Every item annotates the SAME MasterSketchManager instance, so this is the
         // check that a later annotation never silently overwrote or dropped an earlier
-        // one - distinctEvidenceIds.Count must equal evidenceIds.Length exactly.
+        // one - distinctEvidenceIds.Count must equal evidenceIds.Length exactly. Only
+        // meaningful when the real interaction ran; while autoSketchAfterPhotograph is
+        // true, zero annotations is the CORRECT outcome, not a gap.
         if (MasterSketchManager.Instance != null)
         {
             int distinctAnnotated = MasterSketchManager.Instance.Annotations
                 .Select(a => a.evidenceId).Distinct().Count();
-            if (distinctAnnotated != evidenceIds.Length)
+            int expectedAnnotated = esm.AutoSketchAfterPhotograph ? 0 : evidenceIds.Length;
+
+            if (distinctAnnotated != expectedAnnotated)
             {
-                Fail(failures, report, "master sketch has " + distinctAnnotated + " distinct annotation(s), expected " + evidenceIds.Length + ".");
+                Fail(failures, report, "master sketch has " + distinctAnnotated + " distinct annotation(s), expected " + expectedAnnotated
+                    + " (autoSketchAfterPhotograph=" + esm.AutoSketchAfterPhotograph + ").");
             }
             else
             {
@@ -359,8 +404,36 @@ public class GreyboxFlowTest : MonoBehaviour
                 result = esm.MarkSketched(id, ToolType.Sketcher);
                 break;
             case EvidenceStatus.Logged: result = esm.MarkLogged(id, ToolType.Recorder); break;
-            case EvidenceStatus.Collected: result = esm.MarkCollected(id, ToolType.EvidenceCollector); break;
-            case EvidenceStatus.Sealed: result = esm.MarkSealed(id, ToolType.EvidenceCollector); break;
+            case EvidenceStatus.Collected:
+                // Routes through EvidenceBagTool.TryInsert - the exact call the bag's
+                // receiving zone makes on a real insertion - rather than MarkCollected
+                // alone, same discipline as the Sketched case above.
+                var evidenceForCollect = EvidenceProp.FindById(id);
+                if (evidenceForCollect == null)
+                {
+                    Fail(failures, report, id + ": no registered EvidenceProp - can't exercise the real bagging insertion path.");
+                    return;
+                }
+                if (EvidenceBagTool.Instance == null)
+                {
+                    Fail(failures, report, id + ": no EvidenceBagTool in scene - can't exercise the real bagging insertion path.");
+                    return;
+                }
+                result = EvidenceBagTool.Instance.TryInsert(evidenceForCollect);
+                break;
+            case EvidenceStatus.Sealed:
+                // Routes through EvidenceBagTool.TrySeal - closing the bag on whatever
+                // it currently holds - rather than MarkSealed alone. Relies on the
+                // Collected step just above having inserted this same id into the bag
+                // and nothing else having been inserted since, which holds here because
+                // RunFullFlow processes one item's full lifecycle at a time.
+                if (EvidenceBagTool.Instance == null)
+                {
+                    Fail(failures, report, id + ": no EvidenceBagTool in scene - can't exercise the real bagging seal path.");
+                    return;
+                }
+                result = EvidenceBagTool.Instance.TrySeal();
+                break;
             case EvidenceStatus.Processed: result = esm.MarkProcessed(id, ToolType.IOC); break;
             default:
                 Fail(failures, report, id + ": no transition method for " + target);
