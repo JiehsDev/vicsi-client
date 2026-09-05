@@ -5,10 +5,17 @@ using UnityEngine.InputSystem;
 /// <summary>
 /// Grabbable sketchpad prop for the Sketcher role. Follows the same aim-and-activate
 /// contract as PhotographTool - grab it, point the Activate raycast at an evidence
-/// item, press to act - but the sketching interaction/UI itself hasn't been designed
-/// yet, so activating just marks the evidence Sketched. Fill in the real drawing
-/// interaction later; EvidenceStateManager/ProceduralGateValidator already work
-/// against ToolType.Sketcher as-is.
+/// item, press to act.
+///
+/// Unlike photography, which really is a separate artifact per item, a real crime-scene
+/// sketch is one spatial document with every item's numbered marker plotted onto it.
+/// So the interaction here does not produce a per-item drawing: aiming at an item that
+/// has already been Marked (and, per the existing sequence, Photographed) and pressing
+/// Activate auto-projects that item's position onto the single shared
+/// MasterSketchManager (no freehand drawing - this project isn't assessing drawing
+/// skill) and then reports EvidenceStatus.Sketched exactly like every other tool
+/// reports its own status, through the same gated SetStatus. MasterSketchUI is where
+/// the accumulated result is actually reviewed.
 /// </summary>
 public class SketchTool : PlayerTool
 {
@@ -86,6 +93,12 @@ public class SketchTool : PlayerTool
             InteractionFeedback.Blocked();
             return;
         }
+
+        // Gate already confirmed above, same as every other tool here - stamp this
+        // item's tent number onto the one shared sketch before reporting the status
+        // change, so MasterSketchUI never observes Sketched without the annotation
+        // that's supposed to have caused it.
+        MasterSketchManager.Instance?.RecordAnnotation(evidence);
 
         ReportEvidence(evidence.evidenceId, (id, tool) => EvidenceStateManager.Instance.MarkSketched(id, tool), "sketched");
     }

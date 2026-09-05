@@ -204,8 +204,26 @@ public class EvidenceStateManager : MonoBehaviour
     /// player was near it, Marked means the player judged it to be evidence. Only the
     /// second is a claim, which is why evidence-identification scoring reads this one
     /// and not Found.
+    ///
+    /// tentNumber (1-based) records which physical tent this was, so later steps - the
+    /// master sketch annotation - can label the item the same way the player already
+    /// sees it in the world. Only written when the transition actually applies, and
+    /// only when a real number (&gt;0) is given, so a caller that doesn't have one
+    /// (e.g. a diagnostic call) can't stamp a bogus 0 over a number set earlier.
     /// </summary>
-    public TransitionResult MarkTented(string evidenceId, ToolType tool) => SetStatus(evidenceId, EvidenceStatus.Marked, tool);
+    public TransitionResult MarkTented(string evidenceId, ToolType tool, int tentNumber = 0)
+    {
+        var result = SetStatus(evidenceId, EvidenceStatus.Marked, tool);
+        if (result == TransitionResult.Applied && tentNumber > 0)
+        {
+            var record = GetRecord(evidenceId);
+            if (record != null)
+            {
+                record.tentNumber = tentNumber;
+            }
+        }
+        return result;
+    }
 
     public TransitionResult MarkPhotographed(string evidenceId, ToolType tool) => SetStatus(evidenceId, EvidenceStatus.Photographed, tool);
     public TransitionResult MarkSketched(string evidenceId, ToolType tool) => SetStatus(evidenceId, EvidenceStatus.Sketched, tool);
@@ -330,6 +348,7 @@ public class EvidenceStateManager : MonoBehaviour
         record.status = EvidenceStatus.Found;
         record.lastToolUsed = tool;
         record.statusChangedAtTime = Time.time;
+        record.tentNumber = null; // the physical tent is gone; nothing to label with anymore
 
         OnEvidenceStatusChanged?.Invoke(evidenceId, EvidenceStatus.Found);
         Debug.Log($"[EvidenceStateManager] {evidenceId} -> Found (marker reclaimed via {tool})");

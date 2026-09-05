@@ -277,7 +277,7 @@ public class EvidenceTentTool : PlayerTool
             // student never made. Aim precision is not the variable this scenario is
             // trying to measure.
             var prop = EvidenceProp.FindNearestWithinRadius(hit.point);
-            string markedEvidenceId = RecordPlacement(prop, hit.collider);
+            string markedEvidenceId = RecordPlacement(prop, hit.collider, index);
 
             var placed = Instantiate(source, hit.point, ComputeStandingFacingRotation(hit.point));
             placed.transform.localScale = source.transform.localScale;
@@ -335,7 +335,7 @@ public class EvidenceTentTool : PlayerTool
     /// FindNearestWithinRadius at all. The guard stays because this method must remain
     /// correct for any caller, not just the one proximity search that feeds it today.
     /// </summary>
-    private string RecordPlacement(EvidenceProp prop, Collider hitCollider)
+    private string RecordPlacement(EvidenceProp prop, Collider hitCollider, int index)
     {
         bool isEvidence = prop != null && !string.IsNullOrEmpty(prop.evidenceId);
 
@@ -344,7 +344,12 @@ public class EvidenceTentTool : PlayerTool
             // Relevance (Critical / Distractor / ...) is deliberately NOT consulted:
             // the distractor must mark exactly like any other item, or the scene would
             // be telling the player which items count.
-            EvidenceStateManager.Instance?.MarkTented(prop.evidenceId, ToolRole);
+            //
+            // The tent number placed (index + 1, the same number shown on the in-hand
+            // preview and on the placed prop itself) is recorded on the record so a
+            // later step - the master sketch annotation - can label this item the same
+            // way the player already sees it in the world.
+            EvidenceStateManager.Instance?.MarkTented(prop.evidenceId, ToolRole, index + 1);
             return prop.evidenceId;
         }
 

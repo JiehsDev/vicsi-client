@@ -18,4 +18,14 @@ public class EvidenceRecord
     /// the record and not in a sequence every item has to walk.
     /// </summary>
     public bool fingerprintingDone;
+
+    /// <summary>
+    /// The tent number this item was marked with (1-based), or null if it has never
+    /// been Marked, or was Marked and then reclaimed. Set by EvidenceStateManager.
+    /// MarkTented and cleared by TryReclaimMarker on a genuine revert - not touched by
+    /// anything else. Exists so a later step (the master sketch annotation) can label
+    /// an item by the same number the player already sees on its physical tent,
+    /// instead of inventing a second numbering scheme.
+    /// </summary>
+    public int? tentNumber;
 }

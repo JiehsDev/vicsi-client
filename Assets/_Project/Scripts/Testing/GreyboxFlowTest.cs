@@ -1,5 +1,6 @@
 // Assets/_Project/Scripts/Testing/GreyboxFlowTest.cs
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using UnityEngine;
 
@@ -171,8 +172,10 @@ public class GreyboxFlowTest : MonoBehaviour
 
         report.AppendLine("=== Greybox flow test ===");
 
+        int tentCounter = 0;
         foreach (var id in evidenceIds)
         {
+            tentCounter++;
             var record = esm.GetRecord(id);
             if (record == null)
             {
@@ -197,9 +200,45 @@ public class GreyboxFlowTest : MonoBehaviour
                 report.AppendLine("    gate correctly refuses Photographed: " + gate.GetBlockReason(id, EvidenceStatus.Photographed));
             }
 
-            Step(esm, gate, failures, report, id, EvidenceStatus.Marked);
+            // A real crime-scene sketch references markers already numbered in the
+            // world, so annotating before Marked (let alone Photographed) makes no
+            // procedural sense - confirm the gate agrees, same shape as the
+            // Photographed check just above.
+            if (gate.CanTransition(id, EvidenceStatus.Sketched))
+            {
+                Fail(failures, report, id + ": Sketched was allowed before Marked/Photographed.");
+            }
+            else
+            {
+                report.AppendLine("    gate correctly refuses Sketched: " + gate.GetBlockReason(id, EvidenceStatus.Sketched));
+            }
+
+            Step(esm, gate, failures, report, id, EvidenceStatus.Marked, tentCounter);
             Step(esm, gate, failures, report, id, EvidenceStatus.Photographed);
             Step(esm, gate, failures, report, id, EvidenceStatus.Sketched);
+
+            if (MasterSketchManager.Instance == null)
+            {
+                Fail(failures, report, id + ": no MasterSketchManager in scene - sketch annotation cannot be verified.");
+            }
+            else
+            {
+                var annotation = MasterSketchManager.Instance.Annotations.FirstOrDefault(a => a.evidenceId == id);
+                if (string.IsNullOrEmpty(annotation.evidenceId))
+                {
+                    Fail(failures, report, id + ": Sketched succeeded but no annotation was recorded on the master sketch.");
+                }
+                else if (annotation.tentNumber != tentCounter)
+                {
+                    Fail(failures, report, id + ": annotation tent number " + annotation.tentNumber + " does not match the tent placed (" + tentCounter + ").");
+                }
+                else
+                {
+                    report.AppendLine("    master sketch annotated at (" + annotation.normalizedPosition.x.ToString("F2")
+                        + ", " + annotation.normalizedPosition.y.ToString("F2") + ") with tent #" + annotation.tentNumber);
+                }
+            }
+
             Step(esm, gate, failures, report, id, EvidenceStatus.Logged);
 
             // MarkLogged auto-advances to ReadyForCollection, so this is already there.
@@ -258,6 +297,23 @@ public class GreyboxFlowTest : MonoBehaviour
             Step(esm, gate, failures, report, id, EvidenceStatus.Processed);
         }
 
+        // Every item annotates the SAME MasterSketchManager instance, so this is the
+        // check that a later annotation never silently overwrote or dropped an earlier
+        // one - distinctEvidenceIds.Count must equal evidenceIds.Length exactly.
+        if (MasterSketchManager.Instance != null)
+        {
+            int distinctAnnotated = MasterSketchManager.Instance.Annotations
+                .Select(a => a.evidenceId).Distinct().Count();
+            if (distinctAnnotated != evidenceIds.Length)
+            {
+                Fail(failures, report, "master sketch has " + distinctAnnotated + " distinct annotation(s), expected " + evidenceIds.Length + ".");
+            }
+            else
+            {
+                report.AppendLine("--- master sketch: " + distinctAnnotated + " item(s) annotated on one shared sketch ---");
+            }
+        }
+
         report.AppendLine("--- totals ---");
         report.AppendLine("at/above Found:     " + esm.CountAtOrAbove(EvidenceStatus.Found));
         report.AppendLine("at/above Marked:    " + esm.CountAtOrAbove(EvidenceStatus.Marked));
@@ -273,7 +329,7 @@ public class GreyboxFlowTest : MonoBehaviour
     }
 
     private static void Step(EvidenceStateManager esm, ProceduralGateValidator gate,
-        List<string> failures, StringBuilder report, string id, EvidenceStatus target)
+        List<string> failures, StringBuilder report, string id, EvidenceStatus target, int tentNumber = 0)
     {
         if (!gate.CanTransition(id, target))
         {
@@ -285,9 +341,23 @@ public class GreyboxFlowTest : MonoBehaviour
         switch (target)
         {
             case EvidenceStatus.Found: result = esm.MarkFound(id, ToolType.None); break;
-            case EvidenceStatus.Marked: result = esm.MarkTented(id, ToolType.EvidenceMarker); break;
+            case EvidenceStatus.Marked: result = esm.MarkTented(id, ToolType.EvidenceMarker, tentNumber); break;
             case EvidenceStatus.Photographed: result = esm.MarkPhotographed(id, ToolType.Photographer); break;
-            case EvidenceStatus.Sketched: result = esm.MarkSketched(id, ToolType.Sketcher); break;
+            case EvidenceStatus.Sketched:
+                // Routes through MasterSketchManager.RecordAnnotation - the exact call
+                // SketchTool.TrySketch makes - rather than calling MarkSketched alone,
+                // so this still fails if the real annotation path breaks even though
+                // this test drives the state machine directly rather than real input
+                // (see the class comment).
+                var prop = EvidenceProp.FindById(id);
+                if (prop == null)
+                {
+                    Fail(failures, report, id + ": no registered EvidenceProp - can't exercise the real sketch annotation path.");
+                    return;
+                }
+                MasterSketchManager.Instance?.RecordAnnotation(prop);
+                result = esm.MarkSketched(id, ToolType.Sketcher);
+                break;
             case EvidenceStatus.Logged: result = esm.MarkLogged(id, ToolType.Recorder); break;
             case EvidenceStatus.Collected: result = esm.MarkCollected(id, ToolType.EvidenceCollector); break;
             case EvidenceStatus.Sealed: result = esm.MarkSealed(id, ToolType.EvidenceCollector); break;

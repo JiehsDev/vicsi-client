@@ -133,6 +133,25 @@ public class EvidenceProp : MonoBehaviour
         return nearest;
     }
 
+    /// <summary>The registered prop with this evidenceId, or null if none is currently active. Linear search - the registry is small (one entry per evidence item in a scene), so this isn't worth a dictionary.</summary>
+    public static EvidenceProp FindById(string evidenceId)
+    {
+        if (string.IsNullOrEmpty(evidenceId))
+        {
+            return null;
+        }
+
+        foreach (var prop in Registered)
+        {
+            if (prop != null && prop.evidenceId == evidenceId)
+            {
+                return prop;
+            }
+        }
+
+        return null;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player") || string.IsNullOrEmpty(evidenceId) || EvidenceStateManager.Instance == null)
