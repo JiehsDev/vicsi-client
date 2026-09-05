@@ -630,6 +630,23 @@ mid-headset-pass, so they are line items rather than "probably fine".
       point stands: `GreyboxFlowTest` still doesn't send input and still can't catch a
       third instance of this on its own. Don't add a fourth tool without placing it.
 
+- [ ] **`AimTargetOutline` still leaks evidence-hood via a white box, independent of
+      status.** While fixing the viewfinder's green confirmation (which now correctly
+      requires the aim target be exactly `Marked` — see `PhotographTool.
+      IsConfirmedForCapture`, `ViewfinderFrameMask.SetConfirmed`,
+      `ViewfinderConfirmationFeedback`, and the now-corrected `AimIndicatorUI`, which
+      used to read the much broader `CanCapture` and light up green for any evidence
+      prop in frame regardless of status), a second, separate leak of the same shape
+      was found and deliberately left alone: `AimTargetOutline` draws a white wireframe
+      box around any `EvidenceProp` in frame — `Found` or not, `Marked` or not — so a
+      player can already tell "this specific object is evidence" from the outline
+      alone, before doing anything to earn that knowledge. Not fixed this pass because
+      it's a different visual (aim-assist outline, not a status confirmation) with its
+      own design tradeoff the outline may have been intentionally built for. Two ways
+      to close it when this gets picked up: make the outline generic (show for
+      whatever the raycast hits, evidence or not), or remove it now that the frame
+      tint + dot already confirm the moment to act.
+
 - [ ] **`GreyboxFlowTest` drives the state machine, not the tools.** It proves the
       sequence, the gates and the logging end to end (`Assets/_Project/Scripts/Testing/
       GreyboxFlowTest.cs`, run `RunFullFlow()`), which is exactly why the earlier

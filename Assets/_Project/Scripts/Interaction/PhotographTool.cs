@@ -12,11 +12,15 @@ using Oculus.Interaction.Locomotion;
 /// visual mesh into an aiming pose and shows the viewfinder HUD. While
 /// aiming, a raycast from the prop's forward direction runs every frame to
 /// track whether an EvidenceProp is currently in frame (see CanCapture /
-/// CurrentAimTarget below) - other components (a viewfinder red/green dot,
-/// a white outline on the target) read that state via events instead of
-/// duplicating the raycast. Pressing the assigned Activate input only takes
-/// a photo - marking that evidence Photographed and playing a flash/shutter
-/// cue - while CanCapture is true; otherwise the shutter is a no-op.
+/// CurrentAimTarget below) - other components (a viewfinder red/green dot)
+/// read that state via events instead of duplicating the raycast. Pressing
+/// the assigned Activate input only takes a photo - marking that evidence
+/// Photographed and playing a flash/shutter cue - while CanCapture is true;
+/// otherwise the shutter is a no-op.
+///
+/// IsConfirmedForCapture is a separate, narrower signal for feedback only
+/// (see its own field comment) - it must never be substituted for CanCapture
+/// in the shutter no-op check, and TakePhoto never reads it.
 ///
 /// The Photographer capability itself - PlayerTool.ToolRole, registration,
 /// held-state - lives in the PlayerTool base so every other tool (sketchpad,
@@ -72,6 +76,21 @@ public class PhotographTool : PlayerTool
 
     /// <summary>Fired whenever CurrentAimTarget changes (including to/from null).</summary>
     public event Action<EvidenceProp> OnAimTargetChanged;
+
+    /// <summary>
+    /// True only while CurrentAimTarget's status is exactly Marked - the one moment a
+    /// shutter press right now would actually apply Photographed, not merely "wouldn't
+    /// error." Deliberately narrower than CanCapture, which only means "a real
+    /// EvidenceProp is in frame" regardless of its status - CanCapture stays exactly as
+    /// it was (still drives the shutter no-op check in TakePhoto) so this is a pure
+    /// additive read of existing gate state, never consulted by TakePhoto itself, which
+    /// re-checks ProceduralGateValidator independently at the moment of the shutter
+    /// press. Purely a feedback signal for "is this the moment to act."
+    /// </summary>
+    public bool IsConfirmedForCapture { get; private set; }
+
+    /// <summary>Fired whenever IsConfirmedForCapture changes.</summary>
+    public event Action<bool> OnConfirmedForCaptureChanged;
 
     /// <summary>Fired right after a photo is successfully taken (evidence was in frame) - drives shutter VFX/SFX that don't want to duplicate the flash/audio already in PlayShutterFeedback.</summary>
     public event Action OnPhotoCaptured;
@@ -249,6 +268,18 @@ public class PhotographTool : PlayerTool
         {
             CanCapture = canCapture;
             OnAimValidityChanged?.Invoke(canCapture);
+        }
+
+        // "Exactly Marked" per CanTransition's own IsValidNextStep check (Photographed
+        // sits immediately after Marked in RequiredSequence), not merely "a real
+        // EvidenceProp is in frame" - see IsConfirmedForCapture's field comment.
+        bool confirmed = target != null
+            && ProceduralGateValidator.Instance != null
+            && ProceduralGateValidator.Instance.CanTransition(target.evidenceId, EvidenceStatus.Photographed);
+        if (confirmed != IsConfirmedForCapture)
+        {
+            IsConfirmedForCapture = confirmed;
+            OnConfirmedForCaptureChanged?.Invoke(confirmed);
         }
     }
 

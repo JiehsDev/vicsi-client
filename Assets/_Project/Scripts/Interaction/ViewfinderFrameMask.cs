@@ -15,6 +15,10 @@ using UnityEngine.UI;
 /// a frame of layout lag during the aim-zoom transition. Bar
 /// positions/sizes are recomputed every frame from the canvas's current
 /// rect, so this stays correct regardless of resolution or FOV changes.
+///
+/// Also owns tinting the decorative border via SetConfirmed(bool) - see that
+/// method's own comment. Knows nothing about why it's being told true or
+/// false; a listener elsewhere decides that from actual gate state.
 /// </summary>
 [RequireComponent(typeof(RectTransform))]
 public class ViewfinderFrameMask : MonoBehaviour
@@ -32,6 +36,9 @@ public class ViewfinderFrameMask : MonoBehaviour
     [SerializeField] private RectTransform frameBorderLeft;
     [SerializeField] private RectTransform frameBorderRight;
 
+    [Tooltip("Tint applied to all four border edges via SetConfirmed(true). Each edge reverts to its own authored color (captured once, the first time borders are resolved) via SetConfirmed(false) - not to a shared hardcoded default - so per-edge color differences the frame was designed with are preserved.")]
+    [SerializeField] private Color confirmedBorderColor = new Color(0.2f, 1f, 0.2f, 0.6f);
+
     /// <summary>The width/height ratio of the visible crop window (aspectWidth / aspectHeight) - exposed so a photo-capture listener can size its render texture to match exactly what this mask actually shows, instead of duplicating the ratio as a separate hardcoded value that could silently drift out of sync with it.</summary>
     public float Aspect => aspectHeight > 0f ? aspectWidth / aspectHeight : 1f;
 
@@ -40,6 +47,11 @@ public class ViewfinderFrameMask : MonoBehaviour
     private RectTransform bottomBar;
     private RectTransform leftBar;
     private RectTransform rightBar;
+
+    private readonly Image[] borderImages = new Image[4];
+    private readonly Color[] borderRestColors = new Color[4];
+    private bool borderColorsCached;
+    private bool confirmed;
 
     private void Awake()
     {
@@ -94,6 +106,63 @@ public class ViewfinderFrameMask : MonoBehaviour
         {
             var t = transform.Find("FrameBox_Right");
             if (t != null) frameBorderRight = (RectTransform)t;
+        }
+
+        CacheBorderColors();
+    }
+
+    // Captures each border edge's own authored color exactly once, the first time all
+    // four are resolved - so SetConfirmed(false) can revert to what the frame was
+    // actually designed with instead of a single hardcoded assumption (e.g. they don't
+    // all have to be the same color or alpha).
+    private void CacheBorderColors()
+    {
+        if (borderColorsCached)
+        {
+            return;
+        }
+
+        var borders = new[] { frameBorderTop, frameBorderBottom, frameBorderLeft, frameBorderRight };
+        for (int i = 0; i < borders.Length; i++)
+        {
+            if (borders[i] == null)
+            {
+                return; // Not all resolved yet - try again next call.
+            }
+
+            var image = borders[i].GetComponent<Image>();
+            borderImages[i] = image;
+            if (image != null)
+            {
+                borderRestColors[i] = image.color;
+            }
+        }
+
+        borderColorsCached = true;
+    }
+
+    /// <summary>
+    /// Tints all four border edges confirmedBorderColor (true) or reverts each to its
+    /// own authored color (false). No-op on any edge left unassigned in the inspector
+    /// and not found by name - matching frameBorderTop/etc.'s existing "leave
+    /// unassigned to skip this" contract.
+    /// </summary>
+    public void SetConfirmed(bool value)
+    {
+        confirmed = value;
+        EnsureFrameBorderRefs();
+
+        if (!borderColorsCached)
+        {
+            return;
+        }
+
+        for (int i = 0; i < borderImages.Length; i++)
+        {
+            if (borderImages[i] != null)
+            {
+                borderImages[i].color = confirmed ? confirmedBorderColor : borderRestColors[i];
+            }
         }
     }
 

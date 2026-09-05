@@ -4,10 +4,16 @@ using UnityEngine.UI;
 
 /// <summary>
 /// Flips a viewfinder dot between red and green based on a PhotographTool's
-/// CanCapture state - green means the shutter will take a photo right now,
-/// red means it won't. Only touches PhotographTool's public CanCapture
-/// property and OnAimValidityChanged event, so the same component works for
-/// any future aiming tool that exposes the same shape.
+/// IsConfirmedForCapture state - green means the current aim target is exactly
+/// Marked, the one moment a shutter press actually applies Photographed.
+///
+/// Deliberately NOT CanCapture (a much broader signal: true for any real
+/// EvidenceProp in frame, regardless of status). Reading CanCapture here used to
+/// mean this dot turned green for an unmarked evidence item exactly the same as a
+/// marked one - both revealing "this object is evidence" before the player had
+/// done anything to justify knowing that, and promising a successful shutter press
+/// the gate would then refuse. IsConfirmedForCapture is the only signal this
+/// component may ever read; see its field comment on PhotographTool for why.
 /// </summary>
 public class AimIndicatorUI : MonoBehaviour
 {
@@ -32,23 +38,23 @@ public class AimIndicatorUI : MonoBehaviour
             return;
         }
 
-        photographTool.OnAimValidityChanged += SetValidity;
-        SetValidity(photographTool.CanCapture);
+        photographTool.OnConfirmedForCaptureChanged += SetValidity;
+        SetValidity(photographTool.IsConfirmedForCapture);
     }
 
     private void OnDisable()
     {
         if (photographTool != null)
         {
-            photographTool.OnAimValidityChanged -= SetValidity;
+            photographTool.OnConfirmedForCaptureChanged -= SetValidity;
         }
     }
 
-    private void SetValidity(bool canCapture)
+    private void SetValidity(bool confirmed)
     {
         if (dotImage != null)
         {
-            dotImage.color = canCapture ? canCaptureColor : cannotCaptureColor;
+            dotImage.color = confirmed ? canCaptureColor : cannotCaptureColor;
         }
     }
 }

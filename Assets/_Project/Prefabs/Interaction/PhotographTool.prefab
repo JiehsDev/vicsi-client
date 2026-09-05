@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 2987389204122768281}
   - component: {fileID: 7508612861821796292}
   - component: {fileID: 1410333771185018151}
-  - component: {fileID: 4711037229170347921}
   - component: {fileID: 3851856897386147299}
   m_Layer: 0
   m_Name: PhotographTool
@@ -269,6 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceProp
   evidenceId: 
+  noticeRadius: 1.5
 --- !u!114 &566381779022750370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,21 +505,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4711037229170347921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 640157732239096698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0931e108ee256f14591e5e4683e13a69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AimTargetOutline
-  photographTool: {fileID: 6079915180392119172}
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  lineWidth: 0.01
 --- !u!114 &3851856897386147299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,7 +518,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhotoCaptureListener
   photographTool: {fileID: 6079915180392119172}
-  captureCamera: {fileID: 0}
+  povCamera: {fileID: 0}
+  viewfinderFrameMask: {fileID: 0}
   captureWidth: 480
   captureHeight: 360
 --- !u!1 &1036624011714819790
@@ -2107,6 +2093,7 @@ MonoBehaviour:
   frameBorderBottom: {fileID: 0}
   frameBorderLeft: {fileID: 0}
   frameBorderRight: {fileID: 0}
+  confirmedBorderColor: {r: 0.2, g: 1, b: 0.2, a: 0.6}
 --- !u!114 &7371613999296429465
 MonoBehaviour:
   m_ObjectHideFlags: 0
