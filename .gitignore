@@ -147,6 +147,10 @@ VR_DEVICE_SYNC_KEY.meta
 /docs/evidence/**/*.png
 /docs/evidence/**/*.png.meta
 
+# Headset captures and raw device logs stay local; retain concise validation reports.
+/docs/evidence/competitive-headset-2026-10-23/*-logcat.txt
+/docs/evidence/competitive-headset-2026-10-23/device-logs/
+
 # Verified downloadable Asset Store binaries; exact versions/GUIDs are in docs/ASSET_STORE_DEPENDENCIES.json.
 /Assets/(HDRP) NYC-Like City Buildings Set (PBR)/Models/building_1.fbx
 /Assets/(HDRP) NYC-Like City Buildings Set (PBR)/Models/building_1.fbx.meta

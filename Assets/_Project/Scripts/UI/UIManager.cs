@@ -11,8 +11,15 @@ public class UIManager : MonoBehaviour
     [Header("Environment scene to load on Start")]
     [SerializeField] private string environmentSceneName = "CSI_Environment";
 
+    public void HideResearchPanels()
+    {
+        if (mainMenuPanel != null) mainMenuPanel.SetActive(false);
+        if (settingsPanel != null) settingsPanel.SetActive(false);
+    }
+
     private void Start()
     {
+        if (CompetitiveEdition.Enabled) { HideResearchPanels(); return; }
         mainMenuPanel.SetActive(true);
         settingsPanel.SetActive(false);
     }
@@ -22,6 +29,7 @@ public class UIManager : MonoBehaviour
     // into the environment.
     public void OnStartPressed()
     {
+        if (CompetitiveEdition.Enabled) return;
         SceneManager.LoadScene(environmentSceneName);
     }
 

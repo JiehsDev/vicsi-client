@@ -1,0 +1,27 @@
+PASS: plain display names accepted
+PASS: empty, short, markup and oversized names rejected
+PASS: completed run retained
+PASS: completed run retained
+PASS: completed run retained
+PASS: completed run retained
+PASS: completed run retained
+PASS: duplicate completion is idempotent
+PASS: accuracy outranks speed
+PASS: time breaks equal scores
+PASS: best run per profile, all attempts in history
+PASS: different rules never share rankings
+PASS: nonfinite scores rejected
+PASS: nonfinite times rejected
+PASS: out of range scores rejected
+PASS: negative times rejected
+PASS: hour-long runs format without truncation
+PASS: all run fields survive persistence
+PASS: rankings survive persistence
+PASS: demo opponents are valid and visibly tagged
+PASS: demo opponents do not enter saved history
+PASS: demo entries cannot be saved as played runs
+PASS: demo entries can be disabled without losing real scores
+PASS: demo profiles are stable across refreshes
+PASS: demo opponents use the current rules
+PASS: real scores outrank demo scores by the same rules
+26 checks passed.

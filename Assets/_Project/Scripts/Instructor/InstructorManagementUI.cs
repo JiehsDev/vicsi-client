@@ -96,6 +96,7 @@ public class InstructorManagementUI : MonoBehaviour
 
     private void Awake()
     {
+        if (CompetitiveEdition.Enabled) { enabled = false; return; }
         PinStore ??= new InstructorPinStore(null, maxFailedPinAttempts, pinCooldownSeconds);
         if (hostCanvas != null) Build(hostCanvas);
     }

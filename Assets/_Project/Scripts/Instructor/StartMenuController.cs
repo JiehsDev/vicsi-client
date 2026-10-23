@@ -43,8 +43,15 @@ public class StartMenuController : MonoBehaviour
         if (instructorUI != null) instructorUI.OnClosed -= HandleInstructorClosed;
     }
 
+    public void HideResearchStatus()
+    {
+        if (statusLine != null) statusLine.gameObject.SetActive(false);
+        if (statusTable != null) statusTable.gameObject.SetActive(false);
+    }
+
     private void Start()
     {
+        if (CompetitiveEdition.Enabled) { HideResearchStatus(); enabled = false; return; }
         _ = ServerReachabilityProbe.CheckAsync(configuration);   // non-blocking
         dirty = true;
     }

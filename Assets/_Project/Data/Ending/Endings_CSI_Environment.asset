@@ -69,7 +69,7 @@ MonoBehaviour:
       measurementRequirementId: 
       authoringNote: 
     requiredConclusionId: conclusion-brother
-    endingText: "Professor: You didn't stop at the first suspicious clue. Paul's fingerprint showed contact with the knife, not when or how he used it.\n\nProfessor: The knife fits John's wound, and the blood pattern supports an attack near where he was found. Paul said he went home and never returned, but the vendor recognized him near John's house around 3:00 AM.\n\nProfessor: That conflict in his timeline, combined with the physical findings, makes Paul the strongest supported suspect. The vendor didn't see the attack, so this still isn't absolute proof.\n\nDispatch: We'll continue the investigation with Paul as the primary suspect, based on the combined findings and the conflict in his timeline."
+    endingText: "Dispatch: You didn't stop at the first suspicious clue. Paul's fingerprint showed contact with the knife, not when or how he used it.\n\nDispatch: The knife fits John's wound, and the blood pattern supports an attack near where he was found. Paul said he went home and never returned, but the vendor recognized him near John's house around 3:00 AM.\n\nDispatch: That conflict in his timeline, combined with the physical findings, makes Paul the strongest supported suspect. The vendor didn't see the attack, so this still isn't absolute proof.\n\nDispatch: We'll continue the investigation with Paul as the primary suspect, based on the combined findings and the conflict in his timeline."
     panelImage: {fileID: 0}
     endingAudioClip: {fileID: 0}
     followUpNarrativeEventId: 
@@ -103,7 +103,7 @@ MonoBehaviour:
       measurementRequirementId: 
       authoringNote: 
     requiredConclusionId: CONCLUSION-INCONCLUSIVE
-    endingText: "Professor: You don't have enough reliable evidence to support an accusation against either person. Leaving the case open is better than forcing a conclusion the evidence can't support."
+    endingText: "Dispatch: You don't have enough reliable evidence to support an accusation against either person. Leaving the case open is better than forcing a conclusion the evidence can't support."
     panelImage: {fileID: 0}
     endingAudioClip: {fileID: 0}
     followUpNarrativeEventId: 
@@ -135,7 +135,7 @@ MonoBehaviour:
       measurementRequirementId: 
       authoringNote: 
     requiredConclusionId: conclusion-peter
-    endingText: "Professor: Peter's departure and behavior gave you reasons to ask questions, but they don't connect him to the attack. The vendor saw him leave, not what happened inside.\n\nProfessor: Nothing you've found ties Peter to the attack strongly enough to support this accusation."
+    endingText: "Dispatch: Peter's departure and behavior gave you reasons to ask questions, but they don't connect him to the attack. The vendor saw him leave, not what happened inside.\n\nDispatch: Nothing you've found ties Peter to the attack strongly enough to support this accusation."
     panelImage: {fileID: 0}
     endingAudioClip: {fileID: 0}
     followUpNarrativeEventId: 
@@ -168,7 +168,7 @@ MonoBehaviour:
       measurementRequirementId: 
       authoringNote: 
     requiredConclusionId: conclusion-brother
-    endingText: "Professor: Paul is worth looking at, but you haven't built enough of a case to support the accusation. His fingerprint shows contact with the knife, not when he touched it or whether he used it in the attack.\n\nProfessor: Weigh the wound and scene reconstruction alongside independently checked accounts. Show how those findings connect on the board before making the accusation."
+    endingText: "Dispatch: Paul is worth looking at, but you haven't built enough of a case to support the accusation. His fingerprint shows contact with the knife, not when he touched it or whether he used it in the attack.\n\nDispatch: Weigh the wound and scene reconstruction alongside independently checked accounts. Show how those findings connect on the board before making the accusation."
     panelImage: {fileID: 0}
     endingAudioClip: {fileID: 0}
     followUpNarrativeEventId: 

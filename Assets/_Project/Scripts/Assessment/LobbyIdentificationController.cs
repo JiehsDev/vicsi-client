@@ -27,6 +27,7 @@ public class LobbyIdentificationController : MonoBehaviour
 
     private void Awake()
     {
+        if (CompetitiveEdition.Enabled) return;
         StudentIdentificationHandoff.MarkLobbyVisited();
         if (identificationPanel == null) return;
         var config = configuration;
@@ -51,6 +52,7 @@ public class LobbyIdentificationController : MonoBehaviour
     /// <summary>Button: Start Investigation.</summary>
     public void BeginIdentification()
     {
+        if (CompetitiveEdition.Enabled) return;
         if (loading) return;
         StudentIdentificationHandoff.Clear();
         if (identificationPanel == null)

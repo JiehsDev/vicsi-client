@@ -1,0 +1,30 @@
+PASS: Competitive lobby installed
+PASS: Course panels hidden
+PASS: Course status hidden
+PASS: Directory sync disabled
+PASS: Competitive save path isolated
+PASS: Leaderboard opens with empty state
+PASS: Username keyboard replaces course code
+PASS: VR keyboard enters username
+PASS: Username carried into investigation
+PASS: Investigation unlocks without identity code
+PASS: Gameplay starts at original FR handover
+PASS: Research scoring remains active
+PASS: Course upload refuses competitive run
+PASS: Raw logs isolated
+PASS: Course panels remain hidden in scenario
+PASS: Incomplete run cannot rank
+PASS: Explicit pause freezes the run timer
+PASS: Timer resumes after closing settings
+PASS: Losing application focus freezes the timer
+PASS: Named investigator can sign the scene register without course identity
+PASS: Scene register uses chosen username
+PASS: Returning to lobby preserves username
+PASS: Returning unfinished adds no leaderboard record
+PASS: Lobby rebuilt on return
+PASS: Scored closeout records username, score and time
+PASS: Repeated closeout saves only once
+PASS: Completed run saved to competitive history
+PASS: Unity JSON preserves saved score and run identity
+PASS: Final results include score, time and personal best
+=== PASS ===

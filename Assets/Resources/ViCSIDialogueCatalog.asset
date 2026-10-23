@@ -2723,7 +2723,7 @@ MonoBehaviour:
   - id: closeout-start
     category: 16
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: Before scene processing is finished, the team checks that every collected
       item and sample is documented and accounted for. This helps prevent evidence
       from being left behind, misplaced or separated from its records. Review the
@@ -2736,7 +2736,7 @@ MonoBehaviour:
   - id: closeout-survey-guidance
     category: 16
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: Before leaving the scene, the team conducts a final check to make sure
       required documentation is complete and nothing important has been overlooked.
       Complete the final scene survey before reporting to the IOC.
@@ -2748,7 +2748,7 @@ MonoBehaviour:
   - id: closeout-survey-done
     category: 16
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: The final survey is complete. Confirm your investigation completion report
       before releasing the scene.
     duration: 0
@@ -2759,7 +2759,7 @@ MonoBehaviour:
   - id: closeout-ioc-question
     category: 16
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: Are you satisfied that the scene has been fully processed and all collected
       evidence is accounted for?
     duration: 0
@@ -2770,7 +2770,7 @@ MonoBehaviour:
   - id: closeout-ioc-release
     category: 16
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: Your completion report is recorded. The investigation is complete. The
       cordon remains secured.
     duration: 0
@@ -2921,7 +2921,7 @@ MonoBehaviour:
   - id: closeout-missing-body
     category: 16
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: '{0} still needs its documentation and examination completed.'
     duration: 0
     priority: 2
@@ -2931,7 +2931,7 @@ MonoBehaviour:
   - id: closeout-missing-item
     category: 16
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: '{0} still needs its processing and secure storage completed.'
     duration: 0
     priority: 2
@@ -2941,7 +2941,7 @@ MonoBehaviour:
   - id: closeout-missing-sample
     category: 16
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: The blood sample from {0} still needs to be contained, sealed and stored
       so its source and identity remain protected.
     duration: 0
@@ -2962,7 +2962,7 @@ MonoBehaviour:
   - id: closeout-not-ready
     category: 16
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: Account for every required item and sample before confirming the inventory,
       so evidence remains connected to its records.
     duration: 0
@@ -3013,7 +3013,7 @@ MonoBehaviour:
   - id: TRAIN-SOCO-TEAM
     category: 0
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: In this simulation, you will practice several crime-scene activities yourself.
       In actual operations, these responsibilities may be divided among trained members
       of the crime-scene team, including photography, evidence recording, collection
@@ -3027,7 +3027,7 @@ MonoBehaviour:
   - id: TRAIN-PHOTOGRAPHY
     category: 1
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: Crime-scene photography preserves how the scene looked before anything
       is moved, including the original position and condition of evidence. The photographer
       documents the overall scene and important details; in actual practice, as many
@@ -3042,7 +3042,7 @@ MonoBehaviour:
   - id: TRAIN-MARKER
     category: 6
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: Evidence markers help the team identify the same item across photographs,
       notes and evidence records. They support consistent documentation, but do not
       replace it.
@@ -3055,7 +3055,7 @@ MonoBehaviour:
   - id: TRAIN-TRACE-SOURCE
     category: 3
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: The knife is physical evidence, while blood on it is material that may
       need its own sample and record. Separately identifying the object and the material
       collected from it preserves where each finding came from. Here, the additional
@@ -3069,7 +3069,7 @@ MonoBehaviour:
   - id: TRAIN-MEASUREMENT
     category: 7
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: Measurements preserve where an item was located in relation to the scene.
       Photographs alone may not fully capture spatial relationships; the team's measurement
       and sketch work helps reconstruct the original layout after evidence is moved.
@@ -3082,7 +3082,7 @@ MonoBehaviour:
   - id: TRAIN-FINGERPRINT
     category: 9
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: Fingerprint personnel carefully develop latent prints before lifting and
       preserving them for examination. The sequence helps protect the print and the
       record of its location. A recovered fingerprint can establish contact with
@@ -3096,7 +3096,7 @@ MonoBehaviour:
   - id: LEAD-FINGERPRINT-VENDOR
     category: 9
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: Paul's print confirms that he handled the knife at some point, but it doesn't
       tell us when he touched it or what he did with it. It isn't proof that he used
       it in the attack. Let's follow up with the vendor and ask whether he noticed
@@ -3111,7 +3111,7 @@ MonoBehaviour:
   - id: TRAIN-BIOLOGICAL-SAMPLE
     category: 8
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: Biological material is placed in its own container and identified so it
       can be traced back to the exact item or area where it came from. Samples from
       different sources must remain distinguishable. Collecting a sample preserves
@@ -3125,7 +3125,7 @@ MonoBehaviour:
   - id: TRAIN-PACKAGING
     category: 11
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: Collection does not end when an item is picked up. The evidence collector
       properly packages, secures and identifies it so its condition and identity
       are protected during handling.
@@ -3138,7 +3138,7 @@ MonoBehaviour:
   - id: TRAIN-CUSTODY
     category: 11
     type: 0
-    speaker: Professor
+    speaker: Dispatch
     text: Packaged and secured evidence must remain accounted for. The evidence recorder
       or custodian records who handled it and where it went after collection. Storing
       it in this simulation practices accountability; the button press does not represent

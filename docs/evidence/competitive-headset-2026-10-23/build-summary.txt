@@ -1,0 +1,9 @@
+Unity 6000.5.6f1 Android ARM64 IL2CPP release
+Package: ph.edu.parsu.vicsi.competitive
+Version: 0.1.0 (1)
+APK bytes: 682302413
+SHA256: c6c7604da4b1ae45e6b94e27eb2900359c8b9175ab1e002d27c8913ae9f9f980
+Install: adb install -r: Success
+Launch: Status ok, COLD
+Both research and competitive packages installed.
+[QuestBuild] Result=Succeeded errors=0 warnings=1210 size=4668542845 time=00:27:15.6590802

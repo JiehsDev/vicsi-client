@@ -82,6 +82,7 @@ public class CompletionScreenUI : MonoBehaviour
     private Image reviewPreviousButton;
     private WorldPanelPointer.Target previousReviewTarget;
     private float reviewInputAfter;
+    private CompetitiveResultsReveal competitiveReveal;
     public bool IsInFinalReview => IsShowing && inReviewPhase;
     public int ReviewPageIndex => reviewIndex;
     public int ReviewPageCount => reviewPages.Count;
@@ -280,12 +281,23 @@ public class CompletionScreenUI : MonoBehaviour
 
     private void ShowCurrentReviewPage()
     {
+        if (competitiveReveal != null) competitiveReveal.gameObject.SetActive(false);
+        lineLabel.transform.parent.gameObject.SetActive(true);
         string page=reviewPages[reviewIndex];
         int headingEnd=page.IndexOf('\n');
         string heading=headingEnd>=0?page.Substring(0,headingEnd).Trim():"Case review";
         feedbackHeading.text=heading=="CASE COMPLETE"?"Case summary":heading;
         reviewProgress.text="Case complete   |   Section "+(reviewIndex+1)+" of "+reviewPages.Count;
         SetLine(headingEnd>=0?page.Substring(headingEnd+1).Trim():page);
+        if (CompetitiveEdition.Enabled && reviewIndex == 0 && CompetitiveEdition.Instance.LastRun != null)
+        {
+            if (competitiveReveal == null) competitiveReveal = CompetitiveResultsReveal.Create(feedbackLayout);
+            if (competitiveReveal.Show(CompetitiveEdition.Instance))
+            {
+                lineLabel.transform.parent.gameObject.SetActive(false);
+                feedbackLayout.Refresh();
+            }
+        }
         bool last=reviewIndex==reviewPages.Count-1;
         reviewNextLabel.text=last?"[A] Finish review":"[A] Next";
         previousReviewTarget.enabled=reviewIndex>0;
@@ -451,6 +463,8 @@ public class CompletionScreenUI : MonoBehaviour
     private void BuildReviewPages(EndingDefinition ending, ConclusionDefinition selectedConclusion)
     {
         reviewPages.Clear();
+        if (CompetitiveEdition.Enabled && SceneTurnover.Phase == ScenarioPhase.InvestigationComplete)
+            AddPageIfNotEmpty(CompetitiveEdition.Instance.ResultsPage());
 
         AddPageIfNotEmpty(BuildSummaryPage(ending, selectedConclusion));
         AddPageIfNotEmpty(BuildSupportPage(selectedConclusion));
@@ -709,8 +723,7 @@ public class CompletionScreenUI : MonoBehaviour
             int violations = SumEventCounts(logger, SessionEventType.EvidenceTransitionBlocked, SessionEventType.EvidenceMarkerRejected, SessionEventType.MarkerReclaimBlocked, SessionEventType.EvidenceDepositBlocked);
             sb.AppendLine($"Procedural violations: {violations}");
 
-            int totalSeconds = Mathf.Max(0, Mathf.RoundToInt(logger.ElapsedSeconds));
-            sb.AppendLine($"Investigation time: {totalSeconds / 60}:{(totalSeconds % 60):D2}");
+            sb.AppendLine("Investigation time: " + CompetitiveRanking.FormatTime(CompetitiveEdition.Instance.ElapsedSeconds));
         }
 
         return sb.ToString();

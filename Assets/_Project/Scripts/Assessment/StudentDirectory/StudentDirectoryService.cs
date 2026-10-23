@@ -60,6 +60,7 @@ public class StudentDirectoryService : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        if (CompetitiveEdition.Enabled) { enabled = false; return; }
         lifetimeCts = new CancellationTokenSource();
         transport ??= new UnityWebRequestStudentDirectoryTransport();
         store ??= new StudentDirectoryStore();
@@ -88,6 +89,7 @@ public class StudentDirectoryService : MonoBehaviour
     /// <summary>Starts a sync unless one is already running; returns the running one either way. Never throws.</summary>
     public Task<StudentDirectorySyncStatus> SyncNow()
     {
+        if (CompetitiveEdition.Enabled) return Task.FromResult(StudentDirectorySyncStatus.NotConfigured);
         if (IsSyncing && CurrentSync != null)
         {
             return CurrentSync;

@@ -128,6 +128,10 @@ public class PreSessionFlowController : MonoBehaviour
     //      header in the vicsi-dashboard repo.
     private void Start()
     {
+        if (CompetitiveEdition.Enabled)
+        {
+            identificationPanel?.Hide(); pairingPanel?.Hide(); UnlockInvestigation(); return;
+        }
         if (SceneTestStart.IsActive) { UnlockInvestigation(); return; }
         // TEMPORARY DEVELOPMENT BYPASS - restore student pairing before final
         // deployment. Deliberately unconditional (no Application.isEditor /

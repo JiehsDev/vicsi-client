@@ -23,6 +23,14 @@ public static class LobbyVisibilityProbe
         {
             if (command == "stop") EditorApplication.isPlaying = false;
             else if (command == "play") EditorApplication.isPlaying = true;
+            else if (command == "play-lobby")
+            {
+                const string lobby = "Assets/_Project/Scenes/Main.unity";
+                if (EditorApplication.isPlaying) throw new InvalidOperationException("Stop Play before starting from the lobby.");
+                UnityEditor.SceneManagement.EditorSceneManager.OpenScene(lobby);
+                UnityEditor.SceneManagement.EditorSceneManager.playModeStartScene = AssetDatabase.LoadAssetAtPath<SceneAsset>(lobby);
+                EditorApplication.isPlaying = true;
+            }
             else if (command == "check-height-restore")
             {
                 var placement = UnityEngine.Object.FindAnyObjectByType<LobbyCanvasPlacement>();

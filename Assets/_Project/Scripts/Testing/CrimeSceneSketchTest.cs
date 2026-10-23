@@ -1,3 +1,4 @@
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
 // Assets/_Project/Scripts/Testing/CrimeSceneSketchTest.cs
 using System.Collections;
 using System.Collections.Generic;
@@ -403,3 +404,4 @@ public class CrimeSceneSketchTest : MonoBehaviour
         Check($"[place] {evidenceId} placed on its anchor -> {r}", picked && r == SketchPlacementResult.Placed);
     }
 }
+#endif

@@ -79,7 +79,7 @@ public class AssessmentUploadService : MonoBehaviour
         // ??= so test/tooling seams set before activation (SetQueueRootForTesting etc.)
         // survive Awake - otherwise OnEnable's startup recovery/cleanup/resume would run
         // against the REAL queue. In normal play these are all null here.
-        store ??= new AssessmentUploadQueueStore();
+        store ??= CompetitiveEdition.Enabled ? new AssessmentUploadQueueStore(System.IO.Path.Combine(CompetitiveEdition.SaveRoot, "disabled-course-queue")) : new AssessmentUploadQueueStore();
         transport ??= new UnityWebRequestUploadTransport();
         authorizationClient ??= new UnityWebRequestVrUploadAuthorizationClient();
         deviceKeyProvider ??= () => StudentDirectoryService.Instance != null ? StudentDirectoryService.Instance.DeviceKey : VrDeviceKey.Resolve();
@@ -91,6 +91,7 @@ public class AssessmentUploadService : MonoBehaviour
 
     private void OnEnable()
     {
+        if (CompetitiveEdition.Enabled) return;
         // "Restore pending items after restarting Unity or the headset" - on every
         // enable (covers both a fresh app launch and a domain reload in the Editor),
         // resume anything left Pending/RetryWaiting/Uploading/AwaitingPairing from a
@@ -313,6 +314,7 @@ public class AssessmentUploadService : MonoBehaviour
     /// </summary>
     public AssessmentUploadQueueEntry QueueSessionForUpload(string sessionLogFilePath, string selectedConclusionId, string resolvedEndingId)
     {
+        if (CompetitiveEdition.Enabled) return null;
         // The DTO is built by reading the log FILE, but SessionLogger buffers events
         // (every N events / N seconds). Without this, the last events before
         // submission - HYP-03, which fires on Submit Conclusion itself - are routinely

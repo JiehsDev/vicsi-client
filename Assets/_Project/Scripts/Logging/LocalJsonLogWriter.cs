@@ -39,7 +39,9 @@ public class LocalJsonLogWriter : MonoBehaviour, ISessionLogWriter
         if (!Guid.TryParse(sessionId, out var parsedId)) throw new ArgumentException("Session ID must be a GUID.", nameof(sessionId));
         string timestamp = DateTime.UtcNow.ToString("yyyyMMdd-HHmmss");
         string fileName = $"session_{parsedId:D}_{timestamp}.jsonl";
-        filePath = Path.Combine(Application.persistentDataPath, fileName);
+        string directory = CompetitiveEdition.Enabled ? Path.Combine(CompetitiveEdition.SaveRoot, "logs") : Application.persistentDataPath;
+        Directory.CreateDirectory(directory);
+        filePath = Path.Combine(directory, fileName);
         initialized = true;
     }
 

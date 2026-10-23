@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,7 +12,7 @@ public sealed class SceneAccessRegisterUI : MonoBehaviour
     [SerializeField] private bool useAuthoredPlacement;
     private InputAction confirm, cancel, scroll;
     private GameObject panel;
-    private TMP_Text footer, action;
+    private TMP_Text footer, action, statusLabel;
     private Text stationLabel;
     private ResponsivePanelLayout layout;
     private WorldPanelPointer pointer;
@@ -93,12 +92,14 @@ public sealed class SceneAccessRegisterUI : MonoBehaviour
         register.RetrySave(); Refresh(); HidePrompt(); WorldPanelPlacement.PlaceInFront(panel.transform);
         HudFollowCamera.ConfigureShared(panel, this, PlayerUIGate.InformationPriority);
         panel.SetActive(true); pointer.Enable(); PlayerUIGate.Enter(this); ToolInputLock.Enter(this); ownsUI = true;
+        LocomotionSuspender.Suspend();
+        layout.Body.Scroll.verticalNormalizedPosition = 1;
         inputAfter = Time.unscaledTime + .25f; return true;
     }
     public bool ConfirmCheckIn()
     {
         if (!IsShowing || Time.unscaledTime < inputAfter || !IsInRange || !Quiet || PlayerUIGate.IsBlockedByOther(this)) return false;
-        if (!register.Authorize(out string reason)) { footer.text = reason ?? "Registration is already confirmed."; layout.Refresh(); return false; }
+        if (!register.Authorize(out string reason)) { statusLabel.text = reason ?? "Check-in is already confirmed."; statusLabel.color = ForensicUIStyle.Warning; layout.Refresh(); return false; }
         Hide(); GameDialogue.SayLine("access-check-in-confirmed", "Scene security", "scene-access-register");
         if (SceneTurnover.Phase == ScenarioPhase.IOCAssessment) GameDialogue.SayLine("ioc-assessment-guidance", "System", "ioc-assessment");
         return true;
@@ -106,7 +107,7 @@ public sealed class SceneAccessRegisterUI : MonoBehaviour
     public void Hide()
     {
         if (panel != null) panel.SetActive(false); pointer?.Disable();
-        if (ownsUI) { ownsUI = false; PlayerUIGate.Exit(this); ToolInputLock.Exit(this); }
+        if (ownsUI) { ownsUI = false; PlayerUIGate.Exit(this); ToolInputLock.Exit(this); LocomotionSuspender.Resume(); }
     }
     private void HidePrompt() { if (ownsPrompt) NotificationManager.HidePrompt(); ownsPrompt = false; }
     private TMP_Text Label(string name, float size, string text)
@@ -122,44 +123,92 @@ public sealed class SceneAccessRegisterUI : MonoBehaviour
         using (EditableSceneVisuals.Begin(this,"BuildPanel"))
         {
         panel = EditableSceneVisuals.Create("Scene access register review", typeof(RectTransform), typeof(Canvas)); panel.transform.SetParent(transform, false);
-        var rect = (RectTransform)panel.transform; rect.sizeDelta = new Vector2(880, 600); rect.localScale = Vector3.one * .001f;
+        var rect = (RectTransform)panel.transform; rect.sizeDelta = new Vector2(820, 600); rect.localScale = Vector3.one * .001f;
         var canvas = panel.GetComponent<Canvas>(); canvas.renderMode = RenderMode.WorldSpace; canvas.sortingOrder = short.MaxValue - 5;
         var bg = ForensicUIStyle.Rect(panel.transform, "Background", ForensicUIStyle.PanelBackground).rectTransform;
         bg.anchorMin = Vector2.zero; bg.anchorMax = Vector2.one; bg.offsetMin = bg.offsetMax = Vector2.zero;
-        var title = Label("Title", 34, "Scene access register\nKeeper: First Responder");
-        footer = Label("Controls", 24, "Right stick: scroll    [B] Cancel / close");
-        action = Label("Confirm check-in", 28, "[A] Confirm check-in with First Responder");
+        var title = Label("Title", 34, "Scene access register");
+        footer = Label("Controls", 22, "Times are elapsed from scene start.\nRight stick: scroll");
+        action = Label("Confirm check-in", 28, "[A] Confirm check-in");
         pointer = new WorldPanelPointer(rect, "SceneAccess", this);
-        layout = ResponsivePanelLayout.Create(rect, title, null, footer, 320, 820, 36);
-        actionRow = layout.AddText(action, layout.Footer, 56); actionRow.SetAsFirstSibling();
-        pointer.Register("access-confirm", actionRow, Vector2.zero, () => { if (register.IsAuthorized) Hide(); else ConfirmCheckIn(); });
-        var close = Label("Close register", 26, "Close register");
-        var closeRow = layout.AddText(close, layout.Footer, 48);
+        layout = ResponsivePanelLayout.Create(rect, title, null, footer, 520, 760, 36);
+        var keeper = Label("Register keeper", 23, "Managed by First Responder"); keeper.color = ForensicUIStyle.TextSecondary;
+        layout.AddText(keeper, layout.Header, 34, 4);
+        var actions = ResponsivePanelLayout.Rect(layout.Footer.Content, "Register actions");
+        var height = actions.gameObject.AddComponent<LayoutElement>(); height.minHeight = height.preferredHeight = 70;
+        actions.SetAsFirstSibling();
+        actionRow = ActionButton(actions, "Check in", action, 0, .65f, ForensicUIStyle.Accent, ForensicUIStyle.PanelBackground);
+        pointer.Register("access-confirm", actionRow, Vector2.zero, () => { if (register != null && register.IsAuthorized) Hide(); else ConfirmCheckIn(); });
+        var close = Label("Close register", 26, "[B] Cancel");
+        var closeRow = ActionButton(actions, "Cancel", close, .68f, 1, ForensicUIStyle.SelectedFill, ForensicUIStyle.TextPrimary);
         pointer.Register("access-close", closeRow, Vector2.zero, Hide);
         layout.RegisterControls(pointer, "access-scroll-"); panel.SetActive(false);
             }
     }
-    private void AddRow(string text)
+    private RectTransform ActionButton(RectTransform parent, string name, TMP_Text label, float left, float right, Color fill, Color ink)
     {
-        var label = Label("Access record", 27, text);
-        rows.Add(layout.AddText(label, layout.Body, 64, 16).gameObject);
+        var image = ForensicUIStyle.Rect(parent, name, fill);
+        var rect = image.rectTransform; rect.anchorMin = new Vector2(left, 0); rect.anchorMax = new Vector2(right, 1);
+        rect.offsetMin = rect.offsetMax = Vector2.zero;
+        label.transform.SetParent(rect, false); label.color = ink; label.alignment = TextAlignmentOptions.Center; label.fontStyle = FontStyles.Bold;
+        label.rectTransform.anchorMin = Vector2.zero; label.rectTransform.anchorMax = Vector2.one;
+        label.rectTransform.offsetMin = new Vector2(12, 8); label.rectTransform.offsetMax = new Vector2(-12, -8);
+        return rect;
+    }
+    private TMP_Text AddRow(string text, float size = 26, float minimum = 48, Color? color = null)
+    {
+        var label = Label("Access record", size, text);
+        if (color.HasValue) label.color = color.Value;
+        rows.Add(layout.AddText(label, layout.Body, minimum, 10).gameObject);
+        return label;
+    }
+    private void Detail(string key, string value)
+    {
+        // Equal padding on a two-column row keeps wrapped values inside its measured bounds.
+        var valueLabel = Label("Register " + key, 27, value);
+        var row = layout.AddText(valueLabel, layout.Body, 44, 8);
+        valueLabel.margin = new Vector4(150, 2, 2, 2);
+        var keyLabel = Label(key + " label", 23, key); keyLabel.color = ForensicUIStyle.TextSecondary;
+        keyLabel.transform.SetParent(row, false);
+        keyLabel.rectTransform.anchorMin = new Vector2(0, 0); keyLabel.rectTransform.anchorMax = new Vector2(0, 1);
+        keyLabel.rectTransform.offsetMin = new Vector2(22, 8); keyLabel.rectTransform.offsetMax = new Vector2(160, -8);
+        rows.Add(row.gameObject);
     }
     public void Refresh()
     {
         if (register == null || !isActiveAndEnabled || panel == null) return;
+        RenderContents(register.StudentName, SceneTurnover.PlayerRole.ToString(), register.CurrentPurpose,
+            register.IsAuthorized, register.Visits, register.Transitions, register.LastPersistenceError);
+    }
+    // Pure presentation entry point, also usable by the isolated editor preview.
+    public void RenderContents(string investigator, string role, string purpose, bool authorized,
+        IReadOnlyList<SceneAccessRegister.Visit> visits, IReadOnlyList<SceneAccessRegister.Transition> transitions, string saveError)
+    {
         foreach (var row in rows) { row.SetActive(false); Destroy(row); } rows.Clear();
-        string status = !register.IsAuthorized ? "Review details, then confirm check-in. Entry time is recorded only when you cross the cordon."
-            : register.Visits.Count == 0 ? "Awaiting entry: check-in confirmed; no physical visit recorded yet." : "Registration confirmed. Physical visits are listed below.";
-        AddRow("Name: " + register.StudentName + "\nCurrent role: " + SceneTurnover.PlayerRole + "\nPurpose: " + register.CurrentPurpose + "\n\n" + status);
-        foreach (var visit in register.Visits)
-            AddRow("Visit " + visit.number + "\nName: " + register.StudentName + "\nRole at entry: " + visit.roleAtEntry
-                + "\nPurpose: " + visit.purpose + "\nTime in: " + SceneAccessRegister.FormatTime(visit.timeInMs)
-                + "\nTime out: " + SceneAccessRegister.FormatTime(visit.timeOutMs) + "\nStatus: " + visit.Status);
-        foreach (var transition in register.Transitions) AddRow(SceneAccessRegister.FormatTime(transition.elapsedMs) + "\n" + transition.description);
-        action.text = register.IsAuthorized ? "[A] Close register" : "[A] Confirm check-in with First Responder";
-        footer.text = register.LastPersistenceError == null ? "Elapsed session time    Right stick: scroll    [B] Cancel / close" : "Local save pending. Review the register again to retry.";
+        statusLabel = AddRow(!authorized ? "Review your details, then confirm check-in."
+            : visits.Count == 0 ? "Checked in. Cross the entrance to record your time in." : "Checked in. Your scene visits are recorded below.",
+            25, 56, authorized ? ForensicUIStyle.Success : ForensicUIStyle.Accent);
+        Detail("Investigator", investigator);
+        Detail("Role", role == "IOC" ? "Investigating officer (IOC)" : role == "SOCO" ? "Scene investigator (SOCO)" : role);
+        Detail("Purpose", purpose);
+        AddRow("SCENE VISITS", 22, 38, ForensicUIStyle.TextSecondary);
+        if (visits.Count == 0) AddRow("No visits yet. Entry and exit times are recorded when you cross the entrance.", 25, 56);
+        foreach (var visit in visits)
+        {
+            string status = visit.presentAtScenarioEnd ? "On scene at closeout" : visit.simulatedRepositionMs >= 0 ? "Handover; exit was not recorded"
+                : visit.timeOutMs >= 0 ? "Signed out" : "On scene";
+            AddRow("Visit " + visit.number + "  |  " + visit.roleAtEntry + "\n" + visit.purpose
+                + "\nIN  " + DisplayTime(visit.timeInMs) + "     OUT  " + DisplayTime(visit.timeOutMs) + "\n" + status);
+        }
+        if (transitions.Count > 0) AddRow("SCENE UPDATES", 22, 38, ForensicUIStyle.TextSecondary);
+        foreach (var transition in transitions) AddRow(DisplayTime(transition.elapsedMs) + "  |  " + transition.description, 24);
+        if (!string.IsNullOrEmpty(saveError)) AddRow("Save pending. Reopen this register to retry.", 24, 48, ForensicUIStyle.Warning);
+        action.text = authorized ? "[A] Close register" : "[A] Confirm check-in";
+        actionRow.parent.Find("Cancel").GetComponentInChildren<TMP_Text>().text = authorized ? "[B] Close" : "[B] Cancel";
         layout.Refresh();
     }
+    private static string DisplayTime(long milliseconds) => milliseconds < 0 ? "--:--:--"
+        : System.TimeSpan.FromMilliseconds(milliseconds).ToString(@"hh\:mm\:ss");
     private Material StationMaterial(string name, Color color)
     {
         var material = new Material(Shader.Find("Universal Render Pipeline/Lit"));

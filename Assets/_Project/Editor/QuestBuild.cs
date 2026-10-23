@@ -25,18 +25,36 @@ public static class QuestBuild
             return;
         }
 
+        bool remoteTest = Environment.GetCommandLineArgs().Contains("-vicsiRemoteTest");
+        string originalId = PlayerSettings.GetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android);
+        string originalName = PlayerSettings.productName;
+        if (remoteTest)
+        {
+            PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android, originalId + ".playtest");
+            PlayerSettings.productName = originalName + " Playtest";
+        }
+
         var options = new BuildPlayerOptions
         {
             scenes = EditorBuildSettings.scenes.Where(s => s.enabled).Select(s => s.path).ToArray(),
             locationPathName = output,
             target = BuildTarget.Android,
             targetGroup = BuildTargetGroup.Android,
-            options = BuildOptions.None,
+            options = remoteTest ? BuildOptions.Development : BuildOptions.None,
         };
 
         Debug.Log($"[QuestBuild] Building {PlayerSettings.GetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android)} " +
             $"({options.scenes.Length} scenes) -> {output}");
-        BuildReport report = BuildPipeline.BuildPlayer(options);
+        BuildReport report;
+        try { report = BuildPipeline.BuildPlayer(options); }
+        finally
+        {
+            if (remoteTest)
+            {
+                PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android, originalId);
+                PlayerSettings.productName = originalName;
+            }
+        }
         BuildSummary summary = report.summary;
         Debug.Log($"[QuestBuild] Result={summary.result} errors={summary.totalErrors} warnings={summary.totalWarnings} " +
             $"size={summary.totalSize} time={summary.totalTime}");

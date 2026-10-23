@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DialoguePool_Beat1_InitialBriefing
   m_EditorClassIdentifier: Assembly-CSharp::DialogueLinePool
   lines:
-  - 'Professor: The initial accounts are useful starting points, not conclusions.
+  - 'Dispatch: The initial accounts are useful starting points, not conclusions.
     Keep Paul, Peter, and the vendor''s account separate from what the scene can
     actually establish.'

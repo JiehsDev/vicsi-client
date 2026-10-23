@@ -43,7 +43,7 @@ public sealed class SceneAccessRegister : MonoBehaviour
     public bool IsAuthorized => record.authorized;
     public bool IsFinalized => record.finalized;
     public bool IsInside => stableInside;
-    public string StudentName => record.name ?? ResolveOwner()?.displayNameSnapshot
+    public string StudentName => (CompetitiveEdition.Enabled ? CompetitiveEdition.Instance?.Username : null) ?? record.name ?? ResolveOwner()?.displayNameSnapshot
         ?? (IsUnassignedDirectRun ? "Unassigned investigator (local session)" : "Student (test session)");
     public string StudentId => record.studentId;
     public IReadOnlyList<Visit> Visits => record.visits;
@@ -69,11 +69,12 @@ public sealed class SceneAccessRegister : MonoBehaviour
         }
         UI.Initialize(this, cordon);
     }
-    private SessionOwnerRecord ResolveOwner() => logger == null ? null : SessionOwnership.Store.Find(logger.SessionId);
+    private SessionOwnerRecord ResolveOwner() => CompetitiveEdition.Enabled || logger == null ? null : SessionOwnership.Store.Find(logger.SessionId);
     private bool IsUnassignedDirectRun
     {
         get
         {
+            if (CompetitiveEdition.Enabled) return CompetitiveRanking.ValidUsername(CompetitiveEdition.Instance?.Username);
             if (logger == null) return false;
             var flow = FindAnyObjectByType<PreSessionFlowController>();
             return flow != null && flow.gameObject.scene == gameObject.scene
@@ -90,7 +91,8 @@ public sealed class SceneAccessRegister : MonoBehaviour
         if (owner == null && !unassigned && !AutomatedTestSandbox.IsActive) { reason = "Confirm your student identity before checking in."; return false; }
         record.unassignedSession = unassigned;
         record.sessionId = logger.SessionId; record.studentId = owner?.studentId ?? (unassigned ? null : "test-investigator");
-        record.name = owner?.displayNameSnapshot ?? (unassigned ? "Unassigned investigator (local session)" : "Student (test session)");
+        record.name = CompetitiveEdition.Enabled ? CompetitiveEdition.Instance.Username
+            : owner?.displayNameSnapshot ?? (unassigned ? "Unassigned investigator (local session)" : "Student (test session)");
         record.roleAtRegistration = SceneTurnover.PlayerRole.ToString(); record.purpose = CurrentPurpose;
         record.registrationMs = Now; record.authorized = true;
         if (!Save()) { record.authorized = false; reason = "Unable to save check-in locally. Please try again."; return false; }
@@ -142,7 +144,7 @@ public sealed class SceneAccessRegister : MonoBehaviour
         var role = SceneTurnover.PlayerRole;
         if (record.authorized && !record.finalized && role != lastRole)
         {
-            record.transitions.Add(new Transition { elapsedMs = Now, description = "Same student: simulated role handover from " + lastRole + " to " + role });
+            record.transitions.Add(new Transition { elapsedMs = Now, description = "Investigator role handover from " + lastRole + " to " + role });
             Emit(SessionEventType.SceneAccessRoleChanged, new Dictionary<string, string> { { "from", lastRole.ToString() }, { "to", role.ToString() }, { "studentId", record.studentId } });
             Save(); Changed?.Invoke();
         }

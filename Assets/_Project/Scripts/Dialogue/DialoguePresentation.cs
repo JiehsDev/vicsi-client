@@ -13,6 +13,7 @@ public static class DialoguePresentation
 
     public static string SpokenText(string text, ref string speaker)
     {
+        if (CompetitiveEdition.Enabled && string.Equals(speaker, "Professor", StringComparison.OrdinalIgnoreCase)) speaker = "Dispatch";
         if (string.IsNullOrEmpty(text)) return text;
         string line = EvidenceDisplay.Text(text);
         while (true)
@@ -23,7 +24,7 @@ public static class DialoguePresentation
             if (!SpeakerLabels.Contains(prefix) && !string.Equals(prefix, speaker, StringComparison.OrdinalIgnoreCase)) return line;
             string rest = line.Substring(colon + 1).TrimStart();
             if (rest.Length == 0) return line;
-            if (string.IsNullOrEmpty(speaker)) speaker = prefix;
+            if (string.IsNullOrEmpty(speaker)) speaker = CompetitiveEdition.Enabled && string.Equals(prefix, "Professor", StringComparison.OrdinalIgnoreCase) ? "Dispatch" : prefix;
             line = rest;
         }
     }
