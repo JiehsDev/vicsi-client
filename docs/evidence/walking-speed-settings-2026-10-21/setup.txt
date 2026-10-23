@@ -1,0 +1,1 @@
+Saved editable walking-speed controls and PlayerWalkingSpeed component; existing height/navigation templates preserved.

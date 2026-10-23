@@ -1,0 +1,47 @@
+=== BodyRemovalTest ===
+  PASS: Persisted body action and SDK fade are wired
+  PASS: Idle SDK fade mesh is disabled and cannot cover normal gameplay
+  PASS: BODY-A retains chalk and has no swab, bag or grab requirement
+  PASS: Early removal refuses and existing guidance explains required documentation
+  PASS: Early removal does not complete closeout or hide body
+  PASS: BODY-A starts with Initial Photograph
+  PASS: Chalk is blocked before initial photography
+  PASS: Marker A is blocked before chalk
+  PASS: Final photograph is blocked before Marker A with revised guidance
+  PASS: Final photo follows Marker A without report or measurement dependency
+  PASS: Early Recorder guidance directs the final photograph before measurement
+  PASS: Fixed body measurement is blocked before final photo
+  PASS: Both pair directions involving the body are blocked before final photo
+  PASS: Final photo does not auto-log or enable removal
+  PASS: Recording remains blocked before measurement
+  PASS: Recorder becomes available after body measurements
+  PASS: Authored body has no solid raycast collider but an active acceptance zone
+  PASS: Recorder cannot open a body report through a solid obstacle
+  PASS: Real Recorder aim opens the body report through its trigger zone
+  PASS: Existing report still requires all authored lines without a separate action
+  PASS: Confirmed body findings follow measurements and enable removal
+  PASS: Procedure map has revised order and no separate examination step
+  PASS: Documented body still blocks closeout
+    Before request: head=(17.35, 2.80, 13.60) body=(17.35, 1.33, 12.90) gates= equipped=Recorder fade=BodyRemovalScreenFade (OVRScreenFade) reason=
+  FAIL: Actual confirmation panel opens and protects against opening-A leakage
+  FAIL: Ray confirmation starts the real transition
+  FAIL: Full-black transition holds interaction locks and records body removal
+  FAIL: Body renderer/collider hidden while outline and evidence identity remain
+  FAIL: Notes retain original body findings and add transport/removal
+  FAIL: Body preparation/removal are each logged once as procedural events
+  FAIL: Training message remains in existing dialogue history
+  FAIL: Closeout and procedure map now recognize removal
+  PASS: Fade and all owned interaction locks restore without errors
+  PASS: Removal changes no deduction inputs or numerical components
+  PASS: Knife, spatter and bottle states are untouched by removal
+  FAIL: Duplicate removal cannot replay or double-log
+  FAIL: Persisted session history retains body removal with explicit non-scored payload
+  FAIL: Session milestones follow final photo, measurement, recording, preparation and removal
+  PASS: Every body milestone explicitly remains non-scored
+  FAIL: Removal analytics survive disabled/capped raw uploads and retain evidence results
+    Fresh: removal=NotPrepared report=False visual=True collider=False
+  PASS: Fresh session restores body visibility, documentation and removal state
+  PASS: Interrupted-transition fixture opens confirmation
+  PASS: Interrupted-transition fixture starts fade
+  PASS: Disabling during fade restores view/UI/canvases without committing removal
+=== 12 FAILURE(S) ===

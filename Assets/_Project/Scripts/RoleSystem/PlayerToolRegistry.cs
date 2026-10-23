@@ -94,6 +94,8 @@ public static class PlayerToolRegistry
 
     /// <summary>Returns the tool registered for a role, or null if none exists yet - never throws.</summary>
     public static PlayerTool GetTool(ToolType role) => tools.TryGetValue(role, out var tool) ? tool : null;
+    public static bool CanEquip(ToolType role) => ProcedureInterlock.AllowsTool(role)
+        && (role!=ToolType.Swab || (GetTool(role) is SwabTool swab && swab.CanEquipCurrent));
 
     /// <summary>Returns the first registered tool assignable to T, or null - never throws.</summary>
     public static T GetTool<T>() where T : PlayerTool
@@ -115,6 +117,7 @@ public static class PlayerToolRegistry
     /// </summary>
     public static bool RequestEquip(ToolType role)
     {
+        if (SceneTurnover.IsInvestigationBlocked || !CanEquip(role)) return false;
         var tool = GetTool(role);
         if (tool == null)
         {
@@ -135,6 +138,7 @@ public static class PlayerToolRegistry
     /// </summary>
     public static bool ToggleEquip(ToolType role, Transform handAnchor)
     {
+        if (SceneTurnover.IsInvestigationBlocked) return false;
         var tool = GetTool(role);
         if (tool == null)
         {
@@ -147,6 +151,8 @@ public static class PlayerToolRegistry
             HolsterCurrent();
             return true;
         }
+
+        if(!CanEquip(role))return false;
 
         HolsterCurrent();
         tool.EquipToHand(handAnchor);
@@ -182,7 +188,7 @@ public static class PlayerToolRegistry
 
     internal static void NotifyToolGrabbed(PlayerTool tool)
     {
-        if (tool == null)
+        if (tool == null || !CanEquip(tool.ToolRole))
         {
             return;
         }

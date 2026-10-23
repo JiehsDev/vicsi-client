@@ -1,0 +1,11 @@
+# Conclusion UI — 2026-10-23
+
+Reworked EndingManager's picker into a choose → review → submit flow. Options use readable, padded text and an explicit selected label inside a bounded scrolling body. The fixed footer has controller/ray actions for reviewing the current selection and cancelling. During review it shows the chosen title/description, Submit conclusion, and Back to choices. Left/right on the right stick changes the highlighted choice; up/down scrolls long content. Each state transition has a brief input guard so one press cannot both choose and submit.
+
+Cancelling returns to investigation and releases UI/locomotion ownership. Disabling the picker hides its canvas and stops submission. Final confirmation still runs the existing vendor, sketch, relationship and conclusion-eligibility checks. Stale options rebuild the list without recording a choice. Existing diagnostic selection helpers explicitly exercise selection and submission; normal player input must pass through review.
+
+Conclusion feedback now has a heading, bounded text area, and a visible Continue to evidence custody button after the narrative sequence. It names the submitted conclusion and explains that custody/scene closeout remain. Continuing uses the existing acknowledgement and closeout transition. The final case review retains its existing content and now shares the bounded text layout.
+
+ConclusionPickerUITest covers real-scene eligibility, two-stage input protection, ray callbacks, cancel/back, long descriptions, fixed controls while scrolling, stale choices, disable cleanup, single recorded selection, and the actual feedback-to-custody transition. Native previews and reports are saved under docs/evidence/conclusion-ui-2026-10-23. Physical headset validation was not performed.
+
+Validation: the final ConclusionPickerUITest passed 22 checks; EvidenceRelationshipsReviewTest passed 41 checks, including late-arriving evidence requiring another relationship review before conclusion submission. Script compilation and whitespace checks passed. Native previews were visually inspected. The first preview exposed a truncated Back to choices label; the footer proportions were corrected and an explicit truncation check passed in the final run.

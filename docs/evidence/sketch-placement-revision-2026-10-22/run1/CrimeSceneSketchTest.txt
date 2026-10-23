@@ -1,0 +1,83 @@
+=== CrimeSceneSketchTest ===
+  PASS: [authoring] template adopted by the UI
+  PASS: [authoring] definition, template and measurement set agree (0 problems)
+  PASS: [authoring] 4 required evidence elements, 8 required measurement slots
+  PASS: [leak] evidence anchors have no visuals at all
+  PASS: [leak] north arrow present (orientation requirement)
+  PASS: [template] sheet is not left floating in the scene before opening
+  PASS: [initial] state NotStarted (NotStarted)
+  PASS: [initial] no evidence elements available
+  PASS: [initial] no measurement cards
+  PASS: [initial] cannot submit
+  PASS: [initial] an undiscovered item cannot be placed (nothing logged)
+  PASS: [setup] scene photography route completed
+  PASS: [unlock] Found alone unlocks nothing (proximity would reveal evidence)
+  PASS: [unlock] knife photographed -> only the knife is available (1)
+  PASS: [open] board shows
+  PASS: [map] kitchen detail and both floor plans render actual architectural linework
+  PASS: [open] SketchOpened logged
+  PASS: [modal] tools and world interaction locked, UI gate held
+  PASS: [open] palette lists the knife only (EVD-014)
+  PASS: [open] no symbols or measurement boxes on the sheet yet
+  PASS: [wrong] knife picked up
+  PASS: [wrong] knife on the bottle's anchor -> Incorrect
+  PASS: [wrong] element stays held at the cursor without returning
+  PASS: [wrong] one SketchPlacementIncorrect logged with the attempted anchor (SketchAnchor_Bottle)
+  PASS: [wrong] knife remains held and unplaced after waiting
+  PASS: [wrong] rejected element continues following the cursor
+  PASS: [hint] no placement hint after only one wrong drop
+  PASS: [wrong] open board -> Incorrect, logged as 'none', same message as a wrong anchor
+  PASS: [hint] second wrong drop reveals a persistent hint without picking the card up again
+  PASS: [hint] assistance is logged once at the second wrong drop
+  PASS: [hint] readable gold-ring instruction remains visible after the card returns
+  PASS: [hint] rendered board contains visible gold pixels at the correct target (839)
+  PASS: [hint] after two wrong drops the knife's area is highlighted, centred on its anchor ((3.84, 67.91) vs (3.84, 67.91))
+  PASS: [hint] SketchPlacementHintShown logged once
+  PASS: [hint] highlight removed once the card is dropped
+  PASS: [correct] knife 1.5x its authored radius from the anchor still placed (forgiving drop) -> Placed
+  PASS: [correct] snapped exactly onto the anchor ((3.84, 67.91) vs (3.84, 67.91))
+  PASS: [correct] SketchEvidencePlaced logged once
+  PASS: [correct] placed element leaves the palette and is locked
+  PASS: [state] InProgress after the first placement (InProgress)
+  PASS: [slots] the knife's two measurement boxes appear only now; others stay hidden
+  PASS: [submit] Submit not available while incomplete
+  PASS: [measure] no cards before anything is recorded
+  PASS: [measure] knife reference 1 recorded with the tape-measure path
+  PASS: [measure] later recorded distance attaches automatically
+  PASS: [measure] attached distance uses the recorded session value and tape precision
+  PASS: [measure] unrecorded reference stays empty
+  PASS: [measure] redraw does not duplicate measurement events
+  PASS: [close] locks released on close
+  PASS: [incremental] knife still placed after reopening
+  PASS: [incremental] knife measurement still filed
+  PASS: [incremental] spatter now available (EVD-015)
+  PASS: [place] EVD-015 placed on its anchor -> Placed
+  PASS: [place] BODY-A placed on its anchor -> Placed
+  PASS: [duplicate] two cards both read '1.09 m' with different identities
+  PASS: [duplicate] equal values attach by evidence and reference identity
+  PASS: [setup] bottle final photograph precedes its measurement cards
+  PASS: [measure] recorded bottle distances stay off the board before placement
+  PASS: [place] EVD-018 placed on its anchor -> Placed
+  PASS: [measure] correct bottle placement immediately attaches both prior recordings
+  PASS: [complete] BodyA_Ref1_Slot automatically attached from its matching recording
+  PASS: [complete] BodyA_Ref2_Slot automatically attached from its matching recording
+  PASS: [complete] Knife_Ref1_Slot automatically attached from its matching recording
+  PASS: [complete] Knife_Ref2_Slot automatically attached from its matching recording
+  PASS: [complete] Spatter_Ref1_Slot automatically attached from its matching recording
+  PASS: [complete] Spatter_Ref2_Slot automatically attached from its matching recording
+  PASS: [complete] Bottle_Ref1_Slot automatically attached from its matching recording
+  PASS: [complete] Bottle_Ref2_Slot automatically attached from its matching recording
+  PASS: [ready] every required element and distance placed -> ReadyForSubmission
+  PASS: [legend] legend lists the four placed items in placement order
+  PASS: [submit] first press asks for confirmation
+  PASS: [submit] going back leaves it unsubmitted
+  PASS: [submit] confirm submits
+  PASS: [submit] exactly one SketchSubmitted event
+  PASS: [read-only] no resubmission
+  PASS: [read-only] nothing can be moved or placed after submission
+  PASS: [scope] sketch never touched the evidence lifecycle (knife still PhotographedRaw)
+  PASS: [close] locks released after submission
+  PASS: [reset] no placements, no filed distances, no rejected attempts, not submitted
+  PASS: [reset] state back to NotStarted (NotStarted)
+  PASS: [reset] the sheet is clear again
+=== PASS, 0 failures ===

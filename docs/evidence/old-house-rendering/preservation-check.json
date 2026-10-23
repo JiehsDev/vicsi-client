@@ -1,0 +1,16 @@
+{
+  "sceneRecordsAddedOrRemoved": 0,
+  "unexpectedChanges": 0,
+  "changedRecordTypes": {
+    "PrefabInstance": 31,
+    "Transform": 17
+  },
+  "allowedPrefabChanges": {
+    "m_LocalPosition.x": 38,
+    "m_Materials.Array.data[0]": 28,
+    "m_LocalPosition.z": 38,
+    "m_LocalPosition.y": 19
+  },
+  "directTransformChanges": "localPosition only",
+  "pipelineChange": "additional lights per object 4 -> 8 only"
+}

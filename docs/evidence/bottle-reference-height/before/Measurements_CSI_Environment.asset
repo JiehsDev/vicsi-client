@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2235aa6fa990144bb56f5e1ac696ca, type: 3}
+  m_Name: Measurements_CSI_Environment
+  m_EditorClassIdentifier: Assembly-CSharp::MeasurementRequirementSet
+  scenarioId: CSI_Environment
+  requirements:
+  - requirementId: MEAS-BODY-A
+    targetEvidenceId: BODY-A
+    referenceAId: REF-BODYA-1
+    referenceBId: REF-BODYA-2
+    expectedDistanceA: 2.0668297
+    expectedDistanceB: 1.2679882
+    tolerance: 0.1
+    validateTolerance: 1
+    measureOnFloorPlan: 1
+    required: 1
+    mustPrecedeDisturbance: 1
+    disturbanceStatus: 8
+    enforcement: 0
+    scoreWeight: 1
+    participatesInScenePairMeasurement: 1
+    instructionText: Measure the victim from East Kitchen Wall and Foot-side Kitchen
+      Wall before disturbing it.
+  - requirementId: MEAS-EVD-014
+    targetEvidenceId: EVD-014
+    referenceAId: REF-KNIFE-1
+    referenceBId: REF-KNIFE-CAB
+    expectedDistanceA: 0.78982925
+    expectedDistanceB: 1.7470102
+    tolerance: 0.1
+    validateTolerance: 1
+    measureOnFloorPlan: 1
+    required: 1
+    mustPrecedeDisturbance: 1
+    disturbanceStatus: 8
+    enforcement: 0
+    scoreWeight: 1
+    participatesInScenePairMeasurement: 1
+    instructionText: Measure the knife from East Kitchen Wall and Rear Kitchen Wall
+      before disturbing it.
+  - requirementId: MEAS-EVD-015
+    targetEvidenceId: EVD-015
+    referenceAId: REF-SPATTER-CAB
+    referenceBId: REF-SPATTER-2
+    expectedDistanceA: 1.0119886
+    expectedDistanceB: 1.7581711
+    tolerance: 0.1
+    validateTolerance: 1
+    measureOnFloorPlan: 1
+    required: 1
+    mustPrecedeDisturbance: 1
+    disturbanceStatus: 8
+    enforcement: 0
+    scoreWeight: 1
+    participatesInScenePairMeasurement: 1
+    instructionText: Measure the blood pattern from Foot-side Kitchen Wall and West
+      Kitchen Wall before disturbing it.
+  - requirementId: MEAS-EVD-018
+    targetEvidenceId: EVD-018
+    referenceAId: REF-BOTTLE-1
+    referenceBId: REF-BOTTLE-2
+    expectedDistanceA: 0.33201122
+    expectedDistanceB: 0.59127235
+    tolerance: 0.1
+    validateTolerance: 1
+    measureOnFloorPlan: 1
+    required: 1
+    mustPrecedeDisturbance: 1
+    disturbanceStatus: 8
+    enforcement: 0
+    scoreWeight: 1
+    participatesInScenePairMeasurement: 1
+    instructionText: Measure the bottle from Rear Kitchen Wall and Right Cabinet
+      End before disturbing it.
+  pairTolerance: 0.1
+  pairsMeasureOnFloorPlan: 1

@@ -1,0 +1,39 @@
+{
+  "suites": {
+    "SOCOCloseoutTest": {
+      "passed": 46,
+      "failed": 0
+    },
+    "EndingManagerTest": {
+      "passed": 9,
+      "failed": 0
+    },
+    "EvidenceInventoryTest": {
+      "passed": 29,
+      "failed": 0
+    },
+    "ScenarioPhaseFoundationTest": {
+      "passed": 7,
+      "failed": 0
+    },
+    "FirstResponderTurnoverTest": {
+      "passed": 44,
+      "failed": 0
+    },
+    "CollectionFeedbackTest": {
+      "passed": 43,
+      "failed": 0
+    },
+    "BiologicalSamplingTest": {
+      "passed": 50,
+      "failed": 0
+    }
+  },
+  "totalPassed": 228,
+  "totalFailed": 0,
+  "initialStaleExpectation": {
+    "passed": 6,
+    "failed": 1,
+    "classification": "B - corrected diagnostic expectation"
+  }
+}

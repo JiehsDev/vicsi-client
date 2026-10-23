@@ -1,0 +1,55 @@
+{
+    "date":  "2026-10-22",
+    "importedClips":  22,
+    "tests":  [
+                  {
+                      "report":  "run2/InteractionSfxTest.txt",
+                      "passed":  39,
+                      "failed":  0
+                  },
+                  {
+                      "report":  "run1/RecorderReportLimitTest.txt",
+                      "passed":  30,
+                      "failed":  0
+                  },
+                  {
+                      "report":  "run1/MeasurementToolTest.txt",
+                      "passed":  41,
+                      "failed":  0
+                  },
+                  {
+                      "report":  "run2/ChalkProcedureTest.txt",
+                      "passed":  39,
+                      "failed":  0
+                  },
+                  {
+                      "report":  "run2/FingerprintStorageTest.txt",
+                      "passed":  35,
+                      "failed":  0
+                  },
+                  {
+                      "report":  "run2/SamplePreparationTest.txt",
+                      "passed":  47,
+                      "failed":  0
+                  },
+                  {
+                      "report":  "run2/SettingsPauseMenuTest.txt",
+                      "passed":  49,
+                      "failed":  0
+                  }
+              ],
+    "passed":  280,
+    "failed":  0,
+    "unityCompilation":  "passed",
+    "manifestHashes":  "verified",
+    "excluded":  [
+                     "zipper",
+                     "door",
+                     "cabinet"
+                 ],
+    "physicalHeadsetListening":  false,
+    "productionWrites":  0,
+    "commit":  false,
+    "push":  false,
+    "deployment":  false
+}

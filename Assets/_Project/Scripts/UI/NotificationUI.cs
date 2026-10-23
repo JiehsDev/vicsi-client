@@ -1,209 +1,206 @@
 // Assets/_Project/Scripts/UI/NotificationUI.cs
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 /// <summary>
-/// Generic world-space toast popup. One label, one canvas group, and two classes of
-/// message competing for them:
+/// The lower world-space panel: the TOOLTIP channel. Two kinds of message share its label:
 ///
-///  - Show(message) posts a STATE-DRIVEN message: something happened or was refused.
-///    Gate-block reasons ("Not yet Marked."), confirmations ("Evidence tent 1
-///    placed."), status changes. Each gets its own full, uninterrupted display.
+///  - Timed tooltips (ShowTooltip, fed by GameDialogue for catalog entries of type
+///    Tooltip): short "do this now" instructions. LATEST WINS - a new tooltip replaces the
+///    one on screen immediately and nothing is ever queued, so an instruction for a step
+///    the player has already finished can never appear later ("Measure the west wall" is
+///    simply gone once "Measure the north wall" is posted). Re-posting the tooltip that is
+///    already up restarts its timer instead of stacking a copy.
 ///
-///  - ShowPrompt(message) / HidePrompt() posts an AMBIENT message: a standing
-///    affordance hint that is true for as long as some context holds, e.g.
-///    "[B] Pick Up Evidence Tent" while the player is in range of a tent.
+///  - The ambient prompt (ShowPrompt / HidePrompt): a standing affordance such as
+///    "[B] Pick Up Evidence Tent", true for as long as some context holds. A timed tooltip
+///    takes the label over it; the prompt comes back by itself once the tooltip expires,
+///    provided its context still holds.
 ///
-/// PRIORITY RULE - AMBIENT PROMPTS ARE ALWAYS PREEMPTABLE, STATE-DRIVEN MESSAGES
-/// NEVER ARE. A state-driven message always takes the display, immediately,
-/// interrupting any ambient prompt; the prompt resumes on its own once the queue
-/// drains, provided the context that asked for it is still true. Do not invert this,
-/// and do not add a case that lets some particular prompt outrank a state message.
-///
-/// This is deliberately expressed as two classes of message rather than as checks on
-/// particular strings: every message posted through Show() outranks every message
-/// posted through ShowPrompt(), whatever either says, including ones added later.
-///
-/// Why it matters: an ambient prompt is a restatement of something already true and
-/// still visible in the world - the player can walk two steps and see it again. A
-/// state-driven message is the only report of an event that has already happened,
-/// and if it is not shown at the moment it fires it is not merely delayed, it is
-/// lost. The previous version had this exactly backwards: ShowPrompt() paused the
-/// toast queue, so standing near a tent silently swallowed every refusal the player
-/// triggered. Pulling a trigger and getting no response at all reads as a broken
-/// tool, not as a refused action - which is precisely how it was reported.
-///
-/// Knows nothing about what triggered a message; see NotificationManager for how
-/// other systems reach this.
+/// Professor/teammate dialogue never comes here - that is the upper panel
+/// (STCSNotificationUI), so the two channels never block or overwrite each other.
+/// Tooltips are not written to Dialogue History.
 /// </summary>
 public class NotificationUI : MonoBehaviour
 {
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private TMP_Text label;
-    [SerializeField] private float defaultDisplaySeconds = 3f;
-    [SerializeField] private float fadeSeconds = 0.2f;
+    [SerializeField] private DialogueCountdownBar countdownBar;
 
-    private readonly Queue<(string message, float duration)> pending = new();
+    private string tooltipText;            // the timed tooltip on screen (null when none)
+    private float tooltipRemaining;
+    private float tooltipDuration;
+    private string ambientPromptMessage;   // what the world wants the prompt to say (kept while a tooltip covers it)
+    private string displayed;              // what the label currently shows
+    private Coroutine fadeRoutine;
+    private RectTransform panel;
+    private float authoredPanelHeight;
+    private DialoguePanelLayout dialogueLayout;
+    private bool awoken;   // requests that arrive before Awake (scene start-up order) are shown by Awake
+    private HudFollowCamera follow;
+    private Vector3 authoredOffset;
+    private Vector3? promptOffset;
 
-    // What the world currently WANTS the ambient prompt to say, which is not the same
-    // as what is on screen: it stays set while a state-driven message preempts it, so
-    // the prompt can come back afterwards without the caller re-posting it.
-    private string ambientPromptMessage;
-
-    private Coroutine driveRoutine;
-
-    /// <summary>True while an ambient prompt is the thing currently requested (whether or not it is the thing currently displayed).</summary>
+    /// <summary>True while an ambient prompt is requested (whether or not a tooltip currently covers it).</summary>
     public bool HasAmbientPrompt => ambientPromptMessage != null;
+    public string CurrentAmbientPrompt => ambientPromptMessage;
+
+    /// <summary>The timed tooltip on screen, or null.</summary>
+    public string CurrentTooltip => tooltipText;
+
+    /// <summary>Seconds the current tooltip still has (0 when none).</summary>
+    public float TooltipRemaining => tooltipText != null ? tooltipRemaining : 0f;
+
+    /// <summary>Tooltips never queue - always 0. Kept for diagnostics that report panel load.</summary>
+    public int PendingCount => 0;
+    public bool IsPlacementDeferred => follow != null && follow.SharedLayout
+        && (PlayerUIGate.IsBlocked || follow.IsLayoutSuppressed);
 
     private void Awake()
     {
-        if (canvasGroup != null)
+        if (canvasGroup != null) canvasGroup.alpha = 0f;
+        panel = transform as RectTransform;
+        authoredPanelHeight = panel != null ? panel.sizeDelta.y : 0f;
+        dialogueLayout = new DialoguePanelLayout(panel, label, authoredPanelHeight, keepTopEdge: true);
+        follow = GetComponent<HudFollowCamera>();
+        var canvas = GetComponent<Canvas>();
+        if (canvas != null && canvas.renderMode == RenderMode.WorldSpace && GetComponentInParent<LobbyCanvasPlacement>() == null)
         {
-            canvasGroup.alpha = 0f;
+            // Reuse the authored label/countdown/canvas; no new canvas or input owner.
+            follow = HudFollowCamera.ConfigureTemporaryFeedback(gameObject, this,
+                () => canvasGroup == null || canvasGroup.alpha > .001f);
+            if (panel != null) panel.localScale = Vector3.one * .0011f;
+            if (canvasGroup != null) { canvasGroup.interactable = false; canvasGroup.blocksRaycasts = false; }
         }
-    }
-
-    /// <summary>Posts a state-driven message. Always displayed in full; preempts any ambient prompt.</summary>
-    public void Show(string message, float? durationSeconds = null)
-    {
-        if (string.IsNullOrEmpty(message))
-        {
-            return;
-        }
-
-        pending.Enqueue((message, durationSeconds ?? defaultDisplaySeconds));
-        EnsureDriving();
-    }
-
-    /// <summary>
-    /// Posts the ambient prompt - a standing hint shown while some context holds.
-    /// Displayed only while no state-driven message is waiting or playing; it is
-    /// recorded either way and appears (or reappears) as soon as the display is free.
-    /// </summary>
-    public void ShowPrompt(string message)
-    {
-        if (string.IsNullOrEmpty(message))
-        {
-            return;
-        }
-
-        ambientPromptMessage = message;
-        EnsureDriving();
-    }
-
-    /// <summary>Withdraws the ambient prompt. No-op if none is requested. Never affects queued state-driven messages.</summary>
-    public void HidePrompt()
-    {
-        ambientPromptMessage = null;
-        EnsureDriving();
-    }
-
-    private void EnsureDriving()
-    {
-        if (driveRoutine == null && isActiveAndEnabled)
-        {
-            driveRoutine = StartCoroutine(Drive());
-        }
+        if (follow != null) authoredOffset = follow.LocalOffset;
+        awoken = true;
+        Refresh();
     }
 
     private void OnDisable()
     {
-        driveRoutine = null;
-        pending.Clear();
+        tooltipText = null;
         ambientPromptMessage = null;
-        if (canvasGroup != null)
-        {
-            canvasGroup.alpha = 0f;
-        }
+        promptOffset = null;
+        if (follow != null) follow.LocalOffset = authoredOffset;
+        displayed = null;
+        fadeRoutine = null;
+        if (canvasGroup != null) canvasGroup.alpha = 0f;
+        if (countdownBar != null) countdownBar.SetVisible(false);
     }
 
     /// <summary>
-    /// The single owner of the label. Everything that wants to display something adds
-    /// to state and lets this decide, so the two message classes can never each hold a
-    /// half-finished coroutine writing over the other - which is what made the old
-    /// version's ordering depend on which call happened to arrive first.
+    /// Shows a timed tooltip, replacing any tooltip on screen at once (latest wins, no
+    /// backlog). IgnoreIfAlreadyShowing leaves an identical tooltip untouched; any other
+    /// behavior restarts its timer.
     /// </summary>
-    private IEnumerator Drive()
+    public void ShowTooltip(string text, float durationSeconds, DialogueReplaceBehavior behavior = DialogueReplaceBehavior.ReplaceCurrent)
     {
-        while (true)
+        if (string.IsNullOrEmpty(text)) return;
+        if (text == tooltipText && behavior == DialogueReplaceBehavior.IgnoreIfAlreadyShowing) return;
+        tooltipText = text;
+        tooltipDuration = Mathf.Max(0.1f, durationSeconds);
+        tooltipRemaining = tooltipDuration;
+        Refresh();
+    }
+
+    /// <summary>Back-compatible shim: a timed tooltip with the catalog's default length for this priority.</summary>
+    public void Show(string message, DialogueKind kind = DialogueKind.Guidance) =>
+        ShowTooltip(message, ViCSIDialogueCatalog.Current.DefaultDuration(DialogueEntryType.Tooltip, kind));
+
+    /// <summary>Clears the current tooltip now (the ambient prompt, if any, comes back).</summary>
+    public void ClearTooltip()
+    {
+        tooltipText = null;
+        Refresh();
+    }
+
+    /// <summary>Requests the ambient prompt; shown whenever no timed tooltip is up.</summary>
+    public void ShowPrompt(string message) => ShowPrompt(message, null);
+
+    public void ShowPrompt(string message, Vector3? cameraOffset)
+    {
+        if (string.IsNullOrEmpty(message)) return;
+        ambientPromptMessage = message;
+        promptOffset = cameraOffset;
+        Refresh();
+    }
+
+    /// <summary>Withdraws the ambient prompt. Never affects a timed tooltip.</summary>
+    public void HidePrompt()
+    {
+        ambientPromptMessage = null;
+        promptOffset = null;
+        Refresh();
+    }
+
+    private void Update()
+    {
+        if (tooltipText == null) return;
+        // Preserve readable time while a modal or solid geometry withholds this latest-wins message.
+        if (IsPlacementDeferred || (canvasGroup != null && canvasGroup.alpha <= .001f)) return;
+        tooltipRemaining -= Time.deltaTime;
+        if (countdownBar != null) countdownBar.SetProgress(Mathf.Clamp01(tooltipRemaining / tooltipDuration));
+        if (tooltipRemaining <= 0f)
         {
-            // State-driven always wins, and drains completely before anything ambient
-            // is considered.
-            if (pending.Count > 0)
-            {
-                var (message, duration) = pending.Dequeue();
-                SetLabel(message);
-                yield return Fade(CurrentAlpha(), 1f, fadeSeconds);
-                yield return new WaitForSeconds(duration);
-                yield return Fade(CurrentAlpha(), 0f, fadeSeconds);
-                continue;
-            }
-
-            // Nothing state-driven waiting, so the ambient prompt may have the display
-            // back - but only until the next state-driven message arrives.
-            if (ambientPromptMessage != null)
-            {
-                string showing = ambientPromptMessage;
-                SetLabel(showing);
-                yield return Fade(CurrentAlpha(), 1f, fadeSeconds);
-
-                while (ambientPromptMessage == showing && pending.Count == 0)
-                {
-                    yield return null;
-                }
-
-                // Preempted by a state-driven message: clear the display for it. If the
-                // prompt merely changed or was withdrawn, loop round and re-evaluate
-                // without a redundant fade.
-                if (pending.Count > 0)
-                {
-                    yield return Fade(CurrentAlpha(), 0f, fadeSeconds);
-                }
-                continue;
-            }
-
-            // Nothing to show at all.
-            if (CurrentAlpha() > 0f)
-            {
-                yield return Fade(CurrentAlpha(), 0f, fadeSeconds);
-            }
-
-            // Re-check rather than exiting blind: a message may have been posted during
-            // that fade, and dropping it here would reintroduce the lost-message bug
-            // this class exists to prevent.
-            if (pending.Count == 0 && ambientPromptMessage == null)
-            {
-                driveRoutine = null;
-                yield break;
-            }
+            tooltipText = null;
+            Refresh();
         }
     }
 
-    private void SetLabel(string message)
+    // Single owner of the label: tooltip > ambient prompt > nothing.
+    private void Refresh()
     {
-        if (label != null)
+        if (!awoken) return;
+        string wanted = tooltipText ?? ambientPromptMessage;
+        bool timed = tooltipText != null;
+        // Context-specific offsets remain desired poses, validated by the shared solver.
+        if (follow != null) follow.LocalOffset = !timed && ambientPromptMessage != null && promptOffset.HasValue
+            ? promptOffset.Value : authoredOffset;
+        if (follow != null && follow.SharedLayout)
+            follow.PlacementPriority = timed ? PlayerUIGate.ProceduralFeedbackPriority : PlayerUIGate.AmbientPriority;
+        if (countdownBar != null)
         {
-            label.text = message;
+            countdownBar.SetVisible(timed);
+            if (timed) countdownBar.SetProgress(Mathf.Clamp01(tooltipRemaining / tooltipDuration));
         }
+        if (wanted == null)
+        {
+            displayed = null;
+            FadeTo(0f);
+            return;
+        }
+        if (wanted != displayed)
+        {
+            displayed = wanted;
+            if (label != null)
+            {
+                label.text = EvidenceDisplay.Text(wanted);
+                // Grows downward only, away from the dialogue panel above it.
+                dialogueLayout.Fit();
+            }
+        }
+        FadeTo(1f);
     }
 
-    private float CurrentAlpha() => canvasGroup != null ? canvasGroup.alpha : 0f;
-
-    private IEnumerator Fade(float from, float to, float seconds)
+    private void FadeTo(float target)
     {
-        if (canvasGroup == null)
-        {
-            yield break;
-        }
+        if (canvasGroup == null) return;
+        if (!isActiveAndEnabled) { canvasGroup.alpha = target; return; }
+        if (fadeRoutine != null) StopCoroutine(fadeRoutine);
+        fadeRoutine = StartCoroutine(Fade(target, DialogueTimingSettings.Current.fadeSeconds));
+    }
 
-        if (seconds <= 0f)
+    private IEnumerator Fade(float to, float seconds)
+    {
+        float from = canvasGroup.alpha;
+        if (seconds <= 0f || Mathf.Approximately(from, to))
         {
             canvasGroup.alpha = to;
+            fadeRoutine = null;
             yield break;
         }
-
         float t = 0f;
         while (t < seconds)
         {
@@ -212,5 +209,6 @@ public class NotificationUI : MonoBehaviour
             yield return null;
         }
         canvasGroup.alpha = to;
+        fadeRoutine = null;
     }
 }

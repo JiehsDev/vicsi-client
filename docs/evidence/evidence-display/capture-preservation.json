@@ -1,0 +1,40 @@
+{
+    "files":  [
+                  {
+                      "freshCapture":  "docs\\evidence\\evidence-display\\captures\\original-paths\\bottle-on-scene\\upload-wire.json",
+                      "sha256":  "7350625595A484880F0D218725EB256D848E7593DC4A16DD8CE4B113B81BD4E3",
+                      "source":  "docs/evidence/bottle-on-scene/upload-wire.json"
+                  },
+                  {
+                      "freshCapture":  "docs\\evidence\\evidence-display\\captures\\original-paths\\relationship-review\\upload-wire.json",
+                      "sha256":  "2102CCD92BD6ED0FFA8BE0D9E121CC7F5C75FC8FBBD532418CE93ABDDAB956EE",
+                      "source":  "docs/evidence/relationship-review/upload-wire.json"
+                  },
+                  {
+                      "freshCapture":  "docs\\evidence\\evidence-display\\captures\\original-paths\\custody-pass\\upload-wire.json",
+                      "sha256":  "0758AED7CCDD435A4C09A058129AB56A432D9AE153815D18242E297B9CB07B59",
+                      "source":  "docs/evidence/custody-pass/upload-wire.json"
+                  },
+                  {
+                      "freshCapture":  "docs\\evidence\\evidence-display\\captures\\original-paths\\custody-pass\\box-contents.png",
+                      "sha256":  "BC4AFD0D573AC3A6F4C21B8C545E235E1020982144C58AD327D569E91FFC6E83",
+                      "source":  "docs/evidence/custody-pass/box-contents.png"
+                  },
+                  {
+                      "freshCapture":  "docs\\evidence\\evidence-display\\captures\\original-paths\\session-simplification\\current-unity-upload.json",
+                      "sha256":  "00DC0119B8BD4344B4213CD12C017B2EA60547B9F474C233F9F3303A97F16E63",
+                      "source":  "docs/evidence/session-simplification/current-unity-upload.json"
+                  },
+                  {
+                      "freshCapture":  "docs\\evidence\\evidence-display\\captures\\original-paths\\session-simplification\\frozen-questions.json",
+                      "sha256":  "B946161CF6DF8782582AE48C6396164E943FBC5DF3F6C0AD12B30827DE7C1FF8",
+                      "source":  "docs/evidence/session-simplification/frozen-questions.json"
+                  },
+                  {
+                      "freshCapture":  "docs\\evidence\\evidence-display\\captures\\original-paths\\session-simplification\\unity-parity-cases.json",
+                      "sha256":  "5D9D1AEFEA77D9561291510378E8405E6A6E2F423860FDFAABE118F5EDF70358",
+                      "source":  "docs/evidence/session-simplification/unity-parity-cases.json"
+                  }
+              ],
+    "note":  "Existing diagnostic suites refreshed their shared local test-capture paths. Fresh captures are copied here for this task. These are isolated fixtures; no historical database rows or production data were written."
+}

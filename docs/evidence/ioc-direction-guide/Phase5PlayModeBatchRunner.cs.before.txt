@@ -1,0 +1,335 @@
+// Assets/_Project/Editor/Phase5PlayModeBatchRunner.cs
+#if UNITY_EDITOR
+using System;
+using System.IO;
+using System.Reflection;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+
+/// <summary>
+/// Command-line runner for the project's existing coroutine-based Play-mode diagnostics.
+/// Each invocation runs one suite in a fresh Unity process, writes its report to Temp,
+/// exits Play mode, and quits. This prevents a large regression sweep from accumulating
+/// state or memory across the scene-dependent diagnostic components.
+/// </summary>
+[InitializeOnLoad]
+public static class Phase5PlayModeBatchRunner
+{
+    private const string ScenePath = "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity";
+    private static string suiteName;
+    private static string outputPath;
+    private static Component suite;
+    private static bool started;
+    private static bool quit;
+    private static double deadline;
+    private static double invokeAfter;
+    private const string PendingKey = "ViCSI.Phase5.Pending";
+    private const string RequestPath = "Temp/phase5-request.json";
+
+    [Serializable]
+    private class Request { public string suite; public string output; }
+    [Serializable] private class Batch { public int batch; public string[] suites; }
+    [Serializable] private class BatchPlan { public Batch[] batches; }
+
+    static Phase5PlayModeBatchRunner()
+    {
+        EditorApplication.update += PollFileRequest;
+        EditorApplication.playModeStateChanged += RestoreEditorSettings;
+        if (SessionState.GetBool(PendingKey + ".exitRequested", false))
+        {
+            EditorApplication.delayCall += () =>
+            {
+                SessionState.SetBool(PendingKey + ".exitRequested", false);
+                EditorApplication.Exit(SessionState.GetInt(PendingKey + ".exitCode", 2));
+            };
+        }
+        if (!SessionState.GetBool(PendingKey, false)) return;
+        suiteName = SessionState.GetString(PendingKey + ".suite", "");
+        outputPath = SessionState.GetString(PendingKey + ".output", "");
+        quit = SessionState.GetBool(PendingKey + ".quit", false);
+        deadline = EditorApplication.timeSinceStartup + 240;
+        EditorApplication.playModeStateChanged += HandlePlayModeState;
+        EditorApplication.update += Poll;
+    }
+
+    private static double nextRequestPoll;
+    private static void PollFileRequest()
+    {
+        if (EditorApplication.timeSinceStartup < nextRequestPoll) return;
+        nextRequestPoll = EditorApplication.timeSinceStartup + 1;
+        string nextSuite = SessionState.GetString(PendingKey + ".nextSuite", "");
+        if (!string.IsNullOrEmpty(nextSuite) && !EditorApplication.isPlayingOrWillChangePlaymode
+            && !EditorApplication.isCompiling && !EditorApplication.isUpdating)
+        {
+            SessionState.SetString(PendingKey + ".nextSuite", "");
+            Begin(nextSuite, SessionState.GetString(PendingKey + ".nextOutput", ""), true);
+            return;
+        }
+        const string path = "Tools/phase5-file-request.json";
+        if (!File.Exists(path) || EditorApplication.isCompiling || EditorApplication.isUpdating
+            || EditorApplication.isPlayingOrWillChangePlaymode || SessionState.GetBool(PendingKey, false)) return;
+        var request = JsonUtility.FromJson<Request>(File.ReadAllText(path));
+        foreach (var scene in EnumerableScenes())
+            if (scene.isDirty) return;
+        File.Delete(path);
+        Begin(request.suite, request.output, false);
+    }
+
+    private static void RestoreEditorSettings(PlayModeStateChange state)
+    {
+        if (state != PlayModeStateChange.EnteredEditMode || !SessionState.GetBool(PendingKey + ".xrRestore", false)) return;
+        var settings = UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget.XRGeneralSettingsForBuildTarget(BuildTargetGroup.Standalone);
+        if (settings != null) settings.InitManagerOnStart = SessionState.GetBool(PendingKey + ".xrOriginal", true);
+        SessionState.SetBool(PendingKey + ".xrRestore", false);
+    }
+
+    [MenuItem("Tools/ViCSI/Phase 5/Run Requested Suite")]
+    public static void RunRequestedSuite()
+    {
+        if (EditorApplication.isPlayingOrWillChangePlaymode || EditorApplication.isCompiling)
+            throw new InvalidOperationException("Phase 5 requires an idle Editor outside Play mode.");
+        foreach (var scene in EnumerableScenes())
+            if (scene.isDirty) throw new InvalidOperationException("Save unsaved scene changes before Phase 5.");
+        var request = JsonUtility.FromJson<Request>(File.ReadAllText(RequestPath));
+        Begin(request.suite, request.output, false);
+    }
+
+    private static System.Collections.Generic.IEnumerable<UnityEngine.SceneManagement.Scene> EnumerableScenes()
+    {
+        for (int i = 0; i < UnityEngine.SceneManagement.SceneManager.sceneCount; i++)
+            yield return UnityEngine.SceneManagement.SceneManager.GetSceneAt(i);
+    }
+
+    public static void Run()
+    {
+        suiteName = ReadArgument("-phase5Suite");
+        outputPath = ReadArgument("-phase5Output");
+        if (string.IsNullOrWhiteSpace(suiteName) || string.IsNullOrWhiteSpace(outputPath))
+        {
+            Debug.LogError("[Phase5PlayModeBatchRunner] Supply -phase5Suite <type> and -phase5Output <path>.");
+            EditorApplication.Exit(2);
+            return;
+        }
+
+        SessionState.SetInt(PendingKey + ".processSuites", 0);
+        Begin(suiteName, outputPath, true);
+    }
+
+    private static void Begin(string name, string output, bool quitWhenFinished)
+    {
+        suiteName = name;
+        outputPath = output;
+        quit = quitWhenFinished;
+        if (quit) SessionState.SetInt(PendingKey + ".processSuites", SessionState.GetInt(PendingKey + ".processSuites", 0) + 1);
+        started = false;
+        suite = null;
+        SessionState.SetBool(PendingKey, true);
+        SessionState.SetString(PendingKey + ".suite", suiteName);
+        SessionState.SetString(PendingKey + ".output", outputPath);
+        SessionState.SetBool(PendingKey + ".quit", quit);
+        deadline = EditorApplication.timeSinceStartup + 240;
+        EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Single);
+        var xr = UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget.XRGeneralSettingsForBuildTarget(BuildTargetGroup.Standalone);
+        if (xr != null)
+        {
+            SessionState.SetBool(PendingKey + ".xrOriginal", xr.InitManagerOnStart);
+            SessionState.SetBool(PendingKey + ".xrRestore", true);
+            xr.InitManagerOnStart = false; // Offline Editor diagnostics do not initialize unavailable headset hardware.
+        }
+        EditorApplication.playModeStateChanged += HandlePlayModeState;
+        EditorApplication.update += Poll;
+        EditorApplication.isPlaying = true;
+    }
+
+    private static void HandlePlayModeState(PlayModeStateChange state)
+    {
+        if (state != PlayModeStateChange.EnteredPlayMode || started)
+        {
+            return;
+        }
+
+        started = true;
+        Application.runInBackground = true;
+        invokeAfter = EditorApplication.timeSinceStartup + 1;
+        EditorApplication.QueuePlayerLoopUpdate();
+    }
+
+    private static void InvokeSuite()
+    {
+        if (suiteName != nameof(FirstResponderTurnoverTest) && suiteName != nameof(ScenarioPhaseFoundationTest)
+            && suiteName != nameof(VendorFollowupTest) && suiteName != nameof(ReasoningCheckpointTest)
+            && suiteName != nameof(NarrativeRoleFlowTest) && SceneTurnover.IsGated)
+        {
+            if (SceneTurnover.IsPending) SceneTurnover.Controller.CompleteWithoutDialogue();
+            var assessment = UnityEngine.Object.FindAnyObjectByType<IOCAssessmentInteraction>();
+            if (assessment != null)
+                foreach (var observation in assessment.Definition.observations)
+                    SceneTurnover.RecordIOCObservation(observation.observationId);
+            SceneTurnover.CompleteIOCAssessment();
+            SceneTurnover.TryAdvance(ScenarioPhase.SOCORequested);
+            SceneTurnover.TryAdvance(ScenarioPhase.SOCOTurnover);
+            SceneTurnover.TryAdvance(ScenarioPhase.SOCOInvestigation);
+        }
+        var type = FindType(suiteName);
+        if (type == null || !typeof(MonoBehaviour).IsAssignableFrom(type))
+        {
+            Finish($"FAIL: Could not locate MonoBehaviour suite '{suiteName}'.", 2);
+            return;
+        }
+
+        AutomatedTestSandbox.Activate("Phase5_" + suiteName);
+        suite = UnityEngine.Object.FindAnyObjectByType(type) as Component;
+        if (suite == null)
+        {
+            var host = new GameObject("Phase5_" + suiteName);
+            suite = host.AddComponent(type);
+        }
+        var method = type.GetMethod("RunAllTests", BindingFlags.Instance | BindingFlags.Public)
+            ?? type.GetMethod("RunAndLog", BindingFlags.Instance | BindingFlags.Public)
+            ?? type.GetMethod("RunFullFlow", BindingFlags.Instance | BindingFlags.Public);
+        if (method == null)
+        {
+            Finish($"FAIL: {suiteName} has no public RunAllTests() or RunAndLog() method.", 2);
+            return;
+        }
+
+        try
+        {
+            var parameters = method.GetParameters();
+            var arguments = new object[parameters.Length];
+            for (int i = 0; i < parameters.Length; i++)
+            {
+                if (type == typeof(MeasurementProcedureTest) && parameters[i].ParameterType == typeof(MeasurementProcedureTest.Mode))
+                {
+                    arguments[i] = Enum.Parse(typeof(MeasurementProcedureTest.Mode), ReadArgument("-phase5MeasurementMode") ?? "Normal");
+                    continue;
+                }
+                if (!parameters[i].HasDefaultValue)
+                    throw new InvalidOperationException("Suite entry point requires a non-optional argument: " + parameters[i].Name);
+                arguments[i] = parameters[i].DefaultValue;
+            }
+            var result = method.Invoke(suite, arguments);
+            if (result is string text) Finish(text, text.Contains("=== PASS") ? 0 : 1);
+        }
+        catch (Exception ex) { Finish("FAIL: " + ex, 2); }
+    }
+
+    private static void Poll()
+    {
+        if (EditorApplication.isPlaying) EditorApplication.QueuePlayerLoopUpdate();
+        if (EditorApplication.timeSinceStartup > deadline)
+        {
+            Finish("FAIL: Suite timed out after 240 seconds.", 2);
+            return;
+        }
+        if (started && suite == null && EditorApplication.isPlaying && EditorApplication.timeSinceStartup >= invokeAfter)
+            InvokeSuite();
+        if (!SessionState.GetBool(PendingKey, false)) return;
+        if (!started || suite == null)
+        {
+            return;
+        }
+
+        var type = suite.GetType();
+        var done = type.GetProperty("IsDone", BindingFlags.Instance | BindingFlags.Public);
+        var report = type.GetProperty("Report", BindingFlags.Instance | BindingFlags.Public);
+        if (done == null || report == null)
+        {
+            Finish($"FAIL: {suiteName} must expose public IsDone and Report properties.", 2);
+            return;
+        }
+
+        if (!(done.GetValue(suite) is bool isDone) || !isDone)
+        {
+            return;
+        }
+
+        string text = report.GetValue(suite) as string ?? "FAIL: Suite completed without a report.";
+        Finish(text, text.Contains("=== PASS") ? 0 : 1);
+    }
+
+    private static void Finish(string report, int exitCode)
+    {
+        try
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(outputPath) ?? "Temp");
+            File.WriteAllText(outputPath, report);
+            Debug.Log(report);
+        }
+        finally
+        {
+            SessionState.SetBool(PendingKey, false);
+            bool hasNext = quit && QueueNextSuite();
+            SessionState.SetBool(PendingKey + ".exitRequested", quit && !hasNext);
+            SessionState.SetInt(PendingKey + ".exitCode", exitCode);
+            EditorApplication.playModeStateChanged -= HandlePlayModeState;
+            EditorApplication.update -= Poll;
+            if (EditorApplication.isPlaying)
+            {
+                EditorApplication.isPlaying = false;
+            }
+            if (quit && !hasNext) EditorApplication.delayCall += () => EditorApplication.Exit(exitCode);
+        }
+    }
+
+    private static bool QueueNextSuite()
+    {
+        // Low-memory integration runs may require one suite per fresh Unity process.
+        if (Array.IndexOf(Environment.GetCommandLineArgs(), "-phase5SingleSuite") >= 0) return false;
+        // At most two suites per fresh process; each still exits Play mode and
+        // reloads the scene/domain. Keep reports outside Unity's disposable Temp.
+        if (SessionState.GetInt(PendingKey + ".processSuites", 0) >= 2) return false;
+        string folder = Path.GetDirectoryName(outputPath);
+        string name = Path.GetFileName(folder);
+        int batchId = 0;
+        if (name.StartsWith("batch")) int.TryParse(name.Substring(5), out batchId);
+        string[] names = batchId == 1
+            ? new[] { "FirstResponderTurnoverTest", "DialogueHistoryTest", "StoryContentTest", "ObjectiveStateManagerTest" }
+            : null;
+        if (names == null && File.Exists("Tools/phase5-batches.json"))
+        {
+            var plan = JsonUtility.FromJson<BatchPlan>("{\"batches\":" + File.ReadAllText("Tools/phase5-batches.json") + "}");
+            foreach (var batch in plan.batches)
+                if (batch.batch == batchId || Array.IndexOf(batch.suites, suiteName) >= 0) names = batch.suites;
+        }
+        if (names == null) return false;
+        int index = Array.IndexOf(names, suiteName);
+        for (int i = index + 1; index >= 0 && i < names.Length; i++)
+        {
+            string output = Path.Combine(folder, names[i] + ".txt");
+            if (File.Exists(output)) continue;
+            SessionState.SetString(PendingKey + ".nextSuite", names[i]);
+            SessionState.SetString(PendingKey + ".nextOutput", output);
+            return true;
+        }
+        return false;
+    }
+
+    private static string ReadArgument(string key)
+    {
+        var args = Environment.GetCommandLineArgs();
+        for (int i = 0; i < args.Length - 1; i++)
+        {
+            if (args[i] == key)
+            {
+                return args[i + 1];
+            }
+        }
+        return null;
+    }
+
+    private static Type FindType(string simpleName)
+    {
+        foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
+        {
+            var type = assembly.GetType(simpleName);
+            if (type != null)
+            {
+                return type;
+            }
+        }
+        return null;
+    }
+}
+#endif

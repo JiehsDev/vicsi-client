@@ -1,0 +1,509 @@
+{
+    "payloadVersion": 1,
+    "sessionId": "18245357-97c2-4cd6-b0da-d04c751b75ff",
+    "studentId": "",
+    "classId": "",
+    "isTestSession": false,
+    "scenarioId": "CSI-ENVIRONMENT-001",
+    "scenarioVersion": "1.1.0",
+    "scoringRulesVersion": "1.7.0",
+    "groundTruthVersion": "1.2.0",
+    "clientVersion": "0.1.0",
+    "startedAtUtc": "2026-10-13T04:17:51.9119761Z",
+    "completedAtUtc": "",
+    "durationSeconds": 46.684,
+    "selectedConclusionId": "",
+    "resolvedEndingId": "",
+    "hasClientReportedScores": true,
+    "clientReportedScores": {
+        "relationshipsCompletedCorrect": 0,
+        "relationshipsCompletedIncorrect": 0,
+        "objectivesCompleted": 3,
+        "objectivesFailed": 0,
+        "proceduralViolationCount": 3
+    },
+    "evidenceResults": [
+        {
+            "evidenceId": "EVD-014",
+            "finalStatus": "PhotographedRaw",
+            "swabbingDone": false,
+            "fingerprintingDone": false,
+            "isFlipped": false,
+            "fingerprintLabStatus": "NotSent",
+            "tentNumber": 0,
+            "tentLetter": ""
+        },
+        {
+            "evidenceId": "EVD-018",
+            "finalStatus": "PhotographedRaw",
+            "swabbingDone": false,
+            "fingerprintingDone": false,
+            "isFlipped": false,
+            "fingerprintLabStatus": "NotSent",
+            "tentNumber": 0,
+            "tentLetter": ""
+        },
+        {
+            "evidenceId": "EVD-015",
+            "finalStatus": "PhotographedRaw",
+            "swabbingDone": false,
+            "fingerprintingDone": false,
+            "isFlipped": false,
+            "fingerprintLabStatus": "NotSent",
+            "tentNumber": 0,
+            "tentLetter": ""
+        },
+        {
+            "evidenceId": "BODY-A",
+            "finalStatus": "Logged",
+            "swabbingDone": false,
+            "fingerprintingDone": false,
+            "isFlipped": false,
+            "fingerprintLabStatus": "NotSent",
+            "tentNumber": 0,
+            "tentLetter": "A"
+        }
+    ],
+    "reportLineResults": [
+        {
+            "evidenceId": "BODY-A",
+            "lineId": "body-a-location"
+        },
+        {
+            "evidenceId": "BODY-A",
+            "lineId": "body-a-position"
+        },
+        {
+            "evidenceId": "BODY-A",
+            "lineId": "body-a-wound-sharp-object"
+        }
+    ],
+    "proceduralViolations": [
+        {
+            "eventType": "EvidenceTransitionBlocked",
+            "targetId": "BODY-A",
+            "timestampMs": 43693,
+            "detail": "attempted=ChalkMarked current=Found"
+        },
+        {
+            "eventType": "EvidenceTransitionBlocked",
+            "targetId": "BODY-A",
+            "timestampMs": 43702,
+            "detail": "attempted=Marked current=PhotographedRaw"
+        },
+        {
+            "eventType": "EvidenceTransitionBlocked",
+            "targetId": "BODY-A",
+            "timestampMs": 43704,
+            "detail": "attempted=PhotographedFinal current=PhotographedRaw"
+        }
+    ],
+    "relationshipResults": [
+        {
+            "relationshipId": "REL-paul-timeline-contradiction",
+            "sourceId": "statement_paul_timeline",
+            "targetId": "statement_vendor_paul_3am",
+            "relationshipType": "Contradicts",
+            "state": "Locked",
+            "wasEverSelected": false
+        },
+        {
+            "relationshipId": "REL-bottle-supports-brother",
+            "sourceId": "EVD-018",
+            "targetId": "statement_brother_drinking",
+            "relationshipType": "Supports",
+            "state": "Locked",
+            "wasEverSelected": false
+        },
+        {
+            "relationshipId": "REL-knife-consistent-wound",
+            "sourceId": "EVD-014",
+            "targetId": "BODY-A",
+            "relationshipType": "ConsistentWith",
+            "state": "Locked",
+            "wasEverSelected": false
+        },
+        {
+            "relationshipId": "REL-spatter-consistent-reconstruction",
+            "sourceId": "EVD-015",
+            "targetId": "reconstruction_attack_sequence",
+            "relationshipType": "ConsistentWith",
+            "state": "Locked",
+            "wasEverSelected": false
+        },
+        {
+            "relationshipId": "REL-paul-print-handled-knife",
+            "sourceId": "EVD-014",
+            "targetId": "statement_paul_knife_contact",
+            "relationshipType": "Supports",
+            "state": "Locked",
+            "wasEverSelected": false
+        },
+        {
+            "relationshipId": "REL-peter-departure-supported",
+            "sourceId": "statement_peter_timeline",
+            "targetId": "statement_vendor_observation",
+            "relationshipType": "Corroborates",
+            "state": "Available",
+            "wasEverSelected": false
+        }
+    ],
+    "hypothesisResults": [],
+    "deductionAssessmentEvents": [
+        {
+            "sequenceNumber": 12,
+            "timestampMs": 31950,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-01-PETER",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "31.951"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "EVIDENCE_CAUTION"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 18,
+            "timestampMs": 31958,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-02-SCENE",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "31.959"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "SCENE_INTERPRETATION"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 104,
+            "timestampMs": 43840,
+            "eventType": "BodyDocumentationRecorded",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "procedureId",
+                    "value": "body-documentation"
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 106,
+            "timestampMs": 46680,
+            "eventType": "BodyPreparedForRemoval",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "procedureId",
+                    "value": "body-removal"
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                },
+                {
+                    "key": "steps",
+                    "value": "identification-tagging,wrapping,cadaver-bag,medico-legal-transport"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 107,
+            "timestampMs": 46684,
+            "eventType": "BodyRemoved",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "procedureId",
+                    "value": "body-removal"
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                },
+                {
+                    "key": "destination",
+                    "value": "medico-legal-examination"
+                }
+            ]
+        }
+    ],
+    "hasDeductionAssessment": true,
+    "deductionAssessment": {
+        "scoringRulesVersion": "1.7.0",
+        "status": "incomplete",
+        "hasFinalScore": false,
+        "totalScore": 0.0,
+        "reasoningCheckpoints": 0.0,
+        "deductionRelationships": 0.0,
+        "finalConclusion": 0.0,
+        "reasoningComponent": 0.0,
+        "relationshipComponent": 0.0,
+        "conclusionComponent": 0.0,
+        "relationshipEarned": 0.0,
+        "relationshipMaximum": 6.0,
+        "checkpointEarned": 0,
+        "checkpointMaximum": 24,
+        "answeredCount": 0,
+        "eligibleUnansweredCount": 0,
+        "undiscoveredCount": 0,
+        "unsupportedRelationships": 0,
+        "reviewReasons": [
+            "Conclusion-time assessment snapshot missing."
+        ]
+    },
+    "confirmedFindingIds": [
+        "FIND-BODY-SHARP-WOUND"
+    ],
+    "unlockedInsightIds": [],
+    "hasScenePhotography": true,
+    "scenePhotography": {
+        "requiredPointCount": 7,
+        "completedPointCount": 7,
+        "coveragePercent": 100.0,
+        "correctSequenceCount": 7,
+        "sequenceAccuracyPercent": 100.0,
+        "wrongOrderAttempts": 0,
+        "wrongPositionAttempts": 0,
+        "wrongAngleAttempts": 0,
+        "totalAttempts": 7,
+        "procedureAccuracyPercent": 100.0,
+        "isComplete": true,
+        "completionSeconds": 0.0,
+        "scorePercent": 100.0
+    },
+    "hasMeasurement": true,
+    "measurement": {
+        "requirementCount": 4,
+        "completedCount": 4,
+        "accurateCount": 4,
+        "lateCount": 0,
+        "completionPercent": 100.0,
+        "accuracyPercent": 100.0,
+        "timingPercent": 100.0,
+        "scorePercent": 100.0,
+        "items": [
+            {
+                "requirementId": "MEAS-BODY-A",
+                "evidenceId": "BODY-A",
+                "referenceAId": "REF-BODYA-1",
+                "referenceBId": "REF-BODYA-2",
+                "expectedDistanceA": 2.4489998817443849,
+                "expectedDistanceB": 1.13100004196167,
+                "measuredDistanceA": 2.4494106769561769,
+                "measuredDistanceB": 1.1310300827026368,
+                "tolerance": 0.10000000149011612,
+                "completedA": true,
+                "completedB": true,
+                "completedBoth": true,
+                "withinToleranceA": true,
+                "withinToleranceB": true,
+                "late": false,
+                "isComplete": true,
+                "measuredAtSecondsA": 0.019999992102384568,
+                "measuredAtSecondsB": 0.019999992102384568,
+                "completedAtSeconds": 0.019999992102384568,
+                "completionScore": 1.0,
+                "accuracyScore": 1.0,
+                "timingScore": 1.0,
+                "scorePercent": 100.0
+            },
+            {
+                "requirementId": "MEAS-EVD-014",
+                "evidenceId": "EVD-014",
+                "referenceAId": "REF-KNIFE-1",
+                "referenceBId": "REF-KNIFE-CAB",
+                "expectedDistanceA": 1.340999960899353,
+                "expectedDistanceB": 1.0789999961853028,
+                "measuredDistanceA": 1.3409996032714844,
+                "measuredDistanceB": 1.0789995193481446,
+                "tolerance": 0.10000000149011612,
+                "completedA": true,
+                "completedB": true,
+                "completedBoth": true,
+                "withinToleranceA": true,
+                "withinToleranceB": true,
+                "late": false,
+                "isComplete": true,
+                "measuredAtSecondsA": 0.019999992102384568,
+                "measuredAtSecondsB": 0.019999992102384568,
+                "completedAtSeconds": 0.019999992102384568,
+                "completionScore": 1.0,
+                "accuracyScore": 1.0,
+                "timingScore": 1.0,
+                "scorePercent": 100.0
+            },
+            {
+                "requirementId": "MEAS-EVD-015",
+                "evidenceId": "EVD-015",
+                "referenceAId": "REF-SPATTER-CAB",
+                "referenceBId": "REF-SPATTER-2",
+                "expectedDistanceA": 1.3819999694824219,
+                "expectedDistanceB": 2.2639999389648439,
+                "measuredDistanceA": 1.3819999694824219,
+                "measuredDistanceB": 2.264000177383423,
+                "tolerance": 0.10000000149011612,
+                "completedA": true,
+                "completedB": true,
+                "completedBoth": true,
+                "withinToleranceA": true,
+                "withinToleranceB": true,
+                "late": false,
+                "isComplete": true,
+                "measuredAtSecondsA": 0.019999992102384568,
+                "measuredAtSecondsB": 0.019999992102384568,
+                "completedAtSeconds": 0.019999992102384568,
+                "completionScore": 1.0,
+                "accuracyScore": 1.0,
+                "timingScore": 1.0,
+                "scorePercent": 100.0
+            },
+            {
+                "requirementId": "MEAS-EVD-018",
+                "evidenceId": "EVD-018",
+                "referenceAId": "REF-BOTTLE-1",
+                "referenceBId": "REF-BOTTLE-2",
+                "expectedDistanceA": 0.3529999852180481,
+                "expectedDistanceB": 0.4050000011920929,
+                "measuredDistanceA": 0.3530001640319824,
+                "measuredDistanceB": 0.4050006866455078,
+                "tolerance": 0.10000000149011612,
+                "completedA": true,
+                "completedB": true,
+                "completedBoth": true,
+                "withinToleranceA": true,
+                "withinToleranceB": true,
+                "late": false,
+                "isComplete": true,
+                "measuredAtSecondsA": 0.019999992102384568,
+                "measuredAtSecondsB": 0.019999992102384568,
+                "completedAtSeconds": 0.019999992102384568,
+                "completionScore": 1.0,
+                "accuracyScore": 1.0,
+                "timingScore": 1.0,
+                "scorePercent": 100.0
+            }
+        ],
+        "fixedSidesRequired": 8,
+        "fixedSidesCompleted": 8,
+        "pairRequiredCount": 6,
+        "pairCompletedCount": 6,
+        "pairLateCount": 0,
+        "sceneMeasurementsComplete": true,
+        "pairs": [
+            {
+                "pairKey": "BODY-A|EVD-014",
+                "evidenceA": "BODY-A",
+                "evidenceB": "EVD-014",
+                "isComplete": true,
+                "measuredDistance": 1.2226202487945557,
+                "expectedDistance": 1.2226202487945557,
+                "tolerance": 0.10000000149011612,
+                "withinTolerance": true,
+                "late": false,
+                "missed": false,
+                "measuredAtSeconds": 0.019999992102384568,
+                "order": 1
+            },
+            {
+                "pairKey": "BODY-A|EVD-015",
+                "evidenceA": "BODY-A",
+                "evidenceB": "EVD-015",
+                "isComplete": true,
+                "measuredDistance": 0.2672257125377655,
+                "expectedDistance": 0.2672257125377655,
+                "tolerance": 0.10000000149011612,
+                "withinTolerance": true,
+                "late": false,
+                "missed": false,
+                "measuredAtSeconds": 0.019999992102384568,
+                "order": 2
+            },
+            {
+                "pairKey": "BODY-A|EVD-018",
+                "evidenceA": "BODY-A",
+                "evidenceB": "EVD-018",
+                "isComplete": true,
+                "measuredDistance": 1.4271317720413209,
+                "expectedDistance": 1.4271317720413209,
+                "tolerance": 0.10000000149011612,
+                "withinTolerance": true,
+                "late": false,
+                "missed": false,
+                "measuredAtSeconds": 0.019999992102384568,
+                "order": 3
+            },
+            {
+                "pairKey": "EVD-014|EVD-015",
+                "evidenceA": "EVD-014",
+                "evidenceB": "EVD-015",
+                "isComplete": true,
+                "measuredDistance": 0.9942930936813355,
+                "expectedDistance": 0.9942930936813355,
+                "tolerance": 0.10000000149011612,
+                "withinTolerance": true,
+                "late": false,
+                "missed": false,
+                "measuredAtSeconds": 0.019999992102384568,
+                "order": 4
+            },
+            {
+                "pairKey": "EVD-014|EVD-018",
+                "evidenceA": "EVD-014",
+                "evidenceB": "EVD-018",
+                "isComplete": true,
+                "measuredDistance": 2.463627576828003,
+                "expectedDistance": 2.463627576828003,
+                "tolerance": 0.10000000149011612,
+                "withinTolerance": true,
+                "late": false,
+                "missed": false,
+                "measuredAtSeconds": 0.019999992102384568,
+                "order": 5
+            },
+            {
+                "pairKey": "EVD-015|EVD-018",
+                "evidenceA": "EVD-015",
+                "evidenceB": "EVD-018",
+                "isComplete": true,
+                "measuredDistance": 1.6861910820007325,
+                "expectedDistance": 1.6861910820007325,
+                "tolerance": 0.10000000149011612,
+                "withinTolerance": true,
+                "late": false,
+                "missed": false,
+                "measuredAtSeconds": 0.019999992102384568,
+                "order": 6
+            }
+        ]
+    },
+    "includesRawEventLog": false,
+    "orderedEvents": []
+}

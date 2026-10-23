@@ -1,0 +1,33 @@
+{
+  "changedEntryIds": [
+    "ioc-assessment-guidance",
+    "ioc-observation-bottle",
+    "ioc-observation-survey"
+  ],
+  "addedEntryIds": [],
+  "removedEntryIds": [],
+  "sceneSha256": "91d5c8c35425cdc32fec5ecb6bbc01ebfb07c368e227d62da5e10fdf12786005",
+  "dialogue": [
+    {
+      "id": "ioc-assessment-guidance",
+      "text": "At the yellow highlight inside the kitchen, face John's body. Press A to Observe. Look only; don't touch surfaces or step on evidence.",
+      "words": 23,
+      "durationSeconds": 14.0,
+      "wordsPerMinute": 98.6
+    },
+    {
+      "id": "ioc-observation-bottle",
+      "text": "There's an empty liquor bottle here. It may relate to the reported drinking, but that needs examination. Observe it without handling it and leave it in place for SOCO.",
+      "words": 29,
+      "durationSeconds": 14.0,
+      "wordsPerMinute": 124.3
+    },
+    {
+      "id": "ioc-observation-survey",
+      "text": "The cordon is intact; John's body appears undisturbed. Limit contact and movement to avoid moving or transferring traces. Gloves don't prevent all contamination. Leave everything in place for SOCO.",
+      "words": 29,
+      "durationSeconds": 18.0,
+      "wordsPerMinute": 96.7
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f8d02f05a0c4340a5ebca0f2d34f71, type: 3}
+  m_Name: Finding_GLOVES-CONSISTENT-WITH-ATTACK
+  m_EditorClassIdentifier: Assembly-CSharp::FindingDefinition
+  findingId: FIND-GLOVES-CONSISTENT-WITH-ATTACK
+  displayName: Gloves Consistent with Contact During the Attack
+  description: The blood distribution on the gloves is consistent with close contact
+    during the incident and may indicate that they were worn while the victim was
+    bleeding.
+  sourceEvidenceId: EVD-019
+  sourceEvidenceReference: {fileID: 0}
+  unlockRequirement:
+    kind: 1
+    operatorType: 0
+    children:
+    - rid: 7267691018064494880
+    - rid: 7267691018064494881
+    requirementType: 0
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    authoringNote: 
+  category: physical
+  references:
+    version: 2
+    RefIds:
+    - rid: 7267691018064494880
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-GLOVES-BLOOD-VICTIM
+        authoringNote: 
+    - rid: 7267691018064494881
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-SPATTER-RECONSTRUCTION
+        authoringNote: 'AUTHORED ASSUMPTION (fictional demo case): this project has
+          no per-injury forensic-matching subsystem, so ''consistent with contact
+          during the attack'' is represented as the combination of (a) the gloves
+          carrying the victim''s blood and (b) the scene reconstruction independently
+          establishing how the attack unfolded, rather than a deeper simulated bloodstain-pattern
+          analysis. Deliberately NOT gated on EvidenceSwabbed alone - see this finding''s
+          own displayName/description.'

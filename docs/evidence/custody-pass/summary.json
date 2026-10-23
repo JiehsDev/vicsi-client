@@ -1,0 +1,56 @@
+﻿{
+    "feature":  "Evidence custody pass",
+    "date":  "2026-10-17",
+    "unity":  [
+                  {
+                      "report":  "final/CustodyPassTest.txt",
+                      "passed":  50,
+                      "failed":  0
+                  },
+                  {
+                      "report":  "final/SceneTestStartTest.txt",
+                      "passed":  143,
+                      "failed":  0
+                  },
+                  {
+                      "report":  "final/SettingsPauseMenuTest.txt",
+                      "passed":  35,
+                      "failed":  0
+                  },
+                  {
+                      "report":  "run2/SOCOCloseoutTest.txt",
+                      "passed":  50,
+                      "failed":  0
+                  },
+                  {
+                      "report":  "run2/EvidenceInventoryTest.txt",
+                      "passed":  29,
+                      "failed":  0
+                  },
+                  {
+                      "report":  "run2/AssessmentUploadServiceTest.txt",
+                      "passed":  33,
+                      "failed":  0
+                  }
+              ],
+    "unityPassed":  340,
+    "unityFailed":  0,
+    "dashboard":  {
+                      "passed":  44,
+                      "scopedESLint":  "passed",
+                      "failed":  0,
+                      "typeScript":  "passed",
+                      "report":  "dashboard-tests.txt",
+                      "actualUnityWireVerified":  true,
+                      "skipped":  0
+                  },
+    "proof":  "editor-proof.json",
+    "boxPreview":  "box-contents.png",
+    "uploadWire":  "upload-wire.json",
+    "manualEditorWiring":  "None",
+    "manualChecks":  [
+                         "Physical Quest controller and comfort acceptance",
+                         "Live Supabase round trip after coordinated client/server release"
+                     ],
+    "noCommitPushDeploy":  true
+}

@@ -1,0 +1,1 @@
+FAIL: Aborted diagnostic: inactive deduction board excluded from test lookup; correcting lookup before retry.

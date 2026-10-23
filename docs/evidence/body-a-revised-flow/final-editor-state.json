@@ -1,0 +1,18 @@
+{
+  "unityVersion": "6000.5.6f1",
+  "buildTarget": "Android",
+  "compiling": false,
+  "compilationFailed": false,
+  "playing": false,
+  "playTransition": false,
+  "scenePath": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+  "sceneDirty": false,
+  "pending": false,
+  "xrRestorePending": false,
+  "standaloneXR": true,
+  "androidXR": true,
+  "bodyActions": 1,
+  "evidenceManagers": 1,
+  "bodyRequiresSwab": false,
+  "bodyRequiresRemoval": true
+}

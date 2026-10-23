@@ -1,0 +1,15 @@
+scene=Assets/_Project/Scenes/Scenarios/CSI_Environment.unity playing=False dirty=False compilationFailed=False
+Dining window floor plant: min=(10.894, 1.200, 7.964) max=(11.991, 2.416, 9.218)
+Living window floor plant: min=(18.462, 1.200, 10.143) max=(19.378, 2.112, 11.140)
+Kitchen corner floor plant: min=(18.603, 1.200, 13.736) max=(19.482, 1.991, 14.562)
+Porch planter: min=(18.515, 1.200, 4.546) max=(19.432, 2.112, 5.543)
+Kitchen counter herb: min=(17.992, 2.117, 14.269) max=(18.271, 2.409, 14.580)
+Dining table greenery: min=(13.349, 1.995, 5.680) max=(13.613, 2.287, 5.981)
+Coffee table books: min=(17.268, 1.568, 9.830) max=(17.583, 1.649, 10.084)
+Coffee table bud plant: min=(17.935, 1.568, 9.996) max=(18.151, 1.787, 10.180)
+Woven living room rug: min=(16.370, 1.204, 8.450) max=(19.020, 1.208, 10.550)
+Living botanical print left: min=(16.730, 2.690, 11.340) max=(17.350, 3.470, 11.383)
+Living botanical print right: min=(17.850, 2.690, 11.340) max=(18.470, 3.470, 11.383)
+Dining botanical print: min=(13.190, 2.560, 9.090) max=(13.810, 3.340, 9.133)
+Kitchen ceiling light: min=(16.950, 3.900, 13.000) max=(17.250, 3.935, 13.300)
+groups=13 colliders=0 lights=1 triangles=6104

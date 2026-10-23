@@ -1,0 +1,15 @@
+{
+  "sceneChangedBlocks": [
+    "1422889310",
+    "1892130580",
+    "2100001112"
+  ],
+  "sceneChangesLimitedToManagersUtilityAndCloseout": true,
+  "originalObjectivesPreservedVerbatim": true,
+  "newObjectivesUnscored": true,
+  "equipmentInventoryPreserved": true,
+  "separateCloseoutUtility": true,
+  "backendFilesChanged": "",
+  "deductionChangesOnlyPhaseGuards": true,
+  "closedBagSourceSha256": "fa95eacc56b4d4644c5f0fb5eaa65853f74b63a6fe8ea125e7aa8ccd0ab936e7"
+}

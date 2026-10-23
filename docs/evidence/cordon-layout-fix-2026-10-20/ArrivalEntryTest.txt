@@ -1,0 +1,48 @@
+=== ArrivalEntryTest ===
+PASS: Existing physical side and rear fences complete the property enclosure
+PASS: Tape 0.65 joins both property fences without a lawn bypass
+PASS: Tape 0.65 preserves the designated central entry
+PASS: Tape 0.95 joins both property fences without a lawn bypass
+PASS: Tape 0.95 preserves the designated central entry
+PASS: Security boundary begins immediately behind tape at X=8.30
+PASS: Front staging stays outside tape at X=8.30
+PASS: Security boundary begins immediately behind tape at X=12.10
+PASS: Front staging stays outside tape at X=12.10
+PASS: Security boundary begins immediately behind tape at X=16.90
+PASS: Front staging stays outside tape at X=16.90
+PASS: Security boundary begins immediately behind tape at X=21.30
+PASS: Front staging stays outside tape at X=21.30
+PASS: Security boundary begins immediately behind tape at X=24.70
+PASS: Front staging stays outside tape at X=24.70
+PASS: Security footprint follows both side fences and rear fence
+PASS: Gloves, drying, logging, evidence box and comparison staging stay outside the secured area
+PASS: Player starts outside the visible entrance with full capsule clearance
+PASS: Authored arrival is outside both warning areas
+PASS: Opening objective uses the requested briefing wording
+PASS: Initial phase is IOC turnover with tools still locked
+PASS: One world-space controlled-entry sign is authored on the existing cordon
+PASS: Sign has the short high-contrast label
+PASS: Two-line label fits without shrinking or clipping
+PASS: Physical sign remains compact and readable
+PASS: Sign owns no input, raycaster or collider
+PASS: Existing cordon is intact and passable
+FAIL: Responder and entrance sit within 30 horizontal degrees of initial forward gaze
+PASS: Sign and responder label are visible together in the initial view
+PASS: Existing NPC guide is reused and initial briefing is in interaction range
+PASS: Arrival does not start the conversation or unlock scene processing
+PASS: Prompt asks the player to deliberately receive the briefing
+PASS: Crossing the visible entrance is detected before the old protected-area boundary
+PASS: Early entry requests the exact warning once
+PASS: After entry return the NPC guide still targets the briefing
+PASS: Early entry returns outside without opening a modal
+PASS: Early entry unlocks no observations, photography or evidence discovery
+PASS: Remaining inside does not spam warnings
+PASS: Returning outside restores ordinary NPC approach guidance
+PASS: A separate early reentry produces one new warning
+PASS: Original Form 1 handover still enters IOC assessment and hides the FR guide
+PASS: The arrival change does not prematurely start SOCO processing
+PASS: Gloves still require scene-access authorization
+PASS: Register opens at its new front-yard approach
+PASS: Confirmed check-in authorizes the entry
+PASS: After handover, gloves and check-in, crossing produces no entry warning
+=== FAIL: 1 failure(s) ===

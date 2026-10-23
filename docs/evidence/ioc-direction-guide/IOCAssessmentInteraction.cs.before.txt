@@ -1,0 +1,272 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using TMPro;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
+
+/// <summary>IOC gaze/interact and checklist presentation only; all progress lives in SceneTurnover.</summary>
+public class IOCAssessmentInteraction : MonoBehaviour
+{
+    [SerializeField] private IOCAssessmentDefinition definition;
+    [Header("IOC Observation Point")]
+    [Tooltip("Manually placed student standing point for the opening scene-survey observation.")]
+    [SerializeField] private Transform iocObservePoint;
+    [SerializeField] private GameObject surveyStandingHighlight;
+    [SerializeField, Min(0.25f)] private float observeRadius = 1.5f;
+    [SerializeField] private bool requireFacing = true;
+    [SerializeField, Range(1f, 180f)] private float facingAngle = 45f;
+    [SerializeField] private string observePromptText = "A – Observe";
+    private readonly Dictionary<string, EvidenceProp> targets = new();
+    private InputAction interact;
+    private InputAction trigger;
+    private InputAction closeChecklist;
+    private InputAction utilityOpen;
+    private int closedFrame = -1;
+    private GameObject panel;
+    private TMP_Text checklist;
+    private string prompt;
+    public bool IsChecklistVisible => panel != null && panel.activeSelf;
+    public IOCAssessmentDefinition Definition => definition;
+    public Transform ObservePoint => iocObservePoint;
+    public float ObserveRadius => observeRadius;
+    public bool RequireFacing => requireFacing;
+    public float FacingAngle => facingAngle;
+    public string ObservePromptText => observePromptText;
+    public string CurrentPrompt => prompt;
+    public string ChecklistText => checklist != null ? checklist.text : string.Empty;
+    public bool CanOpenChecklist => SceneTurnover.IsGated && SceneTurnover.Phase == ScenarioPhase.IOCAssessment;
+
+    private void Awake()
+    {
+        SceneTurnover.RegisterAssessment(definition, FindAnyObjectByType<SceneCordon>());
+        interact = PlayerUIGate.CreateConfirmAction(this, "IOC_Observe", () => !IsChecklistVisible && !PlayerUIGate.IsBlocked && SceneTurnover.Phase == ScenarioPhase.IOCAssessment && (ObservationAtGaze() != null || SceneTurnover.AssessmentReady), 200);
+        trigger = new InputAction("IOC_ObserveTrigger", InputActionType.Button, "<XRController>{RightHand}/triggerPressed");
+        closeChecklist = new InputAction("IOC_ChecklistClose", InputActionType.Button, "<XRController>{RightHand}/secondaryButton");
+        utilityOpen = new InputAction("IOC_UtilityOpenGuard", InputActionType.Button, "<XRController>{LeftHand}/primaryButton");
+        BuildChecklist();
+    }
+    private void OnEnable()
+    {
+        interact.Enable(); trigger.Enable();
+        closeChecklist.Enable(); utilityOpen.Enable();
+        SceneTurnover.OnPhaseChanged += OnPhaseChanged;
+        SceneTurnover.OnIOCObservationRecorded += OnObservation;
+    }
+    private void Start()
+    {
+        foreach (var prop in FindObjectsByType<EvidenceProp>())
+            if (!string.IsNullOrEmpty(prop.evidenceId)) targets.TryAdd(prop.evidenceId, prop);
+        RefreshChecklist();
+        RefreshSurveyStandingHighlight();
+    }
+    private void OnDisable()
+    {
+        interact.Disable(); trigger.Disable();
+        closeChecklist.Disable(); utilityOpen.Disable();
+        SceneTurnover.OnPhaseChanged -= OnPhaseChanged;
+        SceneTurnover.OnIOCObservationRecorded -= OnObservation;
+        ClearPrompt();
+        HideChecklist();
+        if (surveyStandingHighlight != null) surveyStandingHighlight.SetActive(false);
+    }
+    private void OnDestroy() { interact?.Dispose(); trigger?.Dispose(); closeChecklist?.Dispose(); utilityOpen?.Dispose(); }
+    private void OnPhaseChanged(ScenarioPhase phase)
+    {
+        RefreshSurveyStandingHighlight();
+        ClearPrompt(); RefreshChecklist();
+        if (phase != ScenarioPhase.IOCAssessment) HideChecklist();
+        if (phase == ScenarioPhase.IOCAssessment)
+            GameDialogue.SayLine("ioc-assessment-guidance", "System", "ioc-assessment");
+        if (phase == ScenarioPhase.IOCSOCODecision) GameDialogue.Say("ioc-assessment-complete");
+    }
+    private void OnObservation(string id)
+    {
+        RefreshChecklist();
+        RefreshSurveyStandingHighlight();
+    }
+
+    private void RefreshSurveyStandingHighlight()
+    {
+        if (surveyStandingHighlight == null) return;
+        var survey = definition != null
+            ? definition.observations.Find(o => o.kind == IOCObservationKind.SceneSurvey) : null;
+        surveyStandingHighlight.SetActive(isActiveAndEnabled && SceneTurnover.Phase == ScenarioPhase.IOCAssessment
+            && survey != null && !SceneTurnover.IOCObservations.Contains(survey.observationId));
+    }
+
+    private void Update()
+    {
+        if (IsChecklistVisible)
+        {
+            if (!CanOpenChecklist || PlayerUIGate.IsBlockedByOther(this) || closeChecklist.WasPressedThisFrame()) HideChecklist();
+            ClearPrompt();
+            return;
+        }
+        bool assessment = SceneTurnover.Phase == ScenarioPhase.IOCAssessment;
+        // Consume utility opening and panel closing before world input, regardless of Update order.
+        if (!SceneTurnover.IsGated || !assessment || PlayerUIGate.IsBlocked || definition == null
+            || Time.frameCount == closedFrame || utilityOpen.WasPressedThisFrame())
+        { ClearPrompt(); return; }
+        string id = ObservationAtGaze();
+        string text = id != null ? (definition.Find(id).kind == IOCObservationKind.SceneSurvey
+            ? observePromptText : GameDialogue.Text("ioc-prompt-observe"))
+            : (SceneTurnover.AssessmentReady ? GameDialogue.Text("ioc-prompt-complete") : null);
+        if (STCSNotificationUI.Instance != null && STCSNotificationUI.Instance.IsShowing) text = null;
+        if (text != prompt)
+        {
+            ClearPrompt(); prompt = text;
+            if (text != null) NotificationManager.ShowPrompt(text, new Vector3(0f, -0.16f, 0f));
+        }
+        if (!PlayerUIGate.TryConsumeConfirm(this, interact) && !trigger.WasPressedThisFrame()) return;
+        if (id != null) ObserveAtGaze();
+        else if (SceneTurnover.AssessmentReady) SceneTurnover.CompleteIOCAssessment();
+    }
+    public void ShowChecklist()
+    {
+        if (!CanOpenChecklist || IsChecklistVisible || PlayerUIGate.IsBlocked
+            || (STCSNotificationUI.Instance != null && STCSNotificationUI.Instance.IsShowing)) return;
+        ClearPrompt(); RefreshChecklist();
+        WorldPanelPlacement.PlaceInFront(panel.transform, owner: this);
+        panel.SetActive(true);
+        PlayerUIGate.Enter(this); ToolInputLock.Enter(this); LocomotionSuspender.Suspend();
+    }
+    public void HideChecklist()
+    {
+        if (!IsChecklistVisible) return;
+        panel.SetActive(false);
+        PlayerUIGate.Exit(this); ToolInputLock.Exit(this); LocomotionSuspender.Resume();
+        closedFrame = Time.frameCount;
+    }
+    private void ClearPrompt()
+    {
+        if (prompt != null) NotificationManager.HidePrompt();
+        prompt = null;
+    }
+
+    /// <summary>Same read-only target selection used by normal input and focused diagnostics.</summary>
+    public string ObservationAtGaze()
+    {
+        if (definition == null || SceneTurnover.Phase != ScenarioPhase.IOCAssessment || PlayerUIGate.IsBlocked) return null;
+        var camera = Camera.main;
+        if (camera == null) return null;
+        Vector3 origin = camera.transform.position;
+        string best = null;
+        float bestAngle = definition.gazeAngle;
+        foreach (var observation in definition.observations)
+        {
+            if (observation.kind == IOCObservationKind.SceneSurvey || SceneTurnover.IOCObservations.Contains(observation.observationId)
+                || !targets.TryGetValue(observation.evidenceId, out var prop) || prop == null) continue;
+            Vector3 point = prop.transform.position + observation.worldOffset;
+            Vector3 direction = point - origin;
+            float distance = direction.magnitude;
+            if (distance > definition.observationDistance || distance < 0.05f) continue;
+            float angle = Vector3.Angle(camera.transform.forward, direction);
+            if (angle > bestAngle) continue;
+            // Triggers (including the body's marker zone) do not obstruct observation.
+            // Never enable/alter evidence colliders to make the victim observable.
+            if (Physics.Raycast(origin, direction.normalized, out var hit, Mathf.Max(0f, distance - 0.12f),
+                ~0, QueryTriggerInteraction.Ignore) && !hit.transform.IsChildOf(prop.transform)) continue;
+            bestAngle = angle; best = observation.observationId;
+        }
+        if (best != null) return best;
+        var survey = definition.observations.Find(o => o.kind == IOCObservationKind.SceneSurvey);
+        if (survey != null && !SceneTurnover.IOCObservations.Contains(survey.observationId)
+            && IsAtSurveyObservationPoint(camera, origin)) return survey.observationId;
+        return null;
+    }
+    private bool IsAtSurveyObservationPoint(Camera camera, Vector3 origin)
+    {
+        if (iocObservePoint == null)
+        {
+            // Compatibility for other scenes that still author the legacy definition bounds.
+            return definition.surveyArea.Contains(origin)
+                && Vector3.Angle(camera.transform.forward, definition.surveyLookAt - origin) <= 45f;
+        }
+
+        Vector3 offset = origin - iocObservePoint.position;
+        offset.y = 0f;
+        if (offset.sqrMagnitude > observeRadius * observeRadius) return false;
+        if (!requireFacing) return true;
+        Vector3 forward = iocObservePoint.forward;
+        forward.y = 0f;
+        Vector3 view = camera.transform.forward;
+        view.y = 0f;
+        if (forward.sqrMagnitude < 0.0001f || view.sqrMagnitude < 0.0001f) return false;
+        return Vector3.Angle(view.normalized, forward.normalized) <= facingAngle;
+    }
+    public bool ObserveAtGaze()
+    {
+        string id = ObservationAtGaze();
+        if (id == null || !SceneTurnover.RecordIOCObservation(id)) return false;
+        ClearPrompt();
+        GameDialogue.Say(definition.Find(id).dialogueId);
+        return true;
+    }
+
+    private void RefreshChecklist()
+    {
+        if (checklist == null) return;
+        var text = new StringBuilder();
+        text.AppendLine("<b>" + GameDialogue.Text("ioc-checklist-title").ToUpperInvariant() + "</b>\n");
+        Row(text, SceneTurnover.SceneSecurityAcknowledged, "ioc-check-security");
+        Row(text, SceneTurnover.Form1Received, "ioc-check-turnover");
+        Row(text, SceneTurnover.VictimObserved, "ioc-check-victim");
+        Row(text, definition != null && definition.observations.Any(o => o.kind == IOCObservationKind.SceneSurvey
+            && SceneTurnover.IOCObservations.Contains(o.observationId)), "ioc-check-survey");
+        Row(text, definition != null && SceneTurnover.PossibleEvidenceObserved >= definition.minimumPossibleEvidence, "ioc-check-examination");
+        Row(text, SceneTurnover.Form1Received, "ioc-check-information");
+        Row(text, SceneTurnover.IOCAssessmentCompleted, "ioc-check-complete");
+        checklist.text = text.ToString();
+    }
+    private static void Row(StringBuilder text, bool done, string id) =>
+        text.AppendLine((done ? "<color=#86E5B0>[x] " : "<color=#E4EAF0>[ ] ") + GameDialogue.Text(id) + "</color>");
+
+    private void BuildChecklist()
+    {
+        panel = new GameObject("IOCAssessmentChecklist", typeof(RectTransform), typeof(Canvas));
+        panel.transform.SetParent(transform, false);
+        panel.transform.localScale = Vector3.one * 0.0008f;
+        var rect = (RectTransform)panel.transform; rect.sizeDelta = new Vector2(980f, 620f);
+        var canvas = panel.GetComponent<Canvas>(); canvas.renderMode = RenderMode.WorldSpace;
+        canvas.overrideSorting = true; canvas.sortingOrder = short.MaxValue - 5;
+        var bg = new GameObject("Background", typeof(RectTransform), typeof(Image)); bg.transform.SetParent(panel.transform, false);
+        var image = bg.GetComponent<Image>(); image.color = new Color(0.03f, 0.05f, 0.06f, 0.95f); image.raycastTarget = false;
+        Stretch((RectTransform)bg.transform, 0f);
+        var label = new GameObject("Checklist", typeof(RectTransform), typeof(TextMeshProUGUI)); label.transform.SetParent(panel.transform, false);
+        checklist = label.GetComponent<TextMeshProUGUI>(); checklist.fontSize = 32f; checklist.color = Color.white;
+        checklist.lineSpacing = 18f;
+        checklist.raycastTarget = false; checklist.alignment = TextAlignmentOptions.TopLeft;
+        Stretch((RectTransform)label.transform, 32f);
+        checklist.rectTransform.offsetMin = new Vector2(32f, 80f);
+        var footer = new GameObject("Controls", typeof(RectTransform), typeof(TextMeshProUGUI));
+        footer.transform.SetParent(panel.transform, false);
+        var controls = footer.GetComponent<TextMeshProUGUI>(); controls.text = "[B] Close";
+        controls.fontSize = 28f; controls.color = Color.white; controls.raycastTarget = false;
+        controls.alignment = TextAlignmentOptions.Center;
+        controls.rectTransform.sizeDelta = new Vector2(916f, 48f);
+        controls.rectTransform.anchoredPosition = new Vector2(0f, -266f);
+        panel.SetActive(false);
+    }
+    private static void Stretch(RectTransform rect, float padding)
+    {
+        rect.anchorMin = Vector2.zero; rect.anchorMax = Vector2.one;
+        rect.offsetMin = Vector2.one * padding; rect.offsetMax = -Vector2.one * padding;
+    }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        if (iocObservePoint == null) return;
+        Vector3 center = iocObservePoint.position;
+        Gizmos.color = new Color(1f, 0.85f, 0.15f, 0.9f);
+        Gizmos.DrawWireSphere(center, observeRadius);
+        Gizmos.DrawSphere(center, 0.08f);
+        Vector3 forward = iocObservePoint.forward;
+        forward.y = 0f;
+        if (forward.sqrMagnitude > 0.0001f)
+            Gizmos.DrawLine(center + Vector3.up * 0.05f, center + Vector3.up * 0.05f + forward.normalized * 0.75f);
+    }
+#endif
+}

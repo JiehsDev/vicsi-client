@@ -1,0 +1,55 @@
+=== GloveChangeStationTest ===
+PASS: Exactly one shared glove state/station; no inventory item
+PASS: Recognisable dispenser/table/disposal are physical station props
+PASS: Clean gloves suppress waypoint
+PASS: Matched head/capsule boundary samples open an authorized visit
+PASS: Real player capsule can follow the exit route to (15.55, 1.20, 11.90) actual=(15.55, 1.20, 11.90)
+PASS: Real player capsule can follow the exit route to (15.55, 1.20, 10.80) actual=(15.55, 1.20, 10.80)
+PASS: Real player capsule can follow the exit route to (15.55, 1.20, 7.30) actual=(15.55, 1.20, 7.30)
+PASS: Real player capsule can follow the exit route to (16.70, 1.20, 7.30) actual=(16.70, 1.20, 7.30)
+PASS: Real player capsule can follow the exit route to (16.90, 1.20, 5.20) actual=(16.90, 1.20, 5.20)
+PASS: Real player capsule can follow the exit route to (16.90, 0.03, 2.70) actual=(16.90, 0.01, 2.70)
+PASS: Real player capsule can follow the exit route to (16.90, 0.03, 0.70) actual=(16.90, 0.00, 0.70)
+PASS: Real player capsule can follow the exit route to (16.90, 0.03, -0.55) actual=(16.90, 0.04, -0.55)
+PASS: Real player capsule can follow the exit route to (17.07, 0.00, -0.58) actual=(17.07, 0.04, -0.58)
+PASS: Rejected sample does not consume clean gloves
+PASS: Successful blade sample marks gloves used once
+PASS: Sampling guidance survives the success notification
+PASS: Uncontained sample suppresses travel and disposal
+PASS: Current sample can still be contained with used gloves
+PASS: Contained sample still requires explicit storage
+PASS: B storage completes current sample while gloves remain used
+PASS: Stored sample activates waypoint and a route from the kitchen
+PASS: Destination instruction fits its actual panel
+PASS: Modal UI suppresses destination and route
+PASS: Capture hides pin and arrows
+PASS: Nested capture remains hidden
+PASS: Capture restores needed navigation
+PASS: Next source refuses used gloves without progress
+PASS: Station cannot replace gloves from across the house
+PASS: Near-table position inside tape cannot remove gloves
+PASS: Disposal waits for the observed exit to settle
+PASS: Table trip records a real exit without repeating authorization
+PASS: Local table prompt takes over without duplicate destination label
+PASS: A held tool blocks glove removal
+PASS: Station owns A ahead of nearby closed register
+INFO: table position=(17.9200, 0.0000, -0.5000)
+PASS: Supply table is outside controlled footprint
+PASS: Modal UI blocks disposal
+PASS: One A disposes used gloves without wearing replacements
+PASS: Bare hands cannot take the next sample
+PASS: Held disposal A cannot pick up clean pair
+PASS: Next deliberate A picks up a pair
+PASS: Walking away returns pending pair without completing change
+PASS: B returns the pair without fresh credit
+PASS: Separate A wears fresh gloves and clears requirement
+PASS: Glove change alone preserves the fresh-swab destination
+PASS: Completing both supplies hides the waypoint
+PASS: One disposal/change event and no repeated arrival PPE event
+PASS: Glove change preserves source and sealed stored sample
+PASS: Returning after replacement opens the next physical visit
+PASS: Fresh gloves allow next source and become used again
+PASS: Reload clears glove changes, pending source and samples
+PASS: Waypoint waits for the First Responder briefing
+PASS: Initial glove waypoint works during IOC assessment
+=== PASS ===

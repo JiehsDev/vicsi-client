@@ -1,0 +1,26 @@
+=== RequirementEvaluatorTest ===
+  PASS: Empty ALL group evaluates to true
+  PASS: Empty ANY group evaluates to false
+  PASS: Valid NOT (1 child, child fails) evaluates to true
+  PASS: Invalid NOT (0 children) fails closed
+  PASS: Invalid NOT (2 children) fails closed
+  PASS: One-level ALL with a satisfiable leaf passes
+  PASS: One-level ALL with an unknown evidenceId fails
+  PASS: 6-level nested ALL>ANY>NOT/ALL>leaf tree evaluates to true
+  PASS: Nested tree's ChildResults were populated when requested
+  PASS: Leaf with no evidenceId fails closed with MissingEvidenceId
+  PASS: Leaf with an unregistered evidenceId fails closed with UnknownEvidenceId
+  PASS: EvidenceStatusAtOrAbove(EVD-014, NotFound) passes
+  PASS: EvidenceDiscovered on an unregistered id fails with UnknownEvidenceId
+  PASS: ReportLineSelected for a line never selected fails with ReportLineNotSelected
+  PASS: FingerprintLabStatusAtOrAbove(EVD-014, NotSent) passes (every item starts at NotSent)
+  PASS: EvidenceSwabbed leaf matches record.swabbingDone
+  PASS: EvidenceFingerprinted leaf matches record.fingerprintingDone
+  PASS: EvidenceFlipped leaf matches record.isFlipped
+  PASS: Duplicate sibling leaves produce a validation warning
+  PASS: Circular RequirementAssetReference (A -> B -> A) fails closed with CircularReference
+  PASS: Diamond-shaped shared asset reference (no cycle) still passes
+  PASS: RequirementNode.FromLegacyList produces the same result as SelectionPrerequisite.AllSatisfied
+  PASS: Null legacy list: both old and new paths agree (vacuously true)
+  PASS: Null RequirementNode evaluates to true
+=== PASS 24 checks, 0 failures ===

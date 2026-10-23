@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "noAdded": true,
+    "noRemoved": true,
+    "onlyTwoReferenceTransformsChanged": true,
+    "measurementRequirementsUnchanged": true
+  },
+  "changed": [
+    "1933980409",
+    "751979416"
+  ]
+}

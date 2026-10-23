@@ -97,6 +97,7 @@ public class InteractionFeedback : MonoBehaviour
         }
         audioSource.playOnAwake = false;
         audioSource.spatialBlend = 0f;
+        GameAudioSettings.RouteSource(audioSource);
 
         if (confirmClip == null)
         {

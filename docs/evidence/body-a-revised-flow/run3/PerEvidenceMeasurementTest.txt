@@ -1,0 +1,35 @@
+=== PerEvidenceMeasurementTest ===
+  PASS: [BODY-A] own pair resolves: 'West Wall' + 'Counter Back' (plane references with zones)
+  PASS: [BODY-A] student-facing names never expose ids
+  PASS: [EVD-014] own pair resolves: 'West Wall' + 'Cabinet Front Edge' (plane references with zones)
+  PASS: [EVD-014] student-facing names never expose ids
+  PASS: [EVD-015] own pair resolves: 'Cabinet Front Edge' + 'Cabinet End' (plane references with zones)
+  PASS: [EVD-015] student-facing names never expose ids
+  PASS: [EVD-018] own pair resolves: 'Counter End' + 'Counter Front' (plane references with zones)
+  PASS: [EVD-018] student-facing names never expose ids
+  PASS: [independent] 8 distinct references for 4 items (got 8)
+  PASS: [independent] knife and bottle use different pairs
+  PASS: [wrong ref] knife measured from REF-SPATTER-CAB -> WrongReference, nothing recorded
+  PASS: [wrong ref] knife measured from REF-BOTTLE-1 -> WrongReference, nothing recorded
+  PASS: [wrong ref] knife measured from REF-BOTTLE-2 -> WrongReference, nothing recorded
+  PASS: [partial] knife reference 1 recorded
+  PASS: [partial] reference 1 only -> Partial, not complete
+  PASS: [full] knife reference 2 completes it
+  PASS: [BODY-A] another item's reference refused (WrongReference); own pair: Recorded then Completed
+  PASS: [EVD-015] another item's reference refused (WrongReference); own pair: Recorded then Completed
+  PASS: [EVD-018] another item's reference refused (WrongReference); own pair: Recorded then Completed
+  PASS: [accuracy] tolerance still 0.10 m on every item
+  PASS: [accuracy] the live scene distance matches the baked expected value (1.341 vs 1.341)
+  PASS: [accuracy] 0.09 m off is within tolerance, 0.11 m is not (same rule as before)
+  PASS: [wall] two different hook spots along the zone both count as held at this reference
+  PASS: [wall] perpendicular distance is the same anywhere along the wall (1.341 vs 1.341)
+  PASS: [angle] BODY-A reference directions 90.0° - within 90° ± 15°, no warning
+  PASS: [angle] EVD-014 reference directions 90.0° - within 90° ± 15°, no warning
+  PASS: [angle] EVD-015 reference directions 90.0° - within 90° ± 15°, no warning
+  PASS: [angle] EVD-018 reference directions 90.0° - within 90° ± 15°, no warning
+  PASS: [angle] near 90° (88°) -> no warning
+  PASS: [angle] poor angle (68°) -> warning 'Measurement reference directions for EVD-014 are 68°. Review the reference placement.'
+  PASS: [late] route completed for lifecycle setup
+  PASS: [late] knife blood sampling does NOT count as moving the knife
+  PASS: [late] spatter sampling DOES count as disturbance
+=== PASS, 0 failures ===

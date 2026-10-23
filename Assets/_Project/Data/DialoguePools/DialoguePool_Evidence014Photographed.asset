@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: DialoguePool_Evidence014Photographed
   m_EditorClassIdentifier: Assembly-CSharp::DialogueLinePool
   lines:
-  - "Sketcher: Got it sketched \u2014 dimensions and position relative to the counter
-    are logged."
+  - "Dispatch: Dimensions and position relative to the counter \u2014 logged."
   - 'Recorder: Copy that. Kitchen knife is entered into the evidence log.'

@@ -3,6 +3,25 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PhotoCaptureKind { Unspecified, Original, Final, ScaledFinal, Scene }
+
+public sealed class PhotoRecord
+{
+    public Texture2D Texture { get; internal set; }
+    public string SubjectId { get; internal set; }
+    public string SubjectName { get; internal set; }
+    public PhotoCaptureKind Kind { get; internal set; }
+    public DateTime CapturedAtUtc { get; internal set; }
+    public string StageLabel => Kind switch {
+        PhotoCaptureKind.Original => "Original — without ruler",
+        PhotoCaptureKind.ScaledFinal => "Final — with scale",
+        PhotoCaptureKind.Final => "Final photograph",
+        PhotoCaptureKind.Scene => "Scene photograph",
+        _ => "Photograph"
+    };
+    public string Caption => (string.IsNullOrEmpty(SubjectName) ? "Photograph" : SubjectName) + " · " + StageLabel;
+}
+
 /// <summary>
 /// Scene-wide store of every photo the player has captured, the same
 /// Instance-singleton shape as EvidenceStateManager/NotificationManager
@@ -18,6 +37,9 @@ public class PhotoAlbumManager : MonoBehaviour
     public event Action<Texture2D> OnPhotoAdded;
 
     private readonly List<Texture2D> photos = new();
+    private readonly List<PhotoRecord> records = new();
+    public IReadOnlyList<PhotoRecord> Records => records;
+    public PhotoRecord FindRecord(Texture2D texture) => records.Find(r => r.Texture == texture);
 
     /// <summary>Every photo captured so far, oldest first.</summary>
     public IReadOnlyList<Texture2D> Photos => photos;
@@ -35,7 +57,7 @@ public class PhotoAlbumManager : MonoBehaviour
         }
     }
 
-    public void AddPhoto(Texture2D photo)
+    public void AddPhoto(Texture2D photo, string subjectId = null, string subjectName = null, PhotoCaptureKind kind = PhotoCaptureKind.Unspecified)
     {
         if (photo == null)
         {
@@ -43,6 +65,8 @@ public class PhotoAlbumManager : MonoBehaviour
         }
 
         photos.Add(photo);
+        records.Add(new PhotoRecord { Texture = photo, SubjectId = subjectId, SubjectName = subjectName,
+            Kind = kind, CapturedAtUtc = DateTime.UtcNow });
         OnPhotoAdded?.Invoke(photo);
     }
 }

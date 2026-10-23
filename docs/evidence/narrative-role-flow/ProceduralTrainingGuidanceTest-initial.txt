@@ -1,0 +1,22 @@
+=== ProceduralTrainingGuidanceTest ===
+  PASS: Crime scene automatically owns the guidance adapter
+  PASS: Team role lesson scheduled at investigation entry
+  PASS: All eleven concepts are authored, nonmodal Professor dialogue with readable duration
+  PASS: Training does not name suspects or tell the player which conclusion to choose
+  PASS: Photography distinguishes route points from real photograph coverage
+  PASS: Trace explanation identifies the exercise and source principle
+  PASS: Custody teaches accountability without equating B with full real custody
+  PASS: Blocked photograph and fingerprint guidance explains the reason
+  PASS: Repeated concept queues only once
+  PASS: Lesson waits while a menu owns input
+  PASS: Lesson waits for the explicit action prompt
+  PASS: Lesson waits for the immediate tooltip
+  FAIL: Lesson is presented after action guidance clears
+  FAIL: Lesson acquires no UI or tool lock
+  FAIL: History records the instructor lesson once with stable source and Training category
+  PASS: An incoming action hint hides the lesson and pauses reading time
+  FAIL: Lesson resumes visibly after the hint
+  PASS: Blocked-action feedback takes precedence over a lesson
+  FAIL: Later evidence cannot replay the displayed lesson
+  PASS: Blocked feedback cannot starve behind a lesson paused immediately after starting
+=== FAIL, 5 failures ===

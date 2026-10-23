@@ -1,0 +1,59 @@
+=== UIComfortInputTest ===
+PASS: Meta Jump event automatically routed, no manual scene wiring
+PASS: Only the persistent Jump listener is disabled
+PASS: Fixture starts without modal locks (owners=, jump=True)
+PASS: Unowned A forwards normal gameplay jump
+PASS: Noninteractive notification does not own A or block jump
+PASS: Highest-priority UI alone receives actual A
+PASS: Same A never reaches gameplay jump
+PASS: Confirm closes UI without same-frame jump
+PASS: Held A after close stays consumed
+PASS: Release clears ownership without synthesizing jump
+PASS: Next fresh A jumps normally
+PASS: A opens modal without also selecting it or jumping
+PASS: Modal accepts fresh press after activation
+PASS: Real procedure completion reaches the converted notification channel
+PASS: Procedure feedback appears normally in open space with the lightweight profile
+PASS: Timed feedback has lower placement priority and no input locks
+PASS: Visible wall-aware procedure feedback still permits normal A jump
+PASS: Completion facing a wall stays visible on its player side
+PASS: Very close wall uses a readable, safe notification fallback
+PASS: Notification fallback remains safe and does not flip under head jitter
+PASS: No readable slot withholds feedback instead of placing it through a wall
+INFO: deferred timer before=59.56573; after=59.56573; textUnchanged=True; suppressed=True
+PASS: Spatially deferred feedback preserves remaining display time
+PASS: Feedback resumes when a readable slot becomes available
+PASS: Ambient notices use the same solver at the lowest placement priority
+PASS: Reasoning owns A and locks tools as well as its existing locomotion
+PASS: Real reasoning rectangle avoids wall
+PASS: Reasoning defers feedback without overlapping the primary or consuming its timer
+PASS: Reasoning modal prevents both radial wheels from opening
+PASS: First reasoning A selects without locking answer
+PASS: Second fresh reasoning A confirms once
+PASS: Modal locks physical evidence grab interactables without changing evidence status
+PASS: Held UI trigger remains blocked after modal closes
+PASS: Releasing UI trigger restores normal tool and grab input
+PASS: Open-space preferred distance and offset unchanged
+PASS: Simultaneous panels share rotation and measured nonoverlapping vertical slot
+PASS: Group respects secondary minimum readability without an unnecessary side fallback in open space
+PASS: Modal keeps primary placement; lower interactive canvas yields
+PASS: Wall fixture obstructs the preferred primary pose
+PASS: Viewer inside solid geometry remains rejected
+PASS: Wall fallback clears primary rectangle
+PASS: Secondary also clears wall with same fallback and rotation
+PASS: Fallback chose a stable side
+PASS: Head jitter does not flip side or reorder panels
+PASS: Secondary-only wall is detected
+PASS: Primary remains wall-safe while group adjusts
+PASS: Group actually moves or defers secondary for secondary-only obstruction
+PASS: Real dialogue opts into shared wall avoidance
+PASS: Real dialogue rectangle avoids wall
+PASS: Temporary feedback uses a measured nonoverlapping lower dialogue slot
+PASS: Both real dialogue and temporary rectangles remain wall-safe together
+PASS: Dialogue progression still accepts existing skip
+PASS: Dialogue skip accepted after protection
+INFO: notes showing=True; suppressed=False; pose=(998.83, 999.86, 1000.68); eye=(1000.00, 1000.00, 1000.00); size=(1.20, 0.68); minimum=0.82; owners=EvidenceProcedureUI
+PASS: Real Evidence Notes rectangle uses shared wall-safe placement
+PASS: Real inventory rectangle uses shared wall-safe placement
+PASS: World-anchored reading panel keeps its pose when head turns
+=== ALL PASS ===

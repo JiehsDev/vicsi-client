@@ -76,24 +76,26 @@ public class ProceduralGateValidator : MonoBehaviour
     {
         if (EvidenceStateManager.Instance == null)
         {
-            return "Evidence system not available.";
+            return GameDialogue.Text("sys-evidence-system-unavailable");
         }
 
         var record = EvidenceStateManager.Instance.GetRecord(evidenceId);
         if (record == null)
         {
-            return "Unknown evidence item.";
+            return GameDialogue.Text("sys-unknown-evidence");
         }
 
-        if (EvidenceStateManager.IsValidNextStep(record.status, target))
+        var itemReason = EvidenceStateManager.Instance.GetItemBlockReason(evidenceId, target);
+        if (itemReason != null) return itemReason;
+
+        if (EvidenceStateManager.IsValidNextStep(record, target))
         {
             // The sequence allows it, so any remaining objection is item-specific
             // (e.g. fingerprinting). Null here means genuinely unblocked.
             return EvidenceStateManager.Instance.GetItemBlockReason(evidenceId, target);
         }
 
-        var nextRequired = EvidenceStateManager.GetNextRequiredStatus(record.status);
-        return nextRequired.HasValue ? $"Not yet {nextRequired}." : "No further steps required.";
+        return EvidenceStateManager.DescribeNextStepForPlayer(record);
     }
 
     /// <summary>Backward-compatible convenience wrapper - equivalent to GetBlockReason(evidenceId, EvidenceStatus.Collected).</summary>

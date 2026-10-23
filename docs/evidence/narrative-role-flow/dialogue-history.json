@@ -1,0 +1,14 @@
+{
+    "text": [
+        ": At the yellow highlight inside the kitchen, face John's body. Press A to Observe. Look only; don't touch surfaces or step on evidence.",
+        "IOC: I've finished the initial walkthrough; the scene's still secure and no forensic work has been done yet. John's on the kitchen floor with what looks like a penetrating wound, and there's a kitchen knife and blood nearby. There's also an empty liquor bottle that may fit the reported drinking session.",
+        "IOC: The First Responder was told Paul and Peter had been drinking here with John. The nearby vendor found John and called the police; he says he saw Peter leave around two. Neither he nor the First Responder witnessed the attack, so we still need to check those accounts.",
+        "IOC: I've requested your assistance through operations and submitted the completed CSI Form 2 to your team leader. The scene's ready for you to take over the investigation. The First Responder will help maintain scene security.",
+        ": You've got several accounts to work with, but don't let them decide the case for you. Start by documenting the room, John and anything that might be connected. Then see what the scene actually supports.",
+        "Professor: Fingerprint personnel carefully develop latent prints before lifting and preserving them for examination. The sequence helps protect the print and the record of its location. A recovered fingerprint can establish contact with an object, but alone does not explain when or why that contact occurred.",
+        "Professor: Paul's print confirms that he handled the knife at some point, but it doesn't tell us when he touched it or what he did with it. It isn't proof that he used it in the attack. Let's follow up with the vendor and ask whether he noticed anyone else near John's house besides Peter.",
+        "Investigator: Did you see anyone else near John's house besides Peter?",
+        "Vendor: Now that you mention it, I remember seeing Paul near John's house around three in the morning. I didn't see where he went after that.",
+        ": Complete John's final photograph with Body Marker A in frame, then measure his position and record the findings before removal."
+    ]
+}

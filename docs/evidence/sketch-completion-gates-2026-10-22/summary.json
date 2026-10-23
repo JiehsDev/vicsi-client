@@ -1,0 +1,81 @@
+{
+  "suite_count": 12,
+  "passed": 683,
+  "failed": 0,
+  "csharp_errors": 0,
+  "suites": [
+    {
+      "suite": "BiologicalSamplingTest",
+      "report": "docs/evidence/sketch-completion-gates-2026-10-22/run1/BiologicalSamplingTest.txt",
+      "passed": 73,
+      "failed": 0
+    },
+    {
+      "suite": "BodyRemovalTest",
+      "report": "docs/evidence/sketch-completion-gates-2026-10-22/run1/BodyRemovalTest.txt",
+      "passed": 51,
+      "failed": 0
+    },
+    {
+      "suite": "BrotherPathTest",
+      "report": "docs/evidence/sketch-completion-gates-2026-10-22/run1/BrotherPathTest.txt",
+      "passed": 56,
+      "failed": 0
+    },
+    {
+      "suite": "EndingManagerTest",
+      "report": "docs/evidence/sketch-completion-gates-2026-10-22/run1/EndingManagerTest.txt",
+      "passed": 9,
+      "failed": 0
+    },
+    {
+      "suite": "EvidenceRelationshipsReviewTest",
+      "report": "docs/evidence/sketch-completion-gates-2026-10-22/run1/EvidenceRelationshipsReviewTest.txt",
+      "passed": 41,
+      "failed": 0
+    },
+    {
+      "suite": "InconclusivePathTest",
+      "report": "docs/evidence/sketch-completion-gates-2026-10-22/final/InconclusivePathTest.txt",
+      "passed": 13,
+      "failed": 0
+    },
+    {
+      "suite": "RecorderDocumentationAccuracyTest",
+      "report": "docs/evidence/sketch-completion-gates-2026-10-22/run1/RecorderDocumentationAccuracyTest.txt",
+      "passed": 60,
+      "failed": 0
+    },
+    {
+      "suite": "SOCOCloseoutTest",
+      "report": "docs/evidence/sketch-completion-gates-2026-10-22/run1/SOCOCloseoutTest.txt",
+      "passed": 52,
+      "failed": 0
+    },
+    {
+      "suite": "SceneRelationalMeasurementTest",
+      "report": "docs/evidence/sketch-completion-gates-2026-10-22/run1/SceneRelationalMeasurementTest.txt",
+      "passed": 59,
+      "failed": 0
+    },
+    {
+      "suite": "SceneTestStartTest",
+      "report": "docs/evidence/sketch-completion-gates-2026-10-22/accepted/SceneTestStartTest.txt",
+      "passed": 209,
+      "failed": 0
+    },
+    {
+      "suite": "SketchCompletionGateTest",
+      "report": "docs/evidence/sketch-completion-gates-2026-10-22/run1/SketchCompletionGateTest.txt",
+      "passed": 22,
+      "failed": 0
+    },
+    {
+      "suite": "StoryContentTest",
+      "report": "docs/evidence/sketch-completion-gates-2026-10-22/accepted/StoryContentTest.txt",
+      "passed": 38,
+      "failed": 0
+    }
+  ],
+  "note": "Latest accepted report per suite; earlier failed fixture expectations retained for review."
+}

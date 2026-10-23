@@ -1,0 +1,57 @@
+=== BrotherPathTest ===
+  PASS: [start] brother conclusion unavailable
+  PASS: [start] Inconclusive unavailable before any meaningful finding
+  PASS: knife lifecycle (found -> swab -> print -> match -> processed)
+  PASS: [fingerprint only] FIND-KNIFE-PRINT-BROTHER confirmed
+  PASS: [fingerprint only] brother conclusion UNAVAILABLE
+  PASS: [fingerprint only] Inconclusive available (meaningful investigation)
+  PASS: [fingerprint only] picker rule offers exactly Inconclusive (got CONCLUSION-INCONCLUSIVE)
+  PASS: body logged
+  PASS: bottle lifecycle
+  PASS: [no spatter] REL-knife-consistent-wound Completed
+  PASS: [no spatter] FIND-SPATTER-RECONSTRUCTION not confirmed
+  PASS: [no spatter] Paul and Peter are selectable after meaningful investigation
+  PASS: [no spatter] Inconclusive available
+  PASS: [no spatter] Paul resolves to the insufficiently-supported outcome
+  PASS: [no spatter] Peter resolves to the unsupported-accusation outcome
+  PASS: [no spatter] Inconclusive remains a defensible outcome
+  PASS: [no spatter] picker offers all incomplete-case options (got CONCLUSION-INCONCLUSIVE,conclusion-brother,conclusion-peter)
+  PASS: [partial picker] offers Paul, Peter, and Inconclusive (got CONCLUSION-INCONCLUSIVE,conclusion-brother,conclusion-peter)
+  PASS: spatter sampled
+  PASS: spatter sample sealed
+  PASS: spatter logged
+  PASS: [full] REL-spatter-consistent-reconstruction Completed
+  PASS: [full] REL-paul-print-handled-knife Completed
+  PASS: [full] discovered vendor statement and timeline contradiction Completed
+  PASS: [full] brother conclusion AVAILABLE
+  PASS: [full] Inconclusive still internally available (monotonic state untouched)
+  PASS: [full] picker hides Inconclusive but retains Paul and Peter (got conclusion-brother,conclusion-peter)
+  PASS: [full] conclusion-brother resolves ending-brother-accused
+  PASS: [stale] confirming Inconclusive after brother became supported is refused
+  PASS: [stale] picker stays open and refreshes without Inconclusive (got conclusion-brother,conclusion-peter)
+  PASS: [stale] nothing submitted - no completion screen
+  PASS: [full] brother conclusion selectable in the refreshed picker
+  PASS: [full] completion screen shown
+  PASS: All six earned contextual checkpoint responses remain independent assessment records
+  PASS: RC-03 fingerprint response is locked before the vendor lead
+  PASS: All six relationship interpretations recorded without board connections
+  PASS: HYP-01, HYP-02 and HYP-03 each define exactly one correct option
+  PASS: session log records the RC-03 interpretation without a fabricated legacy justification
+  PASS: session log records separate locked relationship interpretations
+  PASS: EndingSelected logged ending-brother-accused
+  PASS: stale Inconclusive confirm logged as ConclusionSubmissionBlocked
+  PASS: ConclusionSelected never logged for Inconclusive
+  PASS: session log contains no retired id EVD-017
+  PASS: session log contains no retired id EVD-019
+  PASS: session log contains no retired id CONCLUSION-WIFE-INVOLVEMENT
+  PASS: session log contains no retired id conclusion-wife
+  PASS: session log contains no retired id ending-wife-convicted
+  PASS: session log contains no retired id FIND-PHONE-AFFAIR
+  PASS: session log contains no retired id FIND-GLOVES-PRINT-WIFE
+  PASS: session log contains no retired id hyp03-gloves-wife-match
+  PASS: session log contains no retired id hyp03-phone-overclaim
+  FAIL: [isolation] accepted conclusion waits for closeout before uploading
+  PASS: [persistence] session payload retains the confirmed timeline interpretation in the existing schema
+  PASS: [persistence] vendor question/discovery logged once before session completion
+  PASS: [isolation] real upload queue and real session owners unchanged
+=== FAIL: 1 failure(s) ===

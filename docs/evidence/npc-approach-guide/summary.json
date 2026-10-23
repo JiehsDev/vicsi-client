@@ -1,0 +1,73 @@
+{
+  "scope": [
+    "First Responder before handover",
+    "Visible IOC NPC before opening briefing"
+  ],
+  "implementation": "Assets/_Project/Scripts/SceneTurnover/NPCApproachGuide.cs",
+  "runtimeCanvases": [
+    "NPC_FirstResponder/NPC approach guide",
+    "NPC_IOC/NPC approach guide"
+  ],
+  "displayDistanceMetres": 1.6,
+  "readyUsesExistingInteractionRange": true,
+  "controlsDialogueAndProgressionUnchanged": true,
+  "iocGuideYieldsToExistingBriefingPanel": true,
+  "vendorExcluded": true,
+  "toolWheelUnchanged": true,
+  "tests": {
+    "NPCApproachGuideTest": {
+      "passed": 33,
+      "failed": 0,
+      "exitCode": 0,
+      "report": "docs/evidence/evidence-display/npc-approach-guide-2026-10-18/NPCApproachGuideTest.txt",
+      "log": "docs/evidence/evidence-display/npc-approach-guide-2026-10-18/NPCApproachGuideTest.log"
+    },
+    "ScenarioPhaseFoundationTest": {
+      "passed": 19,
+      "failed": 0,
+      "exitCode": 0,
+      "report": "docs/evidence/evidence-display/npc-approach-guide-2026-10-18/ScenarioPhaseFoundationTest.txt",
+      "log": "docs/evidence/evidence-display/npc-approach-guide-2026-10-18/ScenarioPhaseFoundationTest.log"
+    },
+    "IOCAssessmentGuideTest": {
+      "passed": 35,
+      "failed": 0,
+      "exitCode": 0,
+      "report": "docs/evidence/evidence-display/npc-approach-guide-2026-10-18/IOCAssessmentGuideTest.txt",
+      "log": "docs/evidence/evidence-display/npc-approach-guide-2026-10-18/IOCAssessmentGuideTest.log"
+    },
+    "PhotographyGuideTest": {
+      "passed": 26,
+      "failed": 0,
+      "exitCode": 0,
+      "report": "docs/evidence/evidence-display/npc-approach-guide-2026-10-18/PhotographyGuideTest.txt",
+      "log": "docs/evidence/evidence-display/npc-approach-guide-2026-10-18/PhotographyGuideTest.log"
+    }
+  },
+  "totalPassed": 113,
+  "totalFailed": 0,
+  "csharpCompileErrors": 0,
+  "questDeviceConnected": false,
+  "headsetAcceptancePerformed": false,
+  "preservation": {
+    "changedExistingFiles": [
+      "Assets/_Project/Editor/Phase5PlayModeBatchRunner.cs",
+      "Assets/_Project/Scripts/SceneTurnover/NPCPresentation.cs"
+    ],
+    "unchangedExistingFiles": 1341,
+    "npcChanges": "Read-only authored-anchor/controller accessors and automatic guide attachment for FR/IOC only",
+    "originalNpcPoseAndVisibilityMethodsUnchanged": true,
+    "firstResponderWorkflowAndAssessmentLogicUnchanged": true,
+    "allScenesAndNpcEvidenceMarkerTransformsUnchanged": true,
+    "existingIocAssessmentAndPhotographyGuidesUnchanged": true,
+    "toolAndMenuWheelsUnchanged": true,
+    "scoringUploadsAndDataUnchanged": true,
+    "editorRunnerOnlyChange": "Keep NPCApproachGuideTest at the original initial handover phase",
+    "acceptedSourceHashes": {
+      "Assets/_Project/Editor/Phase5PlayModeBatchRunner.cs": "28045736d9ee608f01adec633ecb3db505666357ba9ebaa810ae91be2f1b4b86",
+      "Assets/_Project/Scripts/SceneTurnover/NPCPresentation.cs": "dd9436b481fbd584af34204a7a17ef2eccfdd952c97e3f374bbb2b019b885709",
+      "Assets/_Project/Scripts/SceneTurnover/NPCApproachGuide.cs": "ba2d302a8d1d0d74985f29f03d24bcfda1d5b74e96d71605825b11ba48512391",
+      "Assets/_Project/Scripts/Testing/NPCApproachGuideTest.cs": "d76716ed847c6469e57ae52d4787e1bfcb257085e71d3e5ca75d4a4de02126f6"
+    }
+  }
+}

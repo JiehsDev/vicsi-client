@@ -1,0 +1,775 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8949ca03682ada948a80024c457fe9c2, type: 3}
+  m_Name: NarrativeEvents_CSI_Environment
+  m_EditorClassIdentifier: Assembly-CSharp::NarrativeEventSet
+  scenarioId: CSI_Environment
+  events:
+  - eventId: beat-1-initial-briefing
+    title: Preserve the Statements, Document the Scene
+    speaker: 
+    lineIds:
+    - narr-beat-1-initial-briefing-1
+    pool: {fileID: 0}
+    playAllLinesInSequence: 1
+    triggerMode: 0
+    trigger:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    priority: 90
+    repeatable: 0
+    delaySeconds: 0
+    followUpObjectiveId: 
+    voiceOverClip: {fileID: 0}
+  - eventId: beat-2-body-doubt
+    title: Body Examination Creates Doubt
+    speaker: 
+    lineIds:
+    - narr-beat-2-body-doubt-1
+    - narr-beat-2-body-doubt-2
+    pool: {fileID: 0}
+    playAllLinesInSequence: 1
+    triggerMode: 0
+    trigger:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 1
+      evidenceId: BODY-A
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: body-a-wound-sharp-object
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    priority: 80
+    repeatable: 0
+    delaySeconds: 0
+    followUpObjectiveId: 
+    voiceOverClip: {fileID: 0}
+  - eventId: beat-3-knife-wound-match
+    title: Knife Connected to the Wound
+    speaker: 
+    lineIds:
+    - narr-beat-3-knife-wound-match-1
+    - narr-beat-3-knife-wound-match-2
+    pool: {fileID: 0}
+    playAllLinesInSequence: 1
+    triggerMode: 0
+    trigger:
+      kind: 1
+      operatorType: 0
+      children:
+      - rid: 7267690769340170746
+      - rid: 7267690769340170747
+      - rid: 7267690769340170748
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    priority: 70
+    repeatable: 0
+    delaySeconds: 0
+    followUpObjectiveId: 
+    voiceOverClip: {fileID: 0}
+  - eventId: beat-4-brother-fingerprint
+    title: Paul's Fingerprint - Insufficient Alone
+    speaker: 
+    lineIds:
+    - narr-beat-4-brother-fingerprint-1
+    - narr-beat-4-brother-fingerprint-2
+    - narr-beat-4-brother-fingerprint-3
+    pool: {fileID: 0}
+    playAllLinesInSequence: 1
+    triggerMode: 0
+    trigger:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 2
+      evidenceId: EVD-014
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 2
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    priority: 60
+    repeatable: 0
+    delaySeconds: 0
+    followUpObjectiveId: 
+    voiceOverClip: {fileID: 0}
+  - eventId: beat-5-bottle-supports-brother
+    title: Bottle Supports Paul's Account
+    speaker: 
+    lineIds:
+    - narr-beat-5-bottle-supports-brother-1
+    - narr-beat-5-bottle-supports-brother-2
+    pool: {fileID: 0}
+    playAllLinesInSequence: 1
+    triggerMode: 0
+    trigger:
+      kind: 1
+      operatorType: 0
+      children:
+      - rid: 2142348962394538383
+      - rid: 2142348962394538384
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    priority: 50
+    repeatable: 0
+    delaySeconds: 0
+    followUpObjectiveId: 
+    voiceOverClip: {fileID: 0}
+  - eventId: beat-7-spatter-reconstruction
+    title: Blood-Spatter Reconstruction
+    speaker: 
+    lineIds:
+    - narr-beat-7-spatter-reconstruction-1
+    - narr-beat-7-spatter-reconstruction-2
+    pool: {fileID: 0}
+    playAllLinesInSequence: 1
+    triggerMode: 0
+    trigger:
+      kind: 1
+      operatorType: 0
+      children:
+      - rid: 7267690769340170749
+      - rid: 7267690769340170750
+      - rid: 7267690769340170751
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    priority: 30
+    repeatable: 0
+    delaySeconds: 0
+    followUpObjectiveId: 
+    voiceOverClip: {fileID: 0}
+  - eventId: mission-scene-start
+    title: Document the Scene
+    speaker: 
+    lineIds:
+    - narr-mission-scene-start-1
+    pool: {fileID: 0}
+    playAllLinesInSequence: 0
+    triggerMode: 0
+    trigger:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    priority: 100
+    repeatable: 0
+    delaySeconds: 0
+    followUpObjectiveId: 
+    voiceOverClip: {fileID: 0}
+  - eventId: mission-body-examination
+    title: Document the Victim
+    speaker: 
+    lineIds:
+    - narr-mission-body-examination-1
+    pool: {fileID: 0}
+    playAllLinesInSequence: 0
+    triggerMode: 0
+    trigger:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    priority: 95
+    repeatable: 0
+    delaySeconds: 2
+    followUpObjectiveId: 
+    voiceOverClip: {fileID: 0}
+  - eventId: mission-body-wound-result
+    title: Wound Consistent with a Sharp Object
+    speaker: 
+    lineIds:
+    - narr-mission-body-wound-result-1
+    pool: {fileID: 0}
+    playAllLinesInSequence: 0
+    triggerMode: 0
+    trigger:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 12
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: FIND-BODY-SHARP-WOUND
+      measurementRequirementId: 
+      authoringNote: 
+    priority: 90
+    repeatable: 0
+    delaySeconds: 0
+    followUpObjectiveId: 
+    voiceOverClip: {fileID: 0}
+  - eventId: mission-knife-fingerprint-before
+    title: Process the Knife for Prints
+    speaker: 
+    lineIds:
+    - narr-mission-knife-fingerprint-before-1
+    pool: {fileID: 0}
+    playAllLinesInSequence: 0
+    triggerMode: 0
+    trigger:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 6
+      evidenceId: EVD-014
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    priority: 85
+    repeatable: 0
+    delaySeconds: 0
+    followUpObjectiveId: 
+    voiceOverClip: {fileID: 0}
+  - eventId: mission-knife-print-result
+    title: The Print Belongs to Paul
+    speaker: 
+    lineIds:
+    - narr-mission-knife-print-result-1
+    pool: {fileID: 0}
+    playAllLinesInSequence: 0
+    triggerMode: 0
+    trigger:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 12
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: FIND-KNIFE-PRINT-BROTHER
+      measurementRequirementId: 
+      authoringNote: 
+    priority: 80
+    repeatable: 0
+    delaySeconds: 0
+    followUpObjectiveId: 
+    voiceOverClip: {fileID: 0}
+  - eventId: mission-spatter-before
+    title: Document the Blood Spatter Pattern
+    speaker: 
+    lineIds:
+    - narr-mission-spatter-before-1
+    pool: {fileID: 0}
+    playAllLinesInSequence: 0
+    triggerMode: 0
+    trigger:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 6
+      evidenceId: EVD-015
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    priority: 45
+    repeatable: 0
+    delaySeconds: 0
+    followUpObjectiveId: 
+    voiceOverClip: {fileID: 0}
+  - eventId: mission-spatter-result
+    title: A Clearer Picture of Movement
+    speaker: 
+    lineIds:
+    - narr-mission-spatter-result-1
+    pool: {fileID: 0}
+    playAllLinesInSequence: 0
+    triggerMode: 0
+    trigger:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 12
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: FIND-SPATTER-RECONSTRUCTION
+      measurementRequirementId: 
+      authoringNote: 
+    priority: 40
+    repeatable: 0
+    delaySeconds: 0
+    followUpObjectiveId: 
+    voiceOverClip: {fileID: 0}
+  - eventId: mission-deduction-first-connection
+    title: Review Before You Submit
+    speaker: 
+    lineIds:
+    - narr-mission-deduction-first-connection-1
+    pool: {fileID: 0}
+    playAllLinesInSequence: 0
+    triggerMode: 0
+    trigger:
+      kind: 1
+      operatorType: 1
+      children:
+      - rid: 2142348962394538237
+      - rid: 2142348962394538238
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    priority: 35
+    repeatable: 0
+    delaySeconds: 0
+    followUpObjectiveId: 
+    voiceOverClip: {fileID: 0}
+  - eventId: mission-conclusion-available
+    title: You Have Enough to Conclude
+    speaker: 
+    lineIds:
+    - narr-mission-conclusion-available-1
+    pool: {fileID: 0}
+    playAllLinesInSequence: 1
+    triggerMode: 0
+    trigger:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 8
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 11400000, guid: e4279f15564f9234dba1f49e7833c0b5, type: 2}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    priority: 30
+    repeatable: 0
+    delaySeconds: 0
+    followUpObjectiveId: 
+    voiceOverClip: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 2142348962394538237
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-KNIFE-WOUND-CONSISTENT
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 2142348962394538238
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-SPATTER-RECONSTRUCTION
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 2142348962394538383
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: EVD-018
+        evidenceReference: {fileID: 0}
+        requiredStatus: 10
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 2142348962394538384
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 2
+        evidenceId: EVD-018
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 2
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 7267690769340170746
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 1
+        evidenceId: BODY-A
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: body-a-wound-sharp-object
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 7267690769340170747
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: EVD-014
+        evidenceReference: {fileID: 0}
+        requiredStatus: 6
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 7267690769340170748
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 1
+        evidenceId: EVD-014
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: knife-wound-match
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 7267690769340170749
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: EVD-015
+        evidenceReference: {fileID: 0}
+        requiredStatus: 10
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 7267690769340170750
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 1
+        evidenceId: EVD-015
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: blood-spatter-mechanism-only
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 7267690769340170751
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 1
+        evidenceId: BODY-A
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: body-a-wound-sharp-object
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 

@@ -1,0 +1,29 @@
+{
+  "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+  "dirty": false,
+  "playing": false,
+  "compilationFailed": false,
+  "pending": false,
+  "xrRestore": false,
+  "nextSuite": "",
+  "requestPresent": false,
+  "standaloneXR": true,
+  "androidXR": true,
+  "positions": [
+    {
+      "name": "Evidence_KitchenKnife",
+      "position": "(18.627000, 1.205983, 12.885000)",
+      "rotation": "(90.000000, 0.000000, 0.000000)"
+    },
+    {
+      "name": "Evidence_Bloodspatterpattern",
+      "position": "(16.823000, 1.204000, 12.647000)",
+      "rotation": "(90.000000, 0.000000, 0.000000)"
+    },
+    {
+      "name": "IOC_Observe_Point",
+      "position": "(15.592700, 1.200000, 11.960780)",
+      "rotation": "(0.000000, 57.728860, 0.000000)"
+    }
+  ]
+}

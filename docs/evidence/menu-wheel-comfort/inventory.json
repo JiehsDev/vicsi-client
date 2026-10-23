@@ -1,0 +1,46 @@
+[
+  {
+    "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+    "component": "ToolWheelController",
+    "componentFileID": "40967770",
+    "excluded": true,
+    "authoredLabels": []
+  },
+  {
+    "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+    "component": "UtilityMenuController",
+    "componentFileID": "1892130580",
+    "excluded": false,
+    "authoredLabels": [
+      "IOC Checklist",
+      "Notes",
+      "Item Logs",
+      "Album",
+      "Submit Conclusion",
+      "Evidence Inventory",
+      "Closeout Inventory",
+      "Dialogue History",
+      "Witness Accounts",
+      "Evidence Procedure",
+      "Scene Sketch"
+    ]
+  },
+  {
+    "scene": "Assets/_Project/Scenes/Scenarios/Tutorial_ToolTest.unity",
+    "component": "ToolWheelController",
+    "componentFileID": "1511259833",
+    "excluded": true,
+    "authoredLabels": []
+  },
+  {
+    "scene": "Assets/_Project/Scenes/Scenarios/Tutorial_ToolTest.unity",
+    "component": "UtilityMenuController",
+    "componentFileID": "1655889937",
+    "excluded": false,
+    "authoredLabels": [
+      "Notes",
+      "Item Logs",
+      "Album"
+    ]
+  }
+]

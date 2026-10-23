@@ -1,0 +1,301 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e77d02079bdcf42975e822ccf668f1, type: 3}
+  m_Name: EVD-017_Victimsmobilephone
+  m_EditorClassIdentifier: Assembly-CSharp::EvidenceDefinition
+  evidenceId: EVD-017
+  displayName: Victim's mobile phone
+  relevance: 1
+  interactionRadius: 1.5
+  requiresFingerprinting: 1
+  fingerprintBeforeCollection: 0
+  requiresFlipBeforeFingerprinting: 0
+  description: A mobile phone identified in the case file as belonging to the victim.
+  foundLocation: On the floor within the documented scene area.
+  observedCondition: The phone was found screen-down. Its exterior was preserved
+    for handling-trace examination and its stored records were not assumed from its
+    position.
+  investigativeContext: Device records may provide a timeline or communication context
+    when lawfully examined and corroborated. The phone's position alone cannot establish
+    how it came to rest there.
+  loggingContext: 'Recovered Messages
+
+
+    "We can''t keep meeting like this. She
+    is already suspicious."
+
+    "I know. I''ll explain everything after tonight."
+
+    "Delete
+    these messages. I don''t want anyone finding out."
+
+
+    The recovered conversation
+    suggests that the victim was involved in a personal relationship outside the
+    marriage.
+
+
+    This is a fictional case record created for training purposes.'
+  progressiveFindings:
+  - text: Review of the device records found exchanges indicating a personal relationship
+      outside the marriage.
+    revealRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 1
+      evidenceId: EVD-017
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: phone-message-affair
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      authoringNote: 
+  - text: Fingerprint processing of the phone produced a usable latent print for
+      comparison.
+    revealRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 4
+      evidenceId: EVD-017
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      authoringNote: 
+  reportLineOptions:
+  - id: phone-screen-down-position
+    text: Found screen-down at the scene.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      authoringNote: 
+  - id: phone-ownership-established
+    text: Identified as the victim's own mobile phone.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      authoringNote: 
+  - id: phone-call-history-potential
+    text: Call and message history may help establish who was present, pending further
+      review.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      authoringNote: 
+  - id: phone-fingerprint-pending
+    text: No conclusions about who last handled the phone can be drawn until fingerprint
+      processing is complete.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      authoringNote: 
+  - id: phone-history-overclaim
+    text: The phone's message history confirms who else was present at the time of
+      death.
+    isAccurate: 0
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      authoringNote: 
+  - id: phone-drop-struggle-assumed
+    text: The phone being found screen-down proves it was dropped during a struggle.
+    isAccurate: 0
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      authoringNote: 
+  - id: phone-message-affair
+    text: Message history includes exchanges suggesting the victim was involved with
+      someone outside the marriage.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      authoringNote: 
+  minimumLinesRequired: 3
+  chalkCircleRadius: 0.1
+  chalkPointCount: 24
+  chalkCompletionThreshold: 0.9
+  requiresSwabbing: 0
+  collectedBySwab: 0
+  examinedInPlace: 0
+  icon: {fileID: 21300000, guid: 11503e697edbcd64ebd44e5934335f5a, type: 3}
+  heldPrefab: {fileID: -3879159984123203325, guid: ec6c713a436274e46ba9bb66cd26cb98, type: 3}
+  heldLocalPosition: {x: -0.06, y: 0.02, z: 0.1}
+  heldLocalEulerAngles: {x: 0, y: 0, z: 0}
+  heldLocalScale: {x: 1, y: 1, z: 1}
+  depositRequirement:
+    kind: 1
+    operatorType: 0
+    children: []
+    requirementType: 0
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    authoringNote: 
+  depositedVisual: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

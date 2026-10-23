@@ -25,17 +25,31 @@
 ///                thresholdStatus 1, 7, 7 - none at or above 8 - so nothing needed
 ///                correcting. That was confirmed by reading the asset, not assumed
 ///                from the fact that the values are explicit.
+///   Documentation-flow restructure (PhotographedRaw/ChalkMarked/PhotographedFinal
+///   replace Photographed/Sketched; Marked moves from index 2 to index 4) - a full
+///   reshuffle, not an insertion. HypothesisCheckpoints_CSI_Environment.asset
+///   persisted thresholdStatus 1 (Found, unaffected), 7, 7 (both old Collected,
+///   corrected to 8, the new Collected). Confirmed by reading the asset and
+///   checking every value against the new positions, not by spot-check.
+///   EvidenceStateManager.TryReclaimMarker also had to change: it used to revert a
+///   pulled tent straight to Found, which was equivalent to "one step back" only
+///   because Marked used to sit immediately after Found. With PhotographedRaw and
+///   ChalkMarked now between them, a hardcoded revert-to-Found would have silently
+///   erased those two completed steps. It now reverts to whatever
+///   RequiredSequence's own entry immediately before Marked is, so it stays correct
+///   regardless of future reshuffles.
 /// </summary>
 public enum EvidenceStatus
 {
-    NotFound = 0,           // exists in scene, not yet interacted with
-    Found = 1,              // proximity trigger fired - the player noticed it (attention, not judgment)
-    Marked = 2,             // player deliberately tented it as evidence (judgment) - see EvidenceTentTool
-    Photographed = 3,
-    Sketched = 4,
-    Logged = 5,
-    ReadyForCollection = 6, // all of the above are done - Collector's gate opens here
-    Collected = 7,
-    Sealed = 8,             // tamper-evident seal applied at the scene - what actually protects custody between collection and the lab
-    Processed = 9           // seal broken at the lab and analysis done; fingerprint dusting complete where requiresFingerprinting demands it
+    NotFound = 0,             // exists in scene, not yet interacted with
+    Found = 1,                // proximity trigger fired - the player noticed it (attention, not judgment)
+    PhotographedRaw = 2,      // first photograph, taken before the tent is placed - the undisturbed scene
+    ChalkMarked = 3,          // outline chalked around the item, before the numbered tent goes down
+    Marked = 4,               // player deliberately tented it as evidence (judgment) - see EvidenceTentTool
+    PhotographedFinal = 5,    // second photograph, taken with the numbered tent in frame - the documented scene
+    Logged = 6,
+    ReadyForCollection = 7,   // all of the above are done - Collector's gate opens here
+    Collected = 8,
+    Sealed = 9,               // tamper-evident seal applied at the scene - what actually protects custody between collection and the lab
+    Processed = 10            // seal broken at the lab and analysis done; fingerprint dusting complete where requiresFingerprinting demands it
 }

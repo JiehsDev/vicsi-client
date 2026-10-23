@@ -1,0 +1,125 @@
+{
+  "topLevelFields": [
+    "payloadVersion",
+    "sessionId",
+    "studentId",
+    "classId",
+    "scenarioId",
+    "scenarioVersion",
+    "scoringRulesVersion",
+    "groundTruthVersion",
+    "clientVersion",
+    "isTestSession",
+    "includesRawEventLog",
+    "hasDeductionAssessment",
+    "startedAtUtc",
+    "completedAtUtc",
+    "selectedConclusionId",
+    "resolvedEndingId",
+    "durationSeconds",
+    "deductionAssessment",
+    "orderedEvents"
+  ],
+  "eventCount": 99,
+  "questionCount": 13,
+  "optionCount": 50,
+  "questions": [
+    {
+      "id": "RC-01-PETER",
+      "category": "Reasoning",
+      "optionCount": 4,
+      "selectedAnswerWeight": 4.0,
+      "maximumWeight": 4.0
+    },
+    {
+      "id": "RC-02-SCENE",
+      "category": "Reasoning",
+      "optionCount": 4,
+      "selectedAnswerWeight": 4.0,
+      "maximumWeight": 4.0
+    },
+    {
+      "id": "RC-03-FINGERPRINT",
+      "category": "Reasoning",
+      "optionCount": 4,
+      "selectedAnswerWeight": 4.0,
+      "maximumWeight": 4.0
+    },
+    {
+      "id": "RC-04-KNIFE-WOUND",
+      "category": "Reasoning",
+      "optionCount": 4,
+      "selectedAnswerWeight": 4.0,
+      "maximumWeight": 4.0
+    },
+    {
+      "id": "RC-05-TIMELINE",
+      "category": "Reasoning",
+      "optionCount": 4,
+      "selectedAnswerWeight": 4.0,
+      "maximumWeight": 4.0
+    },
+    {
+      "id": "RC-06-BLOODSTAIN",
+      "category": "Reasoning",
+      "optionCount": 4,
+      "selectedAnswerWeight": 4.0,
+      "maximumWeight": 4.0
+    },
+    {
+      "id": "REL-bottle-supports-brother",
+      "category": "Evidence Relationships",
+      "optionCount": 4,
+      "selectedAnswerWeight": 1.0,
+      "maximumWeight": 1.0
+    },
+    {
+      "id": "REL-knife-consistent-wound",
+      "category": "Evidence Relationships",
+      "optionCount": 4,
+      "selectedAnswerWeight": 1.0,
+      "maximumWeight": 1.0
+    },
+    {
+      "id": "REL-paul-print-handled-knife",
+      "category": "Evidence Relationships",
+      "optionCount": 4,
+      "selectedAnswerWeight": 1.0,
+      "maximumWeight": 1.0
+    },
+    {
+      "id": "REL-paul-timeline-contradiction",
+      "category": "Evidence Relationships",
+      "optionCount": 4,
+      "selectedAnswerWeight": 1.0,
+      "maximumWeight": 1.0
+    },
+    {
+      "id": "REL-peter-departure-supported",
+      "category": "Evidence Relationships",
+      "optionCount": 4,
+      "selectedAnswerWeight": 1.0,
+      "maximumWeight": 1.0
+    },
+    {
+      "id": "REL-spatter-consistent-reconstruction",
+      "category": "Evidence Relationships",
+      "optionCount": 4,
+      "selectedAnswerWeight": 1.0,
+      "maximumWeight": 1.0
+    },
+    {
+      "id": "FINAL-CONCLUSION",
+      "category": "Final Conclusion",
+      "optionCount": 2,
+      "selectedAnswerWeight": 1.0,
+      "maximumWeight": 1.0
+    }
+  ],
+  "components": {
+    "reasoningComponent": 60.0,
+    "relationshipComponent": 25.0,
+    "conclusionComponent": 15.0,
+    "totalScore": 100.0
+  }
+}

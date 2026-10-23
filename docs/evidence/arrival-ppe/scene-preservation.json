@@ -1,0 +1,47 @@
+{
+  "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+  "comparison": "docs/evidence/arrival-entry/CSI_Environment.unity.before",
+  "beforeSha256": "96008381f325db1f0b9b498cabc794ee315c569a285a277ed359a8eff2d70d99",
+  "afterSha256": "91d5c8c35425cdc32fec5ecb6bbc01ebfb07c368e227d62da5e10fdf12786005",
+  "recordsBefore": 5297,
+  "recordsAfter": 5312,
+  "addedRecords": 15,
+  "removedRecords": [],
+  "changedExisting": [
+    {
+      "id": "121411599",
+      "type": "4"
+    },
+    {
+      "id": "1311940559",
+      "type": "114"
+    },
+    {
+      "id": "1311940560",
+      "type": "4"
+    },
+    {
+      "id": "1705414296",
+      "type": "4"
+    }
+  ],
+  "addedGameObjects": [
+    "Controlled entry label",
+    "Backing",
+    "Controlled Entry Point Sign",
+    "Frame"
+  ],
+  "allowedExistingChangesOnly": true,
+  "sourceHashes": {
+    "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity": "91d5c8c35425cdc32fec5ecb6bbc01ebfb07c368e227d62da5e10fdf12786005",
+    "Assets/Resources/ArrivalPPEStation.prefab": "5acd0c22464b61de41397cb4ab51f0d81ad75ef0a135d61b80a7f303a277b496",
+    "Assets/Resources/ViCSIDialogueCatalog.asset": "6db8aaa1df8872f82e6d1d361888a16094533c7a462c99bc757d2edc85c39d8f",
+    "Assets/_Project/Scripts/SceneTurnover/ArrivalPPEStation.cs": "c347b10e9a76c4038fd27ad5f9a4772a251fab950231ea75306efee9253b4e1e",
+    "Assets/_Project/Scripts/SceneTurnover/SceneCordon.cs": "dd55f72f2443fac413550d54aa0c487b443aad81472e04ae7077b9a97b7d7257",
+    "Assets/_Project/Scripts/SceneTurnover/FirstResponderTurnover.cs": "6d023c8540f0abfd3c9bafb082d9a9ed425078a3eb08e13ce7cee44df9130972",
+    "Assets/_Project/Scripts/SceneTurnover/SceneTurnover.cs": "800bc4d448bf5a7e83dd92cc91a3df482b9a1ea2aa61d1ac2a62f7c3a55e1ec2",
+    "Assets/_Project/Scripts/SceneTurnover/IOCAssessmentGuide.cs": "a5c4cb90878b1d9bf22869ee3accf1d452ff2d7a062c7e86ccc6e38cc903c7c8",
+    "Assets/_Project/Scripts/SceneTurnover/IOCAssessmentInteraction.cs": "f3aca786f4e4bb007ad4b29bcf811673972e58195c2caaf5572e9134779f4af2"
+  },
+  "passed": true
+}

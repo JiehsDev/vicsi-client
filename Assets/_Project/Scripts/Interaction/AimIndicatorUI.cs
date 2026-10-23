@@ -13,7 +13,10 @@ using UnityEngine.UI;
 /// marked one - both revealing "this object is evidence" before the player had
 /// done anything to justify knowing that, and promising a successful shutter press
 /// the gate would then refuse. IsConfirmedForCapture is the only signal this
-/// component may ever read; see its field comment on PhotographTool for why.
+/// component may ever read about evidence; see its field comment on PhotographTool.
+/// The one other green case is standing inside the active scene-photography point's
+/// circle (ScenePhotographyManager.IsPlayerInActiveZone), kept in step with the
+/// viewfinder frame (ViewfinderConfirmationFeedback).
 /// </summary>
 public class AimIndicatorUI : MonoBehaviour
 {
@@ -39,7 +42,8 @@ public class AimIndicatorUI : MonoBehaviour
         }
 
         photographTool.OnConfirmedForCaptureChanged += SetValidity;
-        SetValidity(photographTool.IsConfirmedForCapture);
+        ScenePhotographyManager.OnActiveZoneChanged += SetValidity;
+        SetValidity(false);
     }
 
     private void OnDisable()
@@ -48,13 +52,18 @@ public class AimIndicatorUI : MonoBehaviour
         {
             photographTool.OnConfirmedForCaptureChanged -= SetValidity;
         }
+        ScenePhotographyManager.OnActiveZoneChanged -= SetValidity;
     }
 
-    private void SetValidity(bool confirmed)
+    // Either signal changed - recompute from both rather than trusting the argument.
+    private void SetValidity(bool _)
     {
-        if (dotImage != null)
+        if (dotImage == null || photographTool == null)
         {
-            dotImage.color = confirmed ? canCaptureColor : cannotCaptureColor;
+            return;
         }
+        var scene = ScenePhotographyManager.Instance;
+        bool green = photographTool.IsConfirmedForCapture || (scene != null && scene.IsPlayerInActiveZone);
+        dotImage.color = green ? canCaptureColor : cannotCaptureColor;
     }
 }

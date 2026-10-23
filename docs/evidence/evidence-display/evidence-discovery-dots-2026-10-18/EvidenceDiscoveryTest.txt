@@ -1,0 +1,12 @@
+=== EvidenceDiscoveryTest ===
+PASS: Scaled bottle has the authored 1.5 m world-space notice radius
+PASS: Bottle keeps its real-sized solid collider and model scale
+PASS: Latent fingerprint still has no automatic discovery sphere
+PASS: Bottle starts undiscovered
+PASS: Approach across the counter is inside the notice sphere
+PASS: IOC approach cannot discover the bottle
+PASS: Unlocking investigation discovers the already-overlapping player
+PASS: Staying and reentering never repeat the Found transition
+PASS: Discovery keeps bottle placement, physical collider and size intact
+PASS: Non-uniform rotated imports also retain the world-space radius
+=== PASS, 0 failures ===

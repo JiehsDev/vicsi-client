@@ -1,0 +1,7 @@
+# Sketch placement revision ? 2026-10-22
+
+Incorrect evidence placement now keeps the card attached to the cursor instead of animating back to the palette. The message explains that the position does not match the scene; the player can immediately move it and retry. An off-board attempt also stays held. B still explicitly cancels a drag. Existing placement tolerance, hints, evidence unlocks and correct-placement locking remain.
+
+Correct placement automatically attaches the evidence's recorded tape-measure distances to their matching reference boxes and lines. Only actual recorded values are used, identified by evidence, requirement and reference IDs. Distances recorded later also attach while the sketch is closed. Unrecorded distances remain empty and still prevent submission. Measurement cards in the side panel are informational; manual distance dragging is no longer required. Existing sketch state and measurement event formats remain supported.
+
+Validation covers cursor retention and movement after rejection, repeated wrong placements and hints, exact snapping, automatic attachment before/after placement, equal numeric distances with distinct identities, incremental reopening, submission locking and session reset. Results: CrimeSceneSketchTest passed 81 checks with 0 failures; Unity compilation has 0 C# errors. Report: docs/evidence/sketch-placement-revision-2026-10-22/run1/CrimeSceneSketchTest.txt.

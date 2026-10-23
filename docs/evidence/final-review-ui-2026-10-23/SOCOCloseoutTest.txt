@@ -1,0 +1,76 @@
+=== SOCOCloseoutTest (phase/custody fixtures, not procedure replay) ===
+  PASS: Scene has persisted closeout references and begins in SOCO investigation
+  PASS: Append-safe Complete ordinal and chronological phase query
+  PASS: Cannot skip directly to investigation completion or release
+  PASS: Cannot enter closeout before accepting conclusion feedback
+  PASS: Prior scene sketch is submitted before conclusion feedback
+  PASS: ending-brother-accused: feedback leads to closeout and preserves both result IDs
+  PASS: ending-brother-accused: timer continues and cordon remains secured
+  PASS: ending-inconclusive: feedback leads to closeout and preserves both result IDs
+  PASS: ending-inconclusive: timer continues and cordon remains secured
+  PASS: ending-peter-unsupported: feedback leads to closeout and preserves both result IDs
+  PASS: ending-peter-unsupported: timer continues and cordon remains secured
+  PASS: ending-premature-submission: feedback leads to closeout and preserves both result IDs
+  PASS: ending-premature-submission: timer continues and cordon remains secured
+  PASS: Evidence processing stays enabled in closeout
+  PASS: Accepted conclusion cannot be resubmitted or rescored during closeout
+  PASS: Unsecured evidence blocks review with useful feedback
+  PASS: Pending review text does not claim secured evidence
+  PASS: Body documentation alone is not closeout completion
+  PASS: Body removal completes accountability without ordinary evidence sealing
+  PASS: Processed status alone does not substitute for physical custody
+  PASS: EVD-014: contained/sealed but unstored sample is not secured
+  PASS: EVD-014: B handler stores the separate completed sample
+  PASS: EVD-015: contained/sealed but unstored sample is not secured
+  PASS: EVD-015: B handler stores the separate completed sample
+  PASS: Knife and spatter source identities cannot substitute for each other
+  PASS: EVD-014: sealed held bag still requires explicit storage
+  PASS: EVD-014: B storage completes authored bag custody
+  PASS: EVD-018: sealed held bag still requires explicit storage
+  PASS: EVD-018: B storage completes authored bag custody
+  PASS: Bottle's fingerprint work remains required after bag storage
+  PASS: Knife sample cannot borrow the spatter sample's sealed state
+  PASS: Closeout requires custody pass before review
+  PASS: Bulk custody review opens at box
+  PASS: Bulk custody transfers all stored items with visible contents
+INFO: review phase=EvidenceInventoryReview; owners=SOCOCloseout; dialogue=; tools=True; missing=; eye=(14.40, 1.96, 1.85); dialogueSuppressed=False
+  PASS: All accounted evidence automatically offers the live inventory review
+  PASS: Review owns modal/tool input and cannot be skipped through phase API
+  PASS: Review can close/reopen without acknowledging it
+  PASS: Explicit review confirmation enters final survey
+  PASS: Final survey has an authored destination cue
+  PASS: [training] inventory and final-survey explanations scheduled at their phase entries
+  PASS: Confirmed custody cannot be re-equipped during final survey
+  PASS: Final survey cannot be performed from outside its authored area
+  PASS: Intentional SOCO survey advances to IOC report without reusing IOC observations
+  PASS: Completion report still requires explicit confirmation before release
+  PASS: Completion report opens without approaching or restoring the retired IOC
+  PASS: IOC asks the authored question before explicit confirmation
+  PASS: Scene release precedes completion and cordon persists through IOC reply
+  PASS: Administrative closeout completes investigation with cordon still visible and closed
+  PASS: Both investigation and finalized session clocks freeze only at completion
+  PASS: Conclusion and all evidence custody remain preserved at completion
+  PASS: Each final milestone logs once
+  PASS: Final case review opens only after completed closeout
+  PASS: First section disables Previous and shows a clear title
+  PASS: A single press advances only one section
+  PASS: Previous returns to the first section without exiting
+  PASS: Section 1: header and action labels fit
+  PASS: Section 1: panel size stays stable and starts at the top
+  PASS: Section 2: header and action labels fit
+  PASS: Section 2: panel size stays stable and starts at the top
+  PASS: Section 3: header and action labels fit
+  PASS: Section 3: panel size stays stable and starts at the top
+  PASS: Section 4: header and action labels fit
+  PASS: Section 4: panel size stays stable and starts at the top
+  PASS: Section 5: header and action labels fit
+  PASS: Section 5: panel size stays stable and starts at the top
+  PASS: Section 6: header and action labels fit
+  PASS: Section 6: panel size stays stable and starts at the top
+  PASS: Section 7: header and action labels fit
+  PASS: Section 7: panel size stays stable and starts at the top
+  PASS: Section 7: long content scrolls without moving controls
+  PASS: Last section offers an explicit finish action
+  PASS: Review navigation preserves finalized state
+  PASS: Fresh scene resets results, closeout milestones, inventory, timer and cordon
+=== PASS, 0 failures ===

@@ -1,0 +1,22 @@
+{
+  "startupGatePreserved": true,
+  "approachAt1point6Meters": true,
+  "physicalInteractionOpens": true,
+  "discoveryNotAutomatic": true,
+  "stateOwners": 1,
+  "outsideCordon": true,
+  "staticBody": true,
+  "colliderCount": 1,
+  "approachRouteClear": true,
+  "roadsidePassageClear": true,
+  "promptShownAtComfortableDistance": true,
+  "questionSelectedFromExistingPanel": true,
+  "statementDiscoveredOnce": true,
+  "duplicateQuestionRefused": true,
+  "statementDiscoveryEventCount": 1,
+  "placeholderVisible": true,
+  "zeroCSharpCompileErrors": true,
+  "focusedChecksPassed": 6,
+  "focusedChecksFailed": 0,
+  "inspectionMode": "Editor Play mode plus positioned screenshot and collider checks; no headset walk test"
+}

@@ -1,0 +1,5 @@
+Left fence: Center: (8.00, 0.65, 9.83), Extents: (0.08, 0.65, 9.68)
+Right fence: Center: (25.00, 0.65, 9.83), Extents: (0.08, 0.65, 9.68)
+Rear fence: Center: (16.50, 0.65, 19.50), Extents: (8.50, 0.65, 0.08)
+Protected local: Center: (-0.40, 3.50, 8.43), Extents: (8.50, 4.00, 8.25)
+Approach local: Center: (-0.40, 1.50, 0.03), Extents: (8.50, 2.00, 0.15)

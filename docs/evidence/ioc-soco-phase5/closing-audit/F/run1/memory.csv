@@ -1,0 +1,6 @@
+"suite","editorPid","privateGB","freeGB"
+"AssessmentUploadServiceTest",,"0","3.78"
+"SessionPersistenceTest",,"0","3.48"
+"VrIdentityUploadBridgeTest",,"0","3.49"
+"OfflineQueueRetentionTest",,"0","3.9"
+"PreSessionFlowControllerTest","16464","0.25","3.4"

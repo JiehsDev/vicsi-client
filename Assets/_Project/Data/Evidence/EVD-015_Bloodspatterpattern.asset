@@ -15,7 +15,481 @@ MonoBehaviour:
   evidenceId: EVD-015
   displayName: Blood spatter pattern
   relevance: 0
+  interactionRadius: 1.5
   requiresFingerprinting: 0
-  description: Spatter on the floor near the base of the stairs. Distribution and
-    droplet shape are the diagnostic feature - a fall produces a different pattern
-    than an impact.
+  fingerprintBeforeCollection: 0
+  requiresFlipBeforeFingerprinting: 0
+  fingerprintMatchIdentity: 
+  description: A group of reddish stains forming a spatter pattern on a floor surface.
+  foundLocation: On the kitchen floor near the body.
+  observedCondition: Multiple droplets were visible with differing shapes, sizes
+    and directions. The pattern was documented before sampling.
+  investigativeContext: The distribution of droplets can help reconstruct what happened
+    near John's position and identify the likely attack area. Pattern interpretation
+    does not identify a person by itself.
+  loggingContext: 
+  progressiveFindings:
+  - text: A representative sample of the reddish staining was collected and sealed
+      in a swab container.
+    revealRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: EVD-015
+      evidenceReference: {fileID: 0}
+      requiredStatus: 8
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  - text: The documented distribution can inform reconstruction of the event mechanism,
+      but does not establish who was present.
+    revealRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 1
+      evidenceId: EVD-015
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: blood-spatter-mechanism-only
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  reportLineOptions:
+  - id: blood-spatter-location
+    text: Spatter observed on the kitchen floor near the body.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  - id: blood-spatter-droplet-pattern
+    text: The stain distribution supports the kitchen near John's position as the
+      area where blood was deposited during the attack.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  - id: blood-spatter-swab-collection
+    text: Collected via swab sample due to its liquid form; not suitable for physical
+      bagging like solid evidence.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  - id: blood-spatter-mechanism-only
+    text: The pattern is consistent with blood being deposited during an attack near
+      John's location. It does not identify who caused the attack.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  - id: blood-spatter-fall-confirmed
+    text: The blood pattern identifies Paul as the attacker.
+    isAccurate: 0
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  - id: blood-spatter-identity-assumed
+    text: The blood pattern proves Peter was the last person with John.
+    isAccurate: 0
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  minimumLinesRequired: 3
+  chalkCircleRadius: 0.24
+  requiresChalk: 1
+  chalkPointCount: 24
+  chalkCompletionThreshold: 0.9
+  requiresSwabbing: 1
+  collectedBySwab: 1
+  swabBeforeFingerprinting: 0
+  examinedInPlace: 0
+  icon: {fileID: 21300000, guid: bb228e379bd1b12469a143dff2b5f661, type: 3}
+  heldPrefab: {fileID: 7244812867387657823, guid: cca1be3aa02cec24ba639488eafea3fa, type: 3}
+  heldLocalPosition: {x: -0.05, y: 0.02, z: 0.08}
+  heldLocalEulerAngles: {x: 0, y: 0, z: 0}
+  heldLocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  depositRequirement:
+    kind: 1
+    operatorType: 0
+    children: []
+    requirementType: 0
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    measurementRequirementId: 
+    authoringNote: 
+  depositedVisual: {fileID: 0}
+  stepRequirements:
+  - stepId: final-evidence-photograph
+    action: 0
+    beforeStatus: 5
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 14
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: MEAS-EVD-015
+      authoringNote: 
+    enforcement: 0
+    messageId: step-measure-before-final-photo
+    message: 
+    expectedPrerequisite: measurement:MEAS-EVD-015
+  - stepId: evidence-distances-before-final-photo
+    action: 0
+    beforeStatus: 5
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 16
+      evidenceId: EVD-015
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    enforcement: 0
+    messageId: step-measure-distances-before-final-photo
+    message: 
+    expectedPrerequisite: evidence-distances:EVD-015
+  - stepId: scene-measurements-before-record
+    action: 0
+    beforeStatus: 6
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 17
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    enforcement: 1
+    messageId: step-measurements-before-records
+    message: 
+    expectedPrerequisite: scene-measurements
+  - stepId: scene-photos-before-evidence-photo
+    action: 0
+    beforeStatus: 2
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    enforcement: 0
+    messageId: step-scene-photos-before-evidence-photos
+    message: 
+    expectedPrerequisite: scene-photography
+  - stepId: scene-photos-before-chalk
+    action: 0
+    beforeStatus: 3
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    enforcement: 1
+    messageId: step-scene-photos-before-chalk
+    message: 
+    expectedPrerequisite: scene-photography
+  - stepId: scene-photos-before-marker
+    action: 0
+    beforeStatus: 4
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    enforcement: 1
+    messageId: step-scene-photos-before-markers
+    message: 
+    expectedPrerequisite: scene-photography
+  - stepId: scene-photos-before-sampling
+    action: 1
+    beforeStatus: 8
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    enforcement: 1
+    messageId: step-scene-photos-before-sampling
+    message: 
+    expectedPrerequisite: scene-photography
+  - stepId: scene-photos-before-collection
+    action: 0
+    beforeStatus: 8
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    enforcement: 1
+    messageId: step-scene-photos-before-collection
+    message: 
+    expectedPrerequisite: scene-photography
+  references:
+    version: 2
+    RefIds: []

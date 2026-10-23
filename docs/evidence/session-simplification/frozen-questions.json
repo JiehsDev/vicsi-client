@@ -1,0 +1,605 @@
+{
+    "scoringRulesVersion": "1.7.0",
+    "contentVersion": "1.0.0",
+    "selectedConclusionId": "conclusion-brother",
+    "resolvedEndingId": "ending-brother-accused",
+    "atConclusion": true,
+    "requiresSceneRelease": true,
+    "checkpointSystemReady": true,
+    "form1Received": true,
+    "victimObserved": true,
+    "sceneSecurityAcknowledged": true,
+    "iocObservationIds": [
+        "ioc-victim",
+        "ioc-possible-weapon",
+        "ioc-bloodstain-area",
+        "ioc-drinking-context",
+        "ioc-main-scene-survey"
+    ],
+    "confirmedFindingIds": [
+        "FIND-BODY-SHARP-WOUND",
+        "FIND-KNIFE-WOUND-CONSISTENT",
+        "FIND-KNIFE-PRINT-BROTHER",
+        "FIND-KNIFE-BLOOD-SAMPLED",
+        "FIND-SPATTER-RECONSTRUCTION"
+    ],
+    "discoveredStatementIds": [
+        "statement_vendor_paul_3am"
+    ],
+    "observedEvidenceIds": [
+        "EVD-014",
+        "EVD-015",
+        "EVD-018",
+        "BODY-A"
+    ],
+    "checkpoints": [
+        {
+            "checkpointId": "RC-01-PETER",
+            "responseId": "RC-01-PETER-C",
+            "wasEligible": true,
+            "responseOrder": 1,
+            "eligibleSeconds": 21.255996704101564,
+            "answeredSeconds": 21.34905433654785
+        },
+        {
+            "checkpointId": "RC-02-SCENE",
+            "responseId": "RC-02-SCENE-B",
+            "wasEligible": true,
+            "responseOrder": 2,
+            "eligibleSeconds": 21.26195526123047,
+            "answeredSeconds": 21.35196304321289
+        },
+        {
+            "checkpointId": "RC-03-FINGERPRINT",
+            "responseId": "RC-03-FINGERPRINT-C",
+            "wasEligible": true,
+            "responseOrder": 3,
+            "eligibleSeconds": 27.923376083374025,
+            "answeredSeconds": 27.9234561920166
+        },
+        {
+            "checkpointId": "RC-04-KNIFE-WOUND",
+            "responseId": "RC-04-KNIFE-WOUND-B",
+            "wasEligible": true,
+            "responseOrder": 4,
+            "eligibleSeconds": 28.159534454345704,
+            "answeredSeconds": 28.16001319885254
+        },
+        {
+            "checkpointId": "RC-05-TIMELINE",
+            "responseId": "RC-05-TIMELINE-B",
+            "wasEligible": true,
+            "responseOrder": 5,
+            "eligibleSeconds": 29.44279670715332,
+            "answeredSeconds": 29.4428825378418
+        },
+        {
+            "checkpointId": "RC-06-BLOODSTAIN",
+            "responseId": "RC-06-BLOODSTAIN-B",
+            "wasEligible": true,
+            "responseOrder": 6,
+            "eligibleSeconds": 29.5555362701416,
+            "answeredSeconds": 29.555591583251954
+        }
+    ],
+    "completedRelationshipIds": [
+        "REL-paul-timeline-contradiction",
+        "REL-bottle-supports-brother",
+        "REL-knife-consistent-wound",
+        "REL-spatter-consistent-reconstruction",
+        "REL-paul-print-handled-knife",
+        "REL-peter-departure-supported"
+    ],
+    "boardConnections": [],
+    "relationshipReviewVersion": 1,
+    "relationshipResponses": [
+        {
+            "relationshipId": "REL-bottle-supports-brother",
+            "responseId": "REL-bottle-supports-brother-C",
+            "responseOrder": 1,
+            "answeredSeconds": 28.257104873657228
+        },
+        {
+            "relationshipId": "REL-knife-consistent-wound",
+            "responseId": "REL-knife-consistent-wound-C",
+            "responseOrder": 2,
+            "answeredSeconds": 28.260101318359376
+        },
+        {
+            "relationshipId": "REL-paul-print-handled-knife",
+            "responseId": "REL-paul-print-handled-knife-B",
+            "responseOrder": 3,
+            "answeredSeconds": 28.26677894592285
+        },
+        {
+            "relationshipId": "REL-peter-departure-supported",
+            "responseId": "REL-peter-departure-supported-A",
+            "responseOrder": 4,
+            "answeredSeconds": 28.273332595825197
+        },
+        {
+            "relationshipId": "REL-paul-timeline-contradiction",
+            "responseId": "REL-paul-timeline-contradiction-A",
+            "responseOrder": 5,
+            "answeredSeconds": 29.40567207336426
+        },
+        {
+            "relationshipId": "REL-spatter-consistent-reconstruction",
+            "responseId": "REL-spatter-consistent-reconstruction-B",
+            "responseOrder": 6,
+            "answeredSeconds": 29.612689971923829
+        }
+    ],
+    "questionRecordVersion": 1,
+    "questionRecords": [
+        {
+            "id": "RC-01-PETER",
+            "category": "Reasoning",
+            "dimension": "EVIDENCE_CAUTION",
+            "question": "Based on what you know so far, what do you make of Peter leaving the house looking nervous?",
+            "selectedAnswerId": "RC-01-PETER-C",
+            "wasAvailable": true,
+            "answeredSeconds": 21.34905433654785,
+            "selectedAnswerWeight": 4.0,
+            "maximumWeight": 4.0,
+            "options": [
+                {
+                    "id": "RC-01-PETER-A",
+                    "text": "Peter probably did it. Leaving nervously after being with John is enough to make him the main suspect.",
+                    "endingId": "",
+                    "weight": 1.0
+                },
+                {
+                    "id": "RC-01-PETER-B",
+                    "text": "Peter could be involved. His behavior makes him worth looking into, but I need more information.",
+                    "endingId": "",
+                    "weight": 3.0
+                },
+                {
+                    "id": "RC-01-PETER-C",
+                    "text": "I would not treat nervous behavior as proof of guilt. It gives me a reason to ask questions, not a reason to accuse him.",
+                    "endingId": "",
+                    "weight": 4.0
+                },
+                {
+                    "id": "RC-01-PETER-D",
+                    "text": "I don't think Peter matters to the investigation.",
+                    "endingId": "",
+                    "weight": 2.0
+                }
+            ]
+        },
+        {
+            "id": "RC-02-SCENE",
+            "category": "Reasoning",
+            "dimension": "SCENE_INTERPRETATION",
+            "question": "What can you reasonably conclude from the scene at this point?",
+            "selectedAnswerId": "RC-02-SCENE-B",
+            "wasAvailable": true,
+            "answeredSeconds": 21.35196304321289,
+            "selectedAnswerWeight": 4.0,
+            "maximumWeight": 4.0,
+            "options": [
+                {
+                    "id": "RC-02-SCENE-A",
+                    "text": "The knife near John must be the murder weapon.",
+                    "endingId": "",
+                    "weight": 1.0
+                },
+                {
+                    "id": "RC-02-SCENE-B",
+                    "text": "The knife and blood are important, but they still need proper examination before I can say what happened.",
+                    "endingId": "",
+                    "weight": 4.0
+                },
+                {
+                    "id": "RC-02-SCENE-C",
+                    "text": "There isn't enough here to justify further forensic examination.",
+                    "endingId": "",
+                    "weight": 1.0
+                },
+                {
+                    "id": "RC-02-SCENE-D",
+                    "text": "The scene suggests a violent incident, but I still need the physical evidence to understand it.",
+                    "endingId": "",
+                    "weight": 3.0
+                }
+            ]
+        },
+        {
+            "id": "RC-03-FINGERPRINT",
+            "category": "Reasoning",
+            "dimension": "LIMITATION_RECOGNITION",
+            "question": "Paul's fingerprint was recovered from the knife. What does that tell you?",
+            "selectedAnswerId": "RC-03-FINGERPRINT-C",
+            "wasAvailable": true,
+            "answeredSeconds": 27.9234561920166,
+            "selectedAnswerWeight": 4.0,
+            "maximumWeight": 4.0,
+            "options": [
+                {
+                    "id": "RC-03-FINGERPRINT-A",
+                    "text": "Paul must have used the knife to attack John.",
+                    "endingId": "",
+                    "weight": 1.0
+                },
+                {
+                    "id": "RC-03-FINGERPRINT-B",
+                    "text": "It makes Paul more suspicious, but I still need other evidence before deciding what the print means in this case.",
+                    "endingId": "",
+                    "weight": 3.0
+                },
+                {
+                    "id": "RC-03-FINGERPRINT-C",
+                    "text": "It shows Paul handled the knife at some point, but the print alone doesn't tell me when he touched it or what he did with it.",
+                    "endingId": "",
+                    "weight": 4.0
+                },
+                {
+                    "id": "RC-03-FINGERPRINT-D",
+                    "text": "The fingerprint doesn't matter because Paul knew John.",
+                    "endingId": "",
+                    "weight": 2.0
+                }
+            ]
+        },
+        {
+            "id": "RC-04-KNIFE-WOUND",
+            "category": "Reasoning",
+            "dimension": "RELATIONSHIP_REASONING",
+            "question": "The knife is consistent with John's wound. How should that finding be interpreted?",
+            "selectedAnswerId": "RC-04-KNIFE-WOUND-B",
+            "wasAvailable": true,
+            "answeredSeconds": 28.16001319885254,
+            "selectedAnswerWeight": 4.0,
+            "maximumWeight": 4.0,
+            "options": [
+                {
+                    "id": "RC-04-KNIFE-WOUND-A",
+                    "text": "This proves the knife was used to kill John.",
+                    "endingId": "",
+                    "weight": 1.0
+                },
+                {
+                    "id": "RC-04-KNIFE-WOUND-B",
+                    "text": "The knife could be the weapon because its characteristics are consistent with the wound, but that relationship alone does not prove who used it.",
+                    "endingId": "",
+                    "weight": 4.0
+                },
+                {
+                    "id": "RC-04-KNIFE-WOUND-C",
+                    "text": "The knife is probably involved, but I would still want the other findings before relying on it.",
+                    "endingId": "",
+                    "weight": 3.0
+                },
+                {
+                    "id": "RC-04-KNIFE-WOUND-D",
+                    "text": "If the knife fits the wound, whoever touched it must be the attacker.",
+                    "endingId": "",
+                    "weight": 1.0
+                }
+            ]
+        },
+        {
+            "id": "RC-05-TIMELINE",
+            "category": "Reasoning",
+            "dimension": "TIMELINE_REASONING",
+            "question": "I went straight home. I didn't come back after that.\n\nThe vendor says he saw Paul near John's house around three in the morning. How does that affect Paul's account?",
+            "selectedAnswerId": "RC-05-TIMELINE-B",
+            "wasAvailable": true,
+            "answeredSeconds": 29.4428825378418,
+            "selectedAnswerWeight": 4.0,
+            "maximumWeight": 4.0,
+            "options": [
+                {
+                    "id": "RC-05-TIMELINE-A",
+                    "text": "It proves Paul came back and killed John.",
+                    "endingId": "",
+                    "weight": 1.0
+                },
+                {
+                    "id": "RC-05-TIMELINE-B",
+                    "text": "It makes Paul's story questionable because the vendor's observation conflicts with his claim that he never returned.",
+                    "endingId": "",
+                    "weight": 4.0
+                },
+                {
+                    "id": "RC-05-TIMELINE-C",
+                    "text": "It makes Paul more suspicious, but the vendor still did not see him enter the house or attack John.",
+                    "endingId": "",
+                    "weight": 3.0
+                },
+                {
+                    "id": "RC-05-TIMELINE-D",
+                    "text": "It doesn't matter because the vendor didn't witness the attack.",
+                    "endingId": "",
+                    "weight": 2.0
+                }
+            ]
+        },
+        {
+            "id": "RC-06-BLOODSTAIN",
+            "category": "Reasoning",
+            "dimension": "EVIDENCE_INTEGRATION",
+            "question": "What does the bloodstain finding contribute to the case?",
+            "selectedAnswerId": "RC-06-BLOODSTAIN-B",
+            "wasAvailable": true,
+            "answeredSeconds": 29.555591583251954,
+            "selectedAnswerWeight": 4.0,
+            "maximumWeight": 4.0,
+            "options": [
+                {
+                    "id": "RC-06-BLOODSTAIN-A",
+                    "text": "It identifies Paul as the attacker.",
+                    "endingId": "",
+                    "weight": 1.0
+                },
+                {
+                    "id": "RC-06-BLOODSTAIN-B",
+                    "text": "It helps establish where the attack occurred, but it does not identify the attacker by itself.",
+                    "endingId": "",
+                    "weight": 4.0
+                },
+                {
+                    "id": "RC-06-BLOODSTAIN-C",
+                    "text": "It supports the physical reconstruction of what happened near John, but it still needs to be considered with the other evidence.",
+                    "endingId": "",
+                    "weight": 3.0
+                },
+                {
+                    "id": "RC-06-BLOODSTAIN-D",
+                    "text": "The blood only confirms that John was injured, so it adds nothing else.",
+                    "endingId": "",
+                    "weight": 2.0
+                }
+            ]
+        },
+        {
+            "id": "REL-bottle-supports-brother",
+            "category": "Evidence Relationships",
+            "dimension": "",
+            "question": "EVD-018 Bottle + the reported drinking gathering\nHow should this contextual evidence be used?",
+            "selectedAnswerId": "REL-bottle-supports-brother-C",
+            "wasAvailable": true,
+            "answeredSeconds": 28.257104873657228,
+            "selectedAnswerWeight": 1.0,
+            "maximumWeight": 1.0,
+            "options": [
+                {
+                    "id": "REL-bottle-supports-brother-A",
+                    "text": "Handling the bottle proves that a person remained in the house until the attack.",
+                    "endingId": "",
+                    "weight": -1.0
+                },
+                {
+                    "id": "REL-bottle-supports-brother-B",
+                    "text": "The bottle shows the attack was accidental because the gathering involved drinking.",
+                    "endingId": "",
+                    "weight": -1.0
+                },
+                {
+                    "id": "REL-bottle-supports-brother-C",
+                    "text": "The bottle is consistent with the reported gathering and shared handling. It does not establish who was present during the attack or who committed it.",
+                    "endingId": "",
+                    "weight": 1.0
+                },
+                {
+                    "id": "REL-bottle-supports-brother-D",
+                    "text": "The bottle establishes the order and time at which each participant handled it.",
+                    "endingId": "",
+                    "weight": -1.0
+                }
+            ]
+        },
+        {
+            "id": "REL-knife-consistent-wound",
+            "category": "Evidence Relationships",
+            "dimension": "",
+            "question": "EVD-014 Kitchen Knife + John's injury\nWhat can be concluded from their consistency?",
+            "selectedAnswerId": "REL-knife-consistent-wound-C",
+            "wasAvailable": true,
+            "answeredSeconds": 28.260101318359376,
+            "selectedAnswerWeight": 1.0,
+            "maximumWeight": 1.0,
+            "options": [
+                {
+                    "id": "REL-knife-consistent-wound-A",
+                    "text": "The injury proves this particular knife was used and excludes every other sharp object.",
+                    "endingId": "",
+                    "weight": -1.0
+                },
+                {
+                    "id": "REL-knife-consistent-wound-B",
+                    "text": "The injury and knife together identify Paul as the person who inflicted the wound.",
+                    "endingId": "",
+                    "weight": -1.0
+                },
+                {
+                    "id": "REL-knife-consistent-wound-C",
+                    "text": "The knife is consistent with John's injury and could have caused it, but this relationship alone does not identify who used it.",
+                    "endingId": "",
+                    "weight": 1.0
+                },
+                {
+                    "id": "REL-knife-consistent-wound-D",
+                    "text": "A compatible injury establishes the attack sequence and the time at which the knife was used.",
+                    "endingId": "",
+                    "weight": -1.0
+                }
+            ]
+        },
+        {
+            "id": "REL-paul-print-handled-knife",
+            "category": "Evidence Relationships",
+            "dimension": "",
+            "question": "Paul's fingerprint + EVD-014 Kitchen Knife\nWhat does this relationship support?",
+            "selectedAnswerId": "REL-paul-print-handled-knife-B",
+            "wasAvailable": true,
+            "answeredSeconds": 28.26677894592285,
+            "selectedAnswerWeight": 1.0,
+            "maximumWeight": 1.0,
+            "options": [
+                {
+                    "id": "REL-paul-print-handled-knife-A",
+                    "text": "Paul's print identifies him as the person who used the knife during the attack.",
+                    "endingId": "",
+                    "weight": -1.0
+                },
+                {
+                    "id": "REL-paul-print-handled-knife-B",
+                    "text": "Paul handled the knife at some point, but the print alone does not establish when, why, or whether he used it during the attack.",
+                    "endingId": "",
+                    "weight": 1.0
+                },
+                {
+                    "id": "REL-paul-print-handled-knife-C",
+                    "text": "The print shows Paul handled the knife only during the earlier gathering and excludes later handling.",
+                    "endingId": "",
+                    "weight": -1.0
+                },
+                {
+                    "id": "REL-paul-print-handled-knife-D",
+                    "text": "Because the print cannot be dated, it provides no evidence that Paul handled the knife.",
+                    "endingId": "",
+                    "weight": -1.0
+                }
+            ]
+        },
+        {
+            "id": "REL-paul-timeline-contradiction",
+            "category": "Evidence Relationships",
+            "dimension": "",
+            "question": "Paul's statement + the vendor's observation around 3:00 AM\nHow should these accounts be interpreted?",
+            "selectedAnswerId": "REL-paul-timeline-contradiction-A",
+            "wasAvailable": true,
+            "answeredSeconds": 29.40567207336426,
+            "selectedAnswerWeight": 1.0,
+            "maximumWeight": 1.0,
+            "options": [
+                {
+                    "id": "REL-paul-timeline-contradiction-A",
+                    "text": "The vendor's observation contradicts Paul's claim that he went home around midnight and did not return. The vendor did not witness the attack.",
+                    "endingId": "",
+                    "weight": 1.0
+                },
+                {
+                    "id": "REL-paul-timeline-contradiction-B",
+                    "text": "The observation confirms Paul's claim because it occurred after the earlier gathering.",
+                    "endingId": "",
+                    "weight": -1.0
+                },
+                {
+                    "id": "REL-paul-timeline-contradiction-C",
+                    "text": "The observation proves Paul attacked John at exactly 3:00 AM.",
+                    "endingId": "",
+                    "weight": -1.0
+                },
+                {
+                    "id": "REL-paul-timeline-contradiction-D",
+                    "text": "The accounts cannot be compared unless the vendor also saw what happened inside the house.",
+                    "endingId": "",
+                    "weight": -1.0
+                }
+            ]
+        },
+        {
+            "id": "REL-peter-departure-supported",
+            "category": "Evidence Relationships",
+            "dimension": "",
+            "question": "Peter's departure account + the vendor's observation around 2:00 AM\nWhat is supported by the two accounts?",
+            "selectedAnswerId": "REL-peter-departure-supported-A",
+            "wasAvailable": true,
+            "answeredSeconds": 28.273332595825197,
+            "selectedAnswerWeight": 1.0,
+            "maximumWeight": 1.0,
+            "options": [
+                {
+                    "id": "REL-peter-departure-supported-A",
+                    "text": "The vendor broadly corroborates Peter leaving around 2:00 AM, but did not witness the attack or establish everything Peter did afterward.",
+                    "endingId": "",
+                    "weight": 1.0
+                },
+                {
+                    "id": "REL-peter-departure-supported-B",
+                    "text": "The observation establishes Peter's location for the rest of the night and rules out every possible involvement.",
+                    "endingId": "",
+                    "weight": -1.0
+                },
+                {
+                    "id": "REL-peter-departure-supported-C",
+                    "text": "Leaving around 2:00 AM proves Peter left because he had attacked John.",
+                    "endingId": "",
+                    "weight": -1.0
+                },
+                {
+                    "id": "REL-peter-departure-supported-D",
+                    "text": "The accounts are contradictory because the vendor did not observe what happened inside the house.",
+                    "endingId": "",
+                    "weight": -1.0
+                }
+            ]
+        },
+        {
+            "id": "REL-spatter-consistent-reconstruction",
+            "category": "Evidence Relationships",
+            "dimension": "",
+            "question": "EVD-015 Blood Spatter + the attack area\nWhat does the bloodstain evidence support?",
+            "selectedAnswerId": "REL-spatter-consistent-reconstruction-B",
+            "wasAvailable": true,
+            "answeredSeconds": 29.612689971923829,
+            "selectedAnswerWeight": 1.0,
+            "maximumWeight": 1.0,
+            "options": [
+                {
+                    "id": "REL-spatter-consistent-reconstruction-A",
+                    "text": "The blood pattern independently identifies the attacker and establishes intent.",
+                    "endingId": "",
+                    "weight": -1.0
+                },
+                {
+                    "id": "REL-spatter-consistent-reconstruction-B",
+                    "text": "The bloodstain evidence supports reconstruction of the attack area but does not independently identify the attacker.",
+                    "endingId": "",
+                    "weight": 1.0
+                },
+                {
+                    "id": "REL-spatter-consistent-reconstruction-C",
+                    "text": "The pattern establishes one exact sequence of movements and excludes all other sequences.",
+                    "endingId": "",
+                    "weight": -1.0
+                },
+                {
+                    "id": "REL-spatter-consistent-reconstruction-D",
+                    "text": "The pattern proves the knife was held by Paul when the blood was deposited.",
+                    "endingId": "",
+                    "weight": -1.0
+                }
+            ]
+        },
+        {
+            "id": "FINAL-CONCLUSION",
+            "category": "Final Conclusion",
+            "dimension": "",
+            "question": "Submit your conclusion:",
+            "selectedAnswerId": "conclusion-brother",
+            "wasAvailable": true,
+            "answeredSeconds": 29.660991668701173,
+            "selectedAnswerWeight": 1.0,
+            "maximumWeight": 1.0,
+            "options": [
+                {
+                    "id": "conclusion-brother",
+                    "text": "Paul\nPaul is a reasonable person of interest, but an accusation must rest on the combined physical evidence and timeline contradiction rather than his fingerprint alone.",
+                    "endingId": "ending-brother-accused",
+                    "weight": 1.0
+                },
+                {
+                    "id": "conclusion-peter",
+                    "text": "Peter\nPeter's late departure and uneasy appearance justify further investigation, but an accusation still requires evidence connecting him to the attack.",
+                    "endingId": "ending-peter-unsupported",
+                    "weight": 0.0
+                }
+            ]
+        }
+    ]
+}

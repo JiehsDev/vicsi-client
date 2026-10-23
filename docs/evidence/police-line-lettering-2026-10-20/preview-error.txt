@@ -1,0 +1,3 @@
+System.InvalidOperationException: Preview requires a saved scene outside Play mode.
+  at PoliceCordonLetteringSetup.CapturePreview () [0x00275] in C:\Users\Roduf Eleu\My project (1)\Assets\_Project\Editor\PoliceCordonLetteringSetup.cs:54 
+  at PoliceCordonLetteringSetup.PollPreview () [0x0002c] in C:\Users\Roduf Eleu\My project (1)\Assets\_Project\Editor\PoliceCordonLetteringSetup.cs:21 

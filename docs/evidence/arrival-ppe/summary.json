@@ -1,0 +1,74 @@
+{
+  "completedAtUtc": "2026-10-18T16:25:28.517195+00:00",
+  "status": "Editor verified; Quest acceptance pending",
+  "suites": [
+    {
+      "suite": "ArrivalPPETest",
+      "report": "docs/evidence/arrival-ppe/run6/ArrivalPPETest.txt",
+      "passed": 40,
+      "failed": 0,
+      "cSharpCompilationErrors": 0,
+      "observedProcessExitCode": 0
+    },
+    {
+      "suite": "ArrivalEntryTest",
+      "report": "docs/evidence/arrival-ppe/run6/ArrivalEntryTest.txt",
+      "passed": 26,
+      "failed": 0,
+      "cSharpCompilationErrors": 0,
+      "observedProcessExitCode": 0
+    },
+    {
+      "suite": "FirstResponderTurnoverTest",
+      "report": "docs/evidence/arrival-ppe/run6/FirstResponderTurnoverTest.txt",
+      "passed": 44,
+      "failed": 0,
+      "cSharpCompilationErrors": 0,
+      "observedProcessExitCode": 0
+    },
+    {
+      "suite": "ScenarioPhaseFoundationTest",
+      "report": "docs/evidence/arrival-ppe/run6/ScenarioPhaseFoundationTest.txt",
+      "passed": 19,
+      "failed": 0,
+      "cSharpCompilationErrors": 0,
+      "observedProcessExitCode": 0
+    },
+    {
+      "suite": "IOCAssessmentGuideTest",
+      "report": "docs/evidence/arrival-ppe/run6/IOCAssessmentGuideTest.txt",
+      "passed": 35,
+      "failed": 0,
+      "cSharpCompilationErrors": 0,
+      "observedProcessExitCode": 0
+    },
+    {
+      "suite": "NPCApproachGuideTest",
+      "report": "docs/evidence/arrival-ppe/run6/NPCApproachGuideTest.txt",
+      "passed": 33,
+      "failed": 0,
+      "cSharpCompilationErrors": 0,
+      "observedProcessExitCode": 0
+    },
+    {
+      "suite": "SceneTestStartTest",
+      "report": "docs/evidence/arrival-ppe/run5/SceneTestStartTest.txt",
+      "passed": 143,
+      "failed": 0,
+      "cSharpCompilationErrors": 0,
+      "observedProcessExitCode": 0
+    }
+  ],
+  "passed": 340,
+  "failed": 0,
+  "scenePreservation": "docs/evidence/arrival-ppe/scene-preservation.json",
+  "preview": "docs/evidence/arrival-ppe/station-preview.png",
+  "xrStartup": {
+    "Standalone": true,
+    "Android": true
+  },
+  "pendingDiagnosticRequest": false,
+  "report": "docs/validation/arrival-ppe-2026-10-18.md",
+  "earlierAttemptsExcluded": true,
+  "liveUploadOrDeploymentPerformed": false
+}

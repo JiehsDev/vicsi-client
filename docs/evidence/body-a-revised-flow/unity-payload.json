@@ -1,0 +1,1302 @@
+{
+    "payloadVersion": 1,
+    "sessionId": "bb52c3d0-5898-4f4d-92b6-1ed32b957e2e",
+    "studentId": "",
+    "classId": "",
+    "isTestSession": false,
+    "scenarioId": "CSI-ENVIRONMENT-001",
+    "scenarioVersion": "1.1.0",
+    "scoringRulesVersion": "1.7.0",
+    "groundTruthVersion": "1.2.0",
+    "clientVersion": "0.1.0",
+    "startedAtUtc": "2026-10-22T12:53:13.2811130Z",
+    "completedAtUtc": "",
+    "durationSeconds": 19.496,
+    "selectedConclusionId": "",
+    "resolvedEndingId": "",
+    "hasClientReportedScores": false,
+    "clientReportedScores": {
+        "relationshipsCompletedCorrect": 0,
+        "relationshipsCompletedIncorrect": 0,
+        "objectivesCompleted": 0,
+        "objectivesFailed": 0,
+        "proceduralViolationCount": 0
+    },
+    "evidenceResults": [],
+    "reportLineResults": [],
+    "proceduralViolations": [],
+    "relationshipResults": [],
+    "hypothesisResults": [],
+    "deductionAssessmentEvents": [],
+    "hasDeductionAssessment": true,
+    "deductionAssessment": {
+        "scoringRulesVersion": "1.7.0",
+        "status": "incomplete",
+        "hasFinalScore": false,
+        "totalScore": 0.0,
+        "reasoningCheckpoints": 0.0,
+        "deductionRelationships": 0.0,
+        "finalConclusion": 0.0,
+        "reasoningComponent": 0.0,
+        "relationshipComponent": 0.0,
+        "conclusionComponent": 0.0,
+        "relationshipEarned": 0.0,
+        "relationshipMaximum": 6.0,
+        "checkpointEarned": 0,
+        "checkpointMaximum": 24,
+        "answeredCount": 0,
+        "eligibleUnansweredCount": 0,
+        "undiscoveredCount": 0,
+        "unsupportedRelationships": 0,
+        "reviewReasons": [
+            "Conclusion-time assessment snapshot missing."
+        ]
+    },
+    "confirmedFindingIds": [],
+    "unlockedInsightIds": [],
+    "hasScenePhotography": false,
+    "scenePhotography": {
+        "requiredPointCount": 0,
+        "completedPointCount": 0,
+        "coveragePercent": 0.0,
+        "correctSequenceCount": 0,
+        "sequenceAccuracyPercent": 0.0,
+        "wrongOrderAttempts": 0,
+        "wrongPositionAttempts": 0,
+        "wrongAngleAttempts": 0,
+        "totalAttempts": 0,
+        "procedureAccuracyPercent": 0.0,
+        "isComplete": false,
+        "completionSeconds": 0.0,
+        "scorePercent": 0.0
+    },
+    "hasMeasurement": false,
+    "measurement": {
+        "requirementCount": 0,
+        "completedCount": 0,
+        "accurateCount": 0,
+        "lateCount": 0,
+        "completionPercent": 0.0,
+        "accuracyPercent": 0.0,
+        "timingPercent": 0.0,
+        "scorePercent": 0.0,
+        "items": [],
+        "fixedSidesRequired": 0,
+        "fixedSidesCompleted": 0,
+        "pairRequiredCount": 0,
+        "pairCompletedCount": 0,
+        "pairLateCount": 0,
+        "sceneMeasurementsComplete": false,
+        "pairs": []
+    },
+    "includesRawEventLog": false,
+    "orderedEvents": [
+        {
+            "sequenceNumber": 0,
+            "timestampMs": 1,
+            "eventType": "SessionStarted",
+            "targetId": "CSI_Environment",
+            "payload": [
+                {
+                    "key": "startedAtUtc",
+                    "value": "2026-10-22T12:53:13.2811130Z"
+                },
+                {
+                    "key": "applicationVersion",
+                    "value": "0.1.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 7,
+            "timestampMs": 8493,
+            "eventType": "CSIForm1Received",
+            "targetId": "CSI-Form-1",
+            "payload": [
+                {
+                    "key": "receivingRole",
+                    "value": "IOC"
+                },
+                {
+                    "key": "via",
+                    "value": "Bypass"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 8,
+            "timestampMs": 8510,
+            "eventType": "SceneTurnoverCompleted",
+            "targetId": "first-responder-turnover",
+            "payload": [
+                {
+                    "key": "via",
+                    "value": "Bypass"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "8.5"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 12,
+            "timestampMs": 8554,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-01-PETER",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "8.555"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "EVIDENCE_CAUTION"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 13,
+            "timestampMs": 8561,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-victim",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 14,
+            "timestampMs": 8562,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-possible-weapon",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 15,
+            "timestampMs": 8562,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-bloodstain-area",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 16,
+            "timestampMs": 8562,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-drinking-context",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 17,
+            "timestampMs": 8562,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-main-scene-survey",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 18,
+            "timestampMs": 8563,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-02-SCENE",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "8.563"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "SCENE_INTERPRETATION"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 19,
+            "timestampMs": 8563,
+            "eventType": "IOCAssessmentCompleted",
+            "targetId": "ioc-assessment",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 22,
+            "timestampMs": 8592,
+            "eventType": "SOCORequested",
+            "targetId": "soco-request",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 25,
+            "timestampMs": 8594,
+            "eventType": "CSIForm2Completed",
+            "targetId": "CSI-Form-2",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 29,
+            "timestampMs": 8617,
+            "eventType": "SOCOTurnoverCompleted",
+            "targetId": "ioc-soco-turnover",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 46,
+            "timestampMs": 16266,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-exterior-establishing",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Exterior"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "10"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 47,
+            "timestampMs": 16271,
+            "eventType": "ScenePhotographyPhaseCompleted",
+            "targetId": "Exterior",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 49,
+            "timestampMs": 16395,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-entrance-approach",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Entrance"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "20"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 50,
+            "timestampMs": 16395,
+            "eventType": "ScenePhotographyPhaseCompleted",
+            "targetId": "Entrance",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 52,
+            "timestampMs": 16420,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-interior-from-entrance",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Overall"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "30"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 54,
+            "timestampMs": 16442,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-interior-left",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Overall"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "40"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 56,
+            "timestampMs": 16476,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-interior-right",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Overall"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "50"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 57,
+            "timestampMs": 16478,
+            "eventType": "ScenePhotographyPhaseCompleted",
+            "targetId": "Overall",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 59,
+            "timestampMs": 16501,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-body-in-scene",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Context"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "60"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 61,
+            "timestampMs": 16522,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-stair-incident-area",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Context"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "70"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 62,
+            "timestampMs": 16524,
+            "eventType": "ScenePhotographyPhaseCompleted",
+            "targetId": "Context",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 63,
+            "timestampMs": 16524,
+            "eventType": "ScenePhotographyCompleted",
+            "targetId": "",
+            "payload": [
+                {
+                    "key": "completedCount",
+                    "value": "7"
+                },
+                {
+                    "key": "outOfSequenceAttempts",
+                    "value": "0"
+                },
+                {
+                    "key": "wrongAngleAttempts",
+                    "value": "0"
+                },
+                {
+                    "key": "wrongPositionAttempts",
+                    "value": "0"
+                },
+                {
+                    "key": "completionSeconds",
+                    "value": "0.3"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 66,
+            "timestampMs": 16570,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "PhotographedRaw"
+                },
+                {
+                    "key": "tool",
+                    "value": "Photographer"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 69,
+            "timestampMs": 16577,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "ChalkMarked"
+                },
+                {
+                    "key": "tool",
+                    "value": "ChalkMark"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 70,
+            "timestampMs": 16586,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Marked"
+                },
+                {
+                    "key": "tool",
+                    "value": "LetterTentMarker"
+                },
+                {
+                    "key": "tentLetter",
+                    "value": "A"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 71,
+            "timestampMs": 16611,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "PhotographedRaw"
+                },
+                {
+                    "key": "tool",
+                    "value": "Photographer"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 72,
+            "timestampMs": 16614,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "PhotographedFinal"
+                },
+                {
+                    "key": "tool",
+                    "value": "Photographer"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 73,
+            "timestampMs": 16618,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-015",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "PhotographedRaw"
+                },
+                {
+                    "key": "tool",
+                    "value": "Photographer"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 75,
+            "timestampMs": 16627,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "PhotographedRaw"
+                },
+                {
+                    "key": "tool",
+                    "value": "Photographer"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 76,
+            "timestampMs": 16630,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "ChalkMarked"
+                },
+                {
+                    "key": "tool",
+                    "value": "ChalkMark"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 77,
+            "timestampMs": 16637,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Marked"
+                },
+                {
+                    "key": "tool",
+                    "value": "EvidenceMarker"
+                },
+                {
+                    "key": "tentNumber",
+                    "value": "18"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 78,
+            "timestampMs": 16640,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "PhotographedFinal"
+                },
+                {
+                    "key": "tool",
+                    "value": "Photographer"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 82,
+            "timestampMs": 16647,
+            "eventType": "MeasurementCompleted",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "requirementId",
+                    "value": "MEAS-BODY-A"
+                },
+                {
+                    "key": "evidenceId",
+                    "value": "BODY-A"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "0.020"
+                },
+                {
+                    "key": "layoutId",
+                    "value": "new-house-v3"
+                },
+                {
+                    "key": "measuredDistanceA",
+                    "value": "2.067"
+                },
+                {
+                    "key": "measuredDistanceB",
+                    "value": "1.268"
+                },
+                {
+                    "key": "errorA",
+                    "value": "0.000"
+                },
+                {
+                    "key": "errorB",
+                    "value": "0.000"
+                },
+                {
+                    "key": "withinTolerance",
+                    "value": "True"
+                },
+                {
+                    "key": "takenBeforeDisturbance",
+                    "value": "True"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 86,
+            "timestampMs": 16648,
+            "eventType": "MeasurementCompleted",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "requirementId",
+                    "value": "MEAS-EVD-014"
+                },
+                {
+                    "key": "evidenceId",
+                    "value": "EVD-014"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "0.020"
+                },
+                {
+                    "key": "layoutId",
+                    "value": "new-house-v3"
+                },
+                {
+                    "key": "measuredDistanceA",
+                    "value": "0.790"
+                },
+                {
+                    "key": "measuredDistanceB",
+                    "value": "1.747"
+                },
+                {
+                    "key": "errorA",
+                    "value": "0.000"
+                },
+                {
+                    "key": "errorB",
+                    "value": "0.000"
+                },
+                {
+                    "key": "withinTolerance",
+                    "value": "True"
+                },
+                {
+                    "key": "takenBeforeDisturbance",
+                    "value": "True"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 90,
+            "timestampMs": 16650,
+            "eventType": "MeasurementCompleted",
+            "targetId": "EVD-015",
+            "payload": [
+                {
+                    "key": "requirementId",
+                    "value": "MEAS-EVD-015"
+                },
+                {
+                    "key": "evidenceId",
+                    "value": "EVD-015"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "0.020"
+                },
+                {
+                    "key": "layoutId",
+                    "value": "new-house-v3"
+                },
+                {
+                    "key": "measuredDistanceA",
+                    "value": "1.012"
+                },
+                {
+                    "key": "measuredDistanceB",
+                    "value": "1.758"
+                },
+                {
+                    "key": "errorA",
+                    "value": "0.000"
+                },
+                {
+                    "key": "errorB",
+                    "value": "0.000"
+                },
+                {
+                    "key": "withinTolerance",
+                    "value": "True"
+                },
+                {
+                    "key": "takenBeforeDisturbance",
+                    "value": "True"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 94,
+            "timestampMs": 16651,
+            "eventType": "MeasurementCompleted",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "requirementId",
+                    "value": "MEAS-EVD-018"
+                },
+                {
+                    "key": "evidenceId",
+                    "value": "EVD-018"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "0.020"
+                },
+                {
+                    "key": "layoutId",
+                    "value": "new-house-v3"
+                },
+                {
+                    "key": "measuredDistanceA",
+                    "value": "0.332"
+                },
+                {
+                    "key": "measuredDistanceB",
+                    "value": "0.591"
+                },
+                {
+                    "key": "errorA",
+                    "value": "0.000"
+                },
+                {
+                    "key": "errorB",
+                    "value": "0.000"
+                },
+                {
+                    "key": "withinTolerance",
+                    "value": "True"
+                },
+                {
+                    "key": "takenBeforeDisturbance",
+                    "value": "True"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 95,
+            "timestampMs": 16653,
+            "eventType": "EvidencePairMeasured",
+            "targetId": "BODY-A|EVD-014",
+            "payload": [
+                {
+                    "key": "pairKey",
+                    "value": "BODY-A|EVD-014"
+                },
+                {
+                    "key": "evidenceA",
+                    "value": "BODY-A"
+                },
+                {
+                    "key": "evidenceB",
+                    "value": "EVD-014"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "0.020"
+                },
+                {
+                    "key": "measuredDistance",
+                    "value": "1.277"
+                },
+                {
+                    "key": "expectedDistance",
+                    "value": "1.277"
+                },
+                {
+                    "key": "tolerance",
+                    "value": "0.100"
+                },
+                {
+                    "key": "withinTolerance",
+                    "value": "True"
+                },
+                {
+                    "key": "afterDisturbance",
+                    "value": "False"
+                },
+                {
+                    "key": "order",
+                    "value": "1"
+                },
+                {
+                    "key": "measuredFrom",
+                    "value": "BODY-A"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 96,
+            "timestampMs": 16654,
+            "eventType": "EvidencePairMeasured",
+            "targetId": "BODY-A|EVD-015",
+            "payload": [
+                {
+                    "key": "pairKey",
+                    "value": "BODY-A|EVD-015"
+                },
+                {
+                    "key": "evidenceA",
+                    "value": "BODY-A"
+                },
+                {
+                    "key": "evidenceB",
+                    "value": "EVD-015"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "0.020"
+                },
+                {
+                    "key": "measuredDistance",
+                    "value": "0.584"
+                },
+                {
+                    "key": "expectedDistance",
+                    "value": "0.584"
+                },
+                {
+                    "key": "tolerance",
+                    "value": "0.100"
+                },
+                {
+                    "key": "withinTolerance",
+                    "value": "True"
+                },
+                {
+                    "key": "afterDisturbance",
+                    "value": "False"
+                },
+                {
+                    "key": "order",
+                    "value": "2"
+                },
+                {
+                    "key": "measuredFrom",
+                    "value": "BODY-A"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 97,
+            "timestampMs": 16658,
+            "eventType": "EvidencePairMeasured",
+            "targetId": "BODY-A|EVD-018",
+            "payload": [
+                {
+                    "key": "pairKey",
+                    "value": "BODY-A|EVD-018"
+                },
+                {
+                    "key": "evidenceA",
+                    "value": "BODY-A"
+                },
+                {
+                    "key": "evidenceB",
+                    "value": "EVD-018"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "0.020"
+                },
+                {
+                    "key": "measuredDistance",
+                    "value": "1.456"
+                },
+                {
+                    "key": "expectedDistance",
+                    "value": "1.456"
+                },
+                {
+                    "key": "tolerance",
+                    "value": "0.100"
+                },
+                {
+                    "key": "withinTolerance",
+                    "value": "True"
+                },
+                {
+                    "key": "afterDisturbance",
+                    "value": "False"
+                },
+                {
+                    "key": "order",
+                    "value": "3"
+                },
+                {
+                    "key": "measuredFrom",
+                    "value": "BODY-A"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 98,
+            "timestampMs": 16660,
+            "eventType": "EvidencePairMeasured",
+            "targetId": "EVD-014|EVD-015",
+            "payload": [
+                {
+                    "key": "pairKey",
+                    "value": "EVD-014|EVD-015"
+                },
+                {
+                    "key": "evidenceA",
+                    "value": "EVD-014"
+                },
+                {
+                    "key": "evidenceB",
+                    "value": "EVD-015"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "0.020"
+                },
+                {
+                    "key": "measuredDistance",
+                    "value": "1.818"
+                },
+                {
+                    "key": "expectedDistance",
+                    "value": "1.818"
+                },
+                {
+                    "key": "tolerance",
+                    "value": "0.100"
+                },
+                {
+                    "key": "withinTolerance",
+                    "value": "True"
+                },
+                {
+                    "key": "afterDisturbance",
+                    "value": "False"
+                },
+                {
+                    "key": "order",
+                    "value": "4"
+                },
+                {
+                    "key": "measuredFrom",
+                    "value": "EVD-014"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 99,
+            "timestampMs": 16660,
+            "eventType": "EvidencePairMeasured",
+            "targetId": "EVD-014|EVD-018",
+            "payload": [
+                {
+                    "key": "pairKey",
+                    "value": "EVD-014|EVD-018"
+                },
+                {
+                    "key": "evidenceA",
+                    "value": "EVD-014"
+                },
+                {
+                    "key": "evidenceB",
+                    "value": "EVD-018"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "0.020"
+                },
+                {
+                    "key": "measuredDistance",
+                    "value": "1.665"
+                },
+                {
+                    "key": "expectedDistance",
+                    "value": "1.665"
+                },
+                {
+                    "key": "tolerance",
+                    "value": "0.100"
+                },
+                {
+                    "key": "withinTolerance",
+                    "value": "True"
+                },
+                {
+                    "key": "afterDisturbance",
+                    "value": "False"
+                },
+                {
+                    "key": "order",
+                    "value": "5"
+                },
+                {
+                    "key": "measuredFrom",
+                    "value": "EVD-014"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 100,
+            "timestampMs": 16661,
+            "eventType": "EvidencePairMeasured",
+            "targetId": "EVD-015|EVD-018",
+            "payload": [
+                {
+                    "key": "pairKey",
+                    "value": "EVD-015|EVD-018"
+                },
+                {
+                    "key": "evidenceA",
+                    "value": "EVD-015"
+                },
+                {
+                    "key": "evidenceB",
+                    "value": "EVD-018"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "0.020"
+                },
+                {
+                    "key": "measuredDistance",
+                    "value": "1.897"
+                },
+                {
+                    "key": "expectedDistance",
+                    "value": "1.897"
+                },
+                {
+                    "key": "tolerance",
+                    "value": "0.100"
+                },
+                {
+                    "key": "withinTolerance",
+                    "value": "True"
+                },
+                {
+                    "key": "afterDisturbance",
+                    "value": "False"
+                },
+                {
+                    "key": "order",
+                    "value": "6"
+                },
+                {
+                    "key": "measuredFrom",
+                    "value": "EVD-015"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 104,
+            "timestampMs": 18701,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Logged"
+                },
+                {
+                    "key": "tool",
+                    "value": "Recorder"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 111,
+            "timestampMs": 18706,
+            "eventType": "BodyDocumentationRecorded",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "procedureId",
+                    "value": "body-documentation"
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 112,
+            "timestampMs": 18709,
+            "eventType": "ReportLinesSelected",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "lineIds",
+                    "value": "rec-body-location-v1,rec-body-position-v1,rec-body-staining-v1"
+                },
+                {
+                    "key": "lineCount",
+                    "value": "3"
+                },
+                {
+                    "key": "documentationVersion",
+                    "value": "1"
+                },
+                {
+                    "key": "documentation",
+                    "value": "{\"version\":1,\"subjectId\":\"BODY-A\",\"subjectLabel\":\"Body A – John\",\"statements\":[{\"id\":\"rec-body-location-v1\",\"text\":\"John is lying on the rear ground-floor kitchen floor.\",\"selected\":true,\"weight\":2,\"earnedPoints\":2},{\"id\":\"rec-body-fall-v1\",\"text\":\"John's position proves that he died from an accidental fall.\",\"selected\":false,\"weight\":0,\"earnedPoints\":0},{\"id\":\"rec-body-position-v1\",\"text\":\"John is lying face up.\",\"selected\":true,\"weight\":2,\"earnedPoints\":2},{\"id\":\"rec-body-attacker-v1\",\"text\":\"The body's appearance proves that Paul killed John.\",\"selected\":false,\"weight\":0,\"earnedPoints\":0},{\"id\":\"rec-body-staining-v1\",\"text\":\"Reddish staining is visible on John's shirt near the abdomen.\",\"selected\":true,\"weight\":2,\"earnedPoints\":2},{\"id\":\"rec-body-time-v1\",\"text\":\"The body's appearance establishes that John died at exactly 3:00 a.m.\",\"selected\":false,\"weight\":0,\"earnedPoints\":0}],\"earnedPoints\":6,\"maximumPossiblePoints\":6}"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 115,
+            "timestampMs": 19495,
+            "eventType": "BodyPreparedForRemoval",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "procedureId",
+                    "value": "body-removal"
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                },
+                {
+                    "key": "steps",
+                    "value": "identification-tagging,wrapping,cadaver-bag,medico-legal-transport"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 116,
+            "timestampMs": 19496,
+            "eventType": "BodyRemoved",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "procedureId",
+                    "value": "body-removal"
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                },
+                {
+                    "key": "destination",
+                    "value": "medico-legal-examination"
+                }
+            ]
+        }
+    ]
+}

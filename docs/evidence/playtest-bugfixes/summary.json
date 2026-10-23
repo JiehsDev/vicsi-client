@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-16",
+  "implementationOrder": [
+    "question",
+    "bottle",
+    "sketch"
+  ],
+  "passed": 198,
+  "failed": 0,
+  "fixes": [
+    {
+      "fix": "question",
+      "passed": 95,
+      "failed": 0,
+      "suites": [
+        {
+          "suite": "ReasoningCheckpointTest",
+          "passed": 62,
+          "failed": 0,
+          "report": "question/play-run1/ReasoningCheckpointTest.txt"
+        },
+        {
+          "suite": "FingerprintStorageTest",
+          "passed": 33,
+          "failed": 0,
+          "report": "question/play-run1/FingerprintStorageTest.txt"
+        }
+      ]
+    },
+    {
+      "fix": "bottle",
+      "passed": 19,
+      "failed": 0,
+      "suites": [
+        {
+          "suite": "EvidenceDiscoveryTest",
+          "passed": 10,
+          "failed": 0,
+          "report": "bottle/play-run1/EvidenceDiscoveryTest.txt"
+        },
+        {
+          "suite": "GrabReachTest",
+          "passed": 9,
+          "failed": 0,
+          "report": "bottle/play-run1/GrabReachTest.txt"
+        }
+      ]
+    },
+    {
+      "fix": "sketch",
+      "passed": 84,
+      "failed": 0,
+      "suites": [
+        {
+          "suite": "CrimeSceneSketchTest",
+          "passed": 84,
+          "failed": 0,
+          "report": "sketch/play-run1/CrimeSceneSketchTest.txt"
+        }
+      ]
+    }
+  ],
+  "sketchPreview": "sketch/placement-hint.png",
+  "previewInspected": true,
+  "finalEditor": {
+    "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+    "dirty": false,
+    "playing": false,
+    "compiling": false,
+    "compilationFailed": false,
+    "pending": false,
+    "xrRestore": false,
+    "nextSuite": "",
+    "requestPresent": false,
+    "standaloneXR": true,
+    "androidXR": true
+  },
+  "hardwareAcceptance": "Physical Quest recheck pending",
+  "buildInstallDeploy": "not performed"
+}

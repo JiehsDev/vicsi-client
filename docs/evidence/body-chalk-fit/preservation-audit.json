@@ -1,0 +1,29 @@
+{
+  "passed": 4,
+  "failed": 0,
+  "checks": [
+    {
+      "pass": true,
+      "label": "No existing scene records removed"
+    },
+    {
+      "pass": true,
+      "label": "Every changed record is inside the existing body chalk guide"
+    },
+    {
+      "pass": true,
+      "label": "All added records belong to the body chalk guide"
+    },
+    {
+      "pass": true,
+      "label": "Body procedure, tracing tolerance and completion settings unchanged"
+    }
+  ],
+  "addedRecords": 618,
+  "removedRecords": 0,
+  "changedRecordTypes": {
+    "120": 32,
+    "4": 33,
+    "114": 1
+  }
+}

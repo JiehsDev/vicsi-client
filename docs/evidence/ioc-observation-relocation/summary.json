@@ -1,0 +1,11 @@
+{
+    "Date":  "2026-10-13",
+    "Pass":  61,
+    "Fail":  0,
+    "Reports":  [
+                    "docs/evidence/ioc-observation-relocation/run4/ScenarioPhaseFoundationTest.txt",
+                    "docs/evidence/ioc-observation-relocation/run1/DialogueCatalogTest.txt"
+                ],
+    "State":  "docs/evidence/ioc-observation-relocation/final-state.json",
+    "View":  "docs/evidence/ioc-observation-relocation/final-forward-view.png"
+}

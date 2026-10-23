@@ -1,0 +1,14 @@
+=== SessionPersistenceTest ===
+PASS: session start immediately persisted
+PASS: start UTC timestamp parses
+PASS: event buffered before pause
+PASS: pause persists pending event
+PASS: session end is idempotent and rejects later events
+PASS: JSONL sequence and session ID are consistent
+PASS: end UTC timestamp persisted
+PASS: storage failure retains buffered event
+PASS: retry persists retained event exactly once
+PASS: repeated flush does not duplicate lines
+PASS: writer cannot switch sessions and lose buffered data
+PASS: path traversal session ID rejected
+=== PASS: 12 passed, 0 failed ===

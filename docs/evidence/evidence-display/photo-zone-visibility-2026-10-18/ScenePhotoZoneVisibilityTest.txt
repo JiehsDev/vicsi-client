@@ -1,0 +1,67 @@
+=== ScenePhotoZoneVisibilityTest ===
+PASS: All seven authored photography points are present
+PASS: scene-exterior-establishing: visual is a separate child, so hiding it cannot stop tracking
+PASS: scene-exterior-establishing: outside shows only the active circle
+PASS: scene-exterior-establishing: entering hides the circle without advancing
+PASS: scene-exterior-establishing: wrong-angle shutter stays hidden and unfinished
+PASS: scene-exterior-establishing: exiting after unsuccessful photo restores the circle
+PASS: scene-exterior-establishing: another floor does not count as standing inside
+PASS: scene-exterior-establishing: reentry hides circle while framing guidance remains available
+PASS: scene-exterior-establishing: successful photo still completes the original route point
+PASS: scene-exterior-establishing: completed circle stays hidden after leaving
+PASS: scene-entrance-approach: visual is a separate child, so hiding it cannot stop tracking
+PASS: scene-entrance-approach: outside shows only the active circle
+PASS: scene-entrance-approach: entering hides the circle without advancing
+PASS: scene-entrance-approach: wrong-angle shutter stays hidden and unfinished
+PASS: scene-entrance-approach: exiting after unsuccessful photo restores the circle
+PASS: scene-entrance-approach: another floor does not count as standing inside
+PASS: scene-entrance-approach: reentry hides circle while framing guidance remains available
+PASS: scene-entrance-approach: successful photo still completes the original route point
+PASS: scene-entrance-approach: completed circle stays hidden after leaving
+PASS: scene-interior-from-entrance: visual is a separate child, so hiding it cannot stop tracking
+PASS: scene-interior-from-entrance: outside shows only the active circle
+PASS: scene-interior-from-entrance: entering hides the circle without advancing
+PASS: scene-interior-from-entrance: wrong-angle shutter stays hidden and unfinished
+PASS: scene-interior-from-entrance: exiting after unsuccessful photo restores the circle
+PASS: scene-interior-from-entrance: another floor does not count as standing inside
+PASS: scene-interior-from-entrance: reentry hides circle while framing guidance remains available
+PASS: scene-interior-from-entrance: successful photo still completes the original route point
+PASS: scene-interior-from-entrance: completed circle stays hidden after leaving
+PASS: scene-interior-left: visual is a separate child, so hiding it cannot stop tracking
+PASS: scene-interior-left: outside shows only the active circle
+PASS: scene-interior-left: entering hides the circle without advancing
+PASS: scene-interior-left: wrong-angle shutter stays hidden and unfinished
+PASS: scene-interior-left: exiting after unsuccessful photo restores the circle
+PASS: scene-interior-left: another floor does not count as standing inside
+PASS: scene-interior-left: reentry hides circle while framing guidance remains available
+PASS: scene-interior-left: successful photo still completes the original route point
+PASS: scene-interior-left: completed circle stays hidden after leaving
+PASS: scene-interior-right: visual is a separate child, so hiding it cannot stop tracking
+PASS: scene-interior-right: outside shows only the active circle
+PASS: scene-interior-right: entering hides the circle without advancing
+PASS: scene-interior-right: wrong-angle shutter stays hidden and unfinished
+PASS: scene-interior-right: exiting after unsuccessful photo restores the circle
+PASS: scene-interior-right: another floor does not count as standing inside
+PASS: scene-interior-right: reentry hides circle while framing guidance remains available
+PASS: scene-interior-right: successful photo still completes the original route point
+PASS: scene-interior-right: completed circle stays hidden after leaving
+PASS: scene-body-in-scene: visual is a separate child, so hiding it cannot stop tracking
+PASS: scene-body-in-scene: outside shows only the active circle
+PASS: scene-body-in-scene: entering hides the circle without advancing
+PASS: scene-body-in-scene: wrong-angle shutter stays hidden and unfinished
+PASS: scene-body-in-scene: exiting after unsuccessful photo restores the circle
+PASS: scene-body-in-scene: another floor does not count as standing inside
+PASS: scene-body-in-scene: reentry hides circle while framing guidance remains available
+PASS: scene-body-in-scene: successful photo still completes the original route point
+PASS: scene-body-in-scene: completed circle stays hidden after leaving
+PASS: scene-stair-incident-area: visual is a separate child, so hiding it cannot stop tracking
+PASS: scene-stair-incident-area: outside shows only the active circle
+PASS: scene-stair-incident-area: entering hides the circle without advancing
+PASS: scene-stair-incident-area: wrong-angle shutter stays hidden and unfinished
+PASS: scene-stair-incident-area: exiting after unsuccessful photo restores the circle
+PASS: scene-stair-incident-area: another floor does not count as standing inside
+PASS: scene-stair-incident-area: reentry hides circle while framing guidance remains available
+PASS: scene-stair-incident-area: successful photo still completes the original route point
+PASS: scene-stair-incident-area: completed circle stays hidden after leaving
+PASS: Route completes with all circles hidden
+=== PASS, 0 failures ===

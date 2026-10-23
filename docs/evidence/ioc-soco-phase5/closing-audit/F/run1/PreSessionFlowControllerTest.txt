@@ -1,0 +1,13 @@
+=== PreSessionFlowControllerTest ===
+  PASS: LockInvestigation blocks PlayerUIGate
+  PASS: Wrong scenario is rejected (investigation stays locked)
+  PASS: Wrong scenario clears the mismatched identity
+  PASS: Cancel does not unlock investigation
+  PASS: Successful pairing with the correct scenario unlocks investigation
+  PASS: A second successful-pairing event does not re-lock or corrupt the gate
+  PASS: PlayerUIGate.Exit on an already-exited token is safe (no throw)
+  PASS: Development bypass OFF by default leaves identity unpaired
+  NOTE: 'development bypass ON activates in Editor/dev-build' is exercised structurally by
+  PreSessionFlowController.Start()'s own Application.isEditor check, run live via the Editor
+  itself (this test suite always executes inside the Editor) rather than re-asserted here.
+=== PASS, 0 failures ===

@@ -1,0 +1,19 @@
+=== EvidenceTraceMarkerTest ===
+  PASS: scene photography route completed (markers need it)
+  PASS: knife requires a second tent for its blood trace (data)
+  PASS: before the knife is marked, the blade takes no trace tent
+  PASS: first tent at the blade marks the KNIFE [status=Marked, tent=1, trace=]
+  PASS: knife's final photo refused, naming the blood trace tent ['Mark the blood trace on the blade with its own evidence tent before the final photograph.']
+  PASS: a direct final-photo call is refused too (state machine backstop)
+  PASS: now the blade accepts its trace tent
+  PASS: second tent marks the blood trace [trace tent=2, knife still Marked]
+  PASS: EvidenceTraceMarked logged once
+  PASS: UNIFORM pickup prompt on both knife tents
+  PASS: extra tent near the already-marked knife is not tied to it [none]
+  PASS: picking up the extra tent leaves the knife's marks intact [Marked, trace=2]
+  PASS: trace tent picked up before the final photo: trace cleared, knife still Marked [Marked]
+  PASS: trace tent placed again [2]
+  PASS: knife's final photo allowed once both tents are down
+  PASS: knife final-photographed [PhotographedFinal]
+  PASS: after the final photo the trace tent is documented: refused, stays, trace kept
+=== PASS, 0 failures ===

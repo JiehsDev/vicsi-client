@@ -15,7 +15,26 @@ public class RoleSceneLoader : MonoBehaviour
 {
     private void Start()
     {
-        STCSManager.Instance?.Fire("scene_entered");
         SessionLogger.Instance?.LogEvent(SessionEventType.SceneEntered);
+
+        // The team's scene-entered beat is investigation guidance: it waits for the First
+        // Responder's turnover when the scene has one (otherwise fires now, as before).
+        if (SceneTurnover.IsInvestigationBlocked)
+        {
+            SceneTurnover.OnInvestigationStarted += FireSceneEnteredBeat;
+            return;
+        }
+        FireSceneEnteredBeat();
+    }
+
+    private void OnDestroy()
+    {
+        SceneTurnover.OnInvestigationStarted -= FireSceneEnteredBeat;
+    }
+
+    private void FireSceneEnteredBeat()
+    {
+        SceneTurnover.OnInvestigationStarted -= FireSceneEnteredBeat;
+        STCSManager.Instance?.Fire("scene_entered");
     }
 }

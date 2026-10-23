@@ -1,0 +1,18 @@
+=== InconclusivePathTest ===
+  PASS: evidence lifecycle
+  PASS: confirmed knife match requires the physical vendor follow-up
+  PASS: required vendor question starts
+  PASS: delivered vendor answer clears completion gate
+  PASS: spatter reconstruction finding NOT reached
+  PASS: Paul and Peter remain selectable while the case is incomplete
+  PASS: Inconclusive available
+  PASS: complete sketch remains possible before spatter examination
+  PASS: spatter processing remains unfinished in the inconclusive fixture
+  PASS: picker shows Inconclusive with Paul and Peter (got CONCLUSION-INCONCLUSIVE,conclusion-brother,conclusion-peter)
+  PASS: Inconclusive confirm accepted
+  PASS: completion screen shown
+  PASS: Inconclusive resolves ending-inconclusive
+  PASS: [closeout] conclusion feedback acknowledgement accepted
+  PASS: [isolation] accepted conclusion waits for closeout before uploading
+  PASS: [isolation] real upload queue and real session owners unchanged
+=== PASS, 0 failures ===

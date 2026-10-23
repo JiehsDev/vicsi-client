@@ -1,0 +1,28 @@
+{
+    "messages": [
+        {
+            "id": "ioc-assessment-guidance",
+            "preferredHeight": 160.33999633789063,
+            "availableHeight": 200.33999633789063,
+            "fontSize": 20.0,
+            "lines": 7,
+            "fits": true
+        },
+        {
+            "id": "ioc-observation-survey",
+            "preferredHeight": 299.17999267578127,
+            "availableHeight": 240.0,
+            "fontSize": 29.0,
+            "lines": 9,
+            "fits": false
+        },
+        {
+            "id": "ioc-observation-bottle",
+            "preferredHeight": 165.7899932861328,
+            "availableHeight": 205.7899932861328,
+            "fontSize": 29.0,
+            "lines": 5,
+            "fits": true
+        }
+    ]
+}

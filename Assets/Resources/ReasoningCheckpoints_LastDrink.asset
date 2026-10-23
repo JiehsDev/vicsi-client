@@ -1,0 +1,160 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7f6154be9d475b938456d0fc1a21e6, type: 3}
+  m_Name: ReasoningCheckpoints_LastDrink
+  m_EditorClassIdentifier: Assembly-CSharp::ReasoningCheckpointSet
+  contentVersion: 1.0.0
+  checkpoints:
+  - id: RC-01-PETER
+    trigger: 0
+    findingId: 
+    integratedHypothesisId: 
+    category: EVIDENCE_CAUTION
+    prompt: "Based on what you know so far, what do you make of Peter leaving the house looking nervous?"
+    contextCatalogId: 
+    responses:
+    - id: RC-01-PETER-A
+      text: "Peter probably did it. Leaving nervously after being with John is enough to make him the main suspect."
+      weight: 1
+    - id: RC-01-PETER-B
+      text: "Peter could be involved. His behavior makes him worth looking into, but I need more information."
+      weight: 3
+    - id: RC-01-PETER-C
+      text: "I would not treat nervous behavior as proof of guilt. It gives me a reason to ask questions, not a reason to accuse him."
+      weight: 4
+    - id: RC-01-PETER-D
+      text: "I don't think Peter matters to the investigation."
+      weight: 2
+    deferredDialogueIds:
+    - narr-mission-scene-start-1
+    - narr-beat-1-initial-briefing-1
+    deferredTrainingIds: []
+  - id: RC-02-SCENE
+    trigger: 1
+    findingId: 
+    integratedHypothesisId: 
+    category: SCENE_INTERPRETATION
+    prompt: "What can you reasonably conclude from the scene at this point?"
+    contextCatalogId: 
+    responses:
+    - id: RC-02-SCENE-A
+      text: "The knife near John must be the murder weapon."
+      weight: 1
+    - id: RC-02-SCENE-B
+      text: "The knife and blood are important, but they still need proper examination before I can say what happened."
+      weight: 4
+    - id: RC-02-SCENE-C
+      text: "There isn't enough here to justify further forensic examination."
+      weight: 1
+    - id: RC-02-SCENE-D
+      text: "The scene suggests a violent incident, but I still need the physical evidence to understand it."
+      weight: 3
+    deferredDialogueIds: []
+    deferredTrainingIds: []
+  - id: RC-03-FINGERPRINT
+    trigger: 2
+    findingId: FIND-KNIFE-PRINT-BROTHER
+    integratedHypothesisId: HYP-02
+    category: LIMITATION_RECOGNITION
+    prompt: "Paul's fingerprint was recovered from the knife. What does that tell you?"
+    contextCatalogId: 
+    responses:
+    - id: RC-03-FINGERPRINT-A
+      text: "Paul must have used the knife to attack John."
+      weight: 1
+    - id: RC-03-FINGERPRINT-B
+      text: "It makes Paul more suspicious, but I still need other evidence before deciding what the print means in this case."
+      weight: 3
+    - id: RC-03-FINGERPRINT-C
+      text: "It shows Paul handled the knife at some point, but the print alone doesn't tell me when he touched it or what he did with it."
+      weight: 4
+    - id: RC-03-FINGERPRINT-D
+      text: "The fingerprint doesn't matter because Paul knew John."
+      weight: 2
+    deferredDialogueIds:
+    - narr-mission-knife-print-result-1
+    - narr-beat-4-brother-fingerprint-2
+    - narr-beat-4-brother-fingerprint-3
+    - LEAD-FINGERPRINT-VENDOR
+    deferredTrainingIds:
+    - TRAIN-FINGERPRINT
+    - LEAD-FINGERPRINT-VENDOR
+  - id: RC-04-KNIFE-WOUND
+    trigger: 2
+    findingId: FIND-KNIFE-WOUND-CONSISTENT
+    integratedHypothesisId: 
+    category: RELATIONSHIP_REASONING
+    prompt: "The knife is consistent with John's wound. How should that finding be interpreted?"
+    contextCatalogId: 
+    responses:
+    - id: RC-04-KNIFE-WOUND-A
+      text: "This proves the knife was used to kill John."
+      weight: 1
+    - id: RC-04-KNIFE-WOUND-B
+      text: "The knife could be the weapon because its characteristics are consistent with the wound, but that relationship alone does not prove who used it."
+      weight: 4
+    - id: RC-04-KNIFE-WOUND-C
+      text: "The knife is probably involved, but I would still want the other findings before relying on it."
+      weight: 3
+    - id: RC-04-KNIFE-WOUND-D
+      text: "If the knife fits the wound, whoever touched it must be the attacker."
+      weight: 1
+    deferredDialogueIds:
+    - narr-beat-3-knife-wound-match-2
+    deferredTrainingIds: []
+  - id: RC-05-TIMELINE
+    trigger: 3
+    findingId: 
+    integratedHypothesisId: 
+    category: TIMELINE_REASONING
+    prompt: "The vendor says he saw Paul near John's house around three in the morning. How does that affect Paul's account?"
+    contextCatalogId: statement-paul-alibi
+    responses:
+    - id: RC-05-TIMELINE-A
+      text: "It proves Paul came back and killed John."
+      weight: 1
+    - id: RC-05-TIMELINE-B
+      text: "It makes Paul's story questionable because the vendor's observation conflicts with his claim that he never returned."
+      weight: 4
+    - id: RC-05-TIMELINE-C
+      text: "It makes Paul more suspicious, but the vendor still did not see him enter the house or attack John."
+      weight: 3
+    - id: RC-05-TIMELINE-D
+      text: "It doesn't matter because the vendor didn't witness the attack."
+      weight: 2
+    deferredDialogueIds: []
+    deferredTrainingIds: []
+  - id: RC-06-BLOODSTAIN
+    trigger: 2
+    findingId: FIND-SPATTER-RECONSTRUCTION
+    integratedHypothesisId: 
+    category: EVIDENCE_INTEGRATION
+    prompt: "What does the bloodstain finding contribute to the case?"
+    contextCatalogId: 
+    responses:
+    - id: RC-06-BLOODSTAIN-A
+      text: "It identifies Paul as the attacker."
+      weight: 1
+    - id: RC-06-BLOODSTAIN-B
+      text: "It helps establish where the attack occurred, but it does not identify the attacker by itself."
+      weight: 4
+    - id: RC-06-BLOODSTAIN-C
+      text: "It supports the physical reconstruction of what happened near John, but it still needs to be considered with the other evidence."
+      weight: 3
+    - id: RC-06-BLOODSTAIN-D
+      text: "The blood only confirms that John was injured, so it adds nothing else."
+      weight: 2
+    deferredDialogueIds:
+    - narr-mission-spatter-result-1
+    - narr-beat-7-spatter-reconstruction-1
+    - narr-beat-7-spatter-reconstruction-2
+    deferredTrainingIds: []

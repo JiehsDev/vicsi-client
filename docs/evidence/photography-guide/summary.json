@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-16",
+  "scope": "Overall scene photography guidance only",
+  "passed": 92,
+  "failed": 0,
+  "suites": [
+    {
+      "suite": "PhotographyGuideTest",
+      "passed": 26,
+      "failed": 0,
+      "report": "play-run2/PhotographyGuideTest.txt"
+    },
+    {
+      "suite": "ScenePhotographyProcedureTest",
+      "passed": 47,
+      "failed": 0,
+      "report": "play-run1/ScenePhotographyProcedureTest.txt"
+    },
+    {
+      "suite": "ScenarioPhaseFoundationTest",
+      "passed": 19,
+      "failed": 0,
+      "report": "play-run1/ScenarioPhaseFoundationTest.txt"
+    }
+  ],
+  "savedSceneUnchanged": true,
+  "sceneSHA256": "dcfe33b525d9cfcfb7a5315e43a7f04d3275e70e2a94ecd5053025598e4fa194",
+  "visualInspection": "standing pin, off-screen arrow and framing pin inspected after contrast adjustment",
+  "finalEditor": {
+    "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+    "dirty": false,
+    "playing": false,
+    "compiling": false,
+    "compilationFailed": false,
+    "pending": false,
+    "xrRestore": false,
+    "nextSuite": "",
+    "requestPresent": false,
+    "standaloneXR": true,
+    "androidXR": true
+  },
+  "hardwareAcceptance": "Quest stereo, edge placement, head-turn comfort and performance pending",
+  "buildInstallDeploy": "not performed"
+}

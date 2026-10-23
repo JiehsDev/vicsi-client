@@ -1,0 +1,96 @@
+using UnityEngine;
+
+/// <summary>Visual response to existing dialogue/phase owners; owns no gameplay state.</summary>
+[DefaultExecutionOrder(200)]
+public sealed class NPCPresentation : MonoBehaviour
+{
+    public enum Role { FirstResponder, IOC, Vendor }
+    public enum Pose { Idle, Dialogue, SecurityWatch, Briefing }
+    [SerializeField] private Role role;
+    [SerializeField] private Transform facingPivot;
+    [SerializeField] private Transform idleVisual;
+    [SerializeField] private Transform promptAnchor;
+    [SerializeField] private GameObject visibleBody;
+    [SerializeField] private Collider bodyCollider;
+    [SerializeField] private FirstResponderTurnover responder;
+    [SerializeField] private SOCOWorkflowInteraction workflow;
+    [SerializeField] private VendorFollowupInterview vendor;
+    [SerializeField] private Transform playerHead;
+    [SerializeField] private float turnDegreesPerSecond = 75f;
+    [SerializeField, Range(0f, .5f)] private float idleSwayDegrees;
+    private Quaternion authoredFacing, authoredIdle;
+    private bool initialized, discovered;
+    public Pose CurrentPose { get; private set; }
+    public Role CharacterRole => role;
+    public bool IsVisible => visibleBody != null && visibleBody.activeSelf;
+
+    private void Start()
+    {
+        // Cache once, after the FR has applied its authored watch direction.
+        if (playerHead == null && Camera.main != null) playerHead = Camera.main.transform;
+        if (facingPivot == null) facingPivot = transform;
+        authoredFacing = facingPivot.rotation;
+        if (idleVisual != null) authoredIdle = idleVisual.localRotation;
+        discovered = vendor != null && vendor.IsDiscovered;
+        initialized = true;
+        ApplyVisibility();
+    }
+    private void OnEnable() => SceneTurnover.OnPhaseChanged += PhaseChanged;
+    private void OnDisable()
+    {
+        SceneTurnover.OnPhaseChanged -= PhaseChanged;
+        if (!initialized) return;
+        facingPivot.rotation = authoredFacing;
+        if (idleVisual != null) idleVisual.localRotation = authoredIdle;
+    }
+    private void PhaseChanged(ScenarioPhase phase) => ApplyVisibility();
+    private void ApplyVisibility()
+    {
+        if (role != Role.IOC) return;
+        // FinishBriefing advances only after its dialogue source has fully closed.
+        // Keep the actor/data alive, but the student now owns the investigation role.
+        bool visible = SceneTurnover.IsGated && SceneTurnover.Phase == ScenarioPhase.SOCOTurnover;
+        if (visibleBody != null) visibleBody.SetActive(visible);
+        if (promptAnchor != null) promptAnchor.gameObject.SetActive(visible);
+        if (bodyCollider != null) bodyCollider.enabled = visible;
+    }
+    private void LateUpdate()
+    {
+        if (!initialized || !IsVisible) return;
+        bool speaking = role == Role.FirstResponder ? responder != null && responder.IsTalking
+            : role == Role.IOC ? (workflow != null && workflow.IsTalking) || (SOCOCloseout.Instance != null && SOCOCloseout.Instance.IsTalking)
+            : vendor != null && (vendor.IsShowing || vendor.IsTalking);
+        // Keep world labels out of the dialogue and question panel's viewing area.
+        if (role != Role.FirstResponder && promptAnchor != null
+            && promptAnchor.gameObject.activeSelf == speaking)
+            promptAnchor.gameObject.SetActive(!speaking);
+        CurrentPose = speaking ? (role == Role.IOC ? Pose.Briefing : Pose.Dialogue)
+            : role == Role.FirstResponder ? Pose.SecurityWatch : Pose.Idle;
+        Quaternion target = authoredFacing;
+        if (speaking && playerHead != null)
+        {
+            Vector3 direction = playerHead.position - facingPivot.position;
+            direction.y = 0f;
+            if (direction.sqrMagnitude > .01f) target = Quaternion.LookRotation(direction, Vector3.up);
+        }
+        if (Quaternion.Angle(facingPivot.rotation, target) > .05f)
+            facingPivot.rotation = Quaternion.RotateTowards(facingPivot.rotation, target,
+                turnDegreesPerSecond * Time.unscaledDeltaTime);
+        if (idleVisual != null && idleSwayDegrees > 0f)
+        {
+            float sway = speaking ? 0f : Mathf.Sin(Time.unscaledTime * .7f + transform.position.x) * idleSwayDegrees;
+            idleVisual.localRotation = authoredIdle * Quaternion.Euler(0f, 0f, sway);
+        }
+        // World label faces the viewer independently of the body's watch orientation.
+        if (promptAnchor != null && playerHead != null)
+        {
+            Vector3 away = promptAnchor.position - playerHead.position; away.y = 0f;
+            if (away.sqrMagnitude > .01f) promptAnchor.rotation = Quaternion.LookRotation(away, Vector3.up);
+        }
+        if (role == Role.Vendor && vendor != null)
+        {
+            if (!discovered && vendor.IsDiscovered) GameDialogue.Say("vendor-statement-recorded");
+            discovered = vendor.IsDiscovered;
+        }
+    }
+}

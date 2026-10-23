@@ -1,0 +1,55 @@
+=== PhotographicScaleTest ===
+PASS: Accessory is installed once without a tool-wheel role
+PASS: Selected items use scales; body and derived prints retain their existing workflows
+PASS: Scene photography route completes independently
+PASS: EVD-014 cannot place a scale before its original photograph
+PASS: EVD-014 original photo saves without a scale or higher resolution
+PASS: Other modal UI cannot place the ruler
+PASS: Lowered camera cannot place or consume A
+PASS: Distant assisted placement is refused
+PASS: EVD-014 final photograph refuses a missing scale
+PASS: EVD-014 deliberate A places one assisted ruler for the current item
+PASS: EVD-014 held A cannot also remove the ruler
+PASS: EVD-014 ruler is metric and render-only
+PASS: A scale belonging to another item cannot satisfy its final photo
+PASS: A visible ruler cannot appear in an original photograph
+PASS: Holstering returns the accessory without changing evidence progress
+PASS: EVD-014 cropped/out-of-frame ruler cannot advance the photo
+PASS: EVD-014 an obstructed ruler is refused
+INFO: EVD-014 readiness=True target=EVD-014 reason=
+PASS: EVD-014 real saved-photo aspect accepts the whole item and ruler
+PASS: EVD-014 scaled capture advances the existing final state exactly once
+PASS: EVD-014 real saved image has readable-scale resolution and no overlay
+PASS: EVD-014 repeated shutter creates no extra photo or scale completion
+PASS: EVD-014 explicit A removes the ruler while retaining the completed photo
+PASS: EVD-015 cannot place a scale before its original photograph
+PASS: EVD-015 original photo saves without a scale or higher resolution
+PASS: EVD-015 final photograph refuses a missing scale
+PASS: EVD-015 deliberate A places one assisted ruler for the current item
+PASS: EVD-015 held A cannot also remove the ruler
+PASS: EVD-015 ruler is metric and render-only
+PASS: EVD-015 cropped/out-of-frame ruler cannot advance the photo
+PASS: EVD-015 an obstructed ruler is refused
+INFO: EVD-015 readiness=True target=EVD-015 reason=
+PASS: EVD-015 real saved-photo aspect accepts the whole item and ruler
+PASS: EVD-015 scaled capture advances the existing final state exactly once
+PASS: EVD-015 real saved image has readable-scale resolution and no overlay
+PASS: EVD-015 repeated shutter creates no extra photo or scale completion
+PASS: EVD-015 explicit A removes the ruler while retaining the completed photo
+PASS: EVD-018 cannot place a scale before its original photograph
+PASS: EVD-018 original photo saves without a scale or higher resolution
+PASS: EVD-018 final photograph refuses a missing scale
+PASS: EVD-018 deliberate A places one assisted ruler for the current item
+PASS: EVD-018 held A cannot also remove the ruler
+PASS: EVD-018 ruler is metric and render-only
+PASS: EVD-018 cropped/out-of-frame ruler cannot advance the photo
+PASS: EVD-018 an obstructed ruler is refused
+INFO: EVD-018 readiness=True target=EVD-018 reason=
+PASS: EVD-018 real saved-photo aspect accepts the whole item and ruler
+PASS: EVD-018 scaled capture advances the existing final state exactly once
+PASS: EVD-018 real saved image has readable-scale resolution and no overlay
+PASS: EVD-018 repeated shutter creates no extra photo or scale completion
+PASS: EVD-018 explicit A removes the ruler while retaining the completed photo
+PASS: No source item moved and no inventory/sample processing was granted
+PASS: Reload starts without a ruler or carried-over scaled capture
+=== PASS ===

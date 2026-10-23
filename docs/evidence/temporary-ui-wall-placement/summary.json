@@ -1,0 +1,70 @@
+{
+    "Date":  "2026-10-13",
+    "Pass":  189,
+    "Fail":  0,
+    "SuiteCount":  5,
+    "Suites":  [
+                   {
+                       "Suite":  "UIComfortInputTest",
+                       "Pass":  55,
+                       "Fail":  0,
+                       "Report":  "docs/evidence/temporary-ui-wall-placement/run1/UIComfortInputTest.txt",
+                       "Result":  "=== ALL PASS ==="
+                   },
+                   {
+                       "Suite":  "NotificationPriorityTest",
+                       "Pass":  4,
+                       "Fail":  0,
+                       "Report":  "docs/evidence/temporary-ui-wall-placement/run2/NotificationPriorityTest.txt",
+                       "Result":  "=== PASS: refusals are never hidden by ambient prompts ==="
+                   },
+                   {
+                       "Suite":  "DialogueCatalogTest",
+                       "Pass":  46,
+                       "Fail":  0,
+                       "Report":  "docs/evidence/temporary-ui-wall-placement/run2/DialogueCatalogTest.txt",
+                       "Result":  "=== PASS, 0 failures ==="
+                   },
+                   {
+                       "Suite":  "BodyRemovalTest",
+                       "Pass":  41,
+                       "Fail":  0,
+                       "Report":  "docs/evidence/temporary-ui-wall-placement/run3/BodyRemovalTest.txt",
+                       "Result":  "=== ALL PASS ==="
+                   },
+                   {
+                       "Suite":  "CollectionFeedbackTest",
+                       "Pass":  43,
+                       "Fail":  0,
+                       "Report":  "docs/evidence/temporary-ui-wall-placement/run3/CollectionFeedbackTest.txt",
+                       "Result":  "=== PASS, 0 failures ==="
+                   }
+               ],
+    "SourceDefinedRuntimeProfile":  {
+                                        "PreferredDistanceMetres":  0.9,
+                                        "LocalOffsetMetres":  [
+                                                                  0,
+                                                                  -0.18,
+                                                                  0
+                                                              ],
+                                        "MinimumDistanceMetres":  0.6,
+                                        "WallClearanceMetres":  0.12,
+                                        "SphereCastRadiusMetres":  0.035,
+                                        "EnvironmentMask":  1,
+                                        "LateralFallbackStepMetres":  0.32,
+                                        "PositionSmoothingSeconds":  0.1,
+                                        "RotationSmoothing":  8,
+                                        "PositionReplanThresholdMetres":  0.05,
+                                        "RotationReplanThresholdDegrees":  3,
+                                        "CanvasScale":  0.0011,
+                                        "BaseWidthMetres":  0.528,
+                                        "BaseHeightMetres":  0.132,
+                                        "CompanionGapMetres":  0.05,
+                                        "CompanionSlot":  "below-primary",
+                                        "TimedPriority":  250,
+                                        "AmbientPriority":  100,
+                                        "ModalPolicy":  "defer-and-pause-readable-time",
+                                        "TooltipPolicy":  "latest-wins-no-backlog"
+                                    },
+    "PatternSearch":  "docs/evidence/temporary-ui-wall-placement/head-placement-search.txt"
+}

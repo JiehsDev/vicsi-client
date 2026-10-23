@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-09-14T14:19:49.102Z",
+  "scope": "Targeted Main-scene legacy UnityEvent and report-line answer-key comparison",
+  "missingCallbacks": [
+    {
+      "scene": "Assets/_Project/Scenes/Main.unity",
+      "componentId": "138266856",
+      "path": "Canvas/MainMenuPanel/DevelopersButton",
+      "activeInHierarchy": true,
+      "missingMethod": "UIManager.ShowRoleSelect",
+      "replacementCandidate": "UIManager.OnStartPressed (verify button intent)"
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Main.unity",
+      "componentId": "429452320",
+      "path": "Canvas/SettingsPanel/VolumeButton",
+      "activeInHierarchy": false,
+      "missingMethod": "UIManager.ShowRoleSelect",
+      "replacementCandidate": "UIManager.OnStartPressed (verify button intent)"
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Main.unity",
+      "componentId": "623562821",
+      "path": "Canvas/SettingsPanel/SnapTurnButton",
+      "activeInHierarchy": false,
+      "missingMethod": "UIManager.ShowRoleSelect",
+      "replacementCandidate": "UIManager.OnStartPressed (verify button intent)"
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Main.unity",
+      "componentId": "653647499",
+      "path": "Canvas/MainMenuPanel/ScoresButton",
+      "activeInHierarchy": true,
+      "missingMethod": "UIManager.ShowRoleSelect",
+      "replacementCandidate": "UIManager.OnStartPressed (verify button intent)"
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Main.unity",
+      "componentId": "1242806814",
+      "path": "Canvas/SettingsPanel/SubtitlesButton",
+      "activeInHierarchy": false,
+      "missingMethod": "UIManager.ShowRoleSelect",
+      "replacementCandidate": "UIManager.OnStartPressed (verify button intent)"
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Main.unity",
+      "componentId": "1407484235",
+      "path": "Canvas/SettingsPanel/BackButton",
+      "activeInHierarchy": false,
+      "missingMethod": "UIManager.ShowRoleSelect",
+      "replacementCandidate": "UIManager.OnStartPressed (verify button intent)"
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Main.unity",
+      "componentId": "1656534988",
+      "path": "Canvas/MainMenuPanel/QuitButton",
+      "activeInHierarchy": true,
+      "missingMethod": "UIManager.ShowRoleSelect",
+      "replacementCandidate": "UIManager.OnStartPressed (verify button intent)"
+    }
+  ],
+  "groundTruthPath": "Assets/_Project/Data/Scenarios/GroundTruth_CSI_Environment.json",
+  "groundTruthGeneratedAt": "2026-09-11T04:54:39Z",
+  "staleAnswerKeys": [
+    {
+      "file": "Assets/_Project/Data/Evidence/BODY-A_Victimsbody.asset",
+      "evidenceId": "BODY-A",
+      "examinedInPlace": true,
+      "missingFromExport": [
+        "body-a-location",
+        "body-a-position",
+        "body-a-wound-sharp-object"
+      ],
+      "obsoleteInExport": []
+    },
+    {
+      "file": "Assets/_Project/Data/Evidence/EVD-017_Victimsmobilephone.asset",
+      "evidenceId": "EVD-017",
+      "examinedInPlace": false,
+      "missingFromExport": [
+        "phone-message-affair"
+      ],
+      "obsoleteInExport": []
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+=== MeasurementProcedureTest (WrongOrder) ===
+  PASS: [data] BODY-A: Warn rule before PhotographedFinal requiring MeasurementCompleted(MEAS-BODY-A)
+  PASS: [data] EVD-014: Warn rule before PhotographedFinal requiring MeasurementCompleted(MEAS-EVD-014)
+  PASS: [data] EVD-015: Warn rule before PhotographedFinal requiring MeasurementCompleted(MEAS-EVD-015)
+  PASS: [data] EVD-018: Warn rule before PhotographedFinal requiring MeasurementCompleted(MEAS-EVD-018)
+  PASS: [scene] overall scene photography completed before evidence work
+  PASS: [BODY-A] initial photo applied with no measurement warning
+  PASS: [BODY-A] chalk outline traced
+  PASS: [BODY-A] letter marker A placed
+  PASS: [BODY-A wrong order] final photo still applied
+  PASS: [BODY-A wrong order] warning shown
+  PASS: [BODY-A wrong order] exactly one ProcedureOutOfOrder for this shutter press
+  PASS: [BODY-A wrong order] event payload: action, evidence, expected measurement, session time
+  PASS: [BODY-A wrong order] a second shutter press adds no warning
+  PASS: [EVD-018] initial photo applied with no measurement warning
+  PASS: [EVD-018] chalk outline traced
+  PASS: [EVD-018] numbered tent placed
+  PASS: [partial] Reference A only: requirement incomplete
+  PASS: [partial] final photo applied with the warning, one event
+  PASS: [partial] Reference B afterwards completes the measurement
+=== PASS, 0 failures ===

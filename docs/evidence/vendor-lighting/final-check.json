@@ -1,0 +1,17 @@
+{
+  "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+  "dirty": false,
+  "playing": false,
+  "compiling": false,
+  "compilationFailed": false,
+  "positionPreserved": true,
+  "controller": "Assets/_Project/Art/Environments/MODELS/NPC/Vendor/Vendor_Idle.controller",
+  "rootMotion": false,
+  "range": 2.25,
+  "interview": true,
+  "materials": [
+    "Vendor_Readable_Man_Original_Textures keywords=_EMISSION,_NORMALMAP,_RECEIVE_SHADOWS_OFF",
+    "Vendor_Readable_Basket_Handle_Repaired keywords=_EMISSION,_RECEIVE_SHADOWS_OFF",
+    "Vendor_Readable_Character_Color_Fixedmat keywords=_EMISSION,_RECEIVE_SHADOWS_OFF"
+  ]
+}

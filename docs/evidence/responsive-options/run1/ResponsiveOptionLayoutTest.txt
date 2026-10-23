@@ -1,0 +1,34 @@
+PASS: One-line option retains the 78-unit comfortable minimum
+PASS: Two-line option grows above the minimum
+PASS: Four-line option independently grows again
+FAIL: Automatic wrapping retains all long text at the original font size
+INFO: fixture 0 fixed before=78; after=78; lines=1
+INFO: fixture 1 fixed before=78; after=101; lines=2
+INFO: fixture 2 fixed before=78; after=170; lines=4
+INFO: fixture 3 fixed before=78; after=1273; lines=36
+PASS: Every label retains 20 horizontal and 16 vertical padding
+PASS: Unequal rows maintain equal widths and a 12-unit non-overlapping gap
+PASS: Total content caps the panel at 600 and creates a real vertical scroll area
+PASS: Pointer hit area includes the resized row's bottom padding
+PASS: Scrolled-out rows cannot intercept rays over the pinned question
+PASS: Existing VR pointer can operate the visible scroll-down control
+PASS: Bringing a selected ordinary row into view restores its hit target
+PASS: Body scrolling keeps question and confirmation controls fixed
+FAIL: Runtime text assignment resizes synchronously without reducing font size
+FAIL: Oversized questions get an independent scroll viewport while panel stays capped
+PASS: Long-question scrolling operates separately from answer scrolling
+PASS: Settings, decision and reasoning adopt one shared layout
+PASS: SOCOCloseout adopts shared content sizing without manual wiring
+PASS: VendorFollowupInterview adopts shared content sizing without manual wiring
+PASS: BodyRemovalInteraction adopts shared content sizing without manual wiring
+PASS: Recorder candidate and Notes columns use bounded scroll areas
+FAIL: Real reasoning options preserve 26-point readable text and fit their own containers
+PASS: Real reasoning bounds are capped with scrolling instead of unlimited growth
+PASS: Reasoning still owns A, tools and shared priority
+PASS: Resized reasoning remains wall-safe or defers when no safe fit exists
+PASS: Shared layout preserves a non-overlapping companion or defers it
+PASS: Reasoning pointer selects a response without immediately submitting it
+PASS: A confirms the original selected ID exactly once after pointer selection
+PASS: Settings confirmation retains bounded responsive options and readable fonts
+PASS: Layout fixture releases modal and tool ownership
+=== FAIL: ResponsiveOptionLayoutTest ===

@@ -1,0 +1,27 @@
+{
+  "baselineFiles": 772,
+  "changedExistingFiles": [
+    "Assets/Resources/ViCSIDialogueCatalog.asset",
+    "Assets/_Project/Scripts/Dialogue/VendorPathGuide.cs",
+    "Assets/_Project/Scripts/Interaction/PhotoCaptureListener.cs",
+    "Assets/_Project/Scripts/Interaction/SwabTool.cs",
+    "Assets/_Project/Scripts/Logging/SessionEventType.cs",
+    "Assets/_Project/Scripts/SceneTurnover/ArrivalPPEStation.cs",
+    "Assets/_Project/Scripts/Testing/BiologicalSamplingTest.cs",
+    "Assets/_Project/Scripts/Testing/DialogueCatalogTest.cs",
+    "Assets/_Project/Scripts/Testing/GreyboxFlowTest.cs"
+  ],
+  "unchangedBaselineFiles": 763,
+  "addedDialogueIds": [
+    "gloves-clean",
+    "gloves-destination",
+    "gloves-dispose",
+    "gloves-finish-sample",
+    "gloves-follow-route",
+    "gloves-holster",
+    "gloves-replaced",
+    "gloves-sampling-blocked"
+  ],
+  "changedOrRemovedExistingDialogueIds": [],
+  "sceneSha256": "91d5c8c35425cdc32fec5ecb6bbc01ebfb07c368e227d62da5e10fdf12786005"
+}

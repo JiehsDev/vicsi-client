@@ -1,0 +1,10 @@
+{
+    "suite":  "SettingsPauseMenuTest",
+    "acceptedReport":  "run3/SettingsPauseMenuTest.txt",
+    "passed":  49,
+    "failed":  0,
+    "csharpCompilerErrors":  0,
+    "nativePreviewInspected":  true,
+    "physicalHeadsetTest":  false,
+    "productionWrites":  0
+}

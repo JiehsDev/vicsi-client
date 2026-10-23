@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: DialoguePool_SceneEntered
   m_EditorClassIdentifier: Assembly-CSharp::DialogueLinePool
   lines:
-  - 'Team Leader: Scene secured. You''re clear to enter.'
-  - "Team Leader: Perimeter's locked down \u2014 go ahead and start your walkthrough."
-  - 'Team Leader: You''re good to go. Scene''s been logged as secure.'
+  - 'First Responder: Got the call at 11:42 - first on scene, nobody''s touched anything
+    since I arrived.'
+  - 'First Responder: Perimeter''s secured, one way in, one way out. Just me until
+    your team got here.'
+  - "First Responder: Found him on the kitchen floor. Stab wound's visible \u2014
+    this isn't an accident. That's why you're here."
+  - 'First Responder: Log''s started. Chain of custody''s yours from this point.'

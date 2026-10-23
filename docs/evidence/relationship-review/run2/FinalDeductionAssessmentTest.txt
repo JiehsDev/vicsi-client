@@ -1,0 +1,42 @@
+=== FinalDeductionAssessmentTest ===
+PASS: Active scenario selects append-only 1.7.0
+PASS: One research configuration contains 60/25/15 and six checkpoints
+PASS: Six max-weight responses earn full 60/24 maximum
+PASS: Six supported relationships earn 25 including timeline contradiction
+PASS: Supported Paul full chain earns 15 and total 100
+PASS: Worked strong example computes 57.5 + 25 + 15 = 97.5
+PASS: Worked mixed example computes 40 + 12.5 + 3.75 = 56.25
+PASS: Worked weak/Peter example computes 20 + 0 + 0 = 20
+PASS: Eligible unanswered is zero earned with denominator still 24
+PASS: Conclusion before later discovery retains missing opportunity
+PASS: Reached facts without recorded eligibility require review without grade
+PASS: Missing checkpoint system cannot produce a polished grade
+PASS: Content mismatch requires review
+PASS: No completed relationships earns zero relationship component
+PASS: An established supported timeline contradiction earns normalized credit
+PASS: Unsupported relationship earns no credit
+PASS: Unmatched current board connection reduces relationship quality
+PASS: Removed/corrected connection leaves no lasting deduction penalty
+PASS: Duplicate IDs/pairs cannot exceed 100
+PASS: Supported ending without authored full chain requires review
+PASS: Premature Paul earns 3.75 conclusion points
+PASS: Inconclusive despite full supported chain earns lower credit
+PASS: Inconclusive with genuinely insufficient developed chain earns 15
+PASS: Incomplete scene/session emits no final score
+PASS: Absent conclusion emits no final score
+PASS: Missing snapshot is safe and requires review if completion claimed
+PASS: Invalid weights are rejected rather than hidden by a 100 clamp
+PASS: Malformed local checkpoint data cannot crash scoring
+PASS: Review choices preserve exactly 60/25/15 and total 100 without board connections
+PASS: Wrong interpretation uses existing unsupported penalty and cannot support Paul ending
+PASS: Manual completed IDs cannot override locked review answers
+PASS: Duplicate review records are rejected
+PASS: ProcedureOutOfOrder remains logged and does not change numerical components
+PASS: Conclusion assessment snapshot locks once without altering conclusion logic
+PASS: Scoring/capture does not mutate evidence or relationships
+PASS: Payload keeps version/old fields and adds checkpoint essential events without raw log
+PASS: Incomplete payload distinguishes new categories and withholds final grade
+PASS: Raw-event cap cannot discard essential checkpoint/snapshot records
+PASS: Completed payload carries computed 1.7.0 categories and chronology
+PASS: Fresh reset clears checkpoints and cannot inherit frozen final assessment
+=== PASS: 40 focused checks, 0 failures ===

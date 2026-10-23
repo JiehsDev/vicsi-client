@@ -73,7 +73,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 9452ae1262a74094f8a68013fbcd1834, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -243,6 +243,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceProp
   evidenceId: 
+  noticeRadius: 1.5
+  foundRequiresExternalTrigger: 0
+  surfaceNormalAxis: 0
+  overrideChalkGuideTransform: 0
+  chalkGuideLocalPosition: {x: 0, y: 0, z: 0}
+  chalkGuideLocalEulerAngles: {x: 0, y: 0, z: 0}
+  chalkGuideLocalScale: {x: 1, y: 1, z: 1}
 --- !u!114 &1735520601920029209
 MonoBehaviour:
   m_ObjectHideFlags: 0

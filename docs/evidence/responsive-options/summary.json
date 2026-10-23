@@ -1,0 +1,81 @@
+﻿{
+    "date":  "2026-10-13",
+    "unityVersion":  "6000.5.6f1",
+    "suites":  [
+                   {
+                       "suite":  "ResponsiveOptionLayoutTest",
+                       "passed":  41,
+                       "failed":  0,
+                       "evidence":  "docs/evidence/responsive-options/verified/ResponsiveOptionLayoutTest.txt"
+                   },
+                   {
+                       "suite":  "ReasoningCheckpointTest",
+                       "passed":  60,
+                       "failed":  0,
+                       "evidence":  "docs/evidence/responsive-options/closing/ReasoningCheckpointTest.txt"
+                   },
+                   {
+                       "suite":  "UIComfortInputTest",
+                       "passed":  55,
+                       "failed":  0,
+                       "evidence":  "docs/evidence/responsive-options/final/UIComfortInputTest.txt"
+                   },
+                   {
+                       "suite":  "SettingsPauseMenuTest",
+                       "passed":  35,
+                       "failed":  0,
+                       "evidence":  "docs/evidence/responsive-options/final/SettingsPauseMenuTest.txt"
+                   },
+                   {
+                       "suite":  "VendorFollowupTest",
+                       "passed":  16,
+                       "failed":  0,
+                       "evidence":  "docs/evidence/responsive-options/closing/VendorFollowupTest.txt"
+                   },
+                   {
+                       "suite":  "SOCOCloseoutTest",
+                       "passed":  48,
+                       "failed":  0,
+                       "evidence":  "docs/evidence/responsive-options/final/SOCOCloseoutTest.txt"
+                   },
+                   {
+                       "suite":  "BodyRemovalTest",
+                       "passed":  41,
+                       "failed":  0,
+                       "evidence":  "docs/evidence/responsive-options/final/BodyRemovalTest.txt"
+                   },
+                   {
+                       "suite":  "NarrativeRoleFlowTest",
+                       "passed":  41,
+                       "failed":  0,
+                       "evidence":  "docs/evidence/responsive-options/final/NarrativeRoleFlowTest.txt"
+                   },
+                   {
+                       "suite":  "ScenarioPhaseFoundationTest",
+                       "passed":  19,
+                       "failed":  0,
+                       "evidence":  "docs/evidence/responsive-options/final/ScenarioPhaseFoundationTest.txt"
+                   },
+                   {
+                       "suite":  "EvidenceProcedurePanelTest",
+                       "passed":  41,
+                       "failed":  0,
+                       "evidence":  "docs/evidence/responsive-options/final/EvidenceProcedurePanelTest.txt"
+                   },
+                   {
+                       "suite":  "DialogueCatalogTest",
+                       "passed":  46,
+                       "failed":  0,
+                       "evidence":  "docs/evidence/responsive-options/closing/DialogueCatalogTest.txt"
+                   }
+               ],
+    "unityPassed":  443,
+    "unityFailed":  0,
+    "scorer":  {
+                   "command":  "node --test Tools/Audit/scorer.test.mjs",
+                   "failed":  0,
+                   "passed":  6
+               },
+    "manualQuestValidation":  "Pending: readability, ray comfort and scroll speed on Quest 3S",
+    "compiledAssemblyTimestamp":  "2026-10-13T21:52:10.9587443+08:00"
+}

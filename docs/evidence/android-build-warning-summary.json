@@ -1,0 +1,14 @@
+{
+  "source": "LOCALAPPDATA/Unity/Editor/Editor.log",
+  "parsed_at_utc": "2026-09-14T21:06:35.906Z",
+  "found": true,
+  "build_result": {
+    "job_id": "build-a6b80b396a",
+    "result": "succeeded",
+    "errors": 0,
+    "warnings": 1002
+  },
+  "warning_lines_seen": 0,
+  "warning_groups": [],
+  "note": "Unity MCP build status reported 1002 warnings and 0 errors. Individual warning messages were not retained in the inspected Editor.log window, so no warning category breakdown is claimed."
+}

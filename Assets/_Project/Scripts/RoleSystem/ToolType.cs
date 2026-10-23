@@ -21,5 +21,14 @@ public enum ToolType
     Sketcher = 3,
     EvidenceCollector = 4,
     Recorder = 5,
-    EvidenceMarker = 6
+    EvidenceMarker = 6,
+    Swab = 7,
+    FingerprintKit = 8,
+    ChalkMark = 9,
+    EvidenceFlip = 10,
+    FingerprintTape = 11,
+    LetterTentMarker = 12,
+
+    /// <summary>Tape measure for evidence-position measurements - see MeasurementTool. Appended; never renumber the values above (logged and serialized).</summary>
+    Measurement = 13
 }

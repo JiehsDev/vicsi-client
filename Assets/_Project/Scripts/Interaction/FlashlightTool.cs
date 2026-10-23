@@ -30,6 +30,11 @@ public class FlashlightTool : PlayerTool
     [SerializeField] private Transform beamOrigin;
     [SerializeField] private float maxDistance = 5f;
 
+    [Header("Audio")]
+    [Tooltip("Plays once per SetBeam toggle (on AND off), same real-flashlight-click convention as PhotographTool's shutterAudioSource/shutterClip.")]
+    [SerializeField] private AudioSource beamAudioSource;
+    [SerializeField] private AudioClip beamClickClip;
+
     public override ToolType ToolRole => ToolType.IOC;
 
     /// <summary>The EvidenceProp currently in the beam's path, or null. Only ever non-null while the beam is on.</summary>
@@ -76,6 +81,12 @@ public class FlashlightTool : PlayerTool
 
     private void Update()
     {
+        // Dialogue History (a pure review panel) is open - no tool/world input behind it.
+        if (ToolInputLock.IsLocked)
+        {
+            return;
+        }
+
         if (!IsHeld)
         {
             SetBeam(false);
@@ -108,6 +119,11 @@ public class FlashlightTool : PlayerTool
         if (beamLight != null)
         {
             beamLight.enabled = on;
+        }
+
+        if (beamAudioSource != null && beamClickClip != null)
+        {
+            beamAudioSource.PlayOneShot(beamClickClip);
         }
 
         if (!on)

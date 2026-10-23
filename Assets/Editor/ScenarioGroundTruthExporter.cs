@@ -52,6 +52,7 @@ public static class ScenarioGroundTruthExporter
         var entries = new List<EvidenceDefinition>();
         var seenIds = new HashSet<string>();
         int skipped = 0;
+        int excludedExaminedInPlace = 0;
 
         for (int i = 0; i < listProperty.arraySize; i++)
         {
@@ -68,6 +69,26 @@ public static class ScenarioGroundTruthExporter
             {
                 Debug.LogWarning($"[ScenarioGroundTruthExporter] '{def.name}' has no evidenceId; skipping — it could never be joined to a session event anyway.");
                 skipped++;
+                continue;
+            }
+
+            // examinedInPlace items (the body, so far - see EvidenceDefinition's own
+            // comment) are deliberately excluded from ground truth. They're real,
+            // correctly-registered roster members at runtime - this is NOT the same
+            // case as the two anomalies above - but nothing has yet decided how they
+            // should integrate with the systems that consume this file's roster
+            // (HYP-03's "N items processed" threshold semantics, documentationAccuracy,
+            // ReasoningAccuracy): those all currently assume every exported evidence
+            // entry can reach Processed and gets scored the same way, which is false
+            // for an item whose real chain ends at Logged. Exporting it today would
+            // silently hand the scorer a 6th roster row no downstream consumer is
+            // designed to interpret. Revisit this exclusion when that integration
+            // decision is actually made - don't just delete it because the count looks
+            // wrong later. Logged via a separate counter, not "skipped": unlike the two
+            // anomalies above, this isn't a problem with the data.
+            if (def.examinedInPlace)
+            {
+                excludedExaminedInPlace++;
                 continue;
             }
 
@@ -96,7 +117,12 @@ public static class ScenarioGroundTruthExporter
             return;
         }
 
-        string json = BuildJson(scenarioId, entries, lifecycleSequence);
+        // Optional, unlike the evidence roster above: not every scenario scene has a
+        // HypothesisCheckpointManager, and a scene without one should still export its
+        // evidence roster rather than failing the whole export.
+        var checkpoints = ReadHypothesisCheckpoints();
+
+        string json = BuildJson(scenarioId, entries, lifecycleSequence, checkpoints);
         string path = $"{OutputFolder}/GroundTruth_{scenarioId}.json";
 
         if (!AssetDatabase.IsValidFolder(OutputFolder))
@@ -108,7 +134,9 @@ public static class ScenarioGroundTruthExporter
         System.IO.File.WriteAllText(path, json, new UTF8Encoding(false));
         AssetDatabase.ImportAsset(path);
 
-        Debug.Log($"[ScenarioGroundTruthExporter] Wrote {entries.Count} evidence entries for '{scenarioId}' to {path}" + (skipped > 0 ? $" ({skipped} skipped)." : "."));
+        string suffix = (skipped > 0 ? $" ({skipped} skipped)" : "")
+            + (excludedExaminedInPlace > 0 ? $" ({excludedExaminedInPlace} examinedInPlace item(s) excluded - see comment in Export())" : "");
+        Debug.Log($"[ScenarioGroundTruthExporter] Wrote {entries.Count} evidence entries for '{scenarioId}' to {path}{suffix}.");
         EditorUtility.RevealInFinder(path);
     }
 
@@ -149,7 +177,83 @@ public static class ScenarioGroundTruthExporter
         return names;
     }
 
-    private static string BuildJson(string scenarioId, List<EvidenceDefinition> entries, List<string> lifecycleSequence)
+    /// <summary>
+    /// Reads reasoning-option correctness straight from the open scene's
+    /// HypothesisCheckpointManager.checkpointSet - same "no second hand-maintained
+    /// list" rule as the evidence roster above, and the same SerializedObject-for-a-
+    /// private-field technique, since checkpointSet is a private [SerializeField] too.
+    /// Only ids and isCorrect are exported, never the option text: this file is an
+    /// answer key, not a content mirror, matching the evidence entries above (which
+    /// export relevance, never description).
+    ///
+    /// Checked and confirmed structurally independent of the examinedInPlace exclusion
+    /// above: this reads HypothesisCheckpointSet.checkpoints directly, not the entries
+    /// list, and GroundTruthCheckpoint carries no evidenceId at all (just a checkpoint
+    /// id plus reasoning-option ids) - there is no field here a body-specific
+    /// checkpoint could even attach to today, so nothing extra to guard here.
+    /// </summary>
+    private static List<GroundTruthCheckpoint> ReadHypothesisCheckpoints()
+    {
+        var manager = Object.FindFirstObjectByType<HypothesisCheckpointManager>();
+        if (manager == null)
+        {
+            return null;
+        }
+
+        var serialized = new SerializedObject(manager);
+        var setProperty = serialized.FindProperty("checkpointSet");
+        var set = setProperty?.objectReferenceValue as HypothesisCheckpointSet;
+        if (set == null || set.checkpoints == null)
+        {
+            return null;
+        }
+
+        var result = new List<GroundTruthCheckpoint>();
+        foreach (var checkpoint in set.checkpoints)
+        {
+            if (checkpoint == null || string.IsNullOrEmpty(checkpoint.id))
+            {
+                continue;
+            }
+
+            // HYP-01-shaped checkpoints (requiresReasoning false, no reasoningOptions)
+            // correctly have nothing to export here - skipped, not written as an empty
+            // entry, so the export mirrors "this checkpoint has no answer key" rather
+            // than implying one that happens to be empty.
+            if (checkpoint.reasoningOptions == null || checkpoint.reasoningOptions.Count == 0)
+            {
+                continue;
+            }
+
+            var options = new List<GroundTruthReasoningOption>();
+            foreach (var option in checkpoint.reasoningOptions)
+            {
+                if (option == null || string.IsNullOrEmpty(option.id))
+                {
+                    continue;
+                }
+                options.Add(new GroundTruthReasoningOption { Id = option.id, IsCorrect = option.isCorrect });
+            }
+
+            result.Add(new GroundTruthCheckpoint { Id = checkpoint.id, ReasoningOptions = options });
+        }
+
+        return result.Count > 0 ? result : null;
+    }
+
+    private struct GroundTruthReasoningOption
+    {
+        public string Id;
+        public bool IsCorrect;
+    }
+
+    private struct GroundTruthCheckpoint
+    {
+        public string Id;
+        public List<GroundTruthReasoningOption> ReasoningOptions;
+    }
+
+    private static string BuildJson(string scenarioId, List<EvidenceDefinition> entries, List<string> lifecycleSequence, List<GroundTruthCheckpoint> checkpoints)
     {
         var sb = new StringBuilder();
         sb.AppendLine("{");
@@ -183,7 +287,82 @@ public static class ScenarioGroundTruthExporter
             sb.AppendLine(i < entries.Count - 1 ? "," : string.Empty);
         }
 
-        sb.AppendLine("  ]");
+        bool hasCheckpoints = checkpoints != null && checkpoints.Count > 0;
+
+        // Same "no reportLineOptions authored" skip as HYP-01-shaped checkpoints get
+        // above, one level up - an item with nothing authored is omitted from this
+        // list entirely rather than written with an empty options array, so absence
+        // here always means "no answer key," never "authored as empty."
+        //
+        // Built from `entries`, not from sceneEvidenceDefinitions directly - so an
+        // examinedInPlace item is already excluded here too, automatically, via the
+        // same exclusion applied when `entries` was built above. No separate guard
+        // needed in this section.
+        var reportLineEntries = new List<EvidenceDefinition>();
+        foreach (var def in entries)
+        {
+            if (def.reportLineOptions != null && def.reportLineOptions.Count > 0)
+            {
+                reportLineEntries.Add(def);
+            }
+        }
+        bool hasReportLines = reportLineEntries.Count > 0;
+
+        sb.AppendLine(hasCheckpoints || hasReportLines ? "  ]," : "  ]");
+
+        // Omitted entirely (not an empty array) when the scene has no checkpoints with
+        // an answer key to export - same "absence means no data" reasoning as skipping
+        // HYP-01-shaped checkpoints above, one level up.
+        if (hasCheckpoints)
+        {
+            sb.AppendLine("  \"hypothesisCheckpoints\": [");
+            for (int i = 0; i < checkpoints.Count; i++)
+            {
+                var checkpoint = checkpoints[i];
+                sb.AppendLine("    {");
+                sb.AppendLine($"      \"id\": \"{Escape(checkpoint.Id)}\",");
+                sb.AppendLine("      \"reasoningOptions\": [");
+                for (int j = 0; j < checkpoint.ReasoningOptions.Count; j++)
+                {
+                    var option = checkpoint.ReasoningOptions[j];
+                    sb.Append($"        {{ \"id\": \"{Escape(option.Id)}\", \"isCorrect\": {(option.IsCorrect ? "true" : "false")} }}");
+                    sb.AppendLine(j < checkpoint.ReasoningOptions.Count - 1 ? "," : string.Empty);
+                }
+                sb.AppendLine("      ]");
+                sb.Append("    }");
+                sb.AppendLine(i < checkpoints.Count - 1 ? "," : string.Empty);
+            }
+            sb.AppendLine(hasReportLines ? "  ]," : "  ]");
+        }
+
+        // Per-item report-line answer key: id + isAccurate only, never text - same
+        // boundary as reasoningOptions above and the evidence roster's own
+        // relevance-not-description rule. Sourced straight from the SAME entries list
+        // the evidence roster above was built from (no separate scene read, unlike
+        // ReadHypothesisCheckpoints - reportLineOptions already lives on these
+        // EvidenceDefinition objects), so this can never drift from the live roster.
+        if (hasReportLines)
+        {
+            sb.AppendLine("  \"evidenceReportLines\": [");
+            for (int i = 0; i < reportLineEntries.Count; i++)
+            {
+                var def = reportLineEntries[i];
+                sb.AppendLine("    {");
+                sb.AppendLine($"      \"evidenceId\": \"{Escape(def.evidenceId)}\",");
+                sb.AppendLine("      \"reportLineOptions\": [");
+                for (int j = 0; j < def.reportLineOptions.Count; j++)
+                {
+                    var option = def.reportLineOptions[j];
+                    sb.Append($"        {{ \"id\": \"{Escape(option.id)}\", \"isAccurate\": {(option.isAccurate ? "true" : "false")} }}");
+                    sb.AppendLine(j < def.reportLineOptions.Count - 1 ? "," : string.Empty);
+                }
+                sb.AppendLine("      ]");
+                sb.Append("    }");
+                sb.AppendLine(i < reportLineEntries.Count - 1 ? "," : string.Empty);
+            }
+            sb.AppendLine("  ]");
+        }
+
         sb.AppendLine("}");
         return sb.ToString();
     }

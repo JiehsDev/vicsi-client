@@ -1,0 +1,16 @@
+{
+  "changedExistingEntryIds": [],
+  "addedEntryIds": [
+    "photo-scale-first-original",
+    "photo-scale-frame",
+    "photo-scale-move-closer",
+    "photo-scale-place-prompt",
+    "photo-scale-placed",
+    "photo-scale-prepare-item",
+    "photo-scale-remove-for-original",
+    "photo-scale-required",
+    "photo-scale-saved"
+  ],
+  "removedEntryIds": [],
+  "sceneSha256": "91d5c8c35425cdc32fec5ecb6bbc01ebfb07c368e227d62da5e10fdf12786005"
+}

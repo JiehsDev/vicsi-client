@@ -1,0 +1,17 @@
+# Editable scene visuals — 2026-10-20
+
+Previously procedural props, guidance and panels are saved in `Assets/_Project/Scenes/Scenarios/CSI_Environment.unity`: 627 bound GameObjects across 36 visual groups. The supply/preparation tables, logging table with pen and paper, comparison desk and evidence tray can be edited outside Play mode. The assisted metric ruler is an inactive scene object, and packaged swabs use `Assets/Resources/EditablePaperSwabPackage.prefab`.
+
+Open **Tools > ViCSI > Editable Scene Objects** to select a group or show hidden UI for editing. See [editing instructions](../EDITABLE_SCENE_OBJECTS.md). Generated meshes, materials and textures are persistent assets under `Assets/_Project/Art/EditableSceneVisuals/`.
+
+Runtime builders reconnect their fields and input callbacks to the authored objects. They preserve local transforms, materials, colours, fonts and layout settings. Gameplay still controls visibility, current sample/progress text, guidance geometry and camera-following poses. Supply-route points and tracked-hand glove colour are Inspector settings. Existing evidence models remain driven by their editable evidence prefabs. The original camera frame and current whole-house/yard cordon layout are retained.
+
+The focused diagnostic edits a real tabletop's position, scale and material and a label's font size, invokes the original builder, and verifies that the edits survive without duplicate objects. It also checks authored station/register bindings, all visual groups, ruler reuse, packaged-swab source labels and the supply guide's enabled state.
+
+Initial migration attempts exposed component reuse, inactive TMP font setup, settings confirmation caching and supply-guide activation issues. These were repaired before the accepted checks. Initial failed reports and materialization logs remain in the evidence directory. The test runner also now tolerates processes whose command-line information is unavailable. An editor crash during an earlier import/reload required reopening the project; its saved scene and before-scene copy were retained. No specific crash cause was established.
+
+Accepted validation: **510 PASS / 0 FAIL across ten fresh Unity processes**, all exit 0. Editable scene visuals 55, sample preparation 46, custody 62, fingerprint comparison 50, UI comfort/input 57, workflow UI 24, photographic scale 74, arrival 42, access register 48 and fresh swab supply 52. Code whitespace checks pass. Accepted run5 logs contain no missing-cache warnings or null/missing-component exceptions. The reopened editor compiled successfully; its two bridge-port conflict messages are retained in the editor log.
+
+Native edit-mode previews inspected: [yard props](../evidence/editable-scene-visuals-2026-10-20/authored-yard-props.png), [preparation station](../evidence/editable-scene-visuals-2026-10-20/authored-preparation-station.png) and [logging table](../evidence/editable-scene-visuals-2026-10-20/authored-logging-table.png). The temporary capture camera and additive scene were closed. Unity remains open outside Play mode, with the Editable Scene Objects browser and supply-station selection. Its dirty scene state was preserved, rather than saved or discarded during inspection.
+
+Final accepted reports and scene hash are recorded in [summary.json](../evidence/editable-scene-visuals-2026-10-20/summary.json). Saved scene SHA256: `A5850BBA3A16AF8086C46A1B9BB51FD638113938032371B86756ECE553FC3B7C`. Physical headset readability and controller comfort remain manual checks.

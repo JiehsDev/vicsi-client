@@ -1,0 +1,29 @@
+{
+  "feature": "Flexible inventory UI",
+  "date": "2026-10-17",
+  "tests": [
+    {"suite": "InventoryUILayoutTest", "passed": 22, "failed": 0, "report": "run1/InventoryUILayoutTest.txt"},
+    {"suite": "EvidenceInventoryTest", "passed": 29, "failed": 0, "report": "run1/EvidenceInventoryTest.txt"}
+  ],
+  "totalPassed": 51,
+  "totalFailed": 0,
+  "editor": {
+    "play": false,
+    "compiling": false,
+    "compilationFailed": false,
+    "consoleCSharpErrors": 0,
+    "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+    "dirty": false,
+    "pending": false,
+    "requestPending": false,
+    "xrRestorePending": false,
+    "standaloneXR": true,
+    "androidXR": true,
+    "backgroundStretch": true
+  },
+  "manualEditorWiring": "None; uses serialized references and runtime responsive layout setup.",
+  "manualAcceptance": "Physical Quest readability and comfort.",
+  "commit": false,
+  "push": false,
+  "deploy": false
+}

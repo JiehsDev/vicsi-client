@@ -10,6 +10,10 @@ using UnityEngine;
 /// field comment for why the two must stay separate). Same event-driven bridge
 /// pattern as AimIndicatorUI elsewhere in this file's neighborhood, so neither
 /// PhotographTool nor ViewfinderFrameMask needs to know the other exists.
+///
+/// Also green while the player stands inside the active scene-photography point's
+/// marked circle (ScenePhotographyManager.IsPlayerInActiveZone) - the other moment a
+/// shutter press counts. That signal is about a scene position, never about evidence.
 /// </summary>
 public class ViewfinderConfirmationFeedback : MonoBehaviour
 {
@@ -36,16 +40,30 @@ public class ViewfinderConfirmationFeedback : MonoBehaviour
             return;
         }
 
-        photographTool.OnConfirmedForCaptureChanged += frameMask.SetConfirmed;
-        frameMask.SetConfirmed(photographTool.IsConfirmedForCapture);
+        photographTool.OnConfirmedForCaptureChanged += HandleSignalChanged;
+        ScenePhotographyManager.OnActiveZoneChanged += HandleSignalChanged;
+        Refresh();
     }
 
     private void OnDisable()
     {
+        ScenePhotographyManager.OnActiveZoneChanged -= HandleSignalChanged;
         if (photographTool != null && frameMask != null)
         {
-            photographTool.OnConfirmedForCaptureChanged -= frameMask.SetConfirmed;
+            photographTool.OnConfirmedForCaptureChanged -= HandleSignalChanged;
             frameMask.SetConfirmed(false);
         }
+    }
+
+    private void HandleSignalChanged(bool _) => Refresh();
+
+    private void Refresh()
+    {
+        if (photographTool == null || frameMask == null)
+        {
+            return;
+        }
+        var scene = ScenePhotographyManager.Instance;
+        frameMask.SetConfirmed(photographTool.IsConfirmedForCapture || (scene != null && scene.IsPlayerInActiveZone));
     }
 }

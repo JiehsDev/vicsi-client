@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-21",
+  "unity": [
+    {
+      "report": "run5/RecorderDocumentationAccuracyTest.txt",
+      "passed": 59,
+      "failed": 0
+    },
+    {
+      "report": "run4/RecorderReportLimitTest.txt",
+      "passed": 30,
+      "failed": 0
+    },
+    {
+      "report": "run4/BodyRemovalTest.txt",
+      "passed": 49,
+      "failed": 0
+    },
+    {
+      "report": "run4/BottleFingerprintProcedureTest.txt",
+      "passed": 42,
+      "failed": 0
+    },
+    {
+      "report": "run4/FinalDeductionAssessmentTest.txt",
+      "passed": 41,
+      "failed": 0
+    },
+    {
+      "report": "run4/AssessmentUploadServiceTest.txt",
+      "passed": 33,
+      "failed": 0
+    },
+    {
+      "report": "run4/ProcedureTimelineUploadTest.txt",
+      "passed": 14,
+      "failed": 0
+    },
+    {
+      "report": "run5/EducationalSessionRecordTest.txt",
+      "passed": 70,
+      "failed": 0
+    }
+  ],
+  "unityPassed": 338,
+  "unityFailed": 0,
+  "dashboard": {
+    "skipped": 0,
+    "failed": 0,
+    "passed": 83
+  },
+  "scoring": {
+    "skipped": 0,
+    "failed": 0,
+    "passed": 219
+  },
+  "browser": {
+    "passed": 21,
+    "failed": 0
+  },
+  "csharpCompilerErrors": 0,
+  "typecheck": "passed",
+  "scopedLint": "passed",
+  "physicalHeadsetTest": false,
+  "productionReads": 0,
+  "productionWrites": 0,
+  "commit": false,
+  "push": false,
+  "deployment": false
+}

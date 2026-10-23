@@ -1,0 +1,24 @@
+=== SketchCompletionGateTest ===
+PASS: Unsubmitted sketch explains how to finish through the tool wheel
+PASS: Conclusion cannot open while the sketch is unsubmitted
+PASS: Refusal leaves tools and navigation accessible
+PASS: Actual scene photography and measurements complete
+PASS: Report-line metadata alone does not finalize body documentation
+PASS: Measured body cannot be recorded before sketch placement
+PASS: Body recording refusal points to Scene Sketch
+PASS: Body is correctly placed with automatic distances
+PASS: Sketch placement unlocks body recording without final sheet submission
+PASS: Recorded body still refuses preparation if its sketch is missing
+PASS: Removal cannot bypass the sketch through a prepared-state fixture
+PASS: Required sketch placement: BODY-A
+PASS: Required sketch placement: EVD-014
+PASS: Required sketch placement: EVD-015
+PASS: Required sketch placement: EVD-018
+PASS: All placements and distances are ready but not auto-submitted
+PASS: Complete placements alone still cannot submit the conclusion
+PASS: Even accepted-feedback state cannot bypass unsubmitted sketch
+PASS: Explicit sketch submission clears its completion gate
+PASS: Submitted sketch permits the existing closeout transition
+PASS: Final completion also refuses an unsubmitted sketch
+PASS: Deduction weights and separate Recorder maximum stay unchanged
+=== PASS ===

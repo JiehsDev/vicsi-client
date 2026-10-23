@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49f6ed9415254f46a943d2777e3afb8, type: 3}
+  m_Name: Insight_KNIFE-PRINT-GLOVES-WIFE
+  m_EditorClassIdentifier: Assembly-CSharp::InsightDefinition
+  insightId: INSIGHT-KNIFE-PRINT-GLOVES-WIFE
+  displayName: Handling Evidence Points to Different Individuals
+  description: The brother's fingerprint was recovered from the knife, while the
+    wife's fingerprint was recovered from inside the gloves. The evidence connects
+    different individuals to different objects, so object handling should not be
+    treated as direct proof of who committed the attack.
+  suggestedAction: 
+  unlockRequirement:
+    kind: 1
+    operatorType: 0
+    children:
+    - rid: 7267691000371347719
+    - rid: 7267691000371347720
+    requirementType: 0
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    authoringNote: 
+  category: 
+  priority: 0
+  sourceFindingIds:
+  - FIND-KNIFE-PRINT-BROTHER
+  - FIND-GLOVES-PRINT-WIFE
+  references:
+    version: 2
+    RefIds:
+    - rid: 7267691000371347719
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-KNIFE-PRINT-BROTHER
+        authoringNote: 
+    - rid: 7267691000371347720
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-GLOVES-PRINT-WIFE
+        authoringNote: 

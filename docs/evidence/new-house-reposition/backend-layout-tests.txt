@@ -1,0 +1,50 @@
+﻿TAP version 13
+# (node:30252) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/newHouseMeasurementLayout.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: new-house-v1 measurements use registered new geometry with unchanged tolerance
+ok 1 - new-house-v1 measurements use registered new geometry with unchanged tolerance
+  ---
+  duration_ms: 2.6778
+  type: 'test'
+  ...
+# Subtest: untagged historical sessions retain their previous key and exact output
+ok 2 - untagged historical sessions retain their previous key and exact output
+  ---
+  duration_ms: 1.9266
+  type: 'test'
+  ...
+# Subtest: repositioned evidence uses v2 while v1 sessions retain their frozen geometry
+ok 3 - repositioned evidence uses v2 while v1 sessions retain their frozen geometry
+  ---
+  duration_ms: 0.3561
+  type: 'test'
+  ...
+# Subtest: client expected-distance/accuracy claims cannot override the registered layout
+ok 4 - client expected-distance/accuracy claims cannot override the registered layout
+  ---
+  duration_ms: 0.1642
+  type: 'test'
+  ...
+# Subtest: unknown or mixed layouts leave measurement analytics unavailable instead of using the wrong house
+ok 5 - unknown or mixed layouts leave measurement analytics unavailable instead of using the wrong house
+  ---
+  duration_ms: 0.2718
+  type: 'test'
+  ...
+# Subtest: server profile matches the saved Unity layout, references and expected distances
+ok 6 - server profile matches the saved Unity layout, references and expected distances
+  ---
+  duration_ms: 23.3528
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 465.52

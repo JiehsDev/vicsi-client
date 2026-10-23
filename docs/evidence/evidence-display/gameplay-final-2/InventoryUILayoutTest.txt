@@ -1,0 +1,24 @@
+=== InventoryUILayoutTest ===
+PASS: Empty inventory opens in a flexible bounded container
+PASS: Inventory retains shared wall-safe HUD placement
+PASS: Sealed fixture item 0 enters through real inventory admission
+PASS: Sealed fixture item 1 enters through real inventory admission
+PASS: Sealed fixture item 2 enters through real inventory admission
+PASS: Sealed fixture item 3 enters through real inventory admission
+PASS: Sealed fixture item 4 enters through real inventory admission
+PASS: Sealed fixture item 5 enters through real inventory admission
+PASS: Rows grow independently for long names and lock reasons
+PASS: All visible item text wraps without shrinking, clipping or glyph overflow
+PASS: Readable name and detail font sizes are preserved
+PASS: Rows retain equal widths and non-overlapping 12-unit gaps
+PASS: Name retains 20-unit horizontal and 16-unit vertical row padding
+PASS: Overflow caps the panel at 740 with real vertical scrolling
+PASS: Narrower container increases row height and retains all text
+PASS: Thumbstick selection scrolls the last item fully into view
+PASS: Clipped rows cannot intercept inventory pointer hits
+PASS: Resized inventory row remains selectable by controller ray
+PASS: Locked item action preserves custody
+PASS: Closing releases UI ownership
+PASS: Reopening retains one layout and restores six real entries
+PASS: Removing items restores a compact readable empty state
+=== PASS, 0 failures ===

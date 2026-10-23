@@ -1,0 +1,38 @@
+=== MeasurementProcedureTest (Normal) ===
+  PASS: [data] EVD-014: Warn rule before PhotographedFinal requiring MeasurementCompleted(MEAS-EVD-014)
+  PASS: [data] EVD-015: Warn rule before PhotographedFinal requiring MeasurementCompleted(MEAS-EVD-015)
+  FAIL: [data] EVD-018: Warn rule before PhotographedFinal requiring MeasurementCompleted(MEAS-EVD-018)
+  PASS: [data] BODY-A measurements block recording after the final photo
+  PASS: [scene] overall scene photography completed before evidence work
+  PASS: [BODY-A] initial photo applied with no measurement warning
+  PASS: [BODY-A] chalk outline traced
+  PASS: [BODY-A] letter marker A placed
+  PASS: [BODY-A] measurements follow the required photograph/marker order
+  PASS: [BODY-A] final photo: applied, no warning, no ProcedureOutOfOrder
+  PASS: [BODY-A] Recorder after the final photo and measurements
+  PASS: [BODY-A] never collected (examined in place, scene custody)
+  PASS: [EVD-014] initial photo applied with no measurement warning
+  PASS: [EVD-014] chalk outline traced
+  PASS: [EVD-014] numbered tent placed
+  PASS: [EVD-014] measurements follow the required photograph/marker order
+  PASS: [EVD-014] final photo: applied, no warning, no ProcedureOutOfOrder
+  PASS: [EVD-014] rest of the procedure (GreyboxFlowTest resumed after the final photo)
+  PASS: [EVD-014] reached Processed
+  PASS: [EVD-015] initial photo applied with no measurement warning
+  PASS: [EVD-015] chalk outline traced
+  PASS: [EVD-015] numbered tent placed
+  PASS: [EVD-015] measurements follow the required photograph/marker order
+  PASS: [EVD-015] final photo: applied, no warning, no ProcedureOutOfOrder
+  PASS: [EVD-015] rest of the procedure (GreyboxFlowTest resumed after the final photo)
+  PASS: [EVD-015] reached Processed
+  PASS: [EVD-018] initial photo applied with no measurement warning
+  PASS: [EVD-018] chalk outline traced
+  PASS: [EVD-018] numbered tent placed
+  FAIL: [EVD-018] measurements follow the required photograph/marker order
+  PASS: [EVD-018] final photo: applied, no warning, no ProcedureOutOfOrder
+  PASS: [EVD-018] rest of the procedure (GreyboxFlowTest resumed after the final photo)
+  PASS: [EVD-018] reached Processed
+  PASS: [EVD-014] swab done and print matched to Paul (on-scene kit)
+  PASS: [EVD-018] lab print matched to Paul (station)
+  PASS: [log] no ProcedureOutOfOrder in the correctly ordered session
+=== FAIL: 2 failure(s) ===

@@ -1,0 +1,5 @@
+Visible opening (bag-local): (0.070000, -0.023450, -0.089835)
+Receiver position (bag-local): (0.000000, 0.000000, 0.120000)
+Receiver size: (0.350000, 0.350000, 0.350000)
+Receiver contains visible opening: False
+Measured by Unity Editor before correction.

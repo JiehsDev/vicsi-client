@@ -1,0 +1,35 @@
+=== EvidenceNotesTest ===
+PASS: overall scene photography completed first
+PASS: EVD-014 is absent before discovery
+PASS: EVD-015 is absent before discovery
+PASS: EVD-018 is absent before discovery
+PASS: BODY-A is absent before discovery
+PASS: discover knife
+PASS: discovery reveals basic description/location/condition
+PASS: discovery does not reveal swab result
+PASS: discovery does not reveal fingerprint result
+PASS: discovery does not reveal wound comparison
+PASS: raw photograph
+PASS: chalk outline
+PASS: evidence marker
+FAIL: final photograph
+FAIL: swab blade
+FAIL: swab finding appears only after swabbing
+PASS: fingerprint finding remains hidden after swabbing
+PASS: wound comparison remains hidden before report finding
+FAIL: fingerprint handle
+FAIL: fingerprint finding appears after fingerprint processing
+PASS: fingerprint identity is not exposed
+PASS: wound comparison appears after its report finding
+PASS: EVD-014 has readable core sections
+PASS: EVD-014 note does not reveal suspect/conclusion
+PASS: discover EVD-015
+PASS: EVD-015 has readable core sections
+PASS: EVD-015 note does not reveal suspect/conclusion
+PASS: discover EVD-018
+PASS: EVD-018 has readable core sections
+PASS: EVD-018 note does not reveal suspect/conclusion
+PASS: discover BODY-A
+PASS: BODY-A has readable core sections
+PASS: BODY-A note does not reveal suspect/conclusion
+=== FAIL: 5 check(s) failed ===

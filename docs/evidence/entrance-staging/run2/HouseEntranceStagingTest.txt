@@ -1,0 +1,34 @@
+=== HouseEntranceStagingTest ===
+PASS: All stations spawn in the saved scene
+PASS: Cordon controls the house steps, beyond the property gate
+PASS: Existing secured tape remains visible
+PASS: Front-yard aisle is outside the controlled scene
+PASS: House entrance still requires authorization
+PASS: Comparison uses the authored yard anchor
+PASS: ArrivalPPEStation(Clone): physical footprint inside fence and clear of entrance
+PASS: ArrivalPPEStation(Clone): standing approach stays outside inner cordon
+PASS: Protected sample preparation station: physical footprint inside fence and clear of entrance
+PASS: Protected sample preparation station: standing approach stays outside inner cordon
+PASS: Fingerprint Comparison - Training Station: physical footprint inside fence and clear of entrance
+PASS: Fingerprint Comparison - Training Station: standing approach stays outside inner cordon
+PASS: EvidenceHoldingCrate: physical footprint inside fence and clear of entrance
+PASS: EvidenceHoldingCrate: standing approach stays outside inner cordon
+PASS: Exit trail remains inside property fence
+PASS: Exit trail ends in the yard service aisle
+PASS: Capsule exits house waypoint 1 target=(15.55, 1.20, 11.90) reached=(15.55, 1.20, 11.90)
+PASS: Capsule exits house waypoint 2 target=(15.55, 1.20, 10.80) reached=(15.55, 1.20, 10.80)
+PASS: Capsule exits house waypoint 3 target=(15.55, 1.20, 7.30) reached=(15.55, 1.20, 7.30)
+PASS: Capsule exits house waypoint 4 target=(16.70, 1.20, 7.30) reached=(16.70, 1.20, 7.30)
+PASS: Capsule exits house waypoint 5 target=(16.90, 1.20, 5.20) reached=(16.90, 1.20, 5.20)
+PASS: Capsule exits house waypoint 6 target=(16.90, 0.03, 2.70) reached=(16.90, 0.01, 2.70)
+PASS: Capsule exits house waypoint 7 target=(16.90, 0.03, 1.95) reached=(16.90, 0.00, 1.95)
+PASS: Capsule exits house waypoint 8 target=(16.90, 0.03, 0.75) reached=(16.90, 0.00, 0.75)
+PASS: Capsule reaches ArrivalPPEStation(Clone) target=(18.20, 0.03, 0.75) reached=(18.20, 0.00, 0.75)
+PASS: Capsule returns from ArrivalPPEStation(Clone) target=(16.90, 0.03, 0.75) reached=(16.90, 0.00, 0.75)
+PASS: Capsule reaches Protected sample preparation station target=(19.75, 0.03, 0.75) reached=(19.75, 0.01, 0.75)
+PASS: Capsule returns from Protected sample preparation station target=(16.90, 0.03, 0.75) reached=(16.90, 0.00, 0.75)
+PASS: Capsule reaches Fingerprint Comparison - Training Station target=(21.35, 0.03, 0.75) reached=(21.35, 0.00, 0.75)
+PASS: Capsule returns from Fingerprint Comparison - Training Station target=(16.90, 0.03, 0.75) reached=(16.90, 0.00, 0.75)
+PASS: Capsule reaches EvidenceHoldingCrate target=(14.40, 0.55, 0.65) reached=(14.40, 0.00, 0.65)
+PASS: Capsule returns from EvidenceHoldingCrate target=(16.90, 0.03, 0.75) reached=(16.90, 0.00, 0.75)
+=== PASS ===

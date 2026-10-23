@@ -1,0 +1,251 @@
+{
+  "reports": [
+    {
+      "batch": "A",
+      "run": "run1",
+      "suite": "DialogueCatalogTest",
+      "passed": 37,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\A\\run1\\DialogueCatalogTest.txt"
+    },
+    {
+      "batch": "A",
+      "run": "run1",
+      "suite": "DialogueHistoryTest",
+      "passed": 24,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\A\\run1\\DialogueHistoryTest.txt"
+    },
+    {
+      "batch": "A",
+      "run": "run1",
+      "suite": "FirstResponderTurnoverTest",
+      "passed": 44,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\A\\run1\\FirstResponderTurnoverTest.txt"
+    },
+    {
+      "batch": "A",
+      "run": "run1",
+      "suite": "ObjectiveStateManagerTest",
+      "passed": 13,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\A\\run1\\ObjectiveStateManagerTest.txt"
+    },
+    {
+      "batch": "A",
+      "run": "run1",
+      "suite": "ScenarioPhaseFoundationTest",
+      "passed": 7,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\A\\run1\\ScenarioPhaseFoundationTest.txt"
+    },
+    {
+      "batch": "B",
+      "run": "run1",
+      "suite": "EvidenceProcedureMapTest",
+      "passed": 59,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\B\\run1\\EvidenceProcedureMapTest.txt"
+    },
+    {
+      "batch": "B",
+      "run": "run1",
+      "suite": "EvidenceProcedurePanelTest",
+      "passed": 41,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\B\\run1\\EvidenceProcedurePanelTest.txt"
+    },
+    {
+      "batch": "B",
+      "run": "run1",
+      "suite": "ProcedureFoundationTest",
+      "passed": 30,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\B\\run1\\ProcedureFoundationTest.txt"
+    },
+    {
+      "batch": "B",
+      "run": "run1",
+      "suite": "ScenePhotographyProcedureTest",
+      "passed": 40,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\B\\run1\\ScenePhotographyProcedureTest.txt"
+    },
+    {
+      "batch": "C1",
+      "run": "run1",
+      "suite": "BiologicalSamplingTest",
+      "passed": 32,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\C1\\run1\\BiologicalSamplingTest.txt"
+    },
+    {
+      "batch": "C1",
+      "run": "run1",
+      "suite": "ChalkProcedureTest",
+      "passed": 39,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\C1\\run1\\ChalkProcedureTest.txt"
+    },
+    {
+      "batch": "C1",
+      "run": "run1",
+      "suite": "GreyboxFlowTest",
+      "passed": 0,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\C1\\run1\\GreyboxFlowTest.txt"
+    },
+    {
+      "batch": "C1",
+      "run": "run1",
+      "suite": "MeasurementProcedureTest",
+      "passed": 36,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\C1\\run1\\MeasurementProcedureTest.txt"
+    },
+    {
+      "batch": "C1",
+      "run": "run1",
+      "suite": "PerEvidenceMeasurementTest",
+      "passed": 33,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\C1\\run1\\PerEvidenceMeasurementTest.txt"
+    },
+    {
+      "batch": "C2",
+      "run": "run1",
+      "suite": "CollectionFeedbackTest",
+      "passed": 19,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\C2\\run1\\CollectionFeedbackTest.txt"
+    },
+    {
+      "batch": "C2",
+      "run": "run1",
+      "suite": "EvidenceInventoryTest",
+      "passed": 29,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\C2\\run1\\EvidenceInventoryTest.txt"
+    },
+    {
+      "batch": "C2",
+      "run": "run1",
+      "suite": "EvidenceTraceMarkerTest",
+      "passed": 17,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\C2\\run1\\EvidenceTraceMarkerTest.txt"
+    },
+    {
+      "batch": "C2",
+      "run": "run1",
+      "suite": "SceneRelationalMeasurementTest",
+      "passed": 57,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\C2\\run1\\SceneRelationalMeasurementTest.txt"
+    },
+    {
+      "batch": "C3-wrong-order",
+      "run": "run1",
+      "suite": "MeasurementProcedureTest",
+      "passed": 19,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\C3-wrong-order\\run1\\MeasurementProcedureTest.txt"
+    },
+    {
+      "batch": "D",
+      "run": "run1",
+      "suite": "BrotherPathTest",
+      "passed": 44,
+      "failed": 8,
+      "suitePass": false,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\D\\run1\\BrotherPathTest.txt"
+    },
+    {
+      "batch": "D",
+      "run": "run1",
+      "suite": "EvidenceNotesTest",
+      "passed": 33,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\D\\run1\\EvidenceNotesTest.txt"
+    },
+    {
+      "batch": "D",
+      "run": "run1",
+      "suite": "NarrativeEventManagerTest",
+      "passed": 10,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\D\\run1\\NarrativeEventManagerTest.txt"
+    },
+    {
+      "batch": "D",
+      "run": "run1",
+      "suite": "RequirementEvaluatorTest",
+      "passed": 24,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\D\\run1\\RequirementEvaluatorTest.txt"
+    },
+    {
+      "batch": "D",
+      "run": "run2",
+      "suite": "BrotherPathTest",
+      "passed": 55,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\D\\run2\\BrotherPathTest.txt"
+    },
+    {
+      "batch": "D",
+      "run": "run2",
+      "suite": "StoryContentTest",
+      "passed": 28,
+      "failed": 6,
+      "suitePass": false,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\D\\run2\\StoryContentTest.txt"
+    },
+    {
+      "batch": "focused",
+      "run": "post-fixes",
+      "suite": "VendorFollowupTest",
+      "passed": 7,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\focused\\post-fixes\\VendorFollowupTest.txt"
+    },
+    {
+      "batch": "focused",
+      "run": "run1",
+      "suite": "VendorFollowupTest",
+      "passed": 7,
+      "failed": 0,
+      "suitePass": true,
+      "file": "docs\\evidence\\ioc-soco-phase5\\closing-audit\\focused\\run1\\VendorFollowupTest.txt"
+    }
+  ],
+  "reportsCount": 27,
+  "distinctSuites": 24,
+  "passed": 784,
+  "failed": 14
+}

@@ -1,0 +1,22 @@
+=== AdaptiveDialogueLayoutTest ===
+  PASS: Short line uses a compact background
+  PASS: Font has a readable floor and never autoshrinks
+  PASS: Short text stays inside the label
+  PASS: Bottom edge stays at its authored location
+  PASS: Long line expands to the authored maximum width
+  PASS: Long text grows beyond the former clipping height
+  PASS: All long text fits, including explicit paragraph breaks
+  PASS: Long text preserves the font size
+  PASS: Expanded bottom edge remains fixed
+  PASS: Repeated fitting is stable
+  PASS: A short replacement restores the compact size
+  PASS: All 341 catalog messages fit their rendered bounds (clipped=0, first=)
+  PASS: Tooltip top edge stays at its authored location
+  PASS: Long tooltip has real padding on all sides
+  PASS: A long unbroken word wraps inside the background
+  PASS: Both live scene presenters exist
+  PASS: Dialogue presenter applies content fitting
+  PASS: Dialogue presenter shrinks for the next short line
+  PASS: Tooltip presenter applies content fitting
+  PASS: Ambient prompt returns at its compact size
+=== PASS ===

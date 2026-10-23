@@ -1,0 +1,69 @@
+{
+  "scope": "IOC initial assessment only",
+  "wording": [
+    "Investigate here",
+    "Survey the scene",
+    "Examine this",
+    "Move closer"
+  ],
+  "existingPhotographyWordingUnchanged": true,
+  "runtimeGuide": "Assets/_Project/Scripts/SceneTurnover/IOCAssessmentGuide.cs",
+  "runtimeHierarchy": "NPC_FirstResponder/IOC direction guide",
+  "recommendationOrder": [
+    "unfinished survey",
+    "unfinished victim",
+    "needed possible evidence in authored order"
+  ],
+  "mandatoryObservationOrderAdded": false,
+  "evidenceQuotaUnchanged": 2,
+  "guideRecordsObservations": false,
+  "guideOwnsInputOrModalLocks": false,
+  "tests": {
+    "IOCAssessmentGuideTest": {
+      "passed": 35,
+      "failed": 0,
+      "exitCode": 0,
+      "report": "docs/evidence/evidence-display/ioc-direction-guide-final-2026-10-18/IOCAssessmentGuideTest.txt",
+      "log": "docs/evidence/evidence-display/ioc-direction-guide-final-2026-10-18/IOCAssessmentGuideTest.log"
+    },
+    "ScenarioPhaseFoundationTest": {
+      "passed": 19,
+      "failed": 0,
+      "exitCode": 0,
+      "report": "docs/evidence/evidence-display/ioc-direction-guide-final-2026-10-18/ScenarioPhaseFoundationTest.txt",
+      "log": "docs/evidence/evidence-display/ioc-direction-guide-final-2026-10-18/ScenarioPhaseFoundationTest.log"
+    },
+    "PhotographyGuideTest": {
+      "passed": 26,
+      "failed": 0,
+      "exitCode": 0,
+      "report": "docs/evidence/evidence-display/ioc-direction-guide-final-2026-10-18/PhotographyGuideTest.txt",
+      "log": "docs/evidence/evidence-display/ioc-direction-guide-final-2026-10-18/PhotographyGuideTest.log"
+    }
+  },
+  "totalPassed": 80,
+  "totalFailed": 0,
+  "csharpCompileErrors": 0,
+  "questConnected": false,
+  "headsetAcceptancePerformed": false,
+  "preservation": {
+    "changedExistingFiles": [
+      "Assets\\_Project\\Editor\\Phase5PlayModeBatchRunner.cs",
+      "Assets\\_Project\\Scripts\\SceneTurnover\\IOCAssessmentInteraction.cs"
+    ],
+    "unchangedExistingFiles": 1337,
+    "assessmentOnlyChange": "Auto-add IOCAssessmentGuide once after BuildChecklist in Awake",
+    "existingObservationValidationAndInputUnchanged": true,
+    "allScenesAndScenarioDataUnchanged": true,
+    "photographyGuideGraphicShaderAndManagerUnchanged": true,
+    "menuAndToolWheelsUnchanged": true,
+    "scoringUploadDashboardSourcesUntouched": true,
+    "editorRunnerOnlyChange": "Do not skip IOC before IOCAssessmentGuideTest",
+    "acceptedSourceHashes": {
+      "Assets/_Project/Editor/Phase5PlayModeBatchRunner.cs": "fce73c5c73dffab9273ba00cb9c94cc6311cc84363ea6e9676d11e115902190d",
+      "Assets/_Project/Scripts/SceneTurnover/IOCAssessmentInteraction.cs": "576dd2697631341a2a229844ade1d7a16b7956061584026ae7335b8e6b757913",
+      "Assets/_Project/Scripts/SceneTurnover/IOCAssessmentGuide.cs": "9de975e28ea1e3db9424d3e37d3206f48b5d47eca019b1fb2b8d4e408fed77ff",
+      "Assets/_Project/Scripts/Testing/IOCAssessmentGuideTest.cs": "4017cfa56e09865bad4cd1486ad40f191242c74d0ff10fe84024349cb6b28f91"
+    }
+  }
+}

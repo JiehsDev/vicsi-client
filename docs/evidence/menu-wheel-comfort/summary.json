@@ -1,0 +1,156 @@
+{
+  "menuWheels": [
+    {
+      "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+      "component": "ToolWheelController",
+      "componentFileID": "40967770",
+      "excluded": true,
+      "authoredLabels": []
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+      "component": "UtilityMenuController",
+      "componentFileID": "1892130580",
+      "excluded": false,
+      "authoredLabels": [
+        "IOC Checklist",
+        "Notes",
+        "Item Logs",
+        "Album",
+        "Submit Conclusion",
+        "Evidence Inventory",
+        "Closeout Inventory",
+        "Dialogue History",
+        "Witness Accounts",
+        "Evidence Procedure",
+        "Scene Sketch"
+      ]
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Scenarios/Tutorial_ToolTest.unity",
+      "component": "ToolWheelController",
+      "componentFileID": "1511259833",
+      "excluded": true,
+      "authoredLabels": []
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Scenarios/Tutorial_ToolTest.unity",
+      "component": "UtilityMenuController",
+      "componentFileID": "1655889937",
+      "excluded": false,
+      "authoredLabels": [
+        "Notes",
+        "Item Logs",
+        "Album"
+      ]
+    }
+  ],
+  "dimensions": {
+    "oldDiameterUnits": 700,
+    "newDiameterUnits": 660,
+    "oldRadiusMetres": 0.21,
+    "newRadiusMetres": 0.198,
+    "oldLabelRadiusUnits": 504,
+    "newLabelRadiusUnits": 250,
+    "oldLabelRadiusMetres": 0.3024,
+    "newLabelRadiusMetres": 0.15,
+    "oldFontUnits": 20,
+    "newFontUnits": 24,
+    "worldCanvasScale": 0.0006,
+    "unchangedDistanceMetres": 0.65,
+    "newRingHorizontalDegrees": 33.883,
+    "newLabelAnchorSpanDegrees": 25.989
+  },
+  "tests": {
+    "menu": {
+      "report": "docs/evidence/evidence-display/menu-wheel-comfort-regression-2026-10-18/MenuWheelComfortTest.txt",
+      "passed": 251,
+      "failed": 0,
+      "failures": [],
+      "runnerExitCode": 0
+    },
+    "comfort": {
+      "report": "docs/evidence/evidence-display/menu-wheel-comfort-regression-2026-10-18/UIComfortInputTest.txt",
+      "passed": 57,
+      "failed": 0,
+      "failures": [],
+      "runnerExitCode": 1
+    },
+    "settings": {
+      "report": "docs/evidence/evidence-display/menu-wheel-comfort-regression-2026-10-18/SettingsPauseMenuTest.txt",
+      "passed": 28,
+      "failed": 7,
+      "failures": [
+        "FAIL: Height plus increases configured height by 0.10 m",
+        "FAIL: Height minus decreases configured height by 0.10 m",
+        "FAIL: Height clamps to 2.00 m",
+        "FAIL: Reset Height restores calibrated/default height and clears preference",
+        "FAIL: Fresh A selects height plus once and remains suppressed against jumping",
+        "FAIL: Height preference persists through actual scenario restart",
+        "FAIL: Height preference survives starting another session"
+      ],
+      "runnerExitCode": 1
+    },
+    "settingsOriginalMenuControl": {
+      "report": "docs/evidence/evidence-display/menu-wheel-settings-baseline-control-2026-10-18/SettingsPauseMenuTest.txt",
+      "passed": 28,
+      "failed": 7,
+      "failures": [
+        "FAIL: Height plus increases configured height by 0.10 m",
+        "FAIL: Height minus decreases configured height by 0.10 m",
+        "FAIL: Height clamps to 2.00 m",
+        "FAIL: Reset Height restores calibrated/default height and clears preference",
+        "FAIL: Fresh A selects height plus once and remains suppressed against jumping",
+        "FAIL: Height preference persists through actual scenario restart",
+        "FAIL: Height preference survives starting another session"
+      ],
+      "runnerExitCode": 1
+    }
+  },
+  "settingsFailuresPredateMenuChanges": true,
+  "compileErrors": 0,
+  "compileLogs": [
+    "docs/evidence/evidence-display/menu-wheel-comfort-regression-2026-10-18/MenuWheelComfortTest.log",
+    "docs/evidence/evidence-display/menu-wheel-comfort-regression-2026-10-18/SettingsPauseMenuTest.log",
+    "docs/evidence/evidence-display/menu-wheel-comfort-regression-2026-10-18/UIComfortInputTest.log",
+    "docs/evidence/evidence-display/menu-wheel-settings-baseline-control-2026-10-18/SettingsPauseMenuTest.log"
+  ],
+  "quest3SConnected": false,
+  "quest3SAcceptancePerformed": false,
+  "preservation": {
+    "changedPreexistingFiles": [
+      "Assets\\_Project\\Scripts\\UI\\UtilityMenuController.cs"
+    ],
+    "unchangedPreexistingFiles": 1333,
+    "allScopedSceneFilesUnchanged": true,
+    "sceneFileCount": 5,
+    "toolWheelFilesUnchanged": [
+      "Assets\\_Project\\Scripts\\RoleSystem\\ToolWheelController.cs",
+      "Assets\\_Project\\Scripts\\RoleSystem\\ToolWheelController.cs.meta",
+      "Assets\\_Project\\Scripts\\RoleSystem\\ToolWheelWedgeTemplate.cs",
+      "Assets\\_Project\\Scripts\\RoleSystem\\ToolWheelWedgeTemplate.cs.meta"
+    ],
+    "inputAndOwnershipMethodsByteEquivalent": [
+      "Awake",
+      "OnEnable",
+      "OnDisable",
+      "OnDeviceChange",
+      "OnDestroy",
+      "OnPhaseChanged",
+      "Update",
+      "OpenMenu",
+      "CloseMenu",
+      "UpdateHoveredSegment"
+    ],
+    "sharedHudPlacementAndLocomotionSourceUnchanged": true,
+    "newRuntimeFiles": [
+      "Assets/_Project/Scripts/UI/MenuWheelComfortProfile.cs"
+    ],
+    "newValidationFiles": [
+      "Assets/_Project/Scripts/Testing/MenuWheelComfortTest.cs"
+    ],
+    "questAdbDevices": [],
+    "finalUtilitySourceSha256": "f39fac0ceb33a1702cb302acf95b5d9effa0e32df915577c880bc0aa68145f8a",
+    "baselineControlRestoredExactly": true
+  }
+}

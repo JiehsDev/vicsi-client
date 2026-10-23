@@ -1,0 +1,22 @@
+=== WallPenetrationViewTest ===
+PASS: Saved filtered guard exists; broad SDK query is disabled
+PASS: Wall mask starts hidden in the saved scene
+PASS: Movement tunneling remains separate
+PASS: Clear space leaves the mask and renderer off
+PASS: Regression reproduced: original SDK treats interaction trigger as wall
+PASS: Interaction triggers cannot activate the filtered mask
+PASS: Regression reproduced: original SDK treats default-layer world UI as wall
+PASS: Canvas UI cannot block view even with a solid collider
+PASS: Invisible barrier remains physically solid
+PASS: Invisible photography barrier cannot activate the mask
+PASS: Untagged player/held-tool hierarchy cannot activate the mask
+PASS: Regression reproduced: SDK look-ahead masks a wall beyond the head
+PASS: A wall not crossed by the head does not obscure view
+PASS: Genuine head crossing is detected
+PASS: Real walls still activate the comfort renderer
+PASS: Nearest valid surface supplies stable penetration depth
+PASS: Leaving a wall immediately clears the mask and mesh
+PASS: Coincident logical/tracked head cannot leave a stale mask
+PASS: Disabling the guard clears even a stale enabled mesh
+PASS: Guard re-enables cleanly without a phantom wall
+=== PASS, 0 failures ===

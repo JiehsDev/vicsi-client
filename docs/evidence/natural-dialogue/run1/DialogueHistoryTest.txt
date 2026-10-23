@@ -1,0 +1,26 @@
+=== DialogueHistoryTest ===
+  PASS: [session] history holds only this session's lines (1 so far), numbered from 1 in order
+  PASS: [record] a shown line adds exactly one entry
+  PASS: [record] entry keeps text, channel label and source id (no invented speaker)
+  PASS: [duplicate] still one entry after the line stayed visible for 30 frames
+  PASS: [duplicate] the same presentation recorded twice in one frame is one entry
+  PASS: [order] B then C appear after A in presentation order
+  PASS: [repeat] the same line shown again later is a new entry
+  PASS: [speaker] screen omits the prefix; history keeps speaker and line apart
+  PASS: [speaker] an authored 'First Responder: ...' prefix becomes the label, the rest the text
+  PASS: [speaker] a line starting with a time is not split into a fake speaker
+  PASS: [narrative] a real narrative beat is recorded with its event id
+  PASS: [toast] a system toast is recorded (category System) once it is displayed
+  PASS: [missed] after the popup hides, the exact line is still in history
+  PASS: [panel] opens: UI gate, locomotion hold and tool lock taken
+  PASS: [panel] one row per entry (13 rows / 13 entries)
+  PASS: [panel] opens scrolled to the newest line
+  PASS: [panel] scrolling up reaches the oldest line
+  PASS: [panel] scrolling down returns to the newest line
+  PASS: [panel] a line shown while open appears live
+  PASS: [panel] closes: UI gate and tool lock released
+  PASS: [panel] held/equipped tool unchanged across open/close (Measurement)
+  PASS: [capacity] trimmed to the limit (16) by dropping the oldest
+  PASS: [content] no retired storyline (affair / gloves / phone) in live dialogue or history
+  PASS: [reset] a new session's first line starts an empty history at sequence 1
+=== PASS, 0 failures ===

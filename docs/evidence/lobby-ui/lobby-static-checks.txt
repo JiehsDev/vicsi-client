@@ -1,0 +1,4 @@
+Persistent button callbacks unchanged: 48
+Original functional component fields unchanged
+Four intended presentation objects only; no fixture rows
+New source .meta pairings present

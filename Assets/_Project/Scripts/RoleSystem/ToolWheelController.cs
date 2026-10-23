@@ -53,6 +53,9 @@ public class ToolWheelController : MonoBehaviour
     [Tooltip("Icon/monogram opacity for roles with no PlayerTool built/placed yet - shown so the wheel previews every role, but visually muted since picking one does nothing yet.")]
     [SerializeField] private float placeholderIconAlpha = 0.3f;
 
+    [Tooltip("Roles never shown on the wheel in this scene, even though they remain valid ToolType values (persisted data may still contain them).")]
+    [SerializeField] private List<ToolType> hiddenRoles = new();
+
     [System.Serializable]
     private class WheelIconEntry
     {
@@ -102,6 +105,13 @@ public class ToolWheelController : MonoBehaviour
     private InputAction openAction;
     private InputAction selectStickAction;
 
+    /// <summary>Diagnostic-only surface for the dev-only in-headset overlay (see DevDiagnosticOverlay).</summary>
+    public bool IsOpenActionEnabled => openAction != null && openAction.enabled;
+    /// <summary>Diagnostic-only surface for the dev-only in-headset overlay - the wheel's own canvas GameObject active state.</summary>
+    public bool IsCanvasActive => wheelRoot != null && wheelRoot.activeSelf;
+    /// <summary>Diagnostic-only surface for the dev-only in-headset overlay - why the last OpenWheel() attempt (if any) was rejected, or null if the last attempt succeeded/none has happened yet.</summary>
+    public string LastRejectionReason { get; private set; }
+
     private OVRCameraRig cameraRig;
 
     private GameObject wheelRoot;
@@ -131,13 +141,39 @@ public class ToolWheelController : MonoBehaviour
     {
         openAction.Enable();
         selectStickAction.Enable();
+        InputSystem.onDeviceChange += OnDeviceChange;
     }
 
     private void OnDisable()
     {
+        InputSystem.onDeviceChange -= OnDeviceChange;
         openAction.Disable();
         selectStickAction.Disable();
         PlayerUIGate.Exit(this);
+    }
+
+    // These are loose actions (not part of an InputActionAsset), so their binding is
+    // resolved once, against whatever devices exist at Enable() time. Confirmed live on
+    // a Quest 3S test: the XR controller device can be torn down and recreated mid-
+    // session while the OpenXR/OVR session renegotiates (visible in the console as
+    // repeated XR_ERROR_ACTIONSET_NOT_ATTACHED and a premature XR loader deinit) - the
+    // physical button itself and Input System both keep working (confirmed via the
+    // Input Debugger's Devices view), but a loose action's stale resolution can miss the
+    // replacement device entirely, unlike the project's InputActionAsset-backed actions
+    // (e.g. Player/Move), which re-resolve correctly. Re-enabling on every device
+    // add/reconnect forces a fresh resolution so this can't go stale for the rest of the
+    // session.
+    private void OnDeviceChange(InputDevice device, InputDeviceChange change)
+    {
+        if (change != InputDeviceChange.Added && change != InputDeviceChange.Reconnected)
+        {
+            return;
+        }
+
+        openAction.Disable();
+        openAction.Enable();
+        selectStickAction.Disable();
+        selectStickAction.Enable();
     }
 
     private void OnDestroy()
@@ -150,6 +186,12 @@ public class ToolWheelController : MonoBehaviour
     {
         if (!isOpen)
         {
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            if (openAction.WasPressedThisFrame())
+            {
+                Debug.Log($"[ToolWheelController] Y pressed. Requested menu=ToolWheel, PlayerUIGate.IsBlocked={PlayerUIGate.IsBlocked}, canvasActive(before open)={wheelRoot != null && wheelRoot.activeSelf}");
+            }
+#endif
             if (openAction.WasPressedThisFrame())
             {
                 OpenWheel();
@@ -158,10 +200,14 @@ public class ToolWheelController : MonoBehaviour
         }
 
         UpdateHoveredSegment();
+        UpdateHighlight(); // Supply availability may change while the wheel stays open.
         AnimateHoverLift();
 
         if (openAction.WasReleasedThisFrame())
         {
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            Debug.Log($"[ToolWheelController] Y released. canvasActive(before close)={wheelRoot != null && wheelRoot.activeSelf}");
+#endif
             CloseWheel();
         }
     }
@@ -171,14 +217,24 @@ public class ToolWheelController : MonoBehaviour
         // Defers to whatever else already owns the screen right now (the
         // camera viewfinder, the utility menu, ...) instead of stacking this
         // wheel on top of it.
-        if (PlayerUIGate.IsBlocked)
+        if (SceneTurnover.IsInvestigationBlocked)
         {
+            LastRejectionReason = "SOCO investigation has not begun";
+            return;
+        }
+        if (PlayerUIGate.IsBlocked || ToolInputLock.HasUIOwners)
+        {
+            LastRejectionReason = "PlayerUIGate.IsBlocked";
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            Debug.Log("[ToolWheelController] OpenWheel blocked: PlayerUIGate.IsBlocked=true.");
+#endif
             return;
         }
 
         EnsureCameraRig();
         if (cameraRig == null)
         {
+            LastRejectionReason = "No OVRCameraRig found";
             Debug.LogWarning("[ToolWheelController] No OVRCameraRig found in scene; can't resolve a hand anchor to equip tools to.");
             return;
         }
@@ -190,8 +246,13 @@ public class ToolWheelController : MonoBehaviour
         UpdateHighlight();
 
         isOpen = true;
+        HudFollowCamera.ConfigureShared(wheelRoot, this, PlayerUIGate.InformationPriority);
         wheelRoot.SetActive(true);
         PlayerUIGate.Enter(this);
+        LastRejectionReason = null;
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+        Debug.Log($"[ToolWheelController] Wheel opened. canvasActive={wheelRoot.activeSelf}");
+#endif
     }
 
     private void CloseWheel()
@@ -207,9 +268,29 @@ public class ToolWheelController : MonoBehaviour
         }
 
         var selected = segmentViews[hoveredIndex];
+        if (selected.Role == ToolType.Sketcher)
+        {
+            if (!PlayerToolRegistry.CanEquip(ToolType.Sketcher))
+            {
+                NotificationManager.Notify(ProcedureInterlock.Reason, DialogueKind.Warning);
+                return;
+            }
+            CrimeSceneSketchUI.Instance?.Show();
+            return;
+        }
         if (selected.Role == ToolType.None)
         {
-            PlayerToolRegistry.HolsterCurrent();
+            // Routed through HeldItemCoordinator, not PlayerToolRegistry directly - it
+            // remains the single authority for what's held; ToolWheelController never
+            // decides that on its own. See HeldItemCoordinator's own class comment.
+            if (HeldItemCoordinator.Instance != null)
+            {
+                HeldItemCoordinator.Instance.HolsterCurrentTool();
+            }
+            else
+            {
+                PlayerToolRegistry.HolsterCurrent();
+            }
             return;
         }
 
@@ -217,6 +298,15 @@ public class ToolWheelController : MonoBehaviour
         // to equip, so picking one is silently a no-op rather than a warning spam.
         if (!selected.HasTool)
         {
+            return;
+        }
+        if(selected.Role!=PlayerToolRegistry.VirtuallyEquippedRole && !PlayerToolRegistry.CanEquip(selected.Role))
+        {
+            if(selected.Role==ToolType.Swab && SwabTool.Instance!=null)
+            {
+                if(SwabTool.Instance.NeedsFreshSupply)SwabTool.Instance.RequestFreshSupply();
+                GameDialogue.Say(SwabTool.Instance.AvailabilityDialogueId);
+            }
             return;
         }
 
@@ -229,7 +319,14 @@ public class ToolWheelController : MonoBehaviour
             ? cameraRig.leftHandAnchor
             : cameraRig.rightHandAnchor;
 
-        PlayerToolRegistry.ToggleEquip(selected.Role, handAnchor);
+        if (HeldItemCoordinator.Instance != null)
+        {
+            HeldItemCoordinator.Instance.ToggleEquipTool(selected.Role, handAnchor);
+        }
+        else
+        {
+            PlayerToolRegistry.ToggleEquip(selected.Role, handAnchor);
+        }
     }
 
     private void EnsureCameraRig()
@@ -282,21 +379,23 @@ public class ToolWheelController : MonoBehaviour
         {
             var view = segmentViews[i];
             bool hovered = i == hoveredIndex;
+            bool muted=view.Role==ToolType.Swab && SwabTool.Instance!=null && !SwabTool.Instance.HasFreshSwab;
             float alpha = view.HasTool ? 1f : placeholderIconAlpha;
+            if(muted)alpha=.35f;
 
-            view.Wedge.color = hovered ? hoverWedgeColor : dimWedgeColor;
+            view.Wedge.color = hovered && !muted ? hoverWedgeColor : dimWedgeColor;
 
             if (view.Icon != null)
             {
                 // Default look is the white icon on the black wedge; hovering flips the
                 // wedge to white, so the icon flips to its black counterpart to stay
                 // legible (falls back to the white icon if no black variant was set).
-                view.Icon.sprite = hovered && view.IconBlack != null ? view.IconBlack : view.IconWhite;
+                view.Icon.sprite = hovered && !muted && view.IconBlack != null ? view.IconBlack : view.IconWhite;
                 view.Icon.color = new Color(1f, 1f, 1f, alpha);
             }
             else if (view.Monogram != null)
             {
-                view.Monogram.color = hovered ? new Color(0f, 0f, 0f, alpha) : new Color(1f, 1f, 1f, alpha);
+                view.Monogram.color = hovered && !muted ? new Color(0f, 0f, 0f, alpha) : new Color(1f, 1f, 1f, alpha);
             }
         }
 
@@ -304,7 +403,8 @@ public class ToolWheelController : MonoBehaviour
         bool isHolsterEntry = current.Role == ToolType.None;
 
         centerTitle.text = isHolsterEntry ? "Empty Hands" : current.DisplayName.ToUpperInvariant();
-        centerSubtitle.text = current.Description;
+        centerSubtitle.text = current.Role==ToolType.Swab && SwabTool.Instance!=null && !SwabTool.Instance.HasFreshSwab
+            ?SwabTool.Instance.AvailabilityReason:current.Description;
     }
 
     // Eases each wedge's icon/monogram toward its hover target every frame the wheel
@@ -319,7 +419,8 @@ public class ToolWheelController : MonoBehaviour
                 continue;
             }
 
-            float target = i == hoveredIndex ? 1f : 0f;
+            bool muted=view.Role==ToolType.Swab && SwabTool.Instance!=null && !SwabTool.Instance.HasFreshSwab;
+            float target = i == hoveredIndex && !muted ? 1f : 0f;
             view.LiftT = Mathf.MoveTowards(view.LiftT, target, Time.deltaTime * HoverLiftSpeed);
 
             view.VisualRect.anchoredPosition = view.BaseAnchoredPosition + view.HoverDirection * (HoverLiftOffset * view.LiftT);
@@ -529,11 +630,12 @@ public class ToolWheelController : MonoBehaviour
         };
         foreach (ToolType role in System.Enum.GetValues(typeof(ToolType)))
         {
-            if (role == ToolType.None)
+            bool sketch = role == ToolType.Sketcher && CrimeSceneSketchUI.Instance != null;
+            if (role == ToolType.None || hiddenRoles.Contains(role))
             {
                 continue;
             }
-            entries.Add((role, ToDisplayName(role), ResolveDescription(role), PlayerToolRegistry.GetTool(role) != null));
+            entries.Add((role, ToDisplayName(role), ResolveDescription(role), sketch || PlayerToolRegistry.GetTool(role) != null));
         }
 
         int count = entries.Count;
@@ -738,11 +840,16 @@ public class ToolWheelController : MonoBehaviour
     private static string ToDisplayName(ToolType role) => role switch
     {
         ToolType.Photographer => "Camera",
-        ToolType.Sketcher => "Sketchpad",
+        ToolType.Sketcher => "Scene Sketch",
         ToolType.EvidenceCollector => "Evidence Bag",
         ToolType.Recorder => "Recorder",
         ToolType.IOC => "Flashlight",
         ToolType.EvidenceMarker => "Evidence Tent",
+        ToolType.ChalkMark => "Chalk",
+        ToolType.FingerprintKit => "Dust Brush",
+        ToolType.FingerprintTape => "Print Tape",
+        ToolType.LetterTentMarker => "Letter Tent",
+        ToolType.Measurement => "Tape Measure",
         _ => role.ToString(),
     };
 
@@ -754,10 +861,15 @@ public class ToolWheelController : MonoBehaviour
         ToolType.None => "Put away your current tool.",
         ToolType.Photographer => "Captures photographic evidence at the scene.",
         ToolType.IOC => "Illuminates dark areas to reveal hidden evidence.",
-        ToolType.Sketcher => "Sketches the crime scene layout by hand.",
+        ToolType.Sketcher => "Open the sketch after measuring an item. Place it before swabbing or fingerprint processing.",
         ToolType.EvidenceCollector => "Bags and seals collected evidence.",
         ToolType.Recorder => "Records verbal notes and witness statements.",
         ToolType.EvidenceMarker => "Places numbered evidence tents at the scene.",
+        ToolType.ChalkMark => "Chalks an outline around evidence before it is tented.",
+        ToolType.FingerprintKit => "Dusts a revealed latent print to make it visible for lifting.",
+        ToolType.FingerprintTape => "Lifts a dusted print for comparison.",
+        ToolType.LetterTentMarker => "Marks an item examined where it lies with a lettered tent.",
+        ToolType.Measurement => "Measures an item's position from two fixed reference points.",
         _ => string.Empty,
     };
 

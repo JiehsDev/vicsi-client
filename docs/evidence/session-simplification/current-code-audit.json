@@ -1,0 +1,1080 @@
+{
+  "rules": {
+    "scoringRulesVersion": "1.7.0",
+    "scenarioId": "CSI-ENVIRONMENT-001",
+    "scenarioVersion": "1.1.0",
+    "groundTruthVersion": "1.2.0",
+    "contentVersion": "1.0.0",
+    "validationStatus": "RESEARCH_CONFIGURATION_REQUIRES_EXPERT_VALIDATION",
+    "checkpointWeight": 60,
+    "relationshipWeight": 25,
+    "conclusionWeight": 15,
+    "maximumCheckpointWeight": 4,
+    "unsupportedRelationshipPenalty": 1,
+    "checkpoints": [
+      {
+        "id": "RC-01-PETER",
+        "trigger": 0,
+        "findingId": "",
+        "category": "EVIDENCE_CAUTION",
+        "responses": [
+          {
+            "id": "RC-01-PETER-A",
+            "weight": 1
+          },
+          {
+            "id": "RC-01-PETER-B",
+            "weight": 3
+          },
+          {
+            "id": "RC-01-PETER-C",
+            "weight": 4
+          },
+          {
+            "id": "RC-01-PETER-D",
+            "weight": 2
+          }
+        ]
+      },
+      {
+        "id": "RC-02-SCENE",
+        "trigger": 1,
+        "findingId": "",
+        "category": "SCENE_INTERPRETATION",
+        "responses": [
+          {
+            "id": "RC-02-SCENE-A",
+            "weight": 1
+          },
+          {
+            "id": "RC-02-SCENE-B",
+            "weight": 4
+          },
+          {
+            "id": "RC-02-SCENE-C",
+            "weight": 1
+          },
+          {
+            "id": "RC-02-SCENE-D",
+            "weight": 3
+          }
+        ]
+      },
+      {
+        "id": "RC-03-FINGERPRINT",
+        "trigger": 2,
+        "findingId": "FIND-KNIFE-PRINT-BROTHER",
+        "category": "LIMITATION_RECOGNITION",
+        "responses": [
+          {
+            "id": "RC-03-FINGERPRINT-A",
+            "weight": 1
+          },
+          {
+            "id": "RC-03-FINGERPRINT-B",
+            "weight": 3
+          },
+          {
+            "id": "RC-03-FINGERPRINT-C",
+            "weight": 4
+          },
+          {
+            "id": "RC-03-FINGERPRINT-D",
+            "weight": 2
+          }
+        ]
+      },
+      {
+        "id": "RC-04-KNIFE-WOUND",
+        "trigger": 2,
+        "findingId": "FIND-KNIFE-WOUND-CONSISTENT",
+        "category": "RELATIONSHIP_REASONING",
+        "responses": [
+          {
+            "id": "RC-04-KNIFE-WOUND-A",
+            "weight": 1
+          },
+          {
+            "id": "RC-04-KNIFE-WOUND-B",
+            "weight": 4
+          },
+          {
+            "id": "RC-04-KNIFE-WOUND-C",
+            "weight": 3
+          },
+          {
+            "id": "RC-04-KNIFE-WOUND-D",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": "RC-05-TIMELINE",
+        "trigger": 3,
+        "findingId": "",
+        "category": "TIMELINE_REASONING",
+        "responses": [
+          {
+            "id": "RC-05-TIMELINE-A",
+            "weight": 1
+          },
+          {
+            "id": "RC-05-TIMELINE-B",
+            "weight": 4
+          },
+          {
+            "id": "RC-05-TIMELINE-C",
+            "weight": 3
+          },
+          {
+            "id": "RC-05-TIMELINE-D",
+            "weight": 2
+          }
+        ]
+      },
+      {
+        "id": "RC-06-BLOODSTAIN",
+        "trigger": 2,
+        "findingId": "FIND-SPATTER-RECONSTRUCTION",
+        "category": "EVIDENCE_INTEGRATION",
+        "responses": [
+          {
+            "id": "RC-06-BLOODSTAIN-A",
+            "weight": 1
+          },
+          {
+            "id": "RC-06-BLOODSTAIN-B",
+            "weight": 4
+          },
+          {
+            "id": "RC-06-BLOODSTAIN-C",
+            "weight": 3
+          },
+          {
+            "id": "RC-06-BLOODSTAIN-D",
+            "weight": 2
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "id": "REL-bottle-supports-brother",
+        "sourceId": "EVD-018",
+        "targetId": "statement_brother_drinking",
+        "weight": 1,
+        "findingIds": [],
+        "statementId": "",
+        "evidenceId": "EVD-018",
+        "requiresForm1": false,
+        "reviewPrompt": "EVD-018 Bottle + the reported drinking gathering\nHow should this contextual evidence be used?",
+        "interpretations": [
+          {
+            "id": "REL-bottle-supports-brother-A",
+            "text": "Handling the bottle proves that a person remained in the house until the attack."
+          },
+          {
+            "id": "REL-bottle-supports-brother-B",
+            "text": "The bottle shows the attack was accidental because the gathering involved drinking."
+          },
+          {
+            "id": "REL-bottle-supports-brother-C",
+            "text": "The bottle is consistent with the reported gathering and shared handling. It does not establish who was present during the attack or who committed it."
+          },
+          {
+            "id": "REL-bottle-supports-brother-D",
+            "text": "The bottle establishes the order and time at which each participant handled it."
+          }
+        ],
+        "correctInterpretationId": "REL-bottle-supports-brother-C"
+      },
+      {
+        "id": "REL-knife-consistent-wound",
+        "sourceId": "EVD-014",
+        "targetId": "BODY-A",
+        "weight": 1,
+        "findingIds": [
+          "FIND-BODY-SHARP-WOUND",
+          "FIND-KNIFE-WOUND-CONSISTENT"
+        ],
+        "statementId": "",
+        "evidenceId": "",
+        "requiresForm1": false,
+        "reviewPrompt": "EVD-014 Kitchen Knife + John's injury\nWhat can be concluded from their consistency?",
+        "interpretations": [
+          {
+            "id": "REL-knife-consistent-wound-A",
+            "text": "The injury proves this particular knife was used and excludes every other sharp object."
+          },
+          {
+            "id": "REL-knife-consistent-wound-B",
+            "text": "The injury and knife together identify Paul as the person who inflicted the wound."
+          },
+          {
+            "id": "REL-knife-consistent-wound-C",
+            "text": "The knife is consistent with John's injury and could have caused it, but this relationship alone does not identify who used it."
+          },
+          {
+            "id": "REL-knife-consistent-wound-D",
+            "text": "A compatible injury establishes the attack sequence and the time at which the knife was used."
+          }
+        ],
+        "correctInterpretationId": "REL-knife-consistent-wound-C"
+      },
+      {
+        "id": "REL-paul-print-handled-knife",
+        "sourceId": "EVD-014",
+        "targetId": "statement_paul_knife_contact",
+        "weight": 1,
+        "findingIds": [
+          "FIND-KNIFE-PRINT-BROTHER"
+        ],
+        "statementId": "",
+        "evidenceId": "",
+        "requiresForm1": false,
+        "reviewPrompt": "Paul's fingerprint + EVD-014 Kitchen Knife\nWhat does this relationship support?",
+        "interpretations": [
+          {
+            "id": "REL-paul-print-handled-knife-A",
+            "text": "Paul's print identifies him as the person who used the knife during the attack."
+          },
+          {
+            "id": "REL-paul-print-handled-knife-B",
+            "text": "Paul handled the knife at some point, but the print alone does not establish when, why, or whether he used it during the attack."
+          },
+          {
+            "id": "REL-paul-print-handled-knife-C",
+            "text": "The print shows Paul handled the knife only during the earlier gathering and excludes later handling."
+          },
+          {
+            "id": "REL-paul-print-handled-knife-D",
+            "text": "Because the print cannot be dated, it provides no evidence that Paul handled the knife."
+          }
+        ],
+        "correctInterpretationId": "REL-paul-print-handled-knife-B"
+      },
+      {
+        "id": "REL-paul-timeline-contradiction",
+        "sourceId": "statement_paul_timeline",
+        "targetId": "statement_vendor_paul_3am",
+        "weight": 1,
+        "findingIds": [],
+        "statementId": "statement_vendor_paul_3am",
+        "evidenceId": "",
+        "requiresForm1": false,
+        "reviewPrompt": "Paul's statement + the vendor's observation around 3:00 AM\nHow should these accounts be interpreted?",
+        "interpretations": [
+          {
+            "id": "REL-paul-timeline-contradiction-A",
+            "text": "The vendor's observation contradicts Paul's claim that he went home around midnight and did not return. The vendor did not witness the attack."
+          },
+          {
+            "id": "REL-paul-timeline-contradiction-B",
+            "text": "The observation confirms Paul's claim because it occurred after the earlier gathering."
+          },
+          {
+            "id": "REL-paul-timeline-contradiction-C",
+            "text": "The observation proves Paul attacked John at exactly 3:00 AM."
+          },
+          {
+            "id": "REL-paul-timeline-contradiction-D",
+            "text": "The accounts cannot be compared unless the vendor also saw what happened inside the house."
+          }
+        ],
+        "correctInterpretationId": "REL-paul-timeline-contradiction-A"
+      },
+      {
+        "id": "REL-peter-departure-supported",
+        "sourceId": "statement_peter_timeline",
+        "targetId": "statement_vendor_observation",
+        "weight": 1,
+        "findingIds": [],
+        "statementId": "",
+        "evidenceId": "",
+        "requiresForm1": true,
+        "reviewPrompt": "Peter's departure account + the vendor's observation around 2:00 AM\nWhat is supported by the two accounts?",
+        "interpretations": [
+          {
+            "id": "REL-peter-departure-supported-A",
+            "text": "The vendor broadly corroborates Peter leaving around 2:00 AM, but did not witness the attack or establish everything Peter did afterward."
+          },
+          {
+            "id": "REL-peter-departure-supported-B",
+            "text": "The observation establishes Peter's location for the rest of the night and rules out every possible involvement."
+          },
+          {
+            "id": "REL-peter-departure-supported-C",
+            "text": "Leaving around 2:00 AM proves Peter left because he had attacked John."
+          },
+          {
+            "id": "REL-peter-departure-supported-D",
+            "text": "The accounts are contradictory because the vendor did not observe what happened inside the house."
+          }
+        ],
+        "correctInterpretationId": "REL-peter-departure-supported-A"
+      },
+      {
+        "id": "REL-spatter-consistent-reconstruction",
+        "sourceId": "EVD-015",
+        "targetId": "reconstruction_attack_sequence",
+        "weight": 1,
+        "findingIds": [
+          "FIND-SPATTER-RECONSTRUCTION"
+        ],
+        "statementId": "",
+        "evidenceId": "",
+        "requiresForm1": false,
+        "reviewPrompt": "EVD-015 Blood Spatter + the attack area\nWhat does the bloodstain evidence support?",
+        "interpretations": [
+          {
+            "id": "REL-spatter-consistent-reconstruction-A",
+            "text": "The blood pattern independently identifies the attacker and establishes intent."
+          },
+          {
+            "id": "REL-spatter-consistent-reconstruction-B",
+            "text": "The bloodstain evidence supports reconstruction of the attack area but does not independently identify the attacker."
+          },
+          {
+            "id": "REL-spatter-consistent-reconstruction-C",
+            "text": "The pattern establishes one exact sequence of movements and excludes all other sequences."
+          },
+          {
+            "id": "REL-spatter-consistent-reconstruction-D",
+            "text": "The pattern proves the knife was held by Paul when the blood was deposited."
+          }
+        ],
+        "correctInterpretationId": "REL-spatter-consistent-reconstruction-B"
+      }
+    ],
+    "supportedFindingIds": [
+      "FIND-BODY-SHARP-WOUND",
+      "FIND-KNIFE-WOUND-CONSISTENT",
+      "FIND-KNIFE-PRINT-BROTHER",
+      "FIND-SPATTER-RECONSTRUCTION"
+    ],
+    "supportedRelationshipIds": [
+      "REL-knife-consistent-wound",
+      "REL-spatter-consistent-reconstruction",
+      "REL-paul-print-handled-knife",
+      "REL-paul-timeline-contradiction"
+    ],
+    "supportedStatementId": "statement_vendor_paul_3am",
+    "supportedConclusionId": "conclusion-brother",
+    "supportedEndingId": "ending-brother-accused",
+    "prematureEndingId": "ending-premature-submission",
+    "peterConclusionId": "conclusion-peter",
+    "peterEndingId": "ending-peter-unsupported",
+    "inconclusiveConclusionId": "CONCLUSION-INCONCLUSIVE",
+    "inconclusiveEndingId": "ending-inconclusive",
+    "supportedConclusionCredit": 1,
+    "prematureConclusionCredit": 0.25,
+    "peterConclusionCredit": 0,
+    "inconclusiveInsufficientCredit": 1,
+    "inconclusiveSupportedCredit": 0.25
+  },
+  "questions": [
+    {
+      "id": "RC-01-PETER",
+      "category": "Reasoning",
+      "dimension": "EVIDENCE_CAUTION",
+      "prompt": "Based on what you know so far, what do you make of Peter leaving the house looking nervous?",
+      "options": [
+        {
+          "id": "RC-01-PETER-A",
+          "text": "Peter probably did it. Leaving nervously after being with John is enough to make him the main suspect.",
+          "weight": 1
+        },
+        {
+          "id": "RC-01-PETER-B",
+          "text": "Peter could be involved. His behavior makes him worth looking into, but I need more information.",
+          "weight": 3
+        },
+        {
+          "id": "RC-01-PETER-C",
+          "text": "I would not treat nervous behavior as proof of guilt. It gives me a reason to ask questions, not a reason to accuse him.",
+          "weight": 4
+        },
+        {
+          "id": "RC-01-PETER-D",
+          "text": "I don't think Peter matters to the investigation.",
+          "weight": 2
+        }
+      ],
+      "maximum": 4
+    },
+    {
+      "id": "RC-02-SCENE",
+      "category": "Reasoning",
+      "dimension": "SCENE_INTERPRETATION",
+      "prompt": "What can you reasonably conclude from the scene at this point?",
+      "options": [
+        {
+          "id": "RC-02-SCENE-A",
+          "text": "The knife near John must be the murder weapon.",
+          "weight": 1
+        },
+        {
+          "id": "RC-02-SCENE-B",
+          "text": "The knife and blood are important, but they still need proper examination before I can say what happened.",
+          "weight": 4
+        },
+        {
+          "id": "RC-02-SCENE-C",
+          "text": "There isn't enough here to justify further forensic examination.",
+          "weight": 1
+        },
+        {
+          "id": "RC-02-SCENE-D",
+          "text": "The scene suggests a violent incident, but I still need the physical evidence to understand it.",
+          "weight": 3
+        }
+      ],
+      "maximum": 4
+    },
+    {
+      "id": "RC-03-FINGERPRINT",
+      "category": "Reasoning",
+      "dimension": "LIMITATION_RECOGNITION",
+      "prompt": "Paul's fingerprint was recovered from the knife. What does that tell you?",
+      "options": [
+        {
+          "id": "RC-03-FINGERPRINT-A",
+          "text": "Paul must have used the knife to attack John.",
+          "weight": 1
+        },
+        {
+          "id": "RC-03-FINGERPRINT-B",
+          "text": "It makes Paul more suspicious, but I still need other evidence before deciding what the print means in this case.",
+          "weight": 3
+        },
+        {
+          "id": "RC-03-FINGERPRINT-C",
+          "text": "It shows Paul handled the knife at some point, but the print alone doesn't tell me when he touched it or what he did with it.",
+          "weight": 4
+        },
+        {
+          "id": "RC-03-FINGERPRINT-D",
+          "text": "The fingerprint doesn't matter because Paul knew John.",
+          "weight": 2
+        }
+      ],
+      "maximum": 4
+    },
+    {
+      "id": "RC-04-KNIFE-WOUND",
+      "category": "Reasoning",
+      "dimension": "RELATIONSHIP_REASONING",
+      "prompt": "The knife is consistent with John's wound. How should that finding be interpreted?",
+      "options": [
+        {
+          "id": "RC-04-KNIFE-WOUND-A",
+          "text": "This proves the knife was used to kill John.",
+          "weight": 1
+        },
+        {
+          "id": "RC-04-KNIFE-WOUND-B",
+          "text": "The knife could be the weapon because its characteristics are consistent with the wound, but that relationship alone does not prove who used it.",
+          "weight": 4
+        },
+        {
+          "id": "RC-04-KNIFE-WOUND-C",
+          "text": "The knife is probably involved, but I would still want the other findings before relying on it.",
+          "weight": 3
+        },
+        {
+          "id": "RC-04-KNIFE-WOUND-D",
+          "text": "If the knife fits the wound, whoever touched it must be the attacker.",
+          "weight": 1
+        }
+      ],
+      "maximum": 4
+    },
+    {
+      "id": "RC-05-TIMELINE",
+      "category": "Reasoning",
+      "dimension": "TIMELINE_REASONING",
+      "prompt": "The vendor says he saw Paul near John's house around three in the morning. How does that affect Paul's account?",
+      "options": [
+        {
+          "id": "RC-05-TIMELINE-A",
+          "text": "It proves Paul came back and killed John.",
+          "weight": 1
+        },
+        {
+          "id": "RC-05-TIMELINE-B",
+          "text": "It makes Paul's story questionable because the vendor's observation conflicts with his claim that he never returned.",
+          "weight": 4
+        },
+        {
+          "id": "RC-05-TIMELINE-C",
+          "text": "It makes Paul more suspicious, but the vendor still did not see him enter the house or attack John.",
+          "weight": 3
+        },
+        {
+          "id": "RC-05-TIMELINE-D",
+          "text": "It doesn't matter because the vendor didn't witness the attack.",
+          "weight": 2
+        }
+      ],
+      "maximum": 4
+    },
+    {
+      "id": "RC-06-BLOODSTAIN",
+      "category": "Reasoning",
+      "dimension": "EVIDENCE_INTEGRATION",
+      "prompt": "What does the bloodstain finding contribute to the case?",
+      "options": [
+        {
+          "id": "RC-06-BLOODSTAIN-A",
+          "text": "It identifies Paul as the attacker.",
+          "weight": 1
+        },
+        {
+          "id": "RC-06-BLOODSTAIN-B",
+          "text": "It helps establish where the attack occurred, but it does not identify the attacker by itself.",
+          "weight": 4
+        },
+        {
+          "id": "RC-06-BLOODSTAIN-C",
+          "text": "It supports the physical reconstruction of what happened near John, but it still needs to be considered with the other evidence.",
+          "weight": 3
+        },
+        {
+          "id": "RC-06-BLOODSTAIN-D",
+          "text": "The blood only confirms that John was injured, so it adds nothing else.",
+          "weight": 2
+        }
+      ],
+      "maximum": 4
+    },
+    {
+      "id": "REL-bottle-supports-brother",
+      "category": "Evidence Relationships",
+      "prompt": "EVD-018 Bottle + the reported drinking gathering\nHow should this contextual evidence be used?",
+      "options": [
+        {
+          "id": "REL-bottle-supports-brother-A",
+          "text": "Handling the bottle proves that a person remained in the house until the attack.",
+          "weight": -1
+        },
+        {
+          "id": "REL-bottle-supports-brother-B",
+          "text": "The bottle shows the attack was accidental because the gathering involved drinking.",
+          "weight": -1
+        },
+        {
+          "id": "REL-bottle-supports-brother-C",
+          "text": "The bottle is consistent with the reported gathering and shared handling. It does not establish who was present during the attack or who committed it.",
+          "weight": 1
+        },
+        {
+          "id": "REL-bottle-supports-brother-D",
+          "text": "The bottle establishes the order and time at which each participant handled it.",
+          "weight": -1
+        }
+      ],
+      "maximum": 1
+    },
+    {
+      "id": "REL-knife-consistent-wound",
+      "category": "Evidence Relationships",
+      "prompt": "EVD-014 Kitchen Knife + John's injury\nWhat can be concluded from their consistency?",
+      "options": [
+        {
+          "id": "REL-knife-consistent-wound-A",
+          "text": "The injury proves this particular knife was used and excludes every other sharp object.",
+          "weight": -1
+        },
+        {
+          "id": "REL-knife-consistent-wound-B",
+          "text": "The injury and knife together identify Paul as the person who inflicted the wound.",
+          "weight": -1
+        },
+        {
+          "id": "REL-knife-consistent-wound-C",
+          "text": "The knife is consistent with John's injury and could have caused it, but this relationship alone does not identify who used it.",
+          "weight": 1
+        },
+        {
+          "id": "REL-knife-consistent-wound-D",
+          "text": "A compatible injury establishes the attack sequence and the time at which the knife was used.",
+          "weight": -1
+        }
+      ],
+      "maximum": 1
+    },
+    {
+      "id": "REL-paul-print-handled-knife",
+      "category": "Evidence Relationships",
+      "prompt": "Paul's fingerprint + EVD-014 Kitchen Knife\nWhat does this relationship support?",
+      "options": [
+        {
+          "id": "REL-paul-print-handled-knife-A",
+          "text": "Paul's print identifies him as the person who used the knife during the attack.",
+          "weight": -1
+        },
+        {
+          "id": "REL-paul-print-handled-knife-B",
+          "text": "Paul handled the knife at some point, but the print alone does not establish when, why, or whether he used it during the attack.",
+          "weight": 1
+        },
+        {
+          "id": "REL-paul-print-handled-knife-C",
+          "text": "The print shows Paul handled the knife only during the earlier gathering and excludes later handling.",
+          "weight": -1
+        },
+        {
+          "id": "REL-paul-print-handled-knife-D",
+          "text": "Because the print cannot be dated, it provides no evidence that Paul handled the knife.",
+          "weight": -1
+        }
+      ],
+      "maximum": 1
+    },
+    {
+      "id": "REL-paul-timeline-contradiction",
+      "category": "Evidence Relationships",
+      "prompt": "Paul's statement + the vendor's observation around 3:00 AM\nHow should these accounts be interpreted?",
+      "options": [
+        {
+          "id": "REL-paul-timeline-contradiction-A",
+          "text": "The vendor's observation contradicts Paul's claim that he went home around midnight and did not return. The vendor did not witness the attack.",
+          "weight": 1
+        },
+        {
+          "id": "REL-paul-timeline-contradiction-B",
+          "text": "The observation confirms Paul's claim because it occurred after the earlier gathering.",
+          "weight": -1
+        },
+        {
+          "id": "REL-paul-timeline-contradiction-C",
+          "text": "The observation proves Paul attacked John at exactly 3:00 AM.",
+          "weight": -1
+        },
+        {
+          "id": "REL-paul-timeline-contradiction-D",
+          "text": "The accounts cannot be compared unless the vendor also saw what happened inside the house.",
+          "weight": -1
+        }
+      ],
+      "maximum": 1
+    },
+    {
+      "id": "REL-peter-departure-supported",
+      "category": "Evidence Relationships",
+      "prompt": "Peter's departure account + the vendor's observation around 2:00 AM\nWhat is supported by the two accounts?",
+      "options": [
+        {
+          "id": "REL-peter-departure-supported-A",
+          "text": "The vendor broadly corroborates Peter leaving around 2:00 AM, but did not witness the attack or establish everything Peter did afterward.",
+          "weight": 1
+        },
+        {
+          "id": "REL-peter-departure-supported-B",
+          "text": "The observation establishes Peter's location for the rest of the night and rules out every possible involvement.",
+          "weight": -1
+        },
+        {
+          "id": "REL-peter-departure-supported-C",
+          "text": "Leaving around 2:00 AM proves Peter left because he had attacked John.",
+          "weight": -1
+        },
+        {
+          "id": "REL-peter-departure-supported-D",
+          "text": "The accounts are contradictory because the vendor did not observe what happened inside the house.",
+          "weight": -1
+        }
+      ],
+      "maximum": 1
+    },
+    {
+      "id": "REL-spatter-consistent-reconstruction",
+      "category": "Evidence Relationships",
+      "prompt": "EVD-015 Blood Spatter + the attack area\nWhat does the bloodstain evidence support?",
+      "options": [
+        {
+          "id": "REL-spatter-consistent-reconstruction-A",
+          "text": "The blood pattern independently identifies the attacker and establishes intent.",
+          "weight": -1
+        },
+        {
+          "id": "REL-spatter-consistent-reconstruction-B",
+          "text": "The bloodstain evidence supports reconstruction of the attack area but does not independently identify the attacker.",
+          "weight": 1
+        },
+        {
+          "id": "REL-spatter-consistent-reconstruction-C",
+          "text": "The pattern establishes one exact sequence of movements and excludes all other sequences.",
+          "weight": -1
+        },
+        {
+          "id": "REL-spatter-consistent-reconstruction-D",
+          "text": "The pattern proves the knife was held by Paul when the blood was deposited.",
+          "weight": -1
+        }
+      ],
+      "maximum": 1
+    }
+  ],
+  "conclusions": [
+    {
+      "id": "conclusion-brother",
+      "text": "Paul\nPaul is a reasonable person of interest, but an accusation must rest on the combined physical evidence and timeline contradiction rather than his fingerprint alone."
+    },
+    {
+      "id": "conclusion-peter",
+      "text": "Peter\nPeter's late departure and uneasy appearance justify further investigation, but an accusation still requires evidence connecting him to the attack."
+    },
+    {
+      "id": "CONCLUSION-INCONCLUSIVE",
+      "text": "Inconclusive\nThe current findings do not provide enough consistent evidence to identify the responsible person with confidence. Leaving the case unresolved is more defensible than making an unsupported accusation."
+    }
+  ],
+  "events": [
+    {
+      "type": "DeductionAssessmentSnapshot",
+      "file": "Assets/_Project/Scripts/Assessment/FinalDeductionAssessment.cs",
+      "line": 130
+    },
+    {
+      "type": "ReasoningCheckpointEligible",
+      "file": "Assets/_Project/Scripts/Assessment/ReasoningCheckpointManager.cs",
+      "line": 112
+    },
+    {
+      "type": "ReasoningCheckpointSubmitted",
+      "file": "Assets/_Project/Scripts/Assessment/ReasoningCheckpointManager.cs",
+      "line": 177
+    },
+    {
+      "type": "EvidenceDeposited",
+      "file": "Assets/_Project/Scripts/CaseFile/EvidenceInventory.cs",
+      "line": 243
+    },
+    {
+      "type": "EvidenceAddedToInventory",
+      "file": "Assets/_Project/Scripts/CaseFile/EvidenceInventory.cs",
+      "line": 283
+    },
+    {
+      "type": "EvidenceAddedToInventory",
+      "file": "Assets/_Project/Scripts/CaseFile/EvidenceInventory.cs",
+      "line": 355
+    },
+    {
+      "type": "EvidenceEquipped",
+      "file": "Assets/_Project/Scripts/CaseFile/EvidenceInventory.cs",
+      "line": 437
+    },
+    {
+      "type": "EvidenceUnequipped",
+      "file": "Assets/_Project/Scripts/CaseFile/EvidenceInventory.cs",
+      "line": 474
+    },
+    {
+      "type": "EvidenceUnequipped",
+      "file": "Assets/_Project/Scripts/CaseFile/EvidenceInventory.cs",
+      "line": 488
+    },
+    {
+      "type": "EvidenceAddedToInventory",
+      "file": "Assets/_Project/Scripts/CaseFile/EvidenceInventory.cs",
+      "line": 509
+    },
+    {
+      "type": "EvidenceAddedToInventory",
+      "file": "Assets/_Project/Scripts/CaseFile/EvidenceInventory.cs",
+      "line": 516
+    },
+    {
+      "type": "EvidenceDeposited",
+      "file": "Assets/_Project/Scripts/CaseFile/EvidenceInventory.cs",
+      "line": 561
+    },
+    {
+      "type": "EvidenceTraceMarked",
+      "file": "Assets/_Project/Scripts/CaseFile/EvidenceStateManager.cs",
+      "line": 733
+    },
+    {
+      "type": "EvidenceMarkerRejected",
+      "file": "Assets/_Project/Scripts/CaseFile/EvidenceStateManager.cs",
+      "line": 999
+    },
+    {
+      "type": "BodyDocumentationRecorded",
+      "file": "Assets/_Project/Scripts/CaseFile/EvidenceStateManager.cs",
+      "line": 1035
+    },
+    {
+      "type": "BodyRemovalBlocked",
+      "file": "Assets/_Project/Scripts/CaseFile/EvidenceStateManager.cs",
+      "line": 1070
+    },
+    {
+      "type": "BodyPreparedForRemoval",
+      "file": "Assets/_Project/Scripts/CaseFile/EvidenceStateManager.cs",
+      "line": 1075
+    },
+    {
+      "type": "BodyRemoved",
+      "file": "Assets/_Project/Scripts/CaseFile/EvidenceStateManager.cs",
+      "line": 1088
+    },
+    {
+      "type": "FingerprintIdentified",
+      "file": "Assets/_Project/Scripts/CaseFile/EvidenceStateManager.cs",
+      "line": 1292
+    },
+    {
+      "type": "HypothesisSubmitted",
+      "file": "Assets/_Project/Scripts/Deduction/HypothesisCheckpointManager.cs",
+      "line": 400
+    },
+    {
+      "type": "WitnessFollowupQuestionSelected",
+      "file": "Assets/_Project/Scripts/Dialogue/VendorFollowupInterview.cs",
+      "line": 109
+    },
+    {
+      "type": "WitnessStatementDiscovered",
+      "file": "Assets/_Project/Scripts/Dialogue/VendorFollowupInterview.cs",
+      "line": 122
+    },
+    {
+      "type": "ConclusionSubmissionBlocked",
+      "file": "Assets/_Project/Scripts/Ending/EndingManager.cs",
+      "line": 320
+    },
+    {
+      "type": "ConclusionSubmissionAttempted",
+      "file": "Assets/_Project/Scripts/Ending/EndingManager.cs",
+      "line": 328
+    },
+    {
+      "type": "ConclusionSubmissionBlocked",
+      "file": "Assets/_Project/Scripts/Ending/EndingManager.cs",
+      "line": 403
+    },
+    {
+      "type": "ConclusionSubmissionBlocked",
+      "file": "Assets/_Project/Scripts/Ending/EndingManager.cs",
+      "line": 414
+    },
+    {
+      "type": "ConclusionSelected",
+      "file": "Assets/_Project/Scripts/Ending/EndingManager.cs",
+      "line": 432
+    },
+    {
+      "type": "EndingSelected",
+      "file": "Assets/_Project/Scripts/Ending/EndingManager.cs",
+      "line": 459
+    },
+    {
+      "type": "FindingConfirmed",
+      "file": "Assets/_Project/Scripts/Findings/FindingStateManager.cs",
+      "line": 192
+    },
+    {
+      "type": "InsightUnlocked",
+      "file": "Assets/_Project/Scripts/Insights/InsightStateManager.cs",
+      "line": 205
+    },
+    {
+      "type": "CustodyPassCompleted",
+      "file": "Assets/_Project/Scripts/Interaction/EvidenceBoxDepositZone.cs",
+      "line": 121
+    },
+    {
+      "type": "MarkerReclaimBlocked",
+      "file": "Assets/_Project/Scripts/Interaction/EvidenceTentPickup.cs",
+      "line": 92
+    },
+    {
+      "type": "MarkerReclaimed",
+      "file": "Assets/_Project/Scripts/Interaction/EvidenceTentPickup.cs",
+      "line": 100
+    },
+    {
+      "type": "NonEvidenceMarked",
+      "file": "Assets/_Project/Scripts/Interaction/EvidenceTentTool.cs",
+      "line": 490
+    },
+    {
+      "type": "ReportLinesSelected",
+      "file": "Assets/_Project/Scripts/Interaction/RecorderTool.cs",
+      "line": 360
+    },
+    {
+      "type": "ProcedureOutOfOrder",
+      "file": "Assets/_Project/Scripts/Logging/ProcedureLog.cs",
+      "line": 38
+    },
+    {
+      "type": "SessionStarted",
+      "file": "Assets/_Project/Scripts/Logging/SessionLogger.cs",
+      "line": 89
+    },
+    {
+      "type": "SessionEnded",
+      "file": "Assets/_Project/Scripts/Logging/SessionLogger.cs",
+      "line": 179
+    },
+    {
+      "type": "EvidenceStatusChanged",
+      "file": "Assets/_Project/Scripts/Logging/SessionLogger.cs",
+      "line": 213
+    },
+    {
+      "type": "EvidenceTransitionBlocked",
+      "file": "Assets/_Project/Scripts/Logging/SessionLogger.cs",
+      "line": 218
+    },
+    {
+      "type": "NarrativeEventTriggered",
+      "file": "Assets/_Project/Scripts/Narrative/NarrativeEventManager.cs",
+      "line": 212
+    },
+    {
+      "type": "ObjectiveUnlocked",
+      "file": "Assets/_Project/Scripts/Objectives/ObjectiveStateManager.cs",
+      "line": 193
+    },
+    {
+      "type": "ObjectiveFailed",
+      "file": "Assets/_Project/Scripts/Objectives/ObjectiveStateManager.cs",
+      "line": 203
+    },
+    {
+      "type": "ObjectiveCompleted",
+      "file": "Assets/_Project/Scripts/Objectives/ObjectiveStateManager.cs",
+      "line": 211
+    },
+    {
+      "type": "RelationshipInterpretationSubmitted",
+      "file": "Assets/_Project/Scripts/Relationships/EvidenceRelationshipsReview.cs",
+      "line": 84
+    },
+    {
+      "type": "RelationshipUnlocked",
+      "file": "Assets/_Project/Scripts/Relationships/RelationshipStateManager.cs",
+      "line": 188
+    },
+    {
+      "type": "RelationshipAttempted",
+      "file": "Assets/_Project/Scripts/Relationships/RelationshipStateManager.cs",
+      "line": 222
+    },
+    {
+      "type": "RelationshipRemoved",
+      "file": "Assets/_Project/Scripts/Relationships/RelationshipStateManager.cs",
+      "line": 247
+    },
+    {
+      "type": "SceneEntered",
+      "file": "Assets/_Project/Scripts/RoleSystem/RoleSceneLoader.cs",
+      "line": 18
+    },
+    {
+      "type": "ScenePhotoOutOfSequence",
+      "file": "Assets/_Project/Scripts/ScenePhotography/ScenePhotographyManager.cs",
+      "line": 356
+    },
+    {
+      "type": "ScenePhotoWrongPosition",
+      "file": "Assets/_Project/Scripts/ScenePhotography/ScenePhotographyManager.cs",
+      "line": 384
+    },
+    {
+      "type": "ScenePhotoWrongAngle",
+      "file": "Assets/_Project/Scripts/ScenePhotography/ScenePhotographyManager.cs",
+      "line": 445
+    },
+    {
+      "type": "ScenePhotoCompleted",
+      "file": "Assets/_Project/Scripts/ScenePhotography/ScenePhotographyManager.cs",
+      "line": 474
+    },
+    {
+      "type": "ScenePhotographyPhaseCompleted",
+      "file": "Assets/_Project/Scripts/ScenePhotography/ScenePhotographyManager.cs",
+      "line": 489
+    },
+    {
+      "type": "ScenePhotographyCompleted",
+      "file": "Assets/_Project/Scripts/ScenePhotography/ScenePhotographyManager.cs",
+      "line": 508
+    },
+    {
+      "type": "ScenePhotographyStarted",
+      "file": "Assets/_Project/Scripts/ScenePhotography/ScenePhotographyManager.cs",
+      "line": 538
+    },
+    {
+      "type": "ScenePhotoAttempted",
+      "file": "Assets/_Project/Scripts/ScenePhotography/ScenePhotographyManager.cs",
+      "line": 641
+    },
+    {
+      "type": "FirstResponderInteractionStarted",
+      "file": "Assets/_Project/Scripts/SceneTurnover/FirstResponderTurnover.cs",
+      "line": 170
+    },
+    {
+      "type": "CSIForm1Received",
+      "file": "Assets/_Project/Scripts/SceneTurnover/FirstResponderTurnover.cs",
+      "line": 228
+    },
+    {
+      "type": "SceneTurnoverCompleted",
+      "file": "Assets/_Project/Scripts/SceneTurnover/FirstResponderTurnover.cs",
+      "line": 233
+    },
+    {
+      "type": "SOCOAssistanceDecision",
+      "file": "Assets/_Project/Scripts/SceneTurnover/SceneTurnover.cs",
+      "line": 46
+    },
+    {
+      "type": "IOCObservationRecorded",
+      "file": "Assets/_Project/Scripts/SceneTurnover/SceneTurnover.cs",
+      "line": 77
+    },
+    {
+      "type": "IOCAssessmentStarted",
+      "file": "Assets/_Project/Scripts/SceneTurnover/SceneTurnover.cs",
+      "line": 153
+    },
+    {
+      "type": "IOCAssessmentCompleted",
+      "file": "Assets/_Project/Scripts/SceneTurnover/SceneTurnover.cs",
+      "line": 155
+    },
+    {
+      "type": "SOCORequested",
+      "file": "Assets/_Project/Scripts/SceneTurnover/SceneTurnover.cs",
+      "line": 157
+    },
+    {
+      "type": "CSIForm2Completed",
+      "file": "Assets/_Project/Scripts/SceneTurnover/SceneTurnover.cs",
+      "line": 160
+    },
+    {
+      "type": "SOCOTurnoverStarted",
+      "file": "Assets/_Project/Scripts/SceneTurnover/SceneTurnover.cs",
+      "line": 161
+    },
+    {
+      "type": "SOCOTurnoverCompleted",
+      "file": "Assets/_Project/Scripts/SceneTurnover/SceneTurnover.cs",
+      "line": 166
+    },
+    {
+      "type": "SOCOInvestigationStarted",
+      "file": "Assets/_Project/Scripts/SceneTurnover/SceneTurnover.cs",
+      "line": 167
+    }
+  ]
+}

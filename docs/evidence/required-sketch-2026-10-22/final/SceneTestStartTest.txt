@@ -1,0 +1,225 @@
+=== SceneTestStartTest ===
+PASS: Menu contains every preset once without changing serialized IDs
+PASS: Normal play: correct preset, ready, no setup failure
+PASS: Normal play: IOC gate and evidence untouched
+PASS: IOC done: correct preset, ready, no setup failure
+PASS: IOC done: sandbox before uploader/logging and no student owner
+PASS: IOC done: correct scene phase
+PASS: IOC done: photography matches milestone
+INFO: IOC done eye=(16.8988, 0.0275, -0.7035) feet=(16.9000, 0.0325, -0.8000) expected=(16.9000, 0.0300, -0.8000) gloves=True entryReturns=0
+PASS: IOC done: capsule AND headset reach the selected activity
+PASS: IOC done: evidence remains undiscovered
+PASS: IOC done: previous reasoning suppressed without answer records
+PASS: IOC done: measurement state matches milestone
+PASS: IOC done: sketch state matches milestone
+PASS: IOC done: no stale checkpoint owns the UI
+PASS: Photography done: correct preset, ready, no setup failure
+PASS: Photography done: sandbox before uploader/logging and no student owner
+PASS: Photography done: correct scene phase
+PASS: Photography done: photography matches milestone
+INFO: Photography done eye=(15.6014, 1.1975, 10.8817) feet=(15.5500, 1.2025, 10.8000) expected=(15.5500, 1.2000, 10.8000) gloves=True entryReturns=0
+PASS: Photography done: capsule AND headset reach the selected activity
+PASS: Photography done: evidence remains undiscovered
+PASS: Photography done: previous reasoning suppressed without answer records
+PASS: Photography done: measurement state matches milestone
+PASS: Photography done: sketch state matches milestone
+PASS: Photography done: spawn stays outside bottle discovery radius
+PASS: Photography done: actual approach still triggers bottle Found
+PASS: Photography done: restart uses fresh managers/session and removes previous Found
+PASS: Photography done: no stale checkpoint owns the UI
+PASS: All evidence procedures done: correct preset, ready, no setup failure
+PASS: All evidence procedures done: sandbox before uploader/logging and no student owner
+PASS: All evidence procedures done: correct scene phase
+PASS: All evidence procedures done: photography matches milestone
+INFO: All evidence procedures done eye=(15.6014, 1.1975, 10.8817) feet=(15.5500, 1.2025, 10.8000) expected=(15.5500, 1.2000, 10.8000) gloves=True entryReturns=0
+PASS: All evidence procedures done: capsule AND headset reach the selected activity
+PASS: All evidence procedures done: closeout waits for comparison only in the comparison preset
+PASS: All evidence procedures done: measurement anchors retained for all four items
+PASS: All evidence procedures done: no skipped reasoning answer was fabricated
+PASS: All evidence procedures done: permanent body outline remains after removal
+PASS: All evidence procedures done: all six stored items include both secured fingerprint cards
+PASS: All evidence procedures done: measurement state matches milestone
+PASS: All evidence procedures done: sketch state matches milestone
+PASS: All evidence procedures done: no queued or delayed teaching from skipped procedures
+PASS: All evidence procedures done: prior required measurement remains intact and repeat recording is harmless
+PASS: All evidence procedures done: no stale checkpoint owns the UI
+PASS: Measurements done: correct preset, ready, no setup failure
+PASS: Measurements done: sandbox before uploader/logging and no student owner
+PASS: Measurements done: correct scene phase
+PASS: Measurements done: photography matches milestone
+INFO: Measurements done eye=(15.6014, 1.1975, 10.8817) feet=(15.5500, 1.2025, 10.8000) expected=(15.5500, 1.2000, 10.8000) gloves=True entryReturns=0
+PASS: Measurements done: capsule AND headset reach the selected activity
+PASS: Measurements done: closeout waits for comparison only in the comparison preset
+PASS: Measurements done: measurement anchors retained for all four items
+PASS: Measurements done: no skipped reasoning answer was fabricated
+PASS: Measurements done: permanent body outline remains after removal
+PASS: Measurements done: all six stored items include both secured fingerprint cards
+PASS: Measurements done: measurement state matches milestone
+PASS: Measurements done: sketch state matches milestone
+PASS: Measurements done: eight real measurements already attached to prior required placements
+PASS: Measurements done: no stale checkpoint owns the UI
+PASS: Sketch done: correct preset, ready, no setup failure
+PASS: Sketch done: sandbox before uploader/logging and no student owner
+PASS: Sketch done: correct scene phase
+PASS: Sketch done: photography matches milestone
+INFO: Sketch done eye=(15.6014, 1.1975, 10.8817) feet=(15.5500, 1.2025, 10.8000) expected=(15.5500, 1.2000, 10.8000) gloves=True entryReturns=0
+PASS: Sketch done: capsule AND headset reach the selected activity
+PASS: Sketch done: closeout waits for comparison only in the comparison preset
+PASS: Sketch done: measurement anchors retained for all four items
+PASS: Sketch done: no skipped reasoning answer was fabricated
+PASS: Sketch done: permanent body outline remains after removal
+PASS: Sketch done: all six stored items include both secured fingerprint cards
+PASS: Sketch done: measurement state matches milestone
+PASS: Sketch done: sketch state matches milestone
+PASS: Sketch done: no stale checkpoint owns the UI
+PASS: Investigation submitted: correct preset, ready, no setup failure
+PASS: Investigation submitted: sandbox before uploader/logging and no student owner
+PASS: Investigation submitted: correct scene phase
+PASS: Investigation submitted: photography matches milestone
+INFO: Investigation submitted eye=(15.6014, 1.1975, 10.8817) feet=(15.5500, 1.2025, 10.8000) expected=(15.5500, 1.2000, 10.8000) gloves=True entryReturns=0
+PASS: Investigation submitted: capsule AND headset reach the selected activity
+PASS: Investigation submitted: closeout waits for comparison only in the comparison preset
+PASS: Investigation submitted: measurement anchors retained for all four items
+PASS: Investigation submitted: no skipped reasoning answer was fabricated
+PASS: Investigation submitted: permanent body outline remains after removal
+PASS: Investigation submitted: all six stored items include both secured fingerprint cards
+PASS: Investigation submitted: measurement state matches milestone
+PASS: Investigation submitted: sketch state matches milestone
+PASS: Knife bagging: correct preset, ready, no setup failure
+PASS: Knife bagging: sandbox before uploader/logging and no student owner
+PASS: Knife bagging: correct scene phase
+PASS: Knife bagging: photography matches milestone
+INFO: Knife bagging eye=(15.6299, 1.1975, 10.8541) feet=(15.5500, 1.2025, 10.8000) expected=(15.5500, 1.2000, 10.8000) gloves=True entryReturns=0
+PASS: Knife bagging: capsule AND headset reach the selected activity
+PASS: Knife bagging: knife ready, grabbable and still on scene
+PASS: Knife bagging: other evidence untouched and inventory empty
+PASS: Knife bagging: bag equipped in left hand with right hand free
+PASS: Knife bagging: no scored reasoning responses fabricated
+PASS: Knife bagging: real bag insertion and sealing remain available
+PASS: Knife bagging: explicit storage completes the knife bag
+PASS: Knife bagging: restart restores loose ready knife and equipped bag
+PASS: Knife bagging: measurement state matches milestone
+PASS: Knife bagging: sketch state matches milestone
+PASS: Knife bagging: no stale checkpoint owns the UI
+PASS: Bottle fingerprinting: correct preset, ready, no setup failure
+PASS: Bottle fingerprinting: sandbox before uploader/logging and no student owner
+PASS: Bottle fingerprinting: correct scene phase
+PASS: Bottle fingerprinting: photography matches milestone
+INFO: Bottle fingerprinting eye=(15.6014, 1.1975, 10.8817) feet=(15.5500, 1.2025, 10.8000) expected=(15.5500, 1.2000, 10.8000) gloves=True entryReturns=0
+PASS: Bottle fingerprinting: capsule AND headset reach the selected activity
+PASS: Bottle fingerprinting: final photo and bottle measurements prepared
+PASS: Bottle fingerprinting: prints remain undusted and unidentified
+PASS: Bottle fingerprinting: kit equipped and other evidence untouched (kit=True, others=EVD-014:NotFound,EVD-015:NotFound,BODY-A:NotFound)
+PASS: Bottle fingerprinting: restart prepares a fresh fingerprint exercise
+PASS: Bottle fingerprinting: measurement state matches milestone
+PASS: Bottle fingerprinting: sketch state matches milestone
+PASS: Bottle fingerprinting: no stale checkpoint owns the UI
+PASS: Body recording: correct preset, ready, no setup failure
+PASS: Body recording: sandbox before uploader/logging and no student owner
+PASS: Body recording: correct scene phase
+PASS: Body recording: photography matches milestone
+INFO: Body recording eye=(15.6128, 1.1975, 10.8733) feet=(15.5500, 1.2025, 10.8000) expected=(15.5500, 1.2000, 10.8000) gloves=True entryReturns=0
+PASS: Body recording: capsule AND headset reach the selected activity
+PASS: Body recording: final photo, Marker A and all measurements prepared
+PASS: Body recording: report and removal remain for the player
+PASS: Body recording: Recorder equipped and no scored answers or samples fabricated
+PASS: Body recording: restart restores unrecorded body and equipped Recorder
+PASS: Body recording: measurement state matches milestone
+PASS: Body recording: sketch state matches milestone
+PASS: Body recording: no stale checkpoint owns the UI
+PASS: All evidence measured: correct preset, ready, no setup failure
+PASS: All evidence measured: sandbox before uploader/logging and no student owner
+PASS: All evidence measured: correct scene phase
+PASS: All evidence measured: photography matches milestone
+INFO: All evidence measured eye=(15.6128, 1.1975, 10.8733) feet=(15.5500, 1.2025, 10.8000) expected=(15.5500, 1.2000, 10.8000) gloves=True entryReturns=0
+PASS: All evidence measured: capsule AND headset reach the selected activity
+PASS: All evidence measured: all four items measured and unrecorded
+PASS: All evidence measured: no sampling, fingerprints, custody or answers skipped
+PASS: All evidence measured: real item, trace and body markers wait for recording
+PASS: All evidence measured: spare unused tent is immediately pickable
+PASS: All evidence measured: Recorder equipped and body ready for recording
+PASS: All evidence measured: recording body unlocks only its own marker
+PASS: All evidence measured: restart restores measurements, unrecorded items and all six tents
+PASS: All evidence measured: measurement state matches milestone
+PASS: All evidence measured: sketch state matches milestone
+PASS: All evidence measured: no stale checkpoint owns the UI
+PASS: Custody pass: correct preset, ready, no setup failure
+PASS: Custody pass: sandbox before uploader/logging and no student owner
+PASS: Custody pass: correct scene phase
+PASS: Custody pass: photography matches milestone
+INFO: Custody pass eye=(14.4000, -0.0025, 1.8035) feet=(14.4000, 0.0025, 1.9000) expected=(14.4000, 0.0200, 1.9000) gloves=True entryReturns=0
+PASS: Custody pass: capsule AND headset reach the selected activity
+PASS: Custody pass: closeout waits for comparison only in the comparison preset
+PASS: Custody pass: measurement anchors retained for all four items
+PASS: Custody pass: no skipped reasoning answer was fabricated
+PASS: Custody pass: permanent body outline remains after removal
+PASS: Custody pass: all six stored items include both secured fingerprint cards
+PASS: Custody pass: measurement state matches milestone
+PASS: Custody pass: sketch state matches milestone
+PASS: Custody pass: no stale checkpoint owns the UI
+PASS: Knife + ruler photo: correct preset, ready, no setup failure
+PASS: Knife + ruler photo: sandbox before uploader/logging and no student owner
+PASS: Knife + ruler photo: correct scene phase
+PASS: Knife + ruler photo: photography matches milestone
+INFO: Knife + ruler photo eye=(15.6299, 1.1975, 10.8541) feet=(15.5500, 1.2025, 10.8000) expected=(15.5500, 1.2000, 10.8000) gloves=True entryReturns=0
+PASS: Knife + ruler photo: capsule AND headset reach the selected activity
+PASS: Knife + ruler photo: original photo and markers prepare a real final-photo transition
+PASS: Knife + ruler photo: physical markers and chalk exist
+PASS: Knife + ruler photo: held camera leaves raising and ruler placement to the player
+PASS: Knife + ruler photo: samples, recording, other items and scored answers remain untouched
+PASS: Knife + ruler photo: actual ruler and shutter save the final photo with physical markers present
+PASS: Knife + ruler photo: restart restores the pending final photo and camera without a ruler
+PASS: Knife + ruler photo: measurement state matches milestone
+PASS: Knife + ruler photo: sketch state matches milestone
+PASS: Knife + ruler photo: no stale checkpoint owns the UI
+PASS: Bloodstain + ruler photo: correct preset, ready, no setup failure
+PASS: Bloodstain + ruler photo: sandbox before uploader/logging and no student owner
+PASS: Bloodstain + ruler photo: correct scene phase
+PASS: Bloodstain + ruler photo: photography matches milestone
+INFO: Bloodstain + ruler photo eye=(15.6048, 1.1975, 10.8795) feet=(15.5500, 1.2025, 10.8000) expected=(15.5500, 1.2000, 10.8000) gloves=True entryReturns=0
+PASS: Bloodstain + ruler photo: capsule AND headset reach the selected activity
+PASS: Bloodstain + ruler photo: original photo and markers prepare a real final-photo transition
+PASS: Bloodstain + ruler photo: physical markers and chalk exist
+PASS: Bloodstain + ruler photo: held camera leaves raising and ruler placement to the player
+PASS: Bloodstain + ruler photo: samples, recording, other items and scored answers remain untouched
+PASS: Bloodstain + ruler photo: actual ruler and shutter save the final photo with physical markers present
+PASS: Bloodstain + ruler photo: restart restores the pending final photo and camera without a ruler
+PASS: Bloodstain + ruler photo: measurement state matches milestone
+PASS: Bloodstain + ruler photo: sketch state matches milestone
+PASS: Bloodstain + ruler photo: no stale checkpoint owns the UI
+PASS: Bottle + ruler photo: correct preset, ready, no setup failure
+PASS: Bottle + ruler photo: sandbox before uploader/logging and no student owner
+PASS: Bottle + ruler photo: correct scene phase
+PASS: Bottle + ruler photo: photography matches milestone
+INFO: Bottle + ruler photo eye=(15.6014, 1.1975, 10.8817) feet=(15.5500, 1.2025, 10.8000) expected=(15.5500, 1.2000, 10.8000) gloves=True entryReturns=0
+PASS: Bottle + ruler photo: capsule AND headset reach the selected activity
+PASS: Bottle + ruler photo: original photo and markers prepare a real final-photo transition
+PASS: Bottle + ruler photo: physical markers and chalk exist
+PASS: Bottle + ruler photo: held camera leaves raising and ruler placement to the player
+PASS: Bottle + ruler photo: samples, recording, other items and scored answers remain untouched
+PASS: Bottle + ruler photo: actual ruler and shutter save the final photo with physical markers present
+PASS: Bottle + ruler photo: restart restores the pending final photo and camera without a ruler
+PASS: Bottle + ruler photo: measurement state matches milestone
+PASS: Bottle + ruler photo: sketch state matches milestone
+PASS: Bottle + ruler photo: no stale checkpoint owns the UI
+PASS: Fingerprint comparison: correct preset, ready, no setup failure
+PASS: Fingerprint comparison: sandbox before uploader/logging and no student owner
+PASS: Fingerprint comparison: correct scene phase
+PASS: Fingerprint comparison: photography matches milestone
+INFO: Fingerprint comparison eye=(21.3500, -0.0025, 0.7965) feet=(21.3500, 0.0025, 0.7000) expected=(21.3500, 0.0200, 0.7000) gloves=True entryReturns=0
+PASS: Fingerprint comparison: capsule AND headset reach the selected activity
+PASS: Fingerprint comparison: closeout waits for comparison only in the comparison preset
+PASS: Fingerprint comparison: measurement anchors retained for all four items
+PASS: Fingerprint comparison: no skipped reasoning answer was fabricated
+PASS: Fingerprint comparison: permanent body outline remains after removal
+PASS: Fingerprint comparison: all six stored items include both secured fingerprint cards
+PASS: Fingerprint comparison: held unmatched card is available at the actual desk
+PASS: Fingerprint comparison: practice attempts and completions remain for the player
+PASS: Fingerprint comparison: held knife lift awaits comparison without a seeded identity
+PASS: Fingerprint comparison: restart restores the held unmatched card at the outside desk
+PASS: Fingerprint comparison: measurement state matches milestone
+PASS: Fingerprint comparison: sketch state matches milestone
+PASS: Fingerprint comparison: no stale checkpoint owns the UI
+PASS: Normal play after presets returns to fresh IOC with no fixture
+PASS: Real assessment queue and owner records unchanged
+=== PASS, 0 failures ===

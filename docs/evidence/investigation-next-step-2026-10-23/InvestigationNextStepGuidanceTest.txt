@@ -1,0 +1,26 @@
+=== InvestigationNextStepGuidanceTest ===
+PASS: Real completed-evidence fixture is ready
+PASS: Completed collection offers evidence linking before conclusion
+PASS: Hint names the actual wheel label and controller actions
+PASS: Guidance does not auto-open review or record an answer
+PASS: Custody waypoint does not compete with investigation guidance
+PASS: Incomplete evidence suppresses the handoff
+PASS: Completing evidence restores the persistent hint
+PASS: Open panels suppress the hint
+PASS: Immediate action feedback takes priority
+PASS: Persistent instruction fits its backed panel
+PASS: Menu hides the persistent instruction
+PASS: Evidence Links is visibly marked NEXT without clipping
+PASS: The highlighted entry opens the real relationship review
+PASS: Review suppresses the hint without advancing progress
+PASS: Closing unanswered review restores the hint
+PASS: Review response recorded: REL-bottle-supports-brother
+PASS: Review response recorded: REL-knife-consistent-wound
+PASS: Review response recorded: REL-paul-print-handled-knife
+PASS: Review response recorded: REL-paul-timeline-contradiction
+PASS: Review response recorded: REL-peter-departure-supported
+PASS: Review response recorded: REL-spatter-consistent-reconstruction
+PASS: Completed relationships lead to the unfinished sketch
+PASS: Submitted sketch leads to the actual conclusion menu label
+PASS: Guidance preserves evidence and requires an explicit conclusion
+=== PASS, 0 failures ===

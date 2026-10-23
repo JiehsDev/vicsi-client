@@ -1,0 +1,410 @@
+ M Assets/Editor/ScenarioGroundTruthExporter.cs
+ M "Assets/Furniture Mega Pack/Materials/Bathroom/mat_Bathroom.mat"
+ M "Assets/Furniture Mega Pack/Materials/Bed/mat_BedFrame.mat"
+ M "Assets/Furniture Mega Pack/Materials/Bed/mat_Blanket.mat"
+ M "Assets/Furniture Mega Pack/Materials/Bed/mat_Mattress.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair01.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair02.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair03.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair04.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair05.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair06.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair07.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair08.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair09.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair10.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair11.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair12.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair13.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair14.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair15.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair16.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair17.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair18.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair19.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair20.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair21.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair22.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair23.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair24.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair25.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair26.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair27.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair28.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair29.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair30.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair31.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair32.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair33.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair34.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair35.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair36.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair37.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair38.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair39.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair40.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair41.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair42.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair43.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair44.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair45.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair46.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair47.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair48.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair49.mat"
+ M "Assets/Furniture Mega Pack/Materials/Chair/mat_Chair50.mat"
+ M "Assets/Furniture Mega Pack/Materials/Closet/mat_Closet.mat"
+ M "Assets/Furniture Mega Pack/Materials/Cushion/mat_Cushion01_08.mat"
+ M "Assets/Furniture Mega Pack/Materials/Cushion/mat_Cushion09_16.mat"
+ M "Assets/Furniture Mega Pack/Materials/Cushion/mat_Cushion17_24.mat"
+ M "Assets/Furniture Mega Pack/Materials/Cushion/mat_Cushion25_28.mat"
+ M "Assets/Furniture Mega Pack/Materials/Cushion/mat_Cushion29_36.mat"
+ M "Assets/Furniture Mega Pack/Materials/Cushion/mat_Cushion37_40.mat"
+ M "Assets/Furniture Mega Pack/Materials/Cushion/mat_Cushion41_48.mat"
+ M "Assets/Furniture Mega Pack/Materials/Cushion/mat_Cushion49_50.mat"
+ M "Assets/Furniture Mega Pack/Materials/Drawer/mat_Drawer.mat"
+ M "Assets/Furniture Mega Pack/Materials/Kitchen/mat_Glass.mat"
+ M "Assets/Furniture Mega Pack/Materials/Kitchen/mat_Kitchen.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_SectionalSofaFabric.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_SectionalSofaLeather.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa01.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa02.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa03.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa04.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa06.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa07.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa08.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa09.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa10.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa11.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa12.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa13.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa14.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa15.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa16.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa17.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa18.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa19.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa20.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa21.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa22.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa23.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa24.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa25.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa26.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa27.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa28.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa29.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa30.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa31.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa32.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa33.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa34.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa35.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa36.mat"
+ M "Assets/Furniture Mega Pack/Materials/Sofa/mat_Sofa37.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table01.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table02.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table03.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table04.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table05.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table06.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table07.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table08.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table09.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table10.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table11.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table12.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table13.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table14.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table15.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table16.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table17.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table18.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table19.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table20.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table21.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table22.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table23.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table24.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table25.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table26.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table27.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table28.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table29.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table30.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table31.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table32.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table33.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table34.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table35.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table36.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table37.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table38.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table39.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table40.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table41.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table42.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table43.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table44.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table45.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table46.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table47.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table48.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table49.mat"
+ M "Assets/Furniture Mega Pack/Materials/Table/mat_Table50.mat"
+ M "Assets/Furniture Mega Pack/Materials/mat_Floor.mat"
+ M "Assets/JMO Assets/Cartoon FX Remaster/Demo Assets/CFXR Demo Ground URP.mat"
+ M Assets/ModularHousePack1/Art/Materials/M_Tiles_001.mat
+ M "Assets/Plane Material.mat"
+ M Assets/Settings/Mobile_RPAsset.asset
+ M Assets/XR/Settings/OpenXRPackageSettings.asset
+ D "Assets/_Project/Art/Environments/MODELS/Low poly v2/UV LIGHT LOW POLY.glb"
+ D "Assets/_Project/Art/Environments/MODELS/Low poly v2/UV LIGHT LOW POLY.glb.meta"
+ M Assets/_Project/Art/Materials/Mat_Accent_Gold.mat
+ M Assets/_Project/Art/Materials/Mat_BloodSpatter.mat
+ M Assets/_Project/Art/Materials/Mat_Corkboard.mat
+ M Assets/_Project/Art/Materials/Mat_PoliceDesk.mat
+ M Assets/_Project/Art/Materials/Mat_PoliceFloor.mat
+ M Assets/_Project/Art/Materials/Mat_PoliceWall.mat
+ M Assets/_Project/Data/DialoguePools/DialoguePool_Evidence014Photographed.asset
+ M Assets/_Project/Data/DialoguePools/DialoguePool_SceneEntered.asset
+ M Assets/_Project/Data/Evidence/EVD-014_KitchenKnife.asset
+ M Assets/_Project/Data/Evidence/EVD-015_Bloodspatterpattern.asset
+ D Assets/_Project/Data/Evidence/EVD-016_Brokenhandrailfragment.asset
+ D Assets/_Project/Data/Evidence/EVD-016_Brokenhandrailfragment.asset.meta
+ M Assets/_Project/Data/Evidence/EVD-017_Victimsmobilephone.asset
+ M Assets/_Project/Data/Evidence/EVD-018_Emptyliquorbottle.asset
+ M Assets/_Project/Data/Scenarios/GroundTruth_CSI_Environment.json
+ M Assets/_Project/Data/Scenarios/HypothesisCheckpoints_CSI_Environment.asset
+ M Assets/_Project/Prefabs/Evidence/GrabbableEvidenceBase.prefab
+ M Assets/_Project/Scenes/Main.unity
+ M Assets/_Project/Scenes/Scenarios/CSI_Environment.unity
+ D Assets/_Project/Scenes/Scenarios/CSI_Environment/LightingData.asset
+ D Assets/_Project/Scenes/Scenarios/CSI_Environment/LightingData.asset.meta
+ D Assets/_Project/Scenes/Scenarios/CSI_Environment/Lightmap-0_comp_dir.png
+ D Assets/_Project/Scenes/Scenarios/CSI_Environment/Lightmap-0_comp_dir.png.meta
+ D Assets/_Project/Scenes/Scenarios/CSI_Environment/Lightmap-0_comp_light.exr
+ D Assets/_Project/Scenes/Scenarios/CSI_Environment/Lightmap-0_comp_light.exr.meta
+ D Assets/_Project/Scenes/Scenarios/CSI_Environment/Lightmap-1_comp_dir.png
+ D Assets/_Project/Scenes/Scenarios/CSI_Environment/Lightmap-1_comp_dir.png.meta
+ D Assets/_Project/Scenes/Scenarios/CSI_Environment/Lightmap-1_comp_light.exr
+ D Assets/_Project/Scenes/Scenarios/CSI_Environment/Lightmap-1_comp_light.exr.meta
+ D Assets/_Project/Scenes/Scenarios/CSI_Environment/Lightmap-2_comp_dir.png
+ D Assets/_Project/Scenes/Scenarios/CSI_Environment/Lightmap-2_comp_dir.png.meta
+ D Assets/_Project/Scenes/Scenarios/CSI_Environment/Lightmap-2_comp_light.exr
+ D Assets/_Project/Scenes/Scenarios/CSI_Environment/Lightmap-2_comp_light.exr.meta
+ D Assets/_Project/Scenes/Scenarios/CSI_Environment/ReflectionProbe-0.exr
+ D Assets/_Project/Scenes/Scenarios/CSI_Environment/ReflectionProbe-0.exr.meta
+ M Assets/_Project/Scenes/Scenarios/Tutorial_ToolTest.unity
+ M Assets/_Project/Scripts/CaseFile/EvidenceDefinition.cs
+ M Assets/_Project/Scripts/CaseFile/EvidenceProp.cs
+ M Assets/_Project/Scripts/CaseFile/EvidenceRecord.cs
+ M Assets/_Project/Scripts/CaseFile/EvidenceStateManager.cs
+ M Assets/_Project/Scripts/CaseFile/EvidenceSwabRequirement.cs
+ M Assets/_Project/Scripts/Deduction/DeductionScorer.cs
+ M Assets/_Project/Scripts/Deduction/EvidenceBoardController.cs
+ M Assets/_Project/Scripts/Deduction/HypothesisCheckpointManager.cs
+ M Assets/_Project/Scripts/Deduction/HypothesisCheckpointSet.cs
+ M Assets/_Project/Scripts/Deduction/HypothesisCheckpointUI.cs
+ M Assets/_Project/Scripts/Interaction/ChalkMarkTool.cs
+ M Assets/_Project/Scripts/Interaction/EvidenceChalkGuide.cs
+ M Assets/_Project/Scripts/Interaction/EvidenceGrabGate.cs
+ M Assets/_Project/Scripts/Interaction/EvidenceTentPickup.cs
+ M Assets/_Project/Scripts/Interaction/EvidenceTentTool.cs
+ M Assets/_Project/Scripts/Interaction/FingerprintKitTool.cs
+ D Assets/_Project/Scripts/Interaction/FingerprintStationPlaceholder.cs
+ D Assets/_Project/Scripts/Interaction/FingerprintStationPlaceholder.cs.meta
+ M Assets/_Project/Scripts/Interaction/PhotographTool.cs
+ M Assets/_Project/Scripts/Interaction/RecorderTool.cs
+ M Assets/_Project/Scripts/Interaction/SwabTool.cs
+ M Assets/_Project/Scripts/Interaction/UVRevealable.cs
+ M Assets/_Project/Scripts/Logging/SessionEventType.cs
+ M Assets/_Project/Scripts/RoleSystem/PlayerTool.cs
+ M Assets/_Project/Scripts/RoleSystem/ToolType.cs
+ M Assets/_Project/Scripts/RoleSystem/ToolWheelController.cs
+ M Assets/_Project/Scripts/STCS/STCSManager.cs
+ M Assets/_Project/Scripts/Testing/GreyboxFlowTest.cs
+ M Assets/_Project/Scripts/UI/EvidenceNotifier.cs
+ M Assets/_Project/Scripts/UI/RecorderReportUI.cs
+ M Packages/manifest.json
+ M Packages/packages-lock.json
+ M ProjectSettings/QualitySettings.asset
+ M Tools/EvidenceScorer/Program.cs
+?? 1520-removebg-preview.png
+?? "Assets/Hand Painted Seamless Grass Texture.meta"
+?? "Assets/Hand Painted Seamless Grass Texture/"
+?? "Assets/JMO Assets/Cartoon FX FREE (old legacy effects).unitypackage.meta"
+?? Assets/Oculus/OculusProjectSetupSettings.asset
+?? Assets/Oculus/OculusProjectSetupSettings.asset.meta
+?? Assets/StreamingAssets/
+?? "Assets/_Project/Art/Environments/MODELS/Evidence Tents/Evidence Tent A.glb"
+?? "Assets/_Project/Art/Environments/MODELS/Evidence Tents/Evidence Tent A.glb.meta"
+?? "Assets/_Project/Art/Environments/MODELS/Evidence Tents/Evidence Tent B.glb"
+?? "Assets/_Project/Art/Environments/MODELS/Evidence Tents/Evidence Tent B.glb.meta"
+?? "Assets/_Project/Art/Environments/MODELS/Low poly v2/FINGERPRINT_TAPE_30K.glb"
+?? "Assets/_Project/Art/Environments/MODELS/Low poly v2/FINGERPRINT_TAPE_30K.glb.meta"
+?? "Assets/_Project/Art/Environments/MODELS/Low poly v2/POWDER_30K.glb"
+?? "Assets/_Project/Art/Environments/MODELS/Low poly v2/POWDER_30K.glb.meta"
+?? "Assets/_Project/Art/Environments/MODELS/Low poly v2/POWDER_BRUSH_30K.glb"
+?? "Assets/_Project/Art/Environments/MODELS/Low poly v2/POWDER_BRUSH_30K.glb.meta"
+?? "Assets/_Project/Art/Environments/MODELS/Low poly v2/SWAB_30K.glb"
+?? "Assets/_Project/Art/Environments/MODELS/Low poly v2/SWAB_30K.glb.meta"
+?? "Assets/_Project/Art/Environments/MODELS/Low poly v2/SWAB_BLOOD.glb"
+?? "Assets/_Project/Art/Environments/MODELS/Low poly v2/SWAB_BLOOD.glb.meta"
+?? "Assets/_Project/Art/Environments/MODELS/Low poly v2/SWAB_BOTTLE_30K.glb"
+?? "Assets/_Project/Art/Environments/MODELS/Low poly v2/SWAB_BOTTLE_30K.glb.meta"
+?? "Assets/_Project/Art/Environments/MODELS/Low poly v2/UV_LIGHT_30K.glb"
+?? "Assets/_Project/Art/Environments/MODELS/Low poly v2/UV_LIGHT_30K.glb.meta"
+?? "Assets/_Project/Art/Environments/MODELS/Low poly v2/WHITE_CHALK.glb"
+?? "Assets/_Project/Art/Environments/MODELS/Low poly v2/WHITE_CHALK.glb.meta"
+?? Assets/_Project/Art/Environments/MODELS/NEW.meta
+?? Assets/_Project/Art/Environments/MODELS/NEW/
+?? Assets/_Project/Art/ICONS/ICONS/CHALK_BLACK.png
+?? Assets/_Project/Art/ICONS/ICONS/CHALK_BLACK.png.meta
+?? Assets/_Project/Art/ICONS/ICONS/CHALK_WHITE.png
+?? Assets/_Project/Art/ICONS/ICONS/CHALK_WHITE.png.meta
+?? Assets/_Project/Art/ICONS/ICONS/CLIP_BOARD_BLACK.png
+?? Assets/_Project/Art/ICONS/ICONS/CLIP_BOARD_BLACK.png.meta
+?? Assets/_Project/Art/ICONS/ICONS/CLIP_BOARD_WHITE.png
+?? Assets/_Project/Art/ICONS/ICONS/CLIP_BOARD_WHITE.png.meta
+?? Assets/_Project/Art/ICONS/ICONS/EVIDENCE_BAG_BLACK.png
+?? Assets/_Project/Art/ICONS/ICONS/EVIDENCE_BAG_BLACK.png.meta
+?? Assets/_Project/Art/ICONS/ICONS/EVIDENCE_BAG_WHITE.png
+?? Assets/_Project/Art/ICONS/ICONS/EVIDENCE_BAG_WHITE.png.meta
+?? Assets/_Project/Art/ICONS/ICONS/EVIDENCE_TENT_BLACK.png
+?? Assets/_Project/Art/ICONS/ICONS/EVIDENCE_TENT_BLACK.png.meta
+?? Assets/_Project/Art/ICONS/ICONS/EVIDENCE_TENT_WHITE.png
+?? Assets/_Project/Art/ICONS/ICONS/EVIDENCE_TENT_WHITE.png.meta
+?? Assets/_Project/Art/ICONS/ICONS/POWDER_WHITE(1).png
+?? Assets/_Project/Art/ICONS/ICONS/POWDER_WHITE(1).png.meta
+?? Assets/_Project/Art/ICONS/ICONS/POWDER_WHITE.png
+?? Assets/_Project/Art/ICONS/ICONS/POWDER_WHITE.png.meta
+?? Assets/_Project/Art/ICONS/ICONS/SWAB_KIT_BLACK.png
+?? Assets/_Project/Art/ICONS/ICONS/SWAB_KIT_BLACK.png.meta
+?? Assets/_Project/Art/ICONS/ICONS/SWAB_KIT_WHITE.png
+?? Assets/_Project/Art/ICONS/ICONS/SWAB_KIT_WHITE.png.meta
+?? Assets/_Project/Art/Materials/Mat_ChalkGuide_Covered.mat
+?? Assets/_Project/Art/Materials/Mat_ChalkGuide_Covered.mat.meta
+?? Assets/_Project/Art/Materials/Mat_ChalkGuide_Uncovered.mat
+?? Assets/_Project/Art/Materials/Mat_ChalkGuide_Uncovered.mat.meta
+?? Assets/_Project/Art/Props/Materials.meta
+?? Assets/_Project/Art/Props/Materials/
+?? Assets/_Project/Art/Props/camera-frame.png
+?? Assets/_Project/Art/Props/camera-frame.png.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence014ChalkMarked.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence014ChalkMarked.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence014Collected.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence014Collected.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence014Photographed_Raw.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence014Photographed_Raw.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence014Sealed.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence014Sealed.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence015ChalkMarked.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence015ChalkMarked.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence015Collected.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence015Collected.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence015Logged.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence015Logged.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence015Photographed.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence015Photographed.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence015Sealed.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence015Sealed.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence017ChalkMarked.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence017ChalkMarked.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence017Collected.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence017Collected.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence017Logged.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence017Logged.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence017Photographed.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence017Photographed.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence017Sealed.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence017Sealed.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence018ChalkMarked.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence018ChalkMarked.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence018Collected.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence018Collected.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence018Logged.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence018Logged.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence018Photographed.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence018Photographed.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence018Sealed.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence018Sealed.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence019ChalkMarked.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence019ChalkMarked.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence019Collected.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence019Collected.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence019FlipHint.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence019FlipHint.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence019Logged.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence019Logged.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence019Matched.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence019Matched.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence019Photographed.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence019Photographed.asset.meta
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence019Sealed.asset
+?? Assets/_Project/Data/DialoguePools/DialoguePool_Evidence019Sealed.asset.meta
+?? Assets/_Project/Data/DialoguePools/Narrative.meta
+?? Assets/_Project/Data/DialoguePools/Narrative/
+?? Assets/_Project/Data/Ending.meta
+?? Assets/_Project/Data/Ending/
+?? Assets/_Project/Data/Evidence/BODY-A_Victimsbody.asset
+?? Assets/_Project/Data/Evidence/BODY-A_Victimsbody.asset.meta
+?? Assets/_Project/Data/Evidence/EVD-019_DisposableGloves.asset
+?? Assets/_Project/Data/Evidence/EVD-019_DisposableGloves.asset.meta
+?? Assets/_Project/Data/Narrative.meta
+?? Assets/_Project/Data/Narrative/
+?? Assets/_Project/Data/Objectives.meta
+?? Assets/_Project/Data/Objectives/
+?? Assets/_Project/Data/Relationships.meta
+?? Assets/_Project/Data/Relationships/
+?? Assets/_Project/Data/Requirements.meta
+?? Assets/_Project/Editor.meta
+?? Assets/_Project/Editor/
+?? Assets/_Project/Scripts/CaseFile/EvidenceFingerprintMarker.cs
+?? Assets/_Project/Scripts/CaseFile/EvidenceFingerprintMarker.cs.meta
+?? Assets/_Project/Scripts/CaseFile/SelectionPrerequisite.cs
+?? Assets/_Project/Scripts/CaseFile/SelectionPrerequisite.cs.meta
+?? Assets/_Project/Scripts/Deduction/CompletionScreenUI.cs
+?? Assets/_Project/Scripts/Deduction/CompletionScreenUI.cs.meta
+?? Assets/_Project/Scripts/Ending.meta
+?? Assets/_Project/Scripts/Ending/
+?? Assets/_Project/Scripts/Interaction/BrushTipReceiver.cs
+?? Assets/_Project/Scripts/Interaction/BrushTipReceiver.cs.meta
+?? Assets/_Project/Scripts/Interaction/ChalkGuideSegmentLink.cs
+?? Assets/_Project/Scripts/Interaction/ChalkGuideSegmentLink.cs.meta
+?? Assets/_Project/Scripts/Interaction/EvidenceFlipTool.cs
+?? Assets/_Project/Scripts/Interaction/EvidenceFlipTool.cs.meta
+?? Assets/_Project/Scripts/Interaction/FingerprintStationTool.cs
+?? Assets/_Project/Scripts/Interaction/FingerprintStationTool.cs.meta
+?? Assets/_Project/Scripts/Interaction/FingerprintTapeTool.cs
+?? Assets/_Project/Scripts/Interaction/FingerprintTapeTool.cs.meta
+?? Assets/_Project/Scripts/Interaction/LetterTentTool.cs
+?? Assets/_Project/Scripts/Interaction/LetterTentTool.cs.meta
+?? Assets/_Project/Scripts/Interaction/TapeTipReceiver.cs
+?? Assets/_Project/Scripts/Interaction/TapeTipReceiver.cs.meta
+?? Assets/_Project/Scripts/Narrative.meta
+?? Assets/_Project/Scripts/Narrative/
+?? Assets/_Project/Scripts/Objectives.meta
+?? Assets/_Project/Scripts/Objectives/
+?? Assets/_Project/Scripts/Relationships.meta
+?? Assets/_Project/Scripts/Relationships/
+?? Assets/_Project/Scripts/Requirements.meta
+?? Assets/_Project/Scripts/Requirements/
+?? Assets/_Project/Scripts/Testing/EndingManagerTest.cs
+?? Assets/_Project/Scripts/Testing/EndingManagerTest.cs.meta
+?? Assets/_Project/Scripts/Testing/NarrativeEventManagerTest.cs
+?? Assets/_Project/Scripts/Testing/NarrativeEventManagerTest.cs.meta
+?? Assets/_Project/Scripts/Testing/ObjectiveStateManagerTest.cs
+?? Assets/_Project/Scripts/Testing/ObjectiveStateManagerTest.cs.meta
+?? Assets/_Project/Scripts/Testing/RelationshipStateManagerTest.cs
+?? Assets/_Project/Scripts/Testing/RelationshipStateManagerTest.cs.meta
+?? Assets/_Project/Scripts/Testing/RequirementEvaluatorTest.cs
+?? Assets/_Project/Scripts/Testing/RequirementEvaluatorTest.cs.meta
+?? Assets/_Project/Scripts/Testing/StoryContentTest.cs
+?? Assets/_Project/Scripts/Testing/StoryContentTest.cs.meta
+?? RuntimeActionBindings.json
+?? Tools/Audit/
+?? docs/PROJECT_CONTEXT.html
+?? docs/PROJECT_CONTEXT.pdf
+?? docs/evidence/

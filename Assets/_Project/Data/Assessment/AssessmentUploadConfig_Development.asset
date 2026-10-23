@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 996855c76f2f82a4cbf9142d5e78f90e, type: 3}
+  m_Name: AssessmentUploadConfig_Development
+  m_EditorClassIdentifier: Assembly-CSharp::AssessmentUploadConfiguration
+  environmentName: Development
+  isProductionEnvironment: 0
+  allowLocalhost: 1
+  apiBaseUrl: http://localhost:3000
+  submissionEndpointPath: /api/v1/assessment-sessions
+  pairingCodeExchangeEndpointPath: /api/v1/device-pairings/exchange
+  requestTimeoutSeconds: 20
+  maxRetryAttempts: 8
+  initialRetryDelaySeconds: 5
+  maxRetryDelaySeconds: 300
+  automaticUploadEnabled: 1
+  uploadRawEventLogEnabled: 1
+  maxEventsPerRequest: 5000
+  debugLoggingEnabled: 1

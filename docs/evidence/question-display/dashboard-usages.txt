@@ -1,0 +1,43 @@
+src\lib\data\questionDisplay.v1.json:12:    "HYP-01",
+src\lib\data\questionDisplay.v1.json:13:    "HYP-02",
+src\lib\data\questionDisplay.v1.json:14:    "HYP-03"
+src\lib\scoring\data\csiEnvironment.groundTruth.v1_1.ts:14: *    - HYP-02 tests "a print shows handling, not guilt - the wound and blood
+src\lib\scoring\data\csiEnvironment.groundTruth.v1_1.ts:15: *      pattern are what connect it to an attack"; HYP-03 tests combining the
+src\lib\scoring\data\csiEnvironment.groundTruth.v1_1.ts:47:      id: "HYP-02",
+src\lib\scoring\data\csiEnvironment.groundTruth.v1_1.ts:56:      id: "HYP-03",
+src\lib\scoring\data\csiEnvironment.groundTruth.v1_2.ts:39:      "id": "HYP-01",
+src\lib\scoring\data\csiEnvironment.groundTruth.v1_2.ts:60:      "id": "HYP-02",
+src\lib\scoring\data\csiEnvironment.groundTruth.v1_2.ts:81:      "id": "HYP-03",
+src\lib\scoring\data\csiEnvironment.v1.ts:46:      id: "HYP-02",
+src\lib\scoring\data\csiEnvironment.v1.ts:55:      id: "HYP-03",
+src\lib\scoring\__tests__\lastDrink.test.ts:44:  assert.deepEqual(key.hypothesisCheckpoints.map(h=>h.id), ["HYP-01","HYP-02","HYP-03"]);
+src\lib\__tests__\sessionRecord.test.tsx:35: {sequenceNumber:3,timestampMs:600,eventType:'HypothesisSubmitted',targetId:'HYP-01',payload:[]},
+src\lib\__tests__\sessionRecord.test.tsx:38: const rows=procedureTimeline([...events,events[0]]);assert.deepEqual(rows.map(e=>e.timestampMs),[501,600,10002,10002]);assert.equal(rows.length,4);assert.match(rows[1].description,/checkpoint HYP-01/);assert.match(rows[2].description,/marker A/);assert.match(rows[3].description,/lifted fingerprint sample from Evidence 1 – Kitchen Knife/);
+src\lib\__tests__\sessionRecord.test.tsx:55: const r=resultFor();r.scoringVersion='1.5.0';r.events=[];r.hypotheses=[{checkpointId:'HYP-01',selectedOptionId:'recorded-option',reasoningOptionId:'recorded-reason'}];
+src\lib\scoring\__tests__\reasoningCheckpointSeparation.test.ts:15:const legacy = event("HypothesisSubmitted", "HYP-02", {
+src\lib\scoring\__tests__\reasoningCheckpointSeparation.test.ts:34:test("integrated HYP-02 retains legacy justification scoring with new stable first-choice IDs", () => {
+src\lib\scoring\__tests__\reasoningCheckpointSeparation.test.ts:36:    const integrated = event("HypothesisSubmitted","HYP-02",{selectedOptionId:id,reasoningOptionId:"hyp02-print-needs-reconstruction"});
+src\lib\scoring\__tests__\reasoningCheckpointSeparation.test.ts:39:  assert.equal(scoreEvidence([event("HypothesisSubmitted","HYP-02",{selectedOptionId:"RC-03-FINGERPRINT-C",reasoningOptionId:"hyp02-print-proves-attacker"})],truth,rules).reasoningAccuracy,0);
+src\lib\scoring\__tests__\simplifiedScenario.test.ts:36:test("1.1.0 removes the phone/gloves HYP-03 options and wife relationships", () => {
+src\lib\scoring\__tests__\simplifiedScenario.test.ts:37:  const hyp03 = v11.hypothesisCheckpoints.find((h) => h.id === "HYP-03")!;
+src\lib\scoring\__tests__\simplifiedScenario.test.ts:46:test("1.1.0 HYP-02 and HYP-03 each have exactly one correct reasoning option", () => {
+src\lib\scoring\__tests__\simplifiedScenario.test.ts:47:  for (const id of ["HYP-02", "HYP-03"]) {
+src\lib\scoring\__tests__\simplifiedScenario.test.ts:51:  const hyp02 = v11.hypothesisCheckpoints.find((h) => h.id === "HYP-02")!;
+src\lib\scoring\__tests__\simplifiedScenario.test.ts:53:  const hyp03 = v11.hypothesisCheckpoints.find((h) => h.id === "HYP-03")!;
+src\lib\scoring\__tests__\trainingSeparation.test.ts:36:const baseline = [e("HypothesisSubmitted", "HYP-01", {reasoningOptionId: truth.hypothesisCheckpoints[0].reasoningOptions.find(x => x.isCorrect)!.id})];
+src\lib\scoring\__fixtures__\complete-correct-wife.jsonl:45:{"sessionId":"fixture-complete-correct-wife","sequenceNumber":44,"timestampMs":45000,"eventType":"HypothesisSubmitted","targetId":"HYP-02","payload":[{"key":"selectedOptionId","value":"opt-impact"},{"key":"reasoningOptionId","value":"hyp02-blood-spatter-impact"}]}
+src\lib\scoring\__fixtures__\complete-correct-wife.jsonl:46:{"sessionId":"fixture-complete-correct-wife","sequenceNumber":45,"timestampMs":46000,"eventType":"HypothesisSubmitted","targetId":"HYP-03","payload":[{"key":"selectedOptionId","value":"opt-gloves"},{"key":"reasoningOptionId","value":"hyp03-gloves-wife-match"}]}
+src\lib\scoring\__fixtures__\correct-evidence-incorrect-reasoning.jsonl:41:{"sessionId":"fixture-correct-evidence-incorrect-reasoning","sequenceNumber":40,"timestampMs":41000,"eventType":"HypothesisSubmitted","targetId":"HYP-02","payload":[{"key":"selectedOptionId","value":"opt-knife"},{"key":"reasoningOptionId","value":"hyp02-knife-routine-use"}]}
+src\lib\scoring\__fixtures__\correct-evidence-incorrect-reasoning.jsonl:42:{"sessionId":"fixture-correct-evidence-incorrect-reasoning","sequenceNumber":41,"timestampMs":42000,"eventType":"HypothesisSubmitted","targetId":"HYP-03","payload":[{"key":"selectedOptionId","value":"opt-phone"},{"key":"reasoningOptionId","value":"hyp03-phone-overclaim"}]}
+src\lib\scoring\__fixtures__\distractor-heavy.jsonl:32:{"sessionId":"fixture-distractor-heavy","sequenceNumber":31,"timestampMs":32000,"eventType":"HypothesisSubmitted","targetId":"HYP-02","payload":[{"key":"selectedOptionId","value":"opt-bottle"},{"key":"reasoningOptionId","value":"hyp02-bottle-intoxication"}]}
+src\lib\scoring\__fixtures__\generate-fixtures.mjs:77:    hypothesis(sid, "HYP-02", "opt-impact", "hyp02-blood-spatter-impact"),
+src\lib\scoring\__fixtures__\generate-fixtures.mjs:78:    hypothesis(sid, "HYP-03", "opt-gloves", "hyp03-gloves-wife-match"),
+src\lib\scoring\__fixtures__\generate-fixtures.mjs:92:    hypothesis(sid, "HYP-02", "opt-impact", "hyp02-blood-spatter-impact"),
+src\lib\scoring\__fixtures__\generate-fixtures.mjs:94:    hypothesis(sid, "HYP-03", "opt-brother", "hyp03-knife-print-implicates-brother"),
+src\lib\scoring\__fixtures__\generate-fixtures.mjs:108:    hypothesis(sid, "HYP-02", "opt-impact", "hyp02-blood-spatter-impact"),
+src\lib\scoring\__fixtures__\generate-fixtures.mjs:133:    hypothesis(sid, "HYP-02", "opt-bottle", "hyp02-bottle-intoxication"),
+src\lib\scoring\__fixtures__\generate-fixtures.mjs:179:    hypothesis(sid, "HYP-02", "opt-knife", "hyp02-knife-routine-use"),
+src\lib\scoring\__fixtures__\generate-fixtures.mjs:180:    hypothesis(sid, "HYP-03", "opt-phone", "hyp03-phone-overclaim"),
+src\lib\scoring\__fixtures__\incorrect-brother.jsonl:41:{"sessionId":"fixture-incorrect-brother","sequenceNumber":40,"timestampMs":41000,"eventType":"HypothesisSubmitted","targetId":"HYP-02","payload":[{"key":"selectedOptionId","value":"opt-impact"},{"key":"reasoningOptionId","value":"hyp02-blood-spatter-impact"}]}
+src\lib\scoring\__fixtures__\incorrect-brother.jsonl:42:{"sessionId":"fixture-incorrect-brother","sequenceNumber":41,"timestampMs":42000,"eventType":"HypothesisSubmitted","targetId":"HYP-03","payload":[{"key":"selectedOptionId","value":"opt-brother"},{"key":"reasoningOptionId","value":"hyp03-knife-print-implicates-brother"}]}
+src\lib\scoring\__fixtures__\partial-investigation.jsonl:17:{"sessionId":"fixture-partial-investigation","sequenceNumber":16,"timestampMs":17000,"eventType":"HypothesisSubmitted","targetId":"HYP-02","payload":[{"key":"selectedOptionId","value":"opt-impact"},{"key":"reasoningOptionId","value":"hyp02-blood-spatter-impact"}]}

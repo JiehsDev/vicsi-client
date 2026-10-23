@@ -1,0 +1,23 @@
+{
+  "layout_checks_passed": 62,
+  "photography_procedure_passed": 47,
+  "failures": 0,
+  "display_bottles": 2,
+  "display_colliders": 0,
+  "display_evidence_props": 0,
+  "station_id": "scene-interior-right",
+  "sequence_index": 50,
+  "station_position": [
+    14.1,
+    1.2,
+    8.75
+  ],
+  "target_position": [
+    13.48,
+    2.145332,
+    6.99
+  ],
+  "scene_clean": true,
+  "editor_in_play": false,
+  "xr_restored": true
+}

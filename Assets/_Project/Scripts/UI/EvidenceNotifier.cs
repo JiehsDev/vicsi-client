@@ -4,9 +4,9 @@ using UnityEngine;
 /// <summary>
 /// Bridges EvidenceStateManager's existing OnEvidenceStatusChanged event to
 /// NotificationManager, so every evidence status change already flowing through
-/// this project - photographed, sketched, logged, collected, whichever tool
+/// this project - photographed, chalk marked, logged, collected, whichever tool
 /// caused it - surfaces a toast without any of those tools (PhotographTool,
-/// SketchTool, EvidenceBagTool, ...) needing to know notifications exist.
+/// ChalkMarkTool, EvidenceBagTool, ...) needing to know notifications exist.
 /// Sample wiring for the reusable NotificationManager/NotificationUI pair; drop
 /// this on any GameObject in a scene that has both an EvidenceStateManager and a
 /// NotificationManager to enable it.
@@ -74,30 +74,96 @@ public class EvidenceNotifier : MonoBehaviour
             return;
         }
 
-        string verb = status switch
+        // Player-facing name only - internal systems (session log, assessment log,
+        // requirement evaluation, relationship data) all keep using evidenceId
+        // directly; this substitution never leaves this method.
+        string name = EvidenceStateManager.Instance != null ? EvidenceStateManager.Instance.GetDisplayName(evidenceId) : evidenceId;
+        bool plural = LooksPlural(name);
+        string have = plural ? "have" : "has";
+        string is_ = plural ? "are" : "is";
+
+        string sentence = status switch
         {
-            EvidenceStatus.Found => "found",
+            EvidenceStatus.Found => GameDialogue.Text("evidence-status-discovered", name, have),
             // Marked is deliberately absent from this list. A toast here would read
-            // "EVD-018 marked" when the tent lands on registered evidence and show
+            // "{name} marked" when the tent lands on registered evidence and show
             // NOTHING when it lands on anything else - which tells the player, at the
             // instant they place it, whether the thing they just identified was real.
             // EvidenceTentTool raises its own toast instead, worded identically on both
             // branches and naming no evidence id. See the note there before changing this.
-            EvidenceStatus.Photographed => "photographed",
-            EvidenceStatus.Sketched => "sketched",
-            EvidenceStatus.Logged => "logged",
-            EvidenceStatus.ReadyForCollection => "ready for collection",
-            EvidenceStatus.Collected => "collected",
-            EvidenceStatus.Sealed => "sealed",
-            EvidenceStatus.Processed => "processed",
+            EvidenceStatus.PhotographedRaw => GameDialogue.Text("evidence-status-photographed", name, have),
+            EvidenceStatus.ChalkMarked => GameDialogue.Text("evidence-status-outlined", name, have),
+            EvidenceStatus.PhotographedFinal => GameDialogue.Text("evidence-status-final-photographed", name, have),
+            EvidenceStatus.Logged => GameDialogue.Text("evidence-status-recorded", name, have),
+            // Not simply "ready for collection" for every item: reaching this status
+            // only means Logged has happened (see EvidenceStateManager.CheckReadyForCollection) -
+            // it says nothing about whether the NEXT real action is actually a bag
+            // insertion. "ready to be swabbed" instead for an item whose own collection
+            // method IS the swab container (EvidenceDefinition.collectedBySwab, e.g.
+            // EVD-015 - there is no bagging step for it at all). ReadyForCollectionClause
+            // also still checks requiresSwabbing/swabbingDone for a bag-collected item
+            // with an unmet swab precondition (e.g. the knife) as defence in depth, but
+            // that branch is now unreachable in practice: requiresSwabbing now gates
+            // Logged itself (see EvidenceStateManager.IsBlockedBySwabbing), so
+            // swabbingDone is always already true by the time ReadyForCollection can
+            // ever fire.
+            EvidenceStatus.ReadyForCollection => GameDialogue.Text(ReadyForCollectionClause(evidenceId), name, is_),
+            EvidenceStatus.Collected => GameDialogue.Text("evidence-status-collected", name, have),
+            EvidenceStatus.Sealed => GameDialogue.Text("evidence-status-sealed", name, have),
+            EvidenceStatus.Processed => GameDialogue.Text("evidence-status-processed", name, have),
             _ => null,
         };
 
-        if (verb == null)
+        if (sentence == null)
         {
             return;
         }
 
-        NotificationManager.Notify($"{evidenceId} {verb}");
+        NotificationManager.Notify(sentence, DialogueKind.Confirmation);
+    }
+
+    /// <summary>
+    /// "ready to be swabbed." if this item's own collection method is the swab
+    /// container (collectedBySwab) or it's bag-collected but still has an unmet
+    /// requiresSwabbing precondition; "ready for collection." otherwise. See the call
+    /// site's comment for why this can't be a flat string for every item.
+    /// </summary>
+    private static string ReadyForCollectionClause(string evidenceId)
+    {
+        var record = EvidenceStateManager.Instance?.GetRecord(evidenceId);
+        if (record?.definition == null)
+        {
+            return "evidence-status-ready-for-collection";
+        }
+
+        // Only an item still waiting for its swab is "ready to be swabbed" - a sample taken
+        // and sealed on scene before the record (collectedBySwab + requiresSwabbing) is
+        // already done.
+        bool swabNext = (record.definition.collectedBySwab && !record.definition.requiresSwabbing)
+            || (record.definition.requiresSwabbing && !record.swabbingDone);
+
+        return swabNext ? "evidence-status-ready-to-swab" : "evidence-status-ready-for-collection";
+    }
+
+    /// <summary>
+    /// Crude, generic (never evidence-id-specific) plurality guess from the resolved
+    /// display name's last word, so "Disposable gloves have been..." reads correctly
+    /// alongside "Kitchen knife has been..." without an authored per-item grammar
+    /// flag. Deliberately simple: ends-in-s-but-not-'s on the last word. Wrong for a
+    /// genuinely irregular name (e.g. one ending "...glasses" would be fine, but
+    /// something like "...premises" would misfire) - acceptable given the actual
+    /// authored roster has exactly one plural display name (Disposable gloves) and
+    /// this is a minor grammar nicety, never gameplay-affecting.
+    /// </summary>
+    private static bool LooksPlural(string displayName)
+    {
+        if (string.IsNullOrEmpty(displayName))
+        {
+            return false;
+        }
+
+        string lastWord = displayName.TrimEnd().Split(' ')[^1];
+        return lastWord.EndsWith("s", System.StringComparison.OrdinalIgnoreCase)
+            && !lastWord.EndsWith("'s", System.StringComparison.OrdinalIgnoreCase);
     }
 }

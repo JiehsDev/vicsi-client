@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81025025b5ccd0343822b039b1e4dfac, type: 3}
+  m_Name: Conclusion_WIFE-WORE-BLOOD-BEARING-GLOVES
+  m_EditorClassIdentifier: Assembly-CSharp::ConclusionDefinition
+  conclusionId: CONCLUSION-WIFE-WORE-BLOOD-BEARING-GLOVES
+  displayName: The Wife Is Associated with the Blood-Bearing Gloves
+  description: The wife's fingerprint was identified inside gloves that carried blood
+    consistent with the victim. This creates a stronger physical association, but
+    should still be considered with the rest of the scene evidence.
+  supportingEvidenceSummary: 
+  availabilityRequirement:
+    kind: 1
+    operatorType: 0
+    children:
+    - rid: 7267691000371347802
+    - rid: 7267691000371347803
+    requirementType: 0
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    authoringNote: 
+  level: 1
+  priority: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 7267691000371347802
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-GLOVES-PRINT-WIFE
+        authoringNote: 
+    - rid: 7267691000371347803
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-GLOVES-BLOOD-VICTIM
+        authoringNote: 

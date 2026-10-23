@@ -1,0 +1,79 @@
+{
+  "checks": [
+    {
+      "name": "Catalog: unique IDs, no empty texts",
+      "pass": true
+    },
+    {
+      "name": "Exact vendor question and answer",
+      "pass": true
+    },
+    {
+      "name": "Original Paul statement",
+      "pass": true
+    },
+    {
+      "name": "Timeline relationship preserves observation limits",
+      "pass": true
+    },
+    {
+      "name": "Supported Paul: ALL nine exact leaves, no shortcuts",
+      "pass": true
+    },
+    {
+      "name": "Active player-facing content sweep (ordinary fall wording permitted)",
+      "pass": true
+    },
+    {
+      "name": "HYP-03 and ending include strengthened reasoning",
+      "pass": true
+    },
+    {
+      "name": "Presentation: no evidence mutation, physics creation or scene scans",
+      "pass": true
+    },
+    {
+      "name": "Assessment builder and DTO unchanged since checkpoint",
+      "pass": true
+    }
+  ],
+  "hits": [],
+  "supportedPaulLeaves": [
+    {
+      "type": 12,
+      "id": "FIND-BODY-SHARP-WOUND"
+    },
+    {
+      "type": 12,
+      "id": "FIND-KNIFE-WOUND-CONSISTENT"
+    },
+    {
+      "type": 12,
+      "id": "FIND-KNIFE-PRINT-BROTHER"
+    },
+    {
+      "type": 12,
+      "id": "FIND-SPATTER-RECONSTRUCTION"
+    },
+    {
+      "type": 11,
+      "id": "REL-knife-consistent-wound"
+    },
+    {
+      "type": 11,
+      "id": "REL-spatter-consistent-reconstruction"
+    },
+    {
+      "type": 11,
+      "id": "REL-paul-print-handled-knife"
+    },
+    {
+      "type": 11,
+      "id": "REL-paul-timeline-contradiction"
+    },
+    {
+      "type": 21,
+      "id": "statement_vendor_paul_3am"
+    }
+  ]
+}

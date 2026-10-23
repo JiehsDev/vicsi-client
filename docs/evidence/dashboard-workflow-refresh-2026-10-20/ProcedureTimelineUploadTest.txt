@@ -1,0 +1,16 @@
+=== ProcedureTimelineUploadTest ===
+PASS: SceneLogSigned retained without raw logs
+PASS: PPEEquipped retained without raw logs
+PASS: UsedGlovesDisposed retained without raw logs
+PASS: FreshGlovesEquipped retained without raw logs
+PASS: FreshSwabLoaded retained without raw logs
+PASS: PhotographicScaleCaptured retained without raw logs
+PASS: SampleDryingCompleted retained without raw logs
+PASS: SamplePackaged retained without raw logs
+PASS: FingerprintPracticeCompleted retained without raw logs
+PASS: Both blood sources retain their own preparation records
+PASS: Original sequence numbers, timestamps and targets preserved
+PASS: Started, blocked and tool-open events remain outside completion timeline
+PASS: Raw logs and duplicate essential section remain disabled
+PASS: All completion records survive actual wire serialization
+=== PASS ===

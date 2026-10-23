@@ -1,0 +1,11 @@
+=== GrabReachTest ===
+  PASS: both items grab-enabled (ready) for the test [knife=True, bottle=True]
+  PASS: both items carry the reach filter (reach 0.15 m)
+  PASS: right hand touching the knife (~5 cm): knife grabbable [0.05 m]
+  PASS:   ... and the bottle (other ready item, metres away) is NOT
+  PASS: right hand 30 cm from the knife: not grabbable [0.30 m]
+  PASS: right hand 2 m away: not grabbable
+  PASS: right hand at the scene entrance (~23 m): neither item grabbable
+  PASS: right hand touching the bottle: bottle grabbable, knife not
+  PASS: left hand touching the knife: still refused (left hand holds the bag)
+=== PASS, 0 failures ===

@@ -1,0 +1,27 @@
+=== VrIdentityUploadBridgeTest ===
+  PASS: [identify online] code -> server -> stable id, name, class
+  PASS: [identify online] server is authoritative over an older cache
+  PASS: [identify offline] cached code -> stable id
+  PASS: [identify offline] disabled cached code -> Disabled
+  PASS: [identify offline] unknown code -> NotRecognized (headset can't invent students)
+  PASS: [identify] malformed code -> InvalidFormat
+  PASS: [identify] a hung server falls back to the cache (2.0s)
+  PASS: [identify offline] never-synced headset says so
+  PASS: [test mode] Continue Without Code -> the EXISTING test student id from the directory, flagged test
+  PASS: [test mode] unavailable (not invented) when the headset never synced a test student
+  PASS: [ownership] a bound session can't be re-bound: the original owner is returned and the file is unchanged
+  PASS: [online student] code-identified session -> device-authorized token for Juan + this session -> upload -> stored under Juan
+  PASS: [offline student] completed offline -> saved, waiting (RetryWaiting), payload kept
+  PASS: [Juan -> Maria] internet returns: Juan's pending session uploads to JUAN, Maria's to Maria
+  PASS: [John Doe] Continue Without Code session -> per-session token for the existing John Doe id -> stored as John Doe, test flag kept
+  PASS: [regenerated code] old code no longer identifies, new one does; the existing session still belongs to Juan
+  PASS: [disabled] a session completed before the code was disabled still uploads
+  PASS: [disabled] a session started after disabling is refused - kept on the headset (Rejected), never discarded
+  PASS: [expired token] TOKEN_EXPIRED -> one fresh token -> uploaded under Juan, nothing lost
+  PASS: [invalid device key] authorization refused -> session stays local at RetryWaiting (not AwaitingPairing), payload kept
+  PASS: [invalid device key] once the key is fixed, the same saved session uploads to its owner
+  PASS: [no device key] nothing sent, session saved at RetryWaiting
+  PASS: [owner mismatch] refused by the server, kept locally as Rejected; ownership never moved
+  PASS: [legacy] a session with no owner record keeps the pairing behavior (AwaitingPairing, nothing sent)
+  PASS: [secrets] none of the 9 upload tokens nor the device key is in the queue, payloads or owner file
+=== PASS, 0 failures ===

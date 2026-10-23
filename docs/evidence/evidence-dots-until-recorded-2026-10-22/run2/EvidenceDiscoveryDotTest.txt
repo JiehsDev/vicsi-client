@@ -1,0 +1,97 @@
+=== EvidenceDiscoveryDotTest ===
+PASS: All four physical items auto-attach exactly one dot
+PASS: Hidden fingerprint targets stay excluded
+PASS: Held tool placeholders stay excluded
+PASS: No dots before completed scene photography
+PASS: Initial discovery states are unchanged
+PASS: Original photo route completes through real shutter gates
+PASS: All undiscovered dots appear together on the completion event
+PASS: Dot refresh never discovers evidence or writes session events
+PASS: BODY-A: small constant 5 cm world diameter
+PASS: BODY-A: dot floats above physical item
+PASS: BODY-A: no text, arrows, hit targets or colliders
+PASS: BODY-A: native circle mesh and supported depth-tested shader
+PASS: EVD-014: small constant 5 cm world diameter
+PASS: EVD-014: dot floats above physical item
+PASS: EVD-014: no text, arrows, hit targets or colliders
+PASS: EVD-014: native circle mesh and supported depth-tested shader
+PASS: EVD-015: small constant 5 cm world diameter
+PASS: EVD-015: dot floats above physical item
+PASS: EVD-015: no text, arrows, hit targets or colliders
+PASS: EVD-015: native circle mesh and supported depth-tested shader
+PASS: EVD-018: small constant 5 cm world diameter
+PASS: EVD-018: dot floats above physical item
+PASS: EVD-018: no text, arrows, hit targets or colliders
+PASS: EVD-018: native circle mesh and supported depth-tested shader
+PASS: Dots billboard toward headset without moving evidence
+PASS: Synchronous capture scope hides every dot
+PASS: Nested capture remains hidden
+PASS: Inner disposal does not restore outer capture
+PASS: Capture scope restores still-undiscovered dots
+PASS: Actual album render excludes dots and restores the live view
+PASS: Rendered highlighted dot is visible in open view
+PASS: Opaque geometry occludes the dot (no through-wall highlight)
+PASS: IOC phase cannot reveal SOCO evidence dots
+PASS: Returning to allowed investigation restores all remaining dots
+PASS: Disabled evidence hides its dot
+PASS: Disabling dot immediately hides standalone visual
+PASS: Re-enabling undiscovered evidence restores its dot
+PASS: Existing discovery call still applies
+PASS: Discovery keeps every unrecorded evidence dot visible
+PASS: Repeated discovery does not create extra events
+PASS: Capture restores discovered but unrecorded evidence dots
+PASS: Missing photo completion hides remaining dots
+PASS: Discovered unrecorded items relight when photo readiness returns
+PASS: Discovering all evidence leaves all unrecorded dots visible
+PASS: BODY-A: dot persists at PhotographedRaw
+PASS: BODY-A: dot persists at ChalkMarked
+PASS: BODY-A: dot persists at Marked
+PASS: BODY-A: dot persists at PhotographedFinal
+PASS: EVD-014: dot persists at PhotographedRaw
+PASS: EVD-014: dot persists at ChalkMarked
+PASS: EVD-014: dot persists at Marked
+PASS: EVD-014: dot persists at PhotographedFinal
+PASS: EVD-015: dot persists at PhotographedRaw
+PASS: EVD-015: dot persists at ChalkMarked
+PASS: EVD-015: dot persists at Marked
+PASS: EVD-015: dot persists at PhotographedFinal
+PASS: EVD-018: dot persists at PhotographedRaw
+PASS: EVD-018: dot persists at ChalkMarked
+PASS: EVD-018: dot persists at Marked
+PASS: EVD-018: dot persists at PhotographedFinal
+PASS: BODY-A: real Recorder opens without hiding its dot
+PASS: BODY-A: incomplete confirmation does not hide the dot
+PASS: BODY-A: cancelling Recorder keeps the dot
+PASS: BODY-A: selecting three statements does not hide the dot
+PASS: BODY-A: successful Recorder confirmation hides the dot immediately
+PASS: BODY-A: capture restoration cannot relight a confirmed entry
+PASS: BODY-A: other unrecorded subjects keep their dots
+PASS: EVD-014: real Recorder opens without hiding its dot
+PASS: EVD-014: incomplete confirmation does not hide the dot
+PASS: EVD-014: cancelling Recorder keeps the dot
+PASS: EVD-014: selecting three statements does not hide the dot
+PASS: EVD-014: successful Recorder confirmation hides the dot immediately
+PASS: EVD-014: capture restoration cannot relight a confirmed entry
+PASS: EVD-014: other unrecorded subjects keep their dots
+PASS: EVD-015: real Recorder opens without hiding its dot
+PASS: EVD-015: incomplete confirmation does not hide the dot
+PASS: EVD-015: cancelling Recorder keeps the dot
+PASS: EVD-015: selecting three statements does not hide the dot
+PASS: EVD-015: successful Recorder confirmation hides the dot immediately
+PASS: EVD-015: capture restoration cannot relight a confirmed entry
+PASS: EVD-015: other unrecorded subjects keep their dots
+PASS: EVD-018: real Recorder opens without hiding its dot
+PASS: EVD-018: incomplete confirmation does not hide the dot
+PASS: EVD-018: cancelling Recorder keeps the dot
+PASS: EVD-018: selecting three statements does not hide the dot
+PASS: EVD-018: successful Recorder confirmation hides the dot immediately
+PASS: EVD-018: capture restoration cannot relight a confirmed entry
+PASS: EVD-018: other unrecorded subjects keep their dots
+PASS: All dots disappear only after all four entries are confirmed
+PASS: Legacy recorded item stays hidden at Logged
+PASS: Legacy recorded item stays hidden at ReadyForCollection
+PASS: Legacy recorded item stays hidden at Collected
+PASS: Legacy recorded item stays hidden at Sealed
+PASS: Legacy recorded item stays hidden at Processed
+PASS: Evidence positions and imported model scales are unchanged
+=== PASS ===

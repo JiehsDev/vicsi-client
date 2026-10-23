@@ -1,0 +1,70 @@
+{
+    "version": 1,
+    "sessionId": "46f153af-df60-4eed-93f6-7b71b775df88",
+    "studentId": "scene-access-test-student",
+    "name": "Alexandra Maria de los Santos - Student Investigator With A Long Display Name",
+    "roleAtRegistration": "IOC",
+    "purpose": "Initial scene assessment",
+    "keeper": "First Responder",
+    "registrationMs": 12372,
+    "authorized": true,
+    "finalized": true,
+    "developmentPreparation": false,
+    "visits": [
+        {
+            "number": 1,
+            "timeInMs": 12697,
+            "timeOutMs": 14399,
+            "simulatedRepositionMs": -1,
+            "roleAtEntry": "IOC",
+            "purpose": "Initial scene assessment",
+            "presentAtScenarioEnd": false
+        },
+        {
+            "number": 2,
+            "timeInMs": 15205,
+            "timeOutMs": -1,
+            "simulatedRepositionMs": 15623,
+            "roleAtEntry": "IOC",
+            "purpose": "Initial scene assessment",
+            "presentAtScenarioEnd": false
+        },
+        {
+            "number": 3,
+            "timeInMs": 16069,
+            "timeOutMs": 16462,
+            "simulatedRepositionMs": -1,
+            "roleAtEntry": "SOCO",
+            "purpose": "Forensic scene investigation",
+            "presentAtScenarioEnd": false
+        },
+        {
+            "number": 4,
+            "timeInMs": 16862,
+            "timeOutMs": 17263,
+            "simulatedRepositionMs": -1,
+            "roleAtEntry": "SOCO",
+            "purpose": "Forensic scene investigation",
+            "presentAtScenarioEnd": false
+        },
+        {
+            "number": 5,
+            "timeInMs": 18739,
+            "timeOutMs": -1,
+            "simulatedRepositionMs": -1,
+            "roleAtEntry": "SOCO",
+            "purpose": "Forensic scene investigation",
+            "presentAtScenarioEnd": true
+        }
+    ],
+    "transitions": [
+        {
+            "elapsedMs": 15623,
+            "description": "Simulated SOCO arrival reposition; no physical exit recorded"
+        },
+        {
+            "elapsedMs": 16041,
+            "description": "Same student: simulated role handover from IOC to SOCO"
+        }
+    ]
+}

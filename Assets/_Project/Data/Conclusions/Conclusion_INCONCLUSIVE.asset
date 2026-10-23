@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81025025b5ccd0343822b039b1e4dfac, type: 3}
+  m_Name: Conclusion_INCONCLUSIVE
+  m_EditorClassIdentifier: Assembly-CSharp::ConclusionDefinition
+  conclusionId: CONCLUSION-INCONCLUSIVE
+  displayName: Inconclusive
+  description: The current findings do not provide enough consistent evidence to
+    identify the responsible person with confidence. Leaving the case unresolved is
+    more defensible than making an unsupported accusation.
+  supportingEvidenceSummary: Available once any analytical finding is confirmed (meaningful
+    investigation). Availability is one-way internally, but the picker offers it
+    only while no supported Case conclusion is available - once the Paul case is supported,
+    Inconclusive is hidden from the picker (EndingManager.GetSelectableCaseConclusions).
+  availabilityRequirement:
+    kind: 1
+    operatorType: 1
+    children:
+    - rid: 2142348962394538243
+    - rid: 2142348962394538244
+    - rid: 2142348962394538245
+    - rid: 2142348962394538246
+    requirementType: 0
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    measurementRequirementId: 
+    authoringNote: 
+  level: 2
+  priority: 0
+  hidesInconclusiveWhenSupported: 0
+  inconclusiveSuppressionRequirement:
+    kind: 1
+    operatorType: 0
+    children: []
+    requirementType: 0
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    measurementRequirementId: 
+    authoringNote: 
+  references:
+    version: 2
+    RefIds:
+    - rid: 2142348962394538243
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-BODY-SHARP-WOUND
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 2142348962394538244
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-KNIFE-WOUND-CONSISTENT
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 2142348962394538245
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-KNIFE-PRINT-BROTHER
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 2142348962394538246
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-SPATTER-RECONSTRUCTION
+        measurementRequirementId: 
+        authoringNote: 

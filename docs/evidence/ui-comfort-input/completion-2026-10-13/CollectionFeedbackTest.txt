@@ -1,0 +1,45 @@
+=== CollectionFeedbackTest ===
+  PASS: scene photography route completed (precondition)
+  PASS: [NotFound] grip names the missing step: 'Kitchen knife isn't ready for collection. Find this evidence first.'
+  PASS: [Found] grip names the missing step: 'Kitchen knife isn't ready for collection. Photograph this item before continuing so its original position and condition are documented before it is disturbed.'
+  PASS: [PhotographedRaw] grip names the missing step: 'Kitchen knife isn't ready for collection. Mark the evidence position with chalk first.'
+  PASS: [ChalkMarked] grip names the missing step: 'Kitchen knife isn't ready for collection. Place the evidence marker first so this item can be identified consistently in photographs and records.'
+  PASS: [Marked, blood trace not tented] grip names the missing step: 'Kitchen knife isn't ready for collection. Identify the blood trace with the additional marker used in this exercise before the final photograph, so the sample source can be distinguished from the knife itself.'
+  PASS: [Marked, both tents down] grip names the missing step: 'Kitchen knife isn't ready for collection. Take the final photograph before continuing so the evidence and its identifying marker are documented together.'
+  PASS: knife reached PhotographedFinal [PhotographedFinal]
+  PASS: [PhotographedFinal, not swabbed] grip names the missing step: 'Kitchen knife isn't ready for collection. Collect the blood sample before completing the evidence record.'
+  PASS: knife swabbed [True]
+  PASS: [swabbed, print not lifted] grip names the missing step: 'Kitchen knife isn't ready for collection. Complete fingerprint processing first so the record describes the finding that was actually recovered.'
+  PASS: knife fingerprinted on scene [True]
+  PASS: [measurements incomplete] grip names the missing step: 'Kitchen knife isn't ready for collection. Complete the required scene measurements before the evidence record so it includes the original layout and spatial relationships.'
+  PASS: the Logged step's wording names the Recorder ['Record this evidence with the Recorder first so its identity and observations remain connected to the item.']
+  PASS: [not recorded yet] grip names the missing step: 'Kitchen knife isn't ready for collection. Record this evidence with the Recorder first so its identity and observations remain connected to the item.'
+  PASS: grab still off before recording
+  PASS: recorded -> ReadyForCollection [ReadyForCollection]
+  PASS: grab switched on once ready
+  PASS: nothing to explain once ready
+  PASS: [EVD-014] equip open bag via coordinator
+  PASS: [EVD-014] before insertion: open visual, no completed bag or B prompt
+  PASS: [EVD-014] real insertion collects without prematurely sealing/closing
+  PASS: [EVD-014] seal gesture holds closed bag without automatically storing
+  PASS: [EVD-014] held bag uses supplied closed-paper-bag meshes
+  PASS: [EVD-014] another tool cannot implicitly store the bag
+  PASS: [EVD-014] modal suppresses B storage and prompt
+  PASS: [EVD-014] completed bag shows exact B prompt
+  PASS: [EVD-014] B handler stores same ID, clears prompt and frees hand
+  PASS: [EVD-014] stored item can be re-equipped and stored again
+  PASS: bottle reaches its existing collection stage without an on-scene fingerprint
+  PASS: [EVD-018] equip open bag via coordinator
+  PASS: [EVD-018] before insertion: open visual, no completed bag or B prompt
+  PASS: [EVD-018] real insertion collects without prematurely sealing/closing
+  PASS: [EVD-018] seal gesture holds closed bag without automatically storing
+  PASS: [EVD-018] held bag uses supplied closed-paper-bag meshes
+  PASS: [EVD-018] another tool cannot implicitly store the bag
+  PASS: [EVD-018] modal suppresses B storage and prompt
+  PASS: [EVD-018] completed bag shows exact B prompt
+  PASS: [EVD-018] B handler stores same ID, clears prompt and frees hand
+  PASS: [EVD-018] stored item can be re-equipped and stored again
+  PASS: knife and bottle remain separate stored IDs/names
+  PASS: reset clears bags/custody and restores both original evidence props
+  PASS: reset leaves no pending bag or completed held visual
+=== PASS, 0 failures ===

@@ -1,0 +1,34 @@
+=== UIComfortInputTest ===
+PASS: Meta Jump event automatically routed, no manual scene wiring
+PASS: Only the persistent Jump listener is disabled
+FAIL: Fixture starts without modal locks (owners=, jump=False)
+FAIL: Unowned A forwards normal gameplay jump
+FAIL: Noninteractive notification does not own A or block jump
+PASS: Highest-priority UI alone receives actual A
+FAIL: Same A never reaches gameplay jump
+PASS: Confirm closes UI without same-frame jump
+PASS: Held A after close stays consumed
+PASS: Release clears ownership without synthesizing jump
+FAIL: Next fresh A jumps normally
+PASS: A opens modal without also selecting it or jumping
+PASS: Modal accepts fresh press after activation
+PASS: Reasoning owns A and locks tools as well as its existing locomotion
+PASS: First reasoning A selects without locking answer
+PASS: Second fresh reasoning A confirms once
+PASS: Open-space preferred distance and offset unchanged
+PASS: Simultaneous panels share rotation and measured nonoverlapping vertical slot
+PASS: Modal keeps primary placement; lower interactive canvas yields
+PASS: Wall fixture obstructs the preferred primary pose
+PASS: Wall fallback clears primary rectangle
+PASS: Secondary also clears wall with same fallback and rotation
+PASS: Fallback chose a stable side
+PASS: Head jitter does not flip side or reorder panels
+PASS: Secondary-only wall is detected
+PASS: Primary remains wall-safe while group adjusts
+PASS: Group actually moves or defers secondary for secondary-only obstruction
+PASS: Real dialogue opts into shared wall avoidance
+PASS: Real dialogue rectangle avoids wall
+PASS: Dialogue progression still accepts existing skip
+PASS: Dialogue skip accepted after protection
+PASS: World-anchored reading panel keeps its pose when head turns
+=== 5 FAILURE(S) ===

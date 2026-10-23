@@ -50,6 +50,55 @@ internal sealed class GroundTruthEvidence
     public string Relevance { get; set; } = "";
 }
 
+/// <summary>
+/// One reasoning option's answer key: which pick, at which checkpoint, is the
+/// defensible justification. Deliberately id + isCorrect only, never the option text
+/// - this file is an answer key, not a content mirror, same boundary GroundTruthEvidence
+/// already draws (relevance is exported, description is not).
+/// </summary>
+internal sealed class GroundTruthReasoningOption
+{
+    public string Id { get; set; } = "";
+    public bool IsCorrect { get; set; }
+}
+
+/// <summary>
+/// One HypothesisCheckpoint's answer key. Only checkpoints that actually have a
+/// reasoning step are present here - see ScenarioGroundTruthExporter.ReadHypothesisCheckpoints,
+/// which skips HYP-01-shaped checkpoints (requiresReasoning false) rather than writing
+/// an empty entry for them. A checkpoint id absent from this list has no answer key to
+/// score against, not an empty one.
+/// </summary>
+internal sealed class GroundTruthHypothesisCheckpoint
+{
+    public string Id { get; set; } = "";
+    public List<GroundTruthReasoningOption> ReasoningOptions { get; set; } = new();
+}
+
+/// <summary>
+/// One report line's answer key: id + isAccurate only, never text - same boundary as
+/// GroundTruthReasoningOption above.
+/// </summary>
+internal sealed class GroundTruthReportLineOption
+{
+    public string Id { get; set; } = "";
+    public bool IsAccurate { get; set; }
+}
+
+/// <summary>
+/// One evidence item's report-line answer key. Only items with authored
+/// reportLineOptions are present here - see
+/// ScenarioGroundTruthExporter.BuildJson, which skips an item with none rather than
+/// writing an empty entry for it (that item's RecorderTool falls back to the plain
+/// instant log and never produces a ReportLinesSelected event at all, so there is
+/// genuinely nothing to score for it).
+/// </summary>
+internal sealed class GroundTruthEvidenceReportLines
+{
+    public string EvidenceId { get; set; } = "";
+    public List<GroundTruthReportLineOption> ReportLineOptions { get; set; } = new();
+}
+
 internal sealed class GroundTruth
 {
     public string ScenarioId { get; set; } = "";
@@ -69,6 +118,25 @@ internal sealed class GroundTruth
     public List<string>? LifecycleSequence { get; set; }
 
     public List<GroundTruthEvidence> Evidence { get; set; } = new();
+
+    /// <summary>
+    /// Null when reading an export generated before this field existed, or when the
+    /// exported scenario has no checkpoints with a reasoning step - both are legitimate
+    /// "no answer key available" states, not errors, unlike LifecycleSequence's absence
+    /// above. Consumed by Score() into ReasoningAccuracy, reading HypothesisSubmitted
+    /// events' reasoningOptionId payload key.
+    /// </summary>
+    public List<GroundTruthHypothesisCheckpoint>? HypothesisCheckpoints { get; set; }
+
+    /// <summary>
+    /// Null when reading an export generated before this field existed, or when no
+    /// exported item has authored reportLineOptions - same "no answer key" states as
+    /// HypothesisCheckpoints above. Consumed by Score() into DocumentationAccuracy,
+    /// reading ReportLinesSelected events' lineIds payload key (see
+    /// RecorderTool.HandleReportConfirmed - one event per item, a comma-joined list of
+    /// every selected line id, not one event per line).
+    /// </summary>
+    public List<GroundTruthEvidenceReportLines>? EvidenceReportLines { get; set; }
 }
 
 // --- Output shape -----------------------------------------------------------------
@@ -82,6 +150,27 @@ internal sealed class ScoreReport
     public double RelevantRecall { get; set; }
     public double Precision { get; set; }
     public double DistractorFallRate { get; set; }
+
+    /// <summary>
+    /// Correct reasoning-option picks / total reasoning-required checkpoints answered.
+    /// A checkpoint with no reasoning step (HYP-01: requiresReasoning false) never
+    /// produces a reasoningOptionId in its HypothesisSubmitted payload and is therefore
+    /// never counted in either half of this ratio - see Score(). Distinct from
+    /// ReasoningUnclassified below: this ratio only ever reflects checkpoints the
+    /// ground truth could actually classify as right or wrong.
+    /// </summary>
+    public double ReasoningAccuracy { get; set; }
+
+    /// <summary>
+    /// True-positive selected report lines / total selected report lines across the
+    /// whole session. Every ReportLinesSelected event in the log contributes (an item
+    /// can only log once - RecorderTool.TryOpenReport gates on CanTransition(...,
+    /// Logged), which refuses a second attempt - so this is "every event," not "every
+    /// event except stale ones," but stated as event-history-driven rather than a
+    /// final-state read for the same reason Precision is: the raw log, not a snapshot,
+    /// is this scorer's source of truth throughout.
+    /// </summary>
+    public double DocumentationAccuracy { get; set; }
 
     public int NonEvidenceMarkCount { get; set; }
     public int ReclaimCount { get; set; }
@@ -105,6 +194,31 @@ internal sealed class ScoreReport
     /// fix, not a score to interpret.
     /// </summary>
     public int UnclassifiedMarks { get; set; }
+
+    public int ReasoningCorrect { get; set; }
+    public int ReasoningTotal { get; set; }
+
+    /// <summary>
+    /// HypothesisSubmitted events that named a real reasoningOptionId but whose
+    /// checkpoint id or option id isn't in groundTruth.HypothesisCheckpoints. Same
+    /// "excluded, not guessed at" treatment as UnclassifiedMarks - non-zero means the
+    /// session log and the ground truth disagree about what checkpoints/options exist,
+    /// which is a data problem (stale export, or a reworded id that was never treated
+    /// as permanent - see ReasoningOption's own comment), not a score to interpret.
+    /// </summary>
+    public int ReasoningUnclassified { get; set; }
+
+    public int DocumentationTruePositives { get; set; }
+    public int DocumentationFalsePositives { get; set; }
+
+    /// <summary>
+    /// Selected report-line ids whose evidenceId or line id isn't in
+    /// groundTruth.EvidenceReportLines. Same "excluded, not guessed at" treatment as
+    /// UnclassifiedMarks/ReasoningUnclassified - non-zero means the session log and the
+    /// ground truth disagree about what lines exist for that item, a data problem to
+    /// fix (stale export, or a reworded line id), not a score to interpret.
+    /// </summary>
+    public int DocumentationUnclassified { get; set; }
 }
 
 internal static class Program
@@ -122,7 +236,16 @@ internal static class Program
     {
         WriteIndented = true,
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-        DefaultIgnoreCondition = JsonIgnoreCondition.Never
+        DefaultIgnoreCondition = JsonIgnoreCondition.Never,
+        // Ratio() deliberately returns NaN for a zero denominator rather than 0.0 (see
+        // its own comment) - a session with no evidence-marking events at all (e.g. one
+        // that only exercises hypothesis checkpoints) hits this on Precision and would
+        // otherwise crash JsonSerializer.Serialize outright, before PrintSummary's
+        // already-NaN-safe console output ever runs. Pre-existing gap, not something
+        // this pass introduced - written as "NaN" in the JSON, matching Pct()'s "n/a
+        // (no items)" console rendering in spirit: an honest missing-data marker, not a
+        // guessed 0.0.
+        NumberHandling = JsonNumberHandling.AllowNamedFloatingPointLiterals
     };
 
     private static int Rank(IReadOnlyList<string> sequence, string? status)
@@ -241,8 +364,46 @@ internal static class Program
         var finalStatus = new Dictionary<string, string>(StringComparer.Ordinal);
         var everMarked = new HashSet<string>(StringComparer.Ordinal);
 
+        // checkpoint id -> option id -> isCorrect. Built once, outside the event loop,
+        // from whatever HypothesisCheckpoints the ground truth actually carries - null
+        // (pre-checkpoints export) and an empty scenario (no reasoning-bearing
+        // checkpoints) both degrade to an empty map here, which correctly makes every
+        // HypothesisSubmitted event unclassifiable rather than throwing.
+        var reasoningCorrectByCheckpoint = new Dictionary<string, Dictionary<string, bool>>(StringComparer.Ordinal);
+        if (groundTruth.HypothesisCheckpoints != null)
+        {
+            foreach (var checkpoint in groundTruth.HypothesisCheckpoints)
+            {
+                var byOption = new Dictionary<string, bool>(StringComparer.Ordinal);
+                foreach (var option in checkpoint.ReasoningOptions)
+                {
+                    byOption[option.Id] = option.IsCorrect;
+                }
+                reasoningCorrectByCheckpoint[checkpoint.Id] = byOption;
+            }
+        }
+
+        // evidenceId -> line id -> isAccurate. Same degrade-to-empty-map treatment as
+        // reasoningCorrectByCheckpoint above for a pre-report-lines export or a
+        // scenario with no authored lines at all.
+        var accurateByEvidence = new Dictionary<string, Dictionary<string, bool>>(StringComparer.Ordinal);
+        if (groundTruth.EvidenceReportLines != null)
+        {
+            foreach (var item in groundTruth.EvidenceReportLines)
+            {
+                var byLine = new Dictionary<string, bool>(StringComparer.Ordinal);
+                foreach (var option in item.ReportLineOptions)
+                {
+                    byLine[option.Id] = option.IsAccurate;
+                }
+                accurateByEvidence[item.EvidenceId] = byLine;
+            }
+        }
+
         int truePositiveMarks = 0, falsePositiveMarks = 0, unclassifiedMarks = 0;
         int nonEvidenceMarkCount = 0, reclaimCount = 0, reclaimBlockedCount = 0;
+        int reasoningCorrect = 0, reasoningTotal = 0, reasoningUnclassified = 0;
+        int documentationTruePositives = 0, documentationFalsePositives = 0, documentationUnclassified = 0;
 
         foreach (var ev in events)
         {
@@ -299,6 +460,67 @@ internal static class Program
                 case "MarkerReclaimBlocked":
                     reclaimBlockedCount++;
                     break;
+
+                case "HypothesisSubmitted":
+                {
+                    var checkpointId = ev.TargetId;
+                    var reasoningOptionId = ev.PayloadValue("reasoningOptionId");
+
+                    // No reasoningOptionId means this checkpoint had no reasoning step
+                    // (HYP-01: requiresReasoning false - HypothesisCheckpointUI never
+                    // enters the reasoning stage, so LogSubmission logs it empty). Not
+                    // a reasoning-required checkpoint the player skipped; it never asked
+                    // one. Excluded from both halves of the ratio, not just the numerator.
+                    if (string.IsNullOrEmpty(checkpointId) || string.IsNullOrEmpty(reasoningOptionId))
+                    {
+                        break;
+                    }
+
+                    if (reasoningCorrectByCheckpoint.TryGetValue(checkpointId, out var options)
+                        && options.TryGetValue(reasoningOptionId, out var isCorrect))
+                    {
+                        reasoningTotal++;
+                        if (isCorrect) reasoningCorrect++;
+                    }
+                    else
+                    {
+                        reasoningUnclassified++;
+                    }
+                    break;
+                }
+
+                case "ReportLinesSelected":
+                {
+                    var evidenceId = ev.TargetId;
+                    var lineIdsRaw = ev.PayloadValue("lineIds");
+
+                    // One event per ITEM (RecorderTool.HandleReportConfirmed fires once
+                    // per Confirm(), not once per line), so lineIds is a comma-joined
+                    // batch - see the class-level comment on GroundTruth.EvidenceReportLines.
+                    // An empty payload (0 lines, shouldn't happen given
+                    // minimumLinesRequired >= 1, but not assumed) produces no entries to
+                    // score rather than one spurious unclassified one.
+                    if (string.IsNullOrEmpty(evidenceId) || string.IsNullOrEmpty(lineIdsRaw))
+                    {
+                        break;
+                    }
+
+                    accurateByEvidence.TryGetValue(evidenceId, out var lineAccuracy);
+
+                    foreach (var lineId in lineIdsRaw.Split(',', StringSplitOptions.RemoveEmptyEntries))
+                    {
+                        if (lineAccuracy != null && lineAccuracy.TryGetValue(lineId, out var isAccurate))
+                        {
+                            if (isAccurate) documentationTruePositives++;
+                            else documentationFalsePositives++;
+                        }
+                        else
+                        {
+                            documentationUnclassified++;
+                        }
+                    }
+                    break;
+                }
             }
         }
 
@@ -333,6 +555,7 @@ internal static class Program
         }
 
         int precisionDenominator = truePositiveMarks + falsePositiveMarks;
+        int documentationDenominator = documentationTruePositives + documentationFalsePositives;
 
         return new ScoreReport
         {
@@ -343,6 +566,8 @@ internal static class Program
             RelevantRecall = Ratio(relevantRecalled, relevantTotal),
             Precision = Ratio(truePositiveMarks, precisionDenominator),
             DistractorFallRate = Ratio(distractorEverMarked, distractorTotal),
+            ReasoningAccuracy = Ratio(reasoningCorrect, reasoningTotal),
+            DocumentationAccuracy = Ratio(documentationTruePositives, documentationDenominator),
 
             NonEvidenceMarkCount = nonEvidenceMarkCount,
             ReclaimCount = reclaimCount,
@@ -356,7 +581,15 @@ internal static class Program
             DistractorEverMarked = distractorEverMarked,
             TruePositiveMarks = truePositiveMarks,
             FalsePositiveMarks = falsePositiveMarks,
-            UnclassifiedMarks = unclassifiedMarks
+            UnclassifiedMarks = unclassifiedMarks,
+
+            ReasoningCorrect = reasoningCorrect,
+            ReasoningTotal = reasoningTotal,
+            ReasoningUnclassified = reasoningUnclassified,
+
+            DocumentationTruePositives = documentationTruePositives,
+            DocumentationFalsePositives = documentationFalsePositives,
+            DocumentationUnclassified = documentationUnclassified
         };
     }
 
@@ -379,6 +612,8 @@ internal static class Program
         Console.WriteLine($"  relevant recall      {Pct(r.RelevantRecall),-16} ({r.RelevantRecalled}/{r.RelevantTotal})");
         Console.WriteLine($"  precision            {Pct(r.Precision),-16} ({r.TruePositiveMarks} TP / {r.TruePositiveMarks + r.FalsePositiveMarks} marking attempts)");
         Console.WriteLine($"  distractor fall-rate {Pct(r.DistractorFallRate),-16} ({r.DistractorEverMarked}/{r.DistractorTotal} ever marked)");
+        Console.WriteLine($"  reasoning accuracy   {Pct(r.ReasoningAccuracy),-16} ({r.ReasoningCorrect}/{r.ReasoningTotal} reasoning-required checkpoints)");
+        Console.WriteLine($"  documentation accuracy {Pct(r.DocumentationAccuracy),-14} ({r.DocumentationTruePositives} TP / {r.DocumentationTruePositives + r.DocumentationFalsePositives} report lines selected)");
         Console.WriteLine();
         Console.WriteLine($"  non-evidence marks   {r.NonEvidenceMarkCount}");
         Console.WriteLine($"  reclaims             {r.ReclaimCount} ({r.ReclaimBlockedCount} blocked)   [reported, not scored]");
@@ -388,6 +623,20 @@ internal static class Program
             Console.WriteLine();
             Console.WriteLine($"  WARNING: {r.UnclassifiedMarks} marking event(s) referenced ids absent from the ground truth.");
             Console.WriteLine("           Excluded from precision. Regenerate the ground-truth export for this scenario.");
+        }
+
+        if (r.ReasoningUnclassified > 0)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"  WARNING: {r.ReasoningUnclassified} HypothesisSubmitted event(s) referenced a checkpoint/option id absent from the ground truth.");
+            Console.WriteLine("           Excluded from reasoning accuracy. Regenerate the ground-truth export for this scenario.");
+        }
+
+        if (r.DocumentationUnclassified > 0)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"  WARNING: {r.DocumentationUnclassified} selected report line(s) referenced an evidenceId/line id absent from the ground truth.");
+            Console.WriteLine("           Excluded from documentation accuracy. Regenerate the ground-truth export for this scenario.");
         }
     }
 }

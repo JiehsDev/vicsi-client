@@ -1,0 +1,41 @@
+{
+  "checks": {
+    "only_display_data_changed": true,
+    "EvidenceDisplayNames_1.json_parity": true,
+    "QuestionDisplayNames_1.json_parity": true,
+    "ProcedureTimeline_1.json_parity": true,
+    "authoritative_weights_60_25_15": true,
+    "actual_current_question_order": true,
+    "build_scene_local_references_resolve": true,
+    "build_scene_references_resolve_in_editor": true
+  },
+  "serializedFilesPreserved": 147,
+  "changedSerializedFiles": [
+    "Assets/Resources/EvidenceDisplayNames_1.json"
+  ],
+  "weights": {
+    "checkpointWeight": 60,
+    "relationshipWeight": 25,
+    "conclusionWeight": 15
+  },
+  "questionOrder": [
+    "RC-01-PETER",
+    "RC-02-SCENE",
+    "RC-03-FINGERPRINT",
+    "RC-04-KNIFE-WOUND",
+    "RC-05-TIMELINE",
+    "RC-06-BLOODSTAIN"
+  ],
+  "scenes": [
+    {
+      "scene": "Assets/_Project/Scenes/Main.unity",
+      "assetGuidCount": 86,
+      "missingLocalFileIds": []
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+      "assetGuidCount": 417,
+      "missingLocalFileIds": []
+    }
+  ]
+}

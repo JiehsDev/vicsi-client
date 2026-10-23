@@ -1,0 +1,64 @@
+=== ReasoningCheckpointTest ===
+PASS: Bootstrap uses existing choice UI and six authored checkpoints
+PASS: Authored IDs, categories, response IDs and weights validate
+PASS: RC-01-PETER has exact authored A-D stable IDs/weights
+PASS: RC-02-SCENE has exact authored A-D stable IDs/weights
+PASS: RC-03-FINGERPRINT has exact authored A-D stable IDs/weights
+PASS: RC-04-KNIFE-WOUND has exact authored A-D stable IDs/weights
+PASS: RC-05-TIMELINE has exact authored A-D stable IDs/weights
+PASS: RC-06-BLOODSTAIN has exact authored A-D stable IDs/weights
+PASS: Peter checkpoint not eligible before Form 1
+PASS: All later checkpoints initially ineligible
+PASS: Fingerprint training held even before identification
+PASS: Actual training queue withholds fingerprint lesson without starving unrelated marker lesson
+PASS: Potentially revealing fingerprint narrative is withheld from UI/history
+PASS: Form 1 makes Peter checkpoint eligible
+PASS: Scene interpretation still waits for observations
+PASS: Eligible checkpoint queues behind existing modal
+PASS: Active dialogue prevents checkpoint overlap
+PASS: Cumulative slow repositioning also postpones the question
+PASS: Peter prompt appears once after dialogue clears
+PASS: Opening/highlight alone does not submit
+PASS: Player content has no weights, points or correctness feedback
+PASS: First A only selects and exposes confirmation
+PASS: Explicit confirmation records the final selected A response once
+PASS: Submitted response cannot be replaced with higher-weight answer
+PASS: Same-session reopening cannot replay answered checkpoint
+PASS: Unknown response ID cannot create a record
+PASS: Scene checkpoint requires blood observation as well as victim, knife and survey
+PASS: Actual IOC observation IDs unlock scene checkpoint before forensic findings
+PASS: Scene interpretation records independently of HYP-01
+PASS: Snapshot leaves EvidenceStatus, board relationships, score and conclusion unchanged
+PASS: Responses/options do not enter Dialogue History or Witness Accounts
+PASS: SOCO request/turnover blocks presentation
+PASS: Paul fingerprint checkpoint requires the actual confirmed identity finding
+PASS: Integrated HYP-02 also queues behind a modal without releasing lesson
+PASS: Held/virtually equipped tool defers eligible checkpoint
+PASS: Fingerprint appears as HYP-02's single contextual first question
+PASS: One confirmed fingerprint answer records the snapshot and closes the panel
+PASS: No duplicate legacy justification question appears
+PASS: Fingerprint training releases only after response is recorded
+PASS: HYP-02 completion is emitted exactly once for the single explicit response
+PASS: Completion links the contextual response without inventing a second answer
+PASS: Reevaluation cannot reopen the answered fingerprint question
+PASS: Withheld explanation now reaches existing dialogue channel/history
+PASS: Held Phase 2 fingerprint lesson is actually presented after submission
+PASS: Fingerprint teaching remains once per session after releasing the hold
+PASS: Knife/wound checkpoint requires authored consistency finding
+PASS: Catalog presence alone cannot unlock Vendor timeline checkpoint
+PASS: Physical Vendor interaction starts answer before discovery/eligibility
+PASS: Completed physical Vendor statement unlocks timeline checkpoint
+PASS: Strong timeline response does not create deduction-board relationship
+PASS: Collecting blood alone cannot unlock reconstruction checkpoint
+PASS: Actual reconstruction report/finding unlocks bloodstain checkpoint
+PASS: Chronology retains early assumption and later stronger reasoning
+PASS: Eligibility is durably logged once per checkpoint, including its possible weight
+PASS: JSONL round-trip preserves six IDs, categories, weights, maxima and timestamps
+PASS: Unchanged payload generic orderedEvents can carry separate response records
+PASS: HYP-01 still asks its unchanged broad working-theory question
+PASS: Existing HYP-03 fires at its authored three-Processed threshold
+PASS: HYP-03 still submits original justification without changing checkpoint stream or conclusion
+PASS: Fresh scene/session clears answers, chronology, eligibility and weights
+PASS: Fresh session holds fingerprint teaching again
+PASS: New session can trigger Peter snapshot again
+=== PASS: 62 focused checks, 0 failures ===

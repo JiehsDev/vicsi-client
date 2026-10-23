@@ -1,0 +1,11 @@
+=== EarlyCustodyPassTest ===
+PASS: Physical-completion preset is ready
+PASS: Conclusion feedback is still pending
+PASS: All physical evidence is ready independently of deduction
+PASS: Player can open custody review before conclusion feedback
+PASS: Explicit confirmation transfers all six packaged items
+PASS: Box custody still satisfies physical completion
+PASS: Physical transfer does not advance the deduction or closeout phase
+PASS: The 60/25/15 assessment values are unchanged by custody
+PASS: Custody waypoint retires after transfer
+=== PASS ===

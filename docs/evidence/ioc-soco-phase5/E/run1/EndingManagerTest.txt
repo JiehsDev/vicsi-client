@@ -1,0 +1,11 @@
+=== EndingManagerTest ===
+  PASS: With nothing else satisfied, resolution falls back to the isFallback ending
+  PASS: requiredConclusionId match wins over the fallback when its own priority is higher
+  PASS: requiredConclusionId that does NOT match excludes that ending, falling back
+  PASS: Highest satisfied priority wins among multiple eligible endings (got ending-high-priority)
+  PASS: A higher-priority conclusion-gated match still wins over a satisfied-but-lower-priority ending
+  PASS: TrySubmitConclusion with no EndingSet assigned does not throw
+  PASS: Submit Conclusion blocked by an unsatisfied submissionRequirement does not show the completion screen
+  FAIL: SelectConclusionForTest succeeds while the picker is showing
+  FAIL: Full Submit Conclusion flow (gate -> picker -> resolve -> ShowEnding) shows the completion screen
+=== FAIL: 2 failure(s) ===

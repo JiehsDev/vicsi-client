@@ -1,0 +1,53 @@
+=== SamplePreparationTest ===
+PASS: Drying action UI is hidden before blood collection
+PASS: One separate protected cabinet exists
+PASS: Cabinet and its standing approach are outside the controlled footprint
+PASS: Empty cabinet grants no progress or evidence
+PASS: Sampling retains the knife source
+PASS: A loose swab cannot start cabinet drying
+PASS: Contained carrier needs drying
+PASS: Trigger cannot seal a wet sample
+PASS: B cannot store a wet sample
+PASS: Preparation waypoint takes priority before glove changes
+PASS: Across-house preparation is refused
+PASS: Player capsule reaches preparation route point (15.55, 1.20, 11.90) actual=(15.55, 1.20, 11.90)
+PASS: Player capsule reaches preparation route point (15.55, 1.20, 10.80) actual=(15.55, 1.20, 10.80)
+PASS: Player capsule reaches preparation route point (15.55, 1.20, 7.30) actual=(15.55, 1.20, 7.30)
+PASS: Player capsule reaches preparation route point (16.70, 1.20, 7.30) actual=(16.70, 1.20, 7.30)
+PASS: Player capsule reaches preparation route point (16.90, 1.20, 5.20) actual=(16.90, 1.20, 5.20)
+PASS: Player capsule reaches preparation route point (16.90, 0.03, 2.70) actual=(16.90, 0.01, 2.70)
+PASS: Player capsule reaches preparation route point (16.90, 0.03, 1.95) actual=(16.90, 0.00, 1.95)
+PASS: Player capsule reaches preparation route point (16.90, 0.03, 0.75) actual=(16.90, 0.00, 0.75)
+PASS: Player capsule reaches preparation route point (19.75, 0.03, 0.75) actual=(19.75, 0.01, 0.75)
+PASS: Exterior settled cabinet is available
+PASS: Actual A parks the same carrier at the labelled rack
+PASS: Drying does not seal or store evidence
+PASS: Circular fill advances proportionally
+PASS: Circular fill renders visible cyan pixels in the actual station view
+PASS: Drying shows the exposed swab inside the protective cabinet
+PASS: Sign identifies blood evidence drying and its source using casework wording
+PASS: Drying instructions use casework wording throughout
+PASS: Spoken guidance pauses drying while its own timer can run
+PASS: Spoken guidance finishes and drying resumes without a manual reset
+PASS: Modal pauses progress and actions without losing source
+PASS: Walking away pauses and preserves the parked carrier
+PASS: No storage or fresh supplies during preparation
+PASS: Fill reaches one and remains dry but unpackaged
+PASS: Holding the initial A does not auto-confirm packaging
+PASS: Disabling cabinet restores carrier and releases its UI ownership
+PASS: Distinct A confirms source and retrieves paper package
+PASS: Packaging grants no seal, storage, glove or fresh-swab credit
+PASS: Repeated preparation cannot duplicate or relabel the sample
+PASS: Actual trigger seals the prepared held package despite used gloves
+PASS: Early B resumes normal sealing and storage after preparation
+PASS: Completed preparation hides drying action UI
+PASS: Used gloves prevent re-equipping the stored package
+PASS: Stored package can be re-equipped with its wrapper and source
+PASS: Next sample remains unmodified
+PASS: One source produced exactly one set of preparation events
+PASS: Second source gets its own fresh sample
+PASS: Second sample starts with no inherited drying or packaging
+PASS: Second source uses the same protected preparation path
+PASS: Independent packages retain original identities and custody
+PASS: Scene reload clears progress, pending source, package and cabinet ownership
+=== PASS ===

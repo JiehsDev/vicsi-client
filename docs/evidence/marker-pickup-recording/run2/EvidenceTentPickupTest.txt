@@ -1,0 +1,23 @@
+=== EvidenceTentPickupTest ===
+  PASS: scene photography route completed (markers need it)
+  PASS: test floor spot is outside every evidence item's tent radius
+  PASS: dispenser starts at number 1 [1]
+  PASS: tent placed on bare floor (pickup attached, not on evidence)
+  PASS: number 1 now in use [next=2]
+  PASS: tent placed on the bottle marks it [Marked]
+  PASS: Unused tent is pickable immediately; successful marker stays until recording
+  PASS: Nearest locked marker does not block a nearby unused marker
+  PASS: Only unused marker shows the actual pickup hint before recording
+  PASS: Pickup hint defers to UI ownership
+  PASS: floor tent picked up: gone, number 1 free again [next=1]
+  PASS: Successful marker cannot be reclaimed at Marked and its record remains intact
+  PASS: bottle re-marked and final-photographed [PhotographedFinal]
+  PASS: documented tent refused: stays in place, status unchanged, MarkerReclaimBlocked logged
+  PASS: all 6 numbers in use, dispenser empty [junk placed=5, next=0]
+  PASS: picking one back up makes a number available again (no soft-lock) [next=6]
+  PASS: Required on-scene fingerprint processing completes before recording
+  PASS: Fingerprint processing alone does not unlock the marker
+  PASS: Successful marker becomes pickable after recording without collection
+  PASS: Recorded evidence marker now shows its pickup hint
+  PASS: Cleanup preserves recorded status and marker number and logs once
+=== PASS, 0 failures ===

@@ -1,0 +1,21 @@
+{
+  "changedExistingFiles": [
+    "Assets/_Project/Editor/Phase5PlayModeBatchRunner.cs",
+    "Assets/_Project/Scripts/SceneTurnover/NPCPresentation.cs"
+  ],
+  "unchangedExistingFiles": 1341,
+  "npcChanges": "Read-only authored-anchor/controller accessors and automatic guide attachment for FR/IOC only",
+  "originalNpcPoseAndVisibilityMethodsUnchanged": true,
+  "firstResponderWorkflowAndAssessmentLogicUnchanged": true,
+  "allScenesAndNpcEvidenceMarkerTransformsUnchanged": true,
+  "existingIocAssessmentAndPhotographyGuidesUnchanged": true,
+  "toolAndMenuWheelsUnchanged": true,
+  "scoringUploadsAndDataUnchanged": true,
+  "editorRunnerOnlyChange": "Keep NPCApproachGuideTest at the original initial handover phase",
+  "acceptedSourceHashes": {
+    "Assets/_Project/Editor/Phase5PlayModeBatchRunner.cs": "28045736d9ee608f01adec633ecb3db505666357ba9ebaa810ae91be2f1b4b86",
+    "Assets/_Project/Scripts/SceneTurnover/NPCPresentation.cs": "dd9436b481fbd584af34204a7a17ef2eccfdd952c97e3f374bbb2b019b885709",
+    "Assets/_Project/Scripts/SceneTurnover/NPCApproachGuide.cs": "ba2d302a8d1d0d74985f29f03d24bcfda1d5b74e96d71605825b11ba48512391",
+    "Assets/_Project/Scripts/Testing/NPCApproachGuideTest.cs": "d76716ed847c6469e57ae52d4787e1bfcb257085e71d3e5ca75d4a4de02126f6"
+  }
+}

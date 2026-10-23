@@ -1,0 +1,12 @@
+playing=False paused=False frame=295 compiling=False compilationFailed=False
+hmd=False manager=null
+scene=Assets/_Project/Scenes/Main.unity dirty=False
+camera=RightEyeAnchor enabled=False active=True pos=(-1.8400, 1.4700, 8.6400) rot=(0.00, 179.61, 0.00) target= depth=0 mask=-1
+camera=CenterEyeAnchor enabled=True active=True pos=(-1.8400, 1.4700, 8.6400) rot=(0.00, 179.61, 0.00) target= depth=0 mask=-1
+camera=LeftEyeAnchor enabled=False active=True pos=(-1.8400, 1.4700, 8.6400) rot=(0.00, 179.61, 0.00) target= depth=0 mask=-1
+previewYaw=0
+main=CenterEyeAnchor
+canvas=Canvas enabled=True active=True pos=(-1.8297, 1.4700, 7.1400) rot=(0.00, 179.61, 0.00) scale=(0.0010, 0.0010, 0.0010) mode=WorldSpace
+viewport=(0.5002, 0.4996, 1.5000) distance=1.5
+object=TrackingSpace active=True pos=(-1.8400, 1.4700, 8.6400)
+object=MainMenuPanel active=True pos=(-1.8297, 1.4700, 7.1400)

@@ -1,0 +1,211 @@
+--- 
++++ 
+@@ -8204,8 +8204,8 @@
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 162933219}
+   serializedVersion: 2
+-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+-  m_LocalPosition: {x: 19.417, y: 1.95, z: 13.4}
++  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
++  m_LocalPosition: {x: 15.06683, y: 1.95, z: 12.644}
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_ConstrainProportionsScale: 0
+   m_Children:
+@@ -8225,10 +8225,10 @@
+   m_Name: 
+   m_EditorClassIdentifier: Assembly-CSharp::SceneReferencePoint
+   referenceId: REF-SPATTER-2
+-  displayName: East Kitchen Wall
++  displayName: West Kitchen Wall
+   shape: 1
+   zone: {fileID: 931549817}
+-  description: Fixed east kitchen wall in the rear ground-floor kitchen.
++  description: Fixed west kitchen wall in the rear ground-floor kitchen.
+   anchor: {fileID: 0}
+   debugMarker: {fileID: 0}
+   showMarkerInBuilds: 0
+@@ -25724,8 +25724,8 @@
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 338761985}
+   serializedVersion: 2
+-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+-  m_LocalPosition: {x: 15.645, y: 1.8, z: 13.417}
++  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
++  m_LocalPosition: {x: 19.41683, y: 1.95, z: 13.8}
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_ConstrainProportionsScale: 0
+   m_Children:
+@@ -25745,10 +25745,10 @@
+   m_Name: 
+   m_EditorClassIdentifier: Assembly-CSharp::SceneReferencePoint
+   referenceId: REF-KNIFE-1
+-  displayName: West Cabinet Front
++  displayName: East Kitchen Wall
+   shape: 1
+   zone: {fileID: 1642790449}
+-  description: Fixed west cabinet front in the rear ground-floor kitchen.
++  description: Fixed east kitchen wall in the rear ground-floor kitchen.
+   anchor: {fileID: 0}
+   debugMarker: {fileID: 0}
+   showMarkerInBuilds: 0
+@@ -51845,7 +51845,7 @@
+   m_ProvidesContacts: 0
+   m_Enabled: 1
+   serializedVersion: 3
+-  m_Size: {x: 0.45, y: 0.6, z: 0.16}
++  m_Size: {x: 0.35, y: 0.6, z: 0.16}
+   m_Center: {x: 0, y: 0, z: 0}
+ --- !u!1 &817025017
+ GameObject:
+@@ -57917,7 +57917,7 @@
+   m_GameObject: {fileID: 931549815}
+   serializedVersion: 2
+   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+-  m_LocalPosition: {x: 0.000000014901161, y: 0, z: 0.1000004}
++  m_LocalPosition: {x: -0.000000014901161, y: 0, z: 0.1000004}
+   m_LocalScale: {x: 1, y: 1.1042656, z: 1}
+   m_ConstrainProportionsScale: 0
+   m_Children: []
+@@ -57954,7 +57954,7 @@
+   m_ProvidesContacts: 0
+   m_Enabled: 1
+   serializedVersion: 3
+-  m_Size: {x: 0.6, y: 0.6, z: 0.16}
++  m_Size: {x: 0.4, y: 0.6, z: 0.16}
+   m_Center: {x: 0, y: 0, z: 0}
+ --- !u!1 &932298130
+ GameObject:
+@@ -67122,7 +67122,7 @@
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+   m_AnchorMin: {x: 0.5, y: 0.5}
+   m_AnchorMax: {x: 0.5, y: 0.5}
+-  m_AnchoredPosition: {x: -270.03983, y: 204.07767}
++  m_AnchoredPosition: {x: 3.8408508, y: 268.49}
+   m_SizeDelta: {x: 1, y: 1}
+   m_Pivot: {x: 0.5, y: 0.5}
+ --- !u!1 &1114988831
+@@ -80819,7 +80819,7 @@
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+   m_AnchorMin: {x: 0.5, y: 0.5}
+   m_AnchorMax: {x: 0.5, y: 0.5}
+-  m_AnchoredPosition: {x: -31.177704, y: 94.544334}
++  m_AnchoredPosition: {x: -203.05547, y: 40.237007}
+   m_SizeDelta: {x: 10, y: 10}
+   m_Pivot: {x: 0.5, y: 0.5}
+ --- !u!114 &1323487729
+@@ -81621,8 +81621,8 @@
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 1339150891}
+   serializedVersion: 2
+-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+-  m_LocalPosition: {x: 16.25, y: 1.8, z: 14.071}
++  m_LocalRotation: {x: 0, y: 1, z: -0, w: 0}
++  m_LocalPosition: {x: 18.627, y: 1.95, z: 14.63201}
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_ConstrainProportionsScale: 0
+   m_Children:
+@@ -81642,10 +81642,10 @@
+   m_Name: 
+   m_EditorClassIdentifier: Assembly-CSharp::SceneReferencePoint
+   referenceId: REF-KNIFE-CAB
+-  displayName: Rear Cabinet Front
++  displayName: Rear Kitchen Wall
+   shape: 1
+   zone: {fileID: 1997538333}
+-  description: Fixed rear cabinet front in the rear ground-floor kitchen.
++  description: Fixed rear kitchen wall in the rear ground-floor kitchen.
+   anchor: {fileID: 0}
+   debugMarker: {fileID: 0}
+   showMarkerInBuilds: 0
+@@ -84825,7 +84825,7 @@
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+   m_AnchorMin: {x: 0.5, y: 0.5}
+   m_AnchorMax: {x: 0.5, y: 0.5}
+-  m_AnchoredPosition: {x: -338.537, y: 128.87053}
++  m_AnchoredPosition: {x: 94.52495, y: 67.90737}
+   m_SizeDelta: {x: 1, y: 1}
+   m_Pivot: {x: 0.5, y: 0.5}
+ --- !u!1 &1415084057
+@@ -86279,7 +86279,7 @@
+   m_Name: 
+   m_EditorClassIdentifier: Assembly-CSharp::MeasurementStateManager
+   requirementSet: {fileID: 11400000, guid: 1d47c6b7c7a21e44ea32965a7f21de00, type: 2}
+-  measurementLayoutId: new-house-v1
++  measurementLayoutId: new-house-v2
+   showMeasurementGizmos: 1
+ --- !u!114 &1422889342
+ MonoBehaviour:
+@@ -90139,7 +90139,7 @@
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+   m_AnchorMin: {x: 0.5, y: 0.5}
+   m_AnchorMax: {x: 0.5, y: 0.5}
+-  m_AnchoredPosition: {x: -270.03983, y: 128.87053}
++  m_AnchoredPosition: {x: 3.8408508, y: 67.90737}
+   m_SizeDelta: {x: 10, y: 10}
+   m_Pivot: {x: 0.5, y: 0.5}
+ --- !u!114 &1484906520
+@@ -102724,7 +102724,7 @@
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+   m_AnchorMin: {x: 0.5, y: 0.5}
+   m_AnchorMax: {x: 0.5, y: 0.5}
+-  m_AnchoredPosition: {x: 94.544464, y: 94.544334}
++  m_AnchoredPosition: {x: -404.91956, y: 40.237007}
+   m_SizeDelta: {x: 1, y: 1}
+   m_Pivot: {x: 0.5, y: 0.5}
+ --- !u!1 &1554180243
+@@ -108194,7 +108194,7 @@
+   m_GameObject: {fileID: 1642790447}
+   serializedVersion: 2
+   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+-  m_LocalPosition: {x: -0.000000014901161, y: 0, z: 0.1000004}
++  m_LocalPosition: {x: 0.000000014901161, y: 0, z: 0.1000004}
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_ConstrainProportionsScale: 0
+   m_Children: []
+@@ -108231,7 +108231,7 @@
+   m_ProvidesContacts: 0
+   m_Enabled: 1
+   serializedVersion: 3
+-  m_Size: {x: 0.7, y: 0.6, z: 0.16}
++  m_Size: {x: 0.4, y: 0.6, z: 0.16}
+   m_Center: {x: 0, y: 0, z: 0}
+ --- !u!1 &1642936230
+ GameObject:
+@@ -109259,7 +109259,7 @@
+   m_ProvidesContacts: 0
+   m_Enabled: 1
+   serializedVersion: 3
+-  m_Size: {x: 0.9, y: 0.6, z: 0.16}
++  m_Size: {x: 0.5, y: 0.6, z: 0.16}
+   m_Center: {x: 0, y: 0, z: 0}
+ --- !u!1 &1672314589
+ GameObject:
+@@ -115088,7 +115088,7 @@
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+   m_AnchorMin: {x: 0.5, y: 0.5}
+   m_AnchorMax: {x: 0.5, y: 0.5}
+-  m_AnchoredPosition: {x: -31.177704, y: 204.07767}
++  m_AnchoredPosition: {x: -203.05547, y: 204.9957}
+   m_SizeDelta: {x: 1, y: 1}
+   m_Pivot: {x: 0.5, y: 0.5}
+ --- !u!1 &1805976788
+@@ -120601,8 +120601,8 @@
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 1912661446}
+   serializedVersion: 2
+-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+-  m_LocalPosition: {x: 18.1, y: 1.8, z: 14.071}
++  m_LocalRotation: {x: 0, y: 1, z: -0, w: 0}
++  m_LocalPosition: {x: 16.825, y: 1.8000007, z: 14.078996}
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_ConstrainProportionsScale: 0
+   m_Children:
+@@ -124629,7 +124629,7 @@
+   m_ProvidesContacts: 0
+   m_Enabled: 1
+   serializedVersion: 3
+-  m_Size: {x: 0.6, y: 0.6, z: 0.16}
++  m_Size: {x: 0.4, y: 0.6, z: 0.16}
+   m_Center: {x: 0, y: 0, z: 0}
+ --- !u!1 &1998167282
+ GameObject:

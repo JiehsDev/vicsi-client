@@ -1,0 +1,44 @@
+=== FingerprintStorageTest ===
+  PASS: Fresh print hides the linked powder model
+  PASS: UV discovery shows only the latent mark
+  PASS: Fresh session has no lifted or stored print
+  PASS: Comparison action UI stays hidden without an eligible card
+  PASS: Premature lift is refused
+  PASS: Measured knife is sketched before powdering
+  PASS: Powder required before brushing
+  PASS: Powder and sustained brush reveal the print
+  PASS: Completed powdering shows the supplied textured model instead of the box
+  PASS: Further UV reveal cannot restore the gray box
+  PASS: Missing card model cannot consume the print
+  PASS: Failed lift preserves the powdered visual
+  PASS: Lift succeeds with existing wired card
+  PASS: Lift is distinct from collection and match
+  PASS: Card replaces tool in held-item coordinator
+  PASS: Derived card has source/type/visual and requires explicit storage
+  PASS: No duplicate roster evidence or knife custody change
+  PASS: Original marker removed and duplicate lift refused
+  PASS: Successful tape lift also removes the powdered model
+  PASS: RC-03 and vendor lead remain gated before storage
+  PASS: Held-card guidance appears before comparison
+  PASS: Actual B cannot store an unmatched fingerprint
+  PASS: Wrong reference cannot identify or store the card
+  PASS: Pending comparison blocks unrelated tools and source recording
+  PASS: Correct comparison identifies the held card before storage
+  PASS: Actual right B stores the matched fingerprint and frees the hand
+  PASS: Storage retains confirmed processing and identity
+  PASS: Matched storage releases the mandatory continuation gate
+  PASS: Completed comparison does not advertise another matching action
+  PASS: Stored sample preserves EVD-014 association
+  PASS: Session history logs one non-scored fingerprint sample with its source association
+  PASS: Knife remains available for recording and packaging
+  PASS: Lifting/storing does not change assessment score
+  PASS: Correct reference identity survives storage
+  PASS: Comparison makes RC-03 eligible without unlocking vendor
+  PASS: Confirming RC-03 unlocks vendor through existing condition
+  PASS: Locked checkpoint cannot repeat
+  PASS: Stored print can be re-equipped and stored again
+  PASS: Restart clears lifted flag, collection and sample inventory
+  PASS: Restart restores undusted marker and locked reasoning/vendor
+  PASS: Restart hides powder and restores latent UV presentation
+  PASS: Fresh UV reveal after restart displays the latent mark
+=== PASS ===

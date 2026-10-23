@@ -1,191 +1,111 @@
-// Assets/_Project/Scripts/Interaction/EvidenceTentPickup.cs
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-/// <summary>
-/// Sits on a tent prop after EvidenceTentTool places it in the world and
-/// registers itself with EvidenceTentPickupCoordinator while active. Every
-/// frame, whichever placed tent is nearest the player's head - out of all of
-/// them, not just this one - and within pickup range shows a single
-/// "[B] Pick Up Evidence Tent" prompt (via the reusable NotificationManager);
-/// every other tent, including others also technically in range, stays
-/// silent. Pressing the right controller's B button while that prompt is up
-/// reclaims that one tent: it disappears and frees its number back up on the
-/// dispenser it came from (the dispenser always offers the lowest unused
-/// number next), so the total number of tents in play never exceeds how many
-/// distinct tent models exist, but the player isn't permanently limited by
-/// early placements either. Standing between several tents, or a whole pile
-/// of them, only ever offers to pick up one at a time. The prompt (and the B
-/// press it advertises) also defers to PlayerUIGate, since a screen like the
-/// camera viewfinder, the utility menu, or the photo album already owning the
-/// player's attention should take priority over this hint.
-/// </summary>
+/// <summary>A tent that applied no mark is recoverable immediately. A successful item
+/// or trace marker stays until its evidence is recorded. Extra tents never inherit a link.</summary>
 public class EvidenceTentPickup : MonoBehaviour
 {
-    private const string PromptText = "[B] Pick Up Evidence Tent";
-
     private EvidenceTentTool owner;
+    private LetterTentTool letterOwner;
+    private string markerLetter;
     private float pickupRadius;
     private int tentIndex;
     private string markedEvidenceId;
     private InputAction pickupAction;
-    private bool promptShown;
+    private bool promptShown, marksTrace, reclaimed;
+    private static EvidenceTentPickup promptOwner;
 
-    /// <summary>pickupRadius squared, for the coordinator's cheap nearest-tent comparison.</summary>
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void ResetPromptOwner() => promptOwner = null;
     public float PickupRadiusSqr => pickupRadius * pickupRadius;
+    public bool MarksTrace => marksTrace;
+    public string MarkedEvidenceId => markedEvidenceId;
+    public int TentIndex => tentIndex;
+    public string MarkerLetter => markerLetter;
 
-    /// <param name="evidenceId">
-    /// The evidence item this tent was placed on, or null/empty if it was placed on
-    /// something that isn't evidence. Determines whether reclaiming it has any state
-    /// consequence - a tent on untagged geometry never advanced anything, so there is
-    /// nothing to revert and nothing to block.
-    /// </param>
-    public void Initialize(EvidenceTentTool owningTool, float radius, int index, string evidenceId)
+    /// <param name="evidenceId">Only the evidence whose marking transition this placement applied; null when no transition occurred.</param>
+    public void Initialize(EvidenceTentTool owningTool, float radius, int index, string evidenceId, bool isTraceMarker = false)
     {
-        owner = owningTool;
-        pickupRadius = radius;
-        tentIndex = index;
+        owner = owningTool; pickupRadius = radius; tentIndex = index;
         markedEvidenceId = evidenceId;
+        marksTrace = isTraceMarker && !string.IsNullOrEmpty(evidenceId);
     }
 
-    private void Awake()
+    public void InitializeLetter(LetterTentTool owningTool, float radius, string letter, string evidenceId)
     {
-        // Right controller's B button - deliberately not the left controller's
-        // X the camera viewfinder, utility menu, and tool wheel all already
-        // fight over. B is also PhotoAlbumUI's close button, so that screen
-        // (like every other exclusive UI here) registers with PlayerUIGate
-        // too - the prompt below already defers to it, so closing the album
-        // can never also pick up a tent underneath it.
-        pickupAction = new InputAction("EvidenceTentPickup_B", InputActionType.Button, "<XRController>{RightHand}/secondaryButton");
+        letterOwner = owningTool; pickupRadius = radius; tentIndex = -1;
+        markerLetter = letter; markedEvidenceId = evidenceId;
     }
 
-    private void OnEnable()
-    {
-        pickupAction.Enable();
-        EvidenceTentPickupCoordinator.Register(this);
-    }
+    private Dictionary<string,string> MarkerDetails() => new() {
+        { "tentNumber", string.IsNullOrEmpty(markerLetter) ? (tentIndex + 1).ToString() : string.Empty },
+        { "markerLetter", markerLetter ?? string.Empty }, { "wasTraceMarker", marksTrace.ToString() } };
 
-    private void OnDisable()
-    {
-        pickupAction.Disable();
-        EvidenceTentPickupCoordinator.Unregister(this);
-    }
-
-    private void OnDestroy()
-    {
-        pickupAction?.Dispose();
-
-        if (promptShown)
-        {
-            NotificationManager.HidePrompt();
-        }
-    }
+    private void Awake() => pickupAction = new InputAction("EvidenceTentPickup_B", InputActionType.Button, "<XRController>{RightHand}/secondaryButton");
+    private void OnEnable() { pickupAction.Enable(); EvidenceTentPickupCoordinator.Register(this); }
+    private void OnDisable() { pickupAction.Disable(); EvidenceTentPickupCoordinator.Unregister(this); SetPrompt(false); }
+    private void OnDestroy() { pickupAction?.Dispose(); SetPrompt(false); }
 
     private void Update()
     {
-        var povCamera = Camera.main;
-        if (povCamera == null)
+        var camera = Camera.main;
+        bool candidate = camera != null && EvidenceTentPickupCoordinator.FindNearestInRange(camera.transform.position) == this;
+        SetPrompt(candidate && !ProcedureInterlock.BlocksUnrelatedActions && !PlayerUIGate.IsBlocked && !ToolInputLock.HasUIOwners && !SceneTurnover.IsInvestigationBlocked && IsPickable());
+        if (promptShown && pickupAction.WasPressedThisFrame()) TryReclaim();
+    }
+
+    private void SetPrompt(bool show)
+    {
+        if (show)
         {
-            return;
+            if (promptOwner == this && promptShown) return;
+            if (promptOwner != null) promptOwner.promptShown = false;
+            promptOwner = this; promptShown = true;
+            NotificationManager.ShowPrompt(GameDialogue.Text("prompt-tent-pickup"));
         }
-
-        bool isNearestCandidate =
-            EvidenceTentPickupCoordinator.FindNearestInRange(povCamera.transform.position) == this;
-
-        bool shouldShowPrompt = isNearestCandidate && !PlayerUIGate.IsBlocked;
-        if (shouldShowPrompt != promptShown)
+        else
         {
-            promptShown = shouldShowPrompt;
-            if (promptShown)
-            {
-                NotificationManager.ShowPrompt(PromptText);
-            }
-            else
-            {
-                NotificationManager.HidePrompt();
-            }
-        }
-
-        if (promptShown && pickupAction.WasPressedThisFrame())
-        {
-            TryReclaim();
+            promptShown = false;
+            // An old candidate must not hide the newer candidate's hint.
+            if (promptOwner != this) return;
+            promptOwner = null; NotificationManager.HidePrompt();
         }
     }
 
-    /// <summary>
-    /// Reclaiming is status-dependent, not uniformly allowed or uniformly locked.
-    ///
-    /// While the item is still only Marked, pulling the tent is a legitimate
-    /// correction - the player looked closer and decided this isn't evidence - so the
-    /// status reverts to Found and the tent comes back. Once the item has been
-    /// Photographed or later, the marker is already in the documentation and the
-    /// reclaim is refused, matching the one-way gates used everywhere else here.
-    ///
-    /// SCORING DEPENDS ON THIS: the revert rewinds state only. The original
-    /// MarkTented / NonEvidenceMarked event is never deleted or rewritten, and a
-    /// MarkerReclaimed event is appended next to it, so the log still shows that the
-    /// player marked this item and then changed their mind. Scoring must therefore read
-    /// the full event history rather than a final-state snapshot - otherwise tenting
-    /// everything, seeing what reacts, and quietly walking back the wrong ones would
-    /// look identical to identifying correctly the first time. See
-    /// EvidenceStateManager.TryReclaimMarker.
-    /// </summary>
-    private void TryReclaim()
+    public bool IsPickable()
     {
-        // A tent on non-evidence never advanced any record, so there is nothing to
-        // revert and nothing to protect - let it come back freely. The original
-        // NonEvidenceMarked event already stands in the log regardless.
-        if (string.IsNullOrEmpty(markedEvidenceId) || EvidenceStateManager.Instance == null)
-        {
-            CompleteReclaim(null);
-            return;
-        }
-
-        var result = EvidenceStateManager.Instance.TryReclaimMarker(markedEvidenceId, ToolType.EvidenceMarker);
-
-        if (result == ReclaimResult.BlockedDocumented)
-        {
-            // Refused, but never silently - a blocked attempt is diagnostic in its own
-            // right, the same reasoning behind logging EvidenceTransitionBlocked.
-            NotificationManager.Notify("Already documented — the marker stays.");
-            SessionLogger.Instance?.LogEvent(
-                SessionEventType.MarkerReclaimBlocked,
-                markedEvidenceId,
-                new Dictionary<string, string>
-                {
-                    { "tentNumber", (tentIndex + 1).ToString() }
-                });
-            return;
-        }
-
-        CompleteReclaim(result == ReclaimResult.Reverted ? markedEvidenceId : null);
+        if (reclaimed) return false;
+        if (string.IsNullOrEmpty(markedEvidenceId)) return true;
+        var state = EvidenceStateManager.Instance;
+        return state != null && state.GetRecord(markedEvidenceId) != null
+            && state.IsAtOrPastStatus(markedEvidenceId, EvidenceStatus.Logged);
     }
 
-    /// <summary>Frees the tent number, logs the reclaim, and removes the prop.</summary>
-    private void CompleteReclaim(string revertedEvidenceId)
+    public void TryReclaim()
     {
-        SessionLogger.Instance?.LogEvent(
-            SessionEventType.MarkerReclaimed,
+        if (ProcedureInterlock.BlocksUnrelatedActions) return;
+        if (reclaimed) return;
+        if (!IsPickable())
+        {
+            GameDialogue.Say("tent-pickup-already-documented");
+            var details = MarkerDetails(); details["reason"] = "evidence recording required";
+            SessionLogger.Instance?.LogEvent(SessionEventType.MarkerReclaimBlocked, markedEvidenceId,
+                details);
+            return;
+        }
+        reclaimed = true;
+        var reclaimDetails = MarkerDetails();
+        reclaimDetails["wasEvidence"] = (!string.IsNullOrEmpty(markedEvidenceId)).ToString();
+        reclaimDetails["statusReverted"] = "False";
+        SessionLogger.Instance?.LogEvent(SessionEventType.MarkerReclaimed,
             string.IsNullOrEmpty(markedEvidenceId) ? "(non-evidence)" : markedEvidenceId,
-            new Dictionary<string, string>
-            {
-                { "tentNumber", (tentIndex + 1).ToString() },
-                { "wasEvidence", (!string.IsNullOrEmpty(markedEvidenceId)).ToString() },
-                { "statusReverted", (!string.IsNullOrEmpty(revertedEvidenceId)).ToString() }
-            });
-
-        // Only when nothing changed status. A genuine revert already raised
-        // OnEvidenceStatusChanged(Found), which FeedbackDirector acknowledges - firing
-        // here as well would double the cue on that path and on that path only.
-        if (string.IsNullOrEmpty(revertedEvidenceId))
-        {
-            InteractionFeedback.Confirm();
-        }
-
-        NotificationManager.HidePrompt();
-        promptShown = false;
+            reclaimDetails);
+        // Keep recorded status and marker/photo references intact: this is physical cleanup.
+        InteractionFeedback.Confirm(); SetPrompt(false);
         owner?.ReclaimSlot(tentIndex);
+        letterOwner?.ReclaimLetter(markerLetter);
+        gameObject.SetActive(false);
         Destroy(gameObject);
     }
 }

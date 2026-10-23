@@ -1,0 +1,245 @@
+{
+    "version":  1,
+    "targets":  [
+                    {
+                        "id":  "ioc-victim",
+                        "description":  "victim (BODY-A)"
+                    },
+                    {
+                        "id":  "ioc-possible-weapon",
+                        "description":  "possible weapon (EVD-014)"
+                    },
+                    {
+                        "id":  "ioc-bloodstain-area",
+                        "description":  "bloodstain area (EVD-015)"
+                    },
+                    {
+                        "id":  "ioc-drinking-context",
+                        "description":  "drinking context (EVD-018)"
+                    },
+                    {
+                        "id":  "ioc-main-scene-survey",
+                        "description":  "initial scene survey"
+                    },
+                    {
+                        "id":  "scene-stair-incident-area",
+                        "description":  "Kitchen and incident area"
+                    },
+                    {
+                        "id":  "scene-interior-right",
+                        "description":  "Table with liquor bottles"
+                    },
+                    {
+                        "id":  "scene-entrance-approach",
+                        "description":  "Entrance and approach"
+                    },
+                    {
+                        "id":  "scene-interior-from-entrance",
+                        "description":  "Interior overall from the entrance"
+                    },
+                    {
+                        "id":  "scene-interior-left",
+                        "description":  "Interior overall, left side"
+                    },
+                    {
+                        "id":  "scene-exterior-establishing",
+                        "description":  "Exterior establishing shot"
+                    },
+                    {
+                        "id":  "scene-body-in-scene",
+                        "description":  "Victim within the scene"
+                    }
+                ],
+    "events":  [
+                   {
+                       "id":  "SceneLogSigned",
+                       "description":  "Confirmed scene-entry check-in with First Responder"
+                   },
+                   {
+                       "id":  "PPEEquipped",
+                       "description":  "Equipped scene-entry gloves"
+                   },
+                   {
+                       "id":  "UsedGlovesDisposed",
+                       "description":  "Disposed of used sampling gloves"
+                   },
+                   {
+                       "id":  "FreshGlovesEquipped",
+                       "description":  "Equipped fresh sampling gloves"
+                   },
+                   {
+                       "id":  "FreshSwabLoaded",
+                       "description":  "Loaded a fresh swab"
+                   },
+                   {
+                       "id":  "PhotographicScaleCaptured",
+                       "description":  "Photographed {target} with photographic scale"
+                   },
+                   {
+                       "id":  "SampleDryingCompleted",
+                       "description":  "Completed simulated drying of blood sample from {target}"
+                   },
+                   {
+                       "id":  "SamplePackaged",
+                       "description":  "Packaged dried blood sample from {target} in paper"
+                   },
+                   {
+                       "id":  "FingerprintPracticeCompleted",
+                       "description":  "Completed optional fingerprint comparison practice for {target} (unscored)"
+                   },
+                   {
+                       "id":  "SceneTurnoverCompleted",
+                       "description":  "Completed First Responder turnover"
+                   },
+                   {
+                       "id":  "CSIForm1Received",
+                       "description":  "Received CSI Form 1"
+                   },
+                   {
+                       "id":  "IOCObservationRecorded",
+                       "description":  "Recorded IOC observation: {target}"
+                   },
+                   {
+                       "id":  "IOCAssessmentCompleted",
+                       "description":  "Completed IOC scene assessment"
+                   },
+                   {
+                       "id":  "SOCORequested",
+                       "description":  "Requested SOCO assistance"
+                   },
+                   {
+                       "id":  "CSIForm2Completed",
+                       "description":  "Completed CSI Form 2"
+                   },
+                   {
+                       "id":  "SOCOTurnoverCompleted",
+                       "description":  "Completed SOCO turnover"
+                   },
+                   {
+                       "id":  "ScenePhotoCompleted",
+                       "description":  "Completed scene photograph: {target}"
+                   },
+                   {
+                       "id":  "ScenePhotographyPhaseCompleted",
+                       "description":  "Completed {target} scene photography"
+                   },
+                   {
+                       "id":  "ScenePhotographyCompleted",
+                       "description":  "Completed scene photography"
+                   },
+                   {
+                       "id":  "EvidenceTraceMarked",
+                       "description":  "Placed trace marker {marker} on {target}"
+                   },
+                   {
+                       "id":  "MeasurementCompleted",
+                       "description":  "Measured {target} position"
+                   },
+                   {
+                       "id":  "EvidencePairMeasured",
+                       "description":  "Measured distance between {target}"
+                   },
+                   {
+                       "id":  "SketchSubmitted",
+                       "description":  "Completed crime scene sketch"
+                   },
+                   {
+                       "id":  "HypothesisSubmitted",
+                       "description":  "Completed investigation checkpoint {target}"
+                   },
+                   {
+                       "id":  "EvidenceFingerprintProcessed",
+                       "description":  "Processed {target} fingerprint"
+                   },
+                   {
+                       "id":  "EvidenceSwabbed",
+                       "description":  "Collected biological sample from {target}"
+                   },
+                   {
+                       "id":  "FingerprintIdentified",
+                       "description":  "Identified fingerprint on {target}"
+                   },
+                   {
+                       "id":  "EvidenceAddedToInventory",
+                       "description":  "Stored {target}"
+                   },
+                   {
+                       "id":  "EvidenceDeposited",
+                       "description":  "Transferred {target} to evidence custody"
+                   },
+                   {
+                       "id":  "CustodyPassCompleted",
+                       "description":  "Completed evidence custody transfer"
+                   },
+                   {
+                       "id":  "WitnessStatementDiscovered",
+                       "description":  "Completed vendor follow-up"
+                   },
+                   {
+                       "id":  "BodyDocumentationRecorded",
+                       "description":  "Completed {target} body documentation"
+                   },
+                   {
+                       "id":  "BodyPreparedForRemoval",
+                       "description":  "Prepared {target} for removal"
+                   },
+                   {
+                       "id":  "BodyRemoved",
+                       "description":  "Completed {target} removal"
+                   },
+                   {
+                       "id":  "EvidenceInventoryConfirmed",
+                       "description":  "Completed evidence inventory"
+                   },
+                   {
+                       "id":  "FinalSceneSurveyCompleted",
+                       "description":  "Completed final scene survey"
+                   },
+                   {
+                       "id":  "SceneReleaseConfirmed",
+                       "description":  "IOC report accepted; scene release authorized"
+                   },
+                   {
+                       "id":  "InvestigationCompleted",
+                       "description":  "Completed investigation and released crime scene"
+                   },
+                   {
+                       "id":  "ReportLinesSelected",
+                       "description":  "Recorded findings for {target}"
+                   }
+               ],
+    "statuses":  [
+                     {
+                         "id":  "PhotographedRaw",
+                         "description":  "Photographed {target} before marking"
+                     },
+                     {
+                         "id":  "ChalkMarked",
+                         "description":  "Completed chalk outline for {target}"
+                     },
+                     {
+                         "id":  "Marked",
+                         "description":  "Placed marker {marker} on {target}"
+                     },
+                     {
+                         "id":  "PhotographedFinal",
+                         "description":  "Photographed {target} with marker"
+                     },
+                     {
+                         "id":  "Logged",
+                         "description":  "Completed {target} evidence report"
+                     },
+                     {
+                         "id":  "Collected",
+                         "description":  "Collected {target}"
+                     },
+                     {
+                         "id":  "Sealed",
+                         "description":  "Sealed {target}"
+                     },
+                     {
+                         "id":  "Processed",
+                         "description":  "Completed {target} processing"
+                     }
+                 ]
+}

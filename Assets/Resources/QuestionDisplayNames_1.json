@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "current": [
+    "RC-01-PETER",
+    "RC-02-SCENE",
+    "RC-03-FINGERPRINT",
+    "RC-04-KNIFE-WOUND",
+    "RC-05-TIMELINE",
+    "RC-06-BLOODSTAIN"
+  ],
+  "legacy": [
+    "HYP-01",
+    "HYP-02",
+    "HYP-03"
+  ],
+  "relationships": [
+    {
+      "id": "REL-bottle-supports-brother",
+      "label": "Bottle Corroborates Paul's Earlier Presence"
+    },
+    {
+      "id": "REL-knife-consistent-wound",
+      "label": "Knife Consistent with Victim's Wound"
+    },
+    {
+      "id": "REL-paul-print-handled-knife",
+      "label": "Paul's Print Shows Prior Knife Handling"
+    },
+    {
+      "id": "REL-paul-timeline-contradiction",
+      "label": "Paul's timeline conflicts with the vendor's observation."
+    },
+    {
+      "id": "REL-peter-departure-supported",
+      "label": "Vendor Observation Supports Peter's Departure Account"
+    },
+    {
+      "id": "REL-spatter-consistent-reconstruction",
+      "label": "Bloodstain Pattern Supports Attack Location"
+    }
+  ]
+}

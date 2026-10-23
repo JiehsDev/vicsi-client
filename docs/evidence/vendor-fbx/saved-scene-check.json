@@ -1,0 +1,18 @@
+{
+  "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+  "dirty": false,
+  "playing": false,
+  "compiling": false,
+  "compilationFailed": false,
+  "root": "(-7.00, 0.03, -0.55)",
+  "range": 2.25,
+  "interview": true,
+  "colliderHeight": 1.82,
+  "colliderRadius": 0.28,
+  "presentation": "Vendor",
+  "model": "Assets/_Project/Art/Environments/MODELS/NPC/Vendor/Balut_Vendor_With_Basket_Idle.fbx",
+  "visualChildren": 1,
+  "controller": "Assets/_Project/Art/Environments/MODELS/NPC/Vendor/Vendor_Idle.controller",
+  "rootMotion": false,
+  "rendererCount": 2
+}

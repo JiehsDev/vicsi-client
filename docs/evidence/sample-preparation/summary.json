@@ -1,0 +1,92 @@
+{
+  "suites": {
+    "SamplePreparationTest": {
+      "report": "docs\\evidence\\sample-preparation\\run7\\SamplePreparationTest.txt",
+      "pass": 46,
+      "fail": 0
+    },
+    "FreshSwabSupplyTest": {
+      "report": "docs\\evidence\\sample-preparation\\run7\\FreshSwabSupplyTest.txt",
+      "pass": 52,
+      "fail": 0
+    },
+    "GloveChangeStationTest": {
+      "report": "docs\\evidence\\sample-preparation\\run7\\GloveChangeStationTest.txt",
+      "pass": 53,
+      "fail": 0
+    },
+    "ArrivalPPETest": {
+      "report": "docs\\evidence\\sample-preparation\\run10\\ArrivalPPETest.txt",
+      "pass": 42,
+      "fail": 0
+    },
+    "BiologicalSamplingTest": {
+      "report": "docs\\evidence\\sample-preparation\\run10\\BiologicalSamplingTest.txt",
+      "pass": 63,
+      "fail": 0
+    },
+    "DialogueCatalogTest": {
+      "report": "docs\\evidence\\sample-preparation\\run10\\DialogueCatalogTest.txt",
+      "pass": 60,
+      "fail": 0
+    },
+    "EvidenceInventoryTest": {
+      "report": "docs\\evidence\\sample-preparation\\run10\\EvidenceInventoryTest.txt",
+      "pass": 29,
+      "fail": 0
+    },
+    "SceneAccessRegisterTest": {
+      "report": "docs\\evidence\\sample-preparation\\run10\\SceneAccessRegisterTest.txt",
+      "pass": 40,
+      "fail": 0
+    },
+    "SceneTestStartTest": {
+      "report": "docs\\evidence\\sample-preparation\\run10\\SceneTestStartTest.txt",
+      "pass": 143,
+      "fail": 0
+    }
+  },
+  "totalPass": 528,
+  "totalFail": 0,
+  "changedExistingFiles": [
+    "Assets\\_Project\\Scripts\\Interaction\\SwabTool.cs",
+    "Assets\\_Project\\Scripts\\Logging\\SessionEventType.cs",
+    "Assets\\_Project\\Scripts\\SceneTurnover\\ArrivalPPEStation.cs",
+    "Assets\\_Project\\Scripts\\SceneTurnover\\GloveStationGuide.cs",
+    "Assets\\_Project\\Scripts\\Testing\\BiologicalSamplingTest.cs",
+    "Assets\\_Project\\Scripts\\Testing\\DialogueCatalogTest.cs",
+    "Assets\\_Project\\Scripts\\Testing\\FreshSwabSupplyTest.cs",
+    "Assets\\_Project\\Scripts\\Testing\\GloveChangeStationTest.cs",
+    "Assets\\_Project\\Scripts\\Testing\\GreyboxFlowTest.cs",
+    "Assets\\_Project\\Scripts\\UI\\HeldEvidenceStorePrompt.cs",
+    "Assets\\Resources\\ViCSIDialogueCatalog.asset"
+  ],
+  "unchangedExistingFiles": 475,
+  "sceneSha256": "91d5c8c35425cdc32fec5ecb6bbc01ebfb07c368e227d62da5e10fdf12786005",
+  "sourceHashes": {
+    "Assets\\_Project\\Scripts\\Interaction\\PaperSwabPackage.cs": "cb8167f2e8c19e4085d78cd1153be7a888a82ea17e72e9ac58241ff5bb5c7261",
+    "Assets\\_Project\\Scripts\\Interaction\\SwabTool.cs": "f376c7f2cbf19c3b28bf4cd9b9f3e03cb8a50737b2c6fdcf71a39e086da791e6",
+    "Assets\\_Project\\Scripts\\SceneTurnover\\ArrivalPPEStation.cs": "6fed585248af922c68ac766928b949fafbf14beaff23d596301a49fa9612fbc4",
+    "Assets\\_Project\\Scripts\\SceneTurnover\\GloveStationGuide.cs": "6c6496dc8322b8d762d32ee41633cc2d13561bd468128d2466b93f54678b1794",
+    "Assets\\_Project\\Scripts\\SceneTurnover\\SamplePreparationStation.cs": "42dd1a7a912e249059716b05d75470017003f9912d26018dec6b6f87016a0ca3",
+    "Assets\\_Project\\Scripts\\Testing\\SamplePreparationTest.cs": "05684120668cc5f03aee337b297aaff006926d613eff64ce0d3cf84a0f4d841a",
+    "Assets\\_Project\\Scripts\\Testing\\SamplePreparationTestUtil.cs": "5003f01b94d852ea49f0d1111ac878365f6cc6226649047f3c8260e9e5e18dce",
+    "Assets\\_Project\\Scripts\\UI\\DryingProgressGraphic.cs": "7667244adf27f4de2fedc5a0fb3fea5c33f16e0d64278542a7e1ff808c55f540"
+  },
+  "questDeviceValidation": "pending",
+  "newMissingDialogueWarnings": 0,
+  "csShaderNullMissingReferenceErrors": 0,
+  "changedSourceHashes": {
+    "Assets\\_Project\\Scripts\\Interaction\\SwabTool.cs": "f376c7f2cbf19c3b28bf4cd9b9f3e03cb8a50737b2c6fdcf71a39e086da791e6",
+    "Assets\\_Project\\Scripts\\Logging\\SessionEventType.cs": "5f8fedf061ffa82fe45c8466e9bbf4b4b2a350b84a001c50dfe4187418380622",
+    "Assets\\_Project\\Scripts\\SceneTurnover\\ArrivalPPEStation.cs": "6fed585248af922c68ac766928b949fafbf14beaff23d596301a49fa9612fbc4",
+    "Assets\\_Project\\Scripts\\SceneTurnover\\GloveStationGuide.cs": "6c6496dc8322b8d762d32ee41633cc2d13561bd468128d2466b93f54678b1794",
+    "Assets\\_Project\\Scripts\\Testing\\BiologicalSamplingTest.cs": "6ff33c9d1763bda62695eb2e3c3b9c006e7f1cfc80bb666ae60ab3c2db45dfa8",
+    "Assets\\_Project\\Scripts\\Testing\\DialogueCatalogTest.cs": "7b9bb2fd756b9958bb4d6eda26693ee6507dc4bf2243a6ce34486cee428f1f1b",
+    "Assets\\_Project\\Scripts\\Testing\\FreshSwabSupplyTest.cs": "0d22d82c5c360344a51e1d97cb7833ffed488d3030c58cf39e5068b73de292fc",
+    "Assets\\_Project\\Scripts\\Testing\\GloveChangeStationTest.cs": "32c02fcd6c6b6d56625a5268ff4a84f90e41ce302a6836c1a7f446cc724fa8b1",
+    "Assets\\_Project\\Scripts\\Testing\\GreyboxFlowTest.cs": "dc8b648a6722a3d923b397668bbc894f3c9bd336ddc000383c1892655320d7d6",
+    "Assets\\_Project\\Scripts\\UI\\HeldEvidenceStorePrompt.cs": "acc72bc8e1bae06d88cd1e3d0524fb27cbae49d28fe88b0e4c2e3b7206764ff4",
+    "Assets\\Resources\\ViCSIDialogueCatalog.asset": "0f742bde84746c978484d29335ec54a5e0fccd45718cce3adbeb0c3adc1c8cdc"
+  }
+}

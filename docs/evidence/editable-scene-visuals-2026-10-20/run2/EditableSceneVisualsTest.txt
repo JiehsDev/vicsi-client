@@ -1,0 +1,56 @@
+=== EditableSceneVisualsTest ===
+PASS: Exactly one authored glove station is used
+PASS: Cordon references its scene-authored supply station
+PASS: Authored register is the runtime interaction target
+PASS: One preparation station survives startup
+PASS: One comparison desk survives startup
+PASS: BodyRemovalInteraction.BuildPanel has intact authored scene objects
+PASS: InsightsUI.BuildRuntimeUI has intact authored scene objects
+PASS: SceneAccessRegisterUI.BuildPanel has intact authored scene objects
+PASS: SceneAccessRegisterUI.BuildLoggingTable has intact authored scene objects
+PASS: EndingManager.BuildPickerUIIfNeeded has intact authored scene objects
+PASS: HypothesisCheckpointUI.BuildRuntimeUI has intact authored scene objects
+PASS: SOCOCloseout.BuildUI has intact authored scene objects
+PASS: VendorFollowupInterview.BuildPanel has intact authored scene objects
+PASS: WitnessAccountsUI.BuildPanel has intact authored scene objects
+PASS: HypothesisCheckpointUI.BuildInteractionVisuals has intact authored scene objects
+PASS: ScenePhotographyGuide.Awake has intact authored scene objects
+PASS: CompletionScreenUI.BuildRuntimeUI has intact authored scene objects
+PASS: ArrivalPPEStation.BuildVisuals has intact authored scene objects
+PASS: GloveStationGuide.Awake has intact authored scene objects
+PASS: SamplePreparationStation.BuildVisuals has intact authored scene objects
+PASS: RecorderReportUI.BuildRuntimeUI has intact authored scene objects
+PASS: DialogueHistoryUI.BuildRuntimeUI has intact authored scene objects
+PASS: EvidenceProcedureUI.BuildRuntimeUI has intact authored scene objects
+PASS: NPCApproachGuide.Awake has intact authored scene objects
+PASS: CrimeSceneSketchUI.BuildRuntimeUI has intact authored scene objects
+PASS: FingerprintComparisonStation.BuildDesk has intact authored scene objects
+PASS: FingerprintComparisonStation.BuildUI has intact authored scene objects
+PASS: VendorPathGuide.Awake has intact authored scene objects
+PASS: PhotographicScaleAccessory.BuildHint has intact authored scene objects
+PASS: PhotoAlbumUI.BuildPresentation has intact authored scene objects
+PASS: IOCAssessmentInteraction.BuildChecklist has intact authored scene objects
+PASS: SettingsPauseMenu.BuildSettings has intact authored scene objects
+PASS: SOCOWorkflowInteraction.BuildPanel has intact authored scene objects
+PASS: IOCAssessmentGuide.Awake has intact authored scene objects
+PASS: NPCApproachGuide.Awake has intact authored scene objects
+PASS: SettingsPauseMenu.BuildShell has intact authored scene objects
+PASS: SettingsPauseMenu.Confirmation-restart has intact authored scene objects
+PASS: SettingsPauseMenu.Confirmation-lobby has intact authored scene objects
+PASS: EvidenceBoxContentsDisplay.BuildTray has intact authored scene objects
+PASS: EvidenceBoxDepositZone.BuildUI has intact authored scene objects
+PASS: EvidenceBoxWaypoint.Awake has intact authored scene objects
+PASS: Generated scene visuals have no DontSave flag
+PASS: Builder reuses the authored glove model
+PASS: Rebinding creates no duplicate station objects
+PASS: Edited local position survives rebinding
+PASS: Edited dimensions survive rebinding
+PASS: Edited material survives rebinding
+PASS: Edited label font size survives rebinding
+PASS: Camera has an authored metric ruler
+PASS: Authored ruler starts hidden and is not duplicated
+PASS: Paper package is an editable prefab
+PASS: Runtime package uses the authored template
+PASS: Source label updates without raw evidence IDs
+PASS: Template introduces no sample collider
+=== PASS ===

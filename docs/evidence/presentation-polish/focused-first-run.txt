@@ -1,0 +1,11 @@
+FR_Pass=True
+FR_Faces=False
+IOC_Faces=True
+Briefing_Pass=True
+Vendor_Opened=True
+Vendor_Faces=True
+Question_Asked=True
+Vendor_Once=True
+discoveryCount=1
+phase=SOCOInvestigation discovered=True
+IOCpose=Idle visible=True

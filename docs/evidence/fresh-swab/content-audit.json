@@ -1,0 +1,30 @@
+{
+  "baselineFiles": 776,
+  "changedExistingFiles": [
+    "Assets/Resources/ViCSIDialogueCatalog.asset",
+    "Assets/_Project/Editor/Phase5PlayModeBatchRunner.cs",
+    "Assets/_Project/Scripts/Interaction/SwabTool.cs",
+    "Assets/_Project/Scripts/Logging/SessionEventType.cs",
+    "Assets/_Project/Scripts/RoleSystem/HeldItemCoordinator.cs",
+    "Assets/_Project/Scripts/RoleSystem/PlayerToolRegistry.cs",
+    "Assets/_Project/Scripts/RoleSystem/ToolWheelController.cs",
+    "Assets/_Project/Scripts/SceneTurnover/ArrivalPPEStation.cs",
+    "Assets/_Project/Scripts/SceneTurnover/GloveStationGuide.cs",
+    "Assets/_Project/Scripts/SceneTurnover/SceneTurnover.cs",
+    "Assets/_Project/Scripts/Testing/GloveChangeStationTest.cs",
+    "Assets/_Project/Scripts/Testing/GloveChangeTestUtil.cs"
+  ],
+  "unchangedBaselineFiles": 764,
+  "addedDialogueIds": [
+    "supplies-destination",
+    "swab-destination",
+    "swab-finish-container",
+    "swab-finish-loaded",
+    "swab-fresh-loaded",
+    "swab-open-pack",
+    "swab-supply-required",
+    "swab-take-pack"
+  ],
+  "changedOrRemovedExistingDialogueIds": [],
+  "sceneSha256": "91d5c8c35425cdc32fec5ecb6bbc01ebfb07c368e227d62da5e10fdf12786005"
+}

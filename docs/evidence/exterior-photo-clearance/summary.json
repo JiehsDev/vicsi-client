@@ -1,0 +1,66 @@
+{
+  "transform": "ScenePhotography/ScenePhotoPoint_10_scene-exterior-establishing",
+  "fileID": 1822672826,
+  "before": [
+    16.9,
+    0,
+    -0.8
+  ],
+  "after": [
+    16.9,
+    0.03,
+    -0.8
+  ],
+  "environmentChecks": {
+    "passed": 62,
+    "failed": 0
+  },
+  "focusedPhotography": {
+    "guide": {
+      "passed": 26,
+      "failed": 0,
+      "failures": []
+    },
+    "shutter": {
+      "passed": 14,
+      "failed": 0,
+      "failures": []
+    }
+  },
+  "procedureSuiteFixed": {
+    "passed": 44,
+    "failed": 3,
+    "failures": [
+      "  FAIL: [marker] EVD-014: no tent placed, state unchanged, one blocked action",
+      "  FAIL: [marker] EVD-015: no tent placed, state unchanged, one blocked action",
+      "  FAIL: [marker] EVD-018: no tent placed, state unchanged, one blocked action"
+    ]
+  },
+  "procedureSuiteOriginalHeightControl": {
+    "passed": 44,
+    "failed": 3,
+    "failures": [
+      "  FAIL: [marker] EVD-014: no tent placed, state unchanged, one blocked action",
+      "  FAIL: [marker] EVD-015: no tent placed, state unchanged, one blocked action",
+      "  FAIL: [marker] EVD-018: no tent placed, state unchanged, one blocked action"
+    ]
+  },
+  "preexistingMarkerFailuresConfirmed": true,
+  "compilationErrors": 0,
+  "preservation": {
+    "changedExistingFiles": [
+      "C:\\Users\\Roduf Eleu\\My project (1)\\Assets\\_Project\\Scenes\\Scenarios\\CSI_Environment.unity"
+    ],
+    "unchangedExistingFiles": 739,
+    "changedSceneRecords": [
+      "1822672826"
+    ],
+    "addedSceneRecords": [],
+    "removedSceneRecords": [],
+    "onlyFieldChanged": "Transform 1822672826 m_LocalPosition.y: 0 -> 0.03",
+    "allOtherTransformsAndPhotoSettingsUnchanged": true,
+    "dashboardSourceUnchanged": true,
+    "finalSceneSha256": "96008381f325db1f0b9b498cabc794ee315c569a285a277ed359a8eff2d70d99"
+  },
+  "headsetAcceptancePerformed": false
+}

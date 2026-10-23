@@ -15,54 +15,392 @@ MonoBehaviour:
   scenarioId: CSI_Environment
   checkpoints:
   - id: HYP-01
-    promptText: You have completed your first walkthrough of the scene. Before you
-      process anything, what is your working theory of what happened here?
+    promptText: "What do you think you can reasonably say about the case so far?"
     options:
-    - Accidental fall
-    - Homicide
-    - Undetermined
-    requiresReasoning: 0
-    reasoningOptions: []
+    - id: theory-accidental-fall
+      text: Peter is responsible because the vendor saw him leave.
+    - id: theory-homicide
+      text: Paul is responsible because he argued with John earlier.
+    - id: theory-undetermined
+      text: John was attacked, but there is not enough reliable evidence yet to identify
+        the attacker.
+    - id: theory-alcohol-explanation
+      text: The drinking explains what happened to John.
+    requiresReasoning: 1
+    reasoningOptions:
+    - id: hyp01-peter-departure-proves-guilt
+      text: Peter's later departure and uneasy appearance establish that he attacked John.
+      isCorrect: 0
+      prerequisites: []
+      extraRequirement:
+        kind: 1
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        authoringNote: 
+    - id: hyp01-paul-argument-proves-guilt
+      text: Paul's earlier argument with John is enough to identify him as the attacker.
+      isCorrect: 0
+      prerequisites: []
+      extraRequirement:
+        kind: 1
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        authoringNote: 
+    - id: hyp01-evidence-not-yet-developed
+      text: "Peter's timing and behavior give us questions to ask, not a conclusion. Paul still needs looking at too; we need to see what the physical findings support."
+      isCorrect: 1
+      prerequisites: []
+      extraRequirement:
+        kind: 1
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        authoringNote: 
+    - id: hyp01-drinking-explains-attack
+      text: Earlier drinking is enough to explain the injury without further investigation.
+      isCorrect: 0
+      prerequisites: []
+      extraRequirement:
+        kind: 1
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        authoringNote: 
     trigger:
       type: 0
       thresholdStatus: 1
       thresholdCount: 3
   - id: HYP-02
-    promptText: You have now collected physical evidence from the scene. Has your
-      theory changed? Commit to a position.
+    promptText: "What can Paul's fingerprint on the knife tell us?"
     options:
-    - Accidental fall
-    - Homicide
-    - Undetermined
+    - id: theory-accidental-fall
+      text: Paul used the knife during the attack.
+    - id: theory-homicide
+      text: Paul handled the knife at some point.
+    - id: theory-undetermined
+      text: Paul was the last person to touch the knife.
+    - id: theory-knife-ownership
+      text: The knife belongs to Paul.
     requiresReasoning: 1
     reasoningOptions:
-    - text: The recovered evidence is inconsistent with an accidental mechanism
+    - id: hyp02-print-proves-attacker
+      text: Paul's print proves he used the knife during the attack.
+      isCorrect: 0
+      prerequisites: []
+      extraRequirement:
+        kind: 1
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        authoringNote: 
+    - id: hyp02-bottle-intoxication
+      text: Paul's earlier drinking means the print can be treated as proof of his involvement.
+      isCorrect: 0
+      prerequisites: []
+      extraRequirement:
+        kind: 1
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        authoringNote: 
+    - id: hyp02-print-needs-reconstruction
+      text: "Paul handled the knife at some point, but the print doesn't tell us when or why. We can't treat contact as proof that he attacked John."
       isCorrect: 1
-    - text: Signs of intoxication adequately explain a fall without a second party
+      prerequisites: []
+      extraRequirement:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 2
+        evidenceId: EVD-014
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 2
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        authoringNote: 
+    - id: hyp02-knife-routine-use
+      text: Because the knife came from John's kitchen, the fingerprint has no investigative value.
       isCorrect: 0
-    - text: The position of the body accounts for the injuries on its own
-      isCorrect: 0
-    - text: The physical evidence so far is equally consistent with either account
-      isCorrect: 0
+      prerequisites: []
+      extraRequirement:
+        kind: 1
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        authoringNote: 
     trigger:
       type: 0
-      thresholdStatus: 7
-      thresholdCount: 2
+      thresholdStatus: 6
+      thresholdCount: 1
   - id: HYP-03
-    promptText: You are submitting your case. State your final conclusion.
+    promptText: "How do the findings fit together at this point?"
     options:
-    - Accidental fall
-    - Homicide
-    - Undetermined
+    - id: theory-accidental-fall
+      text: Peter is responsible because the vendor saw him leave.
+    - id: theory-homicide
+      text: Paul is responsible because his fingerprint was found on the knife.
+    - id: theory-undetermined
+      text: Physical findings and any independently discovered timeline contradictions
+        must be considered together before responsibility can be assigned.
+    - id: theory-bottle-presence
+      text: The liquor bottle establishes who remained at the scene.
     requiresReasoning: 1
     reasoningOptions:
-    - text: Physical evidence contradicts the accidental account
+    - id: hyp03-knife-print-implicates-brother
+      text: Paul's fingerprint on the knife is enough on its own to identify him as the attacker.
+      isCorrect: 0
+      prerequisites:
+      - type: 1
+        evidenceId: EVD-014
+        lineId: 
+      extraRequirement:
+        kind: 1
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        authoringNote: 
+    - id: hyp03-wound-alone
+      text: John's wound identifies the kind of injury, so it also identifies who was responsible.
+      isCorrect: 0
+      prerequisites:
+      - type: 0
+        evidenceId: BODY-A
+        lineId: body-a-wound-sharp-object
+      extraRequirement:
+        kind: 1
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        authoringNote: 
+    - id: hyp03-combined-physical-evidence
+      text: "We need to weigh the wound, knife fit, contact and blood pattern alongside checked accounts. To support Paul, we also need a discovered observation that conflicts with his no-return claim, linked to that claim on the board. Contact or a sighting alone isn't proof of guilt."
       isCorrect: 1
-    - text: Witness testimony is the strongest evidence available
+      prerequisites:
+      - type: 0
+        evidenceId: BODY-A
+        lineId: body-a-wound-sharp-object
+      - type: 0
+        evidenceId: EVD-014
+        lineId: knife-wound-match
+      - type: 0
+        evidenceId: EVD-015
+        lineId: blood-spatter-mechanism-only
+      - type: 1
+        evidenceId: EVD-014
+        lineId: 
+      extraRequirement:
+        kind: 1
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        authoringNote: 
+    - id: hyp03-bottle-premature-closure
+      text: Paul's print on the bottle places him at the house during the attack.
       isCorrect: 0
-    - text: Key evidence remains uncollected, so no conclusion is supportable
+      prerequisites:
+      - type: 1
+        evidenceId: EVD-018
+        lineId: 
+      extraRequirement:
+        kind: 1
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        authoringNote: 
+    - id: hyp03-no-contradicting-evidence
+      text: Peter's departure and Paul's statement settle the case without needing
+        the physical evidence.
       isCorrect: 0
+      prerequisites: []
+      extraRequirement:
+        kind: 1
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        authoringNote: 
     trigger:
-      type: 1
-      thresholdStatus: 7
-      thresholdCount: 1
+      type: 0
+      thresholdStatus: 10
+      thresholdCount: 3
+  references:
+    version: 2
+    RefIds: []

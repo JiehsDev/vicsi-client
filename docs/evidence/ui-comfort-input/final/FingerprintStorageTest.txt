@@ -1,0 +1,27 @@
+=== FingerprintStorageTest ===
+  PASS: Fresh session has no lifted or stored print
+  PASS: Premature lift is refused
+  PASS: Powder required before brushing
+  PASS: Powder and sustained brush reveal the print
+  PASS: Missing card model cannot consume the print
+  PASS: Lift succeeds with existing wired card
+  PASS: Lift is distinct from collection and match
+  PASS: Card replaces tool in held-item coordinator
+  PASS: Derived card has source/type/visual and requires explicit storage
+  PASS: No duplicate roster evidence or knife custody change
+  PASS: Original marker removed and duplicate lift refused
+  PASS: RC-03 and vendor lead remain gated before storage
+  PASS: Existing B/Store prompt appears for held card
+  PASS: Actual right B stores the fingerprint and frees the hand
+  PASS: Storage completes fingerprinting and identifies Paul
+  PASS: Stored sample preserves EVD-014 association
+  PASS: Session history logs one non-scored fingerprint sample with its source association
+  PASS: Knife remains available for recording and packaging
+  PASS: Lifting/storing does not change assessment score
+  PASS: Storage makes RC-03 eligible without unlocking vendor
+  PASS: Confirming RC-03 unlocks vendor through existing condition
+  PASS: Locked checkpoint cannot repeat
+  PASS: Stored print can be re-equipped and stored again
+  PASS: Restart clears lifted flag, collection and sample inventory
+  PASS: Restart restores undusted marker and locked reasoning/vendor
+=== ALL PASS ===

@@ -1,0 +1,3343 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef4685dce134df8409bc6416fb74028e, type: 3}
+  m_Name: ViCSIDialogueCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::ViCSIDialogueCatalog
+  dialogueConfirmationSeconds: 2.75
+  dialogueGuidanceSeconds: 4
+  dialogueWarningSeconds: 5
+  dialogueErrorSeconds: 5
+  tooltipSeconds: 2
+  tooltipImportantSeconds: 2.75
+  skipProtectionSeconds: 0.25
+  entries:
+  - id: narr-mission-scene-start-1
+    category: 0
+    type: 0
+    speaker: 
+    text: You've got several accounts to work with, but don't let them decide the
+      case for you. Start by documenting the room, John and anything that might be
+      connected. Then see what the scene actually supports.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: First professor line after the First Responder turnover (event 'mission-scene-start',
+      priority 100). It directs the student to document the scene before weighing
+      statements.
+  - id: narr-beat-1-initial-briefing-1
+    category: 0
+    type: 0
+    speaker: 
+    text: Paul, Peter and the vendor give you somewhere to start. Keep track of what
+      each person says, and check it against what you find here.
+    duration: 8
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Consolidated professor guidance for event 'beat-1-initial-briefing'. The
+      First Responder has already supplied the known scene and witness facts.
+  - id: evidence-status-discovered
+    category: 0
+    type: 1
+    speaker: 
+    text: '{0} {1} been discovered.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = evidence display name, {1} = ''has'' or ''have'' (chosen automatically
+      from the name).'
+  - id: prompt-attic-ladder
+    category: 0
+    type: 1
+    speaker: 
+    text: '[B] Toggle Attic Ladder'
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Standing prompt near the attic ladder lever.
+  - id: prompt-furniture-open
+    category: 0
+    type: 1
+    speaker: 
+    text: '[Trigger] Open'
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Standing prompt at a closed drawer/cabinet/door.
+  - id: prompt-furniture-close
+    category: 0
+    type: 1
+    speaker: 
+    text: '[Trigger] Close'
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Standing prompt at an open drawer/cabinet/door.
+  - id: FR_SECURITY_01
+    category: 0
+    type: 0
+    speaker: First Responder
+    text: I will maintain the controlled entrance and access register. After putting
+      on gloves, check in at the clipboard beside me, outside the cordon. We record
+      who enters, their role and purpose, and when they enter and leave. Limiting access
+      helps protect the scene from disturbance and contamination.
+    duration: 20
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Scene security and access registration before Form 1 handover.
+  - id: access-check-in-next
+    category: 0
+    type: 0
+    speaker: 
+    text: Check in at the clipboard beside the First Responder, outside the cordon.
+      Press A to review your details, then A to confirm. B cancels.
+    duration: 10
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Gloves are worn but access registration is still required.
+  - id: access-entry-required
+    category: 0
+    type: 0
+    speaker: 
+    text: Check in at the scene access register before entering the cordon.
+    duration: 5
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Missing scene-access authorization after briefing and gloves.
+  - id: access-check-in-confirmed
+    category: 0
+    type: 0
+    speaker: 
+    text: Check-in confirmed by the First Responder. You may enter through the controlled
+      entrance. Your entry and exit times will be recorded when you cross the cordon.
+    duration: 9
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Registration is authorization; a visit begins only on an observed physical crossing.
+  - id: FR_PPE_01
+    category: 0
+    type: 0
+    speaker: First Responder
+    text: Before entering, collect clean gloves from the station beside the cordon.
+      Press A to pick up a pair, then A again to wear them. Your other protective
+      equipment is assumed for this exercise; gloves alone are not complete PPE.
+    duration: 14
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Arrival PPE instruction before Form 1 handover; no new medical or scene-disturbance facts.
+  - id: FR_PPE_02
+    category: 0
+    type: 0
+    speaker: First Responder
+    text: Gloves help protect your hands and reduce contamination of evidence.
+      Change gloves between unrelated evidence items and use clean equipment.
+      Avoid touching your face or personal belongings with used gloves.
+    duration: 12
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Introductory PPE teaching; later glove-change mechanics are outside this arrival exercise.
+  - id: ppe-arrival-next
+    category: 0
+    type: 0
+    speaker: 
+    text: Before entering, use the clean-glove station beside the cordon. Press A
+      to pick up a pair, then A to wear them. Press B to return the pair.
+    duration: 10
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Replaces interior survey guidance until arrival gloves are worn.
+  - id: ppe-entry-required
+    category: 0
+    type: 0
+    speaker: 
+    text: Put on clean gloves at the station beside the cordon before entering.
+    duration: 5
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Early entry after briefing but before equipping gloves.
+  - id: ppe-gloves-equipped
+    category: 0
+    type: 0
+    speaker: 
+    text: Gloves equipped. Check in at the scene access register before entering.
+      Keep your hands clean and change gloves between unrelated evidence items.
+    duration: 7
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Logged in dialogue history; equipping gloves is a non-scored arrival action.
+  - id: FR_TURNOVER_01
+    category: 0
+    type: 0
+    speaker: First Responder
+    text: We've kept access under control since we arrived, and the house is still
+      cordoned off. John was found on the floor inside with what looks like a stab
+      wound. We're treating this as a suspected violent death.
+    duration: 18
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: FR to IOC turnover line 1/4. Preliminary information only; no forensic
+      interpretation.
+  - id: FR_TURNOVER_02
+    category: 0
+    type: 0
+    speaker: First Responder
+    text: The nearby vendor is the one who called us after finding John. We were
+      told John had been drinking here with his brother Paul and a friend named Peter.
+      The vendor says he saw Peter leave around two in the morning, looking nervous
+      or sick. He did not witness the attack.
+    duration: 22
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: FR to IOC turnover line 2/4. Preliminary information only; no forensic
+      interpretation.
+  - id: FR_TURNOVER_03
+    category: 0
+    type: 0
+    speaker: First Responder
+    text: We've kept the scene as we found it after the initial response; no forensic
+      work has been done yet. I didn't witness the attack. What we've heard about
+      the drinking and Peter leaving still needs checking.
+    duration: 18
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: FR to IOC turnover line 3/4. Preliminary information only; no forensic
+      interpretation.
+  - id: FR_TURNOVER_04
+    category: 0
+    type: 0
+    speaker: First Responder
+    text: Here's the completed CSI Form 1, the First Responder's Report, with the
+      information we've gathered. The scene is yours now. We'll keep the cordon secure
+      and help where you need us.
+    duration: 18
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: FR to IOC turnover line 4/4. Preliminary information only; no forensic
+      interpretation.
+  - id: statement-paul-evening
+    category: 0
+    type: 0
+    speaker: Paul
+    text: Yeah, we were drinking earlier. John and I argued about some family stuff,
+      but that wasn't unusual for us. I left around midnight; Peter was still there
+      when I went home.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Central statement catalog for later interview or case-file presentation.
+      It is not triggered by Phase 1 gameplay.
+  - id: statement-paul-alibi
+    category: 0
+    type: 0
+    speaker: Paul
+    text: I went straight home. I didn't come back after that.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Central Paul follow-up statement for later use. Not wired to new gameplay
+      in Phase 1.
+  - id: statement-paul-knife
+    category: 0
+    type: 0
+    speaker: Paul
+    text: I've used that knife before. It's from John's kitchen. Finding my print
+      on it doesn't mean I used it on him.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Prepared confrontation line for later use. Not triggered by Phase 1 gameplay.
+  - id: statement-peter-timeline
+    category: 0
+    type: 0
+    speaker: Peter
+    text: I stayed a while after Paul left, but then I started feeling sick. I left
+      around two in the morning. John was still awake when I walked out.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Central Peter statement for later interview or case-file presentation.
+      It is not triggered by Phase 1 gameplay.
+  - id: statement-peter-appearance
+    category: 0
+    type: 0
+    speaker: Peter
+    text: I probably did look bad. I'd been drinking and I felt like I was going
+      to throw up. I just wanted to get home.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Central Peter follow-up statement for later use. Not wired to new gameplay
+      in Phase 1.
+  - id: statement-peter-money
+    category: 0
+    type: 0
+    speaker: Peter
+    text: We'd argued about money before, sure. I was frustrated with him, but I
+      did not hurt him.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Central Peter follow-up statement for later use. Not wired to new gameplay
+      in Phase 1.
+  - id: statement-vendor-peter-leaving
+    category: 0
+    type: 0
+    speaker: Vendor
+    text: I was still up when I saw Peter coming out of John's place, sometime around
+      two. He didn't look right. Nervous, or maybe sick; I couldn't really tell.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Central reporting-witness statement for later interview or case-file presentation.
+      It is not triggered by Phase 1 gameplay.
+  - id: statement-vendor-discovery
+    category: 0
+    type: 0
+    speaker: Vendor
+    text: I came back later to check on John. He wasn't answering, so I went inside
+      and found him on the floor. I called the police right away.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Central reporting-witness discovery statement for later use. Not wired
+      to new gameplay in Phase 1.
+  - id: statement-vendor-limitation
+    category: 0
+    type: 0
+    speaker: Vendor
+    text: I didn't see what happened inside. All I saw then was Peter leaving.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Central reporting-witness limitation statement for later use. Not wired
+      to new gameplay in Phase 1.
+  - id: vendor-placeholder-label
+    category: 0
+    type: 1
+    speaker: 
+    text: Vendor
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Physical vendor placeholder name label.
+  - id: prompt-talk-vendor
+    category: 0
+    type: 1
+    speaker: 
+    text: Vendor - [A] Talk
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Physical vendor interaction prompt; opens the existing follow-up panel.
+  - id: vendor-followup-heading
+    category: 0
+    type: 0
+    speaker: Vendor
+    text: Vendor follow-up / Statements
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Session-local vendor follow-up; available during SOCO investigation. Discovery
+      is required for the new board fact.
+  - id: vendor-followup-anyone-else
+    category: 0
+    type: 0
+    speaker: Investigator
+    text: Did you see anyone else near John's house besides Peter?
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Session-local vendor follow-up; available during SOCO investigation. Discovery
+      is required for the new board fact.
+  - id: statement-vendor-paul-3am
+    category: 0
+    type: 0
+    speaker: Vendor
+    text: Now that you mention it, I remember seeing Paul near John's house around
+      three in the morning. I didn't see where he went after that.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Session-local vendor follow-up; available during SOCO investigation. Discovery
+      is required for the new board fact.
+  - id: vendor-paul-3am-summary
+    category: 0
+    type: 0
+    speaker: Vendor
+    text: Vendor saw Paul near John's house around 3:00 AM.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Session-local vendor follow-up; available during SOCO investigation. Discovery
+      is required for the new board fact.
+  - id: vendor-paul-3am-detail
+    category: 0
+    type: 0
+    speaker: Vendor
+    text: The vendor remembers seeing Paul walking near John's house sometime around
+      3:00 AM. He recognized Paul but did not see where Paul went afterward. He did
+      not see Paul enter the house and did not witness the attack. This observation
+      does not establish who attacked John.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Session-local vendor follow-up; available during SOCO investigation. Discovery
+      is required for the new board fact.
+  - id: prompt-talk-first-responder
+    category: 0
+    type: 1
+    speaker: 
+    text: '[A] Receive briefing'
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: FIRST RESPONDER standing prompt while the player is within the NPC's interaction
+      radius and the scene has not been turned over yet.
+  - id: csi-form-1-received
+    category: 0
+    type: 1
+    speaker: 
+    text: 'CSI Form 1 received and added to case records.
+
+      Conduct an initial
+      assessment of the scene.'
+    duration: 6
+    priority: 0
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural FR to IOC document receipt and broad next objective; no form-entry
+      UI.
+  - id: fr-return-for-briefing
+    category: 0
+    type: 1
+    speaker:
+    text: Return for briefing
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Read-only First Responder guide instruction after unauthorized early entry.
+  - id: fr-early-entry-warning
+    category: 0
+    type: 1
+    speaker: 
+    text: Receive the First Responder's briefing before entering the scene.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: FIRST RESPONDER warning shown by SceneCordon when the player walks into
+      the scene before turnover. Nothing starts.
+  - id: photo-point-exterior-establishing
+    category: 1
+    type: 1
+    speaker: 
+    text: Begin by documenting the scene from outside before entering. Photograph
+      the whole house.
+    duration: 3.5
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Instruction when 'Exterior establishing shot' (photo point scene-exterior-establishing,
+      step 10) becomes the active view.
+  - id: photo-point-entrance-approach
+    category: 1
+    type: 1
+    speaker: 
+    text: Photograph the porch and front doorway before moving inside.
+    duration: 3.5
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Instruction when 'Entrance and approach' (photo point scene-entrance-approach,
+      step 20) becomes the active view.
+  - id: photo-point-interior-from-entrance
+    category: 1
+    type: 1
+    speaker: 
+    text: Step inside. Capture an overall view before focusing on individual items.
+    duration: 3.5
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Instruction when 'Interior overall from the entrance' (photo point scene-interior-from-entrance,
+      step 30) becomes the active view.
+  - id: photo-point-interior-left
+    category: 1
+    type: 1
+    speaker: 
+    text: Photograph the living area from the left side to record the furniture layout.
+    duration: 3.5
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Instruction when 'Interior overall, left side' (photo point scene-interior-left,
+      step 40) becomes the active view.
+  - id: photo-point-interior-right
+    category: 1
+    type: 1
+    speaker: 
+    text: Photograph the table beside the living room, including both liquor bottles.
+    duration: 3.5
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Instruction for Table with liquor bottles (scene-interior-right, step
+      50). Display bottles are scene decoration.
+  - id: photo-point-body-in-scene
+    category: 1
+    type: 1
+    speaker: 
+    text: Enter the rear ground-floor kitchen. Photograph John's body in its surroundings.
+    duration: 3.5
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Instruction when 'Victim within the scene' (photo point scene-body-in-scene,
+      step 60) becomes the active view.
+  - id: photo-point-stair-incident-area
+    category: 1
+    type: 1
+    speaker: 
+    text: Photograph the rear kitchen to show the counters, the body and the floor
+      around the evidence.
+    duration: 3.5
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Instruction when 'Kitchen and incident area' (photo point scene-stair-incident-area,
+      step 70 - id kept from when it faced the stairs) becomes the active view.
+  - id: photo-zone-entered
+    category: 1
+    type: 1
+    speaker: 
+    text: You're in position. Equip the camera and press [X] then aim at the scene.
+    duration: 3.5
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Player stepped into the active photo point's marked circle. {0} = the
+      view's name.
+  - id: evidence-step-photograph-first
+    category: 1
+    type: 0
+    speaker: 
+    text: Photograph this item before continuing so its original position and condition
+      are documented before it is disturbed.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Refusal: the item needs its first (raw) photograph.'
+  - id: evidence-step-final-photo-first
+    category: 1
+    type: 0
+    speaker: 
+    text: Take the final photograph before continuing so the evidence and its identifying
+      marker are documented together.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Refusal: the final (with-marker) photograph comes next.'
+  - id: photo-out-of-sequence
+    category: 1
+    type: 0
+    speaker: 
+    text: Document the earlier scene view first.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Photo taken for a later view while an earlier required view is still open.
+  - id: photo-wrong-position
+    category: 1
+    type: 0
+    speaker: 
+    text: Stand inside the marked area to take this photo.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Shutter pressed outside the active point's circle.
+  - id: photo-wrong-angle
+    category: 1
+    type: 0
+    speaker: 
+    text: Aim toward the required scene area.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Shutter pressed inside the circle but facing the wrong way.
+  - id: photo-scene-complete
+    category: 1
+    type: 0
+    speaker: 
+    text: Scene documentation complete. You may continue with detailed investigation.
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 0
+    notes: All required overall scene views documented - evidence work unlocks.
+  - id: step-scene-photos-before-evidence-photos
+    category: 1
+    type: 0
+    speaker: 
+    text: Document the overall scene before detailed evidence photographs so each
+      item can be reviewed in its original scene context.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Procedure-order rule on the evidence items: refusal reason (Block) or
+      camera warning (Warn). Also written to the session log as the expected prerequisite
+      when the rule has none.'
+  - id: step-scene-photos-before-chalk
+    category: 1
+    type: 0
+    speaker: 
+    text: Complete overall scene photography before marking positions so the scene
+      is documented before anything is added or altered.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Procedure-order rule on the evidence items: refusal reason (Block) or
+      camera warning (Warn). Also written to the session log as the expected prerequisite
+      when the rule has none.'
+  - id: step-scene-photos-before-markers
+    category: 1
+    type: 0
+    speaker: 
+    text: Complete overall scene photography before placing markers so the original
+      appearance of the scene is preserved.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Procedure-order rule on the evidence items: refusal reason (Block) or
+      camera warning (Warn). Also written to the session log as the expected prerequisite
+      when the rule has none.'
+  - id: step-scene-photos-before-sampling
+    category: 1
+    type: 0
+    speaker: 
+    text: Document the overall scene before biological sampling so the material and
+      its surroundings are recorded before collection.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Procedure-order rule on the evidence items: refusal reason (Block) or
+      camera warning (Warn). Also written to the session log as the expected prerequisite
+      when the rule has none.'
+  - id: step-scene-photos-before-fingerprints
+    category: 1
+    type: 0
+    speaker: 
+    text: Complete overall scene photography before fingerprint processing so the
+      original condition is documented before treatment.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Procedure-order rule on the evidence items: refusal reason (Block) or
+      camera warning (Warn). Also written to the session log as the expected prerequisite
+      when the rule has none.'
+  - id: step-scene-photos-before-collection
+    category: 1
+    type: 0
+    speaker: 
+    text: Complete overall scene photography before collection so the original positions
+      and condition of items are preserved in the record.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Procedure-order rule on the evidence items: refusal reason (Block) or
+      camera warning (Warn). Also written to the session log as the expected prerequisite
+      when the rule has none.'
+  - id: evidence-status-photographed
+    category: 1
+    type: 1
+    speaker: 
+    text: '{0} {1} been photographed.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = evidence display name, {1} = ''has'' or ''have'' (chosen automatically
+      from the name). First (raw) evidence photograph.'
+  - id: evidence-status-final-photographed
+    category: 1
+    type: 1
+    speaker: 
+    text: '{0} {1} been photographed.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = evidence display name, {1} = ''has'' or ''have'' (chosen automatically
+      from the name). Final photograph (with marker).'
+  - id: photo-view-unnamed
+    category: 1
+    type: 1
+    speaker: 
+    text: this view
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Name used in photo-zone-entered when a photo point has no display name.
+  - id: narr-mission-body-examination-1
+    category: 2
+    type: 0
+    speaker: 
+    text: Complete John's final photograph with Body Marker A in frame, then measure
+      his position and record the findings before removal.
+    duration: 6.8
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Narrative line 1/1 of event 'mission-body-examination' (was Pool_MissionBodyExam.asset).
+  - id: narr-mission-body-wound-result-1
+    category: 2
+    type: 0
+    speaker: 
+    text: The wound looks consistent with a sharp-edged object. Compare it with the
+      possible weapons you've documented, and see what fits.
+    duration: 7
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Narrative line 1/1 of event 'mission-body-wound-result' (was Pool_MissionBodyWoundResult.asset).
+  - id: narr-beat-2-body-doubt-1
+    category: 2
+    type: 0
+    speaker: 
+    text: 'Recorder: The wound''s narrow and deep. That fits an injury from a sharp-edged
+      object.'
+    duration: 5.7
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Narrative line 1/2 of event 'beat-2-body-doubt' (was DialoguePool_Beat2_BodyDoubt.asset).
+  - id: narr-beat-2-body-doubt-2
+    category: 2
+    type: 0
+    speaker: 
+    text: 'Recorder: Let''s record what the wound tells us, then see how it fits
+      with the rest of the scene.'
+    duration: 5.8
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Narrative line 2/2 of event 'beat-2-body-doubt' (was DialoguePool_Beat2_BodyDoubt.asset).
+  - id: evidence-examined-in-place
+    category: 2
+    type: 0
+    speaker: 
+    text: This evidence is examined in place and cannot be collected or sealed.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Refusal: trying to bag/seal the body.'
+  - id: narr-mission-knife-fingerprint-before-1
+    category: 3
+    type: 0
+    speaker: 
+    text: The knife may help us find out who handled it. Get it documented, then
+      sample the blood on the blade before dusting the handle for prints.
+    duration: 7
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Narrative line 1/1 of event 'mission-knife-fingerprint-before' (was Pool_MissionKnifeBefore.asset).
+  - id: narr-beat-3-knife-wound-match-1
+    category: 3
+    type: 0
+    speaker: 
+    text: 'Recorder: The blade''s dimensions match the wound profile.'
+    duration: 4.8
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Narrative line 1/2 of event 'beat-3-knife-wound-match' (was DialoguePool_Beat3_KnifeWound.asset).
+  - id: narr-beat-3-knife-wound-match-2
+    category: 3
+    type: 0
+    speaker: 
+    text: 'Recorder: This knife could be the weapon. Let''s see whether the other
+      findings support that.'
+    duration: 5.6
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Narrative line 2/2 of event 'beat-3-knife-wound-match' (was DialoguePool_Beat3_KnifeWound.asset).
+  - id: team-evidence-014-logged-1
+    category: 3
+    type: 0
+    speaker: 
+    text: 'Dispatch: Got the knife''s dimensions and its position relative to the
+      counter.'
+    duration: 5.5
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Teammate line 1/2 for STCS trigger 'evidence_014_logged' (was DialoguePool_Evidence014Photographed.asset).
+  - id: team-evidence-014-logged-2
+    category: 3
+    type: 0
+    speaker: 
+    text: 'Recorder: Copy. I''ve added the kitchen knife to the evidence log.'
+    duration: 5.6
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Teammate line 2/2 for STCS trigger 'evidence_014_logged' (was DialoguePool_Evidence014Photographed.asset).
+  - id: team-evidence-014-photographed-1
+    category: 3
+    type: 0
+    speaker: 
+    text: 'Dispatch: We''ve got a clear photo of the knife before it''s touched.'
+    duration: 5.2
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Teammate line 1/1 for STCS trigger 'evidence_014_photographed' (was DialoguePool_Evidence014Photographed_Raw.asset).
+  - id: team-evidence-014-chalk-marked-1
+    category: 3
+    type: 0
+    speaker: 
+    text: 'Dispatch: The knife''s position is outlined. We can place the marker there.'
+    duration: 6
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Teammate line 1/1 for STCS trigger 'evidence_014_chalk_marked' (was DialoguePool_Evidence014ChalkMarked.asset).
+  - id: team-evidence-014-collected-1
+    category: 3
+    type: 0
+    speaker: 
+    text: 'Dispatch: Copy, the knife''s bagged. Keep it steady.'
+    duration: 4.6
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Teammate line 1/1 for STCS trigger 'evidence_014_collected' (was DialoguePool_Evidence014Collected.asset).
+  - id: team-evidence-014-sealed-1
+    category: 3
+    type: 0
+    speaker: 
+    text: 'Recorder: The bag''s sealed. We''ll keep the custody record with it.'
+    duration: 4.8
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Teammate line 1/1 for STCS trigger 'evidence_014_sealed' (was DialoguePool_Evidence014Sealed.asset).
+  - id: narr-mission-spatter-before-1
+    category: 4
+    type: 0
+    speaker: 
+    text: The blood pattern may help us understand how the attack unfolded. Get it
+      documented carefully before trying to read too much into it.
+    duration: 7
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Narrative line 1/1 of event 'mission-spatter-before' (was Pool_MissionSpatterBefore.asset).
+  - id: narr-mission-spatter-result-1
+    category: 4
+    type: 0
+    speaker: 
+    text: The pattern gives us a picture of where and how the attack happened. Compare
+      that with the wound and the knife.
+    duration: 7
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Narrative line 1/1 of event 'mission-spatter-result' (was Pool_MissionSpatterResult.asset).
+  - id: narr-beat-7-spatter-reconstruction-1
+    category: 4
+    type: 0
+    speaker: 
+    text: 'Recorder: This pattern fits blood being deposited during an attack near
+      where John was found. It helps explain what happened here, but it doesn''t
+      tell us who attacked him.'
+    duration: 5.7
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Narrative line 1/2 of event 'beat-7-spatter-reconstruction' (was DialoguePool_Beat7_SpatterReconstruction.asset).
+  - id: narr-beat-7-spatter-reconstruction-2
+    category: 4
+    type: 0
+    speaker: 
+    text: 'Recorder: Let''s compare it with the wound and the knife. We still need
+      to be clear about what each finding can tell us.'
+    duration: 6.8
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Narrative line 2/2 of event 'beat-7-spatter-reconstruction' (was DialoguePool_Beat7_SpatterReconstruction.asset).
+  - id: team-evidence-015-photographed-1
+    category: 4
+    type: 0
+    speaker: 
+    text: 'Dispatch: We''ve got the full blood pattern photographed by the counter.'
+    duration: 5.4
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Teammate line 1/1 for STCS trigger 'evidence_015_photographed' (was DialoguePool_Evidence015Photographed.asset).
+  - id: team-evidence-015-chalk-marked-1
+    category: 4
+    type: 0
+    speaker: 
+    text: 'Dispatch: The blood pattern''s marked out.'
+    duration: 4.9
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Teammate line 1/1 for STCS trigger 'evidence_015_chalk_marked' (was DialoguePool_Evidence015ChalkMarked.asset).
+  - id: team-evidence-015-logged-1
+    category: 4
+    type: 0
+    speaker: 
+    text: 'Dispatch: Got the droplet shapes and spread. Those details will help us
+      read the pattern.'
+    duration: 5.8
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Teammate line 1/2 for STCS trigger 'evidence_015_logged' (was DialoguePool_Evidence015Logged.asset).
+  - id: team-evidence-015-logged-2
+    category: 4
+    type: 0
+    speaker: 
+    text: 'Recorder: Copy. I''ve added the blood spatter to the evidence log.'
+    duration: 5.1
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Teammate line 2/2 for STCS trigger 'evidence_015_logged' (was DialoguePool_Evidence015Logged.asset).
+  - id: team-evidence-015-collected-1
+    category: 4
+    type: 0
+    speaker: 
+    text: 'Dispatch: The blood sample''s in the vial. It doesn''t need a bag.'
+    duration: 5.8
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Teammate line 1/1 for STCS trigger 'evidence_015_collected' (was DialoguePool_Evidence015Collected.asset).
+  - id: team-evidence-015-sealed-1
+    category: 4
+    type: 0
+    speaker: 
+    text: 'Recorder: The vial''s sealed and the sample''s secure for the lab.'
+    duration: 5
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Teammate line 1/1 for STCS trigger 'evidence_015_sealed' (was DialoguePool_Evidence015Sealed.asset).
+  - id: narr-beat-5-bottle-supports-brother-1
+    category: 5
+    type: 0
+    speaker: 
+    text: 'Recorder: John, Peter and Paul''s prints were recovered from the bottle.
+      Those findings fit the reported drinking gathering.'
+    duration: 8
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: 'Bottle on-scene fingerprints: final photo, measurements, dust, lift and
+      explicit B storage.'
+  - id: narr-beat-5-bottle-supports-brother-2
+    category: 5
+    type: 0
+    speaker: 
+    text: 'Recorder: The prints establish handling. They don''t show who was here
+      when John was attacked.'
+    duration: 8
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: 'Bottle on-scene fingerprints: final photo, measurements, dust, lift and
+      explicit B storage.'
+  - id: team-evidence-018-photographed-1
+    category: 5
+    type: 0
+    speaker: 
+    text: 'Dispatch: We''ve got the bottle photographed on the kitchen counter.'
+    duration: 4.6
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Teammate line 1/1 for STCS trigger 'evidence_018_photographed' (was DialoguePool_Evidence018Photographed.asset).
+  - id: team-evidence-018-chalk-marked-1
+    category: 5
+    type: 0
+    speaker: 
+    text: 'Dispatch: The bottle''s position is outlined.'
+    duration: 5.5
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Teammate line 1/1 for STCS trigger 'evidence_018_chalk_marked' (was DialoguePool_Evidence018ChalkMarked.asset).
+  - id: team-evidence-018-logged-1
+    category: 5
+    type: 0
+    speaker: 
+    text: 'Dispatch: Got the bottle''s position on the rear kitchen counter.'
+    duration: 5.7
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Teammate line 1/2 for STCS trigger 'evidence_018_logged' (was DialoguePool_Evidence018Logged.asset).
+  - id: team-evidence-018-logged-2
+    category: 5
+    type: 0
+    speaker: 
+    text: 'Recorder: Copy. I''ve added the liquor bottle to the evidence log.'
+    duration: 4.7
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Teammate line 2/2 for STCS trigger 'evidence_018_logged' (was DialoguePool_Evidence018Logged.asset).
+  - id: team-evidence-018-collected-1
+    category: 5
+    type: 0
+    speaker: 
+    text: 'Dispatch: The bottle''s bagged. Let''s wait for the findings before reading
+      too much into it.'
+    duration: 4.8
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Teammate line 1/1 for STCS trigger 'evidence_018_collected' (was DialoguePool_Evidence018Collected.asset).
+  - id: team-evidence-018-sealed-1
+    category: 5
+    type: 0
+    speaker: 
+    text: 'Recorder: The bottle is sealed. Its fingerprint sample is already stored
+      and the identification results are in the record.'
+    duration: 8
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: 'Bottle on-scene fingerprints: final photo, measurements, dust, lift and
+      explicit B storage.'
+  - id: evidence-step-chalk-first
+    category: 6
+    type: 0
+    speaker: 
+    text: Mark the evidence position with chalk first.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Refusal: chalk outline comes next.'
+  - id: evidence-step-marker-first
+    category: 6
+    type: 0
+    speaker: 
+    text: Place the evidence marker first so this item can be identified consistently
+      in photographs and records.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Refusal: evidence tent/marker comes next.'
+  - id: marker-number-required
+    category: 6
+    type: 0
+    speaker: 
+    text: Use a positive numbered marker for ordinary evidence; the body requires
+      a lettered marker.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Marker rejection.
+  - id: marker-reclaim-before-renumber
+    category: 6
+    type: 0
+    speaker: 
+    text: Reclaim the existing marker before assigning another number.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Marker rejection.
+  - id: marker-number-in-use
+    category: 6
+    type: 0
+    speaker: 
+    text: That numbered marker is already assigned to another evidence item.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Marker rejection.
+  - id: marker-letter-required
+    category: 6
+    type: 0
+    speaker: 
+    text: Use an uppercase lettered marker for evidence examined in place; ordinary
+      evidence requires a number.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Marker rejection (body).
+  - id: marker-letter-already-set
+    category: 6
+    type: 0
+    speaker: 
+    text: This evidence already has a different lettered marker.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Marker rejection (body).
+  - id: marker-letter-in-use
+    category: 6
+    type: 0
+    speaker: 
+    text: That lettered marker is already assigned to another evidence item.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Marker rejection (body).
+  - id: tent-use-letter-tent
+    category: 6
+    type: 0
+    speaker: 
+    text: This item is examined in place - use the letter tent tool instead.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Numbered tent aimed at the body.
+  - id: tent-use-numbered-tent
+    category: 6
+    type: 0
+    speaker: 
+    text: This item is marked with a numbered evidence tent, not a letter tent.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Letter tent aimed at ordinary evidence.
+  - id: tent-pickup-already-documented
+    category: 6
+    type: 0
+    speaker: 
+    text: Record the evidence before picking up its marker.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Legacy id retained. Successful item/trace markers stay until evidence recording is complete.
+  - id: chalk-not-required
+    category: 6
+    type: 1
+    speaker: 
+    text: Chalk marking is not required for this evidence.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Chalk used on an item that has no chalk step.
+  - id: tent-placed
+    category: 6
+    type: 1
+    speaker: 
+    text: Evidence tent {0} placed.
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: "{0} = tent number (1, 2, 3\u2026) or the body's letter (A)."
+  - id: tent-letter-no-target
+    category: 6
+    type: 1
+    speaker: 
+    text: Nothing here is examined in place - aim at an item that needs a letter
+      tent.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Letter tent used with no valid target.
+  - id: evidence-status-outlined
+    category: 6
+    type: 1
+    speaker: 
+    text: '{0} {1} been outlined.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = evidence display name, {1} = ''has'' or ''have'' (chosen automatically
+      from the name). Chalk outline complete.'
+  - id: prompt-tent-pickup
+    category: 6
+    type: 1
+    speaker: 
+    text: '[B] Pick Up Evidence Tent'
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Standing prompt near a placed tent that may still be picked up.
+  - id: step-measure-before-final-photo
+    category: 7
+    type: 0
+    speaker: 
+    text: Measure this item first so its position can be preserved alongside its
+      photographs and evidence record.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Procedure-order rule on the evidence items: refusal reason (Block) or
+      camera warning (Warn). Also written to the session log as the expected prerequisite
+      when the rule has none.'
+  - id: step-measure-distances-before-final-photo
+    category: 7
+    type: 0
+    speaker: 
+    text: Complete the required evidence distances first so the original spatial
+      relationships remain documented after items are moved.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Procedure-order rule on the evidence items: refusal reason (Block) or
+      camera warning (Warn). Also written to the session log as the expected prerequisite
+      when the rule has none.'
+  - id: step-measurements-before-records
+    category: 7
+    type: 0
+    speaker: 
+    text: Complete the required scene measurements before the evidence record so
+      it includes the original layout and spatial relationships.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Procedure-order rule on the evidence items: refusal reason (Block) or
+      camera warning (Warn). Also written to the session log as the expected prerequisite
+      when the rule has none.'
+  - id: measure-select-evidence
+    category: 7
+    type: 1
+    speaker: 
+    text: Select evidence to measure.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: 'Tape measure idle: aim at a marked evidence item.'
+  - id: measure-not-required
+    category: 7
+    type: 1
+    speaker: 
+    text: No measurement is required for this item.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Tape aimed at an item with no measurement requirement.
+  - id: measure-marker-first
+    category: 7
+    type: 1
+    speaker: 
+    text: Place an evidence marker before measuring.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Measuring is only possible after the item has its tent/marker.
+  - id: measure-complete
+    category: 7
+    type: 1
+    speaker: 
+    text: Measurement complete.
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: Both fixed-reference distances recorded for this item.
+  - id: measure-evidence-moved
+    category: 7
+    type: 1
+    speaker: 
+    text: This evidence was moved before its position was measured.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: The item was disturbed before its fixed-reference measurement.
+  - id: measure-pair-extend-to-other
+    category: 7
+    type: 1
+    speaker: 
+    text: Extend the tape to another marked evidence item.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: 'Evidence-to-evidence mode: tape hooked at the first item.'
+  - id: measure-pair-select-other
+    category: 7
+    type: 1
+    speaker: 
+    text: Select another discovered evidence item.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: 'Evidence-to-evidence mode: aim at a second item.'
+  - id: measure-pair-already-measured
+    category: 7
+    type: 1
+    speaker: 
+    text: This evidence pair has already been measured.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Evidence-to-evidence distance already recorded.
+  - id: measure-pair-not-required
+    category: 7
+    type: 1
+    speaker: 
+    text: This evidence pair is not required.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Evidence-to-evidence distance that the scenario doesn't need.
+  - id: measure-extend-to-evidence
+    category: 7
+    type: 1
+    speaker: 
+    text: Extend the tape to the evidence.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: 'Fixed-reference mode: tape hooked at the reference, carry it to the item.'
+  - id: measure-wrong-reference
+    category: 7
+    type: 1
+    speaker: 
+    text: Use a fixed reference assigned to this evidence.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Tape hooked at a reference that doesn't belong to this item.
+  - id: measure-bring-tape-to-evidence
+    category: 7
+    type: 1
+    speaker: 
+    text: Bring the tape end to the evidence.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: 'Fixed-reference mode: tape end not yet at the item.'
+  - id: measure-out-of-range
+    category: 7
+    type: 1
+    speaker: 
+    text: Measurement is outside the acceptable range. Try again.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Recorded distance too far from the expected value.
+  - id: measure-pair-hold-at-source
+    category: 7
+    type: 1
+    speaker: 
+    text: 'Evidence distance: hold the tape at the {0}.'
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Evidence-to-evidence mode started. {0} = first item's display name.
+  - id: measure-hold-tape-at
+    category: 7
+    type: 1
+    speaker: 
+    text: Hold the tape at the {0}.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = the item (evidence-distance mode) or the fixed reference, e.g.
+      West Wall, where the tape must start.'
+  - id: measure-from-reference
+    category: 7
+    type: 1
+    speaker: 
+    text: Measure from the {0}.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Next fixed reference for the selected item. {0} = reference name, e.g.
+      West Wall.
+  - id: measure-reference-recorded-complete
+    category: 7
+    type: 1
+    speaker: 
+    text: '{0} recorded: {1:0.00} m. Measurement complete.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = reference name, {1} = distance in metres (keep :0.00 for two decimals).'
+  - id: measure-reference-recorded-next
+    category: 7
+    type: 1
+    speaker: 
+    text: '{0} recorded: {1:0.00} m. Measure from the {2}.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = reference just measured, {1} = metres, {2} = next reference.'
+  - id: measure-pair-recorded
+    category: 7
+    type: 1
+    speaker: 
+    text: "{0} \u2013 {1}: {2:0.00} m."
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: Evidence-to-evidence result. {0}/{1} = the two items, {2} = metres. Followed
+      by one of the next three lines.
+  - id: measure-pair-recorded-after-move
+    category: 7
+    type: 1
+    speaker: 
+    text: Recorded after the evidence was moved.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Appended to the pair result when an item had been disturbed.
+  - id: measure-pair-all-complete
+    category: 7
+    type: 1
+    speaker: 
+    text: Evidence distances complete.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Appended when every required distance for the item is done.
+  - id: measure-pair-extend-to-next
+    category: 7
+    type: 1
+    speaker: 
+    text: Extend the tape to the next evidence item.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Appended when more distances remain for the item.
+  - id: evidence-blood-sample-before-record
+    category: 8
+    type: 0
+    speaker: 
+    text: Collect the blood sample before completing the evidence record.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Refusal: Recorder entry blocked until the required blood swab is done.'
+  - id: evidence-blood-sample-before-powder
+    category: 8
+    type: 0
+    speaker: 
+    text: Collect the blood sample before applying fingerprint powder.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Refusal: knife must be swabbed before dusting.'
+  - id: swab-trace-collected
+    category: 8
+    type: 0
+    speaker: 
+    text: '{0} blood trace collected.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 0
+    notes: '{0} = evidence display name. Swab deposited in its container.'
+  - id: swab-sample-taken
+    category: 8
+    type: 1
+    speaker: 
+    text: '{0} has been swabbed.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = evidence display name (blood spatter sample). Next: place the swab
+      in the container.'
+  - id: swab-trace-sampled
+    category: 8
+    type: 1
+    speaker: 
+    text: '{0} blood trace sampled.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = evidence display name (blood on the knife). Next: place the swab
+      in the container.'
+  - id: evidence-status-ready-to-swab
+    category: 8
+    type: 1
+    speaker: 
+    text: '{0} {1} ready to be swabbed.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = evidence display name, {1} = ''is'' or ''are''. For items collected
+      by swab (blood spatter).'
+  - id: narr-mission-knife-print-result-1
+    category: 9
+    type: 0
+    speaker: 
+    text: The print's Paul's, so he handled the knife at some point. It doesn't tell
+      us when or why. Check that contact against the rest of the scene before connecting
+      it to the attack.
+    duration: 7
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Narrative line 1/1 of event 'mission-knife-print-result' (was Pool_MissionKnifePrintResult.asset).
+  - id: narr-beat-4-brother-fingerprint-1
+    category: 9
+    type: 0
+    speaker: 
+    text: 'Dispatch: The print from the knife handle came back. It''s Paul''s.'
+    duration: 5.8
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Narrative line 1/3 of event 'beat-4-brother-fingerprint' (was DialoguePool_Beat4_BrotherPrint.asset).
+  - id: narr-beat-4-brother-fingerprint-2
+    category: 9
+    type: 0
+    speaker: 
+    text: 'Dispatch: That''s worth following up. Command wants us to look into it.'
+    duration: 5.9
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Narrative line 2/3 of event 'beat-4-brother-fingerprint' (was DialoguePool_Beat4_BrotherPrint.asset).
+  - id: narr-beat-4-brother-fingerprint-3
+    category: 9
+    type: 0
+    speaker: 
+    text: 'Recorder: It tells us he handled the knife, but not when or why. We need
+      more before tying him to the attack.'
+    duration: 5.9
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Narrative line 3/3 of event 'beat-4-brother-fingerprint' (was DialoguePool_Beat4_BrotherPrint.asset).
+  - id: evidence-step-processing-needed
+    category: 9
+    type: 0
+    speaker: 
+    text: This evidence still needs processing.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Refusal: lab processing comes next.'
+  - id: evidence-fingerprint-required-first
+    category: 9
+    type: 0
+    speaker: 
+    text: Develop and lift the fingerprint before continuing so the print and its
+      location can be preserved for examination.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Refusal: fingerprints must be processed before this step.'
+  - id: evidence-trace-marker-first
+    category: 3
+    type: 0
+    speaker: 
+    text: Identify the blood trace with the additional marker used in this exercise
+      before the final photograph, so the sample source can be distinguished from
+      the knife itself.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 0
+    notes: The knife takes two tents - one for the knife, one for the blood on its
+      blade (EvidenceDefinition.requiresTraceMarker). Refusal for the knife's final
+      photograph until the second tent is placed.
+  - id: evidence-fingerprint-before-record
+    category: 9
+    type: 0
+    speaker: 
+    text: Complete fingerprint processing first so the record describes the finding
+      that was actually recovered.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Refusal: Recorder entry blocked until on-scene fingerprinting is done.'
+  - id: fingerprint-load-powder-first
+    category: 9
+    type: 0
+    speaker: 
+    text: Load powder onto the brush first so the latent print can be developed for
+      lifting.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Brushing a print with an empty brush.
+  - id: fingerprint-examine-other-surface-first
+    category: 9
+    type: 0
+    speaker: 
+    text: Examine the additional surface before fingerprint processing.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Item must be turned over/examined before dusting.
+  - id: fingerprint-reveal-before-lift
+    category: 9
+    type: 0
+    speaker: 
+    text: Fully develop the print before lifting it. Lifting too early could leave
+      you without a usable record.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Lifting tape used before the print was dusted.
+  - id: fingerprint-item-not-ready
+    category: 9
+    type: 0
+    speaker: 
+    text: This item isn't ready to be fingerprinted yet.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Refusal from kit/station.
+  - id: fingerprint-processed
+    category: 9
+    type: 0
+    speaker: 
+    text: '{0} fingerprint has been processed.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 0
+    notes: '{0} = evidence display name. Fired by the on-scene kit (knife) and the
+      lab station (bottle).'
+  - id: fingerprint-photograph-first
+    category: 9
+    type: 0
+    speaker: 
+    text: Photograph the item before fingerprint processing so its original condition
+      is documented before treatment.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: On-scene item not yet photographed.
+  - id: fingerprint-seal-first
+    category: 9
+    type: 0
+    speaker: 
+    text: Must be sealed before fingerprinting.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Lab item must be sealed first.
+  - id: fingerprint-flip-first
+    category: 9
+    type: 0
+    speaker: 
+    text: Flip it over first.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Item must be turned over before dusting.
+  - id: fingerprint-lift-before-compare
+    category: 9
+    type: 0
+    speaker: 
+    text: Lift a print before comparing it.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Compare pressed before a print was lifted.
+  - id: fingerprint-smudged-underdusted
+    category: 9
+    type: 0
+    speaker: 
+    text: Not enough dust coverage - the print smudged. Re-dust and try again.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Lift attempted with too little powder.
+  - id: fingerprint-smudged-overdusted
+    category: 9
+    type: 0
+    speaker: 
+    text: Over-dusted - the print smudged. Re-dust and try again.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Lift attempted with too much powder.
+  - id: fingerprint-brush-loaded
+    category: 9
+    type: 1
+    speaker: 
+    text: Brush loaded with dust.
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: Brush dipped in the powder jar.
+  - id: fingerprint-already-done
+    category: 9
+    type: 1
+    speaker: 
+    text: Already fingerprinted.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Kit/station used again on a finished item.
+  - id: fingerprint-dusted-ready-to-lift
+    category: 9
+    type: 1
+    speaker: 
+    text: "{0} print dusted \u2014 ready to lift."
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = evidence display name. Next step: lift with tape.'
+  - id: fingerprint-not-needed
+    category: 9
+    type: 1
+    speaker: 
+    text: This item doesn't need fingerprinting.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Lab station used on an item with no fingerprint step.
+  - id: fingerprint-nothing-ready
+    category: 9
+    type: 1
+    speaker: 
+    text: Nothing here is ready for fingerprinting.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Station trigger pressed with nothing valid in range.
+  - id: flip-not-ready
+    category: 9
+    type: 1
+    speaker: 
+    text: Not ready to flip yet.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Fallback when the flip gate gives no specific reason.
+  - id: flip-done
+    category: 9
+    type: 1
+    speaker: 
+    text: '{0} flipped over.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = evidence display name. The item is turned over so the hidden surface
+      can be examined.'
+  - id: evidence-status-processed
+    category: 9
+    type: 1
+    speaker: 
+    text: '{0} {1} been processed.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = evidence display name, {1} = ''has'' or ''have'' (chosen automatically
+      from the name). Lab processing complete.'
+  - id: prompt-fingerprint-station-compare
+    category: 9
+    type: 1
+    speaker: 
+    text: '[Trigger] Compare lifted print ({0})'
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Standing prompt at the lab station. {0} = evidence id.
+  - id: prompt-fingerprint-station-dust-lift
+    category: 9
+    type: 1
+    speaker: 
+    text: '[Trigger] Dust  |  [Grip] Lift  -  {0} ({1} dust)'
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Standing prompt at the lab station. {0} = evidence id, {1} = dust applications
+      so far.
+  - id: evidence-step-documentation-first
+    category: 10
+    type: 0
+    speaker: 
+    text: Record this evidence with the Recorder first so its identity and observations
+      remain connected to the item.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Refusal: the Recorder entry (Logged) comes next.'
+  - id: evidence-status-recorded
+    category: 10
+    type: 1
+    speaker: 
+    text: '{0} {1} been recorded.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = evidence display name, {1} = ''has'' or ''have'' (chosen automatically
+      from the name). Recorder entry saved.'
+  - id: collect-not-ready
+    category: 11
+    type: 0
+    speaker: 
+    text: '{0} isn''t ready for collection. {1}'
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Shown when the player grips an evidence item whose pick-up is still gated
+      (EvidenceGrabGate). {0} = evidence display name, {1} = the one missing step
+      (EvidenceStateManager.GetCollectionBlockReason).
+  - id: evidence-step-not-ready-for-collection
+    category: 11
+    type: 0
+    speaker: 
+    text: This evidence isn't ready for collection yet.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Refusal before collection is allowed.
+  - id: evidence-step-collect-first
+    category: 11
+    type: 0
+    speaker: 
+    text: Collect this evidence before continuing.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Refusal: collection (bagging) comes next.'
+  - id: evidence-step-seal-first
+    category: 11
+    type: 0
+    speaker: 
+    text: Secure and seal the evidence first so its condition and identity are protected
+      before storage.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Refusal: sealing comes next.'
+  - id: box-evidence-not-sealed
+    category: 11
+    type: 0
+    speaker: 
+    text: Seal the evidence before storage to protect it during handling.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Only sealed evidence may go in the box.
+  - id: box-requirements-not-met
+    category: 11
+    type: 0
+    speaker: 
+    text: This item does not meet the box's requirements yet.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Box deposit refused by its requirement.
+  - id: box-not-accepting
+    category: 11
+    type: 0
+    speaker: 
+    text: This box is not accepting deposits yet.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Box inactive at this point in the scenario.
+  - id: box-deposited
+    category: 11
+    type: 0
+    speaker: 
+    text: '{0} placed in the evidence box.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 0
+    notes: '{0} = evidence display name.'
+  - id: box-not-holding-evidence
+    category: 11
+    type: 1
+    speaker: 
+    text: Not holding evidence.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: A pressed at the evidence box with empty hands.
+  - id: box-already-deposited
+    category: 11
+    type: 1
+    speaker: 
+    text: Already deposited.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Item is already in the evidence box.
+  - id: box-evidence-not-held
+    category: 11
+    type: 1
+    speaker: 
+    text: Evidence is not currently held.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Deposit attempted for an item not in hand.
+  - id: box-cannot-deposit
+    category: 11
+    type: 1
+    speaker: 
+    text: Can't deposit right now.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Fallback deposit refusal.
+  - id: held-evidence-stored
+    category: 11
+    type: 1
+    speaker: 
+    text: '{0} stored in inventory.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = evidence display name.'
+  - id: evidence-status-ready-for-collection
+    category: 11
+    type: 1
+    speaker: 
+    text: '{0} {1} ready for collection.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = evidence display name, {1} = ''is'' or ''are''.'
+  - id: evidence-status-collected
+    category: 11
+    type: 1
+    speaker: 
+    text: '{0} {1} been collected.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = evidence display name, {1} = ''has'' or ''have'' (chosen automatically
+      from the name).'
+  - id: evidence-status-sealed
+    category: 11
+    type: 1
+    speaker: 
+    text: '{0} {1} been sealed.'
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: '{0} = evidence display name, {1} = ''has'' or ''have'' (chosen automatically
+      from the name).'
+  - id: prompt-evidence-box-place
+    category: 11
+    type: 1
+    speaker: 
+    text: Press A to place {0} in the evidence box.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Standing prompt while holding sealed evidence at the box. {0} = evidence
+      display name.
+  - id: prompt-store-held-evidence
+    category: 11
+    type: 1
+    speaker: 
+    text: Press B to store {0} in your inventory.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Standing prompt while holding a sealed item away from the evidence box.
+      {0} = evidence display name.
+  - id: narr-mission-deduction-first-connection-1
+    category: 13
+    type: 0
+    speaker: 
+    text: Look at how your findings fit together on the board. Before you submit
+      your theory, ask whether each link holds up.
+    duration: 7
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Narrative line 1/1 of event 'mission-deduction-first-connection' (was
+      Pool_MissionDeductionFirstConnection.asset).
+  - id: insight-added
+    category: 13
+    type: 1
+    speaker: 
+    text: New investigative insight added.
+    duration: 0
+    priority: 0
+    skippable: 1
+    replaceBehavior: 2
+    notes: A new insight unlocked (Insights panel).
+  - id: narr-mission-conclusion-available-1
+    category: 15
+    type: 0
+    speaker: 
+    text: Take a moment to weigh what you've found before choosing a conclusion.
+      If the evidence doesn't support an accusation, leave the case open.
+    duration: 7
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Narrative line 1/1 of event 'mission-conclusion-available' (was Pool_MissionConclusionAvailable.asset).
+  - id: conclusion-close-panels-first
+    category: 15
+    type: 0
+    speaker: 
+    text: Close what you're doing before submitting a conclusion.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Submit Conclusion pressed while a panel/tool owns the screen.
+  - id: conclusion-theory-first
+    category: 15
+    type: 0
+    speaker: 
+    text: Complete the available Evidence Relationships Review before submitting your final conclusion.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Submit Conclusion pressed before a theory exists. Deliberately never names
+      the missing evidence.
+  - id: conclusion-options-changed
+    category: 15
+    type: 0
+    speaker: 
+    text: The available conclusions have changed. Review your options.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Picker refreshed because a stale choice was confirmed.
+  - id: evidence-step-none-needed
+    category: 17
+    type: 0
+    speaker: 
+    text: No further action is needed for this evidence right now.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Shown when a tool is used on evidence that is already fully processed.
+  - id: evidence-step-find-first
+    category: 17
+    type: 0
+    speaker: 
+    text: Find this evidence first.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Refusal: the next required step is discovering the item.'
+  - id: evidence-step-procedure-first
+    category: 17
+    type: 0
+    speaker: 
+    text: Complete the required procedure before continuing.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Generic refusal when no specific next step applies.
+  - id: procedure-step-required-first
+    category: 17
+    type: 0
+    speaker: 
+    text: A required procedure step comes first.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Fallback when a procedure rule has no specific message.
+  - id: interaction-blocked
+    category: 17
+    type: 1
+    speaker: 
+    text: Interaction is blocked right now.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: An action was attempted while a panel/menu owns the controls.
+  - id: sys-evidence-system-unavailable
+    category: 18
+    type: 0
+    speaker: 
+    text: Evidence system not available.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Internal failure surfaced to the player; should never appear in normal
+      play.
+  - id: sys-unknown-evidence
+    category: 18
+    type: 0
+    speaker: 
+    text: Unknown evidence item.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Internal failure: a tool targeted an item the scenario doesn''t know.'
+  - id: swab-seal-failed
+    category: 18
+    type: 0
+    speaker: 
+    text: Something went wrong sealing this sample. It's still in the container.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Unexpected failure while sealing a swab container.
+  - id: bag-seal-failed
+    category: 18
+    type: 0
+    speaker: 
+    text: Something went wrong sealing this item. It's still in your bag.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: Unexpected failure while sealing an evidence bag.
+  - id: sys-missing-evidence-definition
+    category: 18
+    type: 0
+    speaker: 
+    text: Missing evidence definition.
+    duration: 0
+    priority: 3
+    skippable: 1
+    replaceBehavior: 3
+    notes: 'Internal failure: the held item has no evidence definition.'
+  - id: inventory-item-not-holdable
+    category: 18
+    type: 1
+    speaker: 
+    text: No held representation configured for this item yet.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Inventory row clicked for an item with no hand model (content gap).
+  - id: ioc-assessment-guidance
+    category: 0
+    type: 0
+    speaker: 
+    text: At the yellow highlight inside the kitchen, face John's body. Press A to
+      Observe. Look only; don't touch surfaces or step on evidence.
+    duration: 14
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-observation-victim
+    category: 0
+    type: 1
+    speaker: 
+    text: John's on the kitchen floor with what looks like a penetrating wound. This
+      could be a violent death, but we need a proper examination to understand the
+      injury.
+    duration: 6
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-observation-weapon
+    category: 0
+    type: 1
+    speaker: 
+    text: There's a kitchen knife near John. It could be the weapon, but I need to
+      leave it where it is and let SOCO examine it before drawing conclusions.
+    duration: 6
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-observation-blood
+    category: 0
+    type: 1
+    speaker: 
+    text: There's blood near where John was found. The pattern might tell us more
+      about what happened here once it's examined properly.
+    duration: 6
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-observation-bottle
+    category: 0
+    type: 1
+    speaker: 
+    text: There's an empty liquor bottle here. It may relate to the reported drinking,
+      but that needs examination. Observe it without handling it and leave it in
+      place for SOCO.
+    duration: 14
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-observation-survey
+    category: 0
+    type: 1
+    speaker: 
+    text: The cordon is intact; John's body appears undisturbed. Limit contact and
+      movement to avoid moving or transferring traces. Gloves don't prevent all
+      contamination. Leave everything in place for SOCO.
+    duration: 18
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-prompt-observe
+    category: 0
+    type: 1
+    speaker: 
+    text: '[A] Observe'
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-prompt-survey
+    category: 0
+    type: 1
+    speaker: 
+    text: '[A] Survey main scene area'
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-prompt-complete
+    category: 0
+    type: 1
+    speaker: 
+    text: '[A] Complete initial assessment'
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-checklist-title
+    category: 0
+    type: 1
+    speaker: 
+    text: IOC initial assessment
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-check-security
+    category: 0
+    type: 1
+    speaker: 
+    text: Confirm the scene remains secured
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-check-turnover
+    category: 0
+    type: 1
+    speaker: 
+    text: Review First Responder turnover
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-check-victim
+    category: 0
+    type: 1
+    speaker: 
+    text: Observe victim and immediate surroundings
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-check-survey
+    category: 0
+    type: 1
+    speaker: 
+    text: Survey the main scene area
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-check-examination
+    category: 0
+    type: 1
+    speaker: 
+    text: Identify possible forensic examination needs
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-check-information
+    category: 0
+    type: 1
+    speaker: 
+    text: Review preliminary witness/person information
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-check-complete
+    category: 0
+    type: 1
+    speaker: 
+    text: Complete the initial scene assessment
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-decision-objective
+    category: 0
+    type: 1
+    speaker: 
+    text: Determine whether SOCO assistance is required.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-assessment-complete
+    category: 0
+    type: 1
+    speaker: 
+    text: Initial assessment complete. Determine whether SOCO assistance is required.
+    duration: 6
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC procedural assessment; never a forensic finding or evidence status.
+  - id: ioc-role-label
+    category: 0
+    type: 1
+    speaker: 
+    text: 'Role: IOC'
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC SOCO procedural milestone; no forensic findings.
+  - id: soco-decision-question
+    category: 0
+    type: 1
+    speaker: 
+    text: Does this scene require SOCO assistance?
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC SOCO procedural milestone; no forensic findings.
+  - id: soco-choice-request
+    category: 0
+    type: 1
+    speaker: 
+    text: Request SOCO assistance
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC SOCO procedural milestone; no forensic findings.
+  - id: soco-choice-continue
+    category: 0
+    type: 1
+    speaker: 
+    text: Continue without SOCO
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC SOCO procedural milestone; no forensic findings.
+  - id: soco-decision-reconsider
+    category: 0
+    type: 1
+    speaker: 
+    text: There's blood, a possible weapon and a body that need careful examination.
+      Think again about whether you can manage this without SOCO's help.
+    duration: 8
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC SOCO procedural milestone; no forensic findings.
+  - id: soco-assistance-requested
+    category: 0
+    type: 1
+    speaker: 
+    text: SOCO assistance requested through the police operations channel.
+    duration: 6
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC SOCO procedural milestone; no forensic findings.
+  - id: soco-await-arrival
+    category: 0
+    type: 1
+    speaker: 
+    text: Await SOCO arrival.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC SOCO procedural milestone; no forensic findings.
+  - id: soco-arrival-heading
+    category: 0
+    type: 1
+    speaker: 
+    text: SOCO has arrived. Receive the IOC scene briefing before processing begins.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC SOCO procedural milestone; no forensic findings.
+  - id: soco-briefing-action
+    category: 0
+    type: 1
+    speaker: 
+    text: '[A] Receive IOC scene briefing'
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC SOCO procedural milestone; no forensic findings.
+  - id: csi-form-2-submitted
+    category: 0
+    type: 1
+    speaker: 
+    text: CSI Form 2 completed and submitted to the SOCO Team Leader.
+    duration: 6
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC SOCO procedural milestone; no forensic findings.
+  - id: soco-role-started
+    category: 0
+    type: 1
+    speaker: 
+    text: 'ROLE: SOCO INVESTIGATOR'
+    duration: 3.5
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC SOCO procedural milestone; no forensic findings.
+  - id: IOC_SOCO_01
+    category: 0
+    type: 0
+    speaker: IOC
+    text: I've finished the initial walkthrough; the scene's still secure and no
+      forensic work has been done yet. John's on the kitchen floor with what looks
+      like a penetrating wound, and there's a kitchen knife and blood nearby. There's
+      also an empty liquor bottle that may fit the reported drinking session.
+    duration: 20
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC SOCO procedural milestone; no forensic findings.
+  - id: IOC_SOCO_02
+    category: 0
+    type: 0
+    speaker: IOC
+    text: The First Responder was told Paul and Peter had been drinking here with
+      John. The nearby vendor found John and called the police; he says he saw Peter
+      leave around two. Neither he nor the First Responder witnessed the attack,
+      so we still need to check those accounts.
+    duration: 20
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC SOCO procedural milestone; no forensic findings.
+  - id: IOC_SOCO_03
+    category: 0
+    type: 0
+    speaker: IOC
+    text: I've requested your assistance through operations and submitted the completed
+      CSI Form 2 to your team leader. The scene's ready for you to take over the
+      investigation. The First Responder will help maintain scene security.
+    duration: 20
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: IOC SOCO procedural milestone; no forensic findings.
+  - id: soco-choice-controls
+    category: 0
+    type: 1
+    speaker: 
+    text: Point and press trigger, or select with the thumbstick and press A.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Existing world-panel pointer and input bindings.
+  - id: vendor-statement-recorded
+    category: 10
+    type: 1
+    speaker: 
+    text: Vendor statement recorded. Review it in Witness Accounts or on the deduction
+      board.
+    duration: 3.5
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Presentation feedback after the existing interview owner finishes discovery.
+  - id: prompt-store-fingerprint-sample
+    category: 9
+    type: 1
+    speaker: 
+    text: Press B to store the lifted fingerprint
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Derived fingerprint card; stores the print rather than its source evidence.
+  - id: fingerprint-lift-unavailable
+    category: 9
+    type: 1
+    speaker: 
+    text: Finish the required fingerprint preparation and store any item you are
+      holding before lifting the print.
+    duration: 3
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Non-scored refusal; the source print remains available for another attempt.
+  - id: prompt-store-blood-sample
+    category: 8
+    type: 1
+    speaker: 
+    text: Press B to store in inventory
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Held biological sample only; B retains the existing container seal before
+      storage.
+  - id: prompt-store-bagged-evidence
+    category: 8
+    type: 1
+    speaker: 
+    text: Press B to store in inventory
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 2
+    notes: Completed sealed evidence bag only; B changes custody to inventory.
+  - id: ending-radio-opening
+    category: 16
+    type: 0
+    speaker: 
+    text: 'Dispatch: We''ve received your case summary.'
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Closing radio framing, read by the existing completion sequence.
+  - id: ending-radio-closing
+    category: 16
+    type: 0
+    speaker: 
+    text: 'Recorder: Your findings are saved in the case file.'
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Closing radio framing, read by the existing completion sequence.
+  - id: ending-radio-farewell
+    category: 16
+    type: 0
+    speaker: 
+    text: 'Dispatch: Head back to base when you''re ready.'
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Closing radio framing, read by the existing completion sequence.
+  - id: closeout-feedback-continue
+    category: 16
+    type: 1
+    speaker: 
+    text: Press A to continue scene closeout.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-start
+    category: 16
+    type: 0
+    speaker: Professor
+    text: Before scene processing is finished, the team checks that every collected
+      item and sample is documented and accounted for. This helps prevent evidence
+      from being left behind, misplaced or separated from its records. Review the
+      evidence inventory before the final survey.
+    duration: 11
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Once-per-session training concept, routed by ProceduralTrainingGuidance.
+  - id: closeout-survey-guidance
+    category: 16
+    type: 0
+    speaker: Professor
+    text: Before leaving the scene, the team conducts a final check to make sure
+      required documentation is complete and nothing important has been overlooked.
+      Complete the final scene survey before reporting to the IOC.
+    duration: 11
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Once-per-session training concept, routed by ProceduralTrainingGuidance.
+  - id: closeout-survey-done
+    category: 16
+    type: 0
+    speaker: Professor
+    text: The final survey is complete. Confirm your investigation completion report
+      before releasing the scene.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-ioc-question
+    category: 16
+    type: 0
+    speaker: Professor
+    text: Are you satisfied that the scene has been fully processed and all collected
+      evidence is accounted for?
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-ioc-release
+    category: 16
+    type: 0
+    speaker: Professor
+    text: Your completion report is recorded. The investigation is complete. The
+      cordon remains secured.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-objective-processing
+    category: 16
+    type: 1
+    speaker: 
+    text: Complete scene processing and secure all evidence.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-objective-inventory
+    category: 16
+    type: 1
+    speaker: 
+    text: Review and confirm the evidence inventory.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-objective-survey
+    category: 16
+    type: 1
+    speaker: 
+    text: Conduct a final survey of the crime scene.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-objective-report
+    category: 16
+    type: 1
+    speaker: 
+    text: Confirm your investigation completion report.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-inventory-title
+    category: 16
+    type: 1
+    speaker: 
+    text: EVIDENCE INVENTORY
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-inventory-confirm
+    category: 16
+    type: 1
+    speaker: 
+    text: Confirm Evidence Inventory
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-ioc-heading
+    category: 16
+    type: 1
+    speaker: 
+    text: INVESTIGATION COMPLETION REPORT
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-ioc-confirm
+    category: 16
+    type: 1
+    speaker: 
+    text: 'Confirm: all evidence is accounted for'
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-panel-controls
+    category: 16
+    type: 1
+    speaker: 
+    text: 'A: confirm    Trigger: select    B: close'
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-status-pending
+    category: 16
+    type: 1
+    speaker: 
+    text: Incomplete / Needs attention
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-status-body
+    category: 16
+    type: 1
+    speaker: 
+    text: Documented / Examined
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-status-stored
+    category: 16
+    type: 1
+    speaker: 
+    text: Secured / Stored
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-status-sampled
+    category: 16
+    type: 1
+    speaker: 
+    text: Sample secured
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-sample-name
+    category: 16
+    type: 1
+    speaker: 
+    text: Blood Sample - {0}
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-missing-body
+    category: 16
+    type: 0
+    speaker: Professor
+    text: '{0} still needs its documentation and examination completed.'
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-missing-item
+    category: 16
+    type: 0
+    speaker: Professor
+    text: '{0} still needs its processing and secure storage completed.'
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-missing-sample
+    category: 16
+    type: 0
+    speaker: Professor
+    text: The blood sample from {0} still needs to be contained, sealed and stored
+      so its source and identity remain protected.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-store-held
+    category: 16
+    type: 1
+    speaker: 
+    text: Press B to store the held item before continuing.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-not-ready
+    category: 16
+    type: 0
+    speaker: Professor
+    text: Account for every required item and sample before confirming the inventory,
+      so evidence remains connected to its records.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-review-prompt
+    category: 16
+    type: 1
+    speaker: 
+    text: Review Evidence Inventory - Press A
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-survey-prompt
+    category: 16
+    type: 1
+    speaker: 
+    text: Final Scene Survey - Press A
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-ioc-prompt
+    category: 16
+    type: 1
+    speaker: 
+    text: Confirm investigation completion report - Press A
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Procedural SOCO closeout presentation.
+  - id: closeout-custody-fixed
+    category: 16
+    type: 1
+    speaker: 
+    text: Inventory confirmed. Evidence stays secured.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Inventory is read-only after procedural acknowledgement.
+  - id: TRAIN-SOCO-TEAM
+    category: 0
+    type: 0
+    speaker: Professor
+    text: In this simulation, you will practice several crime-scene activities yourself.
+      In actual operations, these responsibilities may be divided among trained members
+      of the crime-scene team, including photography, evidence recording, collection
+      and specialized examination.
+    duration: 11
+    priority: 1
+    skippable: 1
+    replaceBehavior: 3
+    notes: Once per session at a completed training milestone; generic principles,
+      no case answers or assessment contribution.
+  - id: TRAIN-PHOTOGRAPHY
+    category: 1
+    type: 0
+    speaker: Professor
+    text: Crime-scene photography preserves how the scene looked before anything
+      is moved, including the original position and condition of evidence. The photographer
+      documents the overall scene and important details; in actual practice, as many
+      photographs as reasonably necessary may be taken. This simulation uses route
+      points to practice that documentation.
+    duration: 13
+    priority: 1
+    skippable: 1
+    replaceBehavior: 3
+    notes: Once per session at a completed training milestone; generic principles,
+      no case answers or assessment contribution.
+  - id: TRAIN-MARKER
+    category: 6
+    type: 0
+    speaker: Professor
+    text: Evidence markers help the team identify the same item across photographs,
+      notes and evidence records. They support consistent documentation, but do not
+      replace it.
+    duration: 8
+    priority: 1
+    skippable: 1
+    replaceBehavior: 3
+    notes: Once per session at a completed training milestone; generic principles,
+      no case answers or assessment contribution.
+  - id: TRAIN-TRACE-SOURCE
+    category: 3
+    type: 0
+    speaker: Professor
+    text: The knife is physical evidence, while blood on it is material that may
+      need its own sample and record. Separately identifying the object and the material
+      collected from it preserves where each finding came from. Here, the additional
+      trace marker helps you practice that source identification.
+    duration: 12
+    priority: 1
+    skippable: 1
+    replaceBehavior: 3
+    notes: Once per session at a completed training milestone; generic principles,
+      no case answers or assessment contribution.
+  - id: TRAIN-MEASUREMENT
+    category: 7
+    type: 0
+    speaker: Professor
+    text: Measurements preserve where an item was located in relation to the scene.
+      Photographs alone may not fully capture spatial relationships; the team's measurement
+      and sketch work helps reconstruct the original layout after evidence is moved.
+    duration: 10
+    priority: 1
+    skippable: 1
+    replaceBehavior: 3
+    notes: Once per session at a completed training milestone; generic principles,
+      no case answers or assessment contribution.
+  - id: TRAIN-FINGERPRINT
+    category: 9
+    type: 0
+    speaker: Professor
+    text: Fingerprint personnel carefully develop latent prints before lifting and
+      preserving them for examination. The sequence helps protect the print and the
+      record of its location. A recovered fingerprint can establish contact with
+      an object, but alone does not explain when or why that contact occurred.
+    duration: 12
+    priority: 1
+    skippable: 1
+    replaceBehavior: 3
+    notes: Once per session at a completed training milestone; generic principles,
+      no case answers or assessment contribution.
+  - id: LEAD-FINGERPRINT-VENDOR
+    category: 9
+    type: 0
+    speaker: Professor
+    text: Paul's print confirms that he handled the knife at some point, but it doesn't
+      tell us when he touched it or what he did with it. It isn't proof that he used
+      it in the attack. Let's follow up with the vendor and ask whether he noticed
+      anyone else near John's house besides Peter.
+    duration: 20
+    priority: 1
+    skippable: 1
+    replaceBehavior: 3
+    notes: Once per session after the locked RC-03 fingerprint response and existing
+      explanations; investigative lead only, never reveals the vendor answer or awards
+      points.
+  - id: TRAIN-BIOLOGICAL-SAMPLE
+    category: 8
+    type: 0
+    speaker: Professor
+    text: Biological material is placed in its own container and identified so it
+      can be traced back to the exact item or area where it came from. Samples from
+      different sources must remain distinguishable. Collecting a sample preserves
+      material for examination; it does not by itself explain what happened.
+    duration: 12
+    priority: 1
+    skippable: 1
+    replaceBehavior: 3
+    notes: Once per session at a completed training milestone; generic principles,
+      no case answers or assessment contribution.
+  - id: TRAIN-PACKAGING
+    category: 11
+    type: 0
+    speaker: Professor
+    text: Collection does not end when an item is picked up. The evidence collector
+      properly packages, secures and identifies it so its condition and identity
+      are protected during handling.
+    duration: 9
+    priority: 1
+    skippable: 1
+    replaceBehavior: 3
+    notes: Once per session at a completed training milestone; generic principles,
+      no case answers or assessment contribution.
+  - id: TRAIN-CUSTODY
+    category: 11
+    type: 0
+    speaker: Professor
+    text: Packaged and secured evidence must remain accounted for. The evidence recorder
+      or custodian records who handled it and where it went after collection. Storing
+      it in this simulation practices accountability; the button press does not represent
+      every real chain-of-custody step.
+    duration: 11
+    priority: 1
+    skippable: 1
+    replaceBehavior: 3
+    notes: Once per session at a completed training milestone; generic principles,
+      no case answers or assessment contribution.
+  - id: bottle-measure-before-fingerprint
+    category: 5
+    type: 1
+    speaker: 
+    text: Complete the bottle's fixed-reference measurements and its distances to
+      discovered evidence before dusting for prints.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: 'Bottle on-scene fingerprints: final photo, measurements, dust, lift and
+      explicit B storage.'
+  - id: fingerprint-use-on-scene-kit
+    category: 5
+    type: 1
+    speaker: 
+    text: Process this item's prints on scene with the powder brush and lifting tape,
+      then store the recovered sample with B.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: 'Bottle on-scene fingerprints: final photo, measurements, dust, lift and
+      explicit B storage.'
+  - id: bottle-fingerprint-identification
+    category: 5
+    type: 0
+    speaker: 
+    text: Comparison identified separate prints from John, Peter and Paul on the
+      bottle. This supports shared handling during the reported gathering; it does
+      not establish when each print was left.
+    duration: 8
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: 'Bottle on-scene fingerprints: final photo, measurements, dust, lift and
+      explicit B storage.'
+  - id: photo-scale-place-prompt
+    category: 0
+    type: 1
+    speaker:
+    text: "A - Place photo scale (assisted)\n30 cm ruler for size within the photo."
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Camera accessory HUD; Text lookup only. Not a scene-distance measurement.
+  - id: photo-scale-placed
+    category: 0
+    type: 1
+    speaker:
+    text: "A - Remove photo scale\nFrame the item and whole ruler."
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Camera accessory HUD; Text lookup only.
+  - id: photo-scale-saved
+    category: 0
+    type: 1
+    speaker:
+    text: "Scaled photo saved\nA - Remove photo scale"
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Camera accessory HUD; Text lookup only.
+  - id: photo-scale-first-original
+    category: 0
+    type: 1
+    speaker:
+    text: First photograph the item without a scale.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Camera accessory HUD; no automatic placement or photograph.
+  - id: photo-scale-required
+    category: 0
+    type: 1
+    speaker:
+    text: Press A to place the photo scale for this item's final photograph.
+    duration: 8
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: A marked photograph of these selected items also documents the scale.
+  - id: photo-scale-frame
+    category: 0
+    type: 1
+    speaker:
+    text: Include the whole ruler and item. Move closer and keep the ruler unobstructed.
+    duration: 8
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: Validates actual saved-photo aspect, full ruler/item bounds, size and sightlines.
+  - id: photo-scale-remove-for-original
+    category: 0
+    type: 1
+    speaker:
+    text: Remove the photo scale from the frame before taking the unscaled photograph.
+    duration: 8
+    priority: 2
+    skippable: 1
+    replaceBehavior: 3
+    notes: An original photograph must not include the placed photo scale.
+  - id: photo-scale-prepare-item
+    category: 0
+    type: 1
+    speaker:
+    text: Finish the item's marking steps, then return for its scaled photograph.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Camera accessory HUD; existing preparation gates still apply.
+  - id: photo-scale-move-closer
+    category: 0
+    type: 1
+    speaker:
+    text: Move closer to place the photo scale.
+    duration: 0
+    priority: 1
+    skippable: 1
+    replaceBehavior: 0
+    notes: Camera accessory HUD; assisted placement has a two-metre reach.
+  - id: gloves-finish-sample
+    category: 0
+    type: 1
+    speaker:
+    text: Store this sample, then change gloves at the table outside before taking another sample.
+    duration: 10
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Glove replacement station and navigation.
+  - id: gloves-dispose
+    category: 0
+    type: 1
+    speaker:
+    text: "[A] Remove and dispose of used gloves"
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Glove replacement station and navigation.
+  - id: gloves-clean
+    category: 0
+    type: 1
+    speaker:
+    text: Fresh gloves equipped
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Glove replacement station and navigation.
+  - id: gloves-replaced
+    category: 0
+    type: 1
+    speaker:
+    text: Fresh gloves equipped. Return to your evidence.
+    duration: 7
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Glove replacement station and navigation.
+  - id: gloves-sampling-blocked
+    category: 0
+    type: 1
+    speaker:
+    text: Fresh gloves are required. Store your sample, holster your tool, then change gloves at the table outside.
+    duration: 10
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Glove replacement station and navigation.
+  - id: gloves-destination
+    category: 0
+    type: 1
+    speaker:
+    text: Clean gloves - outside
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Glove replacement station and navigation.
+  - id: gloves-holster
+    category: 0
+    type: 1
+    speaker:
+    text: Holster your tool before changing gloves.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Glove replacement station and navigation.
+  - id: gloves-follow-route
+    category: 0
+    type: 1
+    speaker:
+    text: Follow the arrows to the supply table.
+    duration: 0
+    priority: 2
+    skippable: 1
+    replaceBehavior: 0
+    notes: Glove replacement station and navigation.

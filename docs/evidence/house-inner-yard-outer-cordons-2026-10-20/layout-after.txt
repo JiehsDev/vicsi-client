@@ -1,0 +1,5 @@
+Front doorway: Center: (16.72, 2.25, 6.33), Extents: (0.53, 1.05, 0.12)
+Tape: X=16.25681..17.18681 Z=6.186699
+Protected local: Center: (-1.76, 4.03, 7.84), Extents: (4.52, 3.23, 4.21)
+Front wing local: Center: (-3.51, 4.03, 2.58), Extents: (2.77, 3.23, 1.05)
+Approach local: Center: (-0.18, 4.03, 3.50), Extents: (0.47, 3.23, 0.13)

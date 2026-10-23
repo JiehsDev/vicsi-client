@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: known fixture produces expected recall and precision
+ok 1 - known fixture produces expected recall and precision
+  ---
+  duration_ms: 275.3773
+  type: 'test'
+  ...
+# Subtest: identical input produces identical report
+ok 2 - identical input produces identical report
+  ---
+  duration_ms: 408.3526
+  type: 'test'
+  ...
+# Subtest: additional marked states do not double-count identified evidence
+ok 3 - additional marked states do not double-count identified evidence
+  ---
+  duration_ms: 138.0388
+  type: 'test'
+  ...
+# Subtest: empty identification denominators are explicit unavailable values
+ok 4 - empty identification denominators are explicit unavailable values
+  ---
+  duration_ms: 104.765
+  type: 'test'
+  ...
+# Subtest: missing lifecycle export is rejected
+ok 5 - missing lifecycle export is rejected
+  ---
+  duration_ms: 88.0287
+  type: 'test'
+  ...
+# Subtest: empty event log is rejected
+ok 6 - empty event log is rejected
+  ---
+  duration_ms: 87.2625
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1204.9939

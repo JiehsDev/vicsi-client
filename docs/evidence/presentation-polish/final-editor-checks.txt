@@ -1,0 +1,15 @@
+EditorPlay=False
+IOC placement=(-1.60, 0.03, 1.60) yaw=135 rootComponents=3
+NPC presentations=3
+Tape components=1
+Vendor owners=1
+XR initialization restored=True
+FR_Pass=True
+FR_Faces=True
+IOC_Faces=True
+Briefing_Pass=True
+Vendor_Once=True
+Height_Pass=True
+UI_Pass=True
+Path_Pass=True
+Pointer_Pass=True

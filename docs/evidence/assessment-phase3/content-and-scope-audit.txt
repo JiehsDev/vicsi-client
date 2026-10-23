@@ -1,0 +1,30 @@
+PASS: Exactly six unique checkpoint IDs; optional synthesis omitted
+PASS: RC-01-PETER exact requested question and four response texts
+PASS: RC-01-PETER exact internal 1-4 weights/stable IDs/category
+PASS: RC-01-PETER no numerical weights or evaluative labels in player-facing text
+PASS: RC-02-SCENE exact requested question and four response texts
+PASS: RC-02-SCENE exact internal 1-4 weights/stable IDs/category
+PASS: RC-02-SCENE no numerical weights or evaluative labels in player-facing text
+PASS: RC-03-FINGERPRINT exact requested question and four response texts
+PASS: RC-03-FINGERPRINT exact internal 1-4 weights/stable IDs/category
+PASS: RC-03-FINGERPRINT no numerical weights or evaluative labels in player-facing text
+PASS: RC-04-KNIFE-WOUND exact requested question and four response texts
+PASS: RC-04-KNIFE-WOUND exact internal 1-4 weights/stable IDs/category
+PASS: RC-04-KNIFE-WOUND no numerical weights or evaluative labels in player-facing text
+PASS: RC-05-TIMELINE exact requested question and four response texts
+PASS: RC-05-TIMELINE exact internal 1-4 weights/stable IDs/category
+PASS: RC-05-TIMELINE no numerical weights or evaluative labels in player-facing text
+PASS: RC-06-BLOODSTAIN exact requested question and four response texts
+PASS: RC-06-BLOODSTAIN exact internal 1-4 weights/stable IDs/category
+PASS: RC-06-BLOODSTAIN no numerical weights or evaluative labels in player-facing text
+PASS: Early questions expose no later Paul finding or hidden offender fact
+PASS: Fingerprint integrates HYP-02 and withholds Phase 2 lesson
+PASS: Fingerprint, knife/wound and blood interpretations defer answer-revealing narrative
+PASS: No checkpoint response mutates procedures, relationships, conclusions or scoring
+PASS: Vendor eligibility uses physically discovered statement, not catalog availability
+PASS: Scene uses actual IOC observation IDs
+PASS: FR fact now includes reported nervous/sick behavior and no eyewitness attack
+PASS: All eleven Phase 2 lessons remain authored
+PASS: All protected authored procedure, finding, HYP, relationship, conclusion and assessment assets/code unchanged
+PASS: Scoring remains 1.6.0
+29 passed, 0 failed; 325 protected files compared.

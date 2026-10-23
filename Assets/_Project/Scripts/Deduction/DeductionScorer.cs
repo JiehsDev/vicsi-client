@@ -1,10 +1,11 @@
 // Assets/_Project/Scripts/Deduction/DeductionScorer.cs
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// One node-id pair, used both for the answer key (required/contradictory
-/// links) and for tracking which links exist on the board.
+/// One node-id pair, used by EvidenceBoardController to track which links currently
+/// exist on the board (and, before the RelationshipDefinition asset-driven answer key
+/// replaced it, by DeductionScorer's own now-removed hardcoded requiredLinks/
+/// contradictoryLinks fields - see DeductionScorer's class comment).
 /// </summary>
 [System.Serializable]
 public struct NodePairId
@@ -30,65 +31,102 @@ public struct DeductionScoreResult
 }
 
 /// <summary>
-/// Compares the player's board connections against a hardcoded MVP answer
-/// key for the kitchen-homicide scenario and produces a 0-1 score.
-/// Weights: 0.5 required links present, 0.3 absence of contradictory
-/// links, 0.2 time efficiency (elapsed time since this component woke up).
+/// Compares the player's board connections against the editable RelationshipDefinition
+/// roster tracked by RelationshipStateManager and produces a 0-1 score. Weights: 0.5
+/// required (isCorrect) links present, 0.3 absence of contradictory (!isCorrect) links,
+/// 0.2 time efficiency (time spent reviewing the deduction board). Procedural
+/// training time is excluded; assessment weights and relationship math are unchanged.
+///
+/// Previously read a hardcoded [SerializeField] answer key (requiredLinks/
+/// contradictoryLinks) baked directly into this component. That was safe to remove
+/// outright rather than migrate when that replacement was introduced. The current
+/// CSI scene uses this asset-driven scorer; RelationshipStateManager remains its
+/// source of truth. See RelationshipDefinition for the answer-key replacement.
 /// </summary>
 public class DeductionScorer : MonoBehaviour
 {
-    [Tooltip("Connections the player SHOULD make to reach the correct theory.")]
-    [SerializeField]
-    private List<NodePairId> requiredLinks = new()
-    {
-        new NodePairId("EVD-014", "conclusion_murder_weapon")
-    };
-
-    [Tooltip("Connections that indicate a wrong theory if the player makes them.")]
-    [SerializeField]
-    private List<NodePairId> contradictoryLinks = new()
-    {
-        new NodePairId("evd_red_herring", "conclusion_murder_weapon")
-    };
-
     [Tooltip("Elapsed time (seconds) at or below which the player earns full time-efficiency credit.")]
     [SerializeField] private float targetTimeSeconds = 120f;
 
     [Tooltip("Elapsed time (seconds) at or above which time-efficiency credit is zero.")]
     [SerializeField] private float maxTimeSeconds = 300f;
 
-    private float startTime;
+    private float reasoningSeconds;
+    private float reasoningStartedAt;
+    private bool isReasoning;
 
-    private void Awake()
+    public void BeginReasoning()
     {
-        startTime = Time.time;
+        if (isReasoning) return;
+        reasoningStartedAt = Time.time;
+        isReasoning = true;
     }
 
+    public void EndReasoning()
+    {
+        if (!isReasoning) return;
+        reasoningSeconds += Time.time - reasoningStartedAt;
+        isReasoning = false;
+    }
+
+    private void OnDisable() => EndReasoning();
+
+    /// <summary>
+    /// Scores the current board state. board is accepted for signature compatibility
+    /// with EvidenceBoardController.SubmitTheory (which already holds the connection
+    /// data as RelationshipStateManager.Selected/Completed state by the time this is
+    /// called - see SubmitTheory's own call order) but is not read directly here;
+    /// scoring reads RelationshipStateManager, never the board's own connection
+    /// dictionary, so there is exactly one source of truth for "what got connected."
+    /// </summary>
     public DeductionScoreResult Score(EvidenceBoardController board)
     {
-        int requiredHit = 0;
-        foreach (var link in requiredLinks)
+        if (FinalDeductionAssessment.ActiveInScene)
         {
-            if (board.IsConnected(link.nodeIdA, link.nodeIdB))
+            var result = FinalDeductionAssessment.Score(FinalDeductionAssessment.CaptureLive(), false, FinalDeductionAssessment.Rules);
+            return new DeductionScoreResult { requiredLinksScore = result.deductionRelationships,
+                contradictionScore = result.unsupportedRelationships == 0 ? 1 : 0, timeScore = 0,
+                total = result.deductionRelationships, elapsedSeconds = reasoningSeconds + (isReasoning ? Time.time - reasoningStartedAt : 0f) };
+        }
+        float correctWeightAchieved = 0f;
+        float correctWeightTotal = 0f;
+        int incorrectSelectedCount = 0;
+        int incorrectTotalCount = 0;
+
+        if (RelationshipStateManager.Instance != null)
+        {
+            foreach (var record in RelationshipStateManager.Instance.AllRecords)
             {
-                requiredHit++;
+                if (record?.definition == null)
+                {
+                    continue;
+                }
+
+                bool wasCompleted = record.state == RelationshipState.Completed;
+
+                if (record.definition.isCorrect)
+                {
+                    correctWeightTotal += record.definition.scoreWeight;
+                    if (wasCompleted)
+                    {
+                        correctWeightAchieved += record.definition.scoreWeight;
+                    }
+                }
+                else
+                {
+                    incorrectTotalCount++;
+                    if (wasCompleted)
+                    {
+                        incorrectSelectedCount++;
+                    }
+                }
             }
         }
-        float requiredScore = requiredLinks.Count == 0 ? 1f : (float)requiredHit / requiredLinks.Count;
 
-        int contradictionsMade = 0;
-        foreach (var link in contradictoryLinks)
-        {
-            if (board.IsConnected(link.nodeIdA, link.nodeIdB))
-            {
-                contradictionsMade++;
-            }
-        }
-        float contradictionScore = contradictoryLinks.Count == 0
-            ? 1f
-            : 1f - ((float)contradictionsMade / contradictoryLinks.Count);
+        float requiredScore = correctWeightTotal <= 0f ? 1f : Mathf.Clamp01(correctWeightAchieved / correctWeightTotal);
+        float contradictionScore = incorrectTotalCount == 0 ? 1f : 1f - ((float)incorrectSelectedCount / incorrectTotalCount);
 
-        float elapsed = Time.time - startTime;
+        float elapsed = reasoningSeconds + (isReasoning ? Time.time - reasoningStartedAt : 0f);
         float timeScore = Mathf.Clamp01(1f - Mathf.InverseLerp(targetTimeSeconds, maxTimeSeconds, elapsed));
 
         return new DeductionScoreResult

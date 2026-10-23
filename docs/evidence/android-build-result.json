@@ -1,0 +1,14 @@
+{
+  "job_id": "build-a6b80b396a",
+  "result": "succeeded",
+  "platform": "Android",
+  "output_path": "Builds/ViCSI-audit-20260914.apk",
+  "started_at": "2026-09-14T14:09:19.3500419Z",
+  "completed_at": "2026-09-14T14:23:14.5393471Z",
+  "duration_seconds": 835.1893051999999,
+  "build_report_total_size_mb": 4400.59,
+  "errors": 0,
+  "warnings": 1002,
+  "apk_bytes": 710050618,
+  "apk_sha256": "9e8d69b674ffc996213ce327db647bb61d26de95abf7fae495423647036726ff"
+}

@@ -1,0 +1,30 @@
+{
+  "suites": [
+    {
+      "suite": "AudioSettingsTest",
+      "run": "run2",
+      "passed": 22,
+      "failed": 0
+    },
+    {
+      "suite": "SettingsPauseMenuTest",
+      "run": "run1",
+      "passed": 49,
+      "failed": 0
+    },
+    {
+      "suite": "SceneAmbienceTest",
+      "run": "run1",
+      "passed": 28,
+      "failed": 0
+    },
+    {
+      "suite": "InteractionSfxTest",
+      "run": "run1",
+      "passed": 39,
+      "failed": 0
+    }
+  ],
+  "totalPassed": 138,
+  "restoredUnrelatedLayoutBlocks": 9
+}

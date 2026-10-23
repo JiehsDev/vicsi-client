@@ -1,0 +1,4 @@
+scene=Assets/_Project/Scenes/Scenarios/CSI_Environment.unity dirty=False playing=False compiling=False compilationFailed=False
+serializedPreset=NormalPlay editorSelection=0 diagnosticOverride=False
+pending=False xrRestore=False nextSuite=
+StandaloneXR=True AndroidXR=True

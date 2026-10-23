@@ -1,0 +1,30 @@
+=== GloveChangeStationTest ===
+PASS: Exactly one shared glove state/station; no inventory item
+PASS: Recognisable dispenser/table/disposal are physical station props
+PASS: Clean gloves suppress waypoint
+PASS: Rejected sample does not consume clean gloves
+PASS: Successful blade sample marks gloves used once
+PASS: Uncontained sample suppresses travel and disposal
+PASS: Current sample can still be contained with used gloves
+PASS: Contained sample still requires explicit storage
+PASS: B storage completes current sample while gloves remain used
+FAIL: Stored sample activates waypoint and a route from the kitchen
+PASS: Capture hides pin and arrows
+PASS: Nested capture remains hidden
+FAIL: Capture restores needed navigation
+PASS: Next source refuses used gloves without progress
+PASS: Station cannot replace gloves from across the house
+INFO: table position=(17.9200, 0.0000, -0.5000)
+PASS: Supply table is outside controlled footprint
+PASS: Modal UI blocks disposal
+FAIL: One A disposes used gloves without wearing replacements
+PASS: Held disposal A cannot pick up clean pair
+FAIL: Next deliberate A picks up a pair
+PASS: B returns the pair without fresh credit
+FAIL: Separate A wears fresh gloves and clears requirement
+PASS: Completed change hides waypoint and preserves authorization
+FAIL: One disposal/change event and no repeated arrival PPE event
+PASS: Glove change preserves source and sealed stored sample
+FAIL: Fresh gloves allow next source and become used again
+PASS: Reload clears glove changes, pending source and samples
+=== FAIL ===

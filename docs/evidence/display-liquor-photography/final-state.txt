@@ -1,0 +1,6 @@
+scene=Assets/_Project/Scenes/Scenarios/CSI_Environment.unity dirty=False playing=False compileFailed=False pending=False xrRestore=False nextSuite=
+point=scene-interior-right sequence=50 label=Table with liquor bottles position=(14.1000, 1.2000, 8.7500) target=(13.4800, 2.1453, 6.9900)
+instruction=Photograph the table beside the living room, including both liquor bottles.
+renderers=2 colliders=0 evidenceProps=0
+Standalone XR=True
+Android XR=True

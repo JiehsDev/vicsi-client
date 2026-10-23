@@ -1,0 +1,104 @@
+{
+  "passed": 23,
+  "failed": 0,
+  "checks": [
+    {
+      "pass": true,
+      "label": "No scene records added or removed"
+    },
+    {
+      "pass": true,
+      "label": "Evidence_KitchenKnife: complete prefab overrides preserved exactly"
+    },
+    {
+      "pass": true,
+      "label": "Evidence_Bloodspatterpattern: user placement and rotation preserved exactly"
+    },
+    {
+      "pass": true,
+      "label": "IOC_Observe_Point: user placement and rotation preserved exactly"
+    },
+    {
+      "pass": true,
+      "label": "BODY_100K: complete prefab overrides preserved exactly"
+    },
+    {
+      "pass": true,
+      "label": "evidenceId identities preserved"
+    },
+    {
+      "pass": true,
+      "label": "referenceId identities preserved"
+    },
+    {
+      "pass": true,
+      "label": "slotId identities preserved"
+    },
+    {
+      "pass": true,
+      "label": "anchorId identities preserved"
+    },
+    {
+      "pass": true,
+      "label": "Measurements_CSI_Environment.asset: requirementId preserved"
+    },
+    {
+      "pass": true,
+      "label": "Measurements_CSI_Environment.asset: referenceAId preserved"
+    },
+    {
+      "pass": true,
+      "label": "Measurements_CSI_Environment.asset: referenceBId preserved"
+    },
+    {
+      "pass": true,
+      "label": "Measurements_CSI_Environment.asset: evidenceId preserved"
+    },
+    {
+      "pass": true,
+      "label": "Measurements_CSI_Environment.asset: slotId preserved"
+    },
+    {
+      "pass": true,
+      "label": "Measurements_CSI_Environment.asset: correctAnchorId preserved"
+    },
+    {
+      "pass": true,
+      "label": "Measurements_CSI_Environment.asset: tolerance preserved"
+    },
+    {
+      "pass": true,
+      "label": "Sketch_CSI_Environment.asset: requirementId preserved"
+    },
+    {
+      "pass": true,
+      "label": "Sketch_CSI_Environment.asset: referenceAId preserved"
+    },
+    {
+      "pass": true,
+      "label": "Sketch_CSI_Environment.asset: referenceBId preserved"
+    },
+    {
+      "pass": true,
+      "label": "Sketch_CSI_Environment.asset: evidenceId preserved"
+    },
+    {
+      "pass": true,
+      "label": "Sketch_CSI_Environment.asset: slotId preserved"
+    },
+    {
+      "pass": true,
+      "label": "Sketch_CSI_Environment.asset: correctAnchorId preserved"
+    },
+    {
+      "pass": true,
+      "label": "Sketch_CSI_Environment.asset: tolerance preserved"
+    }
+  ],
+  "changedSceneRecordTypes": {
+    "65": 5,
+    "224": 6,
+    "114": 4,
+    "4": 6
+  }
+}

@@ -1,0 +1,36 @@
+=== SamplePreparationTest ===
+PASS: One separate protected cabinet exists
+PASS: Empty cabinet grants no progress or evidence
+PASS: Sampling retains the knife source
+PASS: A loose swab cannot start cabinet drying
+PASS: Contained carrier needs drying
+PASS: Trigger cannot seal a wet sample
+PASS: B cannot store a wet sample
+PASS: Preparation waypoint takes priority before glove changes
+PASS: Across-house preparation is refused
+PASS: Exterior settled cabinet is available
+PASS: Actual A parks the same carrier at the labelled rack
+PASS: Drying does not seal or store evidence
+PASS: Circular fill advances proportionally
+PASS: Circular fill renders visible cyan pixels in the actual station view
+PASS: Drying shows the exposed swab inside the protective cabinet
+PASS: Sign explicitly identifies simulated drying and source
+PASS: Modal pauses progress and actions without losing source
+PASS: Walking away pauses and preserves the parked carrier
+PASS: No storage or fresh supplies during preparation
+PASS: Fill reaches one and remains dry but unpackaged
+PASS: Holding the initial A does not auto-confirm packaging
+PASS: Disabling cabinet restores carrier and releases its UI ownership
+PASS: Distinct A confirms source and retrieves paper package
+PASS: Packaging grants no seal, storage, glove or fresh-swab credit
+PASS: Repeated preparation cannot duplicate or relabel the sample
+PASS: Early B resumes normal sealing and storage after preparation
+PASS: Stored package can be re-equipped with its wrapper and source
+PASS: Next sample remains unmodified
+PASS: One source produced exactly one set of preparation events
+PASS: Second source gets its own fresh sample
+PASS: Second sample starts with no inherited drying or packaging
+PASS: Second source uses the same protected preparation path
+PASS: Independent packages retain original identities and custody
+PASS: Scene reload clears progress, pending source, package and cabinet ownership
+=== PASS ===

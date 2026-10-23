@@ -1,0 +1,40 @@
+{
+  "reports": [
+    {
+      "file": "run2/ScenarioPhaseFoundationTest.txt",
+      "pass": 19,
+      "fail": 0
+    },
+    {
+      "file": "run2/SceneAccessRegisterTest.txt",
+      "pass": 49,
+      "fail": 0
+    },
+    {
+      "file": "run2/NarrativeRoleFlowTest.txt",
+      "pass": 47,
+      "fail": 0
+    },
+    {
+      "file": "run1/NPCApproachGuideTest.txt",
+      "pass": 33,
+      "fail": 0
+    }
+  ],
+  "unrelatedRectTransformsRestored": [
+    "11060113",
+    "249239485",
+    "441566301",
+    "715956252",
+    "922176587",
+    "1030116788",
+    "1545811980",
+    "1810766057",
+    "2120155145"
+  ],
+  "csharpErrors": 0,
+  "shaderErrors": 0,
+  "headsetComfortReview": "manual check pending",
+  "totalPass": 148,
+  "totalFail": 0
+}

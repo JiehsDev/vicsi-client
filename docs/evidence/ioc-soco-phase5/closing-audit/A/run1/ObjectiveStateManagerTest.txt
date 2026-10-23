@@ -1,0 +1,15 @@
+=== ObjectiveStateManagerTest ===
+  PASS: Objective with an always-true unlock AND completion reaches Completed immediately (single RefreshAll pass)
+  PASS: narrativeEventOnUnlockId actually fired the referenced NarrativeEvent
+  PASS: Objective with an unsatisfiable unlock requirement stays Hidden
+  PASS: Objective gated by RequirementType.RelationshipCompleted stays Active until the relationship actually completes
+  PASS: Objective completes once its RelationshipCompleted requirement is satisfied
+  PASS: RequirementType.ObjectiveCompleted reads IsCompleted correctly (true case)
+  PASS: RequirementType.ObjectiveCompleted reads IsCompleted correctly (false case)
+  PASS: Chained same-tick dependency (B unlocks on A.ObjectiveCompleted) resolves within one RefreshAll call
+  PASS: Objective with a failure requirement stays Active before either condition is met
+  PASS: Objective with NO failure field (null) stays Active before its completion condition is met
+  PASS: When both completion and failure conditions are true at once, failure wins
+  PASS: An objective with no failure field completes normally under the identical condition
+  PASS: Completed is terminal - repeated RefreshAll calls do not change it
+=== PASS, 0 failures ===

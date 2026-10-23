@@ -1,0 +1,1 @@
+FAIL: Isolated batch fixture threw InvalidOperationException at its legacy evidenceResults assertion; coroutine could not complete. Process stopped after preserving its log. Corrected fixture is rerun separately.

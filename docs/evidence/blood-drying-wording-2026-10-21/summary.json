@@ -1,0 +1,14 @@
+{
+    "date":  "2026-10-21",
+    "suite":  "SamplePreparationTest",
+    "report":  "drying-run1.txt",
+    "passed":  47,
+    "failed":  0,
+    "sceneSha256":  "CDD56533168B1112208BC5B1A07C85BEDCD32A6D640DEA80358CDBE4C4604957",
+    "previews":  [
+                     "drying-in-progress.png",
+                     "drying-complete.png"
+                 ],
+    "scope":  "Casework wording for drying and packaging; procedure and timing retained",
+    "manualHeadsetTest":  false
+}

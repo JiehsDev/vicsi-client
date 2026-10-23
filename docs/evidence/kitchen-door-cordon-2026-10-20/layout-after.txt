@@ -1,0 +1,4 @@
+Kitchen doorway: Center: (15.52, 2.25, 11.43), Extents: (0.45, 1.05, 0.03)
+Tape: X=15.12683..15.90683 Z=11.37835
+Protected local: Center: (0.33, 2.65, 10.28), Extents: (2.29, 1.50, 1.65)
+Approach local: Center: (-1.38, 2.65, 8.60), Extents: (0.39, 1.50, 0.04)

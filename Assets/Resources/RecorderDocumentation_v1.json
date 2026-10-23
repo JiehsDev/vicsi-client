@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "requiredSelections": 3,
+  "maximumPerSubject": 6,
+  "maximumTotal": 24,
+  "subjects": [
+    {"id":"BODY-A","label":"Body A – John","statements":[
+      {"id":"rec-body-location-v1","text":"John is lying on the rear ground-floor kitchen floor.","weight":2},
+      {"id":"rec-body-fall-v1","text":"John's position proves that he died from an accidental fall.","weight":0},
+      {"id":"rec-body-position-v1","text":"John is lying face up.","weight":2},
+      {"id":"rec-body-attacker-v1","text":"The body's appearance proves that Paul killed John.","weight":0},
+      {"id":"rec-body-staining-v1","text":"Reddish staining is visible on John's shirt near the abdomen.","weight":2},
+      {"id":"rec-body-time-v1","text":"The body's appearance establishes that John died at exactly 3:00 a.m.","weight":0}
+    ]},
+    {"id":"EVD-014","label":"Evidence 1 – Kitchen Knife","statements":[
+      {"id":"rec-knife-use-v1","text":"Paul used this knife to stab John.","weight":0},
+      {"id":"rec-knife-location-v1","text":"The kitchen knife was found on the kitchen floor.","weight":2},
+      {"id":"rec-knife-residue-v1","text":"Reddish residue is visible along the knife blade.","weight":2},
+      {"id":"rec-knife-death-v1","text":"This knife has been conclusively established as the cause of John's death.","weight":0},
+      {"id":"rec-knife-time-v1","text":"The recovered fingerprint establishes the exact time the knife was used.","weight":0},
+      {"id":"rec-knife-print-v1","text":"A latent fingerprint was developed on the knife handle and recovered with lifting tape.","weight":2}
+    ]},
+    {"id":"EVD-015","label":"Evidence 2 – Blood Spatter","statements":[
+      {"id":"rec-spatter-location-v1","text":"The reddish stain pattern is on the kitchen floor near John's body.","weight":2},
+      {"id":"rec-spatter-attacker-v1","text":"The stain pattern identifies Paul as the attacker.","weight":0},
+      {"id":"rec-spatter-dna-v1","text":"DNA testing has confirmed that these stains came from John.","weight":0},
+      {"id":"rec-spatter-appearance-v1","text":"The pattern consists of a group of reddish stains on the floor.","weight":2},
+      {"id":"rec-spatter-swab-v1","text":"A swab was collected from the reddish staining.","weight":2},
+      {"id":"rec-spatter-time-v1","text":"The stains establish the exact time John was attacked.","weight":0}
+    ]},
+    {"id":"EVD-018","label":"Evidence 3 – Empty Liquor Bottle","statements":[
+      {"id":"rec-bottle-presence-v1","text":"The fingerprints prove that Peter was present when John was attacked.","weight":0},
+      {"id":"rec-bottle-location-v1","text":"The bottle was found on the rear ground-floor kitchen counter.","weight":2},
+      {"id":"rec-bottle-condition-v1","text":"The glass liquor bottle is empty and visibly intact.","weight":2},
+      {"id":"rec-bottle-intoxication-v1","text":"The empty bottle proves that John was intoxicated when he died.","weight":0},
+      {"id":"rec-bottle-prints-v1","text":"Fingerprints were developed on the bottle and recovered with lifting tape.","weight":2},
+      {"id":"rec-bottle-time-v1","text":"The recovered fingerprints establish when each person handled the bottle.","weight":0}
+    ]}
+  ]
+}

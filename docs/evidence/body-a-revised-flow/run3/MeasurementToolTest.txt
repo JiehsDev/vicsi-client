@@ -1,0 +1,39 @@
+=== MeasurementToolTest ===
+  PASS: [wheel] Measurement tool registered and not hidden on the wheel
+  PASS: [wheel] ToolType.Measurement appended as 13
+  PASS: [equip] equipped from the wheel path
+  PASS: [leak] undiscovered spatter is not selectable
+  PASS: [select] aiming at nothing -> 'Select evidence to measure.'
+  PASS: [order] unmarked item: 'Place an evidence marker before measuring.'
+  PASS: [setup] overall scene photography completed
+  PASS: [setup] markers placed
+  PASS: [knife] selected; asks for its first fixed reference ('Measure from the West Wall.')
+  PASS: [guides] only the required reference is highlighted, at its anchor
+  PASS: [knife] tape hooked inside the reference zone
+  PASS: [live] live distance 1.371 m = drawn tape 1.371 m from the wall's perpendicular foot, shown as '1.37 m'
+  PASS: [knife] reference 1 recorded at the tape end, not snapped (measured 1.3710 vs expected 1.341)
+  PASS: [knife] partial: reference 1 kept, reference 2 next ('West Wall recorded: 1.37 m. Measure from the Cabinet Front Edge.')
+  PASS: [knife] reference 2 completes the requirement
+  PASS: [knife] measured before disturbance
+  PASS: [knife] reselecting it with an evidence distance open -> Evidence Distance mode ('Evidence distance: hold the tape at the Kitchen knife.')
+  PASS: [tolerance] +0.30 m on reference 1 recorded but invalid (error 0.300)
+  PASS: [tolerance] side stays required, player told to retry
+  PASS: [body] completes after the corrected reference 1
+  PASS: [body] measurements follow final photo without collection (scene custody)
+  PASS: [wrong ref] hooking another item's reference is refused ('Use a fixed reference assigned to this evidence.'), nothing recorded
+  PASS: [far] away from every reference -> told which reference to use ('Hold the tape at the Counter End.')
+  PASS: [either order] the item's own second reference is accepted first
+  PASS: [far] tape end away from the item -> not recorded
+  PASS: [either order] reference 2 recorded first; reference 1 now required
+  PASS: [bottle] pair completes
+  PASS: [spatter] reference 1 recorded
+  PASS: [unequip] holstered: guides and tape hidden, reference 1 still recorded
+  PASS: [re-equip] resumes the same item at reference 2 (tape not left extended) ('Measure from the Cabinet End.')
+  PASS: [disturbed] spatter sampled on scene
+  PASS: [disturbed] sampling counts as disturbance for an item collected by swab
+  PASS: [spatter] target anchor stable through sampling
+  PASS: [disturbed] late side flagged and the player told
+  PASS: [disturbed] Warn requirement: completes, marked late (per requirement enforcement)
+  PASS: [events] Started 4 / Taken 9 / Completed 4 / OutOfTolerance 1 / AfterDisturbance 1 (got 4/9/4/1/1)
+  PASS: [ids] no internal ids in any player message seen
+=== PASS, 0 failures ===

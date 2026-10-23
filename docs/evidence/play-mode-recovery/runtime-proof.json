@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-17T13:23:07.5249553Z",
+  "isPlaying": true,
+  "isPaused": false,
+  "compilationFailed": false,
+  "testReady": true,
+  "setupFailure": null,
+  "inventoryCount": 6,
+  "headsetDetected": true,
+  "userPresent": false,
+  "inputFocus": false,
+  "displayRunning": false,
+  "eyeWidth": 0,
+  "eyeHeight": 0,
+  "xrStartup": true,
+  "wallMeshValid": true
+}

@@ -1,0 +1,21 @@
+{
+  "suites": [
+    {
+      "path": "docs/evidence/photography-shutter-ownership/run1/PhotographyGuideTest.txt",
+      "passed": 26,
+      "failed": 0
+    },
+    {
+      "path": "docs/evidence/photography-shutter-ownership/run1/PhotographyShutterOwnershipTest.txt",
+      "passed": 14,
+      "failed": 0
+    },
+    {
+      "path": "docs/evidence/photography-shutter-ownership/run1/ScenePhotographyProcedureTest.txt",
+      "passed": 47,
+      "failed": 0
+    }
+  ],
+  "passed": 87,
+  "failed": 0
+}

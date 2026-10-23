@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-19",
+  "suites": [
+    {
+      "suite": "FreshSwabSupplyTest",
+      "passed": 51,
+      "failed": 0,
+      "report": "docs/evidence/fresh-swab/run4/FreshSwabSupplyTest.txt",
+      "log": "docs/evidence/fresh-swab/run4/FreshSwabSupplyTest.log"
+    },
+    {
+      "suite": "GloveChangeStationTest",
+      "passed": 52,
+      "failed": 0,
+      "report": "docs/evidence/fresh-swab/run2/GloveChangeStationTest.txt",
+      "log": "docs/evidence/fresh-swab/run2/GloveChangeStationTest.log"
+    },
+    {
+      "suite": "BiologicalSamplingTest",
+      "passed": 60,
+      "failed": 0,
+      "report": "docs/evidence/fresh-swab/run2/BiologicalSamplingTest.txt",
+      "log": "docs/evidence/fresh-swab/run2/BiologicalSamplingTest.log"
+    },
+    {
+      "suite": "EvidenceInventoryTest",
+      "passed": 29,
+      "failed": 0,
+      "report": "docs/evidence/fresh-swab/run2/EvidenceInventoryTest.txt",
+      "log": "docs/evidence/fresh-swab/run2/EvidenceInventoryTest.log"
+    },
+    {
+      "suite": "ArrivalPPETest",
+      "passed": 42,
+      "failed": 0,
+      "report": "docs/evidence/fresh-swab/run2/ArrivalPPETest.txt",
+      "log": "docs/evidence/fresh-swab/run2/ArrivalPPETest.log"
+    },
+    {
+      "suite": "ArrivalEntryTest",
+      "passed": 26,
+      "failed": 0,
+      "report": "docs/evidence/fresh-swab/run2/ArrivalEntryTest.txt",
+      "log": "docs/evidence/fresh-swab/run2/ArrivalEntryTest.log"
+    },
+    {
+      "suite": "SceneAccessRegisterTest",
+      "passed": 40,
+      "failed": 0,
+      "report": "docs/evidence/fresh-swab/run2/SceneAccessRegisterTest.txt",
+      "log": "docs/evidence/fresh-swab/run2/SceneAccessRegisterTest.log"
+    },
+    {
+      "suite": "PhotographicScaleTest",
+      "passed": 61,
+      "failed": 0,
+      "report": "docs/evidence/fresh-swab/run2/PhotographicScaleTest.txt",
+      "log": "docs/evidence/fresh-swab/run2/PhotographicScaleTest.log"
+    },
+    {
+      "suite": "VendorPathGuideTest",
+      "passed": 40,
+      "failed": 0,
+      "report": "docs/evidence/fresh-swab/run2/VendorPathGuideTest.txt",
+      "log": "docs/evidence/fresh-swab/run2/VendorPathGuideTest.log"
+    },
+    {
+      "suite": "SceneTestStartTest",
+      "passed": 143,
+      "failed": 0,
+      "report": "docs/evidence/fresh-swab/run2/SceneTestStartTest.txt",
+      "log": "docs/evidence/fresh-swab/run2/SceneTestStartTest.log"
+    },
+    {
+      "suite": "DialogueCatalogTest",
+      "passed": 60,
+      "failed": 0,
+      "report": "docs/evidence/fresh-swab/run2/DialogueCatalogTest.txt",
+      "log": "docs/evidence/fresh-swab/run2/DialogueCatalogTest.log"
+    }
+  ],
+  "totalPassed": 604,
+  "totalFailed": 0,
+  "errorCsShaderNullMissingReferenceMatches": 0,
+  "newMissingDialogueWarnings": 0,
+  "catalogWarningBaselineLog": "docs/evidence/photo-scale/run7/DialogueCatalogTest.log",
+  "catalogWarningBaselineCounts": {
+    "[DialogueCatalog] Missing dialogue id 'narr-mission-body-examination-1' - add it to Resources/ViCSIDialogueCatalog.asset.": 1,
+    "[DialogueCatalog] Missing dialogue id 'narr-beat-1-initial-briefing-1' - add it to Resources/ViCSIDialogueCatalog.asset.": 1,
+    "[DialogueCatalog] Missing dialogue id 'photo-point-exterior-establishing' - add it to Resources/ViCSIDialogueCatalog.asset.": 1,
+    "[DialogueCatalog] Missing dialogue id 'does-not-exist' - add it to Resources/ViCSIDialogueCatalog.asset.": 2
+  },
+  "contentAudit": "docs/evidence/fresh-swab/content-audit.json",
+  "sourceSha256": {
+    "Assets/Resources/ViCSIDialogueCatalog.asset": "aeaf350e17c9b955c50d7e13d533c5a5bcfc2fdd6bb13c697269d37ce0a61cdf",
+    "Assets/_Project/Scripts/Interaction/SwabTool.cs": "c9d776e4895ddcd350348c0a2408d321b1c7f8e167582745dc5e835f10a90eb4",
+    "Assets/_Project/Scripts/SceneTurnover/ArrivalPPEStation.cs": "669ebf617d1a9e5e2692ea441393bf37001c9aa5b34166768fd04a620ffc2f26",
+    "Assets/_Project/Scripts/SceneTurnover/GloveStationGuide.cs": "bda446636cff215bf8fca21d754ac0a736d3b10474af00e11994ea753d9b23f5",
+    "Assets/_Project/Scripts/RoleSystem/PlayerToolRegistry.cs": "e1ee90e9afbcebbeeffdabb411bbcb45f3f6eed145b842b8b88ab63a414fcae3",
+    "Assets/_Project/Scripts/RoleSystem/HeldItemCoordinator.cs": "3699f6a7ae084e63e4e2b0a14ac9ca358b422a44c41bcc28331a02fa086b6507",
+    "Assets/_Project/Scripts/RoleSystem/ToolWheelController.cs": "18e6cd1a4395af68b5957ca1725ed95c7787a9090b9fcf72dc50217b609b3ff3",
+    "Assets/_Project/Scripts/Logging/SessionEventType.cs": "cd7f5e6c19f403edb84a1eb01f2170e9f9cf1f90fecab13aca25fd51bcce7691",
+    "Assets/_Project/Scripts/SceneTurnover/SceneTurnover.cs": "16e262c1fdcf083f59359fddcfbb7e63ae51ca33089c63252c2edf0433a8dcc7",
+    "Assets/_Project/Editor/Phase5PlayModeBatchRunner.cs": "fc2d6e203515cc196675b1c6acf728be8fa7c00f49e321a80613f6054c83ad6e",
+    "Assets/_Project/Scripts/Testing/GloveChangeTestUtil.cs": "9bbd9ba53a27951085558fc0a46f748652fe1ca1935455c6764b78a959820660",
+    "Assets/_Project/Scripts/Testing/GloveChangeStationTest.cs": "b75239ada07951cdaeb60198f6459e73b0810cd74def759dd18605ddd9f76eff",
+    "Assets/_Project/Scripts/Testing/FreshSwabSupplyTest.cs": "acb076d6d1dbf705b25d2f6fa05c596811221877a78833c4e201330f5c428cc1",
+    "Tools/RunFreshSwabChecks.ps1": "42468a9f7a43fad4e1b982cd7e427a8ca3ef3d7b53d03c06dce963aa1ff7e67c"
+  },
+  "manualAcceptancePending": "Physical Quest input comfort, stereo readability and Android device performance"
+}

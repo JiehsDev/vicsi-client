@@ -1,0 +1,23 @@
+{
+  "suites": [
+    {
+      "suite": "SceneAmbienceTest",
+      "passed": 28,
+      "failed": 0
+    },
+    {
+      "suite": "InteractionSfxTest",
+      "passed": 39,
+      "failed": 0
+    },
+    {
+      "suite": "SettingsPauseMenuTest",
+      "passed": 49,
+      "failed": 0
+    }
+  ],
+  "unityChecks": 116,
+  "mediaChecks": 18,
+  "totalChecks": 134,
+  "unrelatedUILayoutBlocksPreserved": 9
+}

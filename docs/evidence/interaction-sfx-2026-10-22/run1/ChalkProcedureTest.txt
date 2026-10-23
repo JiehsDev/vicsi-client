@@ -1,0 +1,67 @@
+=== ChalkProcedureTest ===
+  PASS: [data] BODY-A requiresChalk = true (outline preserves its original position)
+  PASS: [data] EVD-014 requiresChalk = true
+  PASS: [data] EVD-015 requiresChalk = true (stain boundary outlined before sampling)
+  PASS: [data] EVD-018 requiresChalk = true (movable, later bagged: its position is outlined first)
+  PASS: [scene] overall scene photography completed before evidence work
+  PASS: [BODY-A] initial photo
+  PASS: [EVD-014] initial photo
+  PASS: [EVD-015] initial photo
+  PASS: [EVD-018] initial photo
+  PASS: [guides] a chalk guide for every active item
+  PASS: [guides] body outline: 135 points on the floor around the body's footprint
+  PASS: [guides] spatter outline: 24 points flat on the floor around the stain
+  PASS: [guides] bottle's outline lies on the counter top around its base (centre (17.750, 2.126, 14.300))
+  PASS: [no fake progress] tracing the spatter outline completes the spatter only (body covered 0, was 0)
+  PASS: [body] letter marker before chalk refused: still PhotographedRaw, reason given
+  PASS: [body] chalk outline -> ChalkMarked (only the chalk step)
+  PASS: [body] letter marker A after chalk
+  PASS: [knife] tent before chalk refused: no tent placed, still PhotographedRaw
+  PASS: [knife] reason is 'Mark the evidence position with chalk first.'
+  PASS: [knife] chalk outline -> ChalkMarked
+  PASS: [knife] tent after chalk -> Marked
+  PASS: [bottle] tent before chalk refused: no tent placed, still PhotographedRaw
+  PASS: [bottle] chalk outline -> ChalkMarked (only the chalk step)
+  PASS: [bottle] tent after chalk -> Marked
+  PASS: [BODY-A] documentation follows its photograph/measurement order without warning
+  PASS: [EVD-018] documentation follows its photograph/measurement order without warning
+  PASS: [EVD-014] documentation follows its photograph/measurement order without warning
+  PASS: [spatter] tent after chalk -> Marked, ChalkMarked held first
+  PASS: [EVD-015] documentation follows its photograph/measurement order without warning
+  PASS: [body] Recorder after the final photo; never collected
+  PASS: [EVD-014] Recorder / swab / fingerprint / collect / bag / seal -> Processed
+  FAIL: [EVD-015] Recorder / swab / fingerprint / collect / bag / seal -> Processed
+(test setup: disabled and released the real scene's PreSessionFlowController gate - this run never pairs)
+=== Greybox flow test ===
+--- EVD-015 (Blood spatter pattern, relevance=Critical, requiresFingerprinting=False)
+    (already Found)
+    (already PhotographedRaw)
+    (already ChalkMarked)
+    (already Marked)
+    (already PhotographedFinal)
+    gate correctly refuses Logged: Collect the blood sample before completing the evidence record.
+    FAIL: EVD-015: TrySampleRequiredSwab was refused even though the item is PhotographedFinal.
+    FAIL: EVD-015: gate refused Logged - Collect the blood sample before completing the evidence record.
+    sealed on-scene sample carried custody on: PhotographedFinal, NOT in inventory
+    FAIL: EVD-015: the sealed swab sample was not admitted to the evidence inventory.
+    FAIL: EVD-015: gate refused Collected - Record this evidence with the Recorder first so its identity and observations remain connected to the item.
+    gate correctly refuses Processed: Record this evidence with the Recorder first so its identity and observations remain connected to the item.
+    FAIL: EVD-015: gate refused Sealed - Record this evidence with the Recorder first so its identity and observations remain connected to the item.
+    FAIL: EVD-015: gate refused Processed - Record this evidence with the Recorder first so its identity and observations remain connected to the item.
+-> Submit Conclusion skipped (caller drives it)
+--- totals ---
+at/above Found:     3
+at/above Marked:    3
+at/above Collected: 1
+at/above Sealed:    1
+at/above Processed: 1
+=== FAILED with 6 problem(s) ===
+
+  PASS: [EVD-018] Recorder / swab / fingerprint / collect / bag / seal -> Processed
+  PASS: [knife] swab + print matched (Paul)
+  PASS: [bottle] lab print matched (Paul)
+  PASS: [findings] knife print, wound and spatter findings confirmed
+  PASS: [relationships] bottle-brother relationship unlocked
+  PASS: [log] no ProcedureOutOfOrder (each item follows its own photograph/measurement order)
+  PASS: [notes] every chalked item's note says 'Position outlined'
+=== FAIL: 1 failure(s) ===

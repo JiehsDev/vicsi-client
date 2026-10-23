@@ -1,0 +1,101 @@
+{
+    "date":  "2026-10-20",
+    "scene":  "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+    "sceneSha256":  "A5850BBA3A16AF8086C46A1B9BB51FD638113938032371B86756ECE553FC3B7C",
+    "groups":  36,
+    "boundObjects":  627,
+    "materializationErrors":  0,
+    "passed":  510,
+    "failed":  0,
+    "suites":  [
+                   {
+                       "suite":  "EditableSceneVisualsTest",
+                       "report":  "docs/evidence/editable-scene-visuals-2026-10-20/run4/EditableSceneVisualsTest.txt",
+                       "passed":  55,
+                       "failed":  0,
+                       "exitCode":  0
+                   },
+                   {
+                       "suite":  "SamplePreparationTest",
+                       "report":  "docs/evidence/editable-scene-visuals-2026-10-20/run4/SamplePreparationTest.txt",
+                       "passed":  46,
+                       "failed":  0,
+                       "exitCode":  0
+                   },
+                   {
+                       "suite":  "ArrivalEntryTest",
+                       "report":  "docs/evidence/editable-scene-visuals-2026-10-20/run5/ArrivalEntryTest.txt",
+                       "passed":  42,
+                       "failed":  0,
+                       "exitCode":  0
+                   },
+                   {
+                       "suite":  "CustodyPassTest",
+                       "report":  "docs/evidence/editable-scene-visuals-2026-10-20/run5/CustodyPassTest.txt",
+                       "passed":  62,
+                       "failed":  0,
+                       "exitCode":  0
+                   },
+                   {
+                       "suite":  "FingerprintComparisonTest",
+                       "report":  "docs/evidence/editable-scene-visuals-2026-10-20/run5/FingerprintComparisonTest.txt",
+                       "passed":  50,
+                       "failed":  0,
+                       "exitCode":  0
+                   },
+                   {
+                       "suite":  "FreshSwabSupplyTest",
+                       "report":  "docs/evidence/editable-scene-visuals-2026-10-20/run5/FreshSwabSupplyTest.txt",
+                       "passed":  52,
+                       "failed":  0,
+                       "exitCode":  0
+                   },
+                   {
+                       "suite":  "PhotographicScaleTest",
+                       "report":  "docs/evidence/editable-scene-visuals-2026-10-20/run5/PhotographicScaleTest.txt",
+                       "passed":  74,
+                       "failed":  0,
+                       "exitCode":  0
+                   },
+                   {
+                       "suite":  "SceneAccessRegisterTest",
+                       "report":  "docs/evidence/editable-scene-visuals-2026-10-20/run5/SceneAccessRegisterTest.txt",
+                       "passed":  48,
+                       "failed":  0,
+                       "exitCode":  0
+                   },
+                   {
+                       "suite":  "UIComfortInputTest",
+                       "report":  "docs/evidence/editable-scene-visuals-2026-10-20/run5/UIComfortInputTest.txt",
+                       "passed":  57,
+                       "failed":  0,
+                       "exitCode":  0
+                   },
+                   {
+                       "suite":  "UIWorkflowRefreshTest",
+                       "report":  "docs/evidence/editable-scene-visuals-2026-10-20/run5/UIWorkflowRefreshTest.txt",
+                       "passed":  24,
+                       "failed":  0,
+                       "exitCode":  0
+                   }
+               ],
+    "nativePreviews":  [
+                           "authored-yard-props.png",
+                           "authored-preparation-station.png",
+                           "authored-logging-table.png"
+                       ],
+    "editor":  {
+                   "reopened":  true,
+                   "playMode":  false,
+                   "browser":  "Tools \u003e ViCSI \u003e Editable Scene Objects",
+                   "dirtyBeforePreview":  true,
+                   "dirtyAfterPreview":  true,
+                   "temporaryCaptureSceneClosed":  true
+               },
+    "notes":  [
+                  "Earlier failed attempts retained; accepted reports are from run4 and run5.",
+                  "Saved before-scene copy retained. Earlier import/reload crash cause undetermined.",
+                  "No missing-visual-cache or null/missing-component exception found in accepted run5 logs.",
+                  "Physical headset readability/controller comfort remain manual."
+              ]
+}

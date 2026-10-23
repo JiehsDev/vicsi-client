@@ -1,0 +1,31 @@
+=== EvidenceInventoryTest ===
+PASS: pre-seal: item not yet Sealed cannot be admitted
+PASS: scene prop still visible before admission
+PASS: Add admits a sealed item to inventory
+PASS: scene representation hidden only after successful admission
+PASS: duplicate Add is rejected
+PASS: Add for a second, distinct item succeeds independently
+PASS: Add for the missing-heldPrefab item still succeeds (admission and equip are separate concerns)
+PASS: missing evidenceId Add fails safely, no exception
+PASS: unregistered evidenceId Add fails safely
+PASS: EquipHeld with no heldPrefab fails safely (never falls back to raw model)
+PASS: EquipHeld spawns the held visual and moves custody to Held
+PASS: only one held object at a time: equipping B auto-unequips A
+PASS: UnequipHeld returns the item to Inventory
+PASS: UnequipHeld with nothing held is a safe no-op
+PASS: setup: A is held before tool-equip test
+PASS: equipping a tool unequips held evidence
+PASS: equipping evidence holsters the current tool
+PASS: CurrentCategory reflects exactly one held object, never both
+PASS: cannot deposit a tool (Deposit requires the item to be the currently HELD EVIDENCE)
+PASS: cannot deposit an in-inventory item that is not currently held
+PASS: cannot deposit a different in-inventory item while another is held
+PASS: Deposit succeeds for the currently held, sealed item
+PASS: deposited evidence leaves the live inventory
+PASS: deposited evidence is marked deposited
+PASS: deposited evidence cannot be re-equipped
+PASS: one deposit removes it from CurrentHeldEvidenceId (one press deposits once)
+PASS: a second Deposit call for the same id fails (no double-deposit)
+PASS: PlayerUIGate blocks EquipEvidence
+PASS: PlayerUIGate blocks ToggleEquipTool
+=== PASS: 29 passed, 0 failed ===

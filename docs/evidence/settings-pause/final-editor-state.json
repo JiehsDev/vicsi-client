@@ -1,0 +1,22 @@
+{
+  "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+  "sceneDirty": false,
+  "playing": false,
+  "compiling": false,
+  "compilationFailed": false,
+  "csharpErrorEntries": 0,
+  "pendingRunner": false,
+  "pendingRequestFile": false,
+  "pendingXrRestore": false,
+  "modalLocks": 0,
+  "toolModalLocks": false,
+  "locomotionSuspendCount": 0,
+  "settingsAuthored": true,
+  "heightMinimum": 1.4,
+  "heightMaximum": 2.0,
+  "heightDefault": 1.7,
+  "heightStep": 0.05,
+  "oldBriefingRendererEnabled": false,
+  "standaloneXrEnabled": true,
+  "androidXrEnabled": true
+}

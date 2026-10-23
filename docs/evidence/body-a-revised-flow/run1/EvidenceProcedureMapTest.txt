@@ -1,0 +1,65 @@
+=== EvidenceProcedureMapTest ===
+  PASS: [reset] fresh session: no evidence step completed on any item
+  FAIL: [BODY-A] map = scene, initial photo, chalk, body marker, measurement, findings record, final photo, removal
+  PASS: [EVD-014 knife] map = scene, photo, chalk, marker, blood trace marker, measurement, final photo, blood sample, fingerprint, record, collect, seal
+  PASS: [EVD-015 spatter] map = scene, photo, chalk, marker, measurement, final photo, blood sample, seal sample, record
+  PASS: [EVD-018 bottle] map = ... record, collect, seal, then lab fingerprint process
+  PASS: [EVD-014] after discovery, scene photography not done: exactly one Current = scene_photography (count 1, got scene_photography)
+  PASS: [EVD-014] after initial photo taken before scene photography: exactly one Current = scene_photography (count 1, got scene_photography)
+  PASS: [EVD-014] chalk (refused until scene photos) is just Pending - never a second highlighted box
+  PASS: [panel] opens on the knife with UI gate, locomotion and tool lock held
+  PASS: [scene] overall scene photography completed
+  PASS: [EVD-014] after scene photography: exactly one Current = chalk (count 1, got chalk)
+  PASS: [panel] the open panel updated itself to exactly one NOW box (chalk)
+  PASS: [panel] closing releases the UI gate and tool lock
+  PASS: [EVD-014] after chalk: exactly one Current = marker (count 1, got marker)
+  PASS: [EVD-014] after marker (the blood on the blade takes its own tent): exactly one Current = trace_marker (count 1, got trace_marker)
+  PASS: [trace] knife's final photo refused until the blood trace has its own tent
+  PASS: [EVD-014] after blood trace marker: exactly one Current = measurement (count 1, got measurement)
+  PASS: [multiple available] after the marker the game would also accept the final photo
+  PASS: [multiple available] ...but only Measurement (the earlier intended step) is Current; Final Photo stays Pending
+  PASS: [EVD-014] after one reference measured: exactly one Current = measurement (count 1, got measurement)
+  PASS: [EVD-014] after measurement complete: exactly one Current = final_photo (count 1, got final_photo)
+  PASS: [EVD-014] after final photo: exactly one Current = blood_sample (count 1, got blood_sample)
+  PASS: [EVD-014] after blood sample: exactly one Current = fingerprint_process (count 1, got fingerprint_process)
+  PASS: [fingerprint] first sub-action: 'Apply fingerprint powder' (got 'Apply fingerprint powder')
+  PASS: [EVD-014] after dust loaded: exactly one Current = fingerprint_process (count 1, got fingerprint_process)
+  PASS: [fingerprint] then: 'Brush the fingerprint' (got 'Brush the fingerprint')
+  PASS: [EVD-014] after print brushed: exactly one Current = fingerprint_process (count 1, got fingerprint_process)
+  PASS: [fingerprint] then: 'Lift the fingerprint' (dusted=True, got 'Lift the fingerprint')
+  PASS: [EVD-014] after fingerprint lifted but not stored: exactly one Current = fingerprint_process (count 1, got fingerprint_process)
+  PASS: [fingerprint] lifted sub-action requests explicit B/Store
+  PASS: [fingerprint] player stores the derived print
+  PASS: [EVD-014] after fingerprint stored: exactly one Current = record (count 1, got record)
+  PASS: [EVD-014] after record: exactly one Current = collect (count 1, got collect)
+  PASS: [EVD-014] after collect: exactly one Current = seal (count 1, got seal)
+  PASS: [EVD-014] after seal: procedure complete - 0 Current, every step Completed
+  PASS: [completion] the panel shows 'Procedure Complete' and no NOW box
+  PASS: [BODY-A] after initial photo + scene photography (outline before the marker): exactly one Current = chalk (count 1, got chalk)
+  PASS: [BODY-A] after chalk: exactly one Current = marker (count 1, got marker)
+  PASS: [BODY-A] after body marker: exactly one Current = final_photo (count 1, got final_photo)
+  PASS: [BODY-A] after final body photo: exactly one Current = measurement (count 1, got measurement)
+  PASS: [BODY-A] after measurement: exactly one Current = record (count 1, got record)
+  PASS: [BODY-A] after recorded body findings: exactly one Current = body_removal (count 1, got body_removal)
+  PASS: [BODY-A] after removal: procedure complete - 0 Current, every step Completed
+  PASS: [EVD-018] after initial photo + scene photography: exactly one Current = chalk (count 1, got chalk)
+  PASS: [EVD-018] after chalk: exactly one Current = marker (count 1, got marker)
+  PASS: [EVD-018] after marker: exactly one Current = measurement (count 1, got measurement)
+  PASS: [wrong order] Final Photo Completed, Measurement still the one Current
+  PASS: [wrong order] later processing (record, collect, seal, lab) all Pending
+  PASS: [EVD-018] after late measurement completed: exactly one Current = record (count 1, got record)
+  PASS: [EVD-018] after record: exactly one Current = collect (count 1, got collect)
+  PASS: [EVD-018] after collect: exactly one Current = seal (count 1, got seal)
+  PASS: [EVD-018] after seal: exactly one Current = lab_process (count 1, got lab_process)
+  PASS: [EVD-018] after lab fingerprint process: procedure complete - 0 Current, every step Completed
+  PASS: [EVD-015] after initial photo + scene photography (outline before the marker): exactly one Current = chalk (count 1, got chalk)
+  PASS: [EVD-015] after chalk: exactly one Current = marker (count 1, got marker)
+  PASS: [EVD-015] after marker: exactly one Current = measurement (count 1, got measurement)
+  PASS: [EVD-015] after measurement: exactly one Current = final_photo (count 1, got final_photo)
+  PASS: [EVD-015] after final photo: exactly one Current = blood_sample (count 1, got blood_sample)
+  PASS: [EVD-015] after blood sample: exactly one Current = seal_sample (count 1, got seal_sample)
+  PASS: [EVD-015] after sample sealed: exactly one Current = record (count 1, got record)
+  PASS: [EVD-015] after record: procedure complete - 0 Current, every step Completed
+  PASS: [leak] only photographed items can be shown
+  PASS: [panel] left/right switches to another photographed item (EVD-018)
+=== FAIL: 1 failure(s) ===

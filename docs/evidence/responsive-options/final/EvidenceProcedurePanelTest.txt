@@ -1,0 +1,45 @@
+=== EvidenceProcedurePanelTest ===
+  PASS: [empty] nothing photographed: list empty, no procedure, one onboarding instruction
+  PASS: [placement] 1.35 m ahead (1.2-1.5), 0.14 m below eye level, facing the eyes (dot 1.000), size 1.20 x 0.68 m
+  PASS: [placement] shared wall avoidance preserves world anchoring
+  PASS: [placement] unparented, exact scale (parent none, scale 0.0010)
+  PASS: [placement] stays where it was placed while the head moves/turns
+  info: edges at 24.5 deg left/right, 7.5 deg up / 18.3 deg down; body text 29 mm em = 1.22 deg, metadata 1.10 deg at 1.36 m
+  PASS: [hidden] only the photographed item is listed (EVD-014)
+  PASS: [hidden] no evidence distance rows while no other item is discovered
+  PASS: [hidden] no undiscovered item's name anywhere on the panel
+  PASS: [hidden] internal ids never shown
+  PASS: [current] exactly one highlighted step (1)
+  PASS: [scene] overall scene photography completed
+  PASS: [select] ray click selects John's body
+  PASS: [select] exactly one row shows the selected state
+  PASS: [BODY-A] chalk is the one Current step; NEXT: 'Chalk the outline of the evidence's position.'
+  PASS: [BODY-A] checklist renders the item's own procedure: Scene Photography,Initial Photograph,Chalk Position,Body Marker A,Final Photograph,Measurement,Record BODY-A Findings,Prepare Body for Removal
+  PASS: [select] ray click selects Kitchen knife
+  PASS: [measurement] Current = measurement, sub-detail Fixed references|1 / 2 ; Evidence distances|0 / 2
+  PASS: [measurement] counts advance: Fixed references|2 / 2 ; Evidence distances|1 / 2
+  PASS: [next] one instruction, the next pair: 'Measure Kitchen knife to Blood spatter pattern.'
+  PASS: [measurement] fixed references render with values: West Wall|1.34 m ; Cabinet Front Edge|1.08 m
+  PASS: [measurement] evidence distances: measured value + known-unmeasured dash: John's body|1.22 m ; Blood spatter pattern|–
+  PASS: [measurement] the bottle (not photographed) is not listed, counted or named
+  PASS: [EVD-014] checklist renders the item's own procedure: Scene Photography,Initial Photograph,Chalk Position,Evidence Marker,Blood Trace Marker,Measurement,Final Photograph,Blood Sample,Fingerprint Process,Record,Collect in Bag,Seal
+  PASS: [scroll] long knife procedure: overflow 214 units, current row kept in view
+  PASS: [pairs] no duplicate: the body shows the same single pair value (1.22 m), never itself
+  PASS: [select] ray click selects Blood spatter pattern
+  PASS: [spatter] blood sample is the one Current step; NEXT: 'Collect the blood sample with a swab.'
+  PASS: [EVD-015] checklist renders the item's own procedure: Scene Photography,Initial Photograph,Chalk Position,Evidence Marker,Measurement,Final Photograph,Blood Sample,Seal Sample,Record
+  PASS: [select] ray click selects Empty liquor bottle (record Applied)
+  PASS: [bottle] lab fingerprint process is the one Current step; NEXT: 'Process the fingerprint at the lab station.'
+  PASS: [EVD-018] checklist renders the item's own procedure: Scene Photography,Initial Photograph,Chalk Position,Evidence Marker,Measurement,Final Photograph,Record,Collect in Bag,Seal,Lab Fingerprint Process
+  PASS: [scroll] long bottle procedure overflows (54) and the last (current) step is in view
+  PASS: [scroll] one scroll area reaches top and bottom; the next action stays in place
+  PASS: [complete] spatter: no Current step, DONE footer: 'Procedure complete for Blood spatter pattern.'
+  PASS: [targets] every target's hit area is larger than its visual and none overlap
+  info: close visual 44x44 -> hit 72x72 (7.2x7.2 cm); evidence:EVD-014 visual 288x68 -> hit 288x76 (28.8x7.6 cm); evidence:EVD-015 visual 288x68 -> hit 288x76 (28.8x7.6 cm); evidence:EVD-018 visual 288x68 -> hit 288x76 (28.8x7.6 cm); evidence:BODY-A visual 288x68 -> hit 288x76 (28.8x7.6 cm); 
+  PASS: [targets] the ray on empty panel space clicks nothing
+  PASS: [modal] while open: UI gate and tool lock held (world tools inert)
+  PASS: [close] ray click on the close button closes the panel
+  PASS: [close] gate, locomotion hold and tool lock released
+  PASS: [close] reopening keeps the selected evidence
+  PASS: [reset] reset forgets the selection and closes
+=== PASS, 0 failures ===

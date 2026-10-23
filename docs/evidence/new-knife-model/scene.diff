@@ -1,0 +1,28 @@
+--- 
+
++++ 
+
+@@ -10,6 +10,10 @@
+
+       propertyPath: m_Name
+       value: Visual
+       objectReference: {fileID: 0}
++    - target: {fileID: -990627686491460298, guid: 50028b8a2705895499ff7ec54c0679c5, type: 3}
++      propertyPath: m_Mesh
++      value: 
++      objectReference: {fileID: -208029814298811928, guid: 7a0ef696755949d47838d60582724f6c, type: 3}
+     - target: {fileID: -463689925048471867, guid: 50028b8a2705895499ff7ec54c0679c5, type: 3}
+       propertyPath: m_LocalScale.x
+       value: 0.15
+@@ -62,6 +66,10 @@
+
+       propertyPath: m_LocalEulerAnglesHint.z
+       value: 0
+       objectReference: {fileID: 0}
++    - target: {fileID: -442877064864985223, guid: 50028b8a2705895499ff7ec54c0679c5, type: 3}
++      propertyPath: 'm_Materials.Array.data[0]'
++      value: 
++      objectReference: {fileID: -1297869518082289475, guid: 7a0ef696755949d47838d60582724f6c, type: 3}
+     m_RemovedComponents: []
+     m_RemovedGameObjects: []
+     m_AddedGameObjects: []

@@ -1,0 +1,82 @@
+--- before
++++ after
+@@ -14,11 +14,11 @@
+   m_EditorClassIdentifier: Assembly-CSharp::CrimeSceneSketchDefinition
+   sketchId: SKETCH-CSI-ENV
+   scenarioId: CSI_Environment
+-  title: Crime Scene Sketch
++  title: "Crime Scene Sketch \u2014 Rear Kitchen"
+   canvasSize: {x: 1000, y: 1000}
+   paperColor: {r: 0.97, g: 0.96, b: 0.92, a: 1}
+-  showGrid: 1
+-  gridSpacing: 45.4545
++  showGrid: 0
++  gridSpacing: 50
+   gridColor: {r: 0.2, g: 0.35, b: 0.55, a: 0.13}
+   requireNorthArrow: 1
+   evidenceElements:
+@@ -28,7 +28,7 @@
+     required: 1
+     shape: 3
+     color: {r: 0.62, g: 0.1, b: 0.12, a: 1}
+-    placedSize: {x: 64, y: 160}
++    placedSize: {x: 58, y: 145}
+     icon: {fileID: 0}
+   - evidenceId: EVD-014
+     displayName: Kitchen Knife
+@@ -59,47 +59,47 @@
+     evidenceId: BODY-A
+     referenceId: REF-BODYA-1
+     requirementId: MEAS-BODY-A
+-    relationshipText: 
++    relationshipText: Victim / East Kitchen Wall
+     required: 1
+   - slotId: BodyA_Ref2_Slot
+     evidenceId: BODY-A
+     referenceId: REF-BODYA-2
+     requirementId: MEAS-BODY-A
+-    relationshipText: 
++    relationshipText: Victim / Foot-side Kitchen Wall
+     required: 1
+   - slotId: Knife_Ref1_Slot
+     evidenceId: EVD-014
+     referenceId: REF-KNIFE-1
+     requirementId: MEAS-EVD-014
+-    relationshipText: 
++    relationshipText: Kitchen Knife / East Kitchen Wall
+     required: 1
+   - slotId: Knife_Ref2_Slot
+     evidenceId: EVD-014
+     referenceId: REF-KNIFE-CAB
+     requirementId: MEAS-EVD-014
+-    relationshipText: 
++    relationshipText: Kitchen Knife / Rear Kitchen Wall
+     required: 1
+   - slotId: Spatter_Ref1_Slot
+     evidenceId: EVD-015
+     referenceId: REF-SPATTER-CAB
+     requirementId: MEAS-EVD-015
+-    relationshipText: 
++    relationshipText: Blood Spatter / Foot-side Kitchen Wall
+     required: 1
+   - slotId: Spatter_Ref2_Slot
+     evidenceId: EVD-015
+     referenceId: REF-SPATTER-2
+     requirementId: MEAS-EVD-015
+-    relationshipText: 
++    relationshipText: Blood Spatter / West Kitchen Wall
+     required: 1
+   - slotId: Bottle_Ref1_Slot
+     evidenceId: EVD-018
+     referenceId: REF-BOTTLE-1
+     requirementId: MEAS-EVD-018
+-    relationshipText: 
++    relationshipText: Liquor Bottle / Rear Kitchen Wall
+     required: 1
+   - slotId: Bottle_Ref2_Slot
+     evidenceId: EVD-018
+     referenceId: REF-BOTTLE-2
+     requirementId: MEAS-EVD-018
+-    relationshipText: 
++    relationshipText: Liquor Bottle / Right Cabinet End
+     required: 1

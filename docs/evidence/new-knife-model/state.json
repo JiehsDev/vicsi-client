@@ -1,0 +1,14 @@
+{
+  "asset": "Assets/_Project/Art/Environments/MODELS/NEW/new-knife.glb",
+  "materialMatches": true,
+  "position": "(18.627000, 1.205983, 12.885000)",
+  "rotation": "(90.000000, 0.000000, 0.000000)",
+  "visualScale": "(0.150000, 0.150000, 0.150000)",
+  "collider": "(0.285000, 0.178500, 0.021000)",
+  "measurement": "(18.627000, 1.195983, 12.885000)",
+  "blood": "(18.698300, 1.219983, 12.885000)",
+  "fingerprint": "(18.527000, 1.220983, 12.935000)",
+  "newVertices": 18640,
+  "dirty": false,
+  "compilationFailed": false
+}

@@ -1,0 +1,152 @@
+[
+  [
+    "RC-01-PETER",
+    0,
+    "",
+    "EVIDENCE_CAUTION",
+    "Based on what you know so far, what do you make of Peter leaving the house looking nervous?",
+    [
+      [
+        "Peter probably did it. Leaving nervously after being with John is enough to make him the main suspect.",
+        1
+      ],
+      [
+        "Peter could be involved. His behavior makes him worth looking into, but I need more information.",
+        3
+      ],
+      [
+        "I would not treat nervous behavior as proof of guilt. It gives me a reason to ask questions, not a reason to accuse him.",
+        4
+      ],
+      [
+        "I don't think Peter matters to the investigation.",
+        2
+      ]
+    ]
+  ],
+  [
+    "RC-02-SCENE",
+    1,
+    "",
+    "SCENE_INTERPRETATION",
+    "What can you reasonably conclude from the scene at this point?",
+    [
+      [
+        "The knife near John must be the murder weapon.",
+        1
+      ],
+      [
+        "The knife and blood are important, but they still need proper examination before I can say what happened.",
+        4
+      ],
+      [
+        "There isn't enough here to justify further forensic examination.",
+        1
+      ],
+      [
+        "The scene suggests a violent incident, but I still need the physical evidence to understand it.",
+        3
+      ]
+    ]
+  ],
+  [
+    "RC-03-FINGERPRINT",
+    2,
+    "FIND-KNIFE-PRINT-BROTHER",
+    "LIMITATION_RECOGNITION",
+    "Paul's fingerprint was recovered from the knife. What does that tell you?",
+    [
+      [
+        "Paul must have used the knife to attack John.",
+        1
+      ],
+      [
+        "It makes Paul more suspicious, but I still need other evidence before deciding what the print means in this case.",
+        3
+      ],
+      [
+        "It shows Paul handled the knife at some point, but the print alone doesn't tell me when he touched it or what he did with it.",
+        4
+      ],
+      [
+        "The fingerprint doesn't matter because Paul knew John.",
+        2
+      ]
+    ]
+  ],
+  [
+    "RC-04-KNIFE-WOUND",
+    2,
+    "FIND-KNIFE-WOUND-CONSISTENT",
+    "RELATIONSHIP_REASONING",
+    "The knife is consistent with John's wound. How should that finding be interpreted?",
+    [
+      [
+        "This proves the knife was used to kill John.",
+        1
+      ],
+      [
+        "The knife could be the weapon because its characteristics are consistent with the wound, but that relationship alone does not prove who used it.",
+        4
+      ],
+      [
+        "The knife is probably involved, but I would still want the other findings before relying on it.",
+        3
+      ],
+      [
+        "If the knife fits the wound, whoever touched it must be the attacker.",
+        1
+      ]
+    ]
+  ],
+  [
+    "RC-05-TIMELINE",
+    3,
+    "",
+    "TIMELINE_REASONING",
+    "The vendor says he saw Paul near John's house around three in the morning. How does that affect Paul's account?",
+    [
+      [
+        "It proves Paul came back and killed John.",
+        1
+      ],
+      [
+        "It makes Paul's story questionable because the vendor's observation conflicts with his claim that he never returned.",
+        4
+      ],
+      [
+        "It makes Paul more suspicious, but the vendor still did not see him enter the house or attack John.",
+        3
+      ],
+      [
+        "It doesn't matter because the vendor didn't witness the attack.",
+        2
+      ]
+    ]
+  ],
+  [
+    "RC-06-BLOODSTAIN",
+    2,
+    "FIND-SPATTER-RECONSTRUCTION",
+    "EVIDENCE_INTEGRATION",
+    "What does the bloodstain finding contribute to the case?",
+    [
+      [
+        "It identifies Paul as the attacker.",
+        1
+      ],
+      [
+        "It helps establish where the attack occurred, but it does not identify the attacker by itself.",
+        4
+      ],
+      [
+        "It supports the physical reconstruction of what happened near John, but it still needs to be considered with the other evidence.",
+        3
+      ],
+      [
+        "The blood only confirms that John was injured, so it adds nothing else.",
+        2
+      ]
+    ]
+  ]
+]

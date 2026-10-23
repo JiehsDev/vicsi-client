@@ -1,0 +1,29 @@
+{
+  "passed": 5,
+  "failed": 0,
+  "checks": [
+    {
+      "pass": true,
+      "label": "Outline encloses every projected body triangle pixel",
+      "outsidePixels": 0
+    },
+    {
+      "pass": true,
+      "label": "Full 22 mm chalk stroke stays outside the projected body",
+      "overlapPixels": 0
+    },
+    {
+      "pass": true,
+      "label": "Closed contour has no self intersections",
+      "intersections": []
+    },
+    {
+      "pass": true,
+      "label": "135 contiguous silhouette points generated"
+    },
+    {
+      "pass": true,
+      "label": "No trace segment exceeds 11 cm"
+    }
+  ]
+}

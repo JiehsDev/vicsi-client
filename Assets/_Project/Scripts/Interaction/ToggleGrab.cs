@@ -83,6 +83,7 @@ public class ToggleGrab : MonoBehaviour
 
     private void Update()
     {
+        if (ToolInputLock.HasUIOwners) return;
         if (!isStuck || Time.frameCount == stuckSinceFrame)
         {
             return;

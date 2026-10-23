@@ -1,0 +1,69 @@
+=== CustodyPassTest ===
+PASS: Custody preset ready
+INFO: setup= phase=EvidenceInventoryReview range=True eye=(14.40, 0.00, 1.80)
+PASS: Six real entries; two bags, two blood containers, two fingerprint cards
+PASS: No tool or body in custody roster
+PASS: Test observer approaches actual receiving bounds beside empty box
+PASS: One custody waypoint is installed
+PASS: Ready stored evidence shows a box destination from a distance
+PASS: Waypoint keeps uniform world scale [actual=(0.00, 0.00, 0.00), parent=]
+PASS: Looking away shows an edge arrow
+PASS: Modal UI hides the waypoint
+PASS: Photo capture hides the waypoint
+PASS: Nested capture stays hidden until final restore
+PASS: Waypoint returns after capture without taking input
+PASS: Disabling the guide hides its canvas
+PASS: Local transfer prompt takes over beside box
+PASS: Review cannot open away from box
+PASS: Closeout blocked before pass
+PASS: Stale reviewed set cannot partially transfer
+PASS: Unsealed sample blocks entire set
+PASS: Incomplete evidence cannot activate custody waypoint
+PASS: Stored evidence can be held before pass
+PASS: Held evidence blocks entire pass
+PASS: Review opens with explicit student action
+PASS: Opening alone moves nothing
+PASS: Opening press cannot confirm immediately
+PASS: Cancel releases UI and keeps all items
+PASS: Reopen after cancel
+PASS: Confirmation revalidates live sealing
+PASS: Validation warning has a separate visible header row
+PASS: Review reopens after validation failure
+PASS: Review lists every item by its player label without exposing internal IDs
+PASS: Flexible padded review uses existing scroll layout
+PASS: Item list fits or scrolls without text overflow
+PASS: Separate transfer and cancel buttons stay in the fixed footer
+PASS: Both action labels fit their buttons
+PASS: Scrolling evidence keeps the action buttons stationary
+PASS: Rotating the review preserves uniform readable scale
+PASS: Confirmation revalidates box proximity
+PASS: Confirm transfers whole set
+PASS: Inventory observer sees complete transaction
+PASS: Pass complete and inventory no longer selectable
+PASS: Completed custody pass removes the destination
+PASS: blood-sample:EVD-014: tracked custody and box provenance retained
+PASS: blood-sample:EVD-014: visible representation inside box
+PASS: EVD-014: tracked custody and box provenance retained
+PASS: EVD-014: visible representation inside box
+PASS: EVD-015: tracked custody and box provenance retained
+PASS: EVD-015: visible representation inside box
+PASS: EVD-018: tracked custody and box provenance retained
+PASS: EVD-018: visible representation inside box
+PASS: fingerprint-sample:EVD-014: tracked custody and box provenance retained
+PASS: fingerprint-sample:EVD-014: visible representation inside box
+PASS: fingerprint-sample:EVD-018: tracked custody and box provenance retained
+PASS: fingerprint-sample:EVD-018: visible representation inside box
+PASS: Visible stacks and rows do not overlap
+PASS: Display has no evidence gameplay behaviours
+PASS: Derived sample source identities preserved
+PASS: Body stays outside evidence-box custody
+PASS: Deposited bags and samples cannot be re-equipped
+PASS: Double confirmation and empty retry do nothing
+PASS: Exactly one deposit per actual item and one pass event
+PASS: Per-item custody events record box, time, source and non-scored flag
+PASS: Essential upload retains custody with raw events disabled
+PASS: Custody completion enables existing final inventory review
+PASS: Final review shows box custody
+PASS: Restart restores six stored items and empty box
+PASS: Restart releases prior modal input
+=== PASS, 0 failures ===

@@ -1,0 +1,15 @@
+{
+  "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+  "sceneDirty": false,
+  "playing": false,
+  "compiling": false,
+  "compilationFailed": false,
+  "csharpConsoleErrors": 0,
+  "diagnosticPending": false,
+  "xrRestorePending": false,
+  "uiLocks": 0,
+  "toolUIOwners": false,
+  "locomotionSuspensions": 0,
+  "standaloneXRStartup": true,
+  "androidXRStartup": true
+}

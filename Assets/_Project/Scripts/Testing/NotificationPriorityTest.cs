@@ -6,18 +6,15 @@ using TMPro;
 using UnityEngine;
 
 /// <summary>
-/// Checked-in regression test for the notification priority rule: ambient prompts are
-/// always preemptable, state-driven messages never are (see NotificationUI's class
-/// comment for the rule and why it is that way round).
+/// Regression test for the rule that a refusal is never swallowed by an ambient prompt.
+/// The original bug was silent: a "[B] Pick Up Evidence Tent" prompt held the only label,
+/// the refusal was queued behind it and never drawn, and the player read the tool as broken.
 ///
-/// Exists as a file rather than as editor scratch code because this bug was silent -
-/// the refusal was enqueued and simply never drawn, so nothing errored and nothing
-/// logged. A regression here would look exactly like a working game right up until a
-/// player pulls a trigger, gets no response, and reports the tool as broken.
-///
-/// Samples the real NotificationUI label every frame across a real posting sequence,
-/// rather than asserting on internal state, because "what did the player actually
-/// see" is the whole question.
+/// With the central catalog the two kinds of message live on different panels: refusals
+/// (catalog Dialogue entries, Error priority) go to the dialogue panel, so a standing [B]
+/// prompt on the tooltip panel can no longer hide them; and a timed tooltip still takes the
+/// tooltip label over the prompt, which comes back by itself afterwards. Samples the real
+/// labels every frame, because "what did the player actually see" is the whole question.
 ///
 /// Run from the editor via:
 ///     FindFirstObjectByType&lt;NotificationPriorityTest&gt;().RunAndLog()
@@ -26,120 +23,102 @@ public class NotificationPriorityTest : MonoBehaviour
 {
     private const string AmbientText = "[B] Pick Up Evidence Tent";
 
+    public bool IsDone { get; private set; }
+    public string Report { get; private set; }
+
     /// <summary>Runs the check and Debug.Logs a report. Every line starting with FAIL is a real regression.</summary>
-    public void RunAndLog()
-    {
-        StartCoroutine(Run());
-    }
+    public void RunAndLog() => StartCoroutine(Run());
 
     private IEnumerator Run()
     {
-        var report = new StringBuilder();
-        var failures = new List<string>();
+        IsDone = false;
+        var report = new StringBuilder("=== Notification priority test ===\n");
+        int failures = 0;
+        void Check(string label, bool ok) { report.AppendLine($"  {(ok ? "PASS" : "FAIL")}: {label}"); if (!ok) failures++; }
 
-        var manager = FindFirstObjectByType<NotificationManager>();
-        if (manager == null)
+        var tooltipUi = NotificationManager.Instance != null ? NotificationManager.Instance.UI : null;
+        var dialogueUi = STCSNotificationUI.Instance;
+        if (tooltipUi == null || dialogueUi == null)
         {
-            Debug.Log("FAIL: no NotificationManager in scene.");
+            Report = "FAIL: tooltip (NotificationUI) or dialogue (STCSNotificationUI) panel missing.";
+            Debug.Log(Report);
+            IsDone = true;
             yield break;
         }
+        var flags = System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance;
+        var tooltipLabel = typeof(NotificationUI).GetField("label", flags).GetValue(tooltipUi) as TMP_Text;
+        var dialogueLabel = typeof(STCSNotificationUI).GetField("label", flags).GetValue(dialogueUi) as TMP_Text;
+        // This fixture tests routing/readable-time arbitration, not the untracked
+        // Editor head pose or unrelated milestone/checkpoint producers.
+        var suspended = new List<Behaviour>();
+        foreach (Behaviour presenter in new Behaviour[] { ReasoningCheckpointManager.Instance,
+            HypothesisCheckpointManager.Instance, FindAnyObjectByType<HypothesisCheckpointUI>(), ProceduralTrainingGuidance.Instance })
+            if (presenter != null && presenter.enabled) { suspended.Add(presenter); presenter.enabled = false; }
+        var photography = ScenePhotographyManager.Instance;
+        bool photoInstructionPending = photography != null && photography.IsInvoking("ActivateFirstPoint");
+        if (photoInstructionPending) photography.CancelInvoke("ActivateFirstPoint");
+        var noticeFollow = tooltipUi.GetComponent<HudFollowCamera>();
+        var dialogueFollow = dialogueUi.GetComponent<HudFollowCamera>();
+        var cameraField = typeof(HudFollowCamera).GetField("targetCamera", flags);
+        var priorNoticeCamera = cameraField.GetValue(noticeFollow);
+        var priorDialogueCamera = cameraField.GetValue(dialogueFollow);
+        var cameraObject = new GameObject("NotificationPriorityCamera", typeof(Camera));
+        cameraObject.transform.position = new Vector3(1000, 1000, 1000);
+        cameraField.SetValue(noticeFollow, cameraObject.GetComponent<Camera>());
+        cameraField.SetValue(dialogueFollow, cameraObject.GetComponent<Camera>());
+        dialogueUi.HideImmediately();
+        tooltipUi.ClearTooltip();
+        // The Editor spawn point sits inside the evidence box's deposit zone, which owns the
+        // shared prompt slot while the player is inside it (hides it every frame when nothing
+        // eligible is held). Switch the zones off for this check and restore them after.
+        var boxZones = FindObjectsByType<EvidenceBoxDepositZone>(FindObjectsSortMode.None);
+        foreach (var z in boxZones) z.enabled = false;
+        // The live scene posts its own tooltips (photo-point instructions, zone tips); let any finish first.
+        float settle = 0f;
+        while (tooltipUi.CurrentTooltip != null && settle < 6f) { settle += Time.deltaTime; yield return null; }
 
-        var uiField = typeof(NotificationManager).GetField(
-            "notificationUI",
-            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        var ui = uiField != null ? uiField.GetValue(manager) : null;
-        if (ui == null)
-        {
-            Debug.Log("FAIL: NotificationManager has no NotificationUI assigned.");
-            yield break;
-        }
-
-        var labelField = ui.GetType().GetField(
-            "label",
-            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        var label = labelField.GetValue(ui) as TMP_Text;
-
-        report.AppendLine("=== Notification priority test ===");
-
-        // --- Case 1: a state-driven refusal must preempt a standing ambient prompt ---
-        NotificationManager.HidePrompt();
-        yield return new WaitForSeconds(0.5f);
-
+        // Case 1: a refusal (catalog Error dialogue) is shown while a [B] prompt holds the tooltip panel.
         NotificationManager.ShowPrompt(AmbientText);
-        yield return new WaitForSeconds(0.5f);
-        report.AppendLine("ambient prompt showing: \"" + label.text + "\"");
-
-        NotificationManager.Notify("Not yet Marked.");
-
+        yield return new WaitForSeconds(0.4f);
+        string refusal = GameDialogue.Text("evidence-step-marker-first");
+        NotificationManager.Notify(refusal, DialogueKind.Error);
         bool sawRefusal = false;
-        bool ambientResumed = false;
-        float elapsed = 0f;
-        while (elapsed < 6f)
+        float t = 0f;
+        while (t < 2f && !sawRefusal)
         {
-            elapsed += Time.deltaTime;
-            if (label.text == "Not yet Marked.")
-            {
-                sawRefusal = true;
-            }
-            else if (sawRefusal && label.text == AmbientText)
-            {
-                ambientResumed = true;
-                break;
-            }
+            t += Time.deltaTime;
+            sawRefusal = dialogueLabel.text == refusal && dialogueUi.IsShowing;
             yield return null;
         }
+        Check("refusal displayed on the dialogue panel while a [B] prompt was up", sawRefusal);
+        Check($"the [B] prompt stayed on the tooltip panel meanwhile (shown whenever no tooltip covers it) [prompt={tooltipUi.HasAmbientPrompt} tooltip='{tooltipUi.CurrentTooltip}' label='{tooltipLabel.text}']",
+            tooltipUi.HasAmbientPrompt && (tooltipUi.CurrentTooltip != null || tooltipLabel.text == AmbientText));
 
-        if (!sawRefusal)
+        // Case 2: a timed tooltip covers the prompt, then the prompt comes back by itself.
+        tooltipUi.ShowTooltip("Measure the west wall.", 0.6f);
+        yield return null;
+        Check("a timed tooltip takes the tooltip label over the prompt", tooltipLabel.text == "Measure the west wall.");
+        bool resumed = false;
+        t = 0f;
+        while (t < 8f && !resumed)
         {
-            failures.Add("state-driven refusal never reached the label while an ambient prompt was up.");
-            report.AppendLine("    FAIL: refusal never displayed - it was swallowed by the ambient prompt.");
-        }
-        else
-        {
-            report.AppendLine("    refusal preempted the ambient prompt and displayed.");
-        }
-
-        if (!ambientResumed)
-        {
-            failures.Add("ambient prompt did not resume after the refusal finished.");
-            report.AppendLine("    FAIL: ambient prompt did not come back afterwards.");
-        }
-        else
-        {
-            report.AppendLine("    ambient prompt resumed afterwards (context still true).");
-        }
-
-        // --- Case 2: the rule is general, not specific to that one pairing ---
-        NotificationManager.Notify("Not yet Sealed.");
-        bool sawSecond = false;
-        elapsed = 0f;
-        while (elapsed < 4f)
-        {
-            elapsed += Time.deltaTime;
-            if (label.text == "Not yet Sealed.")
-            {
-                sawSecond = true;
-                break;
-            }
+            t += Time.deltaTime;
+            resumed = tooltipUi.CurrentTooltip == null && tooltipLabel.text == AmbientText;
             yield return null;
         }
-
-        if (!sawSecond)
-        {
-            failures.Add("a second, different gate-block message did not preempt the ambient prompt.");
-            report.AppendLine("    FAIL: \"Not yet Sealed.\" never displayed.");
-        }
-        else
-        {
-            report.AppendLine("    second gate-block message also preempted - rule is general.");
-        }
+        Check($"the prompt resumed after the tooltip expired (context still true) [prompt={tooltipUi.HasAmbientPrompt} tooltip='{tooltipUi.CurrentTooltip}' label='{tooltipLabel.text}']", resumed);
 
         NotificationManager.HidePrompt();
-
-        report.AppendLine(failures.Count == 0
-            ? "=== PASS: ambient prompts are preemptable, state-driven messages are not ==="
-            : "=== FAILED with " + failures.Count + " problem(s) ===");
-
-        Debug.Log(report.ToString());
+        dialogueUi.HideImmediately();
+        foreach (var z in boxZones) if (z != null) z.enabled = true;
+        cameraField.SetValue(noticeFollow, priorNoticeCamera);
+        cameraField.SetValue(dialogueFollow, priorDialogueCamera);
+        Destroy(cameraObject);
+        foreach (var presenter in suspended) if (presenter != null) presenter.enabled = true;
+        if (photoInstructionPending && photography != null) photography.Invoke("ActivateFirstPoint", 0f);
+        report.AppendLine(failures == 0 ? "=== PASS: refusals are never hidden by ambient prompts ===" : $"=== FAILED with {failures} problem(s) ===");
+        Report = report.ToString();
+        Debug.Log(Report);
+        IsDone = true;
     }
 }

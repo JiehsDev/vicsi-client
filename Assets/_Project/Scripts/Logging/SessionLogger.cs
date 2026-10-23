@@ -37,11 +37,38 @@ public class SessionLogger : MonoBehaviour
 
     public string SessionId { get; private set; }
 
+    /// <summary>
+    /// Read-only accessor for the active log file's path, when the current writer is a
+    /// LocalJsonLogWriter - null otherwise (a future writer backend, or none assigned).
+    /// Purely additive: does not change LogEvent/Flush/EndSession behavior at all. Added
+    /// so the separate assessment-upload layer (AssessmentSessionBuilder/
+    /// AssessmentUploadService - see Assets/_Project/Scripts/Assessment) can locate the
+    /// just-completed session's own log file to read back and embed, without that layer
+    /// reaching into SessionLogger's private writerSource field or SessionLogger needing
+    /// to know anything about uploading.
+    /// </summary>
+    public string ActiveLogFilePath => (writerSource as LocalJsonLogWriter)?.FilePath;
+
     private int nextSequenceNumber;
     private double sessionStartRealtime;
     private float timeSinceLastFlush;
     private int eventsSinceLastFlush;
     private bool sessionEnded;
+
+    private readonly Dictionary<SessionEventType, int> eventCounts = new();
+
+    /// <summary>
+    /// How many times each SessionEventType has been logged so far this session - purely
+    /// additive in-memory tally alongside the existing disk-written log, added so a
+    /// post-session review can cheaply query counts (e.g. procedural-violation events)
+    /// without re-reading and parsing the JSON log file back. Never changes what gets
+    /// logged or how - see LogEvent, the only place this is incremented.
+    /// </summary>
+    public IReadOnlyDictionary<SessionEventType, int> EventCounts => eventCounts;
+
+    /// <summary>Seconds since this session started (SessionStarted was logged) - the authoritative "investigation time" for post-session review, independent of any individual component's own Awake-relative timer (see DeductionScorer.Score's own narrower elapsedSeconds, which only measures time since the board component woke up).</summary>
+    private double sessionEndRealtime = -1d;
+    public float ElapsedSeconds => (float)((sessionEndRealtime >= 0d ? sessionEndRealtime : Time.realtimeSinceStartupAsDouble) - sessionStartRealtime);
 
     private void Awake()
     {
@@ -52,14 +79,19 @@ public class SessionLogger : MonoBehaviour
         if (writerSource is LocalJsonLogWriter localWriter)
         {
             localWriter.Initialize(SessionId);
+            if (AutomatedTestSandbox.IsActive)
+                localWriter.RelocateTo(System.IO.Path.Combine(AutomatedTestSandbox.Root, "session_log"));
         }
 
-        // No ScenarioDefinition/scenario-ID system exists yet (Data/Scenarios is
-        // still an empty folder) - the active scene name is the best available
-        // stand-in until one does. Replace this with a real scenario ID once that
-        // system lands.
+        // Keep the existing scene-based scenario identifier until the versioned
+        // scenario/upload contract is introduced.
         string scenarioId = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-        LogEvent(SessionEventType.SessionStarted, targetId: scenarioId);
+        LogEvent(SessionEventType.SessionStarted, targetId: scenarioId, payload: new Dictionary<string, string>
+        {
+            { "startedAtUtc", DateTime.UtcNow.ToString("O") },
+            { "applicationVersion", Application.version }
+        });
+        Flush();
     }
 
     private void OnEnable()
@@ -86,6 +118,17 @@ public class SessionLogger : MonoBehaviour
     private void OnApplicationQuit()
     {
         EndSession();
+    }
+
+    private void OnApplicationPause(bool paused)
+    {
+        if (paused) Flush();
+    }
+
+    private void OnDestroy()
+    {
+        EndSession();
+        if (Instance == this) Instance = null;
     }
 
     /// <summary>Records one event. sequenceNumber/timestampMs are assigned internally - callers never compute these themselves.</summary>
@@ -115,6 +158,9 @@ public class SessionLogger : MonoBehaviour
 
         Writer.WriteEvent(evt);
 
+        eventCounts.TryGetValue(type, out int currentCount);
+        eventCounts[type] = currentCount + 1;
+
         eventsSinceLastFlush++;
         if (eventsSinceLastFlush >= flushEveryNEvents)
         {
@@ -122,6 +168,8 @@ public class SessionLogger : MonoBehaviour
         }
     }
 
+    /// <summary>Allows session-local records to finalize before the event stream is frozen.</summary>
+    public event Action BeforeSessionEnd;
     /// <summary>Logs SessionEnded, flushes, and blocks any further LogEvent calls this session. Safe to call more than once.</summary>
     public void EndSession()
     {
@@ -130,24 +178,42 @@ public class SessionLogger : MonoBehaviour
             return;
         }
 
-        LogEvent(SessionEventType.SessionEnded);
+        BeforeSessionEnd?.Invoke();
+        LogEvent(SessionEventType.SessionEnded, payload: new Dictionary<string, string>
+        {
+            { "endedAtUtc", DateTime.UtcNow.ToString("O") }
+        });
         Flush();
+        sessionEndRealtime = Time.realtimeSinceStartupAsDouble;
         sessionEnded = true;
     }
 
     public void Flush()
     {
         Writer?.Flush();
+        // A transient disk failure must not reset the retry thresholds.
+        if (writerSource is LocalJsonLogWriter local && !local.LastFlushSucceeded) return;
         timeSinceLastFlush = 0f;
         eventsSinceLastFlush = 0;
     }
 
     private void HandleEvidenceStatusChanged(string evidenceId, EvidenceStatus newStatus)
     {
-        LogEvent(SessionEventType.EvidenceStatusChanged, evidenceId, new Dictionary<string, string>
+        var payload = new Dictionary<string, string>
         {
             { "status", newStatus.ToString() }
-        });
+        };
+        var record = EvidenceStateManager.Instance?.GetRecord(evidenceId);
+        if (record != null)
+        {
+            payload["tool"] = record.lastToolUsed.ToString();
+            if (newStatus == EvidenceStatus.Marked)
+            {
+                if (record.tentNumber.HasValue) payload["tentNumber"] = record.tentNumber.Value.ToString(System.Globalization.CultureInfo.InvariantCulture);
+                if (!string.IsNullOrEmpty(record.tentLetter)) payload["tentLetter"] = record.tentLetter;
+            }
+        }
+        LogEvent(SessionEventType.EvidenceStatusChanged, evidenceId, payload);
     }
 
     private void HandleEvidenceTransitionBlocked(string evidenceId, EvidenceStatus attempted, EvidenceStatus current)

@@ -1,0 +1,23 @@
+=== ConclusionPickerUITest ===
+PASS: Real investigation fixture has completed relationships and sketch
+PASS: Picker opens with an explicit review action
+PASS: Opening owns UI and cannot submit through its opening press
+PASS: Opening press is ignored
+PASS: Footer actions fit without clipping
+PASS: Conclusion text is readable and padded
+PASS: Clicking a choice opens review without recording a conclusion
+PASS: Same click or rapid A press cannot submit
+PASS: Review shows the selected name and separate submit/back actions
+PASS: Back returns to choices without submission
+PASS: Cancel returns to investigation and releases ownership
+PASS: Long conclusion descriptions use a bounded scroll area
+PASS: Scrolling leaves footer controls stationary
+PASS: Long text keeps full measured height
+PASS: Stale final choice is refused and returns to choices
+PASS: Disabling picker releases UI and hides its canvas
+PASS: Separate final confirmation records the chosen conclusion once
+PASS: Feedback clearly hands off to evidence custody
+PASS: Continue uses the real closeout transition
+PASS: Conclusion feedback advances to custody without completing the session
+PASS: Only the final submit logs a selected conclusion
+=== PASS, 0 failures ===

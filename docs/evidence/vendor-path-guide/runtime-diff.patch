@@ -1,0 +1,32 @@
+--- Assets/_Project/Scripts/Dialogue/VendorWitnessInteraction.cs (task start)
++++ Assets/_Project/Scripts/Dialogue/VendorWitnessInteraction.cs
+@@ -25,6 +25,12 @@
+     {
+         if (Camera.main != null) playerHead = Camera.main.transform;
+         interactAction = PlayerUIGate.CreateConfirmAction(this, "VendorWitness_Interact", () => CanInteract, 200);
++    }
++    private void Start()
++    {
++        var route = Resources.Load<VendorPathRoute>("VendorPathRoute_CSI");
++        if (route != null && gameObject.scene.name == route.sceneName && GetComponent<VendorPathGuide>() == null)
++            gameObject.AddComponent<VendorPathGuide>();
+     }
+     private void OnEnable() => interactAction.Enable();
+     private void OnDisable()
+--- Assets/_Project/Scripts/Interaction/PhotoCaptureListener.cs (task start)
++++ Assets/_Project/Scripts/Interaction/PhotoCaptureListener.cs
+@@ -109,12 +109,14 @@
+             ? ScenePhotographyManager.Instance.GetComponent<ScenePhotographyGuide>() : null;
+         var hiddenGuide = guide != null ? guide.HideForCapture() : null;
+         var hiddenEvidenceDots = EvidenceDiscoveryDot.HideForCapture();
++        var hiddenVendorPath = VendorPathGuide.HideForCapture();
+         try
+         {
+             texture = CaptureFrame();
+         }
+         finally
+         {
++            hiddenVendorPath.Dispose();
+             hiddenEvidenceDots.Dispose();
+             hiddenGuide?.Dispose();
+             if (overlayWasActive) overlay.SetActive(true);

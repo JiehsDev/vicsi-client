@@ -1,0 +1,28 @@
+PASS upper floor 007/008 join
+PASS upper floor 008/009 join
+PASS upper floor 009/010 join
+PASS floor panels aligned to room width
+PASS TV upright
+PASS TV rests on console
+PASS TV remains in living room
+PASS Sofa01 aligned in living room
+PASS Table35 aligned in living room
+PASS Table38 aligned in living room
+PASS Table19 grounded
+PASS Chair02 grounded
+PASS Chair02 (1) grounded
+PASS Chair02 (2) grounded
+PASS Chair02 (3) grounded
+PASS Sofa01 grounded
+PASS Table35 grounded
+PASS Table38 grounded
+PASS no coincident active lights
+PASS PFB_LightCover (6) below first-floor ceiling
+PASS PFB_LightCover (16) below first-floor ceiling
+PASS PFB_LightCover (7) below first-floor ceiling
+PASS PFB_LightCover (8) below first-floor ceiling
+PASS PFB_LightCover (11) below first-floor ceiling
+PASS PFB_LightCover (14) below first-floor ceiling
+PASS PFB_LightCover (15) below first-floor ceiling
+PASS TV albedo texture retained
+failures=0 playing=False compilationFailed=False dirty=False

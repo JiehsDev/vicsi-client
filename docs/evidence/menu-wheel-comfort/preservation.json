@@ -1,0 +1,36 @@
+{
+  "changedPreexistingFiles": [
+    "Assets\\_Project\\Scripts\\UI\\UtilityMenuController.cs"
+  ],
+  "unchangedPreexistingFiles": 1333,
+  "allScopedSceneFilesUnchanged": true,
+  "sceneFileCount": 5,
+  "toolWheelFilesUnchanged": [
+    "Assets\\_Project\\Scripts\\RoleSystem\\ToolWheelController.cs",
+    "Assets\\_Project\\Scripts\\RoleSystem\\ToolWheelController.cs.meta",
+    "Assets\\_Project\\Scripts\\RoleSystem\\ToolWheelWedgeTemplate.cs",
+    "Assets\\_Project\\Scripts\\RoleSystem\\ToolWheelWedgeTemplate.cs.meta"
+  ],
+  "inputAndOwnershipMethodsByteEquivalent": [
+    "Awake",
+    "OnEnable",
+    "OnDisable",
+    "OnDeviceChange",
+    "OnDestroy",
+    "OnPhaseChanged",
+    "Update",
+    "OpenMenu",
+    "CloseMenu",
+    "UpdateHoveredSegment"
+  ],
+  "sharedHudPlacementAndLocomotionSourceUnchanged": true,
+  "newRuntimeFiles": [
+    "Assets/_Project/Scripts/UI/MenuWheelComfortProfile.cs"
+  ],
+  "newValidationFiles": [
+    "Assets/_Project/Scripts/Testing/MenuWheelComfortTest.cs"
+  ],
+  "questAdbDevices": [],
+  "finalUtilitySourceSha256": "f39fac0ceb33a1702cb302acf95b5d9effa0e32df915577c880bc0aa68145f8a",
+  "baselineControlRestoredExactly": true
+}

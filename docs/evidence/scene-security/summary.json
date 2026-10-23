@@ -1,0 +1,165 @@
+{
+  "date": "2026-10-19",
+  "status": "implemented and batch validated",
+  "passed": 452,
+  "failed": 0,
+  "suites": [
+    {
+      "suite": "SceneAccessRegisterTest",
+      "passed": 40,
+      "failed": 0,
+      "exitCode": 0,
+      "csharpErrors": 0,
+      "referenceExceptions": 0,
+      "report": "docs/evidence/scene-security/run2/SceneAccessRegisterTest.txt",
+      "log": "docs/evidence/scene-security/run2/SceneAccessRegisterTest.log"
+    },
+    {
+      "suite": "ArrivalEntryTest",
+      "passed": 26,
+      "failed": 0,
+      "exitCode": 0,
+      "csharpErrors": 0,
+      "referenceExceptions": 0,
+      "report": "docs/evidence/scene-security/run3/ArrivalEntryTest.txt",
+      "log": "docs/evidence/scene-security/run3/ArrivalEntryTest.log"
+    },
+    {
+      "suite": "ArrivalPPETest",
+      "passed": 42,
+      "failed": 0,
+      "exitCode": 0,
+      "csharpErrors": 0,
+      "referenceExceptions": 0,
+      "report": "docs/evidence/scene-security/run3/ArrivalPPETest.txt",
+      "log": "docs/evidence/scene-security/run3/ArrivalPPETest.log"
+    },
+    {
+      "suite": "FirstResponderTurnoverTest",
+      "passed": 44,
+      "failed": 0,
+      "exitCode": 0,
+      "csharpErrors": 0,
+      "referenceExceptions": 0,
+      "report": "docs/evidence/scene-security/run3/FirstResponderTurnoverTest.txt",
+      "log": "docs/evidence/scene-security/run3/FirstResponderTurnoverTest.log"
+    },
+    {
+      "suite": "IOCAssessmentGuideTest",
+      "passed": 35,
+      "failed": 0,
+      "exitCode": 0,
+      "csharpErrors": 0,
+      "referenceExceptions": 0,
+      "report": "docs/evidence/scene-security/run3/IOCAssessmentGuideTest.txt",
+      "log": "docs/evidence/scene-security/run3/IOCAssessmentGuideTest.log"
+    },
+    {
+      "suite": "NarrativeRoleFlowTest",
+      "passed": 41,
+      "failed": 0,
+      "exitCode": 0,
+      "csharpErrors": 0,
+      "referenceExceptions": 0,
+      "report": "docs/evidence/scene-security/run3/NarrativeRoleFlowTest.txt",
+      "log": "docs/evidence/scene-security/run3/NarrativeRoleFlowTest.log"
+    },
+    {
+      "suite": "NPCApproachGuideTest",
+      "passed": 33,
+      "failed": 0,
+      "exitCode": 0,
+      "csharpErrors": 0,
+      "referenceExceptions": 0,
+      "report": "docs/evidence/scene-security/run3/NPCApproachGuideTest.txt",
+      "log": "docs/evidence/scene-security/run3/NPCApproachGuideTest.log"
+    },
+    {
+      "suite": "ScenarioPhaseFoundationTest",
+      "passed": 19,
+      "failed": 0,
+      "exitCode": 0,
+      "csharpErrors": 0,
+      "referenceExceptions": 0,
+      "report": "docs/evidence/scene-security/run3/ScenarioPhaseFoundationTest.txt",
+      "log": "docs/evidence/scene-security/run3/ScenarioPhaseFoundationTest.log"
+    },
+    {
+      "suite": "SceneTestStartTest",
+      "passed": 143,
+      "failed": 0,
+      "exitCode": 0,
+      "csharpErrors": 0,
+      "referenceExceptions": 0,
+      "report": "docs/evidence/scene-security/run3/SceneTestStartTest.txt",
+      "log": "docs/evidence/scene-security/run3/SceneTestStartTest.log"
+    },
+    {
+      "suite": "SessionPersistenceTest",
+      "passed": 12,
+      "failed": 0,
+      "exitCode": 0,
+      "csharpErrors": 0,
+      "referenceExceptions": 0,
+      "report": "docs/evidence/scene-security/run3/SessionPersistenceTest.txt",
+      "log": "docs/evidence/scene-security/run3/SessionPersistenceTest.log"
+    },
+    {
+      "suite": "VendorFollowupTest",
+      "passed": 17,
+      "failed": 0,
+      "exitCode": 0,
+      "csharpErrors": 0,
+      "referenceExceptions": 0,
+      "report": "docs/evidence/scene-security/run3/VendorFollowupTest.txt",
+      "log": "docs/evidence/scene-security/run3/VendorFollowupTest.log"
+    }
+  ],
+  "scenePreservation": {
+    "path": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+    "before": "docs/evidence/scene-security/CSI_Environment.unity.before",
+    "sha256": "91d5c8c35425cdc32fec5ecb6bbc01ebfb07c368e227d62da5e10fdf12786005",
+    "byteIdentical": true
+  },
+  "preview": {
+    "path": "docs/evidence/scene-security/register-preview.png",
+    "manuallyInspected": true,
+    "longNameWrapping": true,
+    "boundedScroll": true
+  },
+  "example": "docs/evidence/scene-security/register-example.json",
+  "registerStorage": "local sidecar only; no dashboard or upload schema change",
+  "failedAttempts": [
+    {
+      "path": "docs/evidence/scene-security/run1",
+      "reason": "Inactive TMP rows measured before default font initialized; fixed by assigning the font explicitly. Timed-out attempt retained."
+    }
+  ],
+  "xrStartup": {
+    "Standalone": true,
+    "Android": true
+  },
+  "pendingRunnerRequests": false,
+  "sourceSha256": {
+    "Assets/_Project/Scripts/SceneTurnover/SceneAccessRegister.cs": "0798ebd74e3b65d51885f070ee6dc92c5010dcbba233e2eef3cb38c2fd49633e",
+    "Assets/_Project/Scripts/SceneTurnover/SceneAccessRegisterUI.cs": "bf2679ea00c87ae066f1a0b4ee589c944288e4cd2444459ad92548960dcfb687",
+    "Assets/_Project/Scripts/SceneTurnover/SceneCordon.cs": "6b9202476e2f30fe9bd1736b7f7be67e1831a7f6c4702f6f677989a5bc6766ce",
+    "Assets/_Project/Scripts/SceneTurnover/SceneTurnover.cs": "be40971963b372389de07e950a0fc4f236706f64441a2d32eef438f66199e9b4",
+    "Assets/_Project/Scripts/SceneTurnover/ArrivalPPEStation.cs": "a3c19739d0009b4995327ac2ee4d1d0ee458a802aec208911fcb2db9cd362b0d",
+    "Assets/_Project/Scripts/SceneTurnover/FirstResponderTurnover.cs": "92f95b1315dc5383006ec8c6ef396eb6d4b4b7c88585396e34376fdd38de1177",
+    "Assets/_Project/Scripts/SceneTurnover/IOCAssessmentInteraction.cs": "a0634680b7a1ca394ce2176dff73daafcfafd17a072686a13c62442a19cc557e",
+    "Assets/_Project/Scripts/SceneTurnover/SOCOWorkflowInteraction.cs": "78e7042e637c958ff23bbd1f22e31ac5a3d7af38f68f9fdd0dbf5b08d4dd805b",
+    "Assets/_Project/Scripts/Logging/SessionLogger.cs": "10a26b56b9ef88860bcc97d5358748e9b4ea310066226a4ca30550318b78fa2d",
+    "Assets/_Project/Scripts/Logging/SessionEventType.cs": "2ca1ac4feb31815fdba9a411674c543c50d90b2fb703739f467e648a29cbe49f",
+    "Assets/_Project/Scripts/Testing/SceneAccessRegisterTest.cs": "01c7ba0cd15e14a447f26a3e03c193ae44da568aa27aa5006893a566e11a136c",
+    "Assets/_Project/Scripts/Testing/ArrivalPPETest.cs": "4cc043f3b694293ff7d17b4a26ef12bcaf367721ecbd5c74274134554154c83c",
+    "Assets/_Project/Scripts/Testing/NarrativeRoleFlowTest.cs": "fa54b2283af6b3bad3433a3b0865c2d679805b927eee0d362459d8de167e4371",
+    "Assets/_Project/Editor/Phase5PlayModeBatchRunner.cs": "a864e618dfd29eb7d21b26832ae2e11069eafefda1b194664a06695a9583f733",
+    "Assets/Resources/ViCSIDialogueCatalog.asset": "524b8aca544909155986b79cd63e0355d3038b7be490c0af9d651e5d0a9ba7f4",
+    "Tools/RunSceneSecurityChecks.ps1": "b762ec6a9573c1827e881ff8ab92bcf17d9ae9d92d001791bb15db2de8c1e7b6",
+    "Assets/_Project/Scripts/SceneTurnover/IOCAssessmentGuide.cs": "ccab348a30f7d73763ef1ec6e48638734d2d31c0f68e0747d132e5fe6b91a33f"
+  },
+  "manualAcceptance": [
+    "Physical Quest controller interaction, readability and boundary comfort"
+  ]
+}

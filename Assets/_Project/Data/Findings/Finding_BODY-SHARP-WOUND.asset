@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f8d02f05a0c4340a5ebca0f2d34f71, type: 3}
+  m_Name: Finding_BODY-SHARP-WOUND
+  m_EditorClassIdentifier: Assembly-CSharp::FindingDefinition
+  findingId: FIND-BODY-SHARP-WOUND
+  displayName: Sharp-Edged Wound Documented
+  description: Examination documented a narrow, deep penetrating wound on John that
+    is consistent with injury from a sharp-edged object. The finding does not identify
+    the attacker.
+  sourceEvidenceId: BODY-A
+  sourceEvidenceReference: {fileID: 11400000, guid: c9972e922039a654d92ed7968e3066ae, type: 2}
+  unlockRequirement:
+    kind: 0
+    operatorType: 0
+    children: []
+    requirementType: 1
+    evidenceId: BODY-A
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: body-a-wound-sharp-object
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    authoringNote: Wound-pattern finding, not mere discovery.
+  category: physical
+  references:
+    version: 2
+    RefIds: []

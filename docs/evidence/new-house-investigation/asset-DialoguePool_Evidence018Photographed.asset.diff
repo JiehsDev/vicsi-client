@@ -1,0 +1,8 @@
+--- before
++++ after
+@@ -13,4 +13,4 @@
+   m_Name: DialoguePool_Evidence018Photographed
+   m_EditorClassIdentifier: Assembly-CSharp::DialogueLinePool
+   lines:
+-  - "Dispatch: Bottle's on film, right by the entry."
++  - 'Dispatch: Bottle''s on film, on the rear kitchen counter.'

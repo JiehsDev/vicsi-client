@@ -1,0 +1,654 @@
+{
+    "payloadVersion": 1,
+    "sessionId": "b759d2a2-d5cc-47e5-9dcc-057d516590d7",
+    "studentId": "",
+    "classId": "",
+    "isTestSession": false,
+    "scenarioId": "CSI-ENVIRONMENT-001",
+    "scenarioVersion": "1.1.0",
+    "scoringRulesVersion": "1.7.0",
+    "groundTruthVersion": "1.2.0",
+    "clientVersion": "0.1.0",
+    "startedAtUtc": "2026-10-18T04:59:30.8536723Z",
+    "completedAtUtc": "",
+    "durationSeconds": 12.82,
+    "selectedConclusionId": "",
+    "resolvedEndingId": "",
+    "hasClientReportedScores": false,
+    "clientReportedScores": {
+        "relationshipsCompletedCorrect": 0,
+        "relationshipsCompletedIncorrect": 0,
+        "objectivesCompleted": 0,
+        "objectivesFailed": 0,
+        "proceduralViolationCount": 0
+    },
+    "evidenceResults": [],
+    "reportLineResults": [],
+    "proceduralViolations": [],
+    "relationshipResults": [],
+    "hypothesisResults": [],
+    "deductionAssessmentEvents": [],
+    "hasDeductionAssessment": true,
+    "deductionAssessment": {
+        "scoringRulesVersion": "1.7.0",
+        "status": "incomplete",
+        "hasFinalScore": false,
+        "totalScore": 0.0,
+        "reasoningCheckpoints": 0.0,
+        "deductionRelationships": 0.0,
+        "finalConclusion": 0.0,
+        "reasoningComponent": 0.0,
+        "relationshipComponent": 0.0,
+        "conclusionComponent": 0.0,
+        "relationshipEarned": 0.0,
+        "relationshipMaximum": 6.0,
+        "checkpointEarned": 0,
+        "checkpointMaximum": 24,
+        "answeredCount": 0,
+        "eligibleUnansweredCount": 0,
+        "undiscoveredCount": 0,
+        "unsupportedRelationships": 0,
+        "reviewReasons": [
+            "Conclusion-time assessment snapshot missing."
+        ]
+    },
+    "confirmedFindingIds": [],
+    "unlockedInsightIds": [],
+    "hasScenePhotography": false,
+    "scenePhotography": {
+        "requiredPointCount": 0,
+        "completedPointCount": 0,
+        "coveragePercent": 0.0,
+        "correctSequenceCount": 0,
+        "sequenceAccuracyPercent": 0.0,
+        "wrongOrderAttempts": 0,
+        "wrongPositionAttempts": 0,
+        "wrongAngleAttempts": 0,
+        "totalAttempts": 0,
+        "procedureAccuracyPercent": 0.0,
+        "isComplete": false,
+        "completionSeconds": 0.0,
+        "scorePercent": 0.0
+    },
+    "hasMeasurement": false,
+    "measurement": {
+        "requirementCount": 0,
+        "completedCount": 0,
+        "accurateCount": 0,
+        "lateCount": 0,
+        "completionPercent": 0.0,
+        "accuracyPercent": 0.0,
+        "timingPercent": 0.0,
+        "scorePercent": 0.0,
+        "items": [],
+        "fixedSidesRequired": 0,
+        "fixedSidesCompleted": 0,
+        "pairRequiredCount": 0,
+        "pairCompletedCount": 0,
+        "pairLateCount": 0,
+        "sceneMeasurementsComplete": false,
+        "pairs": []
+    },
+    "includesRawEventLog": false,
+    "orderedEvents": [
+        {
+            "sequenceNumber": 0,
+            "timestampMs": 2,
+            "eventType": "SessionStarted",
+            "targetId": "CSI_Environment",
+            "payload": [
+                {
+                    "key": "startedAtUtc",
+                    "value": "2026-10-18T04:59:30.8536723Z"
+                },
+                {
+                    "key": "applicationVersion",
+                    "value": "0.1.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 7,
+            "timestampMs": 5711,
+            "eventType": "CSIForm1Received",
+            "targetId": "CSI-Form-1",
+            "payload": [
+                {
+                    "key": "receivingRole",
+                    "value": "IOC"
+                },
+                {
+                    "key": "via",
+                    "value": "Bypass"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 8,
+            "timestampMs": 5714,
+            "eventType": "SceneTurnoverCompleted",
+            "targetId": "first-responder-turnover",
+            "payload": [
+                {
+                    "key": "via",
+                    "value": "Bypass"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "5.7"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 12,
+            "timestampMs": 5727,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-01-PETER",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "5.728"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "EVIDENCE_CAUTION"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 13,
+            "timestampMs": 5731,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-victim",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 14,
+            "timestampMs": 5732,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-possible-weapon",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 15,
+            "timestampMs": 5732,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-bloodstain-area",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 16,
+            "timestampMs": 5732,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-drinking-context",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 17,
+            "timestampMs": 5732,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-main-scene-survey",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 18,
+            "timestampMs": 5733,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-02-SCENE",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "5.733"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "SCENE_INTERPRETATION"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 19,
+            "timestampMs": 5733,
+            "eventType": "IOCAssessmentCompleted",
+            "targetId": "ioc-assessment",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 22,
+            "timestampMs": 5749,
+            "eventType": "SOCORequested",
+            "targetId": "soco-request",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 25,
+            "timestampMs": 5751,
+            "eventType": "CSIForm2Completed",
+            "targetId": "CSI-Form-2",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 29,
+            "timestampMs": 5754,
+            "eventType": "SOCOTurnoverCompleted",
+            "targetId": "ioc-soco-turnover",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 38,
+            "timestampMs": 10118,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-exterior-establishing",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Exterior"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "10"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 39,
+            "timestampMs": 10130,
+            "eventType": "ScenePhotographyPhaseCompleted",
+            "targetId": "Exterior",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 41,
+            "timestampMs": 10137,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-entrance-approach",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Entrance"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "20"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 42,
+            "timestampMs": 10140,
+            "eventType": "ScenePhotographyPhaseCompleted",
+            "targetId": "Entrance",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 44,
+            "timestampMs": 10141,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-interior-from-entrance",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Overall"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "30"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 46,
+            "timestampMs": 10142,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-interior-left",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Overall"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "40"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 48,
+            "timestampMs": 10181,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-interior-right",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Overall"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "50"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 49,
+            "timestampMs": 10181,
+            "eventType": "ScenePhotographyPhaseCompleted",
+            "targetId": "Overall",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 51,
+            "timestampMs": 10182,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-body-in-scene",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Context"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "60"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 53,
+            "timestampMs": 10182,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-stair-incident-area",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Context"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "70"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 54,
+            "timestampMs": 10183,
+            "eventType": "ScenePhotographyPhaseCompleted",
+            "targetId": "Context",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 55,
+            "timestampMs": 10183,
+            "eventType": "ScenePhotographyCompleted",
+            "targetId": "",
+            "payload": [
+                {
+                    "key": "completedCount",
+                    "value": "7"
+                },
+                {
+                    "key": "outOfSequenceAttempts",
+                    "value": "0"
+                },
+                {
+                    "key": "wrongAngleAttempts",
+                    "value": "0"
+                },
+                {
+                    "key": "wrongPositionAttempts",
+                    "value": "0"
+                },
+                {
+                    "key": "completionSeconds",
+                    "value": "0.2"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 88,
+            "timestampMs": 12752,
+            "eventType": "RelationshipInterpretationSubmitted",
+            "targetId": "REL-bottle-supports-brother",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "REL-bottle-supports-brother-C"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "1"
+                },
+                {
+                    "key": "reviewVersion",
+                    "value": "1"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "12.7524633407593"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 89,
+            "timestampMs": 12772,
+            "eventType": "RelationshipInterpretationSubmitted",
+            "targetId": "REL-knife-consistent-wound",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "REL-knife-consistent-wound-C"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "2"
+                },
+                {
+                    "key": "reviewVersion",
+                    "value": "1"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "12.7726469039917"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 90,
+            "timestampMs": 12792,
+            "eventType": "RelationshipInterpretationSubmitted",
+            "targetId": "REL-paul-print-handled-knife",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "REL-paul-print-handled-knife-B"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "3"
+                },
+                {
+                    "key": "reviewVersion",
+                    "value": "1"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "12.7923383712769"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 91,
+            "timestampMs": 12806,
+            "eventType": "RelationshipInterpretationSubmitted",
+            "targetId": "REL-peter-departure-supported",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "REL-peter-departure-supported-B"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "4"
+                },
+                {
+                    "key": "reviewVersion",
+                    "value": "1"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "12.8066568374634"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 93,
+            "timestampMs": 12820,
+            "eventType": "RelationshipInterpretationSubmitted",
+            "targetId": "REL-spatter-consistent-reconstruction",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "REL-spatter-consistent-reconstruction-B"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "5"
+                },
+                {
+                    "key": "reviewVersion",
+                    "value": "1"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "12.8207883834839"
+                }
+            ]
+        }
+    ]
+}

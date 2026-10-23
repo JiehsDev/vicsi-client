@@ -1,0 +1,15 @@
+Editor Play-mode observations captured during the closing pass after the scene fixes.
+PASS: Single vendor owner; roadside body and initial interaction gated
+PASS: FR physical interaction opens
+PASS: FR faces player during dialogue
+PASS: FR completes Form1 and cordon opening
+PASS: Arrival preserves height and tracking; IOC visible with Form2
+PASS: IOC faces player during briefing
+PASS: Briefing activates SOCO; tape retains open entrance
+PASS: Physical vendor opens existing question panel
+PASS: Vendor faces player; label hides and panel text fits
+PASS: Vendor question ray binding works
+PASS: Statement records once and appears on board
+PASS: Witness and timeline relationship identifiers persist in session JSONL
+PASS: Vendor returns to authored roadside orientation
+13 passed, 0 failed. No headset validation performed.

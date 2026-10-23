@@ -1,0 +1,16 @@
+=== RelationshipStateManagerTest ===
+  PASS: Always-unlocked definition (empty ALL requirement) reaches Available immediately
+  PASS: Gated definition with an unsatisfiable requirement stays Locked
+  PASS: FindByPair returns both candidates sharing the same pair
+  PASS: FindByPair is order-independent
+  PASS: MarkSelectedForPair marks a matching definition Selected
+  PASS: MarkSelectedForPair sets wasEverSelected
+  PASS: A Locked relationship still registers as Selected when physically connected (board has no gate)
+  PASS: Both candidates sharing a pair are marked Selected together
+  PASS: Deselecting reverts state to Available
+  PASS: Deselecting does NOT clear wasEverSelected (log history preserved)
+  PASS: CompleteAllSelected advances Selected -> Completed
+  PASS: CompleteAllSelected does not touch an Available (deselected) record
+  PASS: DeductionScorer.requiredLinksScore reflects Completed isCorrect weight (1.00)
+  PASS: DeductionScorer.contradictionScore is 1 when no incorrect link reached Completed (1.00)
+=== PASS, 0 failures ===

@@ -1,0 +1,38 @@
+=== ArrivalPPETest ===
+PASS: Exactly one clean-glove station is installed
+PASS: Fresh session requires briefing and gloves
+FAIL: Station is outside the controlled boundary and reachable from arrival
+PASS: Station uses the authored clean glove meshes
+PASS: Gloves cannot be picked up before briefing
+PASS: Actual Direct3D camera renders the glove pair [changed pixels=2017]
+PASS: Pre-briefing crossing returns the head outside
+FAIL: Pre-briefing crossing requests the briefing instruction
+PASS: Actual responder interaction starts
+PASS: PPE explanation is inserted once before Form 1 handover
+PASS: All six briefing lines render before IOC assessment
+PASS: Both PPE teaching lines are recorded in history
+PASS: PPE teaches contamination, glove changes and limits
+PASS: Briefing alone cannot unlock entry or observations
+PASS: Next instruction points to gloves, not into the kitchen
+FAIL: Post-briefing bare-handed crossing also returns outside
+PASS: Other modal UI prevents pickup
+FAIL: Actual A picks up the pair without equipping it
+FAIL: Picked-up gloves follow the right hand
+FAIL: Holding A never auto-confirms wearing
+PASS: Actual B returns the pair and releases the UI gate
+FAIL: Pair can be picked up again
+PASS: Leaving the station cancels pickup
+FAIL: Second deliberate A equips the gloves and frees the gate
+FAIL: Equipping records exactly one non-scored PPE event
+FAIL: Both animated hand meshes receive glove materials
+PASS: Gloves occupy no tool or evidence slot
+FAIL: Holstering preserves gloves and worn-hand materials
+FAIL: Repeated equip cannot log twice
+FAIL: Gloves unlock entry, with cordon still closed and visible
+FAIL: Equipped student can cross without forced return
+FAIL: Equipped student can record the existing IOC observation
+PASS: No forensic processing or discovery was seeded
+FAIL: Survey guidance follows glove confirmation
+PASS: Restart restores briefing, glove pair and locked entry
+PASS: Restart leaves one station and no carried pair
+=== FAIL: 16 failure(s) ===

@@ -1,0 +1,28 @@
+=== PhotographyGuideTest ===
+PASS: Guide attaches automatically, once, without scene wiring
+PASS: Route is active and guide follows its current point
+PASS: Outside zone: pin points to the standing position, not the photo subject
+PASS: Look away: arrow stays in the inset viewport, no mirrored pin
+PASS: Turn back: the arrow becomes a location pin over the same target
+PASS: Inside zone: pin switches to the authored camera target
+PASS: Guide does not complete a photo just by aligning
+PASS: Other modal UI hides the guide
+PASS: Camera viewfinder ownership permits the guide
+PASS: Another modal still wins while camera owns the gate
+PASS: Capture scope hides the guide synchronously
+PASS: Nested capture scope stays hidden
+PASS: Nested disposal does not restore outer capture
+PASS: Capture scope restores the previous guide state
+PASS: Actual album render excludes guidance, then restores it
+PASS: Guide has no input raycaster, hit targets or collision objects
+PASS: Native location-pin mesh renders with a supported shader
+PASS: Behind-eye projection is finite and points toward the correct turn: (1.00, 0.00, -1.00)
+PASS: Behind-eye projection is finite and points toward the correct turn: (-1.00, 0.00, -1.00)
+PASS: Behind-eye projection is finite and points toward the correct turn: (0.00, 0.00, -1.00)
+PASS: Behind-eye projection is finite and points toward the correct turn: (0.00, 1.00, -1.00)
+PASS: Small boundary head jitter retains the previous arrow/pin state
+PASS: Successful shutter advances guidance to the next point
+PASS: Existing route still completes through its original shutter gates
+PASS: All required photos complete: guide disappears
+PASS: Disable leaves no floating guidance canvas
+=== PASS, 0 failures ===

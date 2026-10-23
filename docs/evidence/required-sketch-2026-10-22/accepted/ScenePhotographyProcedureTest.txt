@@ -1,0 +1,49 @@
+=== ScenePhotographyProcedureTest ===
+  PASS: [start] scene photography not complete, obj-document-scene open
+  PASS: [discovery] all four discovered before scene photography, nothing blocked, no warning
+  PASS: [raw photo] knife photographed (allowed)
+  PASS: [raw photo] warning shown
+  PASS: [raw photo] exactly one ProcedureOutOfOrder for the knife's photo
+  PASS: [raw photo] a second shutter press adds no warning
+  PASS: [raw photo] one warning per item, nothing blocked
+  PASS: [chalk] knife outline refused: nothing traced, still PhotographedRaw
+  PASS: [chalk] reason
+  PASS: [chalk] one blocked action for the whole press
+  PASS: [marker] EVD-014: no tent placed, state unchanged, one blocked action
+  PASS: [marker] EVD-014: reason
+  PASS: [marker] EVD-015: no tent placed, state unchanged, one blocked action
+  PASS: [marker] EVD-015: reason
+  PASS: [marker] EVD-018: no tent placed, state unchanged, one blocked action
+  PASS: [marker] EVD-018: reason
+  PASS: [marker] BODY-A letter marker refused, state unchanged, one blocked action
+  PASS: [measure] tape refuses an unmarked item
+  PASS: [swab] EVD-014: refused, nothing sampled, one blocked action
+  PASS: [swab] EVD-014: reason, and the authoritative step refuses too
+  PASS: [swab] EVD-015: refused, nothing sampled, one blocked action
+  PASS: [swab] EVD-015: reason, and the authoritative step refuses too
+  PASS: [fingerprint] knife: no powder applied, nothing revealed or fingerprinted, one blocked action
+  PASS: [fingerprint] reason (scene first, ahead of the swab-first rule)
+  PASS: [collect] bottle into the bag refused, still on scene
+  PASS: [collect] reason from the central gate
+  PASS: [collect] body stays non-collectible
+  PASS: [log] blocked actions never also logged as ProcedureOutOfOrder
+  PASS: [route] all 7 points completed
+  PASS: [route] obj-document-scene completed
+  PASS: [route] transition message logged on completion ('Scene documentation complete. You may continue with detailed investigation.')
+  PASS: [after] knife chalk outline now completes
+  PASS: [after] bottle chalk outline completes
+  PASS: [after] EVD-015 chalk outline completes
+  PASS: [after] BODY-A chalk outline completes
+  PASS: [after] EVD-014: marker placed
+  PASS: [after] EVD-015: marker placed
+  PASS: [after] EVD-018: marker placed
+  PASS: [after] BODY-A letter marker placed
+  PASS: [after] scene route gate clears while measurement and sketch remain required
+  PASS: [phase1 payload] unchanged schema with explicit scoring 1.6.0
+  PASS: [phase1 payload] all ProcedureOutOfOrder events preserved
+  PASS: [phase1 payload] blocked attempts and count retained
+  PASS: [phase1 payload] completion, photography and measurement analytics retained
+  PASS: [phase1 UI] procedure pages are training with no score award
+  PASS: [phase1 deduction] elapsed training time cannot lower the board score
+  PASS: [phase1 deduction] reasoning time runs only during board review
+=== PASS, 0 failures ===

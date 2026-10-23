@@ -1,0 +1,1 @@
+Saved editable front doorway wall: (16.72, 2.40, 6.21) size (1.17, 2.40, 0.18). IOC phases: disabled. SOCO: enabled until all required Exterior and Entrance photos complete. Existing cordon handles room-scale/teleport bypass.

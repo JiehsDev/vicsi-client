@@ -1,0 +1,130 @@
+--- before
++++ after
+@@ -22,7 +22,7 @@
+   fingerprintMatchIdentity: 
+   description: John's body, whose position and visible condition form part of the
+     scene examination.
+-  foundLocation: On the kitchen floor.
++  foundLocation: On the rear ground-floor kitchen floor.
+   observedCondition: The body was documented in its original position before nearby
+     items were moved. Cause and manner were not inferred from position alone.
+   investigativeContext: Position, visible injuries and nearby physical evidence may
+@@ -53,10 +53,11 @@
+       relationshipId: 
+       findingId: 
+       measurementRequirementId: 
++      scenarioPhase: 0
+       authoringNote: 
+   reportLineOptions:
+   - id: body-a-location
+-    text: Body observed on the kitchen floor.
++    text: Body observed on the rear ground-floor kitchen floor.
+     isAccurate: 1
+     prerequisites: []
+     extraRequirement:
+@@ -79,6 +80,7 @@
+       relationshipId: 
+       findingId: 
+       measurementRequirementId: 
++      scenarioPhase: 0
+       authoringNote: 
+   - id: body-a-position
+     text: John's position and orientation were documented before anything else in
+@@ -105,6 +107,7 @@
+       relationshipId: 
+       findingId: 
+       measurementRequirementId: 
++      scenarioPhase: 0
+       authoringNote: 
+   - id: body-a-wound-sharp-object
+     text: John has a narrow, deep penetrating wound consistent with a sharp-edged
+@@ -131,6 +134,7 @@
+       relationshipId: 
+       findingId: 
+       measurementRequirementId: 
++      scenarioPhase: 0
+       authoringNote: 
+   minimumLinesRequired: 3
+   chalkCircleRadius: 0.5
+@@ -138,6 +142,7 @@
+   chalkPointCount: 24
+   chalkCompletionThreshold: 0.9
+   requiresSwabbing: 0
++  requiresTraceMarker: 0
+   collectedBySwab: 0
+   swabBeforeFingerprinting: 0
+   examinedInPlace: 1
+@@ -167,6 +172,7 @@
+     relationshipId: 
+     findingId: 
+     measurementRequirementId: 
++    scenarioPhase: 0
+     authoringNote: 
+   depositedVisual: {fileID: 0}
+   stepRequirements:
+@@ -193,10 +199,12 @@
+       relationshipId: 
+       findingId: 
+       measurementRequirementId: MEAS-BODY-A
+-      authoringNote: 
+-    enforcement: 1
+-    messageId: ''
+-    message: Measure/document the body position and required evidence distances before recording BODY-A findings.
++      scenarioPhase: 0
++      authoringNote: 
++    enforcement: 1
++    messageId: 
++    message: Measure/document the body position and required evidence distances before
++      recording BODY-A findings.
+     expectedPrerequisite: measurement:MEAS-BODY-A
+   - stepId: evidence-distances-before-body-record
+     action: 0
+@@ -221,10 +229,12 @@
+       relationshipId: 
+       findingId: 
+       measurementRequirementId: 
+-      authoringNote: 
+-    enforcement: 1
+-    messageId: ''
+-    message: Measure/document the body position and required evidence distances before recording BODY-A findings.
++      scenarioPhase: 0
++      authoringNote: 
++    enforcement: 1
++    messageId: 
++    message: Measure/document the body position and required evidence distances before
++      recording BODY-A findings.
+     expectedPrerequisite: evidence-distances:BODY-A
+   - stepId: scene-measurements-before-record
+     action: 0
+@@ -249,6 +259,7 @@
+       relationshipId: 
+       findingId: 
+       measurementRequirementId: 
++      scenarioPhase: 0
+       authoringNote: 
+     enforcement: 1
+     messageId: step-measurements-before-records
+@@ -277,6 +288,7 @@
+       relationshipId: 
+       findingId: 
+       measurementRequirementId: 
++      scenarioPhase: 0
+       authoringNote: 
+     enforcement: 0
+     messageId: step-scene-photos-before-evidence-photos
+@@ -305,6 +317,7 @@
+       relationshipId: 
+       findingId: 
+       measurementRequirementId: 
++      scenarioPhase: 0
+       authoringNote: 
+     enforcement: 1
+     messageId: step-scene-photos-before-chalk
+@@ -333,6 +346,7 @@
+       relationshipId: 
+       findingId: 
+       measurementRequirementId: 
++      scenarioPhase: 0
+       authoringNote: 
+     enforcement: 1
+     messageId: step-scene-photos-before-markers

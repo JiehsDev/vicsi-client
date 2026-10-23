@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f8d02f05a0c4340a5ebca0f2d34f71, type: 3}
+  m_Name: Finding_KNIFE-GLOVE-TRANSFER
+  m_EditorClassIdentifier: Assembly-CSharp::FindingDefinition
+  findingId: FIND-KNIFE-GLOVE-TRANSFER
+  displayName: Blood-Stained Gloves May Have Contacted the Knife
+  description: Transfer evidence on the knife handle is consistent with contact from
+    the blood-stained gloves. This suggests the knife may have been handled while
+    the gloves were being worn.
+  sourceEvidenceId: EVD-014
+  sourceEvidenceReference: {fileID: 0}
+  unlockRequirement:
+    kind: 1
+    operatorType: 0
+    children:
+    - rid: 7267691018064494882
+    - rid: 7267691018064494883
+    - rid: 7267691018064494884
+    - rid: 7267691018064494885
+    requirementType: 0
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    authoringNote: 
+  category: physical
+  references:
+    version: 2
+    RefIds:
+    - rid: 7267691018064494882
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-GLOVES-BLOOD-VICTIM
+        authoringNote: 
+    - rid: 7267691018064494883
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-GLOVES-CONSISTENT-WITH-ATTACK
+        authoringNote: 
+    - rid: 7267691018064494884
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: EVD-014
+        evidenceReference: {fileID: 0}
+        requiredStatus: 10
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        authoringNote: 
+    - rid: 7267691018064494885
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 1
+        evidenceId: EVD-014
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: knife-blood-trace
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        authoringNote: 'AUTHORED ASSUMPTION: ''appropriate knife handling/transfer
+          observation'' is represented via the existing EVD-014 report line acknowledging
+          blood residue on the blade (itself already gated on EvidenceSwabbed(EVD-014)),
+          rather than a new bespoke transfer-analysis mechanic. Deliberately does
+          not name a suspect - see this finding''s own description.'

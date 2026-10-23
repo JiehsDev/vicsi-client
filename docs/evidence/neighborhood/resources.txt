@@ -1,0 +1,1 @@
+triangles=14372 meshBytes=2361504 renderers=21 transparent=0 dirty=False

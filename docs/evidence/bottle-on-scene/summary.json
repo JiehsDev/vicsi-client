@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-17",
+  "verification": "Existing saved reports recounted during continuation; Unity suites and backend tests were not rerun.",
+  "suites": [
+    {
+      "path": "docs/evidence/bottle-on-scene/contrast-final/BottleFingerprintProcedureTest.txt",
+      "passed": 40,
+      "failed": 0
+    },
+    {
+      "path": "docs/evidence/bottle-on-scene/contrast-final/FingerprintStorageTest.txt",
+      "passed": 33,
+      "failed": 0
+    },
+    {
+      "path": "docs/evidence/bottle-on-scene/final/CollectionFeedbackTest.txt",
+      "passed": 47,
+      "failed": 0
+    },
+    {
+      "path": "docs/evidence/bottle-on-scene/final/MeasurementToolTest.txt",
+      "passed": 41,
+      "failed": 0
+    },
+    {
+      "path": "docs/evidence/bottle-on-scene/final/SceneTestStartTest.txt",
+      "passed": 104,
+      "failed": 0
+    },
+    {
+      "path": "docs/evidence/bottle-on-scene/final/SOCOCloseoutTest.txt",
+      "passed": 48,
+      "failed": 0
+    },
+    {
+      "path": "docs/evidence/bottle-on-scene/full-flow/ProcedureFoundationTest.txt",
+      "passed": 30,
+      "failed": 0
+    },
+    {
+      "path": "docs/evidence/bottle-on-scene/play/EvidenceProcedureMapTest.txt",
+      "passed": 64,
+      "failed": 0
+    }
+  ],
+  "unityPassed": 407,
+  "unityFailed": 0,
+  "backend": {
+    "path": "docs/evidence/bottle-on-scene/backend-tests.txt",
+    "passed": 33,
+    "failed": 0
+  },
+  "preservation": {
+    "no_removed_records": true,
+    "changed_records_scoped_to_bottle_station_and_dialogue": true,
+    "new_records_are_bottle_print_children": true,
+    "bottle_prefab_placement_and_visual_overrides_preserved": true
+  }
+}

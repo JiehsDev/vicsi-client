@@ -1,0 +1,8 @@
+[
+  {"batch":2,"suites":["ScenePhotographyProcedureTest","GreyboxFlowTest","ProcedureFoundationTest","ChalkProcedureTest","EvidenceProcedureMapTest","EvidenceProcedurePanelTest"]},
+  {"batch":3,"suites":["BiologicalSamplingTest","MeasurementFoundationTest","MeasurementProcedureTest","MeasurementToolTest","PerEvidenceMeasurementTest","SceneRelationalMeasurementTest","CabinetReferenceTest","CollectionFeedbackTest","EvidenceTraceMarkerTest","EvidenceTentPickupTest","EvidenceInventoryTest"]},
+  {"batch":4,"suites":["EvidenceNotesTest","RequirementEvaluatorTest"]},
+  {"batch":5,"suites":["RelationshipStateManagerTest","BrotherPathTest","InconclusivePathTest","EndingManagerTest"]},
+  {"batch":6,"suites":["AssessmentUploadServiceTest","OfflineQueueRetentionTest","VrIdentityUploadBridgeTest","SessionPersistenceTest","StudentDirectoryCacheTest","PreSessionFlowControllerTest"]},
+  {"batch":7,"suites":["DialogueCatalogTest","NarrativeEventManagerTest","NotificationPriorityTest","CrimeSceneSketchTest","EvidenceBoundaryTest","GrabReachTest","InstructorManagementTest"]}
+]

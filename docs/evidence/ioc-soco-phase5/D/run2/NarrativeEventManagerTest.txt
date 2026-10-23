@@ -1,0 +1,12 @@
+=== NarrativeEventManagerTest ===
+  PASS: Automatic event with an always-true trigger completes on its own
+  PASS: Automatic event with an unsatisfiable trigger never fires
+  PASS: Manual event does not fire on its own (never queued/completed without Fire())
+  PASS: Manual event completes after Fire()
+  PASS: Higher-priority event plays before lower-priority when both are queued together (order: test-auto-always,test-manual,test-priority-blocker,test-priority-high,test-priority-low)
+  PASS: Repeatable event fires more than once
+  PASS: Non-repeatable event does not fire a second time
+  PASS: RequirementType.NarrativeEventCompleted reads IsCompleted correctly (true case)
+  PASS: RequirementType.NarrativeEventCompleted reads IsCompleted correctly (false case)
+  PASS: RequirementType.NarrativeEventCompleted fails closed with MissingNarrativeEventId when blank
+=== PASS, 0 failures ===

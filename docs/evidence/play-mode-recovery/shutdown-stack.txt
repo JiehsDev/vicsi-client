@@ -1,0 +1,1000 @@
+﻿[XR] [47160] [21:03:40.501][Info   ]   XR_FB_composition_layer_image_layout: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_KHR_android_surface_swapchain: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_android_surface_swapchain_create: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_swapchain_update_state: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_swapchain_update_state_opengl_es: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_swapchain_update_state_vulkan: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_composition_layer_alpha_blend: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_KHR_composition_layer_equirect2: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_scene_capture: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_face_tracking: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_face_tracking2: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_eye_tracking: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_eye_tracking_social: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_keyboard_tracking: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_passthrough: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_triangle_mesh: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_passthrough_keyboard_hands: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_META_passthrough_layer_resumed_event: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_META_passthrough_color_lut: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_META_passthrough_preferences: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_common_events: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_composition_layer_depth_test: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_EXTX1_haptic_parametric: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_META_local_dimming: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_META_hand_tracking_wide_motion_mode: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_EXT_hand_joints_motion_range: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_MSFT_hand_interaction: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_hand_tracking_confidence: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_META_face_tracking_visemes: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_composition_layer_settings: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_META_automatic_layer_filter: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_FB_composition_layer_secure_content: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_METAX1_spatial_entity_marker: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_META_environment_raycast: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.501][Info   ]   XR_META_recommended_layer_resolution: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.502][Info   ]   XR_META_hand_tracking_frequency_hint: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.502][Info   ]   XR_META_hand_tracking_unextrapolated_poses: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.502][Info   ]   XR_META_hand_tracking_wide_motion_mode2: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.502][Info   ]   XR_METAX1_agentic_external_tool: Feature="Meta XR Feature": Version=0.0.1, Company="Meta"
+[XR] [47160] [21:03:40.502][Info   ]   XR_FB_foveation: Feature="Meta XR Foveation": Version=1.0.0, Company="Meta"
+[XR] [47160] [21:03:40.502][Info   ]   XR_FB_foveation_configuration: Feature="Meta XR Foveation": Version=1.0.0, Company="Meta"
+[XR] [47160] [21:03:40.502][Info   ]   XR_FB_foveation_vulkan: Feature="Meta XR Foveation": Version=1.0.0, Company="Meta"
+[XR] [47160] [21:03:40.502][Info   ]   XR_MSFT_hand_interaction: Feature="Microsoft Hand Interaction Profile": Version=0.0.1, Company="Unity"
+[XR] [47160] [21:03:40.502][Info   ] 
+[XR] [47160] [21:03:40.502][Info   ] System Properties: Name="Meta Quest 3S", VendorId=-11714
+[XR] [47160] [21:03:40.502][Info   ] System Graphics Properties: MaxWidth=4096, MaxHeight=4096, MaxLayers=16
+[XR] [47160] [21:03:40.502][Info   ] System Tracking Properties: OrientationTracking=True, PositionTracking=True
+[XR] [47160] [21:03:40.502][Info   ] 
+[XR] [47160] [21:03:40.502][Info   ] ==== OpenXR API Spec Version ====
+[XR] [47160] [21:03:40.502][Info   ] 
+[XR] [47160] [21:03:40.502][Info   ] XrInstance Created with OpenXR API Version: 1.1.54
+[XR] [47160] [21:03:40.502][Info   ] 
+[XR] [47160] [21:03:40.502][Info   ] ==== Errors ====
+[XR] [47160] [21:03:40.502][Info   ] 
+[XR] [47160] [21:03:40.502][Info   ] Error: Failed to suggest bindings for interaction profile '/interaction_profiles/microsoft/hand_interaction' with result 'XR_ERROR_HANDLE_INVALID'.
+[XR] [47160] [21:03:40.502][Info   ] 
+[XR] [47160] [21:03:40.502][Info   ] ==== OpenXR Input ====
+[XR] [47160] [21:03:40.502][Info   ] 
+[XR] [47160] [21:03:40.502][Info   ] Action Sets (11): 
+[XR] [47160] [21:03:40.502][Info   ]   handinteraction: ActionCount=13
+[XR] [47160] [21:03:40.502][Info   ]   hpreverbg2controller: ActionCount=12
+[XR] [47160] [21:03:40.502][Info   ]   htcvivecontroller: ActionCount=12
+[XR] [47160] [21:03:40.502][Info   ]   khrsimplecontroller: ActionCount=5
+[XR] [47160] [21:03:40.502][Info   ]   questtouchpluscontroller: ActionCount=22
+[XR] [47160] [21:03:40.502][Info   ]   questprotouchcontroller: ActionCount=25
+[XR] [47160] [21:03:40.502][Info   ]   microsofthandinteraction: ActionCount=6
+[XR] [47160] [21:03:40.502][Info   ]   microsoftmotioncontroller: ActionCount=13
+[XR] [47160] [21:03:40.502][Info   ]   oculustouchcontroller: ActionCount=19
+[XR] [47160] [21:03:40.502][Info   ]   valveindexcontroller: ActionCount=21
+[XR] [47160] [21:03:40.502][Info   ]   proximityinteraction: ActionCount=2
+[XR] [47160] [21:03:40.502][Info   ] 
+[XR] [47160] [21:03:40.502][Info   ] 
+[XR] [47160] [21:03:40.503][Info   ] ==== OpenXR Swapchain Details ====
+[XR] [47160] [21:03:40.503][Info   ] 
+[XR] [47160] [21:03:40.503][Info   ] Render Mode: Single Pass Instanced
+[XR] [47160] [21:03:40.503][Info   ] Latency Optimization: Prioritize Rendering
+[XR] [47160] [21:03:40.503][Info   ] Color Submission Mode: RGBA, 8 bits per channel (LDR)
+[XR] [47160] [21:03:40.503][Info   ] Depth Submission Mode: None
+[XR] [47160] [21:03:40.503][Info   ] 
+[XR] [47160] [21:03:40.503][Info   ] Swapchain Format Preferences: 
+[XR] [47160] [21:03:40.503][Info   ]    kRenderTextureFormatGroup8888
+[XR] [47160] [21:03:40.503][Info   ] Swapchain Formats: 
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_R8G8B8A8_UNORM
+[XR] [47160] [21:03:40.503][Info   ] [c:DXGI_FORMAT_R8G8B8A8_UNORM_SRGB]
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_B8G8R8A8_UNORM
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_B8G8R8A8_UNORM_SRGB
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_B8G8R8X8_UNORM_SRGB
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_R16G16B16A16_FLOAT
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_R11G11B10_FLOAT
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_D16_UNORM
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_D24_UNORM_S8_UINT
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_D32_FLOAT
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_D32_FLOAT_S8X24_UINT
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_BC1_UNORM
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_BC1_UNORM_SRGB
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_BC2_UNORM
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_BC2_UNORM_SRGB
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_BC3_UNORM
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_BC3_UNORM_SRGB
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_BC6H_UF16
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_BC6H_SF16
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_BC7_UNORM
+[XR] [47160] [21:03:40.503][Info   ]    DXGI_FORMAT_BC7_UNORM_SRGB
+[XR] [47160] [21:03:40.503][Info   ] 
+[XR] [47160] [21:03:40.503][Info   ] ==== OpenXR Exception Thrown ====
+[XR] [47160] [21:03:40.503][Info   ] 
+[XR] [47160] [21:03:40.503][Info   ] Error: XrResult failure [XR_ERROR_FEATURE_UNSUPPORTED]
+[XR] [47160] [21:03:40.503][Info   ]     Origin: xrCreateSwapchain(session, &swapchainCreateInfo, &swapchain.handle)
+[XR] [47160] [21:03:40.503][Info   ]     Source: C:\build\output\unity\xr.sdk.openxr\com.unity.xr.openxr\NativePlugin~\Source\unity_swapchain.cpp:181
+[XR] [47160] [21:03:40.503][Info   ] 
+[XR] [47160] [21:03:40.503][Info   ] 
+[XR] [47160] [21:03:40.503][Info   ] ==== Last 20 non-XR_SUCCESS returns ====
+[XR] [47160] [21:03:40.503][Info   ] [FAILURE] xrCreateDebugUtilsMessengerEXT: XR_ERROR_VALIDATION_FAILURE (1x)
+[XR] [47160] [21:03:40.503][Info   ] [FAILURE] xrSuggestInteractionProfileBindings: XR_ERROR_HANDLE_INVALID (1x)
+[XR] [47160] [21:03:40.503][Info   ] [FAILURE] xrCreateSwapchain: XR_ERROR_FEATURE_UNSUPPORTED (2x)
+[XR] [47160] [21:03:40.503][Info   ] 
+[XR] [47160] [21:03:40.503][Info   ] ==== Last 20 Events ====
+[XR] [47160] [21:03:40.503][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_UNKNOWN->XR_SESSION_STATE_IDLE
+[XR] [47160] [21:03:40.503][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_IDLE->XR_SESSION_STATE_READY
+[XR] [47160] [21:03:40.504][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_READY->XR_SESSION_STATE_SYNCHRONIZED
+[XR] [47160] [21:03:40.504][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_SYNCHRONIZED->XR_SESSION_STATE_STOPPING
+[XR] [47160] [21:03:40.504][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_STOPPING->XR_SESSION_STATE_IDLE
+[XR] [47160] [21:03:40.504][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_IDLE->XR_SESSION_STATE_READY
+[XR] [47160] [21:03:40.504][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_READY->XR_SESSION_STATE_SYNCHRONIZED
+[XR] [47160] [21:03:40.504][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_SYNCHRONIZED->XR_SESSION_STATE_VISIBLE
+[XR] [47160] [21:03:40.504][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_VISIBLE->XR_SESSION_STATE_FOCUSED
+[XR] [47160] [21:03:40.504][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_FOCUSED->XR_SESSION_STATE_VISIBLE
+[XR] [47160] [21:03:40.504][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_VISIBLE->XR_SESSION_STATE_SYNCHRONIZED
+[XR] [47160] [21:03:40.504][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_SYNCHRONIZED->XR_SESSION_STATE_STOPPING
+[XR] [47160] [21:03:40.504][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_STOPPING->XR_SESSION_STATE_IDLE
+[XR] [47160] [21:03:40.504][Info   ] XrEventDataSessionStateChanged: XR_SESSION_STATE_IDLE->XR_SESSION_STATE_EXITING
+[XR] [47160] [21:03:40.504][Info   ] 
+
+==== End Unity OpenXR Diagnostic Report ====
+
+
+[MetaXRFeature] OnSessionDestroy: 76
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Meta.XR.MetaXRFeature:OnSessionDestroy (ulong) (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OpenXRFeatures/MetaXRFeature.cs:392)
+UnityEngine.XR.OpenXR.Features.OpenXRFeature:ReceiveNativeEvent (UnityEngine.XR.OpenXR.Features.OpenXRFeature/NativeEvent,ulong) (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/Features/OpenXRFeature.cs:721)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:ReceiveNativeEvent (UnityEngine.XR.OpenXR.Features.OpenXRFeature/NativeEvent,ulong) (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/OpenXRLoader.cs:704)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:Deinitialize () (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/OpenXRLoader.cs:483)
+UnityEngine.XR.Management.XRManagerSettings:DeinitializeLoader () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRManagerSettings.cs:449)
+UnityEngine.XR.Management.XRGeneralSettings:DeInitXRSDK () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:169)
+UnityEngine.XR.Management.XRGeneralSettings:Quit () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:98)
+UnityEngine.XR.Management.XRGeneralSettings:InternalPlayModeStateChanged (UnityEditor.PlayModeStateChange) (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:190)
+UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget:PlayModeStateChanged (UnityEditor.PlayModeStateChange) (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Editor/XRGeneralSettingsPerBuildTarget.cs:129)
+UnityEditor.EditorApplication:Internal_PlayModeStateChanged (UnityEditor.PlayModeStateChange)
+OVRManager:Update () (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs:2682)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OpenXRFeatures/MetaXRFeature.cs Line: 392)
+
+[OVRPlugin] ovrp_UnityOpenXR_OnSessionDestroy(76)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+OVRManager:OVRPluginLogCallback (OVRPlugin/LogLevel,intptr,int) (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs:2138)
+OVRPlugin/UnityOpenXR:OnSessionDestroy (ulong) (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRPlugin.cs:13316)
+Meta.XR.MetaXRFeature:OnSessionDestroy (ulong) (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OpenXRFeatures/MetaXRFeature.cs:393)
+UnityEngine.XR.OpenXR.Features.OpenXRFeature:ReceiveNativeEvent (UnityEngine.XR.OpenXR.Features.OpenXRFeature/NativeEvent,ulong) (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/Features/OpenXRFeature.cs:721)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:ReceiveNativeEvent (UnityEngine.XR.OpenXR.Features.OpenXRFeature/NativeEvent,ulong) (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/OpenXRLoader.cs:704)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:Deinitialize () (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/OpenXRLoader.cs:483)
+UnityEngine.XR.Management.XRManagerSettings:DeinitializeLoader () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRManagerSettings.cs:449)
+UnityEngine.XR.Management.XRGeneralSettings:DeInitXRSDK () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:169)
+UnityEngine.XR.Management.XRGeneralSettings:Quit () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:98)
+UnityEngine.XR.Management.XRGeneralSettings:InternalPlayModeStateChanged (UnityEditor.PlayModeStateChange) (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:190)
+UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget:PlayModeStateChanged (UnityEditor.PlayModeStateChange) (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Editor/XRGeneralSettingsPerBuildTarget.cs:129)
+UnityEditor.EditorApplication:Internal_PlayModeStateChanged (UnityEditor.PlayModeStateChange)
+OVRManager:Update () (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs:2682)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs Line: 2138)
+
+[MetaXRFeature] OnInstanceDestroy: 1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Meta.XR.MetaXRFeature:OnInstanceDestroy (ulong) (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OpenXRFeatures/MetaXRFeature.cs:328)
+UnityEngine.XR.OpenXR.Features.OpenXRFeature:ReceiveNativeEvent (UnityEngine.XR.OpenXR.Features.OpenXRFeature/NativeEvent,ulong) (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/Features/OpenXRFeature.cs:724)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:ReceiveNativeEvent (UnityEngine.XR.OpenXR.Features.OpenXRFeature/NativeEvent,ulong) (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/OpenXRLoader.cs:704)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:Deinitialize () (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/OpenXRLoader.cs:483)
+UnityEngine.XR.Management.XRManagerSettings:DeinitializeLoader () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRManagerSettings.cs:449)
+UnityEngine.XR.Management.XRGeneralSettings:DeInitXRSDK () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:169)
+UnityEngine.XR.Management.XRGeneralSettings:Quit () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:98)
+UnityEngine.XR.Management.XRGeneralSettings:InternalPlayModeStateChanged (UnityEditor.PlayModeStateChange) (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:190)
+UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget:PlayModeStateChanged (UnityEditor.PlayModeStateChange) (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Editor/XRGeneralSettingsPerBuildTarget.cs:129)
+UnityEditor.EditorApplication:Internal_PlayModeStateChanged (UnityEditor.PlayModeStateChange)
+OVRManager:Update () (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs:2682)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OpenXRFeatures/MetaXRFeature.cs Line: 328)
+
+[OVRPlugin] ovrp_UnityOpenXR_OnInstanceDestroy(1)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+OVRManager:OVRPluginLogCallback (OVRPlugin/LogLevel,intptr,int) (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs:2138)
+OVRPlugin/UnityOpenXR:OnInstanceDestroy (ulong) (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRPlugin.cs:13217)
+Meta.XR.MetaXRFeature:OnInstanceDestroy (ulong) (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OpenXRFeatures/MetaXRFeature.cs:329)
+UnityEngine.XR.OpenXR.Features.OpenXRFeature:ReceiveNativeEvent (UnityEngine.XR.OpenXR.Features.OpenXRFeature/NativeEvent,ulong) (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/Features/OpenXRFeature.cs:724)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:ReceiveNativeEvent (UnityEngine.XR.OpenXR.Features.OpenXRFeature/NativeEvent,ulong) (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/OpenXRLoader.cs:704)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:Deinitialize () (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/OpenXRLoader.cs:483)
+UnityEngine.XR.Management.XRManagerSettings:DeinitializeLoader () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRManagerSettings.cs:449)
+UnityEngine.XR.Management.XRGeneralSettings:DeInitXRSDK () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:169)
+UnityEngine.XR.Management.XRGeneralSettings:Quit () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:98)
+UnityEngine.XR.Management.XRGeneralSettings:InternalPlayModeStateChanged (UnityEditor.PlayModeStateChange) (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:190)
+UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget:PlayModeStateChanged (UnityEditor.PlayModeStateChange) (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Editor/XRGeneralSettingsPerBuildTarget.cs:129)
+UnityEditor.EditorApplication:Internal_PlayModeStateChanged (UnityEditor.PlayModeStateChange)
+OVRManager:Update () (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs:2682)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs Line: 2138)
+
+[OVRPlugin] CompositorOpenXR::~CompositorOpenXR()
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+OVRManager:OVRPluginLogCallback (OVRPlugin/LogLevel,intptr,int) (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs:2138)
+OVRPlugin/UnityOpenXR:OnInstanceDestroy (ulong) (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRPlugin.cs:13217)
+Meta.XR.MetaXRFeature:OnInstanceDestroy (ulong) (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OpenXRFeatures/MetaXRFeature.cs:329)
+UnityEngine.XR.OpenXR.Features.OpenXRFeature:ReceiveNativeEvent (UnityEngine.XR.OpenXR.Features.OpenXRFeature/NativeEvent,ulong) (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/Features/OpenXRFeature.cs:724)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:ReceiveNativeEvent (UnityEngine.XR.OpenXR.Features.OpenXRFeature/NativeEvent,ulong) (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/OpenXRLoader.cs:704)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:Deinitialize () (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/OpenXRLoader.cs:483)
+UnityEngine.XR.Management.XRManagerSettings:DeinitializeLoader () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRManagerSettings.cs:449)
+UnityEngine.XR.Management.XRGeneralSettings:DeInitXRSDK () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:169)
+UnityEngine.XR.Management.XRGeneralSettings:Quit () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:98)
+UnityEngine.XR.Management.XRGeneralSettings:InternalPlayModeStateChanged (UnityEditor.PlayModeStateChange) (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:190)
+UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget:PlayModeStateChanged (UnityEditor.PlayModeStateChange) (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Editor/XRGeneralSettingsPerBuildTarget.cs:129)
+UnityEditor.EditorApplication:Internal_PlayModeStateChanged (UnityEditor.PlayModeStateChange)
+OVRManager:Update () (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs:2682)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs Line: 2138)
+
+[OVRPlugin] [CompositorOpenXR::SetExternalXrGetInstanceProcAddr] xrGetInstanceProcAddr set to 0000000000000000. All OpenXR API Entires unbound.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+OVRManager:OVRPluginLogCallback (OVRPlugin/LogLevel,intptr,int) (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs:2138)
+OVRPlugin/UnityOpenXR:OnInstanceDestroy (ulong) (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRPlugin.cs:13217)
+Meta.XR.MetaXRFeature:OnInstanceDestroy (ulong) (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OpenXRFeatures/MetaXRFeature.cs:329)
+UnityEngine.XR.OpenXR.Features.OpenXRFeature:ReceiveNativeEvent (UnityEngine.XR.OpenXR.Features.OpenXRFeature/NativeEvent,ulong) (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/Features/OpenXRFeature.cs:724)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:ReceiveNativeEvent (UnityEngine.XR.OpenXR.Features.OpenXRFeature/NativeEvent,ulong) (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/OpenXRLoader.cs:704)
+UnityEngine.XR.OpenXR.OpenXRLoaderBase:Deinitialize () (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/OpenXRLoader.cs:483)
+UnityEngine.XR.Management.XRManagerSettings:DeinitializeLoader () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRManagerSettings.cs:449)
+UnityEngine.XR.Management.XRGeneralSettings:DeInitXRSDK () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:169)
+UnityEngine.XR.Management.XRGeneralSettings:Quit () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:98)
+UnityEngine.XR.Management.XRGeneralSettings:InternalPlayModeStateChanged (UnityEditor.PlayModeStateChange) (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRGeneralSettings.cs:190)
+UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget:PlayModeStateChanged (UnityEditor.PlayModeStateChange) (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Editor/XRGeneralSettingsPerBuildTarget.cs:129)
+UnityEditor.EditorApplication:Internal_PlayModeStateChanged (UnityEditor.PlayModeStateChange)
+OVRManager:Update () (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs:2682)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs Line: 2138)
+
+Call to DeinitializeLoader without an initialized manager.Please make sure wait for initialization to complete before calling this API.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEngine.XR.Management.XRManagerSettings:DeinitializeLoader () (at ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRManagerSettings.cs:440)
+UnityEngine.XR.OpenXR.OpenXRRestarter/<RestartCoroutine>d__36:MoveNext () (at ./Library/PackageCache/com.unity.xr.openxr@58837b2992e0/Runtime/OpenXRRestarter.cs:244)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: ./Library/PackageCache/com.unity.xr.management@2ad85c7dd480/Runtime/XRManagerSettings.cs Line: 440)
+
+[OVRManager] OnApplicationQuit
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+OVRManager:OnApplicationQuit () (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs:3485)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs Line: 3485)
+
+[OVRManager] OnDestroy
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+OVRManager:OnDestroy () (at ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs:3452)
+
+(Filename: ./Library/PackageCache/com.meta.xr.sdk.core@c0efcbf2ba70/Scripts/OVRManager.cs Line: 3452)
+
+Unloading 52 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Temp/__Backupscenes/0.backup'
+	Deserialize:            436.324 ms
+	Integration:            6385.007 ms
+	Integration of assets:  11.317 ms
+	Thread Wait Time:       -1.659 ms
+	Total Operation Time:   6830.989 ms
+Unloading 359 unused Assets / (31.6 MB). Loaded Objects now: 41980.
+Memory consumption went from 4.11 GB to 4.08 GB.
+Total: 790.454300 ms (FindLiveObjects: 98.923300 ms CreateObjectMapping: 15.602800 ms MarkObjects: 604.945300 ms  DeleteObjects: 70.706800 ms)
+
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+Scanning for USB devices : 7.062ms
+Scanning for USB devices : 3.660ms
+Scanning for USB devices : 5.229ms
+Scanning for USB devices : 3.590ms
+Scanning for USB devices : 2.107ms
+Scanning for USB devices : 4.965ms
+Scanning for USB devices : 3.417ms
+Scanning for USB devices : 1.737ms
+Scanning for USB devices : 1.963ms
+Scanning for USB devices : 1.422ms
+Scanning for USB devices : 4.471ms
+Scanning for USB devices : 2.118ms
+Scanning for USB devices : 1.617ms
+Scanning for USB devices : 1.647ms
+Scanning for USB devices : 1.861ms
+Scanning for USB devices : 1.963ms
+Scanning for USB devices : 1.756ms
+Scanning for USB devices : 1.860ms
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 11 unused Assets / (2.3 KB). Loaded Objects now: 42121.
+Memory consumption went from 4.08 GB to 4.08 GB.
+Total: 486.730500 ms (FindLiveObjects: 89.570400 ms CreateObjectMapping: 15.949200 ms MarkObjects: 375.582000 ms  DeleteObjects: 5.413100 ms)
+
+Importing 'GUID: 0000000000000000b000000000000000 - Path: ProjectSettings/EditorBuildSettings.asset' with importer (LibraryAssetImporter)
+Imported 'GUID: 0000000000000000b000000000000000' -> (Import Result ID: '9f5b45d1ea5c806445a1f7714230702c') in 0.049 seconds [static dependencies only]. Details - ImportResultOutputID=4647dd083cfc32cebcd7526e8846440c DependenciesID=6ecdd100ab581a76d4a1453f723b6c1a StaticDependenciesID=0854978b315d14496279eddaab7c6a14 
+Importing 'GUID: e1037c82fb7b4c24a98c03b9b2f5c7db - Path: Assets/XR/Settings/OpenXRPackageSettings.asset' with importer (NativeFormatImporter)
+Imported 'GUID: e1037c82fb7b4c24a98c03b9b2f5c7db' -> (Import Result ID: 'fd4cdbfe8a604a5247848e4b89287e63') in 0.010 seconds [static dependencies only]. Details - ImportResultOutputID=0fa43597e4c6bbca87e402cdaea32a43 DependenciesID=4df627fff8e3a45508e553f2efe1d1cb StaticDependenciesID=5613e02e81a19cef359f0a28bee6145e 
+Refreshing native plugins compatible for Editor in 34.05 ms, found 22 plugins.
+Preloading 3 native plugins for Editor in 2.87 ms.
+
+Asset Pipeline Refresh (id=f5de0125af89e6c4683648c152b84ef7): Total: 2.292 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	(Values over 0.05ms)
+	Summary:
+		Imports: total=2 (actual=2, local cache=0, cache server=0)
+		Asset DB Process Time: managed=5 ms, native=1872 ms
+		Asset DB Callback time: managed=74 ms, native=337 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=4638, non-scripts=11697
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 5
+	InvokeCustomDependenciesCallbacks: 0.271ms
+	ApplyChangesToAssetFolders: 9.239ms
+	Scan: 70.024ms
+	Collect global state as custom dependencies: 2.206ms
+	CategorizeScriptCompilationAssets: 0.741ms
+	ProcessAssetsWithTransientArtifactChanges: 13.055ms
+	CategorizeAssets: 57.629ms
+	ImportOutOfDateAssets: 1572.973ms (771.893ms without children)
+		ImportManagerImport: 70.752ms (2.572ms without children)
+			UpdateCategorizedAssets: 0.169ms
+		ReloadNativeAssets: 28.255ms
+		UnloadImportedAssets: 0.243ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 2.080ms
+		ImportSchedulerStart: 699.733ms
+	PostProcessAllAssets: 233.608ms
+		XRBuildSystem.XRAssetImported 155.126ms
+		PostprocessAssetsUpdateCachedIcon 0.349ms
+		PostProcessCallbackCreateDeferredMaterials 0.265ms
+		BlockShaderImporter.PostprocessAllAssets 0.205ms
+		ShaderAssetModifiedCallback 0.197ms
+		ComputeShaderImportPostprocess 0.129ms
+		AssemblyValidation.PostprocessAllAssets 0.107ms
+		MonoPostProcessAllAssets: 74.096ms
+			ModelAssetProcessor.OnPostprocessAllAssets 7.929ms
+			ShaderGraphAssetPostProcessor.OnPostprocessAllAssets 4.428ms
+			TMPro_TexturePostProcessor.OnPostprocessAllAssets 4.316ms
+			SyncVS.PostprocessSyncProject 3.781ms
+			AssetPostprocessor.OnPostprocessAllAssets 3.424ms
+			AssetChangedListener.OnPostprocessAllAssets 2.416ms
+			SpeedTree9Postprocessor.OnPostprocessAllAssets 1.602ms
+			SpriteEditorTexturePostprocessor.OnPostprocessAllAssets 1.398ms
+			AssetReferenceReimportMonitor.OnPostprocessAllAssets 1.378ms
+			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 0.965ms
+			ShaderReflectionAssetPostProcessor.OnPostprocessAllAssets 0.833ms
+			WitConfigurationPostprocessor.OnPostprocessAllAssets 0.823ms
+			GraphRefreshPostprocessor.OnPostprocessAllAssets 0.772ms
+			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.768ms
+			TextAssetPostProcessor.OnPostprocessAllAssets 0.748ms
+			ConfigAssetsTracker.OnPostprocessAllAssets 0.690ms
+			SampleDependencyImporterPostProcessor.OnPostprocessAllAssets 0.687ms
+			CFXR_ShaderPostProcessor.OnPostprocessAllAssets 0.528ms
+			MaterialPostprocessor.OnPostprocessAllAssets 0.499ms
+			UVCSAssetPostprocessor.OnPostprocessAllAssets 0.407ms
+			SpeedTreePostProcessor.OnPostprocessAllAssets 0.375ms
+			UniversalRenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 0.371ms
+			AudioContainerPostProcessor.OnPostprocessAllAssets 0.339ms
+			BuilderAssetPostprocessor.OnPostprocessAllAssets 0.335ms
+			SpriteSlicePostprocessor.OnPostprocessAllAssets 0.313ms
+			ScenarioDriftAssetsTracker.OnPostprocessAllAssets 0.257ms
+			InputActionAssetPostprocessor.OnPostprocessAllAssets 0.256ms
+			AssetChangeDetector.OnPostprocessAllAssets 0.203ms
+			RetainedModeAssetPostprocessor.OnPostprocessAllAssets 0.201ms
+			SamplePostprocessor.OnPostprocessAllAssets 0.148ms
+			SceneRenameHandler.OnPostprocessAllAssets 0.141ms
+			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 0.067ms
+	PostAssetChangesProfiler: 177.087ms
+	GatherAllCurrentPrimaryImportResultRevisions: 28.154ms
+	PersistCurrentRevisions: 0.538ms
+	Untracked: 126.008ms
+
+Importing 'GUID: e8f9121e92111104db1e1f46b30ccc26 - Path: Assets/_Project/Scenes/Scenarios/CSI_Environment.unity' with importer (DefaultImporter)
+Imported 'GUID: e8f9121e92111104db1e1f46b30ccc26' -> (Import Result ID: '567146e6a71a90e4e66147c9ba7ab538') in 0.015 seconds [static dependencies only]. Details - ImportResultOutputID=b8d93268641f2025602cd1fdc184b177 DependenciesID=04ef556de34a5ee4ec964f5606756549 StaticDependenciesID=2c2f2addb0a23ebe8cbb4c66ba8bc4ee 
+Refreshing native plugins compatible for Editor in 18.27 ms, found 22 plugins.
+
+Asset Pipeline Refresh (id=2f00b2d8b9813984d9fe5f4a76c7c53c): Total: 1.365 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	(Values over 0.05ms)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1295 ms
+		Asset DB Callback time: managed=42 ms, native=26 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=4638, non-scripts=11697
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 5
+	ApplyChangesToAssetFolders: 2.768ms
+	Scan: 15.870ms
+	Collect global state as custom dependencies: 0.569ms
+	OnSourceAssetsModified: 37.086ms
+	CategorizeScriptCompilationAssets: 0.203ms
+	ProcessAssetsWithTransientArtifactChanges: 0.371ms
+	CategorizeAssets: 60.441ms
+	ImportOutOfDateAssets: 173.886ms (26.510ms without children)
+		ImportManagerImport: 19.171ms (1.492ms without children)
+		ReloadNativeAssets: 0.387ms
+		UnloadImportedAssets: 0.252ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 2.372ms
+		ImportSchedulerStart: 125.177ms
+	PostProcessAllAssets: 12.265ms
+		XRBuildSystem.XRAssetImported 5.720ms
+		MonoPostProcessAllAssets: 6.353ms
+			AssetPostprocessor.OnPostprocessAllAssets 1.635ms
+			SyncVS.PostprocessSyncProject 1.198ms
+			SpriteEditorTexturePostprocessor.OnPostprocessAllAssets 1.068ms
+			ModelAssetProcessor.OnPostprocessAllAssets 0.959ms
+			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 0.240ms
+			ShaderGraphAssetPostProcessor.OnPostprocessAllAssets 0.148ms
+			AssetChangedListener.OnPostprocessAllAssets 0.104ms
+			GraphRefreshPostprocessor.OnPostprocessAllAssets 0.083ms
+	PostAssetChangesProfiler: 19.906ms
+	GatherAllCurrentPrimaryImportResultRevisions: 0.822ms
+	UnloadStreamsBegin: 2.259ms
+	PersistCurrentRevisions: 1.106ms
+	Untracked: 1037.509ms
+
+<b><color=#cc3333>MCP-FOR-UNITY</color></b>: [ExecuteCode] Execution failed: System.Exception: Compiler failed to produce the assembly. Output: ''
+  at Microsoft.CSharp.CSharpCodeGenerator.FromFileBatch (System.CodeDom.Compiler.CompilerParameters options, System.String[] fileNames) [0x0031f] in <bfd1a5b35aa0404ba84824656b7b767f>:0 
+  at Microsoft.CSharp.CSharpCodeGenerator.FromSourceBatch (System.CodeDom.Compiler.CompilerParameters options, System.String[] sources) [0x00095] in <bfd1a5b35aa0404ba84824656b7b767f>:0 
+  at Microsoft.CSharp.CSharpCodeGenerator.System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromSourceBatch (System.CodeDom.Compiler.CompilerParameters options, System.String[] sources) [0x0000f] in <bfd1a5b35aa0404ba84824656b7b767f>:0 
+  at System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromSource (System.CodeDom.Compiler.CompilerParameters options, System.String[] sources) [0x00006] in <bfd1a5b35aa0404ba84824656b7b767f>:0 
+  at MCPForUnity.Editor.Tools.ExecuteCode.CodeDomCompile (System.String source, System.String[] assemblyPaths, System.Collections.Generic.List`1[System.String]& errors) [0x000b7] in .\Library\PackageCache\com.coplaydev.unity-mcp@8bd91ce7bd3a\Editor\Tools\ExecuteCode.cs:307 
+  at MCPForUnity.Editor.Tools.ExecuteCode.CompileAndExecute (System.String code, System.String compiler) [0x000ee] in .\Library\PackageCache\com.coplaydev.unity-mcp@8bd91ce7bd3a\Editor\Tools\ExecuteCode.cs:215 
+  at MCPForUnity.Editor.Tools.ExecuteCode.HandleExecute (Newtonsoft.Json.Linq.JObject params) [0x000c0] in .\Library\PackageCache\com.coplaydev.unity-mcp@8bd91ce7bd3a\Editor\Tools\ExecuteCode.cs:107 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+MCPForUnity.Editor.Helpers.McpLog:Error (string) (at ./Library/PackageCache/com.coplaydev.unity-mcp@8bd91ce7bd3a/Editor/Helpers/McpLog.cs:50)
+MCPForUnity.Editor.Tools.ExecuteCode:HandleExecute (Newtonsoft.Json.Linq.JObject) (at ./Library/PackageCache/com.coplaydev.unity-mcp@8bd91ce7bd3a/Editor/Tools/ExecuteCode.cs:115)
+MCPForUnity.Editor.Tools.ExecuteCode:HandleCommand (Newtonsoft.Json.Linq.JObject) (at ./Library/PackageCache/com.coplaydev.unity-mcp@8bd91ce7bd3a/Editor/Tools/ExecuteCode.cs:72)
+MCPForUnity.Editor.Tools.CommandRegistry:ExecuteCommand (string,Newtonsoft.Json.Linq.JObject,System.Threading.Tasks.TaskCompletionSource`1<string>) (at ./Library/PackageCache/com.coplaydev.unity-mcp@8bd91ce7bd3a/Editor/Tools/CommandRegistry.cs:305)
+MCPForUnity.Editor.Services.Transport.TransportCommandDispatcher:ProcessCommand (string,MCPForUnity.Editor.Services.Transport.TransportCommandDispatcher/PendingCommand) (at ./Library/PackageCache/com.coplaydev.unity-mcp@8bd91ce7bd3a/Editor/Services/Transport/TransportCommandDispatcher.cs:366)
+MCPForUnity.Editor.Services.Transport.TransportCommandDispatcher:ProcessQueue () (at ./Library/PackageCache/com.coplaydev.unity-mcp@8bd91ce7bd3a/Editor/Services/Transport/TransportCommandDispatcher.cs:262)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: ./Library/PackageCache/com.coplaydev.unity-mcp@8bd91ce7bd3a/Editor/Helpers/McpLog.cs Line: 50)
+
+Asset Pipeline Refresh (id=b53b76682c6b3b94c9b31719bee9c8bd): Total: 0.099 seconds - Initiated by RefreshV2(ForceUpdate)
+[ScriptCompilation] Requested script compilation because: Requested through public api
+[Licensing::Client] Successfully resolved entitlement details
+Starting: C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/Roduf Eleu/My project (1)
+[Licensing::Client] Successfully resolved entitlement details
+ExitCode: -1073741819 Duration: 1s409ms
+
+Total cache size 267848267
+Total cache size after purge 267848267, took 00:00:02.2925074
+Internal build system error. Read the full binlog without getting a BuildFinishedMessage.
+The backend process appears to still be running.
+Importing 'GUID: e8f9121e92111104db1e1f46b30ccc26 - Path: Assets/_Project/Scenes/Scenarios/CSI_Environment.unity' with importer (DefaultImporter)
+Imported 'GUID: e8f9121e92111104db1e1f46b30ccc26' -> (Import Result ID: '567146e6a71a90e4e66147c9ba7ab538') in 0.016 seconds [static dependencies only]. Details - ImportResultOutputID=b8d93268641f2025602cd1fdc184b177 DependenciesID=04ef556de34a5ee4ec964f5606756549 StaticDependenciesID=2c2f2addb0a23ebe8cbb4c66ba8bc4ee 
+Refreshing native plugins compatible for Editor in 64.23 ms, found 22 plugins.
+
+Asset Pipeline Refresh (id=8a9c8ec127e515249a81893a47500f53): Total: 0.659 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	(Values over 0.05ms)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=1 ms, native=518 ms
+		Asset DB Callback time: managed=13 ms, native=124 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=4638, non-scripts=11697
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 5
+	ApplyChangesToAssetFolders: 3.361ms
+	Scan: 26.852ms
+	Collect global state as custom dependencies: 0.525ms
+	CategorizeScriptCompilationAssets: 0.256ms
+	ProcessAssetsWithTransientArtifactChanges: 4.177ms
+	CategorizeAssets: 26.121ms
+	ImportOutOfDateAssets: 228.092ms (52.180ms without children)
+		ImportManagerImport: 20.353ms (1.082ms without children)
+		ReloadNativeAssets: 0.743ms
+		UnloadImportedAssets: 0.239ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 2.059ms
+		ImportSchedulerStart: 152.500ms
+	PostProcessAllAssets: 42.756ms
+		XRBuildSystem.XRAssetImported 26.437ms
+		ShaderAssetModifiedCallback 0.254ms
+		RaytracingShaderImportPostprocess 0.183ms
+		MonoPostProcessAllAssets: 13.650ms
+			SyncVS.PostprocessSyncProject 3.295ms
+			AssetPostprocessor.OnPostprocessAllAssets 1.837ms
+			ModelAssetProcessor.OnPostprocessAllAssets 1.406ms
+			SpriteEditorTexturePostprocessor.OnPostprocessAllAssets 0.818ms
+			AssetChangedListener.OnPostprocessAllAssets 0.785ms
+			InputActionAssetPostprocessor.OnPostprocessAllAssets 0.489ms
+			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 0.344ms
+			ShaderGraphAssetPostProcessor.OnPostprocessAllAssets 0.322ms
+			EditModeScopePostprocessor.OnPostprocessAllAssets 0.278ms
+			SpriteSlicePostprocessor.OnPostprocessAllAssets 0.212ms
+			MaterialPostprocessor.OnPostprocessAllAssets 0.204ms
+			GraphRefreshPostprocessor.OnPostprocessAllAssets 0.203ms
+			RetainedModeAssetPostprocessor.OnPostprocessAllAssets 0.190ms
+			AssetReferenceReimportMonitor.OnPostprocessAllAssets 0.171ms
+			CFXR_ShaderPostProcessor.OnPostprocessAllAssets 0.084ms
+			SkillsProjectAssetPostprocessor.OnPostprocessAllAssets 0.075ms
+			BuilderAssetPostprocessor.OnPostprocessAllAssets 0.074ms
+			TMPro_TexturePostProcessor.OnPostprocessAllAssets 0.057ms
+	PostAssetChangesProfiler: 95.881ms
+	GatherAllCurrentPrimaryImportResultRevisions: 10.877ms
+	PersistCurrentRevisions: 0.547ms
+	Untracked: 219.472ms
+
+Asset Pipeline Refresh (id=57b85061b7acab045ae29fbdbe14b832): Total: 0.021 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+MonoPathRemapper: Attempts to remap: 39208861; Successful remaps: 56950
+Serialized file version minimum: 22, current 23
+[LAYOUT] About to save layout C:\Users\Roduf Eleu\My project (1)\UserSettings\Layouts\default-6000.dwlt
+[LAYOUT] About to save layout C:/Users/Roduf Eleu/AppData/Roaming/Unity/Editor-5.x/Preferences\Layouts\current\default-6000.dwlt
+Crash!!!
+SymInit: Symbol-SearchPath: '.', symOptions: 534, UserName: 'Roduf Eleu'
+OS-Version: 10.0.0
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\Unity.exe:Unity.exe (00007FF6FA4F0000), size: 290816 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6000.5.6.1399
+C:\WINDOWS\SYSTEM32\ntdll.dll:ntdll.dll (00007FFCFE380000), size: 2523136 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\KERNEL32.DLL:KERNEL32.DLL (00007FFCFDB10000), size: 831488 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\KERNELBASE.dll:KERNELBASE.dll (00007FFCFBA30000), size: 4198400 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\USER32.dll:USER32.dll (00007FFCFDCB0000), size: 1929216 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\System32\win32u.dll:win32u.dll (00007FFCFB780000), size: 159744 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\GDI32.dll:GDI32.dll (00007FFCFD3F0000), size: 176128 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8328
+C:\WINDOWS\System32\gdi32full.dll:gdi32full.dll (00007FFCFB840000), size: 1220608 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\msvcp_win.dll:msvcp_win.dll (00007FFCFB6D0000), size: 667648 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\ucrtbase.dll:ucrtbase.dll (00007FFCFB570000), size: 1359872 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\IMM32.DLL:IMM32.DLL (00007FFCFE220000), size: 200704 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9278
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\Unity.dll:Unity.dll (00007FFC30670000), size: 99053568 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6000.5.6.1399
+C:\WINDOWS\System32\ADVAPI32.dll:ADVAPI32.dll (00007FFCFE000000), size: 770048 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\msvcrt.dll:msvcrt.dll (00007FFCFC260000), size: 692224 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 7.0.26100.9711
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\SketchUpAPI.dll:SketchUpAPI.dll (00007FFC62180000), size: 24559616 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 26.0.0.0
+C:\WINDOWS\System32\sechost.dll:sechost.dll (00007FFCFDA50000), size: 688128 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\RPCRT4.dll:RPCRT4.dll (00007FFCFD060000), size: 1146880 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\OpenRL.dll:OpenRL.dll (0000000180000000), size: 12779520 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.5.0.2907
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\libfbxsdk.dll:libfbxsdk.dll (00007FFC74D90000), size: 8019968 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2020.3.7.0
+C:\WINDOWS\System32\ole32.dll:ole32.dll (00007FFCFD8B0000), size: 1679360 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\System32\combase.dll:combase.dll (00007FFCFCBB0000), size: 3715072 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\SETUPAPI.dll:SETUPAPI.dll (00007FFCFD420000), size: 4747264 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\s3tcompress.dll:s3tcompress.dll (00007FFC822F0000), size: 180224 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\System32\SHELL32.dll:SHELL32.dll (00007FFCFC320000), size: 7979008 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\shcore.dll:shcore.dll (00007FFCFCF60000), size: 1019904 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\etccompress.dll:etccompress.dll (00007FFC81730000), size: 5070848 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\System32\SHLWAPI.dll:SHLWAPI.dll (00007FFCFC090000), size: 417792 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\CRYPT32.dll:CRYPT32.dll (00007FFCFBF00000), size: 1568768 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\System32\WS2_32.dll:WS2_32.dll (00007FFCFE190000), size: 528384 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\ispc_texcomp.dll:ispc_texcomp.dll (00007FFC80C10000), size: 1826816 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\compress_bc7e.dll:compress_bc7e.dll (00007FFC80AB0000), size: 1433600 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\System32\WINTRUST.dll:WINTRUST.dll (00007FFCFB7B0000), size: 532480 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\OLEAUT32.dll:OLEAUT32.dll (00007FFCFCAD0000), size: 888832 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\umbraoptimizer64.dll:umbraoptimizer64.dll (00007FFC80980000), size: 1187840 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\WinPixEventRuntime.dll:WinPixEventRuntime.dll (00007FFCC5990000), size: 57344 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.0.2403.8001
+C:\WINDOWS\SYSTEM32\bcrypt.dll:bcrypt.dll (00007FFCFB450000), size: 172032 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\VCRUNTIME140.dll:VCRUNTIME140.dll (00007FFC74B10000), size: 180224 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.51.36247.0
+C:\WINDOWS\SYSTEM32\MSVCP140.dll:MSVCP140.dll (00007FFC81FB0000), size: 643072 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.51.36247.0
+C:\WINDOWS\SYSTEM32\VCRUNTIME140_1.dll:VCRUNTIME140_1.dll (00007FFCC55E0000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.51.36247.0
+C:\WINDOWS\SYSTEM32\d3d11.dll:d3d11.dll (00007FFCF8A30000), size: 2486272 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\d3d12.dll:d3d12.dll (00007FFC94630000), size: 143360 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\dwmapi.dll:dwmapi.dll (00007FFCF75C0000), size: 188416 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\dxgi.dll:dxgi.dll (00007FFCF8CC0000), size: 1290240 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.9711_none_3e07b8b0e334e825\COMCTL32.dll:COMCTL32.dll (00007FFCE3D90000), size: 2691072 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6.10.26100.9711
+C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL:IPHLPAPI.DLL (00007FFCF9C60000), size: 208896 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9278
+C:\WINDOWS\SYSTEM32\HID.DLL:HID.DLL (00007FFCF9870000), size: 61440 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
+C:\WINDOWS\SYSTEM32\OPENGL32.dll:OPENGL32.dll (00007FFC81040000), size: 1097728 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9278
+C:\WINDOWS\SYSTEM32\VERSION.dll:VERSION.dll (00007FFCF0750000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
+C:\WINDOWS\SYSTEM32\MSVCR100.dll:MSVCR100.dll (000000006DFF0000), size: 860160 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.40219.325
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\embree.dll:embree.dll (00007FFC651D0000), size: 16711680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.14.0.0
+C:\WINDOWS\SYSTEM32\MSVCP100.dll:MSVCP100.dll (000000006E0D0000), size: 622592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.40219.325
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\SketchUpCommonPreferences.dll:SketchUpCommonPreferences.dll (00007FFC81680000), size: 708608 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 26.0.0.0
+C:\WINDOWS\SYSTEM32\MSVCP140_CODECVT_IDS.dll:MSVCP140_CODECVT_IDS.dll (00007FFCC0260000), size: 28672 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.51.36247.0
+C:\WINDOWS\SYSTEM32\dbghelp.dll:dbghelp.dll (00007FFCF8770000), size: 2408448 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\WINHTTP.dll:WINHTTP.dll (00007FFCF05B0000), size: 1220608 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\GLU32.dll:GLU32.dll (00007FFC822B0000), size: 233472 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\WINMM.dll:WINMM.dll (00007FFCEBFE0000), size: 225280 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\Secur32.dll:Secur32.dll (00007FFCF7350000), size: 53248 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\WSOCK32.dll:WSOCK32.dll (00007FFCC06B0000), size: 40960 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\NativeProxyHelper.dll:NativeProxyHelper.dll (00007FFC804B0000), size: 1789952 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\SYSTEM32\powrprof.dll:powrprof.dll (00007FFCFA040000), size: 385024 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.3912
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\tbb.dll:tbb.dll (00007FFC82260000), size: 303104 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2020.3.2022.1111
+C:\WINDOWS\SYSTEM32\dxcore.dll:dxcore.dll (00007FFCF7A50000), size: 278528 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\FreeImage.dll:FreeImage.dll (00000214E7CC0000), size: 5332992 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 3.18.0.0
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\OpenRL_pthread.dll:OpenRL_pthread.dll (00000214E81E0000), size: 61440 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.9.0.0
+C:\WINDOWS\SYSTEM32\cfgmgr32.DLL:cfgmgr32.DLL (00007FFCFB1E0000), size: 335872 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\SSPICLI.DLL:SSPICLI.DLL (00007FFCFA5F0000), size: 303104 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\MSWSOCK.DLL:MSWSOCK.DLL (00007FFCFA8F0000), size: 442368 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\UMPDC.dll:UMPDC.dll (00007FFCFA020000), size: 86016 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8972
+C:\WINDOWS\SYSTEM32\MSASN1.dll:MSASN1.dll (00007FFCFAD50000), size: 77824 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\bcryptprimitives.dll:bcryptprimitives.dll (00007FFCFB970000), size: 704512 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\kernel.appcore.dll:kernel.appcore.dll (00007FFCFA310000), size: 110592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9278
+C:\WINDOWS\system32\uxtheme.dll:uxtheme.dll (00007FFCF7450000), size: 684032 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\windows.storage.dll:windows.storage.dll (00007FFCF8FB0000), size: 9101312 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\profapi.dll:profapi.dll (00007FFCFB480000), size: 167936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\System32\clbcatq.dll:clbcatq.dll (00007FFCFE0D0000), size: 716800 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2001.12.10941.16384
+C:\WINDOWS\system32\wbem\wbemprox.dll:wbemprox.dll (00007FFCEEAF0000), size: 73728 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\wbemcomn.dll:wbemcomn.dll (00007FFCE7F10000), size: 548864 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\system32\wbem\wbemsvc.dll:wbemsvc.dll (00007FFCDDAE0000), size: 86016 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\system32\wbem\fastprox.dll:fastprox.dll (00007FFCDCCC0000), size: 1007616 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\amsi.dll:amsi.dll (00007FFCC8AB0000), size: 118784 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7309
+C:\WINDOWS\SYSTEM32\USERENV.dll:USERENV.dll (00007FFCFA9A0000), size: 212992 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26090.9-0\MpOav.dll:MpOav.dll (00007FFCC8A00000), size: 675840 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 4.18.26090.9
+C:\WINDOWS\SYSTEM32\CRYPTSP.dll:CRYPTSP.dll (00007FFCFABE0000), size: 110592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\system32\IconCodecService.dll:IconCodecService.dll (00007FFCF7190000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1
+C:\WINDOWS\system32\rsaenh.dll:rsaenh.dll (00007FFCFA260000), size: 233472 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\WindowsCodecs.dll:WindowsCodecs.dll (00007FFCF6510000), size: 2326528 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\CRYPTBASE.dll:CRYPTBASE.dll (00007FFCFAC00000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\imagehlp.dll:imagehlp.dll (00007FFCFDC80000), size: 131072 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.4202
+C:\WINDOWS\System32\netprofm.dll:netprofm.dll (00007FFCF3F30000), size: 450560 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\npmproxy.dll:npmproxy.dll (00007FFCEF660000), size: 102400 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\gpapi.dll:gpapi.dll (00007FFCFA970000), size: 151552 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\Windows\System32\cryptnet.dll:cryptnet.dll (00007FFCEF9D0000), size: 241664 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\WINNSI.DLL:WINNSI.DLL (00007FFCF77B0000), size: 57344 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\NSI.dll:NSI.dll (00007FFCFE2B0000), size: 40960 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL:dhcpcsvc6.DLL (00007FFCF0790000), size: 122880 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL:dhcpcsvc.DLL (00007FFCF0760000), size: 151552 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\DNSAPI.dll:DNSAPI.dll (00007FFCF9D10000), size: 1409024 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\DSPARSE.dll:DSPARSE.dll (00007FFCFA6D0000), size: 53248 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1
+C:\WINDOWS\system32\napinsp.dll:napinsp.dll (00007FFCDC270000), size: 98304 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
+C:\WINDOWS\System32\winrnr.dll:winrnr.dll (00007FFCC78E0000), size: 77824 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9278
+C:\WINDOWS\system32\nlansp_c.dll:nlansp_c.dll (00007FFCB1720000), size: 159744 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\system32\wshbth.dll:wshbth.dll (00007FFCF0930000), size: 90112 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\System32\fwpuclnt.dll:fwpuclnt.dll (00007FFCEFCE0000), size: 548864 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\Windows\System32\rasadhlp.dll:rasadhlp.dll (00007FFCF5800000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\AMDUnityPlugin.DLL:AMDUnityPlugin.DLL (00007FFC67B40000), size: 8843264 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\NVUnityPlugin.DLL:NVUnityPlugin.DLL (00007FFC80310000), size: 1646592 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\Data\Tools\astcenc-avx2.dll:astcenc-avx2.dll (00007FFC81290000), size: 352256 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\System32\MSCTF.dll:MSCTF.dll (00007FFCFDE90000), size: 1425408 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\TextShaping.dll:TextShaping.dll (00007FFCA52D0000), size: 1040384 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\textinputframework.dll:textinputframework.dll (00007FFCD0BC0000), size: 1335296 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\CoreMessaging.dll:CoreMessaging.dll (00007FFCF6E90000), size: 1220608 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\CoreUIComponents.dll:CoreUIComponents.dll (00007FFCE0900000), size: 3035136 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\wintypes.dll:wintypes.dll (00007FFCF4990000), size: 1482752 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\system32\Oleacc.dll:Oleacc.dll (00007FFCE9B40000), size: 479232 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 7.2.26100.9549
+C:\WINDOWS\system32\explorerframe.dll:explorerframe.dll (00007FFCB8BF0000), size: 3289088 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\mfplat.dll:mfplat.dll (00007FFCF3250000), size: 2256896 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\RTWorkQ.DLL:RTWorkQ.DLL (00007FFCF0C20000), size: 241664 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8972
+C:\WINDOWS\SYSTEM32\mfreadwrite.dll:mfreadwrite.dll (00007FFCE3C40000), size: 872448 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\Mf.dll:Mf.dll (00007FFCF3DE0000), size: 622592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\MFCORE.DLL:MFCORE.DLL (00007FFCF3900000), size: 4304896 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\CompPkgSup.DLL:CompPkgSup.DLL (00007FFCEE090000), size: 204800 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8521
+C:\Windows\System32\Windows.Media.dll:Windows.Media.dll (00007FFCA1C10000), size: 6922240 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\Windows\System32\Windows.StateRepositoryPS.dll:Windows.StateRepositoryPS.dll (00007FFCB15A0000), size: 802816 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\Windows\System32\Windows.ApplicationModel.dll:Windows.ApplicationModel.dll (00007FFCC75B0000), size: 880640 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\Windows\System32\AppXDeploymentClient.dll:AppXDeploymentClient.dll (00007FFCF3670000), size: 1515520 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\MMDevApi.dll:MMDevApi.dll (00007FFCF00B0000), size: 679936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\DEVOBJ.dll:DEVOBJ.dll (00007FFCFB1A0000), size: 192512 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\AUDIOSES.DLL:AUDIOSES.DLL (00007FFCEDEA0000), size: 1810432 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\resourcepolicyclient.dll:resourcepolicyclient.dll (00007FFCF7AE0000), size: 81920 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8115
+C:\WINDOWS\SYSTEM32\directxdatabasehelper.dll:directxdatabasehelper.dll (00007FFCF4770000), size: 389120 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\DriverStore\FileRepository\nvacegpu.inf_amd64_0af8f5d55a9e9293\nvldumdx.dll:nvldumdx.dll (00007FFC66290000), size: 770048 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 31.0.15.4618
+C:\WINDOWS\SYSTEM32\drvstore.dll:drvstore.dll (00007FFCEF850000), size: 1548288 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\wldp.dll:wldp.dll (00007FFCFACC0000), size: 528384 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\System32\DriverStore\FileRepository\nvacegpu.inf_amd64_0af8f5d55a9e9293\nvgpucomp64.dll:nvgpucomp64.dll (00007FFC7BC70000), size: 35565568 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 31.0.15.4618
+C:\WINDOWS\System32\DriverStore\FileRepository\nvacegpu.inf_amd64_0af8f5d55a9e9293\nvwgf2umx.dll:nvwgf2umx.dll (00007FFC2B260000), size: 88145920 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 31.0.15.4618
+C:\WINDOWS\system32\nvspcap64.dll:nvspcap64.dll (00007FFC738D0000), size: 2953216 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 3.27.0.114
+C:\WINDOWS\SYSTEM32\ntmarta.dll:ntmarta.dll (00007FFCFA440000), size: 221184 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7019
+C:\WINDOWS\System32\DriverStore\FileRepository\nvacegpu.inf_amd64_0af8f5d55a9e9293\Display.NvContainer\MessageBus.dll:MessageBus.dll (00007FFCDB940000), size: 7565312 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.22.2758.1620
+C:\WINDOWS\SYSTEM32\opencl.dll:opencl.dll (00007FFC85200000), size: 98304 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 3.0.6.0
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\radeonrays.dll:radeonrays.dll (00007FFC80260000), size: 344064 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\Data\MonoBleedingEdge\EmbedRuntime\mono-2.0-bdwgc.dll:mono-2.0-bdwgc.dll (00007FFC72E80000), size: 10760192 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.unity.burst@6bb9aca3ef38\.Runtime\MonoDebuggerHandling.dll:MonoDebuggerHandling.dll (00007FFC94BF0000), size: 368640 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.meta.xr.sdk.core@c0efcbf2ba70\Plugins\Win64OpenXR\OVRPlugin.dll:OVRPlugin.dll (00007FFC5FBC0000), size: 8310784 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.205.0.0
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.meta.xr.sdk.interaction@b67d311217e9\Runtime\Plugins\Win64\ISDKEngineTelemetry.dll:ISDKEngineTelemetry.dll (00007FFC5F3A0000), size: 8474624 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.unity.dt.app-ui@b097002a00c2\Runtime\Core\Platform\Windows\Plugins\x64\AppUINativePlugin.dll:AppUINativePlugin.dll (00007FFCE0FF0000), size: 61440 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Windows\System32\Windows.UI.dll:Windows.UI.dll (00007FFCAFF00000), size: 1421312 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\Windows\System32\Windows.UI.Immersive.dll:Windows.UI.Immersive.dll (00007FFCC9270000), size: 1384448 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\Windows\System32\twinapi.appcore.dll:twinapi.appcore.dll (00007FFCEE800000), size: 2428928 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\system32\apphelp.dll:apphelp.dll (00007FFCF72A0000), size: 651264 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.unity.burst@6bb9aca3ef38\.Runtime\burst-llvm-19.dll:burst-llvm-19.dll (00007FFC232D0000), size: 59863040 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\e9daecfc49fcb7f1df637712cc31f7e7.dll:e9daecfc49fcb7f1df637712cc31f7e7.dll (00007FFCE0FB0000), size: 20480 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\09d12295c8fa2e8076f6d9f7da52e97c.dll:09d12295c8fa2e8076f6d9f7da52e97c.dll (00007FFC98E60000), size: 98304 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\16aea011eaf82f7be432489c0bc3c517.dll:16aea011eaf82f7be432489c0bc3c517.dll (00007FFC97070000), size: 24576 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\734ca24cb5c91e92497f9109d7820072.dll:734ca24cb5c91e92497f9109d7820072.dll (00007FFC97060000), size: 53248 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\e0d291d3c9180ba2761124b6a24d7d57.dll:e0d291d3c9180ba2761124b6a24d7d57.dll (00007FFC94BE0000), size: 53248 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\b2e403defe2eeee07861ee8b9e53c0e1.dll:b2e403defe2eeee07861ee8b9e53c0e1.dll (00007FFC94BD0000), size: 57344 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\7d223044c4b656df3c840f9d997e38d3.dll:7d223044c4b656df3c840f9d997e38d3.dll (00007FFC94BB0000), size: 114688 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\d9a2a20063a81251efd3c5c327ce9f82.dll:d9a2a20063a81251efd3c5c327ce9f82.dll (00007FFC94BA0000), size: 49152 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\4bfb3547e873975638051f2b4ccc737d.dll:4bfb3547e873975638051f2b4ccc737d.dll (00007FFC81650000), size: 20480 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\0c4822515df36169dce029d9c2767878.dll:0c4822515df36169dce029d9c2767878.dll (00007FFC80E20000), size: 20480 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\5c6ce679917cd32bda4f29e46f3961b0.dll:5c6ce679917cd32bda4f29e46f3961b0.dll (00007FFC80DF0000), size: 32768 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\67337117129459abec01ac9d312300da.dll:67337117129459abec01ac9d312300da.dll (00007FFC80920000), size: 57344 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\5e40e9d8fefbd637da11f7495939ffad.dll:5e40e9d8fefbd637da11f7495939ffad.dll (00007FFC80910000), size: 40960 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\db8a478191e70542b464e1e934dc6a17.dll:db8a478191e70542b464e1e934dc6a17.dll (00007FFC80900000), size: 53248 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\c82d6d28f121b33b7d5bfdb8dcaf3f51.dll:c82d6d28f121b33b7d5bfdb8dcaf3f51.dll (00007FFC808D0000), size: 192512 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\93ce1833f5fdca78d701379bb53b2c2d.dll:93ce1833f5fdca78d701379bb53b2c2d.dll (00007FFC70630000), size: 147456 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\6c8d61054148b4d0e7cbe5db7be3b17e.dll:6c8d61054148b4d0e7cbe5db7be3b17e.dll (00007FFC70600000), size: 139264 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\ab3814dd1b15f563a2bc764177c402f7.dll:ab3814dd1b15f563a2bc764177c402f7.dll (00007FFC6C8D0000), size: 249856 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.meta.xr.sdk.audio@baafb66e77db\Runtime\Plugins\x86_64\MetaXRAudioUnity.dll:MetaXRAudioUnity.dll (00007FFC694B0000), size: 2727936 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.meta.xr.sdk.voice@856439ff2689\Lib\Telemetry\Plugins\SDKTelemetry.dll:SDKTelemetry.dll (00007FFC5ACA0000), size: 8654848 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\system32\dataexchange.dll:dataexchange.dll (00007FFCC5FB0000), size: 376832 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\Windows\System32\Windows.Gaming.Input.dll:Windows.Gaming.Input.dll (00007FFCD43D0000), size: 888832 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\inputhost.dll:inputhost.dll (00007FFCC93D0000), size: 1990656 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\PROPSYS.dll:PROPSYS.dll (00007FFCF5D70000), size: 1003520 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 7.0.26100.9549
+C:\Windows\System32\urlmon.dll:urlmon.dll (00007FFCEB540000), size: 1957888 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 11.0.26100.9711
+C:\Windows\System32\iertutil.dll:iertutil.dll (00007FFCEB270000), size: 2899968 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 11.0.26100.9549
+C:\Windows\System32\srvcli.dll:srvcli.dll (00007FFCEAE90000), size: 167936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
+C:\Windows\System32\netutils.dll:netutils.dll (00007FFCF9BB0000), size: 53248 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1882
+C:\WINDOWS\SYSTEM32\virtdisk.dll:virtdisk.dll (00007FFCDD940000), size: 94208 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9278
+C:\WINDOWS\SYSTEM32\edputil.dll:edputil.dll (00007FFCF3220000), size: 167936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.9278
+C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_eacedbde76e6defe\igd10iumd64.dll:igd10iumd64.dll (00007FFCDEF10000), size: 5517312 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 32.0.101.6733
+C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_eacedbde76e6defe\igd10um64xe.DLL:igd10um64xe.DLL (00007FFCDDCD0000), size: 18186240 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 32.0.101.6733
+C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_eacedbde76e6defe\IntelControlLib.dll:IntelControlLib.dll (00007FFCC5F00000), size: 704512 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.0.235.0
+C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_eacedbde76e6defe\igdgmm64.dll:igdgmm64.dll (00007FFCDC700000), size: 5844992 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 32.0.101.6733
+C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_eacedbde76e6defe\igc64.dll:igc64.dll (00007FFCD5D90000), size: 85090304 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 32.0.101.6733
+C:\Windows\System32\uiautomationcore.dll:uiautomationcore.dll (00007FFCC82D0000), size: 4325376 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 7.2.26100.9549
+C:\Windows\System32\threadpoolwinrt.dll:threadpoolwinrt.dll (00007FFCE9D70000), size: 90112 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.8246
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.unity.xr.openxr@58837b2992e0\Runtime\windows\x64\UnityOpenXR.dll:UnityOpenXR.dll (00007FFC6E250000), size: 929792 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Users\Roduf Eleu\My project (1)\Assets\XR\APILayers~\WindowsLayers\x64\XrApiLayer_METAX_operator.dll:XrApiLayer_METAX_operator.dll (00007FFC605C0000), size: 7430144 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\system32\nvapi64.dll:nvapi64.dll (00007FFCEA410000), size: 8003584 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 31.0.15.4618
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.meta.xr.sdk.interaction@b67d311217e9\Runtime\Plugins\Win64\InteractionSdk.dll:InteractionSdk.dll (00007FFC70680000), size: 565248 (result: 0), SymType: '-deferred-', PDB: ''
+
+========== OUTPUTTING STACK TRACE ==================
+
+0x00007FFC5ADAC63D (SDKTelemetry) OnEditorShutdown
+0x00007FFC5AE8C833 (SDKTelemetry) OnEditorShutdown
+0x00007FFC5AE889A8 (SDKTelemetry) OnEditorShutdown
+0x00007FFC5AD87F87 (SDKTelemetry) OnEditorShutdown
+0x00007FFC5AE3F8E0 (SDKTelemetry) OnEditorShutdown
+0x00007FFC5AE37A5B (SDKTelemetry) OnEditorShutdown
+0x00007FFC5ADAD9D8 (SDKTelemetry) OnEditorShutdown
+0x00007FFC5ADAE8E4 (SDKTelemetry) OnEditorShutdown
+0x00007FFC5AD81BA3 (SDKTelemetry) OnEditorShutdown
+0x00007FFC5AD461CD (SDKTelemetry) OnEditorShutdown
+0x00007FFC5AD62A90 (SDKTelemetry) OnEditorShutdown
+0x00007FFC5AD97216 (SDKTelemetry) OnEditorShutdown
+0x00007FFC5AD5E179 (SDKTelemetry) OnEditorShutdown
+0x00007FFC5AD45226 (SDKTelemetry) OnEditorShutdown
+0x00007FFC5AD188EA (SDKTelemetry) OnEditorShutdown
+0x00000216E3C3F2E7 (Mono JIT Code) (wrapper managed-to-native) Meta.Voice.TelemetryUtilities.EditorTelemetry/TelemetryChannel:OnEditorShutdown ()
+0x00000216E3C3EE3B (Mono JIT Code) [.\Library\PackageCache\com.meta.xr.sdk.voice@856439ff2689\Lib\Telemetry\Scripts\Editor\EditorTelemetry.cs:463] Meta.Voice.TelemetryUtilities.EditorTelemetry/TelemetryChannel:ShutdownTelemetry () 
+0x00000216E3C3E433 (Mono JIT Code) [.\Library\PackageCache\com.meta.xr.sdk.voice@856439ff2689\Lib\Telemetry\Scripts\Editor\EditorTelemetry.cs:117] Meta.Voice.TelemetryUtilities.EditorTelemetry:OnUnityEditorQuitting () 
+0x00000216E3C3203D (Mono JIT Code) UnityEditor.EditorApplication:Internal_EditorApplicationQuit ()
+0x00000216D6DF6B95 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void (object,intptr,intptr,intptr)
+0x00007FFC7310755E (mono-2.0-bdwgc) mono_jit_set_domain
+0x00007FFC730491D4 (mono-2.0-bdwgc) mono_object_get_virtual_method
+0x00007FFC730492C0 (mono-2.0-bdwgc) mono_runtime_invoke
+0x00007FFC335DFAD5 (Unity) udnSetPath
+0x00007FFC336081C6 (Unity) udnSetPath
+0x00007FFC33602F85 (Unity) udnSetPath
+0x00007FFC31281B21 (Unity) uds_set_stub_implementation
+0x00007FFC31C9A283 (Unity) udnSetPath
+0x00007FFC31CAD94D (Unity) udnSetPath
+0x00007FFC3154AC40 (Unity) uds_set_stub_implementation
+0x00007FFCFDCC52E6 (USER32) CallWindowProcW
+0x00007FFCFDCC4DAC (USER32) CallWindowProcW
+0x00007FFCE3DBCED8 (COMCTL32) DefSubclassProc
+0x00007FFCE3DBCE08 (COMCTL32) DefSubclassProc
+SymInit: Symbol-SearchPath: '.', symOptions: 534, UserName: 'Roduf Eleu'
+OS-Version: 10.0.0
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\Unity.exe:Unity.exe (00007FF6FA4F0000), size: 290816 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\Unity.exe', fileVersion: 6000.5.6.1399
+C:\WINDOWS\SYSTEM32\ntdll.dll:ntdll.dll (00007FFCFE380000), size: 2523136 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ntdll.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\KERNEL32.DLL:KERNEL32.DLL (00007FFCFDB10000), size: 831488 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\KERNEL32.DLL', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\KERNELBASE.dll:KERNELBASE.dll (00007FFCFBA30000), size: 4198400 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\KERNELBASE.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\USER32.dll:USER32.dll (00007FFCFDCB0000), size: 1929216 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\USER32.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\System32\win32u.dll:win32u.dll (00007FFCFB780000), size: 159744 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\win32u.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\GDI32.dll:GDI32.dll (00007FFCFD3F0000), size: 176128 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\GDI32.dll', fileVersion: 10.0.26100.8328
+C:\WINDOWS\System32\gdi32full.dll:gdi32full.dll (00007FFCFB840000), size: 1220608 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\gdi32full.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\msvcp_win.dll:msvcp_win.dll (00007FFCFB6D0000), size: 667648 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\msvcp_win.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\ucrtbase.dll:ucrtbase.dll (00007FFCFB570000), size: 1359872 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\ucrtbase.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\IMM32.DLL:IMM32.DLL (00007FFCFE220000), size: 200704 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\IMM32.DLL', fileVersion: 10.0.26100.9278
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\Unity.dll:Unity.dll (00007FFC30670000), size: 99053568 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\Unity.dll', fileVersion: 6000.5.6.1399
+C:\WINDOWS\System32\ADVAPI32.dll:ADVAPI32.dll (00007FFCFE000000), size: 770048 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\ADVAPI32.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\msvcrt.dll:msvcrt.dll (00007FFCFC260000), size: 692224 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\msvcrt.dll', fileVersion: 7.0.26100.9711
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\SketchUpAPI.dll:SketchUpAPI.dll (00007FFC62180000), size: 24559616 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\SketchUpAPI.dll', fileVersion: 26.0.0.0
+C:\WINDOWS\System32\sechost.dll:sechost.dll (00007FFCFDA50000), size: 688128 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\sechost.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\RPCRT4.dll:RPCRT4.dll (00007FFCFD060000), size: 1146880 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\RPCRT4.dll', fileVersion: 10.0.26100.9711
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\OpenRL.dll:OpenRL.dll (0000000180000000), size: 12779520 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\OpenRL.dll', fileVersion: 1.5.0.2907
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\libfbxsdk.dll:libfbxsdk.dll (00007FFC74D90000), size: 8019968 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\libfbxsdk.dll', fileVersion: 2020.3.7.0
+C:\WINDOWS\System32\ole32.dll:ole32.dll (00007FFCFD8B0000), size: 1679360 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\ole32.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\System32\combase.dll:combase.dll (00007FFCFCBB0000), size: 3715072 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\combase.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\SETUPAPI.dll:SETUPAPI.dll (00007FFCFD420000), size: 4747264 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\SETUPAPI.dll', fileVersion: 10.0.26100.9549
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\s3tcompress.dll:s3tcompress.dll (00007FFC822F0000), size: 180224 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\s3tcompress.dll'
+C:\WINDOWS\System32\SHELL32.dll:SHELL32.dll (00007FFCFC320000), size: 7979008 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\SHELL32.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\shcore.dll:shcore.dll (00007FFCFCF60000), size: 1019904 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\shcore.dll', fileVersion: 10.0.26100.9711
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\etccompress.dll:etccompress.dll (00007FFC81730000), size: 5070848 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\etccompress.dll'
+C:\WINDOWS\System32\SHLWAPI.dll:SHLWAPI.dll (00007FFCFC090000), size: 417792 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\SHLWAPI.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\CRYPT32.dll:CRYPT32.dll (00007FFCFBF00000), size: 1568768 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\CRYPT32.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\System32\WS2_32.dll:WS2_32.dll (00007FFCFE190000), size: 528384 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\WS2_32.dll', fileVersion: 10.0.26100.9711
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\ispc_texcomp.dll:ispc_texcomp.dll (00007FFC80C10000), size: 1826816 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\ispc_texcomp.dll'
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\compress_bc7e.dll:compress_bc7e.dll (00007FFC80AB0000), size: 1433600 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\compress_bc7e.dll'
+C:\WINDOWS\System32\WINTRUST.dll:WINTRUST.dll (00007FFCFB7B0000), size: 532480 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\WINTRUST.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\OLEAUT32.dll:OLEAUT32.dll (00007FFCFCAD0000), size: 888832 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\OLEAUT32.dll', fileVersion: 10.0.26100.9711
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\umbraoptimizer64.dll:umbraoptimizer64.dll (00007FFC80980000), size: 1187840 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\umbraoptimizer64.dll'
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\WinPixEventRuntime.dll:WinPixEventRuntime.dll (00007FFCC5990000), size: 57344 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\WinPixEventRuntime.dll', fileVersion: 1.0.2403.8001
+C:\WINDOWS\SYSTEM32\bcrypt.dll:bcrypt.dll (00007FFCFB450000), size: 172032 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\bcrypt.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\VCRUNTIME140.dll:VCRUNTIME140.dll (00007FFC74B10000), size: 180224 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\VCRUNTIME140.dll', fileVersion: 14.51.36247.0
+C:\WINDOWS\SYSTEM32\MSVCP140.dll:MSVCP140.dll (00007FFC81FB0000), size: 643072 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MSVCP140.dll', fileVersion: 14.51.36247.0
+C:\WINDOWS\SYSTEM32\VCRUNTIME140_1.dll:VCRUNTIME140_1.dll (00007FFCC55E0000), size: 49152 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\VCRUNTIME140_1.dll', fileVersion: 14.51.36247.0
+C:\WINDOWS\SYSTEM32\d3d11.dll:d3d11.dll (00007FFCF8A30000), size: 2486272 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\d3d11.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\d3d12.dll:d3d12.dll (00007FFC94630000), size: 143360 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\d3d12.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\dwmapi.dll:dwmapi.dll (00007FFCF75C0000), size: 188416 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dwmapi.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\dxgi.dll:dxgi.dll (00007FFCF8CC0000), size: 1290240 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dxgi.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.9711_none_3e07b8b0e334e825\COMCTL32.dll:COMCTL32.dll (00007FFCE3D90000), size: 2691072 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.9711_none_3e07b8b0e334e825\COMCTL32.dll', fileVersion: 6.10.26100.9711
+C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL:IPHLPAPI.DLL (00007FFCF9C60000), size: 208896 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL', fileVersion: 10.0.26100.9278
+C:\WINDOWS\SYSTEM32\HID.DLL:HID.DLL (00007FFCF9870000), size: 61440 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\HID.DLL', fileVersion: 10.0.26100.1150
+C:\WINDOWS\SYSTEM32\OPENGL32.dll:OPENGL32.dll (00007FFC81040000), size: 1097728 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\OPENGL32.dll', fileVersion: 10.0.26100.9278
+C:\WINDOWS\SYSTEM32\VERSION.dll:VERSION.dll (00007FFCF0750000), size: 45056 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\VERSION.dll', fileVersion: 10.0.26100.1150
+C:\WINDOWS\SYSTEM32\MSVCR100.dll:MSVCR100.dll (000000006DFF0000), size: 860160 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MSVCR100.dll', fileVersion: 10.0.40219.325
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\embree.dll:embree.dll (00007FFC651D0000), size: 16711680 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\embree.dll', fileVersion: 2.14.0.0
+C:\WINDOWS\SYSTEM32\MSVCP100.dll:MSVCP100.dll (000000006E0D0000), size: 622592 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MSVCP100.dll', fileVersion: 10.0.40219.325
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\SketchUpCommonPreferences.dll:SketchUpCommonPreferences.dll (00007FFC81680000), size: 708608 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\SketchUpCommonPreferences.dll', fileVersion: 26.0.0.0
+C:\WINDOWS\SYSTEM32\MSVCP140_CODECVT_IDS.dll:MSVCP140_CODECVT_IDS.dll (00007FFCC0260000), size: 28672 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MSVCP140_CODECVT_IDS.dll', fileVersion: 14.51.36247.0
+C:\WINDOWS\SYSTEM32\dbghelp.dll:dbghelp.dll (00007FFCF8770000), size: 2408448 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dbghelp.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\WINHTTP.dll:WINHTTP.dll (00007FFCF05B0000), size: 1220608 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WINHTTP.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\GLU32.dll:GLU32.dll (00007FFC822B0000), size: 233472 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\GLU32.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\WINMM.dll:WINMM.dll (00007FFCEBFE0000), size: 225280 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WINMM.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\Secur32.dll:Secur32.dll (00007FFCF7350000), size: 53248 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\Secur32.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\WSOCK32.dll:WSOCK32.dll (00007FFCC06B0000), size: 40960 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WSOCK32.dll', fileVersion: 10.0.26100.1
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\NativeProxyHelper.dll:NativeProxyHelper.dll (00007FFC804B0000), size: 1789952 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\NativeProxyHelper.dll'
+C:\WINDOWS\SYSTEM32\powrprof.dll:powrprof.dll (00007FFCFA040000), size: 385024 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\powrprof.dll', fileVersion: 10.0.26100.3912
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\tbb.dll:tbb.dll (00007FFC82260000), size: 303104 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\tbb.dll', fileVersion: 2020.3.2022.1111
+C:\WINDOWS\SYSTEM32\dxcore.dll:dxcore.dll (00007FFCF7A50000), size: 278528 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dxcore.dll', fileVersion: 10.0.26100.9549
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\FreeImage.dll:FreeImage.dll (00000214E7CC0000), size: 5332992 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\FreeImage.dll', fileVersion: 3.18.0.0
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\OpenRL_pthread.dll:OpenRL_pthread.dll (00000214E81E0000), size: 61440 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\OpenRL_pthread.dll', fileVersion: 2.9.0.0
+C:\WINDOWS\SYSTEM32\cfgmgr32.DLL:cfgmgr32.DLL (00007FFCFB1E0000), size: 335872 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\cfgmgr32.DLL', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\SSPICLI.DLL:SSPICLI.DLL (00007FFCFA5F0000), size: 303104 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\SSPICLI.DLL', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\MSWSOCK.DLL:MSWSOCK.DLL (00007FFCFA8F0000), size: 442368 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MSWSOCK.DLL', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\UMPDC.dll:UMPDC.dll (00007FFCFA020000), size: 86016 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\UMPDC.dll', fileVersion: 10.0.26100.8972
+C:\WINDOWS\SYSTEM32\MSASN1.dll:MSASN1.dll (00007FFCFAD50000), size: 77824 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MSASN1.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\bcryptprimitives.dll:bcryptprimitives.dll (00007FFCFB970000), size: 704512 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\bcryptprimitives.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\kernel.appcore.dll:kernel.appcore.dll (00007FFCFA310000), size: 110592 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\kernel.appcore.dll', fileVersion: 10.0.26100.9278
+C:\WINDOWS\system32\uxtheme.dll:uxtheme.dll (00007FFCF7450000), size: 684032 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\uxtheme.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\windows.storage.dll:windows.storage.dll (00007FFCF8FB0000), size: 9101312 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\windows.storage.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\profapi.dll:profapi.dll (00007FFCFB480000), size: 167936 (result: 0), SymType: '-nosymbols-', PDB: 'C:\WINDOWS\SYSTEM32\profapi.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\System32\clbcatq.dll:clbcatq.dll (00007FFCFE0D0000), size: 716800 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\clbcatq.dll', fileVersion: 2001.12.10941.16384
+C:\WINDOWS\system32\wbem\wbemprox.dll:wbemprox.dll (00007FFCEEAF0000), size: 73728 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\wbem\wbemprox.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\wbemcomn.dll:wbemcomn.dll (00007FFCE7F10000), size: 548864 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\wbemcomn.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\system32\wbem\wbemsvc.dll:wbemsvc.dll (00007FFCDDAE0000), size: 86016 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\wbem\wbemsvc.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\system32\wbem\fastprox.dll:fastprox.dll (00007FFCDCCC0000), size: 1007616 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\wbem\fastprox.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\amsi.dll:amsi.dll (00007FFCC8AB0000), size: 118784 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\amsi.dll', fileVersion: 10.0.26100.7309
+C:\WINDOWS\SYSTEM32\USERENV.dll:USERENV.dll (00007FFCFA9A0000), size: 212992 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\USERENV.dll', fileVersion: 10.0.26100.9549
+C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26090.9-0\MpOav.dll:MpOav.dll (00007FFCC8A00000), size: 675840 (result: 0), SymType: '-exported-', PDB: 'C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.26090.9-0\MpOav.dll', fileVersion: 4.18.26090.9
+C:\WINDOWS\SYSTEM32\CRYPTSP.dll:CRYPTSP.dll (00007FFCFABE0000), size: 110592 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\CRYPTSP.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\system32\IconCodecService.dll:IconCodecService.dll (00007FFCF7190000), size: 45056 (result: 0), SymType: '-nosymbols-', PDB: 'C:\WINDOWS\system32\IconCodecService.dll', fileVersion: 10.0.26100.1
+C:\WINDOWS\system32\rsaenh.dll:rsaenh.dll (00007FFCFA260000), size: 233472 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\rsaenh.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\WindowsCodecs.dll:WindowsCodecs.dll (00007FFCF6510000), size: 2326528 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WindowsCodecs.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\CRYPTBASE.dll:CRYPTBASE.dll (00007FFCFAC00000), size: 49152 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\CRYPTBASE.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\imagehlp.dll:imagehlp.dll (00007FFCFDC80000), size: 131072 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\imagehlp.dll', fileVersion: 10.0.26100.4202
+C:\WINDOWS\System32\netprofm.dll:netprofm.dll (00007FFCF3F30000), size: 450560 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\netprofm.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\npmproxy.dll:npmproxy.dll (00007FFCEF660000), size: 102400 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\npmproxy.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\gpapi.dll:gpapi.dll (00007FFCFA970000), size: 151552 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\gpapi.dll', fileVersion: 10.0.26100.9549
+C:\Windows\System32\cryptnet.dll:cryptnet.dll (00007FFCEF9D0000), size: 241664 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\cryptnet.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\WINNSI.DLL:WINNSI.DLL (00007FFCF77B0000), size: 57344 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WINNSI.DLL', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\NSI.dll:NSI.dll (00007FFCFE2B0000), size: 40960 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\NSI.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL:dhcpcsvc6.DLL (00007FFCF0790000), size: 122880 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL:dhcpcsvc.DLL (00007FFCF0760000), size: 151552 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\DNSAPI.dll:DNSAPI.dll (00007FFCF9D10000), size: 1409024 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\DNSAPI.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\DSPARSE.dll:DSPARSE.dll (00007FFCFA6D0000), size: 53248 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\DSPARSE.dll', fileVersion: 10.0.26100.1
+C:\WINDOWS\system32\napinsp.dll:napinsp.dll (00007FFCDC270000), size: 98304 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\napinsp.dll', fileVersion: 10.0.26100.1150
+C:\WINDOWS\System32\winrnr.dll:winrnr.dll (00007FFCC78E0000), size: 77824 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\winrnr.dll', fileVersion: 10.0.26100.9278
+C:\WINDOWS\system32\nlansp_c.dll:nlansp_c.dll (00007FFCB1720000), size: 159744 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\nlansp_c.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\system32\wshbth.dll:wshbth.dll (00007FFCF0930000), size: 90112 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\wshbth.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\System32\fwpuclnt.dll:fwpuclnt.dll (00007FFCEFCE0000), size: 548864 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\fwpuclnt.dll', fileVersion: 10.0.26100.9711
+C:\Windows\System32\rasadhlp.dll:rasadhlp.dll (00007FFCF5800000), size: 45056 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\rasadhlp.dll', fileVersion: 10.0.26100.9711
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\AMDUnityPlugin.DLL:AMDUnityPlugin.DLL (00007FFC67B40000), size: 8843264 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\AMDUnityPlugin.DLL'
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\NVUnityPlugin.DLL:NVUnityPlugin.DLL (00007FFC80310000), size: 1646592 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\NVUnityPlugin.DLL'
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\Data\Tools\astcenc-avx2.dll:astcenc-avx2.dll (00007FFC81290000), size: 352256 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\Data\Tools\astcenc-avx2.dll'
+C:\WINDOWS\System32\MSCTF.dll:MSCTF.dll (00007FFCFDE90000), size: 1425408 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\MSCTF.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\TextShaping.dll:TextShaping.dll (00007FFCA52D0000), size: 1040384 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\TextShaping.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\textinputframework.dll:textinputframework.dll (00007FFCD0BC0000), size: 1335296 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\textinputframework.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\CoreMessaging.dll:CoreMessaging.dll (00007FFCF6E90000), size: 1220608 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\CoreMessaging.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\CoreUIComponents.dll:CoreUIComponents.dll (00007FFCE0900000), size: 3035136 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\CoreUIComponents.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\wintypes.dll:wintypes.dll (00007FFCF4990000), size: 1482752 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\wintypes.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\system32\Oleacc.dll:Oleacc.dll (00007FFCE9B40000), size: 479232 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\Oleacc.dll', fileVersion: 7.2.26100.9549
+C:\WINDOWS\system32\explorerframe.dll:explorerframe.dll (00007FFCB8BF0000), size: 3289088 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\explorerframe.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\mfplat.dll:mfplat.dll (00007FFCF3250000), size: 2256896 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\mfplat.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\RTWorkQ.DLL:RTWorkQ.DLL (00007FFCF0C20000), size: 241664 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\RTWorkQ.DLL', fileVersion: 10.0.26100.8972
+C:\WINDOWS\SYSTEM32\mfreadwrite.dll:mfreadwrite.dll (00007FFCE3C40000), size: 872448 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\mfreadwrite.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\Mf.dll:Mf.dll (00007FFCF3DE0000), size: 622592 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\Mf.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\MFCORE.DLL:MFCORE.DLL (00007FFCF3900000), size: 4304896 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MFCORE.DLL', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\CompPkgSup.DLL:CompPkgSup.DLL (00007FFCEE090000), size: 204800 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\CompPkgSup.DLL', fileVersion: 10.0.26100.8521
+C:\Windows\System32\Windows.Media.dll:Windows.Media.dll (00007FFCA1C10000), size: 6922240 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\Windows.Media.dll', fileVersion: 10.0.26100.9549
+C:\Windows\System32\Windows.StateRepositoryPS.dll:Windows.StateRepositoryPS.dll (00007FFCB15A0000), size: 802816 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\Windows.StateRepositoryPS.dll', fileVersion: 10.0.26100.9711
+C:\Windows\System32\Windows.ApplicationModel.dll:Windows.ApplicationModel.dll (00007FFCC75B0000), size: 880640 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\Windows.ApplicationModel.dll', fileVersion: 10.0.26100.9549
+C:\Windows\System32\AppXDeploymentClient.dll:AppXDeploymentClient.dll (00007FFCF3670000), size: 1515520 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\AppXDeploymentClient.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\MMDevApi.dll:MMDevApi.dll (00007FFCF00B0000), size: 679936 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\MMDevApi.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\DEVOBJ.dll:DEVOBJ.dll (00007FFCFB1A0000), size: 192512 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DEVOBJ.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\AUDIOSES.DLL:AUDIOSES.DLL (00007FFCEDEA0000), size: 1810432 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\AUDIOSES.DLL', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\resourcepolicyclient.dll:resourcepolicyclient.dll (00007FFCF7AE0000), size: 81920 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\resourcepolicyclient.dll', fileVersion: 10.0.26100.8115
+C:\WINDOWS\SYSTEM32\directxdatabasehelper.dll:directxdatabasehelper.dll (00007FFCF4770000), size: 389120 (result: 0), SymType: '-nosymbols-', PDB: 'C:\WINDOWS\SYSTEM32\directxdatabasehelper.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\System32\DriverStore\FileRepository\nvacegpu.inf_amd64_0af8f5d55a9e9293\nvldumdx.dll:nvldumdx.dll (00007FFC66290000), size: 770048 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\nvacegpu.inf_amd64_0af8f5d55a9e9293\nvldumdx.dll', fileVersion: 31.0.15.4618
+C:\WINDOWS\SYSTEM32\drvstore.dll:drvstore.dll (00007FFCEF850000), size: 1548288 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\drvstore.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\wldp.dll:wldp.dll (00007FFCFACC0000), size: 528384 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\wldp.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\System32\DriverStore\FileRepository\nvacegpu.inf_amd64_0af8f5d55a9e9293\nvgpucomp64.dll:nvgpucomp64.dll (00007FFC7BC70000), size: 35565568 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\nvacegpu.inf_amd64_0af8f5d55a9e9293\nvgpucomp64.dll', fileVersion: 31.0.15.4618
+C:\WINDOWS\System32\DriverStore\FileRepository\nvacegpu.inf_amd64_0af8f5d55a9e9293\nvwgf2umx.dll:nvwgf2umx.dll (00007FFC2B260000), size: 88145920 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\nvacegpu.inf_amd64_0af8f5d55a9e9293\nvwgf2umx.dll', fileVersion: 31.0.15.4618
+C:\WINDOWS\system32\nvspcap64.dll:nvspcap64.dll (00007FFC738D0000), size: 2953216 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\nvspcap64.dll', fileVersion: 3.27.0.114
+C:\WINDOWS\SYSTEM32\ntmarta.dll:ntmarta.dll (00007FFCFA440000), size: 221184 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ntmarta.dll', fileVersion: 10.0.26100.7019
+C:\WINDOWS\System32\DriverStore\FileRepository\nvacegpu.inf_amd64_0af8f5d55a9e9293\Display.NvContainer\MessageBus.dll:MessageBus.dll (00007FFCDB940000), size: 7565312 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\nvacegpu.inf_amd64_0af8f5d55a9e9293\Display.NvContainer\MessageBus.dll', fileVersion: 1.22.2758.1620
+C:\WINDOWS\SYSTEM32\opencl.dll:opencl.dll (00007FFC85200000), size: 98304 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\opencl.dll', fileVersion: 3.0.6.0
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\radeonrays.dll:radeonrays.dll (00007FFC80260000), size: 344064 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\radeonrays.dll'
+C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\Data\MonoBleedingEdge\EmbedRuntime\mono-2.0-bdwgc.dll:mono-2.0-bdwgc.dll (00007FFC72E80000), size: 10760192 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\Data\MonoBleedingEdge\EmbedRuntime\mono-2.0-bdwgc.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.unity.burst@6bb9aca3ef38\.Runtime\MonoDebuggerHandling.dll:MonoDebuggerHandling.dll (00007FFC94BF0000), size: 368640 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.unity.burst@6bb9aca3ef38\.Runtime\MonoDebuggerHandling.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.meta.xr.sdk.core@c0efcbf2ba70\Plugins\Win64OpenXR\OVRPlugin.dll:OVRPlugin.dll (00007FFC5FBC0000), size: 8310784 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.meta.xr.sdk.core@c0efcbf2ba70\Plugins\Win64OpenXR\OVRPlugin.dll', fileVersion: 1.205.0.0
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.meta.xr.sdk.interaction@b67d311217e9\Runtime\Plugins\Win64\ISDKEngineTelemetry.dll:ISDKEngineTelemetry.dll (00007FFC5F3A0000), size: 8474624 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.meta.xr.sdk.interaction@b67d311217e9\Runtime\Plugins\Win64\ISDKEngineTelemetry.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.unity.dt.app-ui@b097002a00c2\Runtime\Core\Platform\Windows\Plugins\x64\AppUINativePlugin.dll:AppUINativePlugin.dll (00007FFCE0FF0000), size: 61440 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.unity.dt.app-ui@b097002a00c2\Runtime\Core\Platform\Windows\Plugins\x64\AppUINativePlugin.dll'
+C:\Windows\System32\Windows.UI.dll:Windows.UI.dll (00007FFCAFF00000), size: 1421312 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\Windows.UI.dll', fileVersion: 10.0.26100.9549
+C:\Windows\System32\Windows.UI.Immersive.dll:Windows.UI.Immersive.dll (00007FFCC9270000), size: 1384448 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\Windows.UI.Immersive.dll', fileVersion: 10.0.26100.9711
+C:\Windows\System32\twinapi.appcore.dll:twinapi.appcore.dll (00007FFCEE800000), size: 2428928 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\twinapi.appcore.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\system32\apphelp.dll:apphelp.dll (00007FFCF72A0000), size: 651264 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\apphelp.dll', fileVersion: 10.0.26100.9711
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.unity.burst@6bb9aca3ef38\.Runtime\burst-llvm-19.dll:burst-llvm-19.dll (00007FFC232D0000), size: 59863040 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.unity.burst@6bb9aca3ef38\.Runtime\burst-llvm-19.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\e9daecfc49fcb7f1df637712cc31f7e7.dll:e9daecfc49fcb7f1df637712cc31f7e7.dll (00007FFCE0FB0000), size: 20480 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\e9daecfc49fcb7f1df637712cc31f7e7.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\09d12295c8fa2e8076f6d9f7da52e97c.dll:09d12295c8fa2e8076f6d9f7da52e97c.dll (00007FFC98E60000), size: 98304 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\09d12295c8fa2e8076f6d9f7da52e97c.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\16aea011eaf82f7be432489c0bc3c517.dll:16aea011eaf82f7be432489c0bc3c517.dll (00007FFC97070000), size: 24576 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\16aea011eaf82f7be432489c0bc3c517.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\734ca24cb5c91e92497f9109d7820072.dll:734ca24cb5c91e92497f9109d7820072.dll (00007FFC97060000), size: 53248 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\734ca24cb5c91e92497f9109d7820072.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\e0d291d3c9180ba2761124b6a24d7d57.dll:e0d291d3c9180ba2761124b6a24d7d57.dll (00007FFC94BE0000), size: 53248 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\e0d291d3c9180ba2761124b6a24d7d57.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\b2e403defe2eeee07861ee8b9e53c0e1.dll:b2e403defe2eeee07861ee8b9e53c0e1.dll (00007FFC94BD0000), size: 57344 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\b2e403defe2eeee07861ee8b9e53c0e1.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\7d223044c4b656df3c840f9d997e38d3.dll:7d223044c4b656df3c840f9d997e38d3.dll (00007FFC94BB0000), size: 114688 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\7d223044c4b656df3c840f9d997e38d3.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\d9a2a20063a81251efd3c5c327ce9f82.dll:d9a2a20063a81251efd3c5c327ce9f82.dll (00007FFC94BA0000), size: 49152 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\d9a2a20063a81251efd3c5c327ce9f82.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\4bfb3547e873975638051f2b4ccc737d.dll:4bfb3547e873975638051f2b4ccc737d.dll (00007FFC81650000), size: 20480 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\4bfb3547e873975638051f2b4ccc737d.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\0c4822515df36169dce029d9c2767878.dll:0c4822515df36169dce029d9c2767878.dll (00007FFC80E20000), size: 20480 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\0c4822515df36169dce029d9c2767878.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\5c6ce679917cd32bda4f29e46f3961b0.dll:5c6ce679917cd32bda4f29e46f3961b0.dll (00007FFC80DF0000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\5c6ce679917cd32bda4f29e46f3961b0.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\67337117129459abec01ac9d312300da.dll:67337117129459abec01ac9d312300da.dll (00007FFC80920000), size: 57344 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\67337117129459abec01ac9d312300da.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\5e40e9d8fefbd637da11f7495939ffad.dll:5e40e9d8fefbd637da11f7495939ffad.dll (00007FFC80910000), size: 40960 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\5e40e9d8fefbd637da11f7495939ffad.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\db8a478191e70542b464e1e934dc6a17.dll:db8a478191e70542b464e1e934dc6a17.dll (00007FFC80900000), size: 53248 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\db8a478191e70542b464e1e934dc6a17.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\c82d6d28f121b33b7d5bfdb8dcaf3f51.dll:c82d6d28f121b33b7d5bfdb8dcaf3f51.dll (00007FFC808D0000), size: 192512 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\c82d6d28f121b33b7d5bfdb8dcaf3f51.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\93ce1833f5fdca78d701379bb53b2c2d.dll:93ce1833f5fdca78d701379bb53b2c2d.dll (00007FFC70630000), size: 147456 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\93ce1833f5fdca78d701379bb53b2c2d.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\6c8d61054148b4d0e7cbe5db7be3b17e.dll:6c8d61054148b4d0e7cbe5db7be3b17e.dll (00007FFC70600000), size: 139264 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\6c8d61054148b4d0e7cbe5db7be3b17e.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\ab3814dd1b15f563a2bc764177c402f7.dll:ab3814dd1b15f563a2bc764177c402f7.dll (00007FFC6C8D0000), size: 249856 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\BurstCache\JIT\ab3814dd1b15f563a2bc764177c402f7.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.meta.xr.sdk.audio@baafb66e77db\Runtime\Plugins\x86_64\MetaXRAudioUnity.dll:MetaXRAudioUnity.dll (00007FFC694B0000), size: 2727936 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.meta.xr.sdk.audio@baafb66e77db\Runtime\Plugins\x86_64\MetaXRAudioUnity.dll'
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.meta.xr.sdk.voice@856439ff2689\Lib\Telemetry\Plugins\SDKTelemetry.dll:SDKTelemetry.dll (00007FFC5ACA0000), size: 8654848 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.meta.xr.sdk.voice@856439ff2689\Lib\Telemetry\Plugins\SDKTelemetry.dll'
+C:\WINDOWS\system32\dataexchange.dll:dataexchange.dll (00007FFCC5FB0000), size: 376832 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\dataexchange.dll', fileVersion: 10.0.26100.9549
+C:\Windows\System32\Windows.Gaming.Input.dll:Windows.Gaming.Input.dll (00007FFCD43D0000), size: 888832 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\Windows.Gaming.Input.dll', fileVersion: 10.0.26100.9549
+C:\WINDOWS\SYSTEM32\inputhost.dll:inputhost.dll (00007FFCC93D0000), size: 1990656 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\inputhost.dll', fileVersion: 10.0.26100.9711
+C:\WINDOWS\SYSTEM32\PROPSYS.dll:PROPSYS.dll (00007FFCF5D70000), size: 1003520 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\PROPSYS.dll', fileVersion: 7.0.26100.9549
+C:\Windows\System32\urlmon.dll:urlmon.dll (00007FFCEB540000), size: 1957888 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\urlmon.dll', fileVersion: 11.0.26100.9711
+C:\Windows\System32\iertutil.dll:iertutil.dll (00007FFCEB270000), size: 2899968 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\iertutil.dll', fileVersion: 11.0.26100.9549
+C:\Windows\System32\srvcli.dll:srvcli.dll (00007FFCEAE90000), size: 167936 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\srvcli.dll', fileVersion: 10.0.26100.1150
+C:\Windows\System32\netutils.dll:netutils.dll (00007FFCF9BB0000), size: 53248 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\netutils.dll', fileVersion: 10.0.26100.1882
+C:\WINDOWS\SYSTEM32\virtdisk.dll:virtdisk.dll (00007FFCDD940000), size: 94208 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\virtdisk.dll', fileVersion: 10.0.26100.9278
+C:\WINDOWS\SYSTEM32\edputil.dll:edputil.dll (00007FFCF3220000), size: 167936 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\edputil.dll', fileVersion: 10.0.26100.9278
+C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_eacedbde76e6defe\igd10iumd64.dll:igd10iumd64.dll (00007FFCDEF10000), size: 5517312 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_eacedbde76e6defe\igd10iumd64.dll', fileVersion: 32.0.101.6733
+C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_eacedbde76e6defe\igd10um64xe.DLL:igd10um64xe.DLL (00007FFCDDCD0000), size: 18186240 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_eacedbde76e6defe\igd10um64xe.DLL', fileVersion: 32.0.101.6733
+C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_eacedbde76e6defe\IntelControlLib.dll:IntelControlLib.dll (00007FFCC5F00000), size: 704512 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_eacedbde76e6defe\IntelControlLib.dll', fileVersion: 1.0.235.0
+C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_eacedbde76e6defe\igdgmm64.dll:igdgmm64.dll (00007FFCDC700000), size: 5844992 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_eacedbde76e6defe\igdgmm64.dll', fileVersion: 32.0.101.6733
+C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_eacedbde76e6defe\igc64.dll:igc64.dll (00007FFCD5D90000), size: 85090304 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_eacedbde76e6defe\igc64.dll', fileVersion: 32.0.101.6733
+C:\Windows\System32\uiautomationcore.dll:uiautomationcore.dll (00007FFCC82D0000), size: 4325376 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\uiautomationcore.dll', fileVersion: 7.2.26100.9549
+C:\Windows\System32\threadpoolwinrt.dll:threadpoolwinrt.dll (00007FFCE9D70000), size: 90112 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\threadpoolwinrt.dll', fileVersion: 10.0.26100.8246
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.unity.xr.openxr@58837b2992e0\Runtime\windows\x64\UnityOpenXR.dll:UnityOpenXR.dll (00007FFC6E250000), size: 929792 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.unity.xr.openxr@58837b2992e0\Runtime\windows\x64\UnityOpenXR.dll'
+C:\Users\Roduf Eleu\My project (1)\Assets\XR\APILayers~\WindowsLayers\x64\XrApiLayer_METAX_operator.dll:XrApiLayer_METAX_operator.dll (00007FFC605C0000), size: 7430144 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Assets\XR\APILayers~\WindowsLayers\x64\XrApiLayer_METAX_operator.dll'
+C:\WINDOWS\system32\nvapi64.dll:nvapi64.dll (00007FFCEA410000), size: 8003584 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\nvapi64.dll', fileVersion: 31.0.15.4618
+C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.meta.xr.sdk.interaction@b67d311217e9\Runtime\Plugins\Win64\InteractionSdk.dll:InteractionSdk.dll (00007FFC70680000), size: 565248 (result: 0), SymType: '-exported-', PDB: 'C:\Users\Roduf Eleu\My project (1)\Library\PackageCache\com.meta.xr.sdk.interaction@b67d311217e9\Runtime\Plugins\Win64\InteractionSdk.dll'
+  ERROR: SymGetSymFromAddr64, GetLastError: 'Attempt to access invalid address.' (Address: 00007FFCE0FF33F3)
+0x00007FFCE0FF33F3 (AppUINativePlugin) (function-name not available)
+0x00007FFCE3DBCED8 (COMCTL32) DefSubclassProc
+0x00007FFCE3DBCCAF (COMCTL32) GetWindowSubclass
+0x00007FFCFDCC52E6 (USER32) CallWindowProcW
+0x00007FFCFDCC5DBD (USER32) IsWindowUnicode
+0x00007FFC3158F938 (Unity) uds_set_stub_implementation
+0x00007FFC315986D1 (Unity) UnityMain
+  ERROR: SymGetSymFromAddr64, GetLastError: 'Attempt to access invalid address.' (Address: 00007FF6FA4F2F2A)
+0x00007FF6FA4F2F2A (Unity) (function-name not available)
+0x00007FFCFDB3DDA7 (KERNEL32) BaseThreadInitThunk
+0x00007FFCFE3FEE4C (ntdll) RtlUserThreadStart
+
+========== END OF STACKTRACE ===========
+
+A crash has been intercepted by the crash handler. For call stack and other details, see the latest crash report generated in:
+ * C:/Users/RODUFE~1/AppData/Local/Temp/Unity/Editor/Crashes

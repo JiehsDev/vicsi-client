@@ -1,0 +1,1632 @@
+[
+  {
+    "id": "A-01",
+    "section": "Student VR Training",
+    "description": "Start a training session.",
+    "status": "Partial",
+    "source": "UI/UIManager.cs: OnStartPressed; Assets/_Project/Scenes/Main.unity; Logging/SessionLogger.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Player/device acceptance not demonstrated",
+    "action": "Test actual scene controls and outcome on Quest 3S"
+  },
+  {
+    "id": "A-02",
+    "section": "Student VR Training",
+    "description": "Enter the indoor house murder scenario.",
+    "status": "Partial",
+    "source": "Scenes/Scenarios/CSI_Environment.unity",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Player/device acceptance not demonstrated",
+    "action": "Test actual scene controls and outcome on Quest 3S"
+  },
+  {
+    "id": "A-03",
+    "section": "Student VR Training",
+    "description": "Move around the crime scene using Meta Quest 3S controls.",
+    "status": "Partial",
+    "source": "RoleSystem/LocomotionSuspender.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Player/device acceptance not demonstrated",
+    "action": "Test actual scene controls and outcome on Quest 3S"
+  },
+  {
+    "id": "A-04",
+    "section": "Student VR Training",
+    "description": "Grab and examine evidence objects.",
+    "status": "Partial",
+    "source": "Interaction/EvidenceGrabGate.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Player/device acceptance not demonstrated",
+    "action": "Test actual scene controls and outcome on Quest 3S"
+  },
+  {
+    "id": "A-05",
+    "section": "Student VR Training",
+    "description": "Use the tool wheel.",
+    "status": "Partial",
+    "source": "RoleSystem/ToolWheelController.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Player/device acceptance not demonstrated",
+    "action": "Test actual scene controls and outcome on Quest 3S"
+  },
+  {
+    "id": "A-06",
+    "section": "Student VR Training",
+    "description": "Photograph evidence.",
+    "status": "Partial",
+    "source": "Interaction/PhotographTool.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Player/device acceptance not demonstrated",
+    "action": "Test actual scene controls and outcome on Quest 3S"
+  },
+  {
+    "id": "A-07",
+    "section": "Student VR Training",
+    "description": "Place the correct evidence marker.",
+    "status": "Partial",
+    "source": "Interaction/EvidenceTentTool.cs; Interaction/LetterTentTool.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Player/device acceptance not demonstrated",
+    "action": "Test actual scene controls and outcome on Quest 3S"
+  },
+  {
+    "id": "A-08",
+    "section": "Student VR Training",
+    "description": "Chalk or trace evidence when applicable.",
+    "status": "Partial",
+    "source": "Interaction/ChalkMarkTool.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Player/device acceptance not demonstrated",
+    "action": "Test actual scene controls and outcome on Quest 3S"
+  },
+  {
+    "id": "A-09",
+    "section": "Student VR Training",
+    "description": "Record observations using prepared choices without free-text typing.",
+    "status": "Partial",
+    "source": "UI/RecorderReportUI.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Player/device acceptance not demonstrated",
+    "action": "Test actual scene controls and outcome on Quest 3S"
+  },
+  {
+    "id": "A-10",
+    "section": "Student VR Training",
+    "description": "Process physical objects.",
+    "status": "Partial",
+    "source": "CaseFile/EvidenceStateManager.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Legacy processing order/finding flags differ from approved specification; player acceptance unrun",
+    "action": "Migrate type-specific finding workflow and test complete sequence"
+  },
+  {
+    "id": "A-11",
+    "section": "Student VR Training",
+    "description": "Swab blood evidence.",
+    "status": "Partial",
+    "source": "Interaction/SwabTool.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Legacy processing order/finding flags differ from approved specification; player acceptance unrun",
+    "action": "Migrate type-specific finding workflow and test complete sequence"
+  },
+  {
+    "id": "A-12",
+    "section": "Student VR Training",
+    "description": "Apply fingerprint powder.",
+    "status": "Partial",
+    "source": "Interaction/FingerprintKitTool.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Legacy processing order/finding flags differ from approved specification; player acceptance unrun",
+    "action": "Migrate type-specific finding workflow and test complete sequence"
+  },
+  {
+    "id": "A-13",
+    "section": "Student VR Training",
+    "description": "Use the fingerprint brush.",
+    "status": "Partial",
+    "source": "Interaction/BrushTipReceiver.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Legacy processing order/finding flags differ from approved specification; player acceptance unrun",
+    "action": "Migrate type-specific finding workflow and test complete sequence"
+  },
+  {
+    "id": "A-14",
+    "section": "Student VR Training",
+    "description": "Reveal a fingerprint.",
+    "status": "Partial",
+    "source": "Interaction/UVRevealable.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Legacy processing order/finding flags differ from approved specification; player acceptance unrun",
+    "action": "Migrate type-specific finding workflow and test complete sequence"
+  },
+  {
+    "id": "A-15",
+    "section": "Student VR Training",
+    "description": "Lift the fingerprint using fingerprint tape.",
+    "status": "Partial",
+    "source": "Interaction/FingerprintTapeTool.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Legacy processing order/finding flags differ from approved specification; player acceptance unrun",
+    "action": "Migrate type-specific finding workflow and test complete sequence"
+  },
+  {
+    "id": "A-16",
+    "section": "Student VR Training",
+    "description": "Record and secure the lifted fingerprint.",
+    "status": "Partial",
+    "source": "Interaction/FingerprintStationTool.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Legacy processing order/finding flags differ from approved specification; player acceptance unrun",
+    "action": "Migrate type-specific finding workflow and test complete sequence"
+  },
+  {
+    "id": "A-17",
+    "section": "Student VR Training",
+    "description": "Collect physical evidence using the correct evidence bag.",
+    "status": "Partial",
+    "source": "Interaction/EvidenceBagTool.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Legacy processing order/finding flags differ from approved specification; player acceptance unrun",
+    "action": "Migrate type-specific finding workflow and test complete sequence"
+  },
+  {
+    "id": "A-18",
+    "section": "Student VR Training",
+    "description": "Label and seal collected evidence.",
+    "status": "Partial",
+    "source": "Interaction/EvidenceBagReceiver.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Legacy processing order/finding flags differ from approved specification; player acceptance unrun",
+    "action": "Migrate type-specific finding workflow and test complete sequence"
+  },
+  {
+    "id": "A-19",
+    "section": "Student VR Training",
+    "description": "Receive visual, audio, or haptic feedback.",
+    "status": "Partial",
+    "source": "Feedback/InteractionFeedback.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Player/device acceptance not demonstrated",
+    "action": "Test actual scene controls and outcome on Quest 3S"
+  },
+  {
+    "id": "A-20",
+    "section": "Student VR Training",
+    "description": "Use the deduction board.",
+    "status": "Missing",
+    "source": "Deduction/EvidenceBoardController.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Controller code exists but no board component in active scene",
+    "action": "Author and wire board UI and relationship nodes"
+  },
+  {
+    "id": "A-21",
+    "section": "Student VR Training",
+    "description": "Complete an evidence-based conclusion.",
+    "status": "Partial",
+    "source": "Ending/EndingManager.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Separate suspect picker determines submitted conclusion",
+    "action": "Resolve conclusion from completed evidence relationships"
+  },
+  {
+    "id": "A-22",
+    "section": "Student VR Training",
+    "description": "View the session result, score, grade, errors, completion time, and evidence completion.",
+    "status": "Partial",
+    "source": "Deduction/CompletionScreenUI.cs",
+    "tests": "Source inspection only; acceptance unrun",
+    "problem": "Ending text exists; complete assessed result interface absent",
+    "action": "Implement configured scoring, grade, errors, duration and completion view"
+  },
+  {
+    "id": "B-01",
+    "section": "Evidence Procedure Rules",
+    "description": "Photograph the evidence.",
+    "status": "Partial",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: 28/28 component checks; approved full procedure order acceptance unrun",
+    "problem": "Legacy sequence or tool-only validation does not prove approved rule",
+    "action": "Enforce rule at state boundary and cover valid, duplicate and invalid transitions"
+  },
+  {
+    "id": "B-02",
+    "section": "Evidence Procedure Rules",
+    "description": "Place the correct evidence marker.",
+    "status": "Partial",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: 28/28 component checks; approved full procedure order acceptance unrun",
+    "problem": "Legacy sequence or tool-only validation does not prove approved rule",
+    "action": "Enforce rule at state boundary and cover valid, duplicate and invalid transitions"
+  },
+  {
+    "id": "B-03",
+    "section": "Evidence Procedure Rules",
+    "description": "Chalk or trace the item when applicable.",
+    "status": "Partial",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: 28/28 component checks; approved full procedure order acceptance unrun",
+    "problem": "Legacy sequence or tool-only validation does not prove approved rule",
+    "action": "Enforce rule at state boundary and cover valid, duplicate and invalid transitions"
+  },
+  {
+    "id": "B-04",
+    "section": "Evidence Procedure Rules",
+    "description": "Record the evidence or select the appropriate prepared note.",
+    "status": "Partial",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: 28/28 component checks; approved full procedure order acceptance unrun",
+    "problem": "Legacy sequence or tool-only validation does not prove approved rule",
+    "action": "Enforce rule at state boundary and cover valid, duplicate and invalid transitions"
+  },
+  {
+    "id": "B-05",
+    "section": "Evidence Procedure Rules",
+    "description": "Perform the required type-specific procedure.",
+    "status": "Partial",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: 28/28 component checks; approved full procedure order acceptance unrun",
+    "problem": "Legacy sequence or tool-only validation does not prove approved rule",
+    "action": "Enforce rule at state boundary and cover valid, duplicate and invalid transitions"
+  },
+  {
+    "id": "B-06",
+    "section": "Evidence Procedure Rules",
+    "description": "Collect, package, label, and seal the evidence when applicable.",
+    "status": "Partial",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: 28/28 component checks; approved full procedure order acceptance unrun",
+    "problem": "Legacy sequence or tool-only validation does not prove approved rule",
+    "action": "Enforce rule at state boundary and cover valid, duplicate and invalid transitions"
+  },
+  {
+    "id": "B-07",
+    "section": "Evidence Procedure Rules",
+    "description": "Ordinary evidence uses numbered evidence tents.",
+    "status": "Implemented",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: ordinary letter rejected, positive number applied, zero/negative/reused numbers rejected",
+    "problem": "Numbered marker invariant verified at mutation boundary; Quest placement acceptance remains separate",
+    "action": "Preserve regression coverage; execute remaining integrated/device acceptance cases"
+  },
+  {
+    "id": "B-08",
+    "section": "Evidence Procedure Rules",
+    "description": "The body uses a lettered marker.",
+    "status": "Implemented",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: numbered/blank/numeric body labels rejected, A applied, duplicate safe; StoryContentTest documents actual BODY-A with letter A",
+    "problem": "Letter marker invariant verified; physical controller acceptance remains separate",
+    "action": "Preserve regression coverage; execute remaining integrated/device acceptance cases"
+  },
+  {
+    "id": "B-09",
+    "section": "Evidence Procedure Rules",
+    "description": "The body must not be collected as ordinary evidence.",
+    "status": "Implemented",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: body remains Logged; readiness, collection and sealing rejected",
+    "problem": "Body non-collection invariant verified at state/query boundary",
+    "action": "Preserve regression coverage; execute remaining integrated/device acceptance cases"
+  },
+  {
+    "id": "B-10",
+    "section": "Evidence Procedure Rules",
+    "description": "Blood must be swabbed and placed in a proper container.",
+    "status": "Partial",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: 28/28 component checks; approved full procedure order acceptance unrun",
+    "problem": "Legacy sequence or tool-only validation does not prove approved rule",
+    "action": "Enforce rule at state boundary and cover valid, duplicate and invalid transitions"
+  },
+  {
+    "id": "B-11",
+    "section": "Evidence Procedure Rules",
+    "description": "Fingerprints must be powdered, brushed, revealed, lifted, recorded, and secured.",
+    "status": "Partial",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: 28/28 component checks; approved full procedure order acceptance unrun",
+    "problem": "Legacy sequence or tool-only validation does not prove approved rule",
+    "action": "Enforce rule at state boundary and cover valid, duplicate and invalid transitions"
+  },
+  {
+    "id": "B-12",
+    "section": "Evidence Procedure Rules",
+    "description": "Fingerprint work on a physical object must happen before the object is bagged and sealed.",
+    "status": "Partial",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: 28/28 component checks; approved full procedure order acceptance unrun",
+    "problem": "Lab stub and post-seal fingerprint workflow remain",
+    "action": "Separate field procedure from authored analytical results and enforce before packaging"
+  },
+  {
+    "id": "B-13",
+    "section": "Evidence Procedure Rules",
+    "description": "Fingerprint collection does not include laboratory processing.",
+    "status": "Partial",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: 28/28 component checks; approved full procedure order acceptance unrun",
+    "problem": "Lab stub and post-seal fingerprint workflow remain",
+    "action": "Separate field procedure from authored analytical results and enforce before packaging"
+  },
+  {
+    "id": "B-14",
+    "section": "Evidence Procedure Rules",
+    "description": "A blood trace or fingerprint found on another object must be treated as a separate evidence finding.",
+    "status": "Partial",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: 28/28 component checks; approved full procedure order acceptance unrun",
+    "problem": "Findings are parent flags, without separate identity/marker",
+    "action": "Add finding records and unambiguous targeting; migrate scene and answer key"
+  },
+  {
+    "id": "B-15",
+    "section": "Evidence Procedure Rules",
+    "description": "Blood found on the knife must have its own evidence record and marker.",
+    "status": "Partial",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: 28/28 component checks; approved full procedure order acceptance unrun",
+    "problem": "Findings are parent flags, without separate identity/marker",
+    "action": "Add finding records and unambiguous targeting; migrate scene and answer key"
+  },
+  {
+    "id": "B-16",
+    "section": "Evidence Procedure Rules",
+    "description": "Invalid actions must be blocked.",
+    "status": "Partial",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: 28/28 component checks; approved full procedure order acceptance unrun",
+    "problem": "Legacy sequence or tool-only validation does not prove approved rule",
+    "action": "Enforce rule at state boundary and cover valid, duplicate and invalid transitions"
+  },
+  {
+    "id": "B-17",
+    "section": "Evidence Procedure Rules",
+    "description": "The system must explain why the action was blocked.",
+    "status": "Partial",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: 28/28 component checks; approved full procedure order acceptance unrun",
+    "problem": "Legacy sequence or tool-only validation does not prove approved rule",
+    "action": "Enforce rule at state boundary and cover valid, duplicate and invalid transitions"
+  },
+  {
+    "id": "B-18",
+    "section": "Evidence Procedure Rules",
+    "description": "The system must log procedural violations.",
+    "status": "Partial",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: 28/28 component checks; approved full procedure order acceptance unrun",
+    "problem": "Legacy sequence or tool-only validation does not prove approved rule",
+    "action": "Enforce rule at state boundary and cover valid, duplicate and invalid transitions"
+  },
+  {
+    "id": "B-19",
+    "section": "Evidence Procedure Rules",
+    "description": "Duplicate actions and attempts to skip prerequisites must be handled safely.",
+    "status": "Partial",
+    "source": "CaseFile/EvidenceStateManager.cs; ProceduralGate/ProceduralGateValidator.cs",
+    "tests": "EvidenceBoundaryTest: 28/28 component checks; approved full procedure order acceptance unrun",
+    "problem": "Legacy sequence or tool-only validation does not prove approved rule",
+    "action": "Enforce rule at state boundary and cover valid, duplicate and invalid transitions"
+  },
+  {
+    "id": "C-01",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "Victim or BODY-A",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-02",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "Knife or EVD-014",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-03",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "Blood spatter or EVD-015",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-04",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "Phone or EVD-017",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-05",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "Bottle or EVD-018",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-06",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "Bloodied gloves or EVD-019",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-07",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "Fingerprint and blood findings related to the knife, gloves, and phone messages",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-08",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "The brother’s fingerprint on the knife must initially support the brother path.",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-09",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "The system must include the alternative explanation that the brother used the knife while preparing food.",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-10",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "The bottle and previous argument may support the misleading brother path.",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-11",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "Phone messages must support the wife’s affair-related motive.",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-12",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "The gloves must connect the wife’s fingerprint on the inside with the victim’s blood on the outside.",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-13",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "Blood-spatter or scene information must be capable of contradicting the wife’s statement.",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-14",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "The wife path is the complete and correct conclusion.",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-15",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "The brother path is incorrect or incomplete.",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-16",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "An insufficient-evidence conclusion must be available.",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-17",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "A premature conclusion may be included when the required evidence threshold is not reached.",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-18",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "The student must not manually select a suspect from a separate suspect-selection screen.",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "EndingManager explicitly displays wife/brother/inconclusive picker",
+    "action": "Remove suspect-selection screen; derive result from submitted relationships"
+  },
+  {
+    "id": "C-19",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "The conclusion must be determined by the evidence relationships completed by the student.",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-20",
+    "section": "Murder Scenario and Deduction Logic",
+    "description": "Evidence collection must unlock the appropriate conclusion paths.",
+    "status": "Partial",
+    "source": "Data/Evidence/; Data/Relationships/; Data/Ending/Endings_CSI_Environment.asset; Scripts/Ending/EndingManager.cs",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Authored narrative/state logic exists; board unavailable and conclusion uses picker",
+    "action": "Wire relationship-driven deduction and run wife/brother/insufficient player paths"
+  },
+  {
+    "id": "C-21",
+    "section": "C",
+    "description": "Verify and implement one indoor house murder scenario.",
+    "status": "Partial",
+    "source": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+    "tests": "StoryContentTest: 33/33 checks plus legacy Greybox flow PASS; direct state/picker tests, not board/device acceptance",
+    "problem": "Scene and content exist; complete approved player path and device acceptance outstanding",
+    "action": "Migrate the evidence workflow and verify the complete indoor scenario on Quest 3S"
+  },
+  {
+    "id": "D-01",
+    "section": "Assessment and Local Logging",
+    "description": "Session ID",
+    "status": "Implemented",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest: persisted events carry consistent generated session ID and sequence",
+    "problem": "Local session ID persistence verified; authenticated upload remains separate",
+    "action": "Preserve regression coverage; execute remaining integrated/device acceptance cases"
+  },
+  {
+    "id": "D-02",
+    "section": "Assessment and Local Logging",
+    "description": "Student ID when authentication is available",
+    "status": "Missing",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "No verified persistence/assessment implementation for this field",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-03",
+    "section": "Assessment and Local Logging",
+    "description": "Scenario ID",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-04",
+    "section": "Assessment and Local Logging",
+    "description": "Attempt number",
+    "status": "Missing",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "No verified persistence/assessment implementation for this field",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-05",
+    "section": "Assessment and Local Logging",
+    "description": "Session start and completion time",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "UTC startedAtUtc/endedAtUtc now persisted; training-completed versus interruption status remains undefined",
+    "action": "Record explicit training completion and interruption metadata in versioned session contract"
+  },
+  {
+    "id": "D-06",
+    "section": "Assessment and Local Logging",
+    "description": "Evidence discovered",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-07",
+    "section": "Assessment and Local Logging",
+    "description": "Evidence photographed",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-08",
+    "section": "Assessment and Local Logging",
+    "description": "Markers used",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-09",
+    "section": "Assessment and Local Logging",
+    "description": "Notes selected",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-10",
+    "section": "Assessment and Local Logging",
+    "description": "Procedures attempted",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-11",
+    "section": "Assessment and Local Logging",
+    "description": "Correct procedures",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-12",
+    "section": "Assessment and Local Logging",
+    "description": "Invalid actions",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-13",
+    "section": "Assessment and Local Logging",
+    "description": "Blocked actions",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-14",
+    "section": "Assessment and Local Logging",
+    "description": "Evidence collected",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-15",
+    "section": "Assessment and Local Logging",
+    "description": "Missing evidence",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-16",
+    "section": "Assessment and Local Logging",
+    "description": "Duplicate actions",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-17",
+    "section": "Assessment and Local Logging",
+    "description": "Deduction relationships",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-18",
+    "section": "Assessment and Local Logging",
+    "description": "Conclusion path",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-19",
+    "section": "Assessment and Local Logging",
+    "description": "Score",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment; ground-truth export omits authored phone-message-affair and deliberately excludes body notes",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment; regenerate export and model body documentation assessment"
+  },
+  {
+    "id": "D-20",
+    "section": "Assessment and Local Logging",
+    "description": "Grade",
+    "status": "Missing",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "No verified persistence/assessment implementation for this field",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-21",
+    "section": "Assessment and Local Logging",
+    "description": "Completion status",
+    "status": "Missing",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "No verified persistence/assessment implementation for this field",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-22",
+    "section": "Assessment and Local Logging",
+    "description": "Evidence accuracy",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment; ground-truth export omits authored phone-message-affair and deliberately excludes body notes",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment; regenerate export and model body documentation assessment"
+  },
+  {
+    "id": "D-23",
+    "section": "Assessment and Local Logging",
+    "description": "Evidence completeness",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-24",
+    "section": "Assessment and Local Logging",
+    "description": "Procedural compliance",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-25",
+    "section": "Assessment and Local Logging",
+    "description": "Procedural errors",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-26",
+    "section": "Assessment and Local Logging",
+    "description": "Completion time",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-27",
+    "section": "Assessment and Local Logging",
+    "description": "Deduction relationships",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-28",
+    "section": "Assessment and Local Logging",
+    "description": "Final conclusion",
+    "status": "Partial",
+    "source": "Scripts/Logging/SessionLogger.cs; Scripts/Logging/SessionEvent.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Partial event/metric coverage; no complete approved assessment",
+    "action": "Add required metadata/outcome coverage and reproducible configurable assessment"
+  },
+  {
+    "id": "D-29",
+    "section": "D",
+    "description": "Unapproved final scoring weights remain configurable and explicitly require stakeholder approval.",
+    "status": "Partial",
+    "source": "Assets/_Project/Scripts/Deduction/DeductionScorer.cs; Tools/EvidenceScorer/Program.cs",
+    "tests": "SessionPersistenceTest 12/12; CLI metric fixtures 6/6; full assessment/auth/upload acceptance unrun",
+    "problem": "Legacy deduction weights .5/.3/.2 are hardcoded; no approved complete grading policy",
+    "action": "Introduce versioned configurable assessment policy; do not present provisional values as official"
+  },
+  {
+    "id": "E-01",
+    "section": "Node.js API",
+    "description": "Authentication support",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-02",
+    "section": "Node.js API",
+    "description": "Student profiles",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-03",
+    "section": "Node.js API",
+    "description": "Instructor profiles",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-04",
+    "section": "Node.js API",
+    "description": "Administrator profiles",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-05",
+    "section": "Node.js API",
+    "description": "Classes",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-06",
+    "section": "Node.js API",
+    "description": "Enrollments",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-07",
+    "section": "Node.js API",
+    "description": "Scenarios",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-08",
+    "section": "Node.js API",
+    "description": "Training sessions",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-09",
+    "section": "Node.js API",
+    "description": "Evidence interactions",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-10",
+    "section": "Node.js API",
+    "description": "Procedure errors",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-11",
+    "section": "Node.js API",
+    "description": "Scores and grades",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-12",
+    "section": "Node.js API",
+    "description": "Attempt history",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-13",
+    "section": "Node.js API",
+    "description": "Forensic analytics",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-14",
+    "section": "Node.js API",
+    "description": "Archived or invalid sessions",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-15",
+    "section": "Node.js API",
+    "description": "Validate all incoming session data.",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-16",
+    "section": "Node.js API",
+    "description": "Reject incomplete or manipulated session records.",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-17",
+    "section": "Node.js API",
+    "description": "Prevent duplicate session uploads through idempotency controls.",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-18",
+    "section": "Node.js API",
+    "description": "Verify score-related data on the server.",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-19",
+    "section": "Node.js API",
+    "description": "Support retrying uploads without creating duplicate records.",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-20",
+    "section": "Node.js API",
+    "description": "Use environment variables for credentials.",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-21",
+    "section": "Node.js API",
+    "description": "Never commit secrets.",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "E-22",
+    "section": "Node.js API",
+    "description": "Add request validation, authorization, logging, and safe error handling.",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Node API absent",
+    "action": "Implement authenticated validated API after stable session/schema contracts; add authorization/idempotency tests"
+  },
+  {
+    "id": "F-01",
+    "section": "Supabase",
+    "description": "Authentication",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-02",
+    "section": "Supabase",
+    "description": "User profiles",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-03",
+    "section": "Supabase",
+    "description": "User roles",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-04",
+    "section": "Supabase",
+    "description": "Classes",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-05",
+    "section": "Supabase",
+    "description": "Enrollments",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-06",
+    "section": "Supabase",
+    "description": "Scenarios",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-07",
+    "section": "Supabase",
+    "description": "Sessions",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-08",
+    "section": "Supabase",
+    "description": "Evidence events",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-09",
+    "section": "Supabase",
+    "description": "Procedure errors",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-10",
+    "section": "Supabase",
+    "description": "Scores",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-11",
+    "section": "Supabase",
+    "description": "Grades",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-12",
+    "section": "Supabase",
+    "description": "Attempt history",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-13",
+    "section": "Supabase",
+    "description": "Analytics data",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-14",
+    "section": "Supabase",
+    "description": "Archived or invalid sessions",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-15",
+    "section": "Supabase",
+    "description": "Students may only access their own profile, sessions, and grades.",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-16",
+    "section": "Supabase",
+    "description": "Instructors may only access students and sessions in their assigned classes.",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-17",
+    "section": "Supabase",
+    "description": "Administrators may manage authorized system records.",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-18",
+    "section": "Supabase",
+    "description": "Unauthorized users must not access another user’s records.",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-19",
+    "section": "Supabase",
+    "description": "Administrative service credentials must never be exposed to the browser or Unity client.",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Supabase migrations and RLS absent; remote state unverified",
+    "action": "Create constraints, indexes and role-scoped RLS migrations; execute local and deployed database tests"
+  },
+  {
+    "id": "F-20",
+    "section": "F",
+    "description": "Create migrations, indexes, foreign keys, validation constraints and Row-Level Security policies.",
+    "status": "Missing",
+    "source": "Repository inventory",
+    "tests": "Acceptance unrun",
+    "problem": "No Supabase migrations or policies found",
+    "action": "Author and execute schema and role-matrix tests after stable data contract"
+  },
+  {
+    "id": "G-01",
+    "section": "Next.js Dashboards",
+    "description": "Secure login",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-02",
+    "section": "Next.js Dashboards",
+    "description": "Student home page",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-03",
+    "section": "Next.js Dashboards",
+    "description": "Own session list",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-04",
+    "section": "Next.js Dashboards",
+    "description": "Grade for each session",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-05",
+    "section": "Next.js Dashboards",
+    "description": "Session details",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-06",
+    "section": "Next.js Dashboards",
+    "description": "Evidence completion",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-07",
+    "section": "Next.js Dashboards",
+    "description": "Procedural errors",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-08",
+    "section": "Next.js Dashboards",
+    "description": "Completion time",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-09",
+    "section": "Next.js Dashboards",
+    "description": "Attempt history",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-10",
+    "section": "Next.js Dashboards",
+    "description": "Conclusion result",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-11",
+    "section": "Next.js Dashboards",
+    "description": "Secure login",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-12",
+    "section": "Next.js Dashboards",
+    "description": "Assigned classes",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-13",
+    "section": "Next.js Dashboards",
+    "description": "Students within assigned classes",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-14",
+    "section": "Next.js Dashboards",
+    "description": "Sessions grouped by student and session ID",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-15",
+    "section": "Next.js Dashboards",
+    "description": "Session timeline",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-16",
+    "section": "Next.js Dashboards",
+    "description": "Scores and grades",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-17",
+    "section": "Next.js Dashboards",
+    "description": "Evidence completion",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-18",
+    "section": "Next.js Dashboards",
+    "description": "Procedural errors",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-19",
+    "section": "Next.js Dashboards",
+    "description": "Completion time",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-20",
+    "section": "Next.js Dashboards",
+    "description": "Attempt history",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-21",
+    "section": "Next.js Dashboards",
+    "description": "Forensic analytics",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-22",
+    "section": "Next.js Dashboards",
+    "description": "Account and role management",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-23",
+    "section": "Next.js Dashboards",
+    "description": "Class management",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-24",
+    "section": "Next.js Dashboards",
+    "description": "Enrollment management",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-25",
+    "section": "Next.js Dashboards",
+    "description": "Scenario management",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-26",
+    "section": "Next.js Dashboards",
+    "description": "Session and score management",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-27",
+    "section": "Next.js Dashboards",
+    "description": "Permission management",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-28",
+    "section": "Next.js Dashboards",
+    "description": "Archive or invalidate sessions",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-29",
+    "section": "Next.js Dashboards",
+    "description": "View system records",
+    "status": "Missing",
+    "source": "Repository inventory: no relevant application manifest, route or migration",
+    "tests": "No executable implementation found; acceptance unrun",
+    "problem": "Next.js application and role dashboards absent",
+    "action": "Implement role dashboard against secured API; test own-record/class/admin access"
+  },
+  {
+    "id": "G-30",
+    "section": "G",
+    "description": "Clearly label unfinished dashboard components and remove placeholder data before completion.",
+    "status": "Missing",
+    "source": "Repository inventory",
+    "tests": "Acceptance unrun",
+    "problem": "No dashboard application found",
+    "action": "Build real role dashboards; explicitly label incomplete development UI and verify production has no placeholder data"
+  }
+]

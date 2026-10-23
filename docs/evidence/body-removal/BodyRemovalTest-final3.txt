@@ -1,0 +1,34 @@
+=== BodyRemovalTest ===
+  PASS: Persisted body action and SDK fade are wired
+  PASS: Idle SDK fade mesh is disabled and cannot cover normal gameplay
+  PASS: BODY-A retains chalk and has no swab, bag or grab requirement
+  PASS: Early removal refuses and existing guidance explains required documentation
+  PASS: Early removal does not complete closeout or hide body
+  PASS: BODY-A requires measurements before Recorder and findings before final photo
+  PASS: Recorder becomes available after body measurements
+  PASS: Existing Recorder report opens before the final body photograph
+  PASS: Body report requires the visible wound finding as well as position/location
+  PASS: Confirmed body findings precede final photo without faking the photograph
+  PASS: Final photo completes body documentation and enables removal
+  PASS: Documented body still blocks closeout
+    Before request: head=(-3.00, 1.70, 13.50) body=(-3.00, 0.23, 12.80) gates= equipped=None fade=BodyRemovalScreenFade (OVRScreenFade) reason=
+  PASS: Actual confirmation panel opens and protects against opening-A leakage
+  PASS: Ray confirmation starts the real transition
+  PASS: Full-black transition holds interaction locks and records body removal
+  PASS: Body renderer/collider hidden while outline and evidence identity remain
+  PASS: Notes retain original body findings and add transport/removal
+  PASS: Body preparation/removal are each logged once as procedural events
+  PASS: Training message remains in existing dialogue history
+  PASS: Closeout and procedure map now recognize removal
+  PASS: Fade and all owned interaction locks restore without errors
+  PASS: Removal changes no deduction inputs or numerical components
+  PASS: Knife, spatter and bottle states are untouched by removal
+  PASS: Duplicate removal cannot replay or double-log
+  PASS: Persisted session history retains body removal with explicit non-scored payload
+  PASS: Removal analytics survive disabled/capped raw uploads and retain evidence results
+    Fresh: removal=NotPrepared report=False visual=True collider=False
+  PASS: Fresh session restores body visibility, documentation and removal state
+  PASS: Interrupted-transition fixture opens confirmation
+  PASS: Interrupted-transition fixture starts fade
+  PASS: Disabling during fade restores view/UI/canvases without committing removal
+=== ALL PASS ===

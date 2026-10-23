@@ -1,0 +1,26 @@
+=== UIWorkflowRefreshTest ===
+PASS: Empty gallery explains how to take photographs
+PASS: Scene route can be completed before evidence UI checks
+PASS: Original-photo instruction excludes the ruler
+PASS: Final-photo checklist explains the ruler and its controls
+PASS: Actual swab can recover the trace
+PASS: Actual containment leaves drying as the next action
+PASS: Drying starts through the real station
+PASS: Checklist reports drying progress without completing packaging
+PASS: Dried swab requires explicit paper-package retrieval
+PASS: Retrieving the paper package advances only to sealing
+PASS: Sealing still requires B storage
+PASS: Explicit storage advances to fingerprint work
+PASS: Other evidence receives no preparation credit
+PASS: Scene capture records keep their route identity
+PASS: Album opens without a second modal owner
+PASS: Photo metadata retains subject, stage and UTC capture time
+PASS: Gallery identifies the original photograph
+PASS: Large view preserves 4:3 with letterboxing
+PASS: Actual XR up zooms without changing photograph
+PASS: Actual left XR stick pans and stays inside the photo bounds
+PASS: Browsing resets zoom and identifies the next photo
+PASS: Selected photo caption fits without ellipsis
+PASS: Album controls fits without ellipsis
+PASS: Closing album releases modal ownership
+=== PASS ===

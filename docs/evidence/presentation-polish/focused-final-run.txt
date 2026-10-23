@@ -1,0 +1,5 @@
+FR physical interaction=True
+FR dialogue faces player=True
+FR Form1 and entrance=True
+Reposition preserves rig height and tracking offsets=True
+IOC visible in SOCOTurnover=True

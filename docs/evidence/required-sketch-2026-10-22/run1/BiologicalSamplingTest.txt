@@ -1,0 +1,76 @@
+=== BiologicalSamplingTest ===
+  PASS: [training] team-role concept scheduled at SOCO investigation start
+  PASS: [container] clean kit refuses insertion and has no held completed container
+  PASS: [data] knife: swab before fingerprinting
+  PASS: [data] spatter: on-scene sample that is its collection
+  PASS: [data] bottle and body: no swab requirement
+  PASS: [scene] overall scene photography completed before evidence work
+  PASS: [training] completed photo route schedules photography context
+  PASS: [EVD-014] measured item placed in Scene Sketch
+  PASS: [EVD-014] documentation follows the item-specific photograph and measurement order
+  PASS: [training] knife documentation schedules marker, trace source and measurement concepts
+  PASS: [knife wrong order] powder refused before the blood sample: print not dusted, not fingerprinted
+  PASS: [knife wrong order] reason 'Collect the blood sample before applying fingerprint powder.'
+  PASS: [knife wrong order] logged once as a blocked action (not per frame)
+  PASS: [knife wrong order] the authoritative fingerprint step refuses too
+  PASS: [knife wrong order] no ProcedureOutOfOrder added for a blocked action
+  PASS: [knife] swab the blade trace
+  PASS: [EVD-014] loose swab carries this source and displays its blood-bearing tip
+  PASS: [training] touching blood alone does not schedule containment lesson
+  PASS: [knife] sample into the container
+  PASS: [training] successful source-specific containment schedules biological sampling lesson
+  PASS: [knife] insertion holds completed model, hides loose swab, retains source and does not store/seal automatically
+  PASS: [knife] protected preparation completed
+  PASS: [knife] modal suppresses prompt and B storage
+  PASS: [knife] completed container offers contextual B storage
+  PASS: [knife] package retains the original sample meshes
+  PASS: [knife] sample has an individual paper wrapper and source label
+  PASS: [knife] B handler seals/stores sample, removes prompt and frees the hand
+  PASS: [knife] inventory has a source-specific sample name
+  PASS: [training] explicit B storage schedules custody lesson
+  PASS: [knife] fingerprint processing now allowed
+  PASS: [EVD-014] rest of the procedure through the real tools
+  PASS: [knife] print dusted, lifted and matched to Paul
+  PASS: [training] complete fingerprint lifting and physical packaging schedule their concepts
+  PASS: [EVD-015] measured item placed in Scene Sketch
+  PASS: [EVD-015] documentation follows the item-specific photograph and measurement order
+  PASS: [spatter wrong order] Recorder before the sample: refused, not logged
+  PASS: [gloves] real station replacement before a different source ()
+  PASS: [spatter] swab the pattern
+  PASS: [EVD-015] loose swab carries this source and displays its blood-bearing tip
+  PASS: [spatter] sample into the container
+  PASS: [training] second sample does not queue another biological lesson
+  PASS: [spatter] Recorder still refused until the container is sealed
+  PASS: [spatter] sample dried and individually packaged
+  PASS: [spatter] container sealed
+  PASS: [spatter] trigger sealing does not automatically store and both sample IDs remain independent
+  PASS: [spatter] protected preparation completed
+  PASS: [spatter] modal suppresses prompt and B storage
+  PASS: [spatter] completed container offers contextual B storage
+  PASS: [spatter] package retains the original sample meshes
+  PASS: [spatter] sample has an individual paper wrapper and source label
+  PASS: [spatter] B handler seals/stores sample, removes prompt and frees the hand
+  PASS: [spatter] inventory has a source-specific sample name
+  PASS: [spatter] Recorder now allowed
+  PASS: [spatter] the old swab-to-collect path is not offered (no second swab)
+  PASS: [EVD-015] rest of the procedure through the real tools
+  PASS: [spatter] sealed sample carried custody: Processed and in the inventory, one Collected / one Sealed event
+  PASS: [EVD-018] measured item placed in Scene Sketch
+  PASS: [EVD-018] documentation follows the item-specific photograph and measurement order
+  PASS: [bottle] no fingerprint gate from sampling
+  PASS: [EVD-018] rest of the procedure through the real tools
+  PASS: [bottle] Recorder -> collect -> bag -> seal -> lab print matched (Paul)
+  PASS: [BODY-A] measured item placed in Scene Sketch
+  PASS: [BODY-A] documentation follows the item-specific photograph and measurement order
+  PASS: [body] Recorder with no sample requirement; examined in place
+  PASS: [log] no ProcedureOutOfOrder in a correctly ordered session
+INFO: body removal remaining requirement=
+  PASS: [completion] actual body preparation can begin after documentation
+  PASS: [completion] body preparation requires a separate confirmation
+  PASS: [completion] documented body is removed and transition ownership is released
+  PASS: [completion] actual procedures leave no unfinished physical job
+  PASS: [completion] evidence-box review opens after the complete procedure
+  PASS: [completion] all six real packages transfer to the box
+  PASS: [reset] fresh scene clears both samples, loose swab and source flags; original evidence remains
+  PASS: [training reset] fresh scene owns an empty milestone history
+=== PASS, 0 failures ===

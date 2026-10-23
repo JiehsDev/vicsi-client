@@ -30,33 +30,31 @@ public class NotificationManager : MonoBehaviour
         }
     }
 
-    /// <summary>Shows a toast notification. durationSeconds overrides the UI's default hold time if given.</summary>
-    public static void Notify(string message, float? durationSeconds = null)
+    /// <summary>The lower panel: the tooltip channel (GameDialogue routes tooltips here) and ambient prompts.</summary>
+    public NotificationUI UI => notificationUI;
+
+    /// <summary>
+    /// Shows an already-composed message. Player-facing text belongs in
+    /// ViCSIDialogueCatalog - call GameDialogue.Say(id) instead. This remains for text
+    /// resolved through GameDialogue.Text (gate reasons), which keeps its catalog
+    /// channel/timing, and for scenario-authored data text that isn't catalog content.
+    /// </summary>
+    public static void Notify(string message, DialogueKind kind = DialogueKind.Guidance)
     {
-        if (Instance == null)
-        {
-            Debug.LogWarning($"[NotificationManager] No NotificationManager.Instance in scene; dropped notification: \"{message}\"");
-            return;
-        }
-
-        if (Instance.notificationUI == null)
-        {
-            Debug.LogWarning("[NotificationManager] No NotificationUI assigned.", Instance);
-            return;
-        }
-
-        Instance.notificationUI.Show(message, durationSeconds);
+        GameDialogue.ShowText(message, kind);
     }
 
     /// <summary>Shows a message that stays up until HidePrompt() is called - e.g. a "[X] Pick Up ..." prompt while the player is in range of something.</summary>
-    public static void ShowPrompt(string message)
+    public static void ShowPrompt(string message) => ShowPrompt(message, null);
+
+    public static void ShowPrompt(string message, Vector3? cameraOffset)
     {
         if (Instance == null || Instance.notificationUI == null)
         {
             return;
         }
 
-        Instance.notificationUI.ShowPrompt(message);
+        Instance.notificationUI.ShowPrompt(EvidenceDisplay.Text(message), cameraOffset);
     }
 
     /// <summary>Hides the current prompt shown via ShowPrompt(), if any.</summary>

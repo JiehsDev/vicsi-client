@@ -1,0 +1,16 @@
+{
+  "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+  "playing": false,
+  "compiling": false,
+  "compilationFailed": false,
+  "dirty": false,
+  "oldHouseActive": false,
+  "newHouseActive": true,
+  "layoutId": "new-house-v1",
+  "pending": false,
+  "xrRestore": false,
+  "nextSuite": "",
+  "requestPresent": false,
+  "standaloneXRInitializeOnStart": true,
+  "androidXRInitializeOnStart": true
+}

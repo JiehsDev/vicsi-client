@@ -87,7 +87,17 @@ public class PhotoCaptureListener : MonoBehaviour
 
     private void HandlePhotoCaptured()
     {
-        var pov = povCamera != null ? povCamera : Camera.main;
+        CapturePhotograph(photographTool.LastCaptureSubjectId, photographTool.LastCaptureSubjectName, photographTool.LastCaptureKind);
+    }
+
+    public void CaptureScenePhoto(ScenePhotoPoint point)
+    {
+        if(point!=null)CapturePhotograph(point.photoPointId,point.displayName,PhotoCaptureKind.Scene);
+    }
+
+    private void CapturePhotograph(string subjectId,string subjectName,PhotoCaptureKind kind)
+    {
+        var pov = photographTool != null ? photographTool.CapturePov : (povCamera != null ? povCamera : Camera.main);
         if (pov == null)
         {
             Debug.LogWarning($"[{nameof(PhotoCaptureListener)}] No POV camera assigned and Camera.main is null; photo not captured.", this);
@@ -104,11 +114,40 @@ public class PhotoCaptureListener : MonoBehaviour
             overlay.SetActive(false);
         }
 
-        var texture = CaptureFrame();
-
-        if (overlayWasActive)
+        Texture2D texture;
+        var guide = ScenePhotographyManager.Instance != null
+            ? ScenePhotographyManager.Instance.GetComponent<ScenePhotographyGuide>() : null;
+        var hiddenGuide = guide != null ? guide.HideForCapture() : null;
+        var hiddenEvidenceDots = EvidenceDiscoveryDot.HideForCapture();
+        var hiddenProcedureGuide = ProcedureDestinationGuide.HideForCapture();
+        var hiddenVendorPath = VendorPathGuide.HideForCapture();
+        var hiddenVendorHint = VendorWitnessInteraction.HideForCapture();
+        var hiddenGloveGuide = GloveStationGuide.HideForCapture();
+        var hiddenCustodyGuide = EvidenceBoxWaypoint.HideForCapture();
+        // Feedback is not scene evidence. Hide its rendering synchronously without
+        // disabling presenters, clearing messages or interrupting their countdowns.
+        var notificationGroup = NotificationManager.Instance?.UI?.GetComponent<CanvasGroup>();
+        var dialogueGroup = STCSNotificationUI.Instance?.GetComponent<CanvasGroup>();
+        float notificationAlpha = notificationGroup != null ? notificationGroup.alpha : 0;
+        float dialogueAlpha = dialogueGroup != null ? dialogueGroup.alpha : 0;
+        try
         {
-            overlay.SetActive(true);
+            if (notificationGroup != null) notificationGroup.alpha = 0;
+            if (dialogueGroup != null) dialogueGroup.alpha = 0;
+            texture = CaptureFrame();
+        }
+        finally
+        {
+            if (notificationGroup != null) notificationGroup.alpha = notificationAlpha;
+            if (dialogueGroup != null) dialogueGroup.alpha = dialogueAlpha;
+            hiddenCustodyGuide.Dispose();
+            hiddenProcedureGuide.Dispose();
+            hiddenGloveGuide.Dispose();
+            hiddenVendorPath.Dispose();
+            hiddenVendorHint.Dispose();
+            hiddenEvidenceDots.Dispose();
+            hiddenGuide?.Dispose();
+            if (overlayWasActive) overlay.SetActive(true);
         }
 
         if (PhotoAlbumManager.Instance == null)
@@ -117,7 +156,7 @@ public class PhotoCaptureListener : MonoBehaviour
             return;
         }
 
-        PhotoAlbumManager.Instance.AddPhoto(texture);
+        PhotoAlbumManager.Instance.AddPhoto(texture, subjectId, subjectName, kind);
     }
 
     // Built once and reused for every shot - a plain (non-XR) camera rigidly
@@ -145,6 +184,9 @@ public class PhotoCaptureListener : MonoBehaviour
     // PhotographTool animates between rest and zoomedFieldOfView while aiming.
     private void SyncCaptureCamera(Camera pov)
     {
+        captureCamera.transform.SetParent(pov.transform, false);
+        captureCamera.transform.localPosition = Vector3.zero;
+        captureCamera.transform.localRotation = Quaternion.identity;
         captureCamera.fieldOfView = pov.fieldOfView;
         captureCamera.nearClipPlane = pov.nearClipPlane;
         captureCamera.farClipPlane = pov.farClipPlane;
@@ -159,18 +201,20 @@ public class PhotoCaptureListener : MonoBehaviour
         // configured resolution) so the capture always matches whatever window
         // the player actually sees through the viewfinder, instead of a second
         // hardcoded aspect here silently drifting out of sync with it.
+        // Scaled close-ups need enough pixels to read the ruler's numbered graduations.
+        int height = photographTool != null && photographTool.LastCaptureUsedScale ? Mathf.Max(1080, captureHeight) : captureHeight;
         int width = viewfinderFrameMask != null
-            ? Mathf.Max(1, Mathf.RoundToInt(captureHeight * viewfinderFrameMask.Aspect))
-            : captureWidth;
+            ? Mathf.Max(1, Mathf.RoundToInt(height * viewfinderFrameMask.Aspect))
+            : Mathf.Max(1, Mathf.RoundToInt(height * ((float)captureWidth / captureHeight)));
 
-        var renderTexture = RenderTexture.GetTemporary(width, captureHeight, 24);
+        var renderTexture = RenderTexture.GetTemporary(width, height, 24);
 
         captureCamera.targetTexture = renderTexture;
         captureCamera.Render();
         RenderTexture.active = renderTexture;
 
-        var texture = new Texture2D(width, captureHeight, TextureFormat.RGB24, false);
-        texture.ReadPixels(new Rect(0f, 0f, width, captureHeight), 0, 0);
+        var texture = new Texture2D(width, height, TextureFormat.RGB24, false);
+        texture.ReadPixels(new Rect(0f, 0f, width, height), 0, 0);
         texture.Apply();
 
         captureCamera.targetTexture = null;

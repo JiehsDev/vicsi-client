@@ -1,0 +1,52 @@
+=== FingerprintComparisonTest ===
+PASS: One separate examination desk has monitor and labelled tray
+FAIL: Desk is near submission, away from supplies and drying
+PASS: Desk and standing approach are outside the controlled footprint
+PASS: Monitor does not intersect existing solid scene geometry
+PASS: No tutorial is offered before an explicitly stored lift
+PASS: EVD-014 uses the real dust/lift path
+PASS: Unstored lift cannot become a tutorial sample
+PASS: EVD-014 actual B explicitly stores the packaged lift
+PASS: Stored lift activates practice with its original source
+PASS: Shared waypoint guides from inside to comparison
+PASS: Comparison waypoint is hidden for evidence photography
+PASS: Player capsule reaches comparison route point (15.55, 1.20, 11.90) actual=(15.55, 1.20, 11.90)
+PASS: Player capsule reaches comparison route point (15.55, 1.20, 10.80) actual=(15.55, 1.20, 10.80)
+PASS: Player capsule reaches comparison route point (15.55, 1.20, 7.30) actual=(15.55, 1.20, 7.30)
+PASS: Player capsule reaches comparison route point (16.70, 1.20, 7.30) actual=(16.70, 1.20, 7.30)
+PASS: Player capsule reaches comparison route point (16.90, 1.20, 5.20) actual=(16.90, 1.20, 5.20)
+PASS: Player capsule reaches comparison route point (16.90, 0.03, 2.70) actual=(16.90, 0.01, 2.70)
+PASS: Player capsule reaches comparison route point (16.90, 0.03, 1.95) actual=(16.90, 0.00, 1.95)
+PASS: Player capsule reaches comparison route point (16.90, 0.03, 0.75) actual=(16.90, 0.00, 0.75)
+PASS: Player capsule reaches comparison route point (21.35, 0.03, 0.75) actual=(21.35, 0.00, 0.75)
+PASS: A distant station cannot open or mutate practice
+PASS: Held tools cannot open the desk
+PASS: Other modal owners block opening
+PASS: Actual A opens the source-labelled tutorial
+PASS: Held opening A cannot submit a guess
+PASS: Tutorial owns tool input and panel controls
+PASS: Actual controller ray click reveals two labelled feature hints
+PASS: Both prints independently zoom and rotate
+PASS: Monitor paper remains unobscured by other scene overlays
+PASS: Incorrect A guess explains a visible difference and remains open
+PASS: Thirty further wrong guesses have no lockout or timer
+PASS: Actual stick selects a different reference
+PASS: Correct A records tutorial completion and specialist verification guidance
+PASS: All practice text fits the native monitor
+PASS: Wrong and correct guesses preserve assessment score
+PASS: Tutorial leaves evidence identity, custody, case status and matches untouched
+PASS: Completion is recorded once without scoring
+PASS: Actual B closes and releases both input locks
+PASS: Completed source retires the destination
+PASS: Completed sample can be replayed
+PASS: Walking away closes without losing completion or custody
+PASS: EVD-018 uses the real dust/lift path
+PASS: Unstored lift cannot become a tutorial sample
+PASS: EVD-018 actual B explicitly stores the packaged lift
+PASS: New stored source starts an independent practice
+PASS: Next-sample control preserves the explicit source association
+PASS: Second source has a distinct correct reference and independent completion
+PASS: Modal interruption closes and preserves the other owner
+PASS: Disable releases practice UI ownership
+PASS: Scene reload resets practice completion, attempts and sample selection
+=== FAIL ===

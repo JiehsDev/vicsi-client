@@ -1,0 +1,2 @@
+System.InvalidOperationException: Staging standing clearance failed; saved scene untouched.
+  at HouseEntranceStagingSetup.Apply () [0x00430] in C:\Users\Roduf Eleu\My project (1)\Assets\_Project\Editor\HouseEntranceStagingSetup.cs:64 

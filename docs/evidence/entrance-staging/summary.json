@@ -1,0 +1,98 @@
+{
+  "results": [
+    {
+      "suite": "HouseEntranceStagingTest",
+      "attempt": "run2",
+      "passed": 32,
+      "failed": 0,
+      "exit_code": 0
+    },
+    {
+      "suite": "ArrivalEntryTest",
+      "attempt": "run3",
+      "passed": 29,
+      "failed": 0,
+      "exit_code": 0
+    },
+    {
+      "suite": "ArrivalPPETest",
+      "attempt": "run3",
+      "passed": 43,
+      "failed": 0,
+      "exit_code": 0
+    },
+    {
+      "suite": "SceneAccessRegisterTest",
+      "attempt": "run3",
+      "passed": 40,
+      "failed": 0,
+      "exit_code": 0
+    },
+    {
+      "suite": "GloveChangeStationTest",
+      "attempt": "run3",
+      "passed": 53,
+      "failed": 0,
+      "exit_code": 0
+    },
+    {
+      "suite": "FreshSwabSupplyTest",
+      "attempt": "run3",
+      "passed": 52,
+      "failed": 0,
+      "exit_code": 0
+    },
+    {
+      "suite": "SamplePreparationTest",
+      "attempt": "run3",
+      "passed": 46,
+      "failed": 0,
+      "exit_code": 0
+    },
+    {
+      "suite": "FingerprintComparisonTest",
+      "attempt": "run4",
+      "passed": 50,
+      "failed": 0,
+      "exit_code": 0
+    }
+  ],
+  "passed": 345,
+  "failed": 0,
+  "existing_baseline_files": 383,
+  "changed_existing_files": [
+    "Assets/_Project/Editor/Phase5PlayModeBatchRunner.cs",
+    "Assets/_Project/Scripts/Interaction/EvidenceBoxDepositZone.cs",
+    "Assets/_Project/Scripts/SceneTurnover/GloveStationGuide.cs",
+    "Assets/_Project/Scripts/SceneTurnover/SceneCordon.cs",
+    "Assets/_Project/Scripts/Testing/ArrivalEntryTest.cs",
+    "Assets/_Project/Scripts/Testing/ArrivalPPETest.cs",
+    "Assets/_Project/Scripts/Testing/FingerprintComparisonTest.cs",
+    "Assets/_Project/Scripts/Testing/SceneAccessRegisterTest.cs",
+    "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+    "Assets/Resources/GloveStationRoute_CSI.json"
+  ],
+  "unchanged_baseline_files": 373,
+  "changed_old_scene_blocks": [
+    "121411599",
+    "1311940559",
+    "1311940560",
+    "1479794820",
+    "1705414296",
+    "1775574804"
+  ],
+  "added_scene_blocks": [
+    "2010991617",
+    "2010991618",
+    "922855487",
+    "922855488"
+  ],
+  "removed_scene_blocks": [],
+  "scene_sha256": "e441ee08004b03baf5be2ce53598e8542c4318bbb45ff690cd29429d78cadd3d",
+  "notes": [
+    "Cordon at the house steps z=2.7; short entry strip to inner footprint z=3.0.",
+    "Work tables, box and approach routes inside property fence; captured previews inspected.",
+    "Initial authoring floor clearance, trigger-only crate fixture, preauthorized arrival fixture and old box-proximity assertion attempts are retained.",
+    "Physical headset reach, stereo comfort and performance remain manual."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "unityVersion": "6000.5.6f1",
+  "target": "Android",
+  "playing": false,
+  "playTransition": false,
+  "compiling": false,
+  "compilationFailed": false,
+  "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+  "sceneDirty": false,
+  "pending": false,
+  "xrRestorePending": false,
+  "standaloneXR": true,
+  "androidXR": true,
+  "notificationCanvases": 1
+}

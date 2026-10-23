@@ -1,0 +1,31 @@
+{
+    "suites":  [
+                   {
+                       "suite":  "BiologicalSamplingTest",
+                       "passed":  63,
+                       "failed":  0,
+                       "complete":  true
+                   },
+                   {
+                       "suite":  "CustodyPassTest",
+                       "passed":  50,
+                       "failed":  0,
+                       "complete":  true
+                   },
+                   {
+                       "suite":  "FreshSwabSupplyTest",
+                       "passed":  52,
+                       "failed":  0,
+                       "complete":  true
+                   },
+                   {
+                       "suite":  "SamplePreparationTest",
+                       "passed":  46,
+                       "failed":  0,
+                       "complete":  true
+                   }
+               ],
+    "passed":  211,
+    "failed":  0,
+    "sceneHash":  "E441EE08004B03BAF5BE2CE53598E8542C4318BBB45FF690CD29429D78CADD3D"
+}

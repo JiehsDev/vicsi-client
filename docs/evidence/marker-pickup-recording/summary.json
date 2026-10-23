@@ -1,0 +1,52 @@
+{
+  "feature": "Per-marker pickup after recording",
+  "date": "2026-10-17",
+  "rule": {
+    "unused": "Immediate pickup when this placement applied no mark",
+    "successful": "Pickup/hint only after linked evidence is Logged or later",
+    "bodyMarkerA": "Included, explicitly confirmed by user",
+    "timeDelaySeconds": null
+  },
+  "tests": [
+    {
+      "suite": "EvidenceTentPickupTest",
+      "passed": 21,
+      "failed": 0,
+      "report": "run2/EvidenceTentPickupTest.txt"
+    },
+    {
+      "suite": "EvidenceTraceMarkerTest",
+      "passed": 21,
+      "failed": 0,
+      "report": "run2/EvidenceTraceMarkerTest.txt"
+    },
+    {
+      "suite": "BodyRemovalTest",
+      "passed": 49,
+      "failed": 0,
+      "report": "run1/BodyRemovalTest.txt"
+    }
+  ],
+  "totalPassed": 91,
+  "totalFailed": 0,
+  "editor": {
+    "play": false,
+    "compiling": false,
+    "compilationFailed": false,
+    "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+    "dirty": false,
+    "pending": false,
+    "requestPending": false,
+    "xrRestorePending": false,
+    "standaloneXR": true,
+    "androidXR": true,
+    "pickupGuidance": "Record the evidence before picking up its marker."
+  },
+  "consoleCSharpErrors": 0,
+  "initialAttempts": "run1 numbered/trace fixtures omitted required on-scene fingerprints; gates correctly blocked recording. Corrected fixture reruns selected above.",
+  "manualEditorWiring": "None",
+  "manualAcceptance": "Physical Quest proximity/hint comfort",
+  "commit": false,
+  "push": false,
+  "deploy": false
+}

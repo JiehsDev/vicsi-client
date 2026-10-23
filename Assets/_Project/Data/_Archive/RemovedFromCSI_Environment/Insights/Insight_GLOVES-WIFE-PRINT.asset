@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49f6ed9415254f46a943d2777e3afb8, type: 3}
+  m_Name: Insight_GLOVES-WIFE-PRINT
+  m_EditorClassIdentifier: Assembly-CSharp::InsightDefinition
+  insightId: INSIGHT-GLOVES-WIFE-PRINT
+  displayName: Wife Associated with Gloves
+  description: A fingerprint associated with the wife was recovered from inside the
+    gloves. This suggests that she handled or wore them, but does not by itself establish
+    her role in the attack.
+  suggestedAction: 
+  unlockRequirement:
+    kind: 0
+    operatorType: 0
+    children: []
+    requirementType: 12
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: FIND-GLOVES-PRINT-WIFE
+    authoringNote: 
+  category: 
+  priority: 0
+  sourceFindingIds:
+  - FIND-GLOVES-PRINT-WIFE
+  references:
+    version: 2
+    RefIds: []

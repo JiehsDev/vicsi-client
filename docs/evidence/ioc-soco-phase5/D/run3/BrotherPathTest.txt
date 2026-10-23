@@ -1,0 +1,54 @@
+=== BrotherPathTest ===
+  PASS: [start] brother conclusion unavailable
+  PASS: [start] Inconclusive unavailable before any meaningful finding
+  PASS: knife lifecycle (found -> swab -> print -> match -> processed)
+  PASS: [fingerprint only] FIND-KNIFE-PRINT-BROTHER confirmed
+  PASS: [fingerprint only] brother conclusion UNAVAILABLE
+  PASS: [fingerprint only] Inconclusive available (meaningful investigation)
+  PASS: [fingerprint only] picker rule offers exactly Inconclusive (got CONCLUSION-INCONCLUSIVE)
+  PASS: body logged
+  PASS: bottle lifecycle
+  PASS: [no spatter] REL-knife-consistent-wound Completed
+  PASS: [no spatter] FIND-SPATTER-RECONSTRUCTION not confirmed
+  PASS: [no spatter] Paul and Peter are selectable after meaningful investigation
+  PASS: [no spatter] Inconclusive available
+  PASS: [no spatter] Paul resolves to the insufficiently-supported outcome
+  PASS: [no spatter] Peter resolves to the unsupported-accusation outcome
+  PASS: [no spatter] Inconclusive remains a defensible outcome
+  PASS: [no spatter] picker offers all incomplete-case options (got CONCLUSION-INCONCLUSIVE,conclusion-brother,conclusion-peter)
+  PASS: [partial picker] offers Paul, Peter, and Inconclusive (got CONCLUSION-INCONCLUSIVE,conclusion-brother,conclusion-peter)
+  PASS: spatter sampled
+  PASS: spatter sample sealed
+  PASS: spatter logged
+  PASS: [full] REL-spatter-consistent-reconstruction Completed
+  PASS: [full] REL-paul-print-handled-knife Completed
+  PASS: [full] brother conclusion AVAILABLE
+  PASS: [full] Inconclusive still internally available (monotonic state untouched)
+  PASS: [full] picker hides Inconclusive but retains Paul and Peter (got conclusion-brother,conclusion-peter)
+  PASS: [full] conclusion-brother resolves ending-brother-accused
+  PASS: [stale] confirming Inconclusive after brother became supported is refused
+  PASS: [stale] picker stays open and refreshes without Inconclusive (got conclusion-brother,conclusion-peter)
+  PASS: [stale] nothing submitted - no completion screen
+  PASS: [full] brother conclusion selectable in the refreshed picker
+  PASS: [full] completion screen shown
+  PASS: HYP-01 answered with hyp01-evidence-not-yet-developed
+  PASS: HYP-02 answered with hyp02-print-needs-reconstruction
+  PASS: HYP-03 answered with hyp03-combined-physical-evidence
+  PASS: HYP-01, HYP-02 and HYP-03 each define exactly one correct option
+  PASS: session log records HYP-02 reasoning hyp02-print-needs-reconstruction
+  PASS: session log records HYP-03 reasoning hyp03-combined-physical-evidence
+  PASS: EndingSelected logged ending-brother-accused
+  PASS: stale Inconclusive confirm logged as ConclusionSubmissionBlocked
+  PASS: ConclusionSelected never logged for Inconclusive
+  PASS: session log contains no retired id EVD-017
+  PASS: session log contains no retired id EVD-019
+  PASS: session log contains no retired id CONCLUSION-WIFE-INVOLVEMENT
+  PASS: session log contains no retired id conclusion-wife
+  PASS: session log contains no retired id ending-wife-convicted
+  PASS: session log contains no retired id FIND-PHONE-AFFAIR
+  PASS: session log contains no retired id FIND-GLOVES-PRINT-WIFE
+  PASS: session log contains no retired id hyp03-gloves-wife-match
+  PASS: session log contains no retired id hyp03-phone-overclaim
+  PASS: [isolation] the completed session was queued to the isolated test queue (would have uploaded)
+  PASS: [isolation] real upload queue and real session owners unchanged
+=== PASS, 0 failures ===

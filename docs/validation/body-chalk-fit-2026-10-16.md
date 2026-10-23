@@ -1,0 +1,15 @@
+# Body-shaped chalk guide — 2026-10-16
+
+Refined the user's existing `BODY_100K/ChalkGuide_BODY-A` around the actual current body mesh and pose. Preserved the user's body placement, rotation, scale and existing guide transform. A recovery snapshot includes the live unsaved scene at the start of the task.
+
+Projected the mesh triangles onto the kitchen floor, followed the outer silhouette and retained its concavities: head/face/neck, shoulders, extended arm/hand, bent arm, waist, shorts, separated legs and both feet. Added approximately 2 cm of clearance around the silhouette and simplified the contour within 4.5 mm. The guide now has 135 editable `Point_i`/`Segment_i` pairs, with no segment longer than 11 cm. Existing points/segments were retained and refined; the additional pairs extend the same authored guide. Rounded segment ends remove square gaps at joins. Original 22 mm line width, materials, trace tolerance and completion threshold are retained. Points are level at Y=1.218 m, matching the user's current guide height above the kitchen floor.
+
+Reconnected every `ChalkGuideSegmentLink` and refreshed stored world-space line endpoints, which previously still contained old-house coordinates. Runtime already adopts all authored point/segment pairs and preserves their positions, so no runtime code or body-procedure changes were needed. The guide retains its original inactive authoring flag and is activated through the existing initial-photo/chalk flow.
+
+Validation: five geometry checks pass, including complete containment of the projected mesh, no overlap between the full chalk stroke and the body silhouette, no self intersections and bounded segment lengths. The preservation audit passes four checks: no deleted records, every added/changed record inside the existing body guide and the body definition byte-identical. All body/other evidence and interaction transforms outside the guide are preserved. There are 618 added records for the 103 additional point/segment pairs; no existing records were removed.
+
+**79 Play-mode checks pass / zero failures**: StoryContentTest 38, including the real Greybox physical/procedural lifecycle and chalk tracing, and BodyRemovalTest 41. Final Editor check confirms all 135 points match the fitted contour and all segment endpoints connect correctly, including closure. The scene is saved cleanly outside Play, with no compilation failure or pending runner/XR restore. Standalone/Android XR initialization is restored.
+
+Rendered preview was inspected after rounding the joins: `docs/evidence/body-chalk-fit/preview.png`. This isolates the actual body and chalk guide from surrounding architecture for clear inspection. Geometry design, snapshots, audits, raw test reports and final state are retained in that directory; `summary.json` is the final manifest. `Tools/FitBodyChalkOutline.py` records the fitting operation using NumPy/Pillow for authoring only; the game uses the saved scene and has no Python dependency.
+
+Quest tracing comfort and performance with the denser guide remain hardware acceptance checks. No build/install, upload, commit, push or deployment was performed.

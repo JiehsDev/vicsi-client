@@ -1,0 +1,27 @@
+=== RecorderReportLimitTest ===
+PASS: scene photography complete for isolated UI fixture
+PASS: bottle fixture opens with at least four candidates
+PASS: empty Notes cannot confirm
+PASS: actual B adds line 1
+PASS: 1 lines cannot confirm
+PASS: actual B adds line 2
+PASS: 2 lines cannot confirm
+PASS: actual B adds line 3
+PASS: fourth B selection is blocked without changing the three choices
+PASS: full Notes explains how to replace a line
+PASS: programmatic selection uses the same limit
+PASS: actual B can remove a line from full Notes
+PASS: removing a line disables confirmation again
+PASS: a replacement line can fill the freed slot
+PASS: confirmation independently rejects an overfilled Notes container
+PASS: exactly three unique choices reach the callback and close
+PASS: BODY-A: next report starts with empty Notes
+PASS: EVD-014: next report starts with empty Notes
+PASS: EVD-015: next report starts with empty Notes
+PASS: EVD-018: next report starts with empty Notes
+PASS: Recorder callback refuses invalid count/duplicates: 
+PASS: Recorder callback refuses invalid count/duplicates: a,b
+PASS: Recorder callback refuses invalid count/duplicates: a,b,c,d
+PASS: Recorder callback refuses invalid count/duplicates: a,a,b
+PASS: invalid submissions leave evidence unlogged
+=== PASS, 0 failures ===

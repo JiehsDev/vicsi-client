@@ -1,0 +1,50 @@
+{
+    "suites":  [
+                   {
+                       "suite":  "VendorFollowupTest",
+                       "report":  "docs/evidence/required-vendor-followup-2026-10-22/final/VendorFollowupTest.txt",
+                       "passed":  24,
+                       "failed":  0
+                   },
+                   {
+                       "suite":  "VendorPathGuideTest",
+                       "report":  "docs/evidence/required-vendor-followup-2026-10-22/route-accepted/VendorPathGuideTest.txt",
+                       "passed":  44,
+                       "failed":  0
+                   },
+                   {
+                       "suite":  "FingerprintComparisonTest",
+                       "report":  "docs/evidence/required-vendor-followup-2026-10-22/run1/FingerprintComparisonTest.txt",
+                       "passed":  66,
+                       "failed":  0
+                   },
+                   {
+                       "suite":  "InconclusivePathTest",
+                       "report":  "docs/evidence/required-vendor-followup-2026-10-22/run1/InconclusivePathTest.txt",
+                       "passed":  16,
+                       "failed":  0
+                   },
+                   {
+                       "suite":  "ReasoningCheckpointTest",
+                       "report":  "docs/evidence/required-vendor-followup-2026-10-22/run1/ReasoningCheckpointTest.txt",
+                       "passed":  62,
+                       "failed":  0
+                   },
+                   {
+                       "suite":  "ProcedureDestinationGuideTest",
+                       "report":  "docs/evidence/required-vendor-followup-2026-10-22/run1/ProcedureDestinationGuideTest.txt",
+                       "passed":  18,
+                       "failed":  0
+                   },
+                   {
+                       "suite":  "SceneTestStartTest",
+                       "report":  "docs/evidence/required-vendor-followup-2026-10-22/final/SceneTestStartTest.txt",
+                       "passed":  210,
+                       "failed":  0
+                   }
+               ],
+    "totalPassed":  440,
+    "totalFailed":  0,
+    "csharpErrors":  0,
+    "headsetVerified":  false
+}

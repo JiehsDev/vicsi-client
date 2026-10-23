@@ -1,0 +1,37 @@
+(test setup: disabled and released the real scene's PreSessionFlowController gate - this run never pairs)
+=== Greybox flow test ===
+--- scene photography route completed first
+--- EVD-014 (Kitchen knife, relevance=Critical, requiresFingerprinting=True)
+    -> Found
+    -> PhotographedRaw
+    traced 22/24 guide points
+    -> ChalkMarked
+    -> Marked
+    -> PhotographedFinal
+    (required blood sample already taken)
+    gate correctly refuses Logged: Complete fingerprint processing first so the record describes the finding that was actually recovered.
+    -> print revealed under UV (UVRevealable.TriggerReveal)
+    tape-on-undusted-print correctly refused (FingerprintTapeTool.HandleTipTriggerEnter)
+    brush-on-print correctly refused with no dust loaded on the brush
+    loaded dust onto the brush (FingerprintKitTool.DustLoaded=True)
+    dusted and locked visible via brush-print contact (marker.IsDusted=True)
+    -> compared, matched and explicitly stored fingerprint sample associated with EVD-014
+    -> lifted via tape-print contact, fingerprinted on EVD-014's own record (FingerprintTapeTool.HandleTipTriggerEnter -> FingerprintKitTool.TryLift)
+    -> print removed entirely (UVRevealable.Remove, via TryLift)
+    -> confirmed comparison identity retained: Paul
+    -> fingerprinted on scene, before logging
+    selected 3 report line(s) for EVD-014
+    -> Logged
+    -> Collected
+    gate correctly refuses Processed: Secure and seal the evidence first so its condition and identity are protected before storage.
+    -> Sealed
+    -> stored sealed bag through the B storage handler
+    -> Processed (auto-advanced once Sealed and fingerprinted)
+-> Submit Conclusion skipped (caller drives it)
+--- totals ---
+at/above Found:     1
+at/above Marked:    1
+at/above Collected: 1
+at/above Sealed:    1
+at/above Processed: 1
+=== PASS: 1 items completed the full lifecycle ===

@@ -1,0 +1,25 @@
+{
+  "scene-evidence": {
+    "added": {
+      "EVD-018": 1,
+      "EVD-018-print": 1
+    },
+    "removed": {}
+  },
+  "dialogue-entries": {
+    "added": {
+      "bottle-measure-before-fingerprint": 1,
+      "fingerprint-use-on-scene-kit": 1,
+      "bottle-fingerprint-identification": 1
+    },
+    "removed": {}
+  },
+  "bottle-evidence-references": {
+    "added": {
+      "EVD-018": 1
+    },
+    "removed": {
+      "": 1
+    }
+  }
+}

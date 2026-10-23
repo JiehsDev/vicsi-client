@@ -82,6 +82,12 @@ public class OpenableFurniture : MonoBehaviour
 
     private void Update()
     {
+        // Dialogue History (a pure review panel) is open - no tool/world input behind it.
+        if (ToolInputLock.IsLocked)
+        {
+            return;
+        }
+
         UpdateRangeAndPrompt();
 
         if (inRange && (leftTriggerAction.WasPressedThisFrame() || rightTriggerAction.WasPressedThisFrame()))
@@ -118,7 +124,7 @@ public class OpenableFurniture : MonoBehaviour
         }
     }
 
-    private string PromptText() => isOpen ? "[Trigger] Close" : "[Trigger] Open";
+    private string PromptText() => GameDialogue.Text(isOpen ? "prompt-furniture-close" : "prompt-furniture-open");
 
     private void AnimateTowardTarget()
     {

@@ -1,0 +1,21 @@
+{
+  "suites": [
+    {
+      "path": "docs/evidence/body-recorder/final/BodyRemovalTest.txt",
+      "passed": 43,
+      "failed": 0
+    },
+    {
+      "path": "docs/evidence/body-recorder/run1/SceneTestStartTest.txt",
+      "passed": 116,
+      "failed": 0
+    },
+    {
+      "path": "docs/evidence/body-recorder/run1/RecorderReportLimitTest.txt",
+      "passed": 25,
+      "failed": 0
+    }
+  ],
+  "passed": 184,
+  "failed": 0
+}

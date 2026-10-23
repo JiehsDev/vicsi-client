@@ -1,0 +1,47 @@
+=== First Responder turnover test ===
+  DIAGNOSTIC: before turnover mission-scene-start completed=False
+  PASS: 1. fresh scene: current objective is 'Receive scene turnover from the First Responder' [current='Receive scene turnover from the First Responder']
+  PASS: 1b. investigation objectives still hidden (obj-document-scene)
+  PASS: 2. investigation timer not running [InvestigationSeconds=0.00, started=False]
+  PASS: 3. scene photography not started (no active photo point after its start delay) [current=none]
+  PASS: P1. fresh scene: zero photography route circles visible [visible=0]
+  PASS: 4. evidence tools locked (ToolInputLock held)
+  PASS: H1. First Responder holds the scene notes (clipboard) before turnover
+  PASS: 4b. no narrative/professor guidance played before turnover (beat-1 not completed)
+  PASS: 4c. walking onto evidence before turnover discovers nothing (EVD-015 still below Found)
+  PASS: 16. early entry shows the catalog warning once and starts nothing [inside=True, warnings 0->1, pending=True]
+  PASS: C1. cordon visible before turnover, controlled entrance closed
+  PASS: P2. standing in route point 'scene-exterior-establishing' before turnover: circle stays hidden [inZone=True, visible=0, current=none]
+  PASS: 5. in range: tooltip prompt '[A] Receive scene turnover' is up [inRange=True, label='[A] Receive scene turnover']
+  PASS: 15. NPC visual disabled - interaction logic still live
+  PASS: 6a. Interact() starts the conversation
+  PASS: 6b. prompt withdrawn while talking (so B skips dialogue)
+  PASS: 6c. First Responder dialogue begins on the dialogue panel [shown='First Responder: We've kept access under control since we arrived, and the house is still cordoned off. John was found on the floor inside with what looks like a stab wound. We're treating this as a suspected violent death.']
+  PASS: 6d. FirstResponderInteractionStarted logged once
+  PASS: 6e. still pending while lines play
+  PASS: 13. B-skipping showed every line (4/4) and still completed the conversation
+  PASS: 7. finishing the dialogue completes turnover
+  PASS: H2. the clipboard has left the First Responder's hand after turnover (handed over)
+  PASS: 7b. FR turnover enters IOC assessment without unlocking SOCO
+  PASS: 8a. Interact() after turnover does nothing (lines never replay)
+  PASS: 8b. turnover completed exactly once [SceneTurnoverCompleted=1, InteractionStarted=1]
+  PASS: 9. objective changed to 'Begin documenting the crime scene' [current='Begin documenting the crime scene', talk=Completed]
+  PASS: 9b. the turnover objective is excluded from scoring
+  PASS: 10. investigation timer running [InvestigationSeconds=0.46]
+  PASS: 14b. each First Responder line is in Dialogue History exactly once [4/4, duplicated=0, historyBefore=0]
+  PASS: 11. scene photography activated [current=scene-exterior-establishing]
+  PASS: P3. turnover: current route circle visible [scene-exterior-establishing visible=True]
+  PASS: P4. exactly one circle visible and it is the current point [visible=1]
+  PASS: P5. route order unchanged and starts at its first point [10:scene-exterior-establishing > 20:scene-entrance-approach > 30:scene-interior-from-entrance > 40:scene-interior-left > 50:scene-interior-right > 60:scene-body-in-scene > 70:scene-stair-incident-area]
+  PASS: P6. valid photo completes 'scene-exterior-establishing' and advances to the next circle [scene-entrance-approach, visible=1]
+  PASS: 12a. evidence tools unlocked (ToolInputLock released)
+  PASS: 17a. turnover itself changed no evidence status
+  PASS: 12b. walking onto evidence works again after turnover (EVD-015 now Found)
+  PASS: C2. cordon still visible after turnover
+  PASS: C3. controlled entrance remains closed after turnover
+  PASS: C4. player can pass through the controlled entrance (no solid collider across it) [blocker=none]
+  FAIL: D1. IOC assessment guidance precedes professor guidance, which starts only in SOCO investigation [first='ioc-assessment-guidance']
+  PASS: D2. completed FR conversation is not replayed and no old direct SOCO authorization is emitted [repeated=False]
+  PASS: P7. scene reload: circles hidden again until turnover [visible=0, current=none]
+  PASS: 14. scene reload resets turnover [pending=True, complete=False, timer=0.00, current='Receive scene turnover from the First Responder']
+=== FAILED with 1 problem(s) ===

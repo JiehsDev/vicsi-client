@@ -1,0 +1,18 @@
+{
+  "changed_existing_files": [
+    "Assets/_Project/Scripts/Dialogue/VendorWitnessInteraction.cs",
+    "Assets/_Project/Scripts/Interaction/PhotoCaptureListener.cs"
+  ],
+  "new_files": [
+    "Assets/_Project/Scripts/Dialogue/VendorPathGuide.cs",
+    "Assets/_Project/Scripts/Dialogue/VendorPathGuide.cs.meta",
+    "Assets/_Project/Scripts/Dialogue/VendorPathRoute.cs",
+    "Assets/_Project/Scripts/Dialogue/VendorPathRoute.cs.meta",
+    "Assets/_Project/Scripts/Testing/VendorPathGuideTest.cs",
+    "Assets/_Project/Scripts/Testing/VendorPathGuideTest.cs.meta",
+    "Assets/Resources/VendorPathRoute_CSI.asset",
+    "Assets/Resources/VendorPathRoute_CSI.asset.meta"
+  ],
+  "unchanged_scoped_files": 1393,
+  "scene_or_prefab_changes": []
+}

@@ -1,0 +1,16 @@
+playing=True paused=False frame=1497 compiling=False compilationFailed=False
+hmd=False manager=
+headPositionTracked=False
+scene=Assets/_Project/Scenes/Main.unity dirty=False
+camera=CenterEyeAnchor enabled=True active=True pos=(-1.8400, 1.5975, 8.6400) rot=(0.00, 179.61, 0.00) target= depth=0 mask=-1
+camera=LeftEyeAnchor enabled=False active=True pos=(-1.8400, 1.5975, 8.6400) rot=(0.00, 179.61, 0.00) target= depth=0 mask=-1
+camera=RightEyeAnchor enabled=False active=True pos=(-1.8400, 1.5975, 8.6400) rot=(0.00, 179.61, 0.00) target= depth=0 mask=-1
+camera=Pointable Canvas Module enabled=False active=True pos=(0.0000, 0.0000, 0.0000) rot=(0.00, 0.00, 0.00) target= depth=0 mask=-1
+startupFacingApplied=True
+playerRoot=(-1.8400, -0.0025, 8.6400) yaw=179.61 trackingYaw=0.00
+main=CenterEyeAnchor
+canvas=Canvas enabled=True active=True pos=(-1.8303, 1.6500, 7.3330) rot=(0.00, 179.61, 0.00) scale=(0.0010, 0.0010, 0.0010) mode=WorldSpace
+canvasBottom=1.1000 canvasTop=2.2000
+viewport=(0.5002, 0.5110, 1.3070) distance=1.308056
+object=TrackingSpace active=True pos=(-1.8400, 1.5975, 8.6400)
+object=MainMenuPanel active=True pos=(-1.8303, 1.6500, 7.3330)

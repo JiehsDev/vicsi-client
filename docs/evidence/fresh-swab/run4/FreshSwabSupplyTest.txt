@@ -1,0 +1,53 @@
+=== FreshSwabSupplyTest ===
+PASS: Normal session starts without a fresh swab
+PASS: Initial swab supply does not distract from earlier scene photography
+PASS: One shared supply table includes a packaged swab tray
+PASS: Actual Y opens the wheel: wheel-no-fresh-swab
+PASS: Hovered swab retains correct opacity and hover style: wheel-no-fresh-swab
+PASS: Wheel reason fits the actual hub: wheel-no-fresh-swab
+PASS: Y release closes the wheel: wheel-no-fresh-swab
+PASS: Unavailable wheel selection preserves the held recorder
+PASS: Trying the unavailable slot requests the shared supply destination
+PASS: Registry and coordinator reject exhaustion before changing tools
+PASS: Unrelated modal UI cannot grant a pack
+PASS: A picks up an unopened pack without loading it
+PASS: Held opening A cannot load the swab
+PASS: B returns an unopened pack
+PASS: Walking away returns the pack without a fresh swab
+PASS: Modal interruption cancels a pending pack
+PASS: Distinct A loads one fresh swab without evidence or glove credit
+PASS: Actual Y opens the wheel: wheel-fresh-swab
+PASS: Hovered swab retains correct opacity and hover style: wheel-fresh-swab
+PASS: Wheel reason fits the actual hub: wheel-fresh-swab
+PASS: Y release closes the wheel: wheel-fresh-swab
+PASS: Fresh wheel selection equips the real kit
+PASS: Rejected sampling does not consume the unused swab
+PASS: Successful sampling consumes exactly one fresh swab
+PASS: Holstering retains the blood-loaded swab
+PASS: Actual Y opens the wheel: wheel-loaded-recovery
+PASS: Hovered swab retains correct opacity and hover style: wheel-loaded-recovery
+PASS: Wheel reason fits the actual hub: wheel-loaded-recovery
+PASS: Y release closes the wheel: wheel-loaded-recovery
+PASS: Grey loaded kit is recoverable to finish its sample
+PASS: Containment uses the original source despite consumed swab
+PASS: A pending container blocks replacement packs
+PASS: Actual Y opens the wheel: wheel-contained-sample
+PASS: Hovered swab retains correct opacity and hover style: wheel-contained-sample
+PASS: Wheel reason fits the actual hub: wheel-contained-sample
+PASS: Y release closes the wheel: wheel-contained-sample
+PASS: Contained-sample wheel selection preserves the held sample and asks to finish it
+PASS: Actual B seals and stores current sample with used gloves
+PASS: Sealing never restores the clean tip or swab availability
+PASS: Another source cannot use the spent swab
+PASS: Stored sample keeps its blood-bearing swab model
+PASS: Fresh gloves alone leave the swab exhausted
+PASS: Unavailable swab cannot unequip sealed held evidence
+PASS: Actual Y opens the wheel: wheel-used-swab
+PASS: Hovered swab retains correct opacity and hover style: wheel-used-swab
+PASS: Wheel reason fits the actual hub: wheel-used-swab
+PASS: Y release closes the wheel: wheel-used-swab
+PASS: Selecting the spent slot creates no kit
+PASS: Fresh supply alone restores the slot and retires the shared destination
+PASS: Generic sampling also consumes one swab
+PASS: Reload has no fresh swab, pending pack or sample
+=== PASS ===

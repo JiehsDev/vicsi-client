@@ -1,0 +1,32 @@
+﻿{
+    "jsonrpc":  "2.0",
+    "id":  2,
+    "result":  {
+                   "content":  [
+                                   {
+                                       "type":  "text",
+                                       "text":  "{\"success\":true,\"message\":\"Code executed successfully.\",\"data\":{\"result\":{\"playing\":false,\"compiling\":false,\"compilationFailed\":false,\"scene\":\"Assets/_Project/Scenes/Scenarios/CSI_Environment.unity\",\"dirty\":false,\"scoringRulesVersion\":\"1.7.0\",\"unityVersion\":\"6000.5.6f1\",\"target\":\"Android\",\"reasoningAssembly\":\"Assembly-CSharp\",\"checkpointCount\":6},\"compiler\":\"codedom\"}}"
+                                   }
+                               ],
+                   "structuredContent":  {
+                                             "success":  true,
+                                             "message":  "Code executed successfully.",
+                                             "data":  {
+                                                          "result":  {
+                                                                         "playing":  false,
+                                                                         "compiling":  false,
+                                                                         "compilationFailed":  false,
+                                                                         "scene":  "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+                                                                         "dirty":  false,
+                                                                         "scoringRulesVersion":  "1.7.0",
+                                                                         "unityVersion":  "6000.5.6f1",
+                                                                         "target":  "Android",
+                                                                         "reasoningAssembly":  "Assembly-CSharp",
+                                                                         "checkpointCount":  6
+                                                                     },
+                                                          "compiler":  "codedom"
+                                                      }
+                                         },
+                   "isError":  false
+               }
+}

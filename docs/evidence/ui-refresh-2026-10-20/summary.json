@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-20",
+  "passed": 331,
+  "failed": 0,
+  "suites": [
+    {
+      "suite": "UIWorkflowRefreshTest",
+      "attempt": "run4",
+      "passed": 24,
+      "failed": 0,
+      "exitCode": 0,
+      "report": "docs/evidence/ui-refresh-2026-10-20/run4/UIWorkflowRefreshTest.txt",
+      "compileOrNullErrors": []
+    },
+    {
+      "suite": "PhotographicScaleTest",
+      "attempt": "run1",
+      "passed": 74,
+      "failed": 0,
+      "exitCode": 0,
+      "report": "docs/evidence/ui-refresh-2026-10-20/run1/PhotographicScaleTest.txt",
+      "compileOrNullErrors": []
+    },
+    {
+      "suite": "PhotographyShutterOwnershipTest",
+      "attempt": "run1",
+      "passed": 15,
+      "failed": 0,
+      "exitCode": 0,
+      "report": "docs/evidence/ui-refresh-2026-10-20/run1/PhotographyShutterOwnershipTest.txt",
+      "compileOrNullErrors": []
+    },
+    {
+      "suite": "EvidenceProcedureMapTest",
+      "attempt": "run3",
+      "passed": 69,
+      "failed": 0,
+      "exitCode": 0,
+      "report": "docs/evidence/ui-refresh-2026-10-20/run3/EvidenceProcedureMapTest.txt",
+      "compileOrNullErrors": []
+    },
+    {
+      "suite": "EvidenceProcedurePanelTest",
+      "attempt": "run4",
+      "passed": 46,
+      "failed": 0,
+      "exitCode": 0,
+      "report": "docs/evidence/ui-refresh-2026-10-20/run4/EvidenceProcedurePanelTest.txt",
+      "compileOrNullErrors": []
+    },
+    {
+      "suite": "SamplePreparationTest",
+      "attempt": "run4",
+      "passed": 46,
+      "failed": 0,
+      "exitCode": 0,
+      "report": "docs/evidence/ui-refresh-2026-10-20/run4/SamplePreparationTest.txt",
+      "compileOrNullErrors": []
+    },
+    {
+      "suite": "UIComfortInputTest",
+      "attempt": "run4",
+      "passed": 57,
+      "failed": 0,
+      "exitCode": 0,
+      "report": "docs/evidence/ui-refresh-2026-10-20/run4/UIComfortInputTest.txt",
+      "compileOrNullErrors": []
+    }
+  ],
+  "sceneSha256": "e441ee08004b03baf5be2ce53598e8542c4318bbb45ff690cd29429d78cadd3d",
+  "headsetVerified": false
+}

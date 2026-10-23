@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-20",
+  "layout": "Whole house is inner hot zone; yard is outer warm zone",
+  "sceneSha256": "F3D1753960C82B0B74FD5B431266A19F79A4D4CC1C253D84B686EEA5644CB6A6",
+  "tests": [
+    { "report": "ArrivalEntryTest.txt", "passed": 42, "failed": 0 },
+    { "report": "SceneAccessRegisterTest.txt", "passed": 48, "failed": 0 }
+  ],
+  "previews": ["front-door.png", "zone-overview.png"],
+  "backup": "CSI_Environment-before.unity",
+  "headsetValidation": "pending manual traversal"
+}

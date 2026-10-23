@@ -1,0 +1,32 @@
+=== ProcedureFoundationTest ===
+  PASS: [A] FIND-TEST-HARMLESS not registered
+  PASS: [A] FIND-TEST-HARMLESS not confirmed
+  PASS: [E] ScenePhotographyCompleted false before the route
+  PASS: [E] NOT(ScenePhotographyCompleted) true before the route
+  PASS: [D] obj-document-scene incomplete before the route
+  PASS: [D] obj-document-scene still incomplete after BODY-A is Found
+  PASS: [D] every scene photo point completed (7/7)
+  PASS: [E] ScenePhotographyCompleted true after the route
+  PASS: [D] obj-document-scene completed by the route
+  PASS: [hook] Warn rule lets the raw photo through
+  PASS: [hook] Block rule: CanTransition(Marked) false
+  PASS: [hook] Block rule: player-facing reason is the authored message
+  PASS: [hook] Block rule refuses the marker
+  PASS: [hook] status unchanged by the refused marker
+  PASS: [hook] temporary rules removed (definition back to its authored rules)
+  PASS: [hook] marker allowed once the Block rule is gone
+  PASS: [B] bottle lifecycle (GreyboxFlowTest, real station TryDust/TryLift/TryCompare)
+  PASS: [B] bottle lab status Matched (got Matched)
+  PASS: [B] bottle identity = Paul (got 'Paul')
+  PASS: [B] bottle Processed
+  PASS: [B] beat-5 trigger now requires the real lab match
+  PASS: [B] beat-5 trigger satisfied by authoritative state
+  PASS: [B] REL-bottle-supports-brother unlocked
+  PASS: [C] knife lifecycle (powder/brush/lift via FingerprintKitTool)
+  PASS: [C] knife lab status Matched, identity 'Paul'
+  PASS: [C] FIND-KNIFE-PRINT-BROTHER confirmed
+  PASS: [hook] exactly one ProcedureOutOfOrder logged by the test's Warn rule (got 1)
+  PASS: [hook] ProcedureOutOfOrder carries procedureId/evidenceId/expectedPrerequisite
+  PASS: [B] beat-5 dialogue triggered
+  PASS: [A] FIND-TEST-HARMLESS absent from the session log
+=== PASS, 0 failures ===

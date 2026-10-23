@@ -1,0 +1,12 @@
+﻿Observed 2026-10-17 after manual Play failure:
+Unity Editor PID 45068 remains alive, outside Play, saved CSI scene clean.
+RTX 2050 graphics memory: 3977 MiB. Physical RAM: 7895 MiB.
+OS available physical: 771 MiB; available commit/virtual: 295 MiB of 32472 MiB total.
+Editor private committed memory: 13427052544 bytes. Two asset workers: approximately 2.2 GiB each.
+Unity allocator: 4183 MiB allocated; 5350 MiB reserved.
+Console: 26 entries; no C# compilation failure.
+D3D11: Failed to create RenderTexture (1824 x 1872 fmt 19 aa 1), error 0x8007000e
+XR: Error setting active audio output driver. Falling back to default.
+Call to DeinitializeLoader without an initialized manager.
+WallPenetrationTunneling: TunnelingEffect required Mesh Filter reference missing.
+No new native crash directory; most recent crash directory predates this Play attempt.

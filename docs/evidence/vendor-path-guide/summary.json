@@ -1,0 +1,20 @@
+{
+  "results": [
+    {
+      "suite": "VendorFollowupTest",
+      "passed": 17,
+      "failed": 0
+    },
+    {
+      "suite": "VendorPathGuideTest",
+      "passed": 41,
+      "failed": 0
+    }
+  ],
+  "total_passed": 58,
+  "total_failed": 0,
+  "csharp_or_shader_compile_errors": [],
+  "native_render_cyan_changed_pixels": 8482,
+  "quest_headset_verification": "Not performed; manual verification remains.",
+  "production_changes": false
+}

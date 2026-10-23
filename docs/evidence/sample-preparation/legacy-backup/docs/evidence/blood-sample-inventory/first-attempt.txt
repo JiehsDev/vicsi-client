@@ -1,0 +1,1 @@
+FAIL: Aborted first attempt: scene restored with stale pre-compilation serialized model binding. Retry with a fresh scene.

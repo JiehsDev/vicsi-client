@@ -1,0 +1,17 @@
+{
+  "samples": [
+    "elapsed=0 normalized=0 loop=True Balut_Basket min=(0.15, 0.36, -0.28) max=(0.78, 1.05, 0.27)",
+    "elapsed=0 normalized=0 loop=True Balut_Vendor min=(-0.39, 0.00, -0.25) max=(0.55, 1.82, 0.29)",
+    "elapsed=3 normalized=0.215311 loop=True Balut_Basket min=(0.21, 0.35, -0.29) max=(0.90, 1.01, 0.26)",
+    "elapsed=3 normalized=0.215311 loop=True Balut_Vendor min=(-0.28, 0.01, -0.25) max=(0.62, 1.83, 0.30)",
+    "elapsed=7 normalized=0.5023923 loop=True Balut_Basket min=(0.17, 0.39, -0.29) max=(0.85, 1.05, 0.25)",
+    "elapsed=7 normalized=0.5023923 loop=True Balut_Vendor min=(-0.35, 0.01, -0.25) max=(0.59, 1.83, 0.29)",
+    "elapsed=14 normalized=1.004785 loop=True Balut_Basket min=(0.15, 0.36, -0.28) max=(0.78, 1.05, 0.27)",
+    "elapsed=14 normalized=1.004785 loop=True Balut_Vendor min=(-0.39, 0.00, -0.25) max=(0.55, 1.82, 0.29)",
+    "elapsed=28 normalized=2.009569 loop=True Balut_Basket min=(0.15, 0.36, -0.28) max=(0.78, 1.05, 0.27)",
+    "elapsed=28 normalized=2.009569 loop=True Balut_Vendor min=(-0.39, 0.00, -0.25) max=(0.55, 1.82, 0.29)"
+  ],
+  "rootStable": true,
+  "controller": "Assets/_Project/Art/Environments/MODELS/NPC/Vendor/Vendor_Idle.controller",
+  "rootMotion": false
+}

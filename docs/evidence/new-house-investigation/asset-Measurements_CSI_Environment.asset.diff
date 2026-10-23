@@ -1,0 +1,80 @@
+--- before
++++ after
+@@ -18,8 +18,8 @@
+     targetEvidenceId: BODY-A
+     referenceAId: REF-BODYA-1
+     referenceBId: REF-BODYA-2
+-    expectedDistanceA: 2.449
+-    expectedDistanceB: 1.131
++    expectedDistanceA: 2.0668297
++    expectedDistanceB: 1.2679882
+     tolerance: 0.1
+     validateTolerance: 1
+     measureOnFloorPlan: 1
+@@ -29,14 +29,14 @@
+     enforcement: 0
+     scoreWeight: 1
+     participatesInScenePairMeasurement: 1
+-    instructionText: Measure the victim's position from its two fixed references
+-      (West Wall and Counter Back) before the body is moved.
++    instructionText: Measure the victim from East Kitchen Wall and Foot-side Kitchen
++      Wall before disturbing it.
+   - requirementId: MEAS-EVD-014
+     targetEvidenceId: EVD-014
+     referenceAId: REF-KNIFE-1
+     referenceBId: REF-KNIFE-CAB
+-    expectedDistanceA: 1.341
+-    expectedDistanceB: 1.079
++    expectedDistanceA: 0.78982925
++    expectedDistanceB: 1.7470102
+     tolerance: 0.1
+     validateTolerance: 1
+     measureOnFloorPlan: 1
+@@ -46,14 +46,14 @@
+     enforcement: 0
+     scoreWeight: 1
+     participatesInScenePairMeasurement: 1
+-    instructionText: Measure the knife's position from its two fixed references (West
+-      Wall and Cabinet Front Edge) before it is collected.
++    instructionText: Measure the knife from East Kitchen Wall and Rear Kitchen Wall
++      before disturbing it.
+   - requirementId: MEAS-EVD-015
+     targetEvidenceId: EVD-015
+     referenceAId: REF-SPATTER-CAB
+     referenceBId: REF-SPATTER-2
+-    expectedDistanceA: 1.382
+-    expectedDistanceB: 2.264
++    expectedDistanceA: 1.0119886
++    expectedDistanceB: 1.7581711
+     tolerance: 0.1
+     validateTolerance: 1
+     measureOnFloorPlan: 1
+@@ -63,14 +63,14 @@
+     enforcement: 0
+     scoreWeight: 1
+     participatesInScenePairMeasurement: 1
+-    instructionText: Measure the blood pattern's position from its two fixed references
+-      (Cabinet Front Edge and Cabinet End) before it is sampled.
++    instructionText: Measure the blood pattern from Foot-side Kitchen Wall and West
++      Kitchen Wall before disturbing it.
+   - requirementId: MEAS-EVD-018
+     targetEvidenceId: EVD-018
+     referenceAId: REF-BOTTLE-1
+     referenceBId: REF-BOTTLE-2
+-    expectedDistanceA: 0.353
+-    expectedDistanceB: 0.405
++    expectedDistanceA: 0.33201122
++    expectedDistanceB: 0.59127235
+     tolerance: 0.1
+     validateTolerance: 1
+     measureOnFloorPlan: 1
+@@ -80,7 +80,7 @@
+     enforcement: 0
+     scoreWeight: 1
+     participatesInScenePairMeasurement: 1
+-    instructionText: Measure the bottle's position from its two fixed references
+-      (Counter End and Counter Front) before it is collected.
++    instructionText: Measure the bottle from Rear Kitchen Wall and Right Cabinet
++      End before disturbing it.
+   pairTolerance: 0.1
+   pairsMeasureOnFloorPlan: 1

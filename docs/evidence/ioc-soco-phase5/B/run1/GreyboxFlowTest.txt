@@ -1,0 +1,72 @@
+(test setup: disabled and released the real scene's PreSessionFlowController gate - this run never pairs)
+=== Greybox flow test ===
+--- scene photography route completed first
+--- EVD-014 (Kitchen knife, relevance=Critical, requiresFingerprinting=True)
+    -> Found
+    -> PhotographedRaw
+    traced 22/24 guide points
+    -> ChalkMarked
+    -> Marked
+    -> PhotographedFinal
+    gate correctly refuses Logged: Collect the blood sample before completing the evidence record.
+    swabbed required blood trace (SwabTool.TrySampleRequiredSwab -> TryContain -> TrySeal)
+    gate correctly refuses Logged: Process the fingerprint before completing the evidence record.
+    -> print revealed under UV (UVRevealable.TriggerReveal)
+    tape-on-undusted-print correctly refused (FingerprintTapeTool.HandleTipTriggerEnter)
+    brush-on-print correctly refused with no dust loaded on the brush
+    loaded dust onto the brush (FingerprintKitTool.DustLoaded=True)
+    dusted and locked visible via brush-print contact (marker.IsDusted=True)
+    -> lifted via tape-print contact, fingerprinted on EVD-014's own record (FingerprintTapeTool.HandleTipTriggerEnter -> FingerprintKitTool.TryLift)
+    -> print removed entirely (UVRevealable.Remove, via TryLift)
+    -> lab match resolved (bundled into TryLift): Paul
+    -> fingerprinted on scene, before logging
+    selected 3 report line(s) for EVD-014
+    -> Logged
+    (auto-answered a real hypothesis checkpoint that fired mid-flow)
+    -> Collected
+    gate correctly refuses Processed: Seal the evidence before continuing.
+    -> Sealed
+    -> Processed (auto-advanced once Sealed and fingerprinted)
+--- EVD-015 (Blood spatter pattern, relevance=Critical, requiresFingerprinting=False)
+    -> Found
+    -> PhotographedRaw
+    traced 22/24 guide points
+    -> ChalkMarked
+    -> Marked
+    -> PhotographedFinal
+    gate correctly refuses Logged: Collect the blood sample before completing the evidence record.
+    swabbed required blood trace (SwabTool.TrySampleRequiredSwab -> TryContain -> TrySeal)
+    selected 3 report line(s) for EVD-015
+    -> Logged
+    sealed on-scene sample carried custody on: Processed, in inventory
+    (Collected already provided by the sealed on-scene sample)
+    gate correctly refuses Processed: No further action is needed for this evidence right now.
+    (Sealed already provided by the sealed on-scene sample)
+    -> Processed (auto-advanced once Sealed)
+--- EVD-018 (Empty liquor bottle, relevance=Relevant, requiresFingerprinting=True)
+    -> Found
+    (auto-answered a real hypothesis checkpoint that fired mid-flow)
+    -> PhotographedRaw
+    traced 22/24 guide points
+    -> ChalkMarked
+    -> Marked
+    -> PhotographedFinal
+    selected 3 report line(s) for EVD-018
+    -> Logged
+    -> Collected
+    gate correctly refuses Processed: Fingerprint processing required first.
+    -> Sealed
+    gate correctly refuses Processed: Fingerprint processing required first.
+    lift correctly refused with zero dust coverage
+    dusted and lifted a good print
+    -> compared and fingerprinted (FingerprintStationTool.TryDust -> TryLift -> TryCompare)
+    -> lab match resolved by TryCompare itself: Paul
+    -> Processed (auto-advanced once Sealed and fingerprinted)
+-> Submit Conclusion (EndingManager.TrySubmitConclusion)
+--- totals ---
+at/above Found:     3
+at/above Marked:    3
+at/above Collected: 3
+at/above Sealed:    3
+at/above Processed: 3
+=== PASS: 3 items completed the full lifecycle ===

@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-20",
+  "change": "Connect front cordon tape to existing side fences and align security bounds",
+  "sceneSha256": "0EE4453F0761012F9948E36F4B211C48C441ABDAD1542AE1639E29C61BDD1FAE",
+  "acceptedRuns": [
+    { "report": "ArrivalEntryTest-run2.txt", "passed": 46, "failed": 0 },
+    { "report": "SceneAccessRegisterTest.txt", "passed": 48, "failed": 0 }
+  ],
+  "priorAttempts": [
+    { "report": "ArrivalEntryTest.txt", "passed": 45, "failed": 1, "failure": "Starting gaze; repeat passed with measured 17.8 degree angles" }
+  ],
+  "previews": ["cordon-overview.png", "cordon-overhead.png"],
+  "beforeScene": "CSI_Environment-before.unity",
+  "headsetValidation": "pending manual traversal"
+}

@@ -1,0 +1,20 @@
+{
+  "changedExistingFiles": [
+    "Assets\\_Project\\Editor\\Phase5PlayModeBatchRunner.cs",
+    "Assets\\_Project\\Scripts\\SceneTurnover\\IOCAssessmentInteraction.cs"
+  ],
+  "unchangedExistingFiles": 1337,
+  "assessmentOnlyChange": "Auto-add IOCAssessmentGuide once after BuildChecklist in Awake",
+  "existingObservationValidationAndInputUnchanged": true,
+  "allScenesAndScenarioDataUnchanged": true,
+  "photographyGuideGraphicShaderAndManagerUnchanged": true,
+  "menuAndToolWheelsUnchanged": true,
+  "scoringUploadDashboardSourcesUntouched": true,
+  "editorRunnerOnlyChange": "Do not skip IOC before IOCAssessmentGuideTest",
+  "acceptedSourceHashes": {
+    "Assets/_Project/Editor/Phase5PlayModeBatchRunner.cs": "fce73c5c73dffab9273ba00cb9c94cc6311cc84363ea6e9676d11e115902190d",
+    "Assets/_Project/Scripts/SceneTurnover/IOCAssessmentInteraction.cs": "576dd2697631341a2a229844ade1d7a16b7956061584026ae7335b8e6b757913",
+    "Assets/_Project/Scripts/SceneTurnover/IOCAssessmentGuide.cs": "9de975e28ea1e3db9424d3e37d3206f48b5d47eca019b1fb2b8d4e408fed77ff",
+    "Assets/_Project/Scripts/Testing/IOCAssessmentGuideTest.cs": "4017cfa56e09865bad4cd1486ad40f191242c74d0ff10fe84024349cb6b28f91"
+  }
+}

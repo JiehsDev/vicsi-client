@@ -1,0 +1,14 @@
+  PASS: Geometry fixture has no modal owner
+  PASS: Long text: both panels have a visible slot
+  PASS: Long text: gap stays at least 5 cm
+  PASS: Long text: upper clears geometry
+  PASS: Long text: lower clears geometry
+  PASS: Short replacements: both panels have a visible slot
+  PASS: Short replacements: gap stays at least 5 cm
+  PASS: Short replacements: upper clears geometry
+  PASS: Short replacements: lower clears geometry
+  PASS: Long text facing a wall: both panels have a visible slot
+  PASS: Long text facing a wall: gap stays at least 5 cm
+  PASS: Long text facing a wall: upper clears geometry
+  PASS: Long text facing a wall: lower clears geometry
+=== PASS ===

@@ -40,6 +40,25 @@ public class HypothesisTrigger
 }
 
 /// <summary>
+/// One theory the player can pick at a checkpoint (e.g. "Homicide"). Reused identically
+/// across every checkpoint in a set - the same three theories are offered each time -
+/// so the same handful of ids (e.g. "theory-homicide") are shared across HYP-01/02/03
+/// rather than re-authored per checkpoint. See ReasoningOption's own comment for why id
+/// exists alongside text: HypothesisCheckpointManager.LogSubmission logs id, not text,
+/// so relabeling a theory in the Inspector can't silently repoint past sessions' logged
+/// answers at a different theory.
+/// </summary>
+[Serializable]
+public class HypothesisOption
+{
+    [Tooltip("Stable, author-set identifier for this theory (e.g. \"theory-homicide\"). Used as the logged value in HypothesisSubmitted instead of the raw text - see the class comment.")]
+    public string id;
+
+    [Tooltip("The theory as the player reads it, e.g. \"Homicide\".")]
+    public string text;
+}
+
+/// <summary>
 /// One justification the player can pick to explain their chosen theory. Reasoning is
 /// multiple choice rather than free text on purpose: VR keyboard entry is poor, and -
 /// more importantly - typed reasoning can't be compared across students or scored
@@ -54,12 +73,21 @@ public class HypothesisTrigger
 [Serializable]
 public class ReasoningOption
 {
+    [Tooltip("Stable, author-set identifier for this option (e.g. \"hyp02-blood-spatter-impact\"). Used as the logged value in HypothesisSubmitted instead of the raw text - see HypothesisCheckpointManager.LogSubmission. Reworded text keeps scoring against the same id; a reworded id would not, so treat ids as permanent once a session has logged against them.")]
+    public string id;
+
     [TextArea]
     [Tooltip("The justification as the player reads it, e.g. \"The recovered weapon is inconsistent with an accidental injury\".")]
     public string text;
 
-    [Tooltip("Authoring metadata for later scoring: whether this is the defensible justification. NOTHING READS THIS YET - no scoring logic runs against it in the current build; it exists so checkpoints can be authored now and scored once faculty-validated answers exist.")]
+    [Tooltip("Authoring metadata for later scoring: whether this is the defensible justification. Scoring logic still doesn't read this, but HypothesisCheckpointManager now does, for firing eligibility only (see prerequisites below) - not a correctness judgment shown to the player, just which option(s) the eligibility check has to find satisfied before the checkpoint may fire at all.")]
     public bool isCorrect;
+
+    [Tooltip("Optional cross-item unlock, same shape and registry as ReportLineOption.prerequisites (see SelectionPrerequisite): every entry must already be satisfied - that evidenceId's report line was selected earlier this session - before a checkpoint may fire, IF this option is marked isCorrect. Checked only on isCorrect options; a wrong option's own prerequisites (if it ever had any) would never gate anything, since the checkpoint must be answerable with a correct option actually present the moment it opens. Empty = no gating, the unchanged default for every option authored before this field existed - including every option on HYP-01/02/03 today.")]
+    public List<SelectionPrerequisite> prerequisites = new();
+
+    [Tooltip("Optional ADDITIONAL gating condition, checked alongside prerequisites above (both must pass) - the proof-of-concept integration point for RequirementEvaluator/RequirementNode's ALL/ANY/NOT tree, which prerequisites above cannot express (flat AND-only). Defaults to an empty ALL group, which RequirementEvaluator treats as vacuously true - so every option authored before this field existed is completely unaffected until an author deliberately fills this in. See HypothesisCheckpointManager.CorrectOptionPrerequisitesSatisfied.")]
+    public RequirementNode extraRequirement = new();
 }
 
 /// <summary>
@@ -80,7 +108,7 @@ public class HypothesisCheckpoint
     public string promptText;
 
     [Tooltip("The mutually exclusive theories the player picks between, e.g. Accidental fall / Homicide / Undetermined. The player must choose exactly one.")]
-    public List<string> options = new();
+    public List<HypothesisOption> options = new();
 
     [Tooltip("Whether the player must also pick a justification after choosing a theory. An early opening checkpoint may reasonably skip this; later ones generally shouldn't. If true, reasoningOptions must be non-empty (checked in OnValidate).")]
     public bool requiresReasoning;
@@ -145,6 +173,35 @@ public class HypothesisCheckpointSet : ScriptableObject
             if (checkpoint.requiresReasoning && (checkpoint.reasoningOptions == null || checkpoint.reasoningOptions.Count == 0))
             {
                 Debug.LogWarning($"[{name}] Checkpoint '{checkpoint.id}' requires reasoning but has no reasoningOptions - the player would have nothing to pick and could not submit.", this);
+            }
+
+            ValidateOptionIds(checkpoint.id, "options", checkpoint.options?.ConvertAll(o => o?.id));
+            ValidateOptionIds(checkpoint.id, "reasoningOptions", checkpoint.reasoningOptions?.ConvertAll(o => o?.id));
+        }
+    }
+
+    /// <summary>
+    /// Same shape of check as the checkpoint-id one above, applied to one option list:
+    /// a blank or duplicated option id corrupts HypothesisSubmitted's logged data the
+    /// same way a blank/duplicated checkpoint id would.
+    /// </summary>
+    private void ValidateOptionIds(string checkpointId, string fieldName, List<string> optionIds)
+    {
+        if (optionIds == null)
+        {
+            return;
+        }
+
+        var seen = new HashSet<string>();
+        foreach (var id in optionIds)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                Debug.LogWarning($"[{name}] Checkpoint '{checkpointId}': an entry in {fieldName} has no id. Its logged answers would have nothing to key against.", this);
+            }
+            else if (!seen.Add(id))
+            {
+                Debug.LogWarning($"[{name}] Checkpoint '{checkpointId}': duplicate id '{id}' in {fieldName}. Logged answers for either entry would be ambiguous.", this);
             }
         }
     }

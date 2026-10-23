@@ -1,0 +1,11 @@
+PASS: Original catalog IDs, channels, speakers, durations, priorities and queue/skip settings unchanged
+PASS: Only three catalog-backed closing radio entries added
+PASS: Ending requirements, priorities, IDs and post-session explanation unchanged
+PASS: HYP IDs, correctness, prerequisites and timing unchanged
+PASS: Scene components, interaction ranges, statement gates, utility wiring and phase data unchanged
+PASS: Completion logic unchanged apart from three text lookups
+PASS: All catalog entries non-empty
+PASS: Active spoken catalog wording has no software-state phrases
+PASS: Vendor question unchanged
+PASS: No prepared/unused Peter account rewrites
+=== PASS: 10 focused content/structure checks, 0 failures ===

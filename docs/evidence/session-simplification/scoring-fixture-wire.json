@@ -1,0 +1,347 @@
+{
+    "payloadVersion": 1,
+    "sessionId": "25f69ebc-27ef-47ec-824c-51daaeba8218",
+    "studentId": "",
+    "classId": "",
+    "isTestSession": false,
+    "scenarioId": "CSI-ENVIRONMENT-001",
+    "scenarioVersion": "1.1.0",
+    "scoringRulesVersion": "1.7.0",
+    "groundTruthVersion": "1.2.0",
+    "clientVersion": "0.1.0",
+    "startedAtUtc": "2026-10-21T05:00:24.8142355Z",
+    "completedAtUtc": "2026-10-21T05:00:45.7349317Z",
+    "durationSeconds": 20.921,
+    "selectedConclusionId": "CONCLUSION-INCONCLUSIVE",
+    "resolvedEndingId": "ending-inconclusive",
+    "hasClientReportedScores": false,
+    "clientReportedScores": {
+        "relationshipsCompletedCorrect": 0,
+        "relationshipsCompletedIncorrect": 0,
+        "objectivesCompleted": 0,
+        "objectivesFailed": 0,
+        "proceduralViolationCount": 0
+    },
+    "evidenceResults": [],
+    "reportLineResults": [],
+    "proceduralViolations": [],
+    "relationshipResults": [],
+    "hypothesisResults": [],
+    "deductionAssessmentEvents": [],
+    "hasDeductionAssessment": true,
+    "deductionAssessment": {
+        "scoringRulesVersion": "1.7.0",
+        "status": "complete",
+        "hasFinalScore": true,
+        "totalScore": 29.166667938232423,
+        "reasoningCheckpoints": 0.1666666716337204,
+        "deductionRelationships": 0.1666666716337204,
+        "finalConclusion": 1.0,
+        "reasoningComponent": 10.0,
+        "relationshipComponent": 4.1666669845581059,
+        "conclusionComponent": 15.0,
+        "relationshipEarned": 1.0,
+        "relationshipMaximum": 6.0,
+        "checkpointEarned": 4,
+        "checkpointMaximum": 24,
+        "answeredCount": 1,
+        "eligibleUnansweredCount": 1,
+        "undiscoveredCount": 4,
+        "unsupportedRelationships": 0,
+        "reviewReasons": []
+    },
+    "confirmedFindingIds": [],
+    "unlockedInsightIds": [],
+    "hasScenePhotography": false,
+    "scenePhotography": {
+        "requiredPointCount": 0,
+        "completedPointCount": 0,
+        "coveragePercent": 0.0,
+        "correctSequenceCount": 0,
+        "sequenceAccuracyPercent": 0.0,
+        "wrongOrderAttempts": 0,
+        "wrongPositionAttempts": 0,
+        "wrongAngleAttempts": 0,
+        "totalAttempts": 0,
+        "procedureAccuracyPercent": 0.0,
+        "isComplete": false,
+        "completionSeconds": 0.0,
+        "scorePercent": 0.0
+    },
+    "hasMeasurement": false,
+    "measurement": {
+        "requirementCount": 0,
+        "completedCount": 0,
+        "accurateCount": 0,
+        "lateCount": 0,
+        "completionPercent": 0.0,
+        "accuracyPercent": 0.0,
+        "timingPercent": 0.0,
+        "scorePercent": 0.0,
+        "items": [],
+        "fixedSidesRequired": 0,
+        "fixedSidesCompleted": 0,
+        "pairRequiredCount": 0,
+        "pairCompletedCount": 0,
+        "pairLateCount": 0,
+        "sceneMeasurementsComplete": false,
+        "pairs": []
+    },
+    "includesRawEventLog": false,
+    "orderedEvents": [
+        {
+            "sequenceNumber": 0,
+            "timestampMs": 3,
+            "eventType": "SessionStarted",
+            "targetId": "CSI_Environment",
+            "payload": [
+                {
+                    "key": "startedAtUtc",
+                    "value": "2026-10-21T05:00:24.8142355Z"
+                },
+                {
+                    "key": "applicationVersion",
+                    "value": "0.1.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 7,
+            "timestampMs": 15397,
+            "eventType": "CSIForm1Received",
+            "targetId": "CSI-Form-1",
+            "payload": [
+                {
+                    "key": "receivingRole",
+                    "value": "IOC"
+                },
+                {
+                    "key": "via",
+                    "value": "Bypass"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 8,
+            "timestampMs": 15399,
+            "eventType": "SceneTurnoverCompleted",
+            "targetId": "first-responder-turnover",
+            "payload": [
+                {
+                    "key": "via",
+                    "value": "Bypass"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "15.4"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 12,
+            "timestampMs": 15417,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-01-PETER",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "15.417"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "EVIDENCE_CAUTION"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 13,
+            "timestampMs": 15420,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-victim",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 14,
+            "timestampMs": 15420,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-possible-weapon",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 15,
+            "timestampMs": 15421,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-bloodstain-area",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 16,
+            "timestampMs": 15421,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-drinking-context",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 17,
+            "timestampMs": 15422,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-main-scene-survey",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 18,
+            "timestampMs": 15422,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-02-SCENE",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "15.422"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "SCENE_INTERPRETATION"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 19,
+            "timestampMs": 15422,
+            "eventType": "IOCAssessmentCompleted",
+            "targetId": "ioc-assessment",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 22,
+            "timestampMs": 15437,
+            "eventType": "SOCORequested",
+            "targetId": "soco-request",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 25,
+            "timestampMs": 15438,
+            "eventType": "CSIForm2Completed",
+            "targetId": "CSI-Form-2",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 29,
+            "timestampMs": 15458,
+            "eventType": "SOCOTurnoverCompleted",
+            "targetId": "ioc-soco-turnover",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 37,
+            "timestampMs": 20780,
+            "eventType": "ReasoningCheckpointSubmitted",
+            "targetId": "RC-01-PETER",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "RC-01-PETER-C"
+                },
+                {
+                    "key": "weight",
+                    "value": "4"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "EVIDENCE_CAUTION"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "1"
+                },
+                {
+                    "key": "eligibleSeconds",
+                    "value": "15.417"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "20.778"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 39,
+            "timestampMs": 20812,
+            "eventType": "RelationshipInterpretationSubmitted",
+            "targetId": "REL-peter-departure-supported",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "REL-peter-departure-supported-A"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "1"
+                },
+                {
+                    "key": "reviewVersion",
+                    "value": "1"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "20.8110637664795"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 40,
+            "timestampMs": 20828,
+            "eventType": "DeductionAssessmentSnapshot",
+            "targetId": "CONCLUSION-INCONCLUSIVE",
+            "payload": [
+                {
+                    "key": "assessment",
+                    "value": "{\"scoringRulesVersion\":\"1.7.0\",\"contentVersion\":\"1.0.0\",\"selectedConclusionId\":\"CONCLUSION-INCONCLUSIVE\",\"resolvedEndingId\":\"ending-inconclusive\",\"atConclusion\":true,\"requiresSceneRelease\":true,\"checkpointSystemReady\":true,\"form1Received\":true,\"victimObserved\":true,\"sceneSecurityAcknowledged\":true,\"iocObservationIds\":[\"ioc-victim\",\"ioc-possible-weapon\",\"ioc-bloodstain-area\",\"ioc-drinking-context\",\"ioc-main-scene-survey\"],\"confirmedFindingIds\":[],\"discoveredStatementIds\":[],\"observedEvidenceIds\":[],\"checkpoints\":[{\"checkpointId\":\"RC-01-PETER\",\"responseId\":\"RC-01-PETER-C\",\"wasEligible\":true,\"responseOrder\":1,\"eligibleSeconds\":15.416794776916504,\"answeredSeconds\":20.77823829650879},{\"checkpointId\":\"RC-02-SCENE\",\"responseId\":\"\",\"wasEligible\":true,\"responseOrder\":0,\"eligibleSeconds\":0.0,\"answeredSeconds\":0.0},{\"checkpointId\":\"RC-03-FINGERPRINT\",\"responseId\":\"\",\"wasEligible\":false,\"responseOrder\":0,\"eligibleSeconds\":0.0,\"answeredSeconds\":0.0},{\"checkpointId\":\"RC-04-KNIFE-WOUND\",\"responseId\":\"\",\"wasEligible\":false,\"responseOrder\":0,\"eligibleSeconds\":0.0,\"answeredSeconds\":0.0},{\"checkpointId\":\"RC-05-TIMELINE\",\"responseId\":\"\",\"wasEligible\":false,\"responseOrder\":0,\"eligibleSeconds\":0.0,\"answeredSeconds\":0.0},{\"checkpointId\":\"RC-06-BLOODSTAIN\",\"responseId\":\"\",\"wasEligible\":false,\"responseOrder\":0,\"eligibleSeconds\":0.0,\"answeredSeconds\":0.0}],\"completedRelationshipIds\":[\"REL-peter-departure-supported\"],\"boardConnections\":[],\"relationshipReviewVersion\":1,\"relationshipResponses\":[{\"relationshipId\":\"REL-peter-departure-supported\",\"responseId\":\"REL-peter-departure-supported-A\",\"responseOrder\":1,\"answeredSeconds\":20.811063766479493}],\"questionRecordVersion\":1,\"questionRecords\":[{\"id\":\"RC-01-PETER\",\"category\":\"Reasoning\",\"dimension\":\"EVIDENCE_CAUTION\",\"question\":\"Based on what you know so far, what do you make of Peter leaving the house looking nervous?\",\"selectedAnswerId\":\"RC-01-PETER-C\",\"wasAvailable\":true,\"answeredSeconds\":20.77823829650879,\"selectedAnswerWeight\":4.0,\"maximumWeight\":4.0,\"options\":[{\"id\":\"RC-01-PETER-A\",\"text\":\"Peter probably did it. Leaving nervously after being with John is enough to make him the main suspect.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"RC-01-PETER-B\",\"text\":\"Peter could be involved. His behavior makes him worth looking into, but I need more information.\",\"endingId\":\"\",\"weight\":3.0},{\"id\":\"RC-01-PETER-C\",\"text\":\"I would not treat nervous behavior as proof of guilt. It gives me a reason to ask questions, not a reason to accuse him.\",\"endingId\":\"\",\"weight\":4.0},{\"id\":\"RC-01-PETER-D\",\"text\":\"I don't think Peter matters to the investigation.\",\"endingId\":\"\",\"weight\":2.0}]},{\"id\":\"RC-02-SCENE\",\"category\":\"Reasoning\",\"dimension\":\"SCENE_INTERPRETATION\",\"question\":\"What can you reasonably conclude from the scene at this point?\",\"selectedAnswerId\":\"\",\"wasAvailable\":true,\"answeredSeconds\":-1.0,\"selectedAnswerWeight\":0.0,\"maximumWeight\":4.0,\"options\":[{\"id\":\"RC-02-SCENE-A\",\"text\":\"The knife near John must be the murder weapon.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"RC-02-SCENE-B\",\"text\":\"The knife and blood are important, but they still need proper examination before I can say what happened.\",\"endingId\":\"\",\"weight\":4.0},{\"id\":\"RC-02-SCENE-C\",\"text\":\"There isn't enough here to justify further forensic examination.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"RC-02-SCENE-D\",\"text\":\"The scene suggests a violent incident, but I still need the physical evidence to understand it.\",\"endingId\":\"\",\"weight\":3.0}]},{\"id\":\"RC-03-FINGERPRINT\",\"category\":\"Reasoning\",\"dimension\":\"LIMITATION_RECOGNITION\",\"question\":\"Paul's fingerprint was recovered from the knife. What does that tell you?\",\"selectedAnswerId\":\"\",\"wasAvailable\":false,\"answeredSeconds\":-1.0,\"selectedAnswerWeight\":0.0,\"maximumWeight\":4.0,\"options\":[{\"id\":\"RC-03-FINGERPRINT-A\",\"text\":\"Paul must have used the knife to attack John.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"RC-03-FINGERPRINT-B\",\"text\":\"It makes Paul more suspicious, but I still need other evidence before deciding what the print means in this case.\",\"endingId\":\"\",\"weight\":3.0},{\"id\":\"RC-03-FINGERPRINT-C\",\"text\":\"It shows Paul handled the knife at some point, but the print alone doesn't tell me when he touched it or what he did with it.\",\"endingId\":\"\",\"weight\":4.0},{\"id\":\"RC-03-FINGERPRINT-D\",\"text\":\"The fingerprint doesn't matter because Paul knew John.\",\"endingId\":\"\",\"weight\":2.0}]},{\"id\":\"RC-04-KNIFE-WOUND\",\"category\":\"Reasoning\",\"dimension\":\"RELATIONSHIP_REASONING\",\"question\":\"The knife is consistent with John's wound. How should that finding be interpreted?\",\"selectedAnswerId\":\"\",\"wasAvailable\":false,\"answeredSeconds\":-1.0,\"selectedAnswerWeight\":0.0,\"maximumWeight\":4.0,\"options\":[{\"id\":\"RC-04-KNIFE-WOUND-A\",\"text\":\"This proves the knife was used to kill John.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"RC-04-KNIFE-WOUND-B\",\"text\":\"The knife could be the weapon because its characteristics are consistent with the wound, but that relationship alone does not prove who used it.\",\"endingId\":\"\",\"weight\":4.0},{\"id\":\"RC-04-KNIFE-WOUND-C\",\"text\":\"The knife is probably involved, but I would still want the other findings before relying on it.\",\"endingId\":\"\",\"weight\":3.0},{\"id\":\"RC-04-KNIFE-WOUND-D\",\"text\":\"If the knife fits the wound, whoever touched it must be the attacker.\",\"endingId\":\"\",\"weight\":1.0}]},{\"id\":\"RC-05-TIMELINE\",\"category\":\"Reasoning\",\"dimension\":\"TIMELINE_REASONING\",\"question\":\"I went straight home. I didn't come back after that.\\n\\nThe vendor says he saw Paul near John's house around three in the morning. How does that affect Paul's account?\",\"selectedAnswerId\":\"\",\"wasAvailable\":false,\"answeredSeconds\":-1.0,\"selectedAnswerWeight\":0.0,\"maximumWeight\":4.0,\"options\":[{\"id\":\"RC-05-TIMELINE-A\",\"text\":\"It proves Paul came back and killed John.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"RC-05-TIMELINE-B\",\"text\":\"It makes Paul's story questionable because the vendor's observation conflicts with his claim that he never returned.\",\"endingId\":\"\",\"weight\":4.0},{\"id\":\"RC-05-TIMELINE-C\",\"text\":\"It makes Paul more suspicious, but the vendor still did not see him enter the house or attack John.\",\"endingId\":\"\",\"weight\":3.0},{\"id\":\"RC-05-TIMELINE-D\",\"text\":\"It doesn't matter because the vendor didn't witness the attack.\",\"endingId\":\"\",\"weight\":2.0}]},{\"id\":\"RC-06-BLOODSTAIN\",\"category\":\"Reasoning\",\"dimension\":\"EVIDENCE_INTEGRATION\",\"question\":\"What does the bloodstain finding contribute to the case?\",\"selectedAnswerId\":\"\",\"wasAvailable\":false,\"answeredSeconds\":-1.0,\"selectedAnswerWeight\":0.0,\"maximumWeight\":4.0,\"options\":[{\"id\":\"RC-06-BLOODSTAIN-A\",\"text\":\"It identifies Paul as the attacker.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"RC-06-BLOODSTAIN-B\",\"text\":\"It helps establish where the attack occurred, but it does not identify the attacker by itself.\",\"endingId\":\"\",\"weight\":4.0},{\"id\":\"RC-06-BLOODSTAIN-C\",\"text\":\"It supports the physical reconstruction of what happened near John, but it still needs to be considered with the other evidence.\",\"endingId\":\"\",\"weight\":3.0},{\"id\":\"RC-06-BLOODSTAIN-D\",\"text\":\"The blood only confirms that John was injured, so it adds nothing else.\",\"endingId\":\"\",\"weight\":2.0}]},{\"id\":\"REL-bottle-supports-brother\",\"category\":\"Evidence Relationships\",\"dimension\":\"\",\"question\":\"EVD-018 Bottle + the reported drinking gathering\\nHow should this contextual evidence be used?\",\"selectedAnswerId\":\"\",\"wasAvailable\":false,\"answeredSeconds\":-1.0,\"selectedAnswerWeight\":0.0,\"maximumWeight\":1.0,\"options\":[{\"id\":\"REL-bottle-supports-brother-A\",\"text\":\"Handling the bottle proves that a person remained in the house until the attack.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-bottle-supports-brother-B\",\"text\":\"The bottle shows the attack was accidental because the gathering involved drinking.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-bottle-supports-brother-C\",\"text\":\"The bottle is consistent with the reported gathering and shared handling. It does not establish who was present during the attack or who committed it.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"REL-bottle-supports-brother-D\",\"text\":\"The bottle establishes the order and time at which each participant handled it.\",\"endingId\":\"\",\"weight\":-1.0}]},{\"id\":\"REL-knife-consistent-wound\",\"category\":\"Evidence Relationships\",\"dimension\":\"\",\"question\":\"EVD-014 Kitchen Knife + John's injury\\nWhat can be concluded from their consistency?\",\"selectedAnswerId\":\"\",\"wasAvailable\":false,\"answeredSeconds\":-1.0,\"selectedAnswerWeight\":0.0,\"maximumWeight\":1.0,\"options\":[{\"id\":\"REL-knife-consistent-wound-A\",\"text\":\"The injury proves this particular knife was used and excludes every other sharp object.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-knife-consistent-wound-B\",\"text\":\"The injury and knife together identify Paul as the person who inflicted the wound.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-knife-consistent-wound-C\",\"text\":\"The knife is consistent with John's injury and could have caused it, but this relationship alone does not identify who used it.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"REL-knife-consistent-wound-D\",\"text\":\"A compatible injury establishes the attack sequence and the time at which the knife was used.\",\"endingId\":\"\",\"weight\":-1.0}]},{\"id\":\"REL-paul-print-handled-knife\",\"category\":\"Evidence Relationships\",\"dimension\":\"\",\"question\":\"Paul's fingerprint + EVD-014 Kitchen Knife\\nWhat does this relationship support?\",\"selectedAnswerId\":\"\",\"wasAvailable\":false,\"answeredSeconds\":-1.0,\"selectedAnswerWeight\":0.0,\"maximumWeight\":1.0,\"options\":[{\"id\":\"REL-paul-print-handled-knife-A\",\"text\":\"Paul's print identifies him as the person who used the knife during the attack.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-paul-print-handled-knife-B\",\"text\":\"Paul handled the knife at some point, but the print alone does not establish when, why, or whether he used it during the attack.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"REL-paul-print-handled-knife-C\",\"text\":\"The print shows Paul handled the knife only during the earlier gathering and excludes later handling.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-paul-print-handled-knife-D\",\"text\":\"Because the print cannot be dated, it provides no evidence that Paul handled the knife.\",\"endingId\":\"\",\"weight\":-1.0}]},{\"id\":\"REL-paul-timeline-contradiction\",\"category\":\"Evidence Relationships\",\"dimension\":\"\",\"question\":\"Paul's statement + the vendor's observation around 3:00 AM\\nHow should these accounts be interpreted?\",\"selectedAnswerId\":\"\",\"wasAvailable\":false,\"answeredSeconds\":-1.0,\"selectedAnswerWeight\":0.0,\"maximumWeight\":1.0,\"options\":[{\"id\":\"REL-paul-timeline-contradiction-A\",\"text\":\"The vendor's observation contradicts Paul's claim that he went home around midnight and did not return. The vendor did not witness the attack.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"REL-paul-timeline-contradiction-B\",\"text\":\"The observation confirms Paul's claim because it occurred after the earlier gathering.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-paul-timeline-contradiction-C\",\"text\":\"The observation proves Paul attacked John at exactly 3:00 AM.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-paul-timeline-contradiction-D\",\"text\":\"The accounts cannot be compared unless the vendor also saw what happened inside the house.\",\"endingId\":\"\",\"weight\":-1.0}]},{\"id\":\"REL-peter-departure-supported\",\"category\":\"Evidence Relationships\",\"dimension\":\"\",\"question\":\"Peter's departure account + the vendor's observation around 2:00 AM\\nWhat is supported by the two accounts?\",\"selectedAnswerId\":\"REL-peter-departure-supported-A\",\"wasAvailable\":true,\"answeredSeconds\":20.811063766479493,\"selectedAnswerWeight\":1.0,\"maximumWeight\":1.0,\"options\":[{\"id\":\"REL-peter-departure-supported-A\",\"text\":\"The vendor broadly corroborates Peter leaving around 2:00 AM, but did not witness the attack or establish everything Peter did afterward.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"REL-peter-departure-supported-B\",\"text\":\"The observation establishes Peter's location for the rest of the night and rules out every possible involvement.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-peter-departure-supported-C\",\"text\":\"Leaving around 2:00 AM proves Peter left because he had attacked John.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-peter-departure-supported-D\",\"text\":\"The accounts are contradictory because the vendor did not observe what happened inside the house.\",\"endingId\":\"\",\"weight\":-1.0}]},{\"id\":\"REL-spatter-consistent-reconstruction\",\"category\":\"Evidence Relationships\",\"dimension\":\"\",\"question\":\"EVD-015 Blood Spatter + the attack area\\nWhat does the bloodstain evidence support?\",\"selectedAnswerId\":\"\",\"wasAvailable\":false,\"answeredSeconds\":-1.0,\"selectedAnswerWeight\":0.0,\"maximumWeight\":1.0,\"options\":[{\"id\":\"REL-spatter-consistent-reconstruction-A\",\"text\":\"The blood pattern independently identifies the attacker and establishes intent.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-spatter-consistent-reconstruction-B\",\"text\":\"The bloodstain evidence supports reconstruction of the attack area but does not independently identify the attacker.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"REL-spatter-consistent-reconstruction-C\",\"text\":\"The pattern establishes one exact sequence of movements and excludes all other sequences.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-spatter-consistent-reconstruction-D\",\"text\":\"The pattern proves the knife was held by Paul when the blood was deposited.\",\"endingId\":\"\",\"weight\":-1.0}]},{\"id\":\"FINAL-CONCLUSION\",\"category\":\"Final Conclusion\",\"dimension\":\"\",\"question\":\"Submit your conclusion:\",\"selectedAnswerId\":\"CONCLUSION-INCONCLUSIVE\",\"wasAvailable\":true,\"answeredSeconds\":20.825883865356447,\"selectedAnswerWeight\":0.0,\"maximumWeight\":1.0,\"options\":[]}]}"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 41,
+            "timestampMs": 20864,
+            "eventType": "InvestigationCompleted",
+            "targetId": "",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 43,
+            "timestampMs": 20921,
+            "eventType": "SessionEnded",
+            "targetId": "",
+            "payload": [
+                {
+                    "key": "endedAtUtc",
+                    "value": "2026-10-21T05:00:45.7349317Z"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,63 @@
+PASS Old house retained and inactive
+PASS Evidence in rear kitchen: BODY-A (17.350, 1.326, 12.900)
+PASS Evidence in rear kitchen: EVD-014 (16.242, 1.206, 13.416)
+PASS Evidence in rear kitchen: EVD-015 (17.187, 1.204, 13.116)
+PASS Evidence in rear kitchen: EVD-018 (17.750, 2.260, 14.300)
+PASS Measurement expectations match relocated anchors: MEAS-BODY-A
+PASS Perpendicular fixed surfaces and selectable zones: MEAS-BODY-A
+PASS Measurement expectations match relocated anchors: MEAS-EVD-014
+PASS Perpendicular fixed surfaces and selectable zones: MEAS-EVD-014
+PASS Measurement expectations match relocated anchors: MEAS-EVD-015
+PASS Perpendicular fixed surfaces and selectable zones: MEAS-EVD-015
+PASS Measurement expectations match relocated anchors: MEAS-EVD-018
+PASS Perpendicular fixed surfaces and selectable zones: MEAS-EVD-018
+PASS Sketch definition and all stable slot/anchor IDs agree: 
+PASS Sketch has kitchen detail, ground-floor plan and upstairs plan
+PASS Invisible sketch target tracks actual evidence: BODY-A
+PASS Invisible sketch target tracks actual evidence: EVD-014
+PASS Invisible sketch target tracks actual evidence: EVD-015
+PASS Invisible sketch target tracks actual evidence: EVD-018
+PASS Sketch distance line reaches its relocated reference: BodyA_Ref1_Slot
+PASS Sketch distance line reaches its relocated reference: BodyA_Ref2_Slot
+PASS Sketch distance line reaches its relocated reference: Knife_Ref1_Slot
+PASS Sketch distance line reaches its relocated reference: Knife_Ref2_Slot
+PASS Sketch distance line reaches its relocated reference: Spatter_Ref1_Slot
+PASS Sketch distance line reaches its relocated reference: Spatter_Ref2_Slot
+PASS Sketch distance line reaches its relocated reference: Bottle_Ref1_Slot
+PASS Sketch distance line reaches its relocated reference: Bottle_Ref2_Slot
+PASS Finite architectural linework: RearKitchenDetail
+PASS Finite architectural linework: GroundFloorPlan
+PASS Finite architectural linework: UpperFloorPlan
+PASS Finite architectural linework: NorthArrow
+PASS Finite architectural linework: DetailScale
+PASS Cordon protects new house and leaves arrival outside
+PASS Cordon stays visibly secured
+PASS Photography station has floor support: scene-exterior-establishing
+PASS Standing room at photography station: scene-exterior-establishing 
+PASS Photography target visible: scene-exterior-establishing
+PASS Photography station has floor support: scene-entrance-approach
+PASS Standing room at photography station: scene-entrance-approach 
+PASS Photography target visible: scene-entrance-approach
+PASS Photography station has floor support: scene-interior-from-entrance
+PASS Standing room at photography station: scene-interior-from-entrance 
+PASS Photography target visible: scene-interior-from-entrance
+PASS Photography station has floor support: scene-interior-left
+PASS Standing room at photography station: scene-interior-left 
+PASS Photography target visible: scene-interior-left
+PASS Photography station has floor support: scene-interior-right
+PASS Standing room at photography station: scene-interior-right 
+PASS Photography target visible: scene-interior-right
+PASS Photography station has floor support: scene-body-in-scene
+PASS Standing room at photography station: scene-body-in-scene 
+PASS Photography target visible: scene-body-in-scene
+PASS Photography station has floor support: scene-stair-incident-area
+PASS Standing room at photography station: scene-stair-incident-area 
+PASS Photography target visible: scene-stair-incident-area
+PASS Walk from arrival into rear kitchen: (16.90, 0.00, 2.70) actual=(16.90, 0.01, 2.70)
+PASS Walk from arrival into rear kitchen: (16.90, 1.20, 5.20) actual=(16.90, 1.20, 5.19)
+PASS Walk from arrival into rear kitchen: (16.70, 1.20, 7.30) actual=(16.70, 1.20, 7.30)
+FAIL Walk from arrival into rear kitchen: (15.55, 1.20, 10.80) actual=(16.54, 1.20, 7.79)
+FAIL Walk from arrival into rear kitchen: (15.55, 1.20, 12.25) actual=(16.54, 1.20, 7.79)
+FAIL Walk from arrival into rear kitchen: (16.40, 1.20, 12.30) actual=(16.54, 1.20, 7.79)
+FAIL Walk from arrival into rear kitchen: (18.55, 1.20, 12.05) actual=(16.54, 1.20, 7.79)
+failures=4 compilationFailed=False playing=False dirty=False

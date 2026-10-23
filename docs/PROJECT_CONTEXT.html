@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>VR-CSI Project Context</title>
+<style>
+  @page { margin: 2cm 1.8cm; }
+  body { font-family: Georgia, 'Times New Roman', serif; font-size: 10.5pt; line-height: 1.45; color: #1a1a1a; }
+  h1 { font-size: 20pt; border-bottom: 3px solid #333; padding-bottom: 6px; margin-top: 0; page-break-before: always; }
+  h1:first-of-type { page-break-before: avoid; }
+  h2 { font-size: 14pt; border-bottom: 1px solid #999; margin-top: 22px; padding-bottom: 3px; }
+  h3 { font-size: 11.5pt; margin-top: 16px; color: #222; }
+  h4 { font-size: 10.5pt; margin-top: 12px; color: #333; }
+  code, pre { font-family: 'Consolas', 'Courier New', monospace; }
+  code { background: #f2f2f2; padding: 1px 4px; border-radius: 3px; font-size: 9.3pt; }
+  pre { background: #f5f5f5; border-left: 3px solid #888; padding: 8px 10px; font-size: 8.8pt; overflow-x: auto; white-space: pre-wrap; }
+  table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 9.3pt; }
+  th, td { border: 1px solid #ccc; padding: 4px 7px; text-align: left; vertical-align: top; }
+  th { background: #e8e8e8; }
+  .cover { text-align: center; padding-top: 30%; page-break-after: always; }
+  .cover h1 { border: none; font-size: 28pt; }
+  .cover p { font-size: 12pt; color: #555; }
+  .toc { page-break-after: always; }
+  .toc a { text-decoration: none; color: #1a1a1a; }
+  .toc-item { margin: 4px 0; }
+  .warn { background: #fff4e5; border-left: 3px solid #d98c00; padding: 6px 10px; margin: 8px 0; }
+  .gotcha { background: #ffe9e9; border-left: 3px solid #cc3333; padding: 6px 10px; margin: 8px 0; }
+  .note { background: #e9f2ff; border-left: 3px solid #3366cc; padding: 6px 10px; margin: 8px 0; }
+  ul, ol { margin: 4px 0 8px 0; }
+  li { margin: 2px 0; }
+  .filetree { font-family: 'Consolas', monospace; font-size: 8.6pt; background: #f5f5f5; padding: 8px 10px; line-height: 1.35; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>VR-CSI Project Context</h1>
+  <p>Full architecture, conventions, and extension guide<br>for AI contributors</p>
+  <p>Unity 6000.5.6f1 &middot; URP &middot; Meta XR / Oculus Interaction SDK &middot; MCP for Unity</p>
+  <p style="margin-top:60px; font-size:10pt; color:#888;">Generated 2026-09-12 from a long-running development session.<br>
+  Project root: <code>C:\Users\Roduf Eleu\My project (1)</code></p>
+</div>
+
+<div class="toc">
+<h1>Contents</h1>
+<div class="toc-item">1. Project Overview</div>
+<div class="toc-item">2. File Structure</div>
+<div class="toc-item">3. Core Architecture</div>
+<div class="toc-item">&nbsp;&nbsp;3.1 EvidenceStateManager &mdash; the state machine</div>
+<div class="toc-item">&nbsp;&nbsp;3.2 EvidenceProp / EvidenceDefinition &mdash; the data model</div>
+<div class="toc-item">&nbsp;&nbsp;3.3 PlayerTool / the tool wheel</div>
+<div class="toc-item">&nbsp;&nbsp;3.4 The marker precedent pattern</div>
+<div class="toc-item">&nbsp;&nbsp;3.5 On-scene fingerprint sub-step (FingerprintKitTool/FingerprintTapeTool)</div>
+<div class="toc-item">&nbsp;&nbsp;3.6 Scene-authored vs runtime-generated objects (EvidenceChalkGuide)</div>
+<div class="toc-item">&nbsp;&nbsp;3.7 PhotographTool aim-target resolution</div>
+<div class="toc-item">&nbsp;&nbsp;3.8 GreyboxFlowTest</div>
+<div class="toc-item">&nbsp;&nbsp;3.9 GrabbableEvidenceBase.prefab</div>
+<div class="toc-item">&nbsp;&nbsp;3.10 Assessment pipeline (SessionLogger, ScenarioGroundTruthExporter, EvidenceScorer)</div>
+<div class="toc-item">&nbsp;&nbsp;3.11 InteractionFeedback</div>
+<div class="toc-item">&nbsp;&nbsp;3.12 Hypothesis / Deduction system</div>
+<div class="toc-item">&nbsp;&nbsp;3.13 STCS system</div>
+<div class="toc-item">&nbsp;&nbsp;3.14 RecorderReportUI &amp; cross-item unlocks</div>
+<div class="toc-item">4. Established Conventions and Gotchas</div>
+<div class="toc-item">5. How to Extend This Project</div>
+<div class="toc-item">6. Current Known Gaps / Open Items</div>
+</div>
+
+<h1>1. Project Overview</h1>
+
+<p><strong>What this is.</strong> A VR crime-scene-investigation (CSI) training and <em>assessment</em> scenario, built as a thesis project. The player is a single unified investigator (not a multi-role team) who walks through a scene (currently a house, scenario <code>CSI_Environment</code>), finds evidence, documents it through a real forensic procedure, and submits a conclusion. The point is not "collect all the evidence" &mdash; it is measuring whether the player followed the <em>correct real-world procedure</em> and drew <em>correct conclusions</em>, so the whole design is built around not leaking hints.</p>
+
+<h3>Design philosophy (load-bearing, not decorative)</h3>
+<ul>
+<li><strong>Free placement, no hints.</strong> Marking a numbered evidence tent on a decoy produces the exact same feedback (audio/haptic) as marking the real murder weapon &mdash; see <code>InteractionFeedback</code> (&sect;3.11) and <code>EvidenceNotifier</code>, which deliberately excludes the <code>Marked</code> status from its toast list for this reason. Whether an identification was <em>correct</em> is only knowable after the fact from the session log, never fed back live.</li>
+<li><strong>Procedural compliance is the opposite case &mdash; it must be loud.</strong> Skipping a required step (trying to collect before swabbing, trying to seal before collecting) is always refused with a clear message and a distinguishable "blocked" haptic/tone. The distinction between these two feedback classes is documented explicitly in <code>InteractionFeedback</code>'s class comment and must never be collapsed.</li>
+<li><strong>The real procedure is the spec.</strong> Almost every ordering decision in this codebase (swab-before-flip, on-scene fingerprint-before-collection, sealing before lab processing) was chosen because that is how a real CSI investigator would have to do it, not for gameplay convenience.</li>
+<li><strong>Scoring reads the full event log, not a final-state snapshot.</strong> E.g. <code>TryReclaimMarker</code> rewinds state but never deletes the original log event &mdash; a player who tents everything, watches for a reaction, then quietly un-tents the wrong ones must not be able to erase that signal.</li>
+</ul>
+
+<h3>Tech stack</h3>
+<table>
+<tr><th>Layer</th><th>Detail</th></tr>
+<tr><td>Engine</td><td>Unity 6000.5.6f1</td></tr>
+<tr><td>Render pipeline</td><td>URP (Universal Render Pipeline) &mdash; generated placeholder materials must always use <code>Shader.Find("Universal Render Pipeline/Lit")</code>, never the Built-in "Standard" shader (renders magenta &mdash; see &sect;4)</td></tr>
+<tr><td>XR</td><td>Meta XR / Oculus Interaction SDK (Grabbable, HandGrabInteractable, GrabInteractable), XR Interaction Toolkit input actions (XRI Default Input Actions asset), OVRCameraRig</td></tr>
+<tr><td>Editor automation</td><td>MCP for Unity (<code>com.coplaydev.unity-mcp</code>) &mdash; this entire project has been developed via an AI agent driving the Unity Editor through this bridge (<code>execute_code</code>, <code>manage_scene</code>, etc.), not by a human clicking in the Editor</td></tr>
+<tr><td>Backend/logging</td><td>Local JSON session logs (<code>LocalJsonLogWriter</code>) written to <code>Application.persistentDataPath</code>; a standalone .NET 8 console scorer (<code>Tools/EvidenceScorer</code>) reads them offline</td></tr>
+</table>
+
+<div class="note"><strong>For an AI picking this up cold:</strong> almost every non-trivial design decision in this codebase has a documented "why" in an XML doc comment directly above the code, often referencing a confirmed live bug that motivated it (not a hypothetical). Read those comments before changing behavior &mdash; they are the design history, and several of them explicitly warn against a "fix" that was already tried and found wrong.</div>
+
+<h1>2. File Structure</h1>
+
+<p>Real, current tree under <code>Assets/_Project</code> (obtained via Glob, not reconstructed from memory). Grouped by system rather than alphabetically.</p>
+
+<h3>Scripts/CaseFile &mdash; the evidence data model and state machine</h3>
+<div class="filetree">
+EvidenceStateManager.cs      the central state machine (see &sect;3.1)
+EvidenceDefinition.cs        ScriptableObject: per-item authored data (see &sect;3.2)
+EvidenceRecord.cs            runtime record per evidenceId (status + per-item flags)
+EvidenceProp.cs              MonoBehaviour marking a scene object as evidence + Found trigger
+EvidenceStatus.cs            the enum (NotFound..Processed) + explicit-ordinal discipline
+EvidenceRelevance.cs         Critical/Relevant/Distractor/Neutral (scoring-only, never gates play)
+EvidenceSwabRequirement.cs   marker precedent: a blood-trace sub-object (see &sect;3.4)
+EvidenceFingerprintMarker.cs marker precedent: an on-scene print sub-object (see &sect;3.4, 3.5)
+SelectionPrerequisite.cs     cross-item report-line/hypothesis unlock rule (see &sect;3.14)
+</div>
+
+<h3>Scripts/Interaction &mdash; every tool and scene-interactive object</h3>
+<div class="filetree">
+PhotographTool.cs            camera; aim-target resolution (see &sect;3.7)
+ChalkMarkTool.cs             continuous trace-based chalk outline tool
+EvidenceChalkGuide.cs        the per-item chalk guide (scene-authored conversion, see &sect;3.6)
+ChalkGuideSegmentLink.cs     live line-follow helper for the chalk guide (see &sect;3.6)
+EvidenceTentTool.cs          numbered evidence tent dispenser
+LetterTentTool.cs            separate tool for the LETTER tent (examinedInPlace items)
+EvidenceTentPickup.cs / EvidenceTentPickupCoordinator.cs   tent reclaim (currently disabled, see &sect;6)
+SwabTool.cs / SwabTipReceiver.cs                combined swab+container, collision-based
+FingerprintKitTool.cs        dust brush (+jar), collision-based, generalized (see &sect;3.5)
+FingerprintTapeTool.cs / TapeTipReceiver.cs     lift tape, separately equippable (see &sect;3.5)
+FingerprintStationTool.cs    DEFAULT (post-Sealed) dust/lift/compare station &mdash; EVD-017/018 only now
+BrushTipReceiver.cs          thin OnTrigger forwarder for the dust brush
+EvidenceFlipTool.cs          aim-and-activate flip action (gloves only)
+EvidenceBagTool.cs / EvidenceBagReceiver.cs     physical bag-and-seal collection
+EvidenceGrabGate.cs          disables hand-grab until ReadyForCollection + sub-steps done
+UVRevealable.cs              UV-beam hidden/revealed visibility state machine
+FlashlightTool.cs            UV beam source, raycast-based CurrentBeamTarget
+RecorderTool.cs              aim-and-activate; opens the drag-and-drop report panel
+RightHandOnlyFilter.cs / LeftHandOnlyFilter.cs   Oculus HandGrab interactor filters
+ToggleGrab.cs                 physical-grab toggle behavior (on GrabbableEvidenceBase)
+OpenableFurniture.cs / AtticLadderLever.cs / FoldingStairToggle.cs   environment interactables
+CameraShutterEffect.cs / ViewfinderFrameMask.cs / ViewfinderConfirmationFeedback.cs / AimIndicatorUI.cs / PhotoCaptureListener.cs / HudFollowCamera.cs   camera/viewfinder presentation
+</div>
+
+<h3>Scripts/RoleSystem &mdash; the tool wheel / virtual-equip framework</h3>
+<div class="filetree">
+PlayerTool.cs                 abstract base every tool inherits (see &sect;3.3)
+PlayerToolRegistry.cs         static directory + equip/holster orchestration
+ToolType.cs                   explicit-int enum, one entry per equippable capability
+ToolWheelController.cs        the radial wheel UI, auto-enumerates ToolType
+ToolWheelWedgeTemplate.cs     editor-authored wedge template marker
+LocomotionSuspender.cs        pauses movement while the wheel is open
+RoleSceneLoader.cs / PlayerHeightOffset.cs   scene bootstrap / VR comfort
+</div>
+
+<h3>Scripts/Deduction &mdash; hypothesis checkpoints and the evidence board</h3>
+<div class="filetree">
+HypothesisCheckpointManager.cs   watches evidence progress, fires authored checkpoints (see &sect;3.12)
+HypothesisCheckpointSet.cs / HypothesisCheckpointUI.cs   data asset type + presentation (has a
+                                   runtime-generated FALLBACK panel, only built if no panelRoot
+                                   authored &mdash; a pending scene-authoring conversion, see &sect;6)
+CompletionScreenUI.cs         end-of-scenario screen (also has a runtime-generated fallback, see &sect;6)
+EvidenceBoardController.cs / EvidenceNode.cs / ConnectionLine.cs / DeductionScorer.cs
+                               a corkboard-style evidence-connection board (separate from the
+                               hypothesis-checkpoint flow; read DeductionScorer before changing
+                               either, they are easy to conflate)
+</div>
+
+<h3>Scripts/STCS &mdash; Scripted Team Communication System</h3>
+<div class="filetree">
+STCSManager.cs      fires authored dialogue triggers off EvidenceStateManager events (see &sect;3.13)
+STCSTrigger.cs       one trigger entry (id, dialogue pool, side effects)
+STCSNotificationUI.cs / DialogueLinePool.cs   presentation + line-pool data asset
+</div>
+
+<h3>Scripts/UI, Feedback, Logging, ProceduralGate, Testing</h3>
+<div class="filetree">
+UI/            NotificationManager.cs + NotificationUI.cs (async toast QUEUE, see &sect;4)
+                EvidenceNotifier.cs (bridges OnEvidenceStatusChanged -> generic toasts)
+                RecorderReportUI.cs (drag-and-drop report panel, see &sect;3.14)
+                PlayerUIGate.cs (static blocker-count gate so only one panel owns input at a time)
+                UtilityMenuController.cs, PhotoAlbumManager.cs/UI.cs, ReportLineChip.cs, UIManager.cs
+Feedback/       InteractionFeedback.cs (Confirm/Blocked channels, see &sect;3.11)
+                FeedbackDirector.cs (higher-level feedback orchestration - read before adding a
+                new "success" cue; it documents which statuses deliberately get NO cue)
+Logging/        SessionLogger.cs, SessionEvent.cs, SessionEventType.cs, ISessionLogWriter.cs,
+                LocalJsonLogWriter.cs (see &sect;3.10)
+ProceduralGate/ ProceduralGateValidator.cs (thin wrapper: CanTransition/GetBlockReason delegate
+                to EvidenceStateManager.CanAdvanceTo/GetItemBlockReason - the single source of
+                truth for "is X allowed" stays on EvidenceStateManager)
+Testing/        GreyboxFlowTest.cs (see &sect;3.8), NotificationPriorityTest.cs
+</div>
+
+<h3>Data, Scenes, Prefabs, Editor, Tools</h3>
+<div class="filetree">
+Assets/_Project/Data/
+  Evidence/                    EvidenceDefinition assets for CSI_Environment: EVD-014 (knife),
+                                EVD-015 (spatter), EVD-017 (phone), EVD-018 (bottle),
+                                EVD-019 (gloves), BODY-A (victim's body, examinedInPlace)
+  EvidenceDefinitions/Tutorial/ a SEPARATE tutorial scenario's items (TUT-001..003, TUT-FP-001)
+                                - do not confuse with Data/Evidence/, different scenario
+  DialoguePools/                STCS line-pool assets, one family per evidence item per moment
+  Scenarios/                    HypothesisCheckpoints_CSI_Environment.asset,
+                                GroundTruth_CSI_Environment.json (generated, see &sect;3.10)
+
+Assets/_Project/Scenes/
+  Scenarios/CSI_Environment.unity      the main, actively-developed scenario (this session's focus)
+  Scenarios/Tutorial_ToolTest.unity    tool-testbed scene (EvidenceNotifier.announceDiscovery=true
+                                        here on purpose - see that field's own comment)
+  Scenarios/HeacyASF.unity             (not investigated this session - verify before assuming)
+  Scenario_Basic01_Indoor.unity, Main.unity   other scenes, not touched this session
+
+Assets/_Project/Prefabs/
+  Evidence/GrabbableEvidenceBase.prefab   shared base for every grabbable evidence prop (see &sect;3.9)
+  Interaction/FlashlightTool.prefab, EvidenceTentTool.prefab, PhotographTool.prefab
+  UI/ConnectionLine.prefab
+
+Assets/_Project/Art/Materials/    Mat_ChalkGuide_Uncovered.mat, Mat_ChalkGuide_Covered.mat,
+                                   Mat_LetterTent.mat (deleted - see session history), others
+
+Assets/Editor/
+  ScenarioGroundTruthExporter.cs   menu: Tools/VICSI/Export Scenario Ground Truth (see &sect;3.10)
+  McpHouseBuilder.cs, OpenableFurnitureSetup.cs, SceneLightingRealismSetup.cs   scene-building
+                                   editor utilities, not part of the runtime evidence system
+
+Tools/EvidenceScorer/            standalone .NET 8 console app, single file: Program.cs (see &sect;3.10)
+</div>
+
+<h1>3. Core Architecture</h1>
+
+<h2>3.1 EvidenceStateManager &mdash; the state machine</h2>
+
+<p><code>Assets/_Project/Scripts/CaseFile/EvidenceStateManager.cs</code>. Singleton (<code>Instance</code>), holds a <code>Dictionary&lt;string, EvidenceRecord&gt;</code> keyed by evidenceId, populated in <code>Awake()</code> from the Inspector-assigned <code>sceneEvidenceDefinitions</code> list.</p>
+
+<h3>RequiredSequence &mdash; the one shared pipeline</h3>
+<pre>NotFound -> Found -> PhotographedRaw -> ChalkMarked -> Marked -> PhotographedFinal
+   -> Logged -> ReadyForCollection -> Collected -> Sealed -> Processed</pre>
+<p>This is a single, explicitly-ordered <code>EvidenceStatus[]</code> array, written out independently of the enum's own declaration order on purpose &mdash; a future enum insertion must not silently change gating. <code>IsValidNextStep</code>/<code>GetNextRequiredStatus</code> read this array, never the enum's ordinal directly. <strong>Every item in the roster walks this exact same sequence</strong> &mdash; per-item variation happens through flags and sub-step gates layered on top, never through a different sequence.</p>
+
+<h3>Shared-sequence steps vs. per-item flags &mdash; the key distinction</h3>
+<p>A step is in <code>RequiredSequence</code> only if <em>every</em> item must pass through it. Anything that only applies to <em>some</em> items is a flag on <code>EvidenceRecord</code> instead:</p>
+<table>
+<tr><th>Flag</th><th>Meaning</th><th>Set by</th></tr>
+<tr><td><code>swabbingDone</code></td><td>required blood trace has been swabbed</td><td><code>MarkSwabbed</code></td></tr>
+<tr><td><code>fingerprintingDone</code></td><td>fingerprint processing complete</td><td><code>MarkFingerprinted</code></td></tr>
+<tr><td><code>isFlipped</code></td><td>item physically turned over</td><td><code>MarkFlipped</code></td></tr>
+</table>
+<p>These never appear in <code>RequiredSequence</code>; they gate specific transitions via the <code>IsBlockedByX</code> functions below.</p>
+
+<h3>TransitionResult &mdash; Applied / Duplicate / Violation</h3>
+<p>Every <code>MarkX</code> method returns this so a caller can tell "nothing to report" (<code>Duplicate</code> &mdash; a harmless repeat/backward call, e.g. a proximity trigger re-firing) from "blocked, tell the player why" (<code>Violation</code>). <code>Duplicate</code> is never logged as an error; <code>Violation</code> always is, and fires <code>OnEvidenceTransitionBlocked</code>.</p>
+
+<h3>The IsBlockedByX gate functions &mdash; what each gates NOW</h3>
+<div class="warn"><strong>Important for any future change:</strong> a whole task this session ("Move Logged to Just Before Collection") moved these from gating <code>Collected</code> to gating <code>Logged</code>. If you ever see documentation or code elsewhere referencing these as gating <code>Collected</code>, it is stale &mdash; trust the current source below.</div>
+<table>
+<tr><th>Function</th><th>Gates</th><th>Condition</th></tr>
+<tr><td><code>IsBlockedBySwabbing</code></td><td><code>PhotographedFinal -&gt; Logged</code></td><td><code>requiresSwabbing &amp;&amp; !swabbingDone</code></td></tr>
+<tr><td><code>IsBlockedByOnSceneFingerprinting</code></td><td><code>PhotographedFinal -&gt; Logged</code></td><td><code>fingerprintBeforeCollection &amp;&amp; !fingerprintingDone</code></td></tr>
+<tr><td><code>IsBlockedByFingerprinting</code></td><td><code>Sealed -&gt; Processed</code></td><td><code>requiresFingerprinting &amp;&amp; !fingerprintBeforeCollection &amp;&amp; !fingerprintingDone</code> &mdash; the DEFAULT (post-Sealed) shape, unaffected by the reorder</td></tr>
+</table>
+<p><strong>Why Logged, not Collected:</strong> report-line selection (<code>RecorderTool</code>, gated on <code>CanTransition(id, Logged)</code>) must reflect everything actually discovered on that item &mdash; including a swab result or an on-scene fingerprint match &mdash; and logging feeds hypothesis-checkpoint availability downstream. All on-scene discovery has to land before <code>Logged</code>, not merely before the item is physically bagged.</p>
+<p><code>MarkFlipped</code> has its own additional rule, not expressed as an <code>IsBlockedByX</code> function: when an item <code>requiresFlipBeforeFingerprinting</code> AND <code>requiresSwabbing</code> (currently only the gloves), flip is further locked until <code>swabbingDone</code> &mdash; real procedure swabs the outside trace before ever turning the item over. This reuses <code>IsBlockedBySwabbing</code>'s own message for free (both gate <code>Logged</code>).</p>
+
+<h3>CheckReadyForCollection / CheckProcessed &mdash; the two auto-advances</h3>
+<p><code>MarkLogged</code> calls <code>CheckReadyForCollection</code>, which immediately advances <code>Logged -&gt; ReadyForCollection</code> (skipped entirely for <code>examinedInPlace</code> items, which terminate at <code>Logged</code>). <code>MarkSealed</code> and <code>MarkFingerprinted</code> both call <code>CheckProcessed</code>, which advances <code>Sealed -&gt; Processed</code> the moment every precondition is already true &mdash; there is no distinct player action for "Processed," it just <em>is</em> processed once sealed and (where required) fingerprinted.</p>
+
+<h3>The decoupled FingerprintLabStatus side-track</h3>
+<p><code>NotSent -&gt; SentToLab -&gt; Matched</code>, entirely separate from <code>record.status</code>/<code>RequiredSequence</code>. A print's chain-of-custody (Collected-&gt;Sealed-&gt;Processed) must never wait on a lab turnaround, so "sent"/"matched" live on their own 2-stage track (<code>MarkSentToLab</code>/<code>MarkMatched</code>), auto-triggered from <code>MarkFingerprinted</code>. The match result itself is a hardcoded placeholder (<code>PlaceholderMatchTargets</code>, currently EVD-014 &rarr; "Victim's brother", EVD-019 &rarr; "Victim's wife") standing in for a real suspect-matching system that doesn't exist yet.</p>
+
+<h3>examinedInPlace items</h3>
+<p>An item examined and logged where it lies, never bagged (currently only BODY-A, the victim's body). Its real chain is <code>Found -&gt; PhotographedRaw -&gt; ChalkMarked -&gt; Marked -&gt; PhotographedFinal -&gt; Logged</code>, full stop &mdash; no <code>ReadyForCollection</code>/<code>Collected</code>/<code>Sealed</code>/<code>Processed</code>. It is marked with a LETTER tent (via the separate <code>LetterTentTool</code>, &sect;3.3) instead of a numbered one, and is deliberately excluded from <code>CountAtOrAbove</code> (every caller of that aggregate assumes it reflects the numbered roster).</p>
+
+<h2>3.2 EvidenceProp / EvidenceDefinition &mdash; the data model</h2>
+
+<p><code>EvidenceDefinition</code> (ScriptableObject, one asset per item under <code>Data/Evidence</code>) holds every piece of per-item authored data. Key fields, verified current on the live assets:</p>
+<table>
+<tr><th>Field</th><th>Purpose</th></tr>
+<tr><td><code>evidenceId</code>, <code>displayName</code>, <code>relevance</code></td><td>identity + scoring-only classification (never gates play)</td></tr>
+<tr><td><code>interactionRadius</code></td><td>both the auto-Found proximity radius AND the tenting-match radius &mdash; deliberately one number</td></tr>
+<tr><td><code>chalkCircleRadius</code>, <code>chalkPointCount</code>, <code>chalkCompletionThreshold</code></td><td>per-item chalk guide geometry (see &sect;3.6); MUST be authored per item, no sensible universal default</td></tr>
+<tr><td><code>requiresSwabbing</code>, <code>collectedBySwab</code></td><td>mutually exclusive: a precondition-on-a-different-item's-bagging vs. this item's OWN collection method (EVD-015 only)</td></tr>
+<tr><td><code>requiresFingerprinting</code>, <code>fingerprintBeforeCollection</code>, <code>requiresFlipBeforeFingerprinting</code></td><td>see &sect;3.1/3.5 &mdash; on-scene vs. default (post-Sealed) fingerprint shape</td></tr>
+<tr><td><code>examinedInPlace</code></td><td>see &sect;3.1</td></tr>
+<tr><td><code>reportLineOptions</code>, <code>minimumLinesRequired</code></td><td>the drag-and-drop report content (&sect;3.14); each <code>ReportLineOption</code> can carry <code>SelectionPrerequisite</code>s</td></tr>
+</table>
+
+<p><code>EvidenceProp</code> (MonoBehaviour, on the actual scene object) owns:</p>
+<ul>
+<li>A runtime-created trigger collider (sized from <code>interactionRadius</code>) that fires <code>MarkFound</code> automatically &mdash; suppressed entirely when <code>foundRequiresExternalTrigger</code> is true (used by marker sub-objects that reach Found some other way, e.g. via a UV reveal).</li>
+<li><code>SurfaceNormalAxis</code> (LocalUp/LocalForward/LocalDown/LocalBack) &mdash; which local axis is "outward" for the chalk guide's own orientation. NOT uniform across the roster: flat-decal props (knife, spatter) need <code>LocalBack</code>; the phone needs <code>LocalForward</code>; upright props use the <code>LocalUp</code> default. Verify per-prop, never assume.</li>
+<li><code>overrideChalkGuideTransform</code> + <code>chalkGuideLocalPosition/EulerAngles/Scale</code> &mdash; an opt-in per-prop escape hatch added this session so a prop whose own authored rotation/scale isn't a sane basis for a guide (BODY-A's body model sits at an odd 275&deg; rotation) can still get a correctly-oriented guide. Off by default for every other item.</li>
+<li>The static registry (<code>EvidenceProp.All</code>, <code>FindById</code>, <code>FindNearestWithinRadius</code>) that every targeting system (tenting, photography) reads.</li>
+</ul>
+
+<h2>3.3 PlayerTool / the tool wheel</h2>
+
+<p><code>Assets/_Project/Scripts/RoleSystem/PlayerTool.cs</code>. Abstract base for every equippable capability. Core contract:</p>
+<ul>
+<li><strong>Virtual equip, not physical pickup.</strong> A tool starts hidden and inert; it only appears, attached to a hand, once selected from the tool wheel (<code>EquipToHand</code>/<code>Holster</code>, driven by <code>PlayerToolRegistry.ToggleEquip</code>). There is nothing sitting out in the world to walk up to.</li>
+<li><code>equipLocalPosition</code> / <code>equipLocalEulerAngles</code> &mdash; per-tool offset applied relative to the hand anchor on equip. Edit directly in the Inspector under "Virtual Equip (tool wheel)."</li>
+<li><strong>The renderer/collider gotcha:</strong> <code>SetEquippedVisualState</code> disables every collider under the tool's GameObject <strong>in both equip states</strong> (equipped and holstered) &mdash; equipping is exclusively the wheel's job; if colliders stayed enabled while equipped, a hand passing near the tool could grab it mid-air and fight the wheel's own transform pinning. Any tool with its own functional tip collider (brush, swab tip, tape tip) must explicitly re-enable/disable that specific collider in its own <code>EquipToHand</code>/<code>Holster</code> override.</li>
+<li><code>PreferredHand</code> (defaults to Right) lets a tool request the left hand instead of the wheel special-casing it by <code>ToolType</code>.</li>
+</ul>
+<p><code>ToolType</code> is an explicit-int enum (same discipline as <code>EvidenceStatus</code>) &mdash; append, never renumber. Current roster: <code>Photographer, IOC, Sketcher, EvidenceCollector, Recorder, EvidenceMarker, Swab, FingerprintKit, ChalkMark, EvidenceFlip, FingerprintTape, LetterTentMarker</code>.</p>
+<p><code>PlayerToolRegistry</code> is the static directory (<code>GetTool</code>, <code>ToggleEquip</code>, <code>HolsterCurrent</code>) &mdash; adding a new tool needs zero changes here, it self-registers via <code>OnEnable</code>. <code>ToolWheelController</code> auto-enumerates every <code>ToolType</code> value; a role with no <code>PlayerTool</code> built yet just shows a dimmed, non-functional wedge.</p>
+<div class="note">Selecting a <em>different</em> tool from the wheel always fully holsters whatever was equipped before &mdash; this is how switching from a two-handed tool (brush+jar) to a different one-handed tool (tape) empties <em>both</em> hands with zero special-casing anywhere.</div>
+
+<h2>3.4 The marker precedent pattern</h2>
+<p>Used by <code>EvidenceSwabRequirement</code> and <code>EvidenceFingerprintMarker</code>: a small physical sub-object with its <em>own</em> <code>evidenceId</code> field pointing to its PARENT's real roster id, found via its own static registry (<code>FindByEvidenceId</code>), gating the parent's own transition &mdash; explicitly <strong>not</strong> an independent <code>EvidenceProp</code>/roster item.</p>
+<div class="gotcha"><strong>Why not just make it a second EvidenceProp?</strong> This was tried first (an earlier design used an independent, co-located EvidenceProp for the knife's blood trace) and was <strong>genuinely broken</strong>, not merely awkward: <code>PhotographTool</code>'s targeting resolves by camera distance among every registered <code>EvidenceProp</code> &mdash; a stain a few centimetres from the knife's own pivot could not be reliably disambiguated from it, and photographing "the knife" kept crediting the trace instead. Making it a precondition marker sidesteps the conflict entirely: only one real EvidenceProp exists in that physical space.</div>
+<p>Both marker classes: register only if <code>evidenceId</code> is non-empty; are found via <code>GetComponentInParent&lt;T&gt;()</code> from whatever collider a tool's touch/aim actually hit; carry no <code>EvidenceRecord</code> of their own.</p>
+
+<h2>3.5 On-scene fingerprint sub-step (FingerprintKitTool + FingerprintTapeTool)</h2>
+<p>Generalized this session off <code>EvidenceFingerprintMarker</code> &mdash; it used to be hardcoded to the knife alone (<code>KnifeEvidenceId</code>/<code>PrintMarkerId</code> consts, a single <code>isDusted</code> bool). Now:</p>
+<ul>
+<li><code>IsDusted</code> lives <strong>per-marker</strong> (on <code>EvidenceFingerprintMarker</code> itself), not on the tool &mdash; a shared bool would have let dusting one print silently count as dusting a different item's.</li>
+<li><strong>Collision-based, not aim-and-click.</strong> Loading dust needs an explicit trigger press (touch jar + press). Applying dust and lifting need <em>no</em> press at all &mdash; the dusted brush touching a print's own trigger "TouchZone" collider fires <code>TryDust(marker)</code> the instant contact happens, the same way a real brush swiped across a surface deposits powder immediately. The print's TouchZone is a <em>separate</em> trigger collider from its other, solid, non-trigger one &mdash; that second one still has to stay solid for <code>FlashlightTool</code>'s own occlusion-style raycast.</li>
+<li><code>FingerprintTapeTool</code> is a separately-equippable tool (own <code>ToolType.FingerprintTape</code>) whose trigger handler is a thin forwarder into <code>FingerprintKitTool.TryLift(marker)</code> &mdash; <code>TryLift</code>'s implementation deliberately stays on <code>FingerprintKitTool</code> (single source of truth), not moved to the tape tool.</li>
+<li>Currently used by both EVD-014 (knife) and EVD-019 (gloves) &mdash; both have their own <code>EvidenceFingerprintMarker</code> child object with a UV-hidden print, revealed via <code>UVRevealable.TriggerReveal</code>. The gloves' fingerprint marker additionally requires <code>isFlipped</code> before dusting will succeed (checked inside <code>TryDust</code>).</li>
+<li><code>FingerprintStationTool</code> is now used <em>only</em> for the DEFAULT (post-Sealed) shape &mdash; currently EVD-017/018. It has real failability (dust-coverage window, over/under-dusting smudges and resets).</li>
+</ul>
+
+<h2>3.6 Scene-authored vs runtime-generated objects</h2>
+<p><strong>This is the reusable pattern for the still-pending conversions listed in &sect;6.</strong> Worked example: <code>EvidenceChalkGuide</code>.</p>
+<h4>The problem</h4>
+<p>The chalk guide used to be built entirely from scratch in code (<code>new GameObject</code>, <code>AddComponent&lt;LineRenderer&gt;</code>, generated materials) every time an item reached <code>PhotographedRaw</code>. That makes it impossible to hand-tune in the Editor &mdash; any edit is invisible until Play mode, and gets silently rebuilt from formula every session anyway.</p>
+<h4>The pattern (two co-existing paths)</h4>
+<ol>
+<li><strong>Template + clone, for parametric per-item objects.</strong> One authored template (<code>ChalkMarkTool.chalkGuideTemplate</code>, a real inactive scene GameObject with the max point/segment count pre-built and real material assets assigned) is <code>Instantiate</code>d and <em>configured</em> per item &mdash; not built from scratch. The template itself carries the <code>EvidenceChalkGuide</code> component (not <code>AddComponent</code>'d after cloning) specifically so Inspector-assigned fields (the two materials) survive the clone &mdash; a component added via <code>AddComponent&lt;T&gt;()</code> at runtime always starts with default field values, it does not inherit anything.</li>
+<li><strong>Direct authoring adoption, for a specific item.</strong> <code>SpawnFor</code> first checks for an already-existing <code>"ChalkGuide_" + evidenceId</code> child directly under the prop &mdash; if a human (or an AI) hand-placed one, it is <em>adopted</em> (<code>InitializeFromAuthored</code>) instead of cloning the template. Currently used for EVD-017 (phone) and BODY-A.</li>
+</ol>
+<div class="gotcha"><strong>A real bug found and fixed this session:</strong> the first version of the adoption path still called the regular <code>Initialize</code>, which unconditionally recomputes every point's position from the <code>chalkCircleRadius</code> formula &mdash; silently discarding any hand-edit the moment the guide (re)spawned. <code>InitializeFromAuthored</code> is a genuinely separate method that touches only runtime-driven state (current material, current toolEquipped-gated visibility) and never repositions a point, never resizes a segment, and reads the point/segment <em>count</em> from however many actually exist rather than trusting the data.</div>
+<h4>ChalkGuideSegmentLink &mdash; why plain Transform-parenting doesn't work</h4>
+<p>A <code>LineRenderer</code>'s endpoints are <strong>static baked coordinates</strong> set via <code>SetPosition</code>, completely independent of Transform hierarchy. Parenting a point under its segment would move the point when you drag the segment, but the <em>drawn line</em> would not follow &mdash; it stays at its old baked position. The fix: a small <code>[ExecuteAlways]</code> component on each segment holding live Transform references to its start/end points, redrawing every <code>LateUpdate</code> (in both Play mode and the Editor). This is what makes hand-dragging a point in the Scene view visibly update the connected lines in real time, with no Play mode needed.</p>
+<h4>A second real gotcha hit while authoring the phone/body guides</h4>
+<p><code>GameObject.Find</code> cannot find inactive objects &mdash; when the freshly-created template was momentarily inactive, a follow-up <code>GameObject.Find("ChalkGuideTemplate")</code> call failed. Use <code>FindObjectOfType&lt;T&gt;(includeInactive: true)</code>, or hold the reference from the same call that created/deactivated it.</p>
+<div class="note"><strong>For the pending conversions</strong> (checkpoint UI fallback panel, completion screen, letter-tent stub, flip-tool stub, fingerprint station pad) &mdash; first determine whether the object is a true singleton (most of these are) or genuinely parametric per-instance like the chalk guide. A singleton only needs the "direct authoring adoption" half of this pattern (author it once in the scene, have the script find-and-toggle it instead of building it) &mdash; no template/clone machinery needed. Also check whether the object is ever parented under a <code>PlayerTool</code> (the flip-tool stub and fingerprint station pad plausibly are, or at least visually represent held/interactive props) &mdash; if so, <code>SetActive</code> is the correct hide mechanism, NOT renderer-disabling, because <code>PlayerTool.SetEquippedVisualState</code> re-enables/disables renderers on its own schedule tied to equip state and will fight a hand-managed renderer toggle.</div>
+
+<h2>3.7 PhotographTool aim-target resolution</h2>
+<p>Every frame while aiming, <code>UpdateAimTarget</code> scans <code>EvidenceProp.All</code> and resolves a single <code>CurrentAimTarget</code> under three filters, in order:</p>
+<ol>
+<li><strong>Must be at-or-past Found.</strong> An undiscovered item (e.g. a not-yet-revealed print marker) can never win, regardless of distance/framing &mdash; without this, an undiscovered co-located item could steal the aim target from the one the player actually meant to shoot (confirmed live as the original cause of "can't photograph the knife").</li>
+<li><strong>In range and in frustum.</strong> Within <code>maxDistance</code>, and its pivot's viewport point must land in [0,1] on x/y with positive z.</li>
+<li><strong>Unoccluded.</strong> One raycast per candidate toward its own pivot; the first thing hit must be that same item, or it's disqualified (no partial-occlusion tolerance).</li>
+</ol>
+<p><strong>Tie-break among survivors:</strong> as of this session, the candidate closest to <strong>viewport center</strong> wins &mdash; not the one physically nearest the camera. This was changed after a confirmed bug: two items sitting close together (e.g. the blood spatter 0.34m from the body) would have the nearer one hijack the shot even when the player was framed dead-center on the other. <code>TakePhoto</code> only ever acts on the single resolved <code>CurrentAimTarget</code> &mdash; a shutter press has never been able to advance more than one item at once; the bug was about <em>which one</em> got picked, not multiple-at-once.</p>
+
+<h2>3.8 GreyboxFlowTest</h2>
+<p><code>Assets/_Project/Scripts/Testing/GreyboxFlowTest.cs</code>. A checked-in, re-runnable regression test &mdash; exists specifically because an earlier ad-hoc walkthrough (typed into the Editor console once and never saved) silently stopped being valid when the sequence changed, with nothing to fail. Run via:</p>
+<pre>FindFirstObjectByType&lt;GreyboxFlowTest&gt;().RunFullFlow()</pre>
+<p>(from Play mode, via MCP <code>execute_code</code>, or tick <code>runOnStart</code>). Drives every roster item (currently <code>EVD-014, EVD-015, EVD-017, EVD-018, EVD-019</code>) through the full lifecycle, asserting at each step; a line starting with <code>FAIL</code> is a real regression. Where a real tool exists, it calls the tool's own public <code>TryX</code> method (e.g. <code>SwabTool.TrySampleRequiredSwab</code>, <code>FingerprintKitTool.HandleBrushTriggerEnter</code>) rather than the bare <code>EvidenceStateManager.MarkX</code>, so it also proves the real call path, not just the underlying gate.</p>
+<div class="gotcha"><strong>What it explicitly does NOT cover</strong> (confirmed this session, a real blind spot): it drives the state machine directly and does not simulate VR input at all &mdash; it never exercises a tool's actual <code>Update()</code> loop or real button-press detection (<code>InputAction.WasPressedThisFrame()</code>). A bug purely in real trigger/input wiring can pass this test cleanly while still being broken on a real headset. When debugging a "nothing happens when I press the trigger" report, this test alone cannot rule that class of bug out &mdash; you have to simulate the real equipped-tool + real hand-anchor position and call the actual private input-driven method via reflection, or get on a real device.</div>
+<p>State does not reset between runs within the same Play session &mdash; always stop and restart Play mode before re-running for a clean result. Each run also regenerates BODY-A driving manually where needed (it is intentionally excluded from the main roster loop, since <code>examinedInPlace</code> items are excluded from <code>CountAtOrAbove</code>).</p>
+
+<h2>3.9 GrabbableEvidenceBase.prefab</h2>
+<p><code>Assets/_Project/Prefabs/Evidence/GrabbableEvidenceBase.prefab</code>. The shared base every physically-collectible evidence item (knife, phone, bottle, gloves) is a real connected instance of &mdash; verify with <code>PrefabUtility.IsPartOfAnyPrefab</code>/<code>GetPrefabAssetPathOfNearestInstanceRoot</code> before assuming an item is a loose GameObject.</p>
+<p><strong>Base prefab provides:</strong> <code>MeshFilter, MeshRenderer, BoxCollider, Rigidbody (non-kinematic, gravity on by default), Grabbable, HandGrabInteractable, GrabInteractable, EvidenceProp, ToggleGrab</code>.</p>
+<p><strong>Every real instance adds</strong> (as per-instance component overrides, not part of the prefab asset itself &mdash; confirmed via <code>PrefabUtility.GetAddedComponents</code>): <code>EvidenceGrabGate</code> + <code>RightHandOnlyFilter</code> (wired into both interactables' <code>_interactorFilters</code>). Every instance also overrides the <code>Rigidbody</code> to <code>isKinematic=true, useGravity=false</code> (the prefab's own default is the opposite).</p>
+<p><strong>Two visual conventions coexist</strong> among instances &mdash; match whichever fits the item's own mesh setup, don't guess:</p>
+<table>
+<tr><th>Knife/phone style</th><th>Bottle/gloves style</th></tr>
+<tr><td>Root's own <code>MeshFilter</code>/<code>MeshRenderer</code>/<code>ToggleGrab</code> REMOVED; a separate <code>Visual</code> child carries the real mesh</td><td>Root KEEPS the prefab's default <code>MeshFilter</code>/<code>MeshRenderer</code>/<code>ToggleGrab</code>, mesh assigned directly on the root, no Visual child</td></tr>
+</table>
+<div class="gotcha">A stray, non-prefab-connected copy of these components manually bolted onto an item (rather than a real <code>PrefabUtility.InstantiatePrefab</code> instance) is a real mistake to avoid &mdash; it works functionally but loses prefab-level maintainability and was explicitly corrected for the gloves this session after being built that way first.</div>
+
+<h2>3.10 Assessment pipeline</h2>
+<p><strong>SessionLogger</strong> (<code>Assets/_Project/Scripts/Logging/</code>) writes every meaningful player action as a <code>SessionEvent</code> (typed via <code>SessionEventType</code>) to a local JSON file via <code>LocalJsonLogWriter</code>, at <code>Application.persistentDataPath</code> (Windows: <code>AppData/LocalLow/DefaultCompany/My project (1)/session_&lt;guid&gt;_&lt;timestamp&gt;.jsonl</code>). This is the append-only ground truth of what actually happened &mdash; state rewinds (e.g. tent reclaim) never delete or rewrite prior entries.</p>
+<p><strong>ScenarioGroundTruthExporter</strong> (<code>Assets/Editor/ScenarioGroundTruthExporter.cs</code>, menu <code>Tools/VICSI/Export Scenario Ground Truth</code>) reads <code>EvidenceStateManager.sceneEvidenceDefinitions</code> directly via <code>SerializedObject</code> &mdash; no second hand-maintained roster list &mdash; and writes <code>Data/Scenarios/GroundTruth_CSI_Environment.json</code>: the roster (id/name/relevance), hypothesis checkpoint correct-answer keys, and per-item report-line accuracy keys. Fully generic over roster size/content; re-run this after adding or removing any evidence item.</p>
+<p><strong>EvidenceScorer</strong> (<code>Tools/EvidenceScorer</code>, standalone .NET 8 console app, single file <code>Program.cs</code>) takes a session log + the ground truth JSON and computes: critical/relevant recall, precision, distractor fall-rate, reasoning accuracy, documentation accuracy. Run from that directory:</p>
+<pre>dotnet run --no-build -- &lt;sessionLogPath&gt; &lt;groundTruthPath&gt; [outputPath]</pre>
+
+<h2>3.11 InteractionFeedback</h2>
+<p><code>Assets/_Project/Scripts/Feedback/InteractionFeedback.cs</code>. Exactly two static channels, deliberately opposite in what they signal:</p>
+<ul>
+<li><strong><code>Confirm(Transform pulseTarget = null)</code></strong> &mdash; "the game registered what you did," fires identically whether the action was correct or not (marking a decoy confirms exactly like marking the real weapon &mdash; anything else would leak the answer). Haptic pulse + generated tone + optional scale-pop on <code>pulseTarget</code>.</li>
+<li><strong><code>Blocked(Transform pulseTarget = null)</code></strong> &mdash; "the game refused to do that," reserved strictly for procedural refusals (skipping a step) that the player MUST be able to distinguish from an accepted action. Never used to signal a wrong identification.</li>
+</ul>
+<p>Audio is generated procedurally at runtime (<code>BuildTone</code>) rather than shipped as clip assets, specifically so a missing-asset reference can never silently produce nothing. A confirmed real gap this session: <code>EvidenceFlipTool.TryFlip</code>'s success case called bare <code>InteractionFeedback.Confirm()</code> with no toast at all &mdash; unlike every other successful action in the project. Fixed by adding an explicit <code>NotificationManager.Notify</code> call; keep this consistency in mind for any new tool's success path.</p>
+
+<h2>3.12 Hypothesis / Deduction system</h2>
+<p><code>HypothesisCheckpointManager</code> watches <code>EvidenceStateManager.OnEvidenceStatusChanged</code>/<code>OnReportLineSelected</code>/<code>OnFingerprintLabStatusChanged</code> and fires authored checkpoints (data: <code>HypothesisCheckpointSet</code>) once their trigger condition is met (a count threshold, or a specific submission-initiated trigger for the final one). Each checkpoint offers reasoning options, some gated by <code>SelectionPrerequisite</code> (&sect;3.14). Every answer is logged with the evidence state at that moment &mdash; the point of this system is the data captured, not the screen shown. <code>HypothesisCheckpointUI</code> has a runtime-generated fallback panel used only when no <code>panelRoot</code> is authored (a pending scene-authoring conversion, &sect;6).</p>
+<p>Separately, <code>EvidenceBoardController</code>/<code>EvidenceNode</code>/<code>ConnectionLine</code>/<code>DeductionScorer</code> implement a corkboard-style evidence-connection board &mdash; a distinct system from the hypothesis checkpoints; do not conflate the two when extending either.</p>
+
+<h2>3.13 STCS system</h2>
+<p><code>STCSManager</code> fires authored dialogue moments (simulated teammates commenting) off the same <code>EvidenceStateManager</code> events, keyed by trigger id (e.g. <code>"evidence_019_flip_hint"</code>, built generically from the evidenceId's digits via <code>PlayerTool.FireEvidenceSTCSTrigger</code>). A real, fixed bug this session: the gloves' flip-hint trigger used to fire at <code>ReadyForCollection</code>, which &mdash; after the Logged reorder (&sect;3.1) &mdash; was already <em>after</em> the point flipping had to happen, making the hint useless. Now fires at <code>PhotographedFinal</code>, matching when flip actually becomes available. <strong>Any future reorder of when a sub-step becomes available must be checked against every STCS trigger tied to that same moment.</strong></p>
+
+<h2>3.14 RecorderReportUI &amp; cross-item unlocks</h2>
+<p><code>RecorderTool</code> (aim-and-activate) opens <code>RecorderReportUI</code>'s drag-and-drop panel for an item once it's <code>PhotographedFinal</code>; confirming is what actually calls <code>MarkLogged</code> (gated a second time at confirm, in case state changed while the panel was open). Each <code>ReportLineOption</code> can carry a list of <code>SelectionPrerequisite</code>s (&sect;3.4-adjacent, see <code>SelectionPrerequisite.cs</code>) &mdash; e.g. the knife's "may be the murder weapon" line requires BODY-A's wound-description line to have already been selected. <code>SelectionPrerequisite.AllSatisfied</code> is the single shared implementation, called identically from <code>RecorderReportUI</code>, <code>HypothesisCheckpointManager</code>, and <code>HypothesisCheckpointUI</code> &mdash; do not duplicate this check anywhere else.</p>
+
+<h1>4. Established Conventions and Gotchas</h1>
+
+<div class="gotcha"><strong>Scene <code>[SerializeField]</code> values silently override code defaults.</strong> Changing a field's default value in C# does nothing for an object already serialized into a scene with the old value baked in &mdash; the scene's own data wins. Always verify live via <code>SerializedObject</code> after a change like this, don't trust the code alone.</div>
+
+<div class="gotcha"><strong><code>EditorUtility.SetDirty</code> and the MCP <code>manage_scene action:"save"</code> tool do NOT reliably persist scene changes.</strong> The robust pattern, used consistently throughout this session: call <code>UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(scene)</code> then <code>EditorSceneManager.SaveScene(scene)</code> directly via <code>execute_code</code>, <strong>always</strong> followed by a verification reload (<code>manage_scene action:"load"</code>) before trusting the edit persisted.</div>
+
+<div class="gotcha"><strong>Play Mode changes never persist.</strong> Any edit made to a scene GameObject while <code>Application.isPlaying == true</code> is discarded the instant Play mode exits, full stop &mdash; there is no exception. Scene edits (including material/component wiring) must be made in Edit mode.</div>
+
+<div class="gotcha"><strong><code>GameObject.Find</code> cannot find inactive objects.</strong> Use <code>FindObjectOfType&lt;T&gt;(includeInactive: true)</code>, or keep the reference from whichever call created/deactivated the object.</div>
+
+<div class="gotcha"><strong>CodeDom (the default MCP <code>execute_code</code> compiler) does not support local functions or a <code>using</code> statement mid-method-body.</strong> Write helper logic as a lambda (<code>System.Action&lt;...&gt;</code>/<code>Func&lt;...&gt;</code>) instead of a local function, and use fully-qualified type names (<code>Oculus.Interaction.Grabbable</code>, <code>UnityEditor.SceneManagement.EditorSceneManager</code>) instead of a <code>using</code> directive, which is invalid inside a wrapped method body.</div>
+
+<div class="gotcha"><strong>URP vs. the Built-in "Standard" shader.</strong> This project is URP; the legacy Built-in "Standard" shader renders as the magenta/pink error shader under URP. Any generated placeholder material must use <code>Shader.Find("Universal Render Pipeline/Lit")</code>. Confirmed root cause of at least two real bugs this session (a letter-tent stub, and the gloves' own placeholder material).</div>
+
+<div class="gotcha"><strong>The notification toast queue is asynchronous.</strong> <code>NotificationManager.Notify</code> enqueues; the visible label only advances as the display coroutine's own timer allows. Reading the label text in the same synchronous call as the <code>Notify</code> (or the same MCP round-trip) will show whatever was ALREADY displaying, not the new message &mdash; you must let real time pass (a separate tool call) before checking.</div>
+
+<h3>Working discipline</h3>
+<ul>
+<li><strong>"Preserve all existing gating/behavior" is enforced by live re-verification, not code review alone.</strong> Every reorder or refactor this session (the Logged move, the fingerprint generalization, the PhotographTool tie-break fix) was followed by entering Play mode, driving the exact repro scenario, and confirming the before/after numerically &mdash; not just reading the diff.</li>
+<li><strong>Ask before an irreversible architecture fork.</strong> When a request has two materially different correct implementations (e.g. "should the chalk guide be one template-per-item or six hand-authored objects," "should moving a point re-parent it or live-follow it") this session consistently asked a clarifying question (via a structured choice) before committing, rather than guessing and rebuilding later.</li>
+<li><strong>Run <code>GreyboxFlowTest.RunFullFlow()</code> after any change touching the state machine, gating, or a tool's public <code>TryX</code> method</strong>, in a freshly-restarted Play session (state does not reset between runs otherwise).</li>
+</ul>
+
+<h1>5. How to Extend This Project</h1>
+
+<h3>Add a new evidence item</h3>
+<ol>
+<li>Create an <code>EvidenceDefinition</code> asset under <code>Data/Evidence/</code> (menu: <em>VR-CSI/Evidence Definition</em>), fill in <code>evidenceId</code>, <code>displayName</code>, <code>relevance</code>, <code>interactionRadius</code>, <code>chalkCircleRadius</code>/<code>chalkPointCount</code>, and whichever of <code>requiresSwabbing</code>/<code>requiresFingerprinting</code>/<code>fingerprintBeforeCollection</code>/<code>requiresFlipBeforeFingerprinting</code>/<code>examinedInPlace</code> apply.</li>
+<li>Add the physical scene object: either a real <code>GrabbableEvidenceBase.prefab</code> instance (&sect;3.9) if it's meant to be collected, or a plain object with just <code>EvidenceProp</code> if it isn't (e.g. <code>examinedInPlace</code>). Set <code>evidenceId</code> and <code>SurfaceNormalAxis</code> to match its actual resting rotation.</li>
+<li>Add its own sub-marker children if needed (a real <code>EvidenceSwabRequirement</code> or <code>EvidenceFingerprintMarker</code> child, matching &sect;3.4/3.5) &mdash; never a second independent <code>EvidenceProp</code> co-located with the parent.</li>
+<li>Register the new <code>EvidenceDefinition</code> in <code>EvidenceStateManager.sceneEvidenceDefinitions</code> (Inspector list on the scene's <code>EvidenceStateManager</code> component) &mdash; verify via <code>SerializedObject</code>, save+reload.</li>
+<li>Re-run <code>Tools/VICSI/Export Scenario Ground Truth</code> and confirm the new item appears with the right relevance.</li>
+<li>Add it to <code>GreyboxFlowTest.evidenceIds</code> (a <code>[SerializeField]</code> array on the scene's <code>GreyboxFlowTest</code> component &mdash; edit via <code>SerializedObject</code>, not just the C# default array, per the scene-override gotcha) and drive it through <code>RunFullFlow()</code>.</li>
+</ol>
+
+<h3>Add a new tool</h3>
+<ol>
+<li>Add a new value to <code>ToolType</code> (append, explicit int, never renumber existing values).</li>
+<li>Create a new <code>PlayerTool</code> subclass following the aim-and-activate or collision-based conventions already in <code>Assets/_Project/Scripts/Interaction/</code> &mdash; look at <code>EvidenceFlipTool</code> (simplest aim-and-activate) or <code>FingerprintTapeTool</code> (simplest collision-based) as templates.</li>
+<li>Wire it into the scene as a real GameObject with the tool component + whatever physical prop/collider it needs; set <code>equipLocalPosition</code>/<code>equipLocalEulerAngles</code>.</li>
+<li>Optionally add a display name/description in <code>ToolWheelController.ToDisplayName</code>/<code>DefaultDescription</code> &mdash; falls back to the raw enum name/blank otherwise, which still works, just reads plainly.</li>
+<li>Remember the collider-disable-in-both-states gotcha (&sect;3.3) for any functional tip/contact collider.</li>
+</ol>
+
+<h3>Add a new on-scene sub-step marker</h3>
+<p>Follow the marker precedent (&sect;3.4) exactly: a small MonoBehaviour with its own <code>evidenceId</code> field pointing to the parent, a static registry with <code>FindByEvidenceId</code>, never a second <code>EvidenceProp</code>. Gate the relevant transition through a new (or extended existing) <code>IsBlockedByX</code> function on <code>EvidenceStateManager</code>, and check the message it produces flows correctly through <code>ProceduralGateValidator.GetBlockReason</code> to whichever tool's refusal path calls it.</p>
+
+<h3>Standard verification loop for any change</h3>
+<ol>
+<li>Compile-check: <code>refresh_unity</code> then <code>read_console action:"get" types:["error"]</code>.</li>
+<li>Enter Play mode, drive the exact scenario via direct <code>EvidenceStateManager</code>/tool method calls (matching how <code>GreyboxFlowTest</code> itself drives things &mdash; see &sect;3.8's caveat about what this does NOT cover).</li>
+<li>For anything visual/positional: also verify via a real equipped-tool + real hand-anchor-position simulation, not just a manually-teleported aim origin, before concluding "it works."</li>
+<li>Stop Play mode, re-enter fresh, run <code>GreyboxFlowTest.RunFullFlow()</code>, confirm <code>PASS</code>.</li>
+<li>For any scene edit: save via <code>MarkSceneDirty</code>+<code>SaveScene</code>, then reload the scene and re-verify the specific field/value persisted before reporting success.</li>
+</ol>
+
+<h1>6. Current Known Gaps / Open Items</h1>
+
+<h3>Pending scene-authoring conversions</h3>
+<p>Following the pattern in &sect;3.6, still runtime-generated as of this document:</p>
+<ul>
+<li><code>HypothesisCheckpointUI</code>'s fallback panel (only built when no <code>panelRoot</code> is authored &mdash; likely just needs direct authoring, singleton case, no template/clone needed).</li>
+<li><code>CompletionScreenUI</code>'s equivalent fallback (same shape).</li>
+<li>The letter-tent stub's remaining runtime pieces, if any beyond what was already converted this session &mdash; verify current state before assuming untouched.</li>
+<li>The flip-tool stub &mdash; also flagged this session as having an unusually cluttered component set (a stray <code>EvidenceProp</code>/<code>Grabbable</code>/<code>ToggleGrab</code>/<code>Light</code> apparently inherited from being built off the wrong source object). Worth auditing/cleaning regardless of the scene-authoring conversion.</li>
+<li>The fingerprint station pad's generated coverage-indicator visual.</li>
+</ul>
+<p>For each: first determine singleton vs. parametric-per-item (&sect;3.6), then check whether it sits under a <code>PlayerTool</code> hierarchy (changes the correct hide mechanism to <code>SetActive</code>).</p>
+
+<h3>Gloves do not visually rotate on flip</h3>
+<p>Deliberate by original design (<code>MarkFlipped</code> is documented as "genuinely gated, not cosmetic," a pure logic flag) but flagged as a real UX gap this session after a "flip isn't working" report turned out to really mean "flip has zero visible feedback." A toast notification was added as a minimal fix; a real visual rotation of the gloves mesh was explicitly NOT built (would need to decide which axis/direction, and whether the fingerprint print marker's own position needs to move to the new "up" side). Still open if wanted.</p>
+
+<h3>Unresolved "flip aint working" report</h3>
+<p>The user reported the flip tool doing nothing at all on a real headset (no toast, no haptic, no sound) even with every gating condition met. Exhaustively re-verified this session via every testable path &mdash; direct method call, full raycast against the rebuilt gloves object, and (most rigorously) genuinely equipping the tool via the wheel and moving the REAL <code>OVRCameraRig.rightHandAnchor</code> (not a manually-teleported aim origin) before calling the actual private <code>TryFlipAimedTarget()</code> method &mdash; and it succeeded every time. This rules out the gating logic, the raycast/targeting logic, and the equip-follow behavior as the cause. Since <code>WasPressedThisFrame()</code> reads real Input System device state that cannot be faked from script, this could not be fully ruled out as an input-binding or real-environment-occlusion issue specific to the actual headset session. <strong>Next step if revisited:</strong> ask whether a different aim-and-activate tool (e.g. <code>RecorderTool</code>, identical input binding) works from the exact same real position &mdash; that isolates whether the problem is flip-specific or environmental.</p>
+
+<h3>Other loose threads</h3>
+<ul>
+<li><code>EvidenceTentPickup</code>/<code>EvidenceTentPickupCoordinator</code> (tent reclaim) is intentionally disabled (<code>TentPickupEnabled = false</code> constant in <code>EvidenceTentTool</code>) &mdash; placed tents currently cannot be picked back up at all in the live build, regardless of the marked item's status. Known consequence: at most <code>tentVisuals.Length</code> (6) numbered tents can ever be placed in one session, since slots never free up.</li>
+<li>The <code>Scenes/Scenarios/HeacyASF.unity</code> scene was not investigated this session &mdash; verify its purpose/state before assuming it's related to the CSI_Environment work.</li>
+<li>The <code>Data/EvidenceDefinitions/Tutorial/</code> assets (TUT-001..003, TUT-FP-001) belong to a separate tutorial scenario, not the CSI_Environment roster &mdash; do not conflate the two when searching for "all evidence items."</li>
+<li>A handful of unrelated, pre-existing console warnings recur across every Play session in this project (repeated "BoxCollider does not support negative scale or size," various XR/OpenXR/audio-driver messages) &mdash; confirmed multiple times this session as pre-existing background noise, not caused by any of the changes described here. Don't chase these unless a specific new one appears.</li>
+</ul>
+
+</body>
+</html>

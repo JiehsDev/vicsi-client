@@ -1,0 +1,267 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e77d02079bdcf42975e822ccf668f1, type: 3}
+  m_Name: EVD-019_DisposableGloves
+  m_EditorClassIdentifier: Assembly-CSharp::EvidenceDefinition
+  evidenceId: EVD-019
+  displayName: Disposable gloves
+  relevance: 0
+  interactionRadius: 2
+  requiresFingerprinting: 1
+  fingerprintBeforeCollection: 1
+  requiresFlipBeforeFingerprinting: 1
+  description: A pair of disposable gloves documented as a potential scene item.
+  foundLocation: Concealed within the scene, separate from ordinary discarded items.
+  observedCondition: Reddish staining was visible on the outer surface. The gloves
+    were preserved so the exterior could be sampled before the interior was handled.
+  investigativeContext: Material on the outside and handling traces on the inside
+    may address different questions. Any association should be evaluated with other
+    evidence and does not establish responsibility by itself.
+  progressiveFindings:
+  - text: A sample was collected from the reddish staining on the outer surface.
+    revealRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 3
+      evidenceId: EVD-019
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      authoringNote: 
+  - text: Fingerprint processing of the interior surface produced a usable latent
+      print for comparison.
+    revealRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 4
+      evidenceId: EVD-019
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      authoringNote: 
+  - text: Examination of the outer-surface sample produced a finding consistent with
+      the victim's blood.
+    revealRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 1
+      evidenceId: EVD-019
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: glove-outside-blood
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      authoringNote: 
+  reportLineOptions:
+  - id: glove-outside-blood
+    text: Blood on the outside matches the victim's blood - this is where the assault
+      took place.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 3
+      evidenceId: EVD-019
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId:
+      legacyPrerequisite:
+        type: 0
+        evidenceId:
+        lineId:
+      requirementAsset: {fileID: 0}
+      narrativeEventId:
+      objectiveId:
+      relationshipId:
+      authoringNote:
+  - id: glove-hidden-location
+    text: Deliberately hidden, not discarded with anything else - someone didn't
+      want these found.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      authoringNote: 
+  - id: glove-inside-print
+    text: A print was lifted from the inside surface, left by whoever wore them.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 4
+      evidenceId: EVD-019
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId:
+      legacyPrerequisite:
+        type: 0
+        evidenceId:
+        lineId:
+      requirementAsset: {fileID: 0}
+      narrativeEventId:
+      objectiveId:
+      relationshipId:
+      authoringNote:
+  - id: glove-fingerprint-confirms-wearer
+    text: Fingerprint processing identifies exactly who put these on.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 4
+      evidenceId: EVD-019
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId:
+      legacyPrerequisite:
+        type: 0
+        evidenceId:
+        lineId:
+      requirementAsset: {fileID: 0}
+      narrativeEventId:
+      objectiveId:
+      relationshipId:
+      authoringNote:
+  - id: glove-owner-speculation
+    text: Likely discarded by whoever cleaned the scene afterward.
+    isAccurate: 0
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      authoringNote: 
+  - id: glove-conclusion-premature
+    text: This alone proves who committed the murder.
+    isAccurate: 0
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      authoringNote: 
+  minimumLinesRequired: 3
+  chalkCircleRadius: 0.15
+  chalkPointCount: 24
+  chalkCompletionThreshold: 0.9
+  requiresSwabbing: 1
+  collectedBySwab: 0
+  examinedInPlace: 0
+  icon: {fileID: 21300000, guid: 92fcdb570f2327c468116308036282c8, type: 3}
+  heldPrefab: {fileID: 4396132623962376711, guid: 4323d5ecdf279d748b4bd046f3148e26, type: 3}
+  heldLocalPosition: {x: -0.05, y: 0.02, z: 0.08}
+  heldLocalEulerAngles: {x: 0, y: 0, z: 0}
+  heldLocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  depositRequirement:
+    kind: 1
+    operatorType: 0
+    children: []
+    requirementType: 0
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    authoringNote: 
+  depositedVisual: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

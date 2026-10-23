@@ -1,0 +1,59 @@
+=== SceneRelationalMeasurementTest ===
+  PASS: [config] roster is data-driven: BODY-A, EVD-014, EVD-015, EVD-018
+  PASS: [pairs] 4 items -> n(n-1)/2 = 6 unique pairs (6)
+  PASS: [pairs] keys are normalised (A|B == B|A) and no item is paired with itself
+  PASS: [pairs] BODY-A + EVD-014 and EVD-014 + BODY-A resolve to the same pair
+  PASS: [progress] internal requirement = fixed 8 + pairs 6 = 14 (2n + n(n-1)/2)
+  PASS: [progress] current scenario totals 14 (8 fixed + 6 pairs)
+  PASS: [leak] nothing discovered -> no pair available, player-facing progress empty
+  PASS: [setup] scene photography route completed
+  PASS: [leak] Found by proximity alone makes no pair available
+  PASS: [visibility] knife + body discovered -> only Knife-Body available (1)
+  PASS: [visibility] player-facing progress counts only discovered items: fixed 0/4, pairs 0/1
+  PASS: [suggest] body's first suggestion is a fixed reference: 'Measure Body A – John from the East Kitchen Wall.'
+  PASS: [tool] measurement tool equipped
+  PASS: [tool] knife's fixed references done -> Evidence Distance mode ('Evidence distance: hold the tape at the Evidence 1 – Kitchen Knife.')
+  PASS: [tool] tape held at the knife -> extending
+  PASS: [tool wrong] undiscovered bottle at the tape end reads as empty floor ('Select another discovered evidence item.'), nothing recorded or logged
+  PASS: [tool wrong] knife to itself refused (logged as SameEvidence)
+  PASS: [tool wrong] body before final photograph -> 'Complete the final body photograph before recording body measurements.'
+  PASS: [tool correct] Knife -> Body recorded once between the measurement points ('Evidence 1 – Kitchen Knife – Body A – John: 1.28 m. Evidence distances complete.')
+  PASS: [tool] no pair left for the knife -> back to selecting
+  PASS: [tool] knife fully measured -> 'Measurement complete.'
+  PASS: [dedupe] Body -> Knife afterwards -> AlreadyComplete; still one record, no second measurement event
+  PASS: [wrong] manager refuses a pair with an undiscovered item without logging it
+  PASS: [progress] visible: fixed 2/4, pairs 1/1, total 3/5
+  PASS: [progress] internal: 3/14 (fixed 2/8, pairs 1/6)
+  PASS: [recorder] body's own fixed references missing -> refused: 'Measure/document the body position and required evidence distances before recording BODY-A findings.'
+  PASS: [recorder] the Recorder refuses to open the report
+  PASS: [final photo] body's photograph remains complete after measurements: no warning
+  PASS: [recorder CRITICAL] spatter + bottle undiscovered: Recorder allowed, no hidden-evidence refusal (internal set still incomplete)
+  PASS: [leak] player-facing progress 5/5 - no hidden total
+  PASS: [recorder] body record finalized
+  PASS: [record] body's note shows its spatial measurements: knife distance only
+  PASS: [later] spatter discovered -> Body-Spatter and Knife-Spatter appear (3 available)
+  PASS: [later] the body's record is not revoked or reopened
+  PASS: [leak] player-facing progress 5/9 (three discovered items) - never the 14-total
+  PASS: [suggest] body: fixed 2/2, distances 1/2; next 'Measure Body A – John to Evidence 2 – Blood Spatter.'
+  PASS: [leak] suggestions never name the undiscovered bottle
+  PASS: [final photo] spatter's final photo with its two pairs missing: allowed, warned once (unscored step)
+  PASS: [final photo] the body's earlier final photo is untouched by the new pairs
+  PASS: [late] body-spatter measured after the spatter was sampled -> recorded, flagged late
+  PASS: [late] knife-spatter likewise late
+  PASS: [record] body's note now also lists the spatter distance (0.58 m), from live data
+  PASS: [record] no new Record action: the body's status and its last transition time are unchanged
+  FAIL: [late] knife-bottle after the knife's blade swab -> not late
+  PASS: [late] knife's own fixed record unaffected by its swab
+  PASS: [full] every fixed reference and pair completed
+  PASS: [full] Scene Measurements: 14 / 14 (fixed 8/8, distances 6/6)
+  PASS: [full] with all four discovered, player-facing progress equals the full set
+  PASS: [full] the measurement gate no longer stands in front of any remaining record
+  PASS: [record] knife: 2 fixed references + 3 evidence distances, each once, values identical to the records
+  PASS: [record] layout: Fixed References / Evidence Distances, name — 0.00 m
+  PASS: [record] evidence distances listed by display name, never ids
+  PASS: [record] every item's spatial block: its 2 fixed references + 3 evidence distances
+  PASS: [payload] pairs exposed (6, complete 6, late 3) with keys, both ids, distances
+  PASS: [payload] fixed-reference aggregate unchanged (4 items, score from fixed references only)
+  PASS: [sketch] pair exposes ids, key, recorded + display distance, completion
+  PASS: [reset] fixed and pair measurements cleared (0/14)
+=== FAIL: 1 failure(s) ===

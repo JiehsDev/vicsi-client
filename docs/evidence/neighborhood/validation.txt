@@ -1,0 +1,17 @@
+PASS Added geometry below 40,000 triangles (including inactive distance LODs): 14372
+PASS Added mesh renderers <=30 (including alternate LODs): 21
+PASS No added lights
+PASS No runtime scripts
+PASS No rigidbodies
+PASS No mesh colliders
+PASS Four houses use detail/distant/cull LODs
+PASS All added renderers avoid shadow caster passes
+PASS All meshes persist as assets
+PASS NPC_FirstResponder is clear of new obstacles
+PASS NPC_IOC is clear of new obstacles
+PASS NPC_Vendor_PLACEHOLDER is clear of new obstacles
+PASS Teleport Hotspot is clear of new obstacles
+PASS EvidenceHoldingCrate is clear of new obstacles
+PASS Entrance corridor clear for 0.6m-wide standing player
+Added colliders: 17; shared materials: 6
+Failures: 0; compilationFailed: False

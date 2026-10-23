@@ -1,0 +1,212 @@
+{
+    "hierarchy": "ScenePhotography/ScenePhotoPoint_10_scene-exterior-establishing",
+    "targetHierarchy": "ScenePhotography/ScenePhotoPoint_10_scene-exterior-establishing/Target",
+    "station": {
+        "x": 16.899999618530275,
+        "y": 0.0,
+        "z": -0.800000011920929
+    },
+    "localPosition": {
+        "x": 16.899999618530275,
+        "y": 0.0,
+        "z": -0.800000011920929
+    },
+    "target": {
+        "x": 16.799999237060548,
+        "y": 3.200000047683716,
+        "z": 7.5
+    },
+    "forward": {
+        "x": -0.487366259098053,
+        "y": 0.0,
+        "z": 0.8731976747512817
+    },
+    "standingRadius": 0.75,
+    "maxHeadHeight": 2.5,
+    "angleTolerance": 30.0,
+    "playerRadius": 0.25,
+    "playerHeight": 1.7000000476837159,
+    "maxStep": 0.30000001192092898,
+    "skinWidth": 0.004999999888241291,
+    "nearbyColliders": [
+        "[BuildingBlock] Camera Rig/[BuildingBlock] OVRComprehensiveInteractionRig/Locomotor/PlayerController bounds=Center: (16.9000, 0.7000, 0.7000), Extents: (0.2500, 0.6000, 0.2500)",
+        "[BuildingBlock] Camera Rig/TrackingSpace/RightHandAnchor/RecorderDictaphone bounds=Center: (16.8110, -0.1820, 0.7010), Extents: (0.1376, 0.1257, 0.1168)",
+        "Neighborhood_Exterior/East road extension/Road surface bounds=Center: (37.7270, -0.1500, -3.8400), Extents: (22.5000, 0.0900, 2.7500)",
+        "Neighborhood_Exterior/East road extension/Sidewalk surface bounds=Center: (37.7270, -0.0600, -0.5900), Extents: (22.5000, 0.0900, 0.5000)",
+        "Neighborhood_Exterior/Lawn ground bounds=Center: (0.4000, -0.1500, 21.9550), Extents: (65.0000, 0.1150, 22.0450)",
+        "NPC_FirstResponder bounds=Center: (18.1500, 0.9100, 0.8000), Extents: (0.3000, 0.8800, 0.3000)",
+        "Plane (3) bounds=Center: (18.0000, 0.0000, 8.4100), Extents: (10.0000, 0.0000, 9.0910)",
+        "Road/Road_1 (3)/Pavement_1 bounds=Center: (11.4800, -0.1150, -0.5191), Extents: (3.7500, 0.1450, 0.4291)",
+        "Road/Road_1 (3)/Road_1 bounds=Center: (11.4800, -0.1600, -3.8400), Extents: (3.7500, 0.1000, 2.7500)",
+        "Road/Road_1 (3)/Slab_1 bounds=Center: (11.4800, -0.1400, -3.8400), Extents: (3.7500, 0.1250, 2.9000)"
+    ],
+    "original": {
+        "station": {
+            "x": 16.899999618530275,
+            "y": 0.0,
+            "z": -0.800000011920929
+        },
+        "groundedFeet": {
+            "x": 16.899999618530275,
+            "y": -0.026995837688446046,
+            "z": -0.800000011920929
+        },
+        "supported": true,
+        "footprintSupported": true,
+        "visible": true,
+        "inZone": true,
+        "overlaps": [
+            "Neighborhood_Exterior/East road extension/Sidewalk surface bounds=Center: (37.7270, -0.0600, -0.5900), Extents: (22.5000, 0.0900, 0.5000)"
+        ],
+        "valid": false
+    },
+    "candidates": [
+        {
+            "station": {
+                "x": 16.899999618530275,
+                "y": 0.030000004917383195,
+                "z": -0.800000011920929
+            },
+            "groundedFeet": {
+                "x": 16.899999618530275,
+                "y": 0.03250002861022949,
+                "z": -0.800000011920929
+            },
+            "supported": true,
+            "footprintSupported": true,
+            "visible": true,
+            "inZone": true,
+            "overlaps": [],
+            "valid": true
+        },
+        {
+            "station": {
+                "x": 16.850000381469728,
+                "y": 0.030000004917383195,
+                "z": -0.800000011920929
+            },
+            "groundedFeet": {
+                "x": 16.850000381469728,
+                "y": 0.03250002861022949,
+                "z": -0.800000011920929
+            },
+            "supported": true,
+            "footprintSupported": true,
+            "visible": true,
+            "inZone": true,
+            "overlaps": [],
+            "valid": true
+        },
+        {
+            "station": {
+                "x": 16.94999885559082,
+                "y": 0.030000004917383195,
+                "z": -0.800000011920929
+            },
+            "groundedFeet": {
+                "x": 16.94999885559082,
+                "y": 0.03250002861022949,
+                "z": -0.800000011920929
+            },
+            "supported": true,
+            "footprintSupported": true,
+            "visible": true,
+            "inZone": true,
+            "overlaps": [],
+            "valid": true
+        },
+        {
+            "station": {
+                "x": 16.899999618530275,
+                "y": 0.030000004917383195,
+                "z": -0.75
+            },
+            "groundedFeet": {
+                "x": 16.899999618530275,
+                "y": 0.03250002861022949,
+                "z": -0.75
+            },
+            "supported": true,
+            "footprintSupported": true,
+            "visible": true,
+            "inZone": true,
+            "overlaps": [],
+            "valid": true
+        },
+        {
+            "station": {
+                "x": 16.850000381469728,
+                "y": 0.030000004917383195,
+                "z": -0.75
+            },
+            "groundedFeet": {
+                "x": 16.850000381469728,
+                "y": 0.03250002861022949,
+                "z": -0.75
+            },
+            "supported": true,
+            "footprintSupported": true,
+            "visible": true,
+            "inZone": true,
+            "overlaps": [],
+            "valid": true
+        },
+        {
+            "station": {
+                "x": 16.94999885559082,
+                "y": 0.030000004917383195,
+                "z": -0.75
+            },
+            "groundedFeet": {
+                "x": 16.94999885559082,
+                "y": 0.03250002861022949,
+                "z": -0.75
+            },
+            "supported": true,
+            "footprintSupported": true,
+            "visible": true,
+            "inZone": true,
+            "overlaps": [],
+            "valid": true
+        },
+        {
+            "station": {
+                "x": 16.899999618530275,
+                "y": 0.030000004917383195,
+                "z": -0.699999988079071
+            },
+            "groundedFeet": {
+                "x": 16.899999618530275,
+                "y": 0.03250002861022949,
+                "z": -0.699999988079071
+            },
+            "supported": true,
+            "footprintSupported": true,
+            "visible": true,
+            "inZone": true,
+            "overlaps": [],
+            "valid": true
+        },
+        {
+            "station": {
+                "x": 16.799999237060548,
+                "y": 0.030000004917383195,
+                "z": -0.800000011920929
+            },
+            "groundedFeet": {
+                "x": 16.799999237060548,
+                "y": 0.03250002861022949,
+                "z": -0.800000011920929
+            },
+            "supported": true,
+            "footprintSupported": true,
+            "visible": true,
+            "inZone": true,
+            "overlaps": [],
+            "valid": true
+        }
+    ],
+    "navigationReachesStation": true,
+    "sceneLeftClean": true,
+    "compilationFailed": false
+}

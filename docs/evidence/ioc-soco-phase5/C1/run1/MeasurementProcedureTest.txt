@@ -1,0 +1,2 @@
+FAIL: System.InvalidOperationException: Suite entry point requires a non-optional argument: testMode
+  at Phase5PlayModeBatchRunner.InvokeSuite () [0x001b2] in C:\Users\Roduf Eleu\My project (1)\Assets\_Project\Editor\Phase5PlayModeBatchRunner.cs:202 

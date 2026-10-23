@@ -1,0 +1,67 @@
+{
+  "scope": "Small visual dot on still-undiscovered physical evidence after scene photography",
+  "discoveryTimingUnchanged": true,
+  "alreadyDiscoveredItemsStayHidden": true,
+  "simultaneousPhotoCompletionEvent": true,
+  "dotHaloDiameterMetres": 0.05,
+  "surfaceClearanceMetres": 0.06,
+  "noArrowsOrLabels": true,
+  "noThroughOpaqueWalls": true,
+  "noNewInteractionsOrDiscoveryActions": true,
+  "externalTriggerLatentTargetsExcluded": true,
+  "savedPhotosExcludeDots": true,
+  "tests": {
+    "EvidenceDiscoveryDotTest": {
+      "passed": 45,
+      "failed": 0,
+      "exitCode": 0,
+      "report": "docs/evidence/evidence-display/evidence-discovery-dots-2026-10-18/EvidenceDiscoveryDotTest.txt",
+      "log": "docs/evidence/evidence-display/evidence-discovery-dots-2026-10-18/EvidenceDiscoveryDotTest.log"
+    },
+    "EvidenceDiscoveryTest": {
+      "passed": 10,
+      "failed": 0,
+      "exitCode": 0,
+      "report": "docs/evidence/evidence-display/evidence-discovery-dots-2026-10-18/EvidenceDiscoveryTest.txt",
+      "log": "docs/evidence/evidence-display/evidence-discovery-dots-2026-10-18/EvidenceDiscoveryTest.log"
+    },
+    "PhotographyGuideTest": {
+      "passed": 26,
+      "failed": 0,
+      "exitCode": 0,
+      "report": "docs/evidence/evidence-display/evidence-discovery-dots-2026-10-18/PhotographyGuideTest.txt",
+      "log": "docs/evidence/evidence-display/evidence-discovery-dots-2026-10-18/PhotographyGuideTest.log"
+    }
+  },
+  "totalPassed": 81,
+  "totalFailed": 0,
+  "csharpCompileErrors": 0,
+  "shaderCompileErrors": 0,
+  "renderPreviews": [
+    "docs/evidence/evidence-discovery-dots/dot-visible.png",
+    "docs/evidence/evidence-discovery-dots/dot-occluded.png"
+  ],
+  "headsetConnected": false,
+  "headsetAcceptancePerformed": false,
+  "preservation": {
+    "changedExistingFiles": [
+      "Assets/_Project/Scripts/CaseFile/EvidenceProp.cs",
+      "Assets/_Project/Scripts/Interaction/PhotoCaptureListener.cs"
+    ],
+    "unchangedExistingFiles": 1383,
+    "discoveryRulesUnchanged": true,
+    "earlyDiscoveryRemainsAllowed": true,
+    "allScenesTransformsAndEvidenceDataUnchanged": true,
+    "photographCaptureOnlyChange": "Hide and restore visual dots around the existing render",
+    "existingArrowGuidesAndMenuToolWheelsUnchanged": true,
+    "scoringUploadsAndDatabaseIdentifiersUnchanged": true,
+    "acceptedSourceHashes": {
+      "Assets/_Project/Scripts/CaseFile/EvidenceProp.cs": "905986d9b859ac066596f53b5ddec80368c1bd393334e87d9a1f5732a57d8281",
+      "Assets/_Project/Scripts/Interaction/PhotoCaptureListener.cs": "ffc2743392795d7fb836ebca40f69fc61fb49089f7e114601a13e25c78b443bf",
+      "Assets/_Project/Scripts/CaseFile/EvidenceDiscoveryDot.cs": "e0c0b292fe53fb9d3136f26e7c0539198548ef96dee6757911420425d2146b50",
+      "Assets/_Project/Scripts/CaseFile/EvidenceDiscoveryDotGraphic.cs": "83133db3eac5d8742d9e56ddd9c4f14611635e7453ba3039f38eb409086fed89",
+      "Assets/Resources/EvidenceDiscoveryDot.shader": "c736e631ba81dadaaceea7f6a009134d0cb08372b05c3aded102cb4e3704b305",
+      "Assets/_Project/Scripts/Testing/EvidenceDiscoveryDotTest.cs": "2283cef5e7498e3e944a73839a66b9e575d9e972064704a8505c7788b9aa41fb"
+    }
+  }
+}

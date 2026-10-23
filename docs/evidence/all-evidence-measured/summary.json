@@ -1,0 +1,39 @@
+{
+  "feature": "All evidence measured test start",
+  "date": "2026-10-17",
+  "enumValue": 10,
+  "entry": "Tools > ViCSI > Scene Test Start > All evidence measured > Play selected start",
+  "measurementsComplete": true,
+  "allEvidenceRecorded": false,
+  "samplingAndFingerprintsComplete": false,
+  "linkedMarkers": 5,
+  "unusedMarkers": 1,
+  "equippedTool": "Recorder",
+  "tests": {
+    "suite": "SceneTestStartTest",
+    "presets": 11,
+    "passed": 131,
+    "failed": 0,
+    "report": "run2/SceneTestStartTest.txt"
+  },
+  "editor": {
+    "selected": "All evidence measured",
+    "serializedDefault": "NormalPlay",
+    "play": false,
+    "compiling": false,
+    "compilationFailed": false,
+    "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+    "dirty": false,
+    "pending": false,
+    "requestPending": false,
+    "xrRestorePending": false,
+    "standaloneXR": true,
+    "androidXR": true
+  },
+  "consoleCSharpErrors": 0,
+  "initialAttempt": "run1 passed all 116 existing assertions; new preset needed the body-specific final-photo-before-measurement condition. Fixed without changing production gates.",
+  "manualEditorWiring": "None",
+  "commit": false,
+  "push": false,
+  "deploy": false
+}

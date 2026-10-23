@@ -1,0 +1,38 @@
+=== StoryContentTest ===
+--- GreyboxFlowTest.RunFullFlow() ---
+  (physical/procedural lifecycle: PASS)
+  PASS: beat-1-initial-briefing fired (always-eligible)
+  PASS: beat-2-body-doubt fired
+  PASS: beat-3-knife-wound-match fired
+  PASS: beat-4-brother-fingerprint fired
+  PASS: beat-5-bottle-supports-brother fired
+  PASS: beat-7-spatter-reconstruction fired
+  PASS: obj-document-body Completed (not Failed)
+  PASS: obj-identify-poi Completed (not Failed)
+  PASS: obj-identify-murder-weapon Completed
+  PASS: obj-verify-fingerprint-timing Completed
+  PASS: obj-reconstruct-crime Completed
+  PASS: REL-knife-consistent-wound reached Available (unlockRequirement satisfied)
+  PASS: REL-bottle-supports-brother reached Available (unlockRequirement satisfied)
+  PASS: REL-spatter-consistent-reconstruction reached Available (unlockRequirement satisfied)
+  PASS: REL-paul-print-handled-knife reached Available (unlockRequirement satisfied)
+  PASS: REL-peter-departure-supported reached Available (unlockRequirement satisfied)
+  FAIL: REL-paul-timeline-contradiction reached Available (unlockRequirement satisfied)
+  PASS: REL-knife-consistent-wound reached Completed after board connection + Submit Conclusion finalize
+  PASS: REL-bottle-supports-brother reached Completed after board connection + Submit Conclusion finalize
+  PASS: REL-spatter-consistent-reconstruction reached Completed after board connection + Submit Conclusion finalize
+  PASS: REL-paul-print-handled-knife reached Completed after board connection + Submit Conclusion finalize
+  PASS: REL-peter-departure-supported reached Completed after board connection + Submit Conclusion finalize
+  FAIL: REL-paul-timeline-contradiction reached Completed after board connection + Submit Conclusion finalize
+  PASS: No wife ending remains in the EndingSet
+  FAIL: conclusion-brother resolves to ending-brother-accused (got ending-premature-submission)
+  PASS: CONCLUSION-INCONCLUSIVE resolves to ending-inconclusive (got ending-inconclusive)
+  PASS: conclusion-peter resolves to ending-peter-unsupported (got ending-peter-unsupported)
+  PASS: No conclusion selected also resolves to ending-inconclusive (got ending-inconclusive)
+  PASS: Checkpoint UI releases the submission gate before the picker
+  FAIL: Picker offers Paul and Peter but not Inconclusive (got CONCLUSION-INCONCLUSIVE,conclusion-brother,conclusion-peter)
+  FAIL: Confirming hidden Inconclusive is refused
+  FAIL: SelectConclusionForTest(conclusion-brother) succeeds while the real picker is showing
+  PASS: Full Submit Conclusion pipeline shows the real CompletionScreenUI
+  PASS: Accepted ending completes the procedural investigation and freezes its SOCO clock
+=== FAIL: 7 failure(s) ===

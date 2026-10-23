@@ -1,0 +1,22 @@
+[
+    {
+        "test":  "AssessmentUploadServiceTest.txt",
+        "pass":  33,
+        "fail":  0
+    },
+    {
+        "test":  "BiologicalSamplingTest.txt",
+        "pass":  50,
+        "fail":  0
+    },
+    {
+        "test":  "ScenePhotographyProcedureTest.txt",
+        "pass":  47,
+        "fail":  0
+    },
+    {
+        "test":  "SOCOCloseoutTest.txt",
+        "pass":  46,
+        "fail":  0
+    }
+]

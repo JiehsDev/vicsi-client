@@ -1,0 +1,41 @@
+=== InteractionSfxTest ===
+PASS: Saved audio player uses the shared editable library
+PASS: Select has a non-silent decodable mono clip
+PASS: Confirm has a non-silent decodable mono clip
+PASS: Blocked has a non-silent decodable mono clip
+PASS: Shutter has a non-silent decodable mono clip
+PASS: Switch has a non-silent decodable mono clip
+PASS: Measure has a non-silent decodable mono clip
+PASS: Chalk has a non-silent decodable mono clip
+PASS: Writing has a non-silent decodable mono clip
+PASS: Paper has a non-silent decodable mono clip
+PASS: Page has a non-silent decodable mono clip
+PASS: Tape has a non-silent decodable mono clip
+PASS: Container has a non-silent decodable mono clip
+PASS: Place has a non-silent decodable mono clip
+PASS: Nine surface variants are assigned
+PASS: No zipper, door or cabinet sound category exists
+PASS: Normal output levels remain restrained
+PASS: PhotographTool has saved spatial audio and expected clip
+PASS: FlashlightTool has saved spatial audio and expected clip
+PASS: ChalkMarkTool has saved spatial audio and expected clip
+PASS: EvidenceBagTool has saved spatial audio and expected clip
+PASS: EvidenceTentTool has saved spatial audio and expected clip
+PASS: SwabTool has saved spatial audio and expected clip
+PASS: Existing confirm/refusal feedback uses downloaded clips
+PASS: UI source is non-spatial and does not double attenuate clicks
+PASS: A/trigger paths share one neutral click per frame
+PASS: Repeated actions use eight bounded spatial voices without allocating sources
+PASS: Prepared paper-package sealing plays tape instead of a plastic lid
+PASS: Initializing stationary footsteps stays silent
+PASS: Actual horizontal travel plays a step
+PASS: Open menus suppress steps and reset cadence
+PASS: Closing a menu while stationary does not emit a delayed step
+PASS: Teleport travel stays silent
+PASS: Height changes alone do not play walking sounds
+PASS: Normal walking resumes after menu or teleport
+PASS: Fast movement is rate-limited
+PASS: Rate-limited travel cannot make stationary footsteps
+PASS: Opening a menu stops the chalk loop
+PASS: Deduction remains 60/25/15
+=== PASS ===

@@ -1,0 +1,144 @@
+{
+  "status": "consolidation_complete_with_reported_environment_finding",
+  "unity": {
+    "suites": [
+      {
+        "suite": "EvidenceDisplayTest",
+        "passed": 43,
+        "failed": 0,
+        "csharpErrors": 0,
+        "report": "docs/evidence/evidence-display/final-consolidation-2026-10-18/EvidenceDisplayTest.txt"
+      },
+      {
+        "suite": "EducationalSessionRecordTest",
+        "passed": 70,
+        "failed": 0,
+        "csharpErrors": 0,
+        "report": "docs/evidence/evidence-display/final-consolidation-2026-10-18/EducationalSessionRecordTest.txt"
+      },
+      {
+        "suite": "ReasoningCheckpointTest",
+        "passed": 62,
+        "failed": 0,
+        "csharpErrors": 0,
+        "report": "docs/evidence/evidence-display/final-consolidation-2026-10-18/ReasoningCheckpointTest.txt"
+      },
+      {
+        "suite": "EvidenceRelationshipsReviewTest",
+        "passed": 41,
+        "failed": 0,
+        "csharpErrors": 0,
+        "report": "docs/evidence/evidence-display/final-consolidation-2026-10-18/EvidenceRelationshipsReviewTest.txt"
+      },
+      {
+        "suite": "MeasurementToolTest",
+        "passed": 41,
+        "failed": 0,
+        "csharpErrors": 0,
+        "report": "docs/evidence/evidence-display/final-consolidation-2026-10-18/MeasurementToolTest.txt"
+      },
+      {
+        "suite": "CrimeSceneSketchTest",
+        "passed": 85,
+        "failed": 0,
+        "csharpErrors": 0,
+        "report": "docs/evidence/evidence-display/final-consolidation-2026-10-18/CrimeSceneSketchTest.txt"
+      }
+    ],
+    "passed": 342,
+    "failed": 0,
+    "csharpErrors": 0
+  },
+  "dashboard": {
+    "tests": 52,
+    "sessionUploadTests": 19,
+    "scoringTests": 219,
+    "browserChecks": 21,
+    "skipped": 0,
+    "typescript": "pass",
+    "scopedLint": "pass",
+    "productionBuild": "pass"
+  },
+  "newHouse": {
+    "migrationImplemented": true,
+    "activeNewHouse": true,
+    "oldHouseInactive": true,
+    "currentEvidencePresent": true,
+    "measurementLayout": "new-house-v3",
+    "buildScenes": [
+      {
+        "scene": "Assets/_Project/Scenes/Main.unity",
+        "activeMissingScripts": 0,
+        "inactiveMissingScripts": 0,
+        "brokenReferences": []
+      },
+      {
+        "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+        "activeMissingScripts": 0,
+        "inactiveMissingScripts": 0,
+        "brokenReferences": []
+      }
+    ],
+    "layoutChecksPassed": 61,
+    "layoutFailures": [
+      "FAIL Standing room at photography station: scene-exterior-establishing Sidewalk surface"
+    ],
+    "environmentModified": false
+  },
+  "currentCapture": {
+    "sha256": "ba27c9444ae40381b2aeba21fe69926ab069b7c5c06d2e8747b831d95a5e9657",
+    "questions": 13,
+    "answerOptions": 50,
+    "score": {
+      "reasoningComponent": 60.0,
+      "relationshipComponent": 25.0,
+      "conclusionComponent": 15.0,
+      "totalScore": 100.0
+    }
+  },
+  "preservation": {
+    "checks": {
+      "only_display_data_changed": true,
+      "EvidenceDisplayNames_1.json_parity": true,
+      "QuestionDisplayNames_1.json_parity": true,
+      "ProcedureTimeline_1.json_parity": true,
+      "authoritative_weights_60_25_15": true,
+      "actual_current_question_order": true,
+      "build_scene_local_references_resolve": true,
+      "build_scene_references_resolve_in_editor": true
+    },
+    "serializedFilesPreserved": 147,
+    "changedSerializedFiles": [
+      "Assets/Resources/EvidenceDisplayNames_1.json"
+    ],
+    "weights": {
+      "checkpointWeight": 60,
+      "relationshipWeight": 25,
+      "conclusionWeight": 15
+    },
+    "questionOrder": [
+      "RC-01-PETER",
+      "RC-02-SCENE",
+      "RC-03-FINGERPRINT",
+      "RC-04-KNIFE-WOUND",
+      "RC-05-TIMELINE",
+      "RC-06-BLOODSTAIN"
+    ],
+    "scenes": [
+      {
+        "scene": "Assets/_Project/Scenes/Main.unity",
+        "assetGuidCount": 86,
+        "missingLocalFileIds": []
+      },
+      {
+        "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+        "assetGuidCount": 417,
+        "missingLocalFileIds": []
+      }
+    ]
+  },
+  "productionDataWrites": false,
+  "committed": false,
+  "pushed": false,
+  "deployed": false
+}

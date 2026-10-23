@@ -1,0 +1,16 @@
+PASS: Unity/server use byte-identical single authored 1.7.0 scoring definition
+PASS: Research weights are exactly 60/25/15 and require expert validation
+PASS: Same six checkpoint IDs, dimensions, triggers, response IDs and weights
+PASS: Maximum checkpoint denominator is 24
+PASS: All six authored relationship IDs/pairs/weights used, none invented
+PASS: Full-chain scoring matches current supported-Paul requirement IDs
+PASS: All pre-existing ground-truth and scoring definitions, content and authored gameplay assets unchanged
+PASS: Previously audited procedure gates, sequence, board/HYP/ending requirements remain unchanged
+PASS: Active scoring alone is 1.7.0; scenario 1.1.0 / ground truth 1.2.0 unchanged
+PASS: Append-only registry retains 1.0.0-1.6.0 and old missing-version fallback
+PASS: Gameplay choice UI still renders no weights
+PASS: No procedure/time metric enters the new numerical model
+PASS: New model never advances procedures, relationships or conclusion state
+PASS: Payload version remains 1 with additive essential events/category result
+PASS: Stable historical enum ordinals retained; snapshot is appended
+15 passed, 0 failed; 134 current and 311 prior protected files compared.

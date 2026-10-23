@@ -1,0 +1,29 @@
+=== HousePhotographyEntryGateTest ===
+PASS: Saved gate, collider, route and IOC workflow exist
+PASS: Invisible wall has no renderer and uses solid collision
+PASS: Fresh session starts at IOC turnover without photography wall
+PASS: Existing briefing gate remains enforced
+PASS: IOC assessment permits authorized entry before photography
+PASS: IOC body, evidence and security observations remain recordable
+PASS: IOC assessment completes normally
+PASS: IOC decision has no photography obstruction
+PASS: SOCO can be requested normally
+PASS: SOCO request keeps prior entry rules
+PASS: SOCO handover can begin normally
+PASS: SOCO handover has no photography obstruction
+PASS: SOCO investigation begins normally
+PASS: SOCO entry blocks immediately before outdoor photographs
+PASS: Wall spans the actual front doorway
+PASS: Player locomotion collides with wall layer
+PASS: Forward doorway crossing hits the enabled wall
+PASS: All required outdoor photo stations remain outside the wall and hot zone
+PASS: Room-scale or teleport bypass is returned outside
+PASS: Exterior shutter completes the establishing photograph
+PASS: Entrance shot is still required before entry
+PASS: Entrance shutter completes the approach photograph
+PASS: Door opens immediately after both outdoor photographs
+PASS: Interior route remains unfinished and accessible
+PASS: Open gate no longer collides with crossing
+PASS: Remaining real shutter route still completes
+PASS: Completed route keeps entry open
+=== PASS, 0 failures ===

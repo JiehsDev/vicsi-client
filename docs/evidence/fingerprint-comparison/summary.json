@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-19",
+  "suites": {
+    "FingerprintComparisonTest": {
+      "report": "docs/evidence/fingerprint-comparison/run4/FingerprintComparisonTest.txt",
+      "passed": 53,
+      "failed": 0
+    },
+    "FingerprintStorageTest": {
+      "report": "docs/evidence/fingerprint-comparison/run5/FingerprintStorageTest.txt",
+      "passed": 33,
+      "failed": 0
+    },
+    "ArrivalPPETest": {
+      "report": "docs/evidence/fingerprint-comparison/run5/ArrivalPPETest.txt",
+      "passed": 42,
+      "failed": 0
+    },
+    "BottleFingerprintProcedureTest": {
+      "report": "docs/evidence/fingerprint-comparison/run5/BottleFingerprintProcedureTest.txt",
+      "passed": 40,
+      "failed": 0
+    },
+    "DialogueCatalogTest": {
+      "report": "docs/evidence/fingerprint-comparison/run5/DialogueCatalogTest.txt",
+      "passed": 60,
+      "failed": 0
+    },
+    "EvidenceInventoryTest": {
+      "report": "docs/evidence/fingerprint-comparison/run5/EvidenceInventoryTest.txt",
+      "passed": 29,
+      "failed": 0
+    },
+    "GloveChangeStationTest": {
+      "report": "docs/evidence/fingerprint-comparison/run5/GloveChangeStationTest.txt",
+      "passed": 53,
+      "failed": 0
+    },
+    "SamplePreparationTest": {
+      "report": "docs/evidence/fingerprint-comparison/run5/SamplePreparationTest.txt",
+      "passed": 46,
+      "failed": 0
+    },
+    "SceneAccessRegisterTest": {
+      "report": "docs/evidence/fingerprint-comparison/run5/SceneAccessRegisterTest.txt",
+      "passed": 40,
+      "failed": 0
+    }
+  },
+  "totalPassed": 396,
+  "totalFailed": 0,
+  "changedExistingFiles": [
+    "Assets\\_Project\\Scripts\\Interaction\\EvidenceBoxDepositZone.cs",
+    "Assets\\_Project\\Scripts\\Logging\\SessionEventType.cs",
+    "Assets\\_Project\\Scripts\\SceneTurnover\\GloveStationGuide.cs",
+    "Assets\\_Project\\Scripts\\Testing\\DialogueCatalogTest.cs",
+    "Assets\\_Project\\Scripts\\Testing\\FingerprintStorageTest.cs",
+    "Assets\\Resources\\ViCSIDialogueCatalog.asset"
+  ],
+  "unchangedExistingFiles": 485,
+  "addedDialogueIds": [
+    "fp-practice-sign",
+    "fp-practice-open",
+    "fp-practice-destination",
+    "fp-practice-title",
+    "fp-practice-source",
+    "fp-practice-recovered",
+    "fp-practice-reference",
+    "fp-practice-instruction",
+    "fp-practice-hint",
+    "fp-practice-success",
+    "fp-practice-again",
+    "fp-practice-hint-button",
+    "fp-practice-submit",
+    "fp-practice-next",
+    "fp-practice-controls",
+    "fp-practice-idle",
+    "fp-practice-tray"
+  ],
+  "sceneSha256": "91d5c8c35425cdc32fec5ecb6bbc01ebfb07c368e227d62da5e10fdf12786005",
+  "newMissingDialogueWarnings": 0,
+  "csShaderNullMissingReferenceErrors": 0,
+  "sourceSha256": {
+    "Assets\\_Project\\Scripts\\Interaction\\EvidenceBoxDepositZone.cs": "32a870430198e1f72110fd298480549697b610f17d06e31056ba99f820ac9b6e",
+    "Assets\\_Project\\Scripts\\Logging\\SessionEventType.cs": "59856310a52ed69921e4c0ff66a3b0273941aec5937d316debe1579664f6fae3",
+    "Assets\\_Project\\Scripts\\SceneTurnover\\GloveStationGuide.cs": "3a0e89a458685d0d839429589c2497d0154e666b272504df23e21a49ef28dc62",
+    "Assets\\_Project\\Scripts\\Testing\\DialogueCatalogTest.cs": "bcbd219a60f4bbc4897b2b9b072e6f1af21a3b9943e73f0b9179424dc5e7ca28",
+    "Assets\\_Project\\Scripts\\Testing\\FingerprintStorageTest.cs": "b11317049416aa4e9c4637110eeda6ce2e60e39e0b895c993b8f878ebff2fcf6",
+    "Assets\\Resources\\ViCSIDialogueCatalog.asset": "b42eac5f0cf8a4e016b66dad5e46099a3318b99a93ebf478fbf66d65f3c2eda1"
+  },
+  "newSourceSha256": {
+    "Assets/_Project/Scripts/Interaction/FingerprintComparisonStation.cs": "6192878f27c4bfceed1dc9cc952ff62b90a2bc4e3d5f261d26d2b05a9fd4e3ba",
+    "Assets/_Project/Scripts/Testing/FingerprintComparisonTest.cs": "4faf23c43befbb2c62389a05ca9d6c07efb26ed127bcbe934fee3e1f3c7d0dbe",
+    "Assets/_Project/Scripts/UI/PracticeFingerprintGraphic.cs": "b8c5e48676dccc6ddc7fe77cd43303270a276f5dc26a97e0e3afd6667f21efdb"
+  },
+  "manualValidationPending": "Physical Quest controller reach, stereo readability and device performance"
+}

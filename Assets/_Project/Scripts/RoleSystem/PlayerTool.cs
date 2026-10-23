@@ -224,8 +224,11 @@ public abstract class PlayerTool : MonoBehaviour
     /// <summary>
     /// Fires "evidence_&lt;digits&gt;_&lt;suffix&gt;" on STCSManager, e.g. "EVD-014" +
     /// "photographed" -> "evidence_014_photographed". No-op if STCSManager isn't present.
+    /// Public (widened from protected) so non-PlayerTool callers - e.g. STCSManager's
+    /// own generic fingerprint-lab-match reveal hook - can fire this same convention
+    /// without duplicating the digit-extraction logic.
     /// </summary>
-    protected static void FireEvidenceSTCSTrigger(string evidenceId, string suffix)
+    public static void FireEvidenceSTCSTrigger(string evidenceId, string suffix)
     {
         if (STCSManager.Instance == null || string.IsNullOrEmpty(evidenceId) || string.IsNullOrEmpty(suffix))
         {

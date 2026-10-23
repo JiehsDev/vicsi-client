@@ -1,0 +1,57 @@
+=== InstructorManagementTest ===
+  PASS: [A] Instructor Management opens locked at the PIN screen
+  PASS: [A] PIN slots are masked (no digits shown)
+  PASS: [A] an incomplete/incorrect entry is refused
+  PASS: [A] wrong PIN -> 'Incorrect PIN.', configured PIN never revealed
+  PASS: [A] default 0000 unlocks (lands on Headset Status)
+  PASS: [B] Settings warns while the default PIN is in use
+  PASS: [B] change flow asks for the new PIN
+  PASS: [B] then for confirmation
+  PASS: [B] PIN changed, inputs cleared
+  PASS: [B] after restart: 0000 rejected, 4821 accepted
+  PASS: [B] the PIN file holds a salted hash, not the PIN
+  PASS: [B] a mismatched confirmation leaves the PIN unchanged
+  PASS: [C] 5 wrong PINs -> temporary cooldown
+  PASS: [C] even the correct PIN waits during the cooldown
+  PASS: [C] a restart doesn't skip the cooldown
+  PASS: [C] after the cooldown the correct PIN works (no permanent lockout)
+  PASS: [C] success resets the failure count
+  PASS: [students] before any sync: empty directory explained
+  PASS: [sync] manual Sync Student Directory runs the existing sync and refreshes counts/status live
+  PASS: [students] rows: name, class, Active - no internal UUID, no code
+  PASS: [students] search by name
+  PASS: [students] search by access code (hash lookup)
+  PASS: [sync] offline sync shows feedback and keeps the cache
+  PASS: [K] NO_ASSIGNMENT shows as 'Waiting for scenario assignment'
+  PASS: [I] John Doe Test Mode session is marked TEST and owned by John Doe
+  PASS: [K] details explain the session is safe and retryable after assignment
+  PASS: [security] session details show no token or device key
+  PASS: [sessions] legacy, recent and expired uploads labelled correctly
+  PASS: [M] legacy details: 'Retention date unavailable', no days number, no retry
+  PASS: [L] recent upload details: 'Local backup expires in 1 day'
+  PASS: [L] expired upload details: 'Local backup eligible for cleanup'
+  PASS: [P] the open Sessions list updated live (OnQueueEntryChanged) - no reopen
+  PASS: [K] after the assignment exists, the same session uploads under the same owner (John Doe)
+  PASS: [retry] Retry Upload uses RetryNow - Juan's pending session uploads to Juan
+  PASS: [M] automatic cleanup never removes a legacy uploaded entry
+  PASS: [L] automatic cleanup removed only the expired upload (+ its proven raw log), kept the recent upload and the pending session
+  PASS: [L] nothing else eligible afterwards
+  PASS: [M] legacy cleanup shows the count and the server-safe warning
+  PASS: [M] confirmation then requires PIN re-entry
+  PASS: [M] wrong PIN at re-check does nothing
+  PASS: [M] correct PIN removes ONLY the legacy uploaded local copy
+  PASS: [raw] legacy raw log deleted only where proven; a same-name file with another session's content is kept
+  PASS: [raw] pending / recent sessions' raw logs untouched
+  PASS: [N] strong confirmation states it is local only
+  PASS: [N] after PIN re-check the local directory is empty
+  PASS: [N] queue, uploads, ownership, raw logs and server students all untouched
+  PASS: [N] the next successful sync repopulates the directory
+  PASS: [status] readiness with directory synced, credential present, online: READY FOR TRAINING (Online; )
+  PASS: [status] shows credential state but never the key
+  PASS: [O] missing credential -> ACTION NEEDED + 'Device credential missing', no secret shown
+  PASS: [O] offline cached login still works without the credential
+  PASS: [O] uploads needing the device credential stay local (RetryWaiting), nothing lost
+  PASS: [O] manual sync explains the missing credential and keeps the cache
+  PASS: [sessions] there is no generic 'Delete Session' control
+  PASS: [close] Close returns to locked state
+=== PASS, 0 failures ===

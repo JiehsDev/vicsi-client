@@ -1,0 +1,13 @@
+{
+    "Date":  "2026-10-13",
+    "BackendDeductionIntegration":  {
+                                        "Command":  "node --conditions=react-server --experimental-strip-types --test src/lib/scoring/__tests__/deductionIntegration.test.ts",
+                                        "Pass":  29,
+                                        "Fail":  0
+                                    },
+    "Wire":  {
+                 "Report":  "docs/evidence/body-a-revised-flow/wire-tests.txt",
+                 "Pass":  4,
+                 "Fail":  0
+             }
+}

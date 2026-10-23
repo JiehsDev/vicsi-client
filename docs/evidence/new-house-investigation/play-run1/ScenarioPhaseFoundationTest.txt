@@ -1,0 +1,32 @@
+PASS: Survey standing hint is hidden until the FR handover, with no obstructing colliders
+PASS: FR handover reveals the yellow standing area and arrow with location/action guidance
+FAIL: Relocated TV-side observation point has a clear forward body sightline and preserves interaction settings
+PASS: Scene-survey observation uses the revised secured/undisturbed dialogue without added findings
+PASS: IOC Observe owns A at its actionable observation point
+PASS: Real observation input hides the standing highlight after recording the survey
+PASS: Actual XR A records IOC observation and consumes the held press against jump
+PASS: Editor-configured IOC observation point, radius, facing gate and editable A – Observe prompt are active
+PASS: Observation prompt is unavailable outside the point radius or when facing away, then records and clears the scene-survey objective
+INFO: ioc-victim; selected=ioc-victim; recorded=True; UI blocked=False
+INFO: ioc-possible-weapon; selected=ioc-possible-weapon; recorded=True; UI blocked=False
+INFO: ioc-drinking-context; selected=ioc-drinking-context; recorded=True; UI blocked=False
+INFO: statuses unchanged=True; props unchanged=True; observation events=4
+INFO: evidence drift BODY-A=0.000000 m
+INFO: evidence drift EVD-015=0.000000 m
+INFO: evidence drift EVD-014=0.000000 m
+INFO: evidence drift EVD-018=0.000000 m
+INFO: evidence drift EVD-014-print=0.000000 m
+INFO: handover=True; observed=True; ready=True; records=ioc-main-scene-survey,ioc-victim,ioc-possible-weapon,ioc-drinking-context
+PASS: IOC startup, real FR/Form 1 handover and intentional IOC assessment preserve evidence and reach the decision with SOCO locked
+PASS: Actual choice pointer rejects Continue without SOCO, offers reconsideration, logs that choice once and leaves gates intact
+PASS: Request choice advances only to SOCORequested, records decision/request once and activates Await arrival
+INFO: arrival=True; rig=(16.90, 0.00, 0.70); expected entrance=(16.90, 0.00, 0.70); phase=SOCOTurnover; form2=True; gated=True; await=Completed; briefing objective=Active; cordon=True
+PASS: Automatic arrival completes Form 2 once, restores entrance position/yaw while preserving settled height and enters locked IOC-role SOCOTurnover
+PASS: Student approaches the authored IOC marker before briefing
+PASS: Complete three-line IOC briefing displays/skips normally with SOCO locked throughout, records history once and enters investigation once
+INFO: SOCO role=SOCO; tools locked=False; timer=2.015832; photo=scene-exterior-establishing; marker=True; body objective=Active; evidence=EVD-014:NotFound,EVD-015:NotFound,EVD-018:NotFound,BODY-A:NotFound
+PASS: SOCO boundary changes role, unlocks tools, activates the original first photo marker/objectives and starts timing without processing evidence
+PASS: Scene restart resets the standing hint for the next FR handover
+PASS: Restart restores the relocated observation point and unrecorded survey objective
+PASS: Fresh-session reload restores IOC turnover and clears request/Form 2/assessment/timer with SOCO locked
+=== FAIL: IOC SOCO transition ===

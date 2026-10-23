@@ -1,0 +1,39 @@
+{
+  "results": [
+    {
+      "suite": "FirstResponderTurnoverTest",
+      "passed": 44,
+      "failed": 0
+    },
+    {
+      "suite": "PhotographyGuideTest",
+      "passed": 26,
+      "failed": 0
+    },
+    {
+      "suite": "PhotographyShutterOwnershipTest",
+      "passed": 14,
+      "failed": 0
+    },
+    {
+      "suite": "ScenarioPhaseFoundationTest",
+      "passed": 19,
+      "failed": 0
+    },
+    {
+      "suite": "ScenePhotoZoneVisibilityTest",
+      "passed": 65,
+      "failed": 0
+    }
+  ],
+  "total_passed": 168,
+  "total_failed": 0,
+  "csharp_errors": [],
+  "changed_existing_files": [
+    "Assets/_Project/Scripts/ScenePhotography/ScenePhotoPoint.cs",
+    "Assets/_Project/Scripts/Testing/FirstResponderTurnoverTest.cs",
+    "Assets/_Project/Scripts/Testing/ScenarioPhaseFoundationTest.cs"
+  ],
+  "unchanged_scoped_files": 1390,
+  "quest_headset_validation": "Not performed; physical headset check remains."
+}

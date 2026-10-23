@@ -1,0 +1,234 @@
+{
+  "rows": [
+    {
+      "suite": "ScenarioPhaseFoundationTest",
+      "path": "docs/evidence/ioc-soco-phase5/focused-final/run1/ScenarioPhaseFoundationTest.txt",
+      "passes": 7,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "FirstResponderTurnoverTest",
+      "path": "docs/evidence/ioc-soco-phase5/A/run2/FirstResponderTurnoverTest.txt",
+      "passes": 44,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "DialogueHistoryTest",
+      "path": "docs/evidence/ioc-soco-phase5/A/run2/DialogueHistoryTest.txt",
+      "passes": 24,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "StoryContentTest",
+      "path": "docs/evidence/ioc-soco-phase5/A/run3/StoryContentTest.txt",
+      "passes": 32,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "ObjectiveStateManagerTest",
+      "path": "docs/evidence/ioc-soco-phase5/A/run4/ObjectiveStateManagerTest.txt",
+      "passes": 13,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "DialogueCatalogTest",
+      "path": "docs/evidence/ioc-soco-phase5/A/run4/DialogueCatalogTest.txt",
+      "passes": 37,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "ScenePhotographyProcedureTest",
+      "path": "docs/evidence/ioc-soco-phase5/B/run1/ScenePhotographyProcedureTest.txt",
+      "passes": 40,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "GreyboxFlowTest",
+      "path": "docs/evidence/ioc-soco-phase5/B/run1/GreyboxFlowTest.txt",
+      "passes": 0,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "ProcedureFoundationTest",
+      "path": "docs/evidence/ioc-soco-phase5/B/run1/ProcedureFoundationTest.txt",
+      "passes": 30,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "EvidenceProcedureMapTest",
+      "path": "docs/evidence/ioc-soco-phase5/B/run1/EvidenceProcedureMapTest.txt",
+      "passes": 59,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "EvidenceProcedurePanelTest",
+      "path": "docs/evidence/ioc-soco-phase5/B/run1/EvidenceProcedurePanelTest.txt",
+      "passes": 41,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "BiologicalSamplingTest",
+      "path": "docs/evidence/ioc-soco-phase5/C1/run1/BiologicalSamplingTest.txt",
+      "passes": 32,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "ChalkProcedureTest",
+      "path": "docs/evidence/ioc-soco-phase5/C1/run1/ChalkProcedureTest.txt",
+      "passes": 39,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "MeasurementProcedureTest:Normal",
+      "path": "docs/evidence/ioc-soco-phase5/C1/run2/MeasurementProcedureTest.txt",
+      "passes": 36,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "PerEvidenceMeasurementTest",
+      "path": "docs/evidence/ioc-soco-phase5/C1/run2/PerEvidenceMeasurementTest.txt",
+      "passes": 33,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "MeasurementProcedureTest:WrongOrder",
+      "path": "docs/evidence/ioc-soco-phase5/C2/run1/MeasurementProcedureTest.txt",
+      "passes": 19,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "CollectionFeedbackTest",
+      "path": "docs/evidence/ioc-soco-phase5/C2/run1/CollectionFeedbackTest.txt",
+      "passes": 19,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "EvidenceTraceMarkerTest",
+      "path": "docs/evidence/ioc-soco-phase5/C2/run1/EvidenceTraceMarkerTest.txt",
+      "passes": 17,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "EvidenceInventoryTest",
+      "path": "docs/evidence/ioc-soco-phase5/C2/run1/EvidenceInventoryTest.txt",
+      "passes": 29,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "SceneRelationalMeasurementTest",
+      "path": "docs/evidence/ioc-soco-phase5/C2/run2/SceneRelationalMeasurementTest.txt",
+      "passes": 57,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "EvidenceNotesTest",
+      "path": "docs/evidence/ioc-soco-phase5/D/run2/EvidenceNotesTest.txt",
+      "passes": 33,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "RequirementEvaluatorTest",
+      "path": "docs/evidence/ioc-soco-phase5/D/run2/RequirementEvaluatorTest.txt",
+      "passes": 24,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "NarrativeEventManagerTest",
+      "path": "docs/evidence/ioc-soco-phase5/D/run2/NarrativeEventManagerTest.txt",
+      "passes": 10,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "BrotherPathTest",
+      "path": "docs/evidence/ioc-soco-phase5/D/run3/BrotherPathTest.txt",
+      "passes": 52,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "RelationshipStateManagerTest",
+      "path": "docs/evidence/ioc-soco-phase5/E/run1/RelationshipStateManagerTest.txt",
+      "passes": 14,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "InconclusivePathTest",
+      "path": "docs/evidence/ioc-soco-phase5/E/run1/InconclusivePathTest.txt",
+      "passes": 10,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "EndingManagerTest",
+      "path": "docs/evidence/ioc-soco-phase5/E/run3/EndingManagerTest.txt",
+      "passes": 9,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "AssessmentUploadServiceTest",
+      "path": "docs/evidence/ioc-soco-phase5/F/run1/AssessmentUploadServiceTest.txt",
+      "passes": 33,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "SessionPersistenceTest",
+      "path": "docs/evidence/ioc-soco-phase5/F/run1/SessionPersistenceTest.txt",
+      "passes": 12,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "VrIdentityUploadBridgeTest",
+      "path": "docs/evidence/ioc-soco-phase5/F/run1/VrIdentityUploadBridgeTest.txt",
+      "passes": 25,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "OfflineQueueRetentionTest",
+      "path": "docs/evidence/ioc-soco-phase5/F/run1/OfflineQueueRetentionTest.txt",
+      "passes": 34,
+      "fails": 0,
+      "passed": true
+    },
+    {
+      "suite": "PreSessionFlowControllerTest",
+      "path": "docs/evidence/ioc-soco-phase5/F/run1/PreSessionFlowControllerTest.txt",
+      "passes": 8,
+      "fails": 0,
+      "passed": true
+    }
+  ],
+  "explicitPassed": 872,
+  "explicitFailed": 0,
+  "greyboxLifecycleGroups": 3,
+  "distinctSuites": 31,
+  "finalConfigurations": 32,
+  "totalAttempts": 41
+}

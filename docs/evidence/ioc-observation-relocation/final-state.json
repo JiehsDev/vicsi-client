@@ -1,0 +1,17 @@
+{
+  "position": "(0.400000, 0.000000, 10.100000)",
+  "euler": "(0.000000, 308.453700, 0.000000)",
+  "forward": "(-0.783111, 0.000000, 0.621882)",
+  "radius": 1.5,
+  "requireFacing": true,
+  "angle": 45.0,
+  "prompt": "A – Observe",
+  "standingCapsuleObstructions": [],
+  "bodyViewport": "(0.500041, 0.298742, 4.342761)",
+  "bodyRayObstructions": [],
+  "compiling": false,
+  "compilationFailed": false,
+  "playing": false,
+  "pending": false,
+  "xrRestorePending": false
+}

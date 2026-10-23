@@ -1,0 +1,18 @@
+{
+  "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+  "dirty": false,
+  "playing": false,
+  "compiling": false,
+  "compilationFailed": false,
+  "positionPreserved": true,
+  "position": "(2.21, 0.03, 1.60)",
+  "material": "Assets/_Project/Art/Environments/MODELS/NPC/IOC/IOC_Readable.mat",
+  "keywords": [
+    "_EMISSION",
+    "_RECEIVE_SHADOWS_OFF"
+  ],
+  "idleController": "Assets/_Project/Art/Environments/MODELS/NPC/IOC/IOC_Idle.controller",
+  "rootMotion": false,
+  "presentation": "IOC",
+  "trialLightRemoved": true
+}

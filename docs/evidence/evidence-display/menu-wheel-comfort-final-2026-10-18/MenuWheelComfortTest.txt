@@ -1,0 +1,254 @@
+=== MenuWheelComfortTest ===
+PASS: Scenario menu exists
+PASS: Smaller wheel with unchanged physical canvas scale
+PASS: Viewing distance retained
+INFO: actual entries: IOC Checklist, Relationships, Item Logs, Album, Submit Conclusion, Evidence Inventory, Closeout Inventory, Dialogue History, Witness Accounts, Evidence Procedure, Scene Sketch, Settings
+PASS: 3 entries: actual X opens and locks UI
+FAIL: 3 entries: locomotion objects suspended while selecting
+PASS: 3 entries: shared wall-safe placement retained
+PASS: 3 entries: correct number of segments
+PASS: 3/Notes: fixed readable bold type, max two lines, no overflow
+PASS: 3/Notes: rendered glyphs inside own segment and central wheel
+PASS: 3/Notes: real right stick selects correct segment
+PASS: 3/Notes: selected label uses clear black-on-white state
+PASS: 3/Item Logs: fixed readable bold type, max two lines, no overflow
+PASS: 3/Item Logs: rendered glyphs inside own segment and central wheel
+PASS: 3/Item Logs: real right stick selects correct segment
+PASS: 3/Item Logs: selected label uses clear black-on-white state
+PASS: 3/Album: fixed readable bold type, max two lines, no overflow
+PASS: 3/Album: rendered glyphs inside own segment and central wheel
+PASS: 3/Album: real right stick selects correct segment
+PASS: 3/Album: selected label uses clear black-on-white state
+PASS: 3 entries: original deadzone retains selection
+PASS: 3 entries: X release confirms exactly selected action and unlocks
+PASS: 3 entries: original locomotion objects restored
+PASS: 4 entries: actual X opens and locks UI
+FAIL: 4 entries: locomotion objects suspended while selecting
+PASS: 4 entries: shared wall-safe placement retained
+PASS: 4 entries: correct number of segments
+PASS: 4/Notes: fixed readable bold type, max two lines, no overflow
+PASS: 4/Notes: rendered glyphs inside own segment and central wheel
+PASS: 4/Notes: real right stick selects correct segment
+PASS: 4/Notes: selected label uses clear black-on-white state
+PASS: 4/Item Logs: fixed readable bold type, max two lines, no overflow
+PASS: 4/Item Logs: rendered glyphs inside own segment and central wheel
+PASS: 4/Item Logs: real right stick selects correct segment
+PASS: 4/Item Logs: selected label uses clear black-on-white state
+PASS: 4/Album: fixed readable bold type, max two lines, no overflow
+PASS: 4/Album: rendered glyphs inside own segment and central wheel
+PASS: 4/Album: real right stick selects correct segment
+PASS: 4/Album: selected label uses clear black-on-white state
+PASS: 4/Settings: fixed readable bold type, max two lines, no overflow
+PASS: 4/Settings: rendered glyphs inside own segment and central wheel
+PASS: 4/Settings: real right stick selects correct segment
+PASS: 4/Settings: selected label uses clear black-on-white state
+PASS: 4 entries: original deadzone retains selection
+PASS: 4 entries: X release confirms exactly selected action and unlocks
+PASS: 4 entries: original locomotion objects restored
+PASS: 10 entries: actual X opens and locks UI
+FAIL: 10 entries: locomotion objects suspended while selecting
+PASS: 10 entries: shared wall-safe placement retained
+PASS: 10 entries: correct number of segments
+PASS: 10/Relationships: fixed readable bold type, max two lines, no overflow
+PASS: 10/Relationships: rendered glyphs inside own segment and central wheel
+PASS: 10/Relationships: real right stick selects correct segment
+PASS: 10/Relationships: selected label uses clear black-on-white state
+PASS: 10/Item Logs: fixed readable bold type, max two lines, no overflow
+PASS: 10/Item Logs: rendered glyphs inside own segment and central wheel
+PASS: 10/Item Logs: real right stick selects correct segment
+PASS: 10/Item Logs: selected label uses clear black-on-white state
+PASS: 10/Album: fixed readable bold type, max two lines, no overflow
+PASS: 10/Album: rendered glyphs inside own segment and central wheel
+PASS: 10/Album: real right stick selects correct segment
+PASS: 10/Album: selected label uses clear black-on-white state
+PASS: 10/Submit Conclusion: fixed readable bold type, max two lines, no overflow
+PASS: 10/Submit Conclusion: rendered glyphs inside own segment and central wheel
+PASS: 10/Submit Conclusion: real right stick selects correct segment
+PASS: 10/Submit Conclusion: selected label uses clear black-on-white state
+PASS: 10/Evidence Inventory: fixed readable bold type, max two lines, no overflow
+PASS: 10/Evidence Inventory: rendered glyphs inside own segment and central wheel
+PASS: 10/Evidence Inventory: real right stick selects correct segment
+PASS: 10/Evidence Inventory: selected label uses clear black-on-white state
+PASS: 10/Dialogue History: fixed readable bold type, max two lines, no overflow
+PASS: 10/Dialogue History: rendered glyphs inside own segment and central wheel
+PASS: 10/Dialogue History: real right stick selects correct segment
+PASS: 10/Dialogue History: selected label uses clear black-on-white state
+PASS: 10/Witness Accounts: fixed readable bold type, max two lines, no overflow
+PASS: 10/Witness Accounts: rendered glyphs inside own segment and central wheel
+PASS: 10/Witness Accounts: real right stick selects correct segment
+PASS: 10/Witness Accounts: selected label uses clear black-on-white state
+PASS: 10/Evidence Procedure: fixed readable bold type, max two lines, no overflow
+PASS: 10/Evidence Procedure: rendered glyphs inside own segment and central wheel
+PASS: 10/Evidence Procedure: real right stick selects correct segment
+PASS: 10/Evidence Procedure: selected label uses clear black-on-white state
+PASS: 10/Scene Sketch: fixed readable bold type, max two lines, no overflow
+PASS: 10/Scene Sketch: rendered glyphs inside own segment and central wheel
+PASS: 10/Scene Sketch: real right stick selects correct segment
+PASS: 10/Scene Sketch: selected label uses clear black-on-white state
+PASS: 10/Settings: fixed readable bold type, max two lines, no overflow
+PASS: 10/Settings: rendered glyphs inside own segment and central wheel
+PASS: 10/Settings: real right stick selects correct segment
+PASS: 10/Settings: selected label uses clear black-on-white state
+PASS: 10 entries: original deadzone retains selection
+PASS: 10 entries: X release confirms exactly selected action and unlocks
+PASS: 10 entries: original locomotion objects restored
+PASS: 11 entries: actual X opens and locks UI
+FAIL: 11 entries: locomotion objects suspended while selecting
+PASS: 11 entries: shared wall-safe placement retained
+PASS: 11 entries: correct number of segments
+PASS: 11/IOC Checklist: fixed readable bold type, max two lines, no overflow
+PASS: 11/IOC Checklist: rendered glyphs inside own segment and central wheel
+PASS: 11/IOC Checklist: real right stick selects correct segment
+PASS: 11/IOC Checklist: selected label uses clear black-on-white state
+PASS: 11/Relationships: fixed readable bold type, max two lines, no overflow
+PASS: 11/Relationships: rendered glyphs inside own segment and central wheel
+PASS: 11/Relationships: real right stick selects correct segment
+PASS: 11/Relationships: selected label uses clear black-on-white state
+PASS: 11/Item Logs: fixed readable bold type, max two lines, no overflow
+PASS: 11/Item Logs: rendered glyphs inside own segment and central wheel
+PASS: 11/Item Logs: real right stick selects correct segment
+PASS: 11/Item Logs: selected label uses clear black-on-white state
+PASS: 11/Album: fixed readable bold type, max two lines, no overflow
+PASS: 11/Album: rendered glyphs inside own segment and central wheel
+PASS: 11/Album: real right stick selects correct segment
+PASS: 11/Album: selected label uses clear black-on-white state
+PASS: 11/Submit Conclusion: fixed readable bold type, max two lines, no overflow
+PASS: 11/Submit Conclusion: rendered glyphs inside own segment and central wheel
+PASS: 11/Submit Conclusion: real right stick selects correct segment
+PASS: 11/Submit Conclusion: selected label uses clear black-on-white state
+PASS: 11/Evidence Inventory: fixed readable bold type, max two lines, no overflow
+PASS: 11/Evidence Inventory: rendered glyphs inside own segment and central wheel
+PASS: 11/Evidence Inventory: real right stick selects correct segment
+PASS: 11/Evidence Inventory: selected label uses clear black-on-white state
+PASS: 11/Dialogue History: fixed readable bold type, max two lines, no overflow
+PASS: 11/Dialogue History: rendered glyphs inside own segment and central wheel
+PASS: 11/Dialogue History: real right stick selects correct segment
+PASS: 11/Dialogue History: selected label uses clear black-on-white state
+PASS: 11/Witness Accounts: fixed readable bold type, max two lines, no overflow
+PASS: 11/Witness Accounts: rendered glyphs inside own segment and central wheel
+PASS: 11/Witness Accounts: real right stick selects correct segment
+PASS: 11/Witness Accounts: selected label uses clear black-on-white state
+PASS: 11/Evidence Procedure: fixed readable bold type, max two lines, no overflow
+PASS: 11/Evidence Procedure: rendered glyphs inside own segment and central wheel
+PASS: 11/Evidence Procedure: real right stick selects correct segment
+PASS: 11/Evidence Procedure: selected label uses clear black-on-white state
+PASS: 11/Scene Sketch: fixed readable bold type, max two lines, no overflow
+PASS: 11/Scene Sketch: rendered glyphs inside own segment and central wheel
+PASS: 11/Scene Sketch: real right stick selects correct segment
+PASS: 11/Scene Sketch: selected label uses clear black-on-white state
+PASS: 11/Settings: fixed readable bold type, max two lines, no overflow
+PASS: 11/Settings: rendered glyphs inside own segment and central wheel
+PASS: 11/Settings: real right stick selects correct segment
+PASS: 11/Settings: selected label uses clear black-on-white state
+PASS: 11 entries: original deadzone retains selection
+PASS: 11 entries: X release confirms exactly selected action and unlocks
+PASS: 11 entries: original locomotion objects restored
+PASS: 11 entries: actual X opens and locks UI
+FAIL: 11 entries: locomotion objects suspended while selecting
+PASS: 11 entries: shared wall-safe placement retained
+PASS: 11 entries: correct number of segments
+PASS: 11/Relationships: fixed readable bold type, max two lines, no overflow
+PASS: 11/Relationships: rendered glyphs inside own segment and central wheel
+PASS: 11/Relationships: real right stick selects correct segment
+PASS: 11/Relationships: selected label uses clear black-on-white state
+PASS: 11/Item Logs: fixed readable bold type, max two lines, no overflow
+PASS: 11/Item Logs: rendered glyphs inside own segment and central wheel
+PASS: 11/Item Logs: real right stick selects correct segment
+PASS: 11/Item Logs: selected label uses clear black-on-white state
+PASS: 11/Album: fixed readable bold type, max two lines, no overflow
+PASS: 11/Album: rendered glyphs inside own segment and central wheel
+PASS: 11/Album: real right stick selects correct segment
+PASS: 11/Album: selected label uses clear black-on-white state
+PASS: 11/Submit Conclusion: fixed readable bold type, max two lines, no overflow
+PASS: 11/Submit Conclusion: rendered glyphs inside own segment and central wheel
+PASS: 11/Submit Conclusion: real right stick selects correct segment
+PASS: 11/Submit Conclusion: selected label uses clear black-on-white state
+PASS: 11/Evidence Inventory: fixed readable bold type, max two lines, no overflow
+PASS: 11/Evidence Inventory: rendered glyphs inside own segment and central wheel
+PASS: 11/Evidence Inventory: real right stick selects correct segment
+PASS: 11/Evidence Inventory: selected label uses clear black-on-white state
+PASS: 11/Closeout Inventory: fixed readable bold type, max two lines, no overflow
+PASS: 11/Closeout Inventory: rendered glyphs inside own segment and central wheel
+PASS: 11/Closeout Inventory: real right stick selects correct segment
+PASS: 11/Closeout Inventory: selected label uses clear black-on-white state
+PASS: 11/Dialogue History: fixed readable bold type, max two lines, no overflow
+PASS: 11/Dialogue History: rendered glyphs inside own segment and central wheel
+PASS: 11/Dialogue History: real right stick selects correct segment
+PASS: 11/Dialogue History: selected label uses clear black-on-white state
+PASS: 11/Witness Accounts: fixed readable bold type, max two lines, no overflow
+PASS: 11/Witness Accounts: rendered glyphs inside own segment and central wheel
+PASS: 11/Witness Accounts: real right stick selects correct segment
+PASS: 11/Witness Accounts: selected label uses clear black-on-white state
+PASS: 11/Evidence Procedure: fixed readable bold type, max two lines, no overflow
+PASS: 11/Evidence Procedure: rendered glyphs inside own segment and central wheel
+PASS: 11/Evidence Procedure: real right stick selects correct segment
+PASS: 11/Evidence Procedure: selected label uses clear black-on-white state
+PASS: 11/Scene Sketch: fixed readable bold type, max two lines, no overflow
+PASS: 11/Scene Sketch: rendered glyphs inside own segment and central wheel
+PASS: 11/Scene Sketch: real right stick selects correct segment
+PASS: 11/Scene Sketch: selected label uses clear black-on-white state
+PASS: 11/Settings: fixed readable bold type, max two lines, no overflow
+PASS: 11/Settings: rendered glyphs inside own segment and central wheel
+PASS: 11/Settings: real right stick selects correct segment
+PASS: 11/Settings: selected label uses clear black-on-white state
+PASS: 11 entries: original deadzone retains selection
+PASS: 11 entries: X release confirms exactly selected action and unlocks
+PASS: 11 entries: original locomotion objects restored
+PASS: 12 entries: actual X opens and locks UI
+FAIL: 12 entries: locomotion objects suspended while selecting
+PASS: 12 entries: shared wall-safe placement retained
+PASS: 12 entries: correct number of segments
+PASS: 12/IOC Checklist: fixed readable bold type, max two lines, no overflow
+PASS: 12/IOC Checklist: rendered glyphs inside own segment and central wheel
+PASS: 12/IOC Checklist: real right stick selects correct segment
+PASS: 12/IOC Checklist: selected label uses clear black-on-white state
+PASS: 12/Relationships: fixed readable bold type, max two lines, no overflow
+PASS: 12/Relationships: rendered glyphs inside own segment and central wheel
+PASS: 12/Relationships: real right stick selects correct segment
+PASS: 12/Relationships: selected label uses clear black-on-white state
+PASS: 12/Item Logs: fixed readable bold type, max two lines, no overflow
+PASS: 12/Item Logs: rendered glyphs inside own segment and central wheel
+PASS: 12/Item Logs: real right stick selects correct segment
+PASS: 12/Item Logs: selected label uses clear black-on-white state
+PASS: 12/Album: fixed readable bold type, max two lines, no overflow
+PASS: 12/Album: rendered glyphs inside own segment and central wheel
+PASS: 12/Album: real right stick selects correct segment
+PASS: 12/Album: selected label uses clear black-on-white state
+PASS: 12/Submit Conclusion: fixed readable bold type, max two lines, no overflow
+PASS: 12/Submit Conclusion: rendered glyphs inside own segment and central wheel
+PASS: 12/Submit Conclusion: real right stick selects correct segment
+PASS: 12/Submit Conclusion: selected label uses clear black-on-white state
+PASS: 12/Evidence Inventory: fixed readable bold type, max two lines, no overflow
+PASS: 12/Evidence Inventory: rendered glyphs inside own segment and central wheel
+PASS: 12/Evidence Inventory: real right stick selects correct segment
+PASS: 12/Evidence Inventory: selected label uses clear black-on-white state
+PASS: 12/Closeout Inventory: fixed readable bold type, max two lines, no overflow
+PASS: 12/Closeout Inventory: rendered glyphs inside own segment and central wheel
+PASS: 12/Closeout Inventory: real right stick selects correct segment
+PASS: 12/Closeout Inventory: selected label uses clear black-on-white state
+PASS: 12/Dialogue History: fixed readable bold type, max two lines, no overflow
+PASS: 12/Dialogue History: rendered glyphs inside own segment and central wheel
+PASS: 12/Dialogue History: real right stick selects correct segment
+PASS: 12/Dialogue History: selected label uses clear black-on-white state
+PASS: 12/Witness Accounts: fixed readable bold type, max two lines, no overflow
+PASS: 12/Witness Accounts: rendered glyphs inside own segment and central wheel
+PASS: 12/Witness Accounts: real right stick selects correct segment
+PASS: 12/Witness Accounts: selected label uses clear black-on-white state
+PASS: 12/Evidence Procedure: fixed readable bold type, max two lines, no overflow
+PASS: 12/Evidence Procedure: rendered glyphs inside own segment and central wheel
+PASS: 12/Evidence Procedure: real right stick selects correct segment
+PASS: 12/Evidence Procedure: selected label uses clear black-on-white state
+PASS: 12/Scene Sketch: fixed readable bold type, max two lines, no overflow
+PASS: 12/Scene Sketch: rendered glyphs inside own segment and central wheel
+PASS: 12/Scene Sketch: real right stick selects correct segment
+PASS: 12/Scene Sketch: selected label uses clear black-on-white state
+PASS: 12/Settings: fixed readable bold type, max two lines, no overflow
+PASS: 12/Settings: rendered glyphs inside own segment and central wheel
+PASS: 12/Settings: real right stick selects correct segment
+PASS: 12/Settings: selected label uses clear black-on-white state
+PASS: 12 entries: original deadzone retains selection
+PASS: 12 entries: X release confirms exactly selected action and unlocks
+PASS: 12 entries: original locomotion objects restored
+PASS: Actual menu rectangle stays on safe side of nearby wall
+PASS: Actual menu retains readable fallback distance
+=== FAIL: 6 ===

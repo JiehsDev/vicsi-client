@@ -1,0 +1,53 @@
+{
+  "presets": 7,
+  "total_passed": 264,
+  "failures": 0,
+  "reports": [
+    {
+      "suite": "SceneTestStartTest",
+      "report": "docs/evidence/scene-test-start/verified-play/SceneTestStartTest.txt",
+      "passed": 77,
+      "failed": 0,
+      "complete": true
+    },
+    {
+      "suite": "ScenePhotographyProcedureTest",
+      "report": "docs/evidence/scene-test-start/final-play/ScenePhotographyProcedureTest.txt",
+      "passed": 47,
+      "failed": 0,
+      "complete": true
+    },
+    {
+      "suite": "ReasoningCheckpointTest",
+      "report": "docs/evidence/scene-test-start/final-play/ReasoningCheckpointTest.txt",
+      "passed": 62,
+      "failed": 0,
+      "complete": true
+    },
+    {
+      "suite": "SettingsPauseMenuTest",
+      "report": "docs/evidence/scene-test-start/final-play/SettingsPauseMenuTest.txt",
+      "passed": 35,
+      "failed": 0,
+      "complete": true
+    },
+    {
+      "suite": "NarrativeEventManagerTest",
+      "report": "docs/evidence/scene-test-start/verified-play/NarrativeEventManagerTest.txt",
+      "passed": 10,
+      "failed": 0,
+      "complete": true
+    },
+    {
+      "suite": "AssessmentUploadServiceTest",
+      "report": "docs/evidence/scene-test-start/upload-final/AssessmentUploadServiceTest.txt",
+      "passed": 33,
+      "failed": 0,
+      "complete": true
+    }
+  ],
+  "saved_default": "NormalPlay",
+  "editor_default": "NormalPlay",
+  "scene_geometry_preserved": true,
+  "quest_device_verification": "pending"
+}

@@ -14,10 +14,482 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceDefinition
   evidenceId: EVD-018
   displayName: Empty liquor bottle
-  relevance: 3
+  relevance: 1
+  interactionRadius: 1.5
   requiresFingerprinting: 1
-  description: Prominently placed near the entry so it is usually the first thing
-    encountered. Invites the inference that intoxication explains a fall without a
-    second party - an inference the physical evidence does not actually support.
-    Classified via the relevance field (Distractor); it is a real evidence item and
-    tents, photographs and collects exactly like any other.
+  fingerprintBeforeCollection: 1
+  requiresFlipBeforeFingerprinting: 0
+  fingerprintMatchIdentity: Paul
+  fingerprintMatchIdentities:
+  - John
+  - Peter
+  - Paul
+  measurementAfterFinalPhoto: 1
+  description: An empty glass liquor bottle documented as a potential scene item.
+  foundLocation: On the rear ground-floor kitchen counter.
+  observedCondition: The bottle was empty and visibly intact. Its exterior was suitable
+    for latent-print processing.
+  investigativeContext: The bottle provides context for the earlier drinking gathering
+    and may corroborate handling or presence. It does not establish who was present
+    when John was attacked or who caused the attack.
+  loggingContext: 
+  progressiveFindings:
+  - text: Three separate recovered prints were identified as John's, Peter's and
+      Paul's. Their timing cannot be established from the prints alone.
+    revealRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 2
+      evidenceId: EVD-018
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 2
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+  reportLineOptions:
+  - id: bottle-location
+    text: Found on the rear kitchen counter, beside the preparation area.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+  - id: bottle-first-encountered
+    text: Separate fingerprints recovered from the bottle were identified as John's,
+      Peter's and Paul's.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 2
+      evidenceId: EVD-018
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 2
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+  - id: bottle-standard-procedure
+    text: The bottle's original location and condition were documented before collection.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+  - id: bottle-fingerprint-pending
+    text: The recovered prints establish handling, but do not establish when each
+      person touched the bottle.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 2
+      evidenceId: EVD-018
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 2
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+  - id: bottle-intoxication-explains-fall
+    text: Paul's fingerprint on the bottle places him at the house when the attack
+      occurred.
+    isAccurate: 0
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+  - id: bottle-recent-drinking-assumed
+    text: The bottle proves Peter was still inside when John was attacked.
+    isAccurate: 0
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+  minimumLinesRequired: 3
+  chalkCircleRadius: 0.1
+  requiresChalk: 1
+  chalkPointCount: 24
+  chalkCompletionThreshold: 0.9
+  requiresSwabbing: 0
+  requiresTraceMarker: 0
+  collectedBySwab: 0
+  swabBeforeFingerprinting: 0
+  examinedInPlace: 0
+  requiresBodyRemoval: 0
+  icon: {fileID: 21300000, guid: 03617da4feefb3e4a9d552e59819b342, type: 3}
+  heldPrefab: {fileID: 4300004211397350677, guid: d73a140f0a6d25c469a25515a52252ef, type: 3}
+  heldLocalPosition: {x: -0.05, y: 0.02, z: 0.08}
+  heldLocalEulerAngles: {x: 0, y: 0, z: 0}
+  heldLocalScale: {x: 1, y: 1, z: 1}
+  depositRequirement:
+    kind: 1
+    operatorType: 0
+    children: []
+    requirementType: 0
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    measurementRequirementId: 
+    scenarioPhase: 0
+    authoringNote: 
+  depositedVisual: {fileID: 0}
+  stepRequirements:
+  - stepId: scene-measurements-before-record
+    action: 0
+    beforeStatus: 6
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 17
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    enforcement: 1
+    messageId: step-measurements-before-records
+    message: 
+    expectedPrerequisite: scene-measurements
+  - stepId: scene-photos-before-evidence-photo
+    action: 0
+    beforeStatus: 2
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    enforcement: 0
+    messageId: step-scene-photos-before-evidence-photos
+    message: 
+    expectedPrerequisite: scene-photography
+  - stepId: scene-photos-before-chalk
+    action: 0
+    beforeStatus: 3
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    enforcement: 1
+    messageId: step-scene-photos-before-chalk
+    message: 
+    expectedPrerequisite: scene-photography
+  - stepId: scene-photos-before-marker
+    action: 0
+    beforeStatus: 4
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    enforcement: 1
+    messageId: step-scene-photos-before-markers
+    message: 
+    expectedPrerequisite: scene-photography
+  - stepId: scene-photos-before-fingerprinting
+    action: 2
+    beforeStatus: 8
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    enforcement: 1
+    messageId: step-scene-photos-before-fingerprints
+    message: 
+    expectedPrerequisite: scene-photography
+  - stepId: scene-photos-before-collection
+    action: 0
+    beforeStatus: 8
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    enforcement: 1
+    messageId: step-scene-photos-before-collection
+    message: 
+    expectedPrerequisite: scene-photography
+  - stepId: bottle-measure-before-fingerprint-fixed
+    action: 2
+    beforeStatus: 8
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 14
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: MEAS-EVD-018
+      scenarioPhase: 0
+      authoringNote: 
+    enforcement: 1
+    messageId: bottle-measure-before-fingerprint
+    message: 
+    expectedPrerequisite: measurement:MEAS-EVD-018
+  - stepId: bottle-measure-before-fingerprint-pairs
+    action: 2
+    beforeStatus: 8
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 16
+      evidenceId: EVD-018
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    enforcement: 1
+    messageId: bottle-measure-before-fingerprint
+    message: 
+    expectedPrerequisite: evidence-distances:EVD-018
+  references:
+    version: 2
+    RefIds: []

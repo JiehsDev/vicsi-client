@@ -1,0 +1,135 @@
+{
+  "passed": 26,
+  "failed": 3,
+  "checks": [
+    {
+      "pass": true,
+      "label": "Every removed scene record belongs to the replaced Sketch drawing"
+    },
+    {
+      "pass": false,
+      "label": "Scene evidence IDs and counts preserved"
+    },
+    {
+      "pass": true,
+      "label": "Fixed measurement reference IDs and counts preserved"
+    },
+    {
+      "pass": true,
+      "label": "Measurements_CSI_Environment.asset: requirementId identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "Measurements_CSI_Environment.asset: required identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "Measurements_CSI_Environment.asset: scoreWeight identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "Sketch_CSI_Environment.asset: evidenceId identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "Sketch_CSI_Environment.asset: referenceId identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "Sketch_CSI_Environment.asset: requirementId identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "Sketch_CSI_Environment.asset: slotId identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "Sketch_CSI_Environment.asset: correctAnchorId identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "Sketch_CSI_Environment.asset: required identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "IOC_Assessment_CSI_Environment.asset: evidenceId identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "IOC_Assessment_CSI_Environment.asset: observationId identities/rules preserved"
+    },
+    {
+      "pass": false,
+      "label": "ViCSIDialogueCatalog.asset: id identities/rules preserved"
+    },
+    {
+      "pass": false,
+      "label": "EVD-018_Emptyliquorbottle.asset: evidenceId identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "EVD-018_Emptyliquorbottle.asset: id identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "EVD-018_Emptyliquorbottle.asset: isAccurate identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "EVD-018_Emptyliquorbottle.asset: relevance identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "EVD-018_Emptyliquorbottle.asset: requiresFingerprinting identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "EVD-018_Emptyliquorbottle.asset: requiresSwabbing identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "EVD-018_Emptyliquorbottle.asset: requiresChalk identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "BODY-A_Victimsbody.asset: evidenceId identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "BODY-A_Victimsbody.asset: id identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "BODY-A_Victimsbody.asset: isAccurate identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "BODY-A_Victimsbody.asset: relevance identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "BODY-A_Victimsbody.asset: requiresFingerprinting identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "BODY-A_Victimsbody.asset: requiresSwabbing identities/rules preserved"
+    },
+    {
+      "pass": true,
+      "label": "BODY-A_Victimsbody.asset: requiresChalk identities/rules preserved"
+    }
+  ],
+  "addedSceneRecords": 1024,
+  "removedSceneRecords": 307,
+  "removedOutsideOldSketch": [],
+  "changedSceneRecordTypes": {
+    "4": 92,
+    "120": 32,
+    "114": 19,
+    "1001": 6,
+    "65": 8,
+    "224": 1,
+    "1": 1,
+    "1660057539": 1
+  }
+}

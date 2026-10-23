@@ -30,13 +30,10 @@ public class ViewfinderFrameMask : MonoBehaviour
     [Tooltip("Nudges the visible crop window in or out a little, in the same units as the canvas's own RectTransform (hundreds of units is a small nudge, thousands is a big one). Positive shrinks the visible window (black creeps in further); negative grows it. Use this for small manual adjustments instead of changing the aspect ratio.")]
     [SerializeField] private float extraInset = 0f;
 
-    [Tooltip("The decorative border already drawn on the viewfinder (its four edge lines) - repositioned every frame to trace exactly where the black mask begins, instead of sitting at its own separate fixed inset. Leave unassigned to skip this (the mask still works, the border just won't move to match it).")]
-    [SerializeField] private RectTransform frameBorderTop;
-    [SerializeField] private RectTransform frameBorderBottom;
-    [SerializeField] private RectTransform frameBorderLeft;
-    [SerializeField] private RectTransform frameBorderRight;
+    [Tooltip("The single camera-frame overlay graphic (corner brackets/HUD chrome baked into one texture, e.g. Art/Props/camera-frame.png) - resized and repositioned every frame to exactly fill where the black mask begins, instead of sitting at its own separate fixed inset. Replaces the old per-edge FrameBox_Top/Bottom/Left/Right pieces. Leave unassigned to skip this (the mask still works, the frame just won't move to match it).")]
+    [SerializeField] private RectTransform frameOverlay;
 
-    [Tooltip("Tint applied to all four border edges via SetConfirmed(true). Each edge reverts to its own authored color (captured once, the first time borders are resolved) via SetConfirmed(false) - not to a shared hardcoded default - so per-edge color differences the frame was designed with are preserved.")]
+    [Tooltip("Tint applied to the frame overlay via SetConfirmed(true). Reverts to its own authored color (captured once, the first time the overlay is resolved) via SetConfirmed(false).")]
     [SerializeField] private Color confirmedBorderColor = new Color(0.2f, 1f, 0.2f, 0.6f);
 
     /// <summary>The width/height ratio of the visible crop window (aspectWidth / aspectHeight) - exposed so a photo-capture listener can size its render texture to match exactly what this mask actually shows, instead of duplicating the ratio as a separate hardcoded value that could silently drift out of sync with it.</summary>
@@ -48,15 +45,15 @@ public class ViewfinderFrameMask : MonoBehaviour
     private RectTransform leftBar;
     private RectTransform rightBar;
 
-    private readonly Image[] borderImages = new Image[4];
-    private readonly Color[] borderRestColors = new Color[4];
+    private Image frameOverlayImage;
+    private Color frameOverlayRestColor;
     private bool borderColorsCached;
     private bool confirmed;
 
     private void Awake()
     {
         EnsureBars();
-        EnsureFrameBorderRefs();
+        EnsureFrameOverlayRef();
     }
 
     // Bar creation is idempotent and also called from LateUpdate (not just
@@ -81,89 +78,58 @@ public class ViewfinderFrameMask : MonoBehaviour
         rightBar = CreateBar("MaskBar_Right", new Vector2(0f, 0.5f));
     }
 
-    // Auto-finds the existing FrameBox_Top/Bottom/Left/Right children by name
-    // if not explicitly wired in the inspector, so this works without manual
-    // setup on a viewfinder that already has them (matching the project's
-    // existing naming).
-    private void EnsureFrameBorderRefs()
+    // Auto-finds the existing CameraFrameOverlay child by name if not
+    // explicitly wired in the inspector, so this works without manual setup
+    // on a viewfinder that already has one (matching the project's existing
+    // naming).
+    private void EnsureFrameOverlayRef()
     {
-        if (frameBorderTop == null)
+        if (frameOverlay == null)
         {
-            var t = transform.Find("FrameBox_Top");
-            if (t != null) frameBorderTop = (RectTransform)t;
-        }
-        if (frameBorderBottom == null)
-        {
-            var t = transform.Find("FrameBox_Bottom");
-            if (t != null) frameBorderBottom = (RectTransform)t;
-        }
-        if (frameBorderLeft == null)
-        {
-            var t = transform.Find("FrameBox_Left");
-            if (t != null) frameBorderLeft = (RectTransform)t;
-        }
-        if (frameBorderRight == null)
-        {
-            var t = transform.Find("FrameBox_Right");
-            if (t != null) frameBorderRight = (RectTransform)t;
+            var t = transform.Find("CameraFrameOverlay");
+            if (t != null) frameOverlay = (RectTransform)t;
         }
 
         CacheBorderColors();
     }
 
-    // Captures each border edge's own authored color exactly once, the first time all
-    // four are resolved - so SetConfirmed(false) can revert to what the frame was
-    // actually designed with instead of a single hardcoded assumption (e.g. they don't
-    // all have to be the same color or alpha).
+    // Captures the overlay's own authored color exactly once, the first time it's
+    // resolved - so SetConfirmed(false) can revert to what the frame was actually
+    // designed with instead of a hardcoded assumption.
     private void CacheBorderColors()
     {
-        if (borderColorsCached)
+        if (borderColorsCached || frameOverlay == null)
         {
             return;
         }
 
-        var borders = new[] { frameBorderTop, frameBorderBottom, frameBorderLeft, frameBorderRight };
-        for (int i = 0; i < borders.Length; i++)
+        frameOverlayImage = frameOverlay.GetComponent<Image>();
+        if (frameOverlayImage == null)
         {
-            if (borders[i] == null)
-            {
-                return; // Not all resolved yet - try again next call.
-            }
-
-            var image = borders[i].GetComponent<Image>();
-            borderImages[i] = image;
-            if (image != null)
-            {
-                borderRestColors[i] = image.color;
-            }
+            return; // Not resolved yet - try again next call.
         }
 
+        frameOverlayRestColor = frameOverlayImage.color;
         borderColorsCached = true;
     }
 
     /// <summary>
-    /// Tints all four border edges confirmedBorderColor (true) or reverts each to its
-    /// own authored color (false). No-op on any edge left unassigned in the inspector
-    /// and not found by name - matching frameBorderTop/etc.'s existing "leave
-    /// unassigned to skip this" contract.
+    /// Tints the frame overlay confirmedBorderColor (true) or reverts it to its own
+    /// authored color (false). No-op if left unassigned in the inspector and not
+    /// found by name - matching frameOverlay's existing "leave unassigned to skip
+    /// this" contract.
     /// </summary>
     public void SetConfirmed(bool value)
     {
         confirmed = value;
-        EnsureFrameBorderRefs();
+        EnsureFrameOverlayRef();
 
-        if (!borderColorsCached)
+        if (!borderColorsCached || frameOverlayImage == null)
         {
             return;
         }
 
-        for (int i = 0; i < borderImages.Length; i++)
-        {
-            if (borderImages[i] != null)
-            {
-                borderImages[i].color = confirmed ? confirmedBorderColor : borderRestColors[i];
-            }
-        }
+        frameOverlayImage.color = confirmed ? confirmedBorderColor : frameOverlayRestColor;
     }
 
     private RectTransform CreateBar(string barName, Vector2 pivot)
@@ -185,7 +151,7 @@ public class ViewfinderFrameMask : MonoBehaviour
     private void LateUpdate()
     {
         EnsureBars();
-        EnsureFrameBorderRefs();
+        EnsureFrameOverlayRef();
 
         Rect r = selfRect.rect;
         if (r.width <= 0f || r.height <= 0f)
@@ -216,7 +182,7 @@ public class ViewfinderFrameMask : MonoBehaviour
         visibleWidth = Mathf.Max(0f, visibleWidth - extraInset * 2f);
         visibleHeight = Mathf.Max(0f, visibleHeight - extraInset * 2f);
 
-        UpdateFrameBorder(r, visibleWidth, visibleHeight);
+        UpdateFrameOverlay(visibleWidth, visibleHeight);
 
         // Oversized a bit past the canvas's own extent on every side, so the
         // black is guaranteed solid all the way to (and past) the true edge
@@ -242,38 +208,22 @@ public class ViewfinderFrameMask : MonoBehaviour
         bottomBar.sizeDelta = bigSize;
     }
 
-    // Repositions the existing decorative border (FrameBox_Top/Bottom/Left/
-    // Right, each anchored to a canvas corner rather than the center like the
-    // mask bars) so its four edges trace exactly where the mask's visible
-    // window ends - the border always reads as "this is the photo, everything
-    // outside is black" instead of sitting at its own separate fixed inset.
-    private void UpdateFrameBorder(Rect r, float visibleWidth, float visibleHeight)
+    // Resizes the single camera-frame overlay graphic to exactly match the mask's
+    // visible window and keeps it centered on the canvas (anchored/pivoted at its
+    // own center, same as the mask bars) - the frame always reads as "this is the
+    // photo, everything outside is black," and never drifts off-center regardless
+    // of resolution, FOV changes, or the shutter flash firing.
+    private void UpdateFrameOverlay(float visibleWidth, float visibleHeight)
     {
-        float horizontalInset = (r.width - visibleWidth) * 0.5f;
-        float verticalInset = (r.height - visibleHeight) * 0.5f;
-
-        if (frameBorderTop != null)
+        if (frameOverlay == null)
         {
-            frameBorderTop.anchoredPosition = new Vector2(horizontalInset, -verticalInset);
-            frameBorderTop.sizeDelta = new Vector2(visibleWidth, frameBorderTop.sizeDelta.y);
+            return;
         }
 
-        if (frameBorderBottom != null)
-        {
-            frameBorderBottom.anchoredPosition = new Vector2(horizontalInset, verticalInset);
-            frameBorderBottom.sizeDelta = new Vector2(visibleWidth, frameBorderBottom.sizeDelta.y);
-        }
-
-        if (frameBorderLeft != null)
-        {
-            frameBorderLeft.anchoredPosition = new Vector2(horizontalInset, -verticalInset);
-            frameBorderLeft.sizeDelta = new Vector2(frameBorderLeft.sizeDelta.x, visibleHeight);
-        }
-
-        if (frameBorderRight != null)
-        {
-            frameBorderRight.anchoredPosition = new Vector2(-horizontalInset, -verticalInset);
-            frameBorderRight.sizeDelta = new Vector2(frameBorderRight.sizeDelta.x, visibleHeight);
-        }
+        frameOverlay.anchorMin = new Vector2(0.5f, 0.5f);
+        frameOverlay.anchorMax = new Vector2(0.5f, 0.5f);
+        frameOverlay.pivot = new Vector2(0.5f, 0.5f);
+        frameOverlay.anchoredPosition = Vector2.zero;
+        frameOverlay.sizeDelta = new Vector2(visibleWidth, visibleHeight);
     }
 }

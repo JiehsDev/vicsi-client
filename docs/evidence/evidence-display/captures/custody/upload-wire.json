@@ -1,0 +1,508 @@
+{
+    "payloadVersion": 1,
+    "sessionId": "77efdc1e-3c54-44d1-848f-102ee2d2f350",
+    "studentId": "",
+    "classId": "",
+    "scenarioId": "CSI-ENVIRONMENT-001",
+    "scenarioVersion": "1.1.0",
+    "scoringRulesVersion": "1.7.0",
+    "groundTruthVersion": "1.2.0",
+    "clientVersion": "0.1.0",
+    "isTestSession": false,
+    "includesRawEventLog": false,
+    "hasDeductionAssessment": true,
+    "startedAtUtc": "2026-10-18T05:09:52.1175317Z",
+    "completedAtUtc": "",
+    "selectedConclusionId": "",
+    "resolvedEndingId": "",
+    "durationSeconds": 4.001,
+    "deductionAssessment": {
+        "scoringRulesVersion": "1.7.0",
+        "status": "incomplete",
+        "hasFinalScore": false,
+        "totalScore": 0.0,
+        "reasoningCheckpoints": 0.0,
+        "deductionRelationships": 0.0,
+        "finalConclusion": 0.0,
+        "reasoningComponent": 0.0,
+        "relationshipComponent": 0.0,
+        "conclusionComponent": 0.0,
+        "relationshipEarned": 0.0,
+        "relationshipMaximum": 6.0,
+        "checkpointEarned": 0,
+        "checkpointMaximum": 24,
+        "answeredCount": 0,
+        "eligibleUnansweredCount": 0,
+        "undiscoveredCount": 0,
+        "unsupportedRelationships": 0,
+        "reviewReasons": [
+            "Conclusion-time assessment snapshot missing."
+        ]
+    },
+    "orderedEvents": [
+        {
+            "sequenceNumber": 0,
+            "timestampMs": 0,
+            "eventType": "SessionStarted",
+            "targetId": "CSI_Environment",
+            "payload": [
+                {
+                    "key": "startedAtUtc",
+                    "value": "2026-10-18T05:09:52.1175317Z"
+                },
+                {
+                    "key": "applicationVersion",
+                    "value": "0.1.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 12,
+            "timestampMs": 2810,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-01-PETER",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "2.811"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "EVIDENCE_CAUTION"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 13,
+            "timestampMs": 2811,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-02-SCENE",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "2.811"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "SCENE_INTERPRETATION"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 15,
+            "timestampMs": 2832,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Processed"
+                },
+                {
+                    "key": "tool",
+                    "value": "None"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 44,
+            "timestampMs": 2863,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-03-FINGERPRINT",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "2.863"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "LIMITATION_RECOGNITION"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 45,
+            "timestampMs": 2863,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-04-KNIFE-WOUND",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "2.864"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "RELATIONSHIP_REASONING"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 46,
+            "timestampMs": 2863,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-06-BLOODSTAIN",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "2.864"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "EVIDENCE_INTEGRATION"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 53,
+            "timestampMs": 2885,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-015",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Processed"
+                },
+                {
+                    "key": "tool",
+                    "value": "None"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 54,
+            "timestampMs": 2886,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Processed"
+                },
+                {
+                    "key": "tool",
+                    "value": "None"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 55,
+            "timestampMs": 2888,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Logged"
+                },
+                {
+                    "key": "tool",
+                    "value": "None"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 56,
+            "timestampMs": 2929,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-05-TIMELINE",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "2.930"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "TIMELINE_REASONING"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 64,
+            "timestampMs": 3999,
+            "eventType": "EvidenceDeposited",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "previousCustodyLocation",
+                    "value": "Inventory"
+                },
+                {
+                    "key": "newCustodyLocation",
+                    "value": "EvidenceBox"
+                },
+                {
+                    "key": "boxId",
+                    "value": "EvidenceHoldingCrate"
+                },
+                {
+                    "key": "transferId",
+                    "value": "22de6d48a2824db8a25d1619e004edd5"
+                },
+                {
+                    "key": "sourceEvidenceId",
+                    "value": "EVD-014"
+                },
+                {
+                    "key": "sampleType",
+                    "value": ""
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 65,
+            "timestampMs": 3999,
+            "eventType": "EvidenceDeposited",
+            "targetId": "EVD-015",
+            "payload": [
+                {
+                    "key": "previousCustodyLocation",
+                    "value": "Inventory"
+                },
+                {
+                    "key": "newCustodyLocation",
+                    "value": "EvidenceBox"
+                },
+                {
+                    "key": "boxId",
+                    "value": "EvidenceHoldingCrate"
+                },
+                {
+                    "key": "transferId",
+                    "value": "22de6d48a2824db8a25d1619e004edd5"
+                },
+                {
+                    "key": "sourceEvidenceId",
+                    "value": "EVD-015"
+                },
+                {
+                    "key": "sampleType",
+                    "value": "Blood"
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 66,
+            "timestampMs": 3999,
+            "eventType": "EvidenceDeposited",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "previousCustodyLocation",
+                    "value": "Inventory"
+                },
+                {
+                    "key": "newCustodyLocation",
+                    "value": "EvidenceBox"
+                },
+                {
+                    "key": "boxId",
+                    "value": "EvidenceHoldingCrate"
+                },
+                {
+                    "key": "transferId",
+                    "value": "22de6d48a2824db8a25d1619e004edd5"
+                },
+                {
+                    "key": "sourceEvidenceId",
+                    "value": "EVD-018"
+                },
+                {
+                    "key": "sampleType",
+                    "value": ""
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 67,
+            "timestampMs": 3999,
+            "eventType": "EvidenceDeposited",
+            "targetId": "blood-sample:EVD-014",
+            "payload": [
+                {
+                    "key": "previousCustodyLocation",
+                    "value": "Inventory"
+                },
+                {
+                    "key": "newCustodyLocation",
+                    "value": "EvidenceBox"
+                },
+                {
+                    "key": "boxId",
+                    "value": "EvidenceHoldingCrate"
+                },
+                {
+                    "key": "transferId",
+                    "value": "22de6d48a2824db8a25d1619e004edd5"
+                },
+                {
+                    "key": "sourceEvidenceId",
+                    "value": "EVD-014"
+                },
+                {
+                    "key": "sampleType",
+                    "value": "Blood"
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 68,
+            "timestampMs": 3999,
+            "eventType": "EvidenceDeposited",
+            "targetId": "fingerprint-sample:EVD-014",
+            "payload": [
+                {
+                    "key": "previousCustodyLocation",
+                    "value": "Inventory"
+                },
+                {
+                    "key": "newCustodyLocation",
+                    "value": "EvidenceBox"
+                },
+                {
+                    "key": "boxId",
+                    "value": "EvidenceHoldingCrate"
+                },
+                {
+                    "key": "transferId",
+                    "value": "22de6d48a2824db8a25d1619e004edd5"
+                },
+                {
+                    "key": "sourceEvidenceId",
+                    "value": "EVD-014"
+                },
+                {
+                    "key": "sampleType",
+                    "value": "Fingerprint"
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 69,
+            "timestampMs": 3999,
+            "eventType": "EvidenceDeposited",
+            "targetId": "fingerprint-sample:EVD-018",
+            "payload": [
+                {
+                    "key": "previousCustodyLocation",
+                    "value": "Inventory"
+                },
+                {
+                    "key": "newCustodyLocation",
+                    "value": "EvidenceBox"
+                },
+                {
+                    "key": "boxId",
+                    "value": "EvidenceHoldingCrate"
+                },
+                {
+                    "key": "transferId",
+                    "value": "22de6d48a2824db8a25d1619e004edd5"
+                },
+                {
+                    "key": "sourceEvidenceId",
+                    "value": "EVD-018"
+                },
+                {
+                    "key": "sampleType",
+                    "value": "Fingerprint"
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 70,
+            "timestampMs": 4001,
+            "eventType": "CustodyPassCompleted",
+            "targetId": "EvidenceHoldingCrate",
+            "payload": [
+                {
+                    "key": "boxId",
+                    "value": "EvidenceHoldingCrate"
+                },
+                {
+                    "key": "itemCount",
+                    "value": "6"
+                },
+                {
+                    "key": "evidenceIds",
+                    "value": "EVD-014,EVD-015,EVD-018,blood-sample:EVD-014,fingerprint-sample:EVD-014,fingerprint-sample:EVD-018"
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                }
+            ]
+        }
+    ]
+}

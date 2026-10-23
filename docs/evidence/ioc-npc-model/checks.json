@@ -1,0 +1,15 @@
+{
+  "sceneOnlyChangedExistingBlocks": [
+    "1123118393",
+    "262897378"
+  ],
+  "removedPrimitiveBlocks": 24,
+  "newModelBlocks": [
+    "573093509",
+    "573093510"
+  ],
+  "presentationAndColliderUnchanged": true,
+  "editModeBodyActive": true,
+  "compileErrorsSinceFinalCompile": 0,
+  "sourceGLBSha256": "a095dc01f8bfcfc35a80838ff57a7466bde9c7bd26e4a1b8655cf6c32979009e"
+}

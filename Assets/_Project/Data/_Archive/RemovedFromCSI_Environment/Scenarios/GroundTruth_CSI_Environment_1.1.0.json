@@ -1,0 +1,51 @@
+{
+  "scenarioId": "CSI_Environment",
+  "generatedAt": "2026-09-11T04:54:39Z",
+  "lifecycleSequence": ["NotFound", "Found", "PhotographedRaw", "ChalkMarked", "Marked", "PhotographedFinal", "Logged", "ReadyForCollection", "Collected", "Sealed", "Processed"],
+  "evidence": [
+    { "evidenceId": "EVD-014", "displayName": "Kitchen knife", "relevance": "Critical" },
+    { "evidenceId": "EVD-015", "displayName": "Blood spatter pattern", "relevance": "Critical" },
+    { "evidenceId": "EVD-017", "displayName": "Victim's mobile phone", "relevance": "Relevant" },
+    { "evidenceId": "EVD-018", "displayName": "Empty liquor bottle", "relevance": "Distractor" },
+    { "evidenceId": "EVD-019", "displayName": "Disposable gloves", "relevance": "Critical" }
+  ],
+  "hypothesisCheckpoints": [
+    { "id": "HYP-02", "reasoningOptions": [
+      { "id": "hyp02-blood-spatter-impact", "isCorrect": true }, { "id": "hyp02-bottle-intoxication", "isCorrect": false },
+      { "id": "hyp02-knife-routine-use", "isCorrect": false }, { "id": "hyp02-print-ambiguous", "isCorrect": false }
+    ] },
+    { "id": "HYP-03", "reasoningOptions": [
+      { "id": "hyp03-knife-print-implicates-brother", "isCorrect": false }, { "id": "hyp03-phone-overclaim", "isCorrect": false },
+      { "id": "hyp03-bottle-premature-closure", "isCorrect": false }, { "id": "hyp03-gloves-wife-match", "isCorrect": true },
+      { "id": "hyp03-no-contradicting-evidence", "isCorrect": false }
+    ] }
+  ],
+  "evidenceReportLines": [
+    { "evidenceId": "EVD-014", "reportLineOptions": [
+      { "id": "knife-blade-length", "isAccurate": true }, { "id": "knife-blood-trace", "isAccurate": true },
+      { "id": "knife-location", "isAccurate": true }, { "id": "knife-print-on-handle", "isAccurate": true },
+      { "id": "knife-owner-speculation", "isAccurate": false }, { "id": "knife-conclusion-weapon", "isAccurate": false },
+      { "id": "knife-wound-match", "isAccurate": true }
+    ] },
+    { "evidenceId": "EVD-015", "reportLineOptions": [
+      { "id": "blood-spatter-location", "isAccurate": true }, { "id": "blood-spatter-droplet-pattern", "isAccurate": true },
+      { "id": "blood-spatter-swab-collection", "isAccurate": true }, { "id": "blood-spatter-mechanism-only", "isAccurate": true },
+      { "id": "blood-spatter-fall-confirmed", "isAccurate": false }, { "id": "blood-spatter-identity-assumed", "isAccurate": false }
+    ] },
+    { "evidenceId": "EVD-017", "reportLineOptions": [
+      { "id": "phone-screen-down-position", "isAccurate": true }, { "id": "phone-ownership-established", "isAccurate": true },
+      { "id": "phone-call-history-potential", "isAccurate": true }, { "id": "phone-fingerprint-pending", "isAccurate": true },
+      { "id": "phone-history-overclaim", "isAccurate": false }, { "id": "phone-drop-struggle-assumed", "isAccurate": false }
+    ] },
+    { "evidenceId": "EVD-018", "reportLineOptions": [
+      { "id": "bottle-location", "isAccurate": true }, { "id": "bottle-first-encountered", "isAccurate": true },
+      { "id": "bottle-standard-procedure", "isAccurate": true }, { "id": "bottle-fingerprint-pending", "isAccurate": true },
+      { "id": "bottle-intoxication-explains-fall", "isAccurate": false }, { "id": "bottle-recent-drinking-assumed", "isAccurate": false }
+    ] },
+    { "evidenceId": "EVD-019", "reportLineOptions": [
+      { "id": "glove-outside-blood", "isAccurate": true }, { "id": "glove-hidden-location", "isAccurate": true },
+      { "id": "glove-inside-print", "isAccurate": true }, { "id": "glove-fingerprint-confirms-wearer", "isAccurate": true },
+      { "id": "glove-owner-speculation", "isAccurate": false }, { "id": "glove-conclusion-premature", "isAccurate": false }
+    ] }
+  ]
+}

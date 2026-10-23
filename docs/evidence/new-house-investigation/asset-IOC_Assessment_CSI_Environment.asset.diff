@@ -1,0 +1,20 @@
+--- before
++++ after
+@@ -35,13 +35,13 @@
+     worldOffset: {x: 0, y: 0.1, z: 0}
+   - observationId: ioc-main-scene-survey
+     kind: 2
+-    evidenceId:
++    evidenceId: 
+     dialogueId: ioc-observation-survey
+     worldOffset: {x: 0, y: 0, z: 0}
+   minimumPossibleEvidence: 2
+   surveyArea:
+-    m_Center: {x: -2, y: 1.5, z: 10}
+-    m_Extent: {x: 2, y: 1.5, z: 1.5}
+-  surveyLookAt: {x: -3, y: 0.6, z: 12.8}
++    m_Center: {x: 17.5, y: 2.4, z: 12.35}
++    m_Extent: {x: 2, y: 1.5, z: 1}
++  surveyLookAt: {x: 17.35, y: 1.6, z: 12.9}
+   observationDistance: 3.5
+   gazeAngle: 8

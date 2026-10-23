@@ -1,0 +1,44 @@
+[
+  {
+    "asset": "Assets/_Project/Audio/Ambience/yard-residential.wav",
+    "checks": {
+      "original hash": true,
+      "asset hash": true,
+      "stereo": true,
+      "valid audible PCM": true,
+      "continuous loop boundary": true,
+      "CC0 manifest": true
+    },
+    "seconds": 73.33060416666666,
+    "rms": 0.02771293474836538,
+    "peak": 0.800018310546875
+  },
+  {
+    "asset": "Assets/_Project/Audio/Ambience/house-room-tone.wav",
+    "checks": {
+      "original hash": true,
+      "asset hash": true,
+      "stereo": true,
+      "valid audible PCM": true,
+      "continuous loop boundary": true,
+      "CC0 manifest": true
+    },
+    "seconds": 20.311458333333334,
+    "rms": 0.04000150121844416,
+    "peak": 0.165008544921875
+  },
+  {
+    "asset": "Assets/_Project/Audio/Ambience/yard-tree-rustle.wav",
+    "checks": {
+      "original hash": true,
+      "asset hash": true,
+      "stereo": true,
+      "valid audible PCM": true,
+      "continuous loop boundary": true,
+      "CC0 manifest": true
+    },
+    "seconds": 58.0,
+    "rms": 0.040000074281007755,
+    "peak": 0.7481689453125
+  }
+]

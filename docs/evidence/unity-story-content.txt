@@ -1,0 +1,41 @@
+=== StoryContentTest ===
+--- GreyboxFlowTest.RunFullFlow() ---
+  (physical/procedural lifecycle: PASS)
+  PASS: beat-1-initial-briefing fired (always-eligible)
+  PASS: beat-2-body-doubt fired
+  PASS: beat-3-knife-wound-match fired
+  PASS: beat-4-brother-fingerprint fired
+  PASS: beat-5-bottle-supports-brother fired
+  PASS: beat-6-phone-motive fired
+  PASS: beat-7-spatter-reconstruction fired
+  PASS: beat-8-hidden-gloves fired
+  PASS: beat-9-gloves-connect-wife fired
+  PASS: obj-document-body Completed (not Failed)
+  PASS: obj-identify-poi Completed (not Failed)
+  PASS: obj-identify-murder-weapon Completed
+  PASS: obj-verify-fingerprint-timing Completed
+  PASS: obj-investigate-wife-physical-connection Completed
+  PASS: obj-reconstruct-crime Completed
+  PASS: obj-process-gloves-urgent Completed
+  PASS: REL-physical-contradicts-wife reached Available (unlockRequirement satisfied)
+  PASS: REL-gloves-blood-matches-victim reached Available (unlockRequirement satisfied)
+  PASS: REL-gloves-fingerprint-identifies-wife reached Available (unlockRequirement satisfied)
+  PASS: REL-hidden-gloves-contradicts-wife reached Available (unlockRequirement satisfied)
+  PASS: REL-knife-consistent-wound reached Available
+  PASS: REL-bottle-supports-brother reached Available
+  PASS: REL-spatter-consistent-reconstruction reached Available
+  PASS: REL-physical-contradicts-wife reached Completed after board connection + Submit Conclusion finalize
+  PASS: REL-gloves-blood-matches-victim reached Completed after board connection + Submit Conclusion finalize
+  PASS: REL-gloves-fingerprint-identifies-wife reached Completed after board connection + Submit Conclusion finalize
+  PASS: REL-hidden-gloves-contradicts-wife reached Completed after board connection + Submit Conclusion finalize
+  PASS: conclusion-wife resolves to ending-wife-convicted (got ending-wife-convicted, rule PriorityMatch)
+  PASS: conclusion-brother resolves to ending-brother-accused (got ending-brother-accused)
+  PASS: conclusion-inconclusive resolves to ending-inconclusive (got ending-inconclusive)
+  PASS: No conclusion selected also resolves to ending-inconclusive (got ending-inconclusive)
+  NOTE: ending-premature-submission not exercised live in this run - it requires evidence
+  state from before EVD-019 is ever discovered, which this session can no longer represent
+  once RunFullFlow has advanced past it. Checked by construction instead (NOT(EvidenceDiscovered(EVD-019)),
+  priority 200, blank requiredConclusionId) - same leaf type already covered by RequirementEvaluatorTest.
+  PASS: SelectConclusionForTest succeeds while the real picker is showing
+  PASS: Full Submit Conclusion pipeline shows the real CompletionScreenUI
+=== PASS, 0 failures ===

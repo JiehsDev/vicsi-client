@@ -14,7 +14,6 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class AtticLadderLever : MonoBehaviour
 {
-    private const string PromptText = "[B] Toggle Attic Ladder";
 
     [SerializeField] private FoldingStairToggle stairToggle;
     [SerializeField] private Transform leverHandle;
@@ -75,7 +74,7 @@ public class AtticLadderLever : MonoBehaviour
             promptShown = shouldShowPrompt;
             if (promptShown)
             {
-                NotificationManager.ShowPrompt(PromptText);
+                NotificationManager.ShowPrompt(GameDialogue.Text("prompt-attic-ladder"));
             }
             else
             {

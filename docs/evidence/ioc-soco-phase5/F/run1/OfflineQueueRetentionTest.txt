@@ -1,0 +1,36 @@
+=== OfflineQueueRetentionTest ===
+  PASS: [persistence] offline session survives a restart: same id, same owner, payload on disk, not uploaded
+  PASS: [confirmed-only] a token issued + request sent but no success response is NOT Uploaded
+  PASS: [later upload] retried after Maria became current: same sessionId, stored under JUAN, Uploaded only after confirmation
+  PASS: [timestamp] retention starts from the SERVER's receipt time; expiry = +30 days
+  PASS: [after upload] the fresh upload is kept locally (inside retention) with its owner
+  PASS: [NO_ASSIGNMENT] kept local, retryable, distinct reason, payload + owner preserved, not uploaded
+  PASS: [NO_ASSIGNMENT] once the assignment exists, the SAME session uploads under the SAME owner
+  PASS: [John Doe] no assignment -> stays local as John Doe's, never rerouted to another student
+  PASS: [John Doe] same queue/upload path: uploaded, owner = the existing John Doe id
+  PASS: [interrupted] Uploading at launch -> RetryWaiting (Interrupted), same id/owner, never stuck even with auto-upload off
+  PASS: [interrupted] idempotent retry: server answers duplicate, entry Uploaded with the ORIGINAL receipt time, still one server row
+  PASS: [resume] a successful directory sync (server reachable) resumes a due pending upload - no polling
+  PASS: [clock] with no server time known, nothing is removed
+  PASS: [clock] a device clock 5 years ahead can't expire anything early (trusted now capped at last server time + 1 day)
+  PASS: [retention] uploaded 29 days ago remains
+  PASS: [retention] uploaded 30+ days ago is removed (entry + payload)
+  PASS: [retention] Pending 60 days old remains
+  PASS: [retention] FailedRetryable 60 days old remains
+  PASS: [retention] NO_ASSIGNMENT 60 days old remains
+  PASS: [retention] unknown outcome (Uploading) remains
+  PASS: [retention] requires-review and awaiting-pairing remain
+  PASS: [retention] Uploaded without a server receipt time is never auto-removed
+  PASS: [retention] an expired upload that is uploading right now is skipped
+  PASS: [ownership] pending / failed / NO_ASSIGNMENT / uploading / review owners retained
+  PASS: [ownership] uploaded-but-inside-retention owner retained
+  PASS: [ownership] uploaded + expired + local record removed -> owner pruned (and only those)
+  PASS: [ownership] an unrelated session's owner (no queue entry) is untouched
+  PASS: [retention] a second pass changes nothing (idempotent)
+  PASS: [clock] if the headset itself received the confirmation < 30 days ago, the copy is kept
+  PASS: [view] counts: uploaded 2, legacy 1, retry 1, no-assignment 1, review 1, pending 1, uploading 1, pairing 1
+  PASS: [view] 'local copy expires in X days': 29 days old -> 1 day; not-uploaded -> none
+  PASS: [directory isolation] retention removed the expired upload via the service...
+  PASS: [directory isolation] ...without touching the student directory: same active count, identical cache file, no Cleared event
+  PASS: [directory isolation] other students' sessions untouched by that cleanup
+=== PASS, 0 failures ===

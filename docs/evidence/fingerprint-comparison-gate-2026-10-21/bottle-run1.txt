@@ -1,0 +1,44 @@
+=== BottleFingerprintProcedureTest ===
+PASS: bottle uses on-scene processing after final photography
+PASS: physical print cluster belongs to original bottle
+PASS: three separate powdered print visuals start hidden
+PASS: old station is retired and rejects on-scene work
+PASS: scene photography prerequisite completed
+PASS: dusting before final photograph is refused
+PASS: measurement before final photography is refused
+PASS: final photograph no longer warns about measurements
+PASS: dusting without measurements is refused
+PASS: first fixed reference alone does not unlock dust
+PASS: both fixed references still require discovered evidence distances
+PASS: required bottle-to-knife distance records
+PASS: measurements unlock powdering
+PASS: Recorder and collection remain blocked until print storage
+PASS: undusted prints cannot be lifted
+PASS: sustained brush contact reveals all three recovered prints
+PASS: dusting does not identify people or finish processing
+PASS: matched findings and Recorder choices stay hidden before B storage
+PASS: lift creates source-linked held evidence
+PASS: lift alone leaves identification and Recorder blocked
+PASS: actual B storage completes the recovered sample
+PASS: Storage leaves bottle identification pending without announcing a result
+PASS: Correct reference at the actual comparison desk identifies the bottle lift
+PASS: identification contains three distinct people
+PASS: knife remains independently unidentified
+PASS: notes expose the earned multi-person result
+PASS: automatic identification announcement is delivered
+PASS: identification cannot announce twice
+PASS: one unscored identification event carries every name
+PASS: minimal upload retains the bottle ID and every matched identity
+PASS: essential event survives disabled raw logs
+PASS: bottle measurement fixture can complete remaining discovered records
+PASS: Recorder opens after fingerprint storage
+PASS: Recorder accepts earned report line bottle-location
+PASS: Recorder accepts earned report line bottle-first-encountered
+PASS: Recorder accepts earned report line bottle-fingerprint-pending
+PASS: a fourth bottle report line is refused
+PASS: exactly three lines log the bottle
+PASS: real bag insertion and sealing finish processing
+PASS: bag still requires separate B storage
+PASS: collection retains the documented measurement records
+PASS: restart clears dust, lift, matches and sample custody
+=== PASS, 0 failures ===

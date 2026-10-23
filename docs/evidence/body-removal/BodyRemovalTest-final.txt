@@ -1,0 +1,1 @@
+Diagnostic start interrupted by compilation; superseded by the next focused run.

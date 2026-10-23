@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-13",
+  "acceptedSuites": [
+    {
+      "suite": "SettingsPauseMenuTest",
+      "path": "docs/evidence/settings-pause/verified/SettingsPauseMenuTest.txt",
+      "pass": 35,
+      "fail": 0
+    },
+    {
+      "suite": "NarrativeRoleFlowTest",
+      "path": "docs/evidence/settings-pause/regression/NarrativeRoleFlowTest.txt",
+      "pass": 41,
+      "fail": 0
+    },
+    {
+      "suite": "ScenarioPhaseFoundationTest",
+      "path": "docs/evidence/settings-pause/regression/ScenarioPhaseFoundationTest.txt",
+      "pass": 19,
+      "fail": 0
+    },
+    {
+      "suite": "ReasoningCheckpointTest",
+      "path": "docs/evidence/settings-pause/regression/ReasoningCheckpointTest.txt",
+      "pass": 60,
+      "fail": 0
+    },
+    {
+      "suite": "EvidenceProcedurePanelTest",
+      "path": "docs/evidence/settings-pause/regression/EvidenceProcedurePanelTest.txt",
+      "pass": 41,
+      "fail": 0
+    },
+    {
+      "suite": "SOCOCloseoutTest",
+      "path": "docs/evidence/settings-pause/verified/SOCOCloseoutTest.txt",
+      "pass": 48,
+      "fail": 0
+    },
+    {
+      "suite": "UIComfortInputTest",
+      "path": "docs/evidence/settings-pause/verified/UIComfortInputTest.txt",
+      "pass": 55,
+      "fail": 0
+    },
+    {
+      "suite": "GrabReachTest",
+      "path": "docs/evidence/settings-pause/regression/GrabReachTest.txt",
+      "pass": 9,
+      "fail": 0
+    },
+    {
+      "suite": "BodyRemovalTest",
+      "path": "docs/evidence/settings-pause/regression/BodyRemovalTest.txt",
+      "pass": 41,
+      "fail": 0
+    }
+  ],
+  "unityPass": 349,
+  "unityFail": 0,
+  "scorerPass": 6,
+  "scorerFail": 0,
+  "totalPass": 355,
+  "totalFail": 0,
+  "scorerReport": "docs/evidence/settings-pause/scorer-tests.txt",
+  "editorState": "docs/evidence/settings-pause/final-editor-state.json",
+  "preview": "docs/evidence/settings-pause/menu-preview.png",
+  "earlierFailedReportsRetained": [
+    "docs/evidence/settings-pause/regression/SOCOCloseoutTest.txt",
+    "docs/evidence/settings-pause/regression/UIComfortInputTest.txt",
+    "docs/evidence/settings-pause/final/SOCOCloseoutTest.txt"
+  ],
+  "questValidated": false,
+  "committed": false,
+  "pushed": false,
+  "deployed": false
+}

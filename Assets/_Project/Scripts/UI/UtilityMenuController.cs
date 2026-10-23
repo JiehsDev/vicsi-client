@@ -8,8 +8,8 @@ using UnityEngine.UI;
 
 /// <summary>
 /// Radial menu for the player's utility screens (Notes, Item Logs, the Photo
-/// Album, ...) - visually and mechanically the same GTA-style wheel as
-/// ToolWheelController (ring wedges, hover-lift, "release to select"), but
+/// Album, ...) - compact menu-only ring wedges with the same "release to select"
+/// input convention as ToolWheelController, but
 /// generic: entries are a plain list of name/description/UnityEvent instead
 /// of being tied to ToolType/PlayerToolRegistry, since these are UI screens to
 /// open, not tools to equip. Hold the LEFT controller's X button to open it,
@@ -25,13 +25,12 @@ using UnityEngine.UI;
 /// </summary>
 public class UtilityMenuController : MonoBehaviour
 {
-    private const float WheelDiameter = 700f;
+    private const float WheelDiameter = MenuWheelComfortProfile.Diameter;
     private const float RingInnerRadiusRatio = 0.42f;
-    private const float LabelRadiusRatio = 0.72f;
     private const float Deadzone = 0.35f;
 
-    private const float HoverLiftOffset = 20f;
-    private const float HoverLiftScale = 1.15f;
+    private const float HoverLiftOffset = 0f;
+    private const float HoverLiftScale = 1f;
     private const float HoverLiftSpeed = 12f;
 
     private const int WheelSortingOrder = short.MaxValue;
@@ -47,12 +46,27 @@ public class UtilityMenuController : MonoBehaviour
         public string displayName;
         [TextArea]
         public string description;
+        [Tooltip("Hide this entry outside the IOC initial assessment phase.")]
+        public bool iocAssessmentOnly;
+        public bool socoCloseoutOnly;
+        public bool IsAvailable => (!iocAssessmentOnly || (SceneTurnover.IsGated && SceneTurnover.Phase == ScenarioPhase.IOCAssessment))
+            && (!socoCloseoutOnly || SceneTurnover.Phase == ScenarioPhase.SOCOCloseout || SceneTurnover.Phase == ScenarioPhase.EvidenceInventoryReview);
         [Tooltip("What happens when this entry is selected - e.g. PhotoAlbumUI.Show for the Album entry. Leave empty for a placeholder entry (shown dimmed, does nothing when picked).")]
         public UnityEvent onSelect;
     }
 
     [Tooltip("Every screen this menu can open, in wheel order.")]
     [SerializeField] private List<MenuEntry> entries = new();
+    private readonly HashSet<MenuEntry> runtimeEntries = new();
+
+    public void RegisterSettings(SettingsPauseMenu settings)
+    {
+        if (settings == null || runtimeEntries.Count > 0) return;
+        var entry = new MenuEntry { displayName = "Settings", description = "Player height, restart and lobby", onSelect = new UnityEvent() };
+        entry.onSelect.AddListener(settings.Show);
+        entries.Add(entry);
+        runtimeEntries.Add(entry);
+    }
 
     private class WheelSegmentView
     {
@@ -69,6 +83,13 @@ public class UtilityMenuController : MonoBehaviour
     private InputAction openAction;
     private InputAction selectStickAction;
 
+    /// <summary>Diagnostic-only surface for the dev-only in-headset overlay (see DevDiagnosticOverlay).</summary>
+    public bool IsOpenActionEnabled => openAction != null && openAction.enabled;
+    /// <summary>Diagnostic-only surface for the dev-only in-headset overlay - the menu's own canvas GameObject active state.</summary>
+    public bool IsCanvasActive => wheelRoot != null && wheelRoot.activeSelf;
+    /// <summary>Diagnostic-only surface for the dev-only in-headset overlay - why the last OpenMenu() attempt (if any) was rejected, or null if the last attempt succeeded/none has happened yet.</summary>
+    public string LastRejectionReason { get; private set; }
+
     private readonly List<WheelSegmentView> segmentViews = new();
 
     private GameObject wheelRoot;
@@ -80,6 +101,10 @@ public class UtilityMenuController : MonoBehaviour
 
     private void Awake()
     {
+        foreach (var entry in entries)
+            for (int i = 0; entry.onSelect != null && i < entry.onSelect.GetPersistentEventCount(); i++)
+                if (entry.onSelect.GetPersistentTarget(i) is EvidenceBoardController)
+                { entry.displayName = "Relationships"; entry.description = "Evidence Relationships Review"; break; }
         BuildUI();
         wheelRoot.SetActive(false);
 
@@ -95,13 +120,34 @@ public class UtilityMenuController : MonoBehaviour
     {
         openAction.Enable();
         selectStickAction.Enable();
+        InputSystem.onDeviceChange += OnDeviceChange;
+        SceneTurnover.OnPhaseChanged += OnPhaseChanged;
     }
 
     private void OnDisable()
     {
+        InputSystem.onDeviceChange -= OnDeviceChange;
+        SceneTurnover.OnPhaseChanged -= OnPhaseChanged;
         openAction.Disable();
         selectStickAction.Disable();
         PlayerUIGate.Exit(this);
+    }
+
+    // See ToolWheelController.OnDeviceChange for why this exists: loose actions (not
+    // asset-backed) only resolve their binding once, at Enable() time, and a Quest
+    // controller device can be torn down/recreated mid-session during OpenXR/OVR
+    // renegotiation - re-enable on every add/reconnect so the binding can't go stale.
+    private void OnDeviceChange(InputDevice device, InputDeviceChange change)
+    {
+        if (change != InputDeviceChange.Added && change != InputDeviceChange.Reconnected)
+        {
+            return;
+        }
+
+        openAction.Disable();
+        openAction.Enable();
+        selectStickAction.Disable();
+        selectStickAction.Enable();
     }
 
     private void OnDestroy()
@@ -109,11 +155,22 @@ public class UtilityMenuController : MonoBehaviour
         openAction?.Dispose();
         selectStickAction?.Dispose();
     }
+    private void OnPhaseChanged(ScenarioPhase phase)
+    {
+        if (!isOpen) return;
+        BuildSegments(); hoveredIndex = 0; UpdateHighlight();
+    }
 
     private void Update()
     {
         if (!isOpen)
         {
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            if (openAction.WasPressedThisFrame())
+            {
+                Debug.Log($"[UtilityMenuController] X pressed. Requested menu=UtilityMenu, PlayerUIGate.IsBlocked={PlayerUIGate.IsBlocked}, canvasActive(before open)={wheelRoot != null && wheelRoot.activeSelf}");
+            }
+#endif
             if (openAction.WasPressedThisFrame())
             {
                 OpenMenu();
@@ -126,6 +183,9 @@ public class UtilityMenuController : MonoBehaviour
 
         if (openAction.WasReleasedThisFrame())
         {
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            Debug.Log($"[UtilityMenuController] X released. canvasActive(before close)={wheelRoot != null && wheelRoot.activeSelf}");
+#endif
             CloseMenu();
         }
     }
@@ -134,14 +194,28 @@ public class UtilityMenuController : MonoBehaviour
     {
         if (entries.Count == 0)
         {
+            LastRejectionReason = "entries.Count == 0";
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            Debug.Log("[UtilityMenuController] OpenMenu blocked: entries.Count == 0 (no menu entries configured in the Inspector).");
+#endif
             return;
         }
 
         // Defers to whatever else already owns the screen right now - most
         // often the camera viewfinder, since PhotographTool's aim toggle and
         // this menu's open button are both bound to the left controller's X.
-        if (PlayerUIGate.IsBlocked)
+        if (Time.frameCount == PhotographTool.AimClosedFrame)
         {
+            LastRejectionReason = "same press that closed the camera viewfinder";
+            return;
+        }
+
+        if (PlayerUIGate.IsBlocked || ToolInputLock.HasUIOwners)
+        {
+            LastRejectionReason = "PlayerUIGate.IsBlocked";
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            Debug.Log("[UtilityMenuController] OpenMenu blocked: PlayerUIGate.IsBlocked=true.");
+#endif
             return;
         }
 
@@ -151,8 +225,13 @@ public class UtilityMenuController : MonoBehaviour
         UpdateHighlight();
 
         isOpen = true;
+        HudFollowCamera.ConfigureShared(wheelRoot, this, PlayerUIGate.InformationPriority);
         wheelRoot.SetActive(true);
         PlayerUIGate.Enter(this);
+        LastRejectionReason = null;
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+        Debug.Log($"[UtilityMenuController] Menu opened. canvasActive={wheelRoot.activeSelf}");
+#endif
     }
 
     private void CloseMenu()
@@ -168,8 +247,9 @@ public class UtilityMenuController : MonoBehaviour
         }
 
         var selected = segmentViews[hoveredIndex];
-        if (selected.HasListener)
+        if (selected.HasListener && selected.Entry.IsAvailable)
         {
+            InteractionSfx.Select();
             selected.Entry.onSelect.Invoke();
         }
     }
@@ -200,14 +280,17 @@ public class UtilityMenuController : MonoBehaviour
 
     private void UpdateHighlight()
     {
+        string suggested = SOCOCloseout.SuggestedInvestigationMenuEntry;
         for (int i = 0; i < segmentViews.Count; i++)
         {
             var view = segmentViews[i];
             bool hovered = i == hoveredIndex;
-            float alpha = view.HasListener ? 1f : placeholderAlpha;
-
-            view.Wedge.color = hovered ? hoverWedgeColor : dimWedgeColor;
-            view.Label.color = new Color(hovered ? 0f : 1f, hovered ? 0f : 1f, hovered ? 0f : 1f, alpha);
+            float alpha = view.HasListener ? 1f : Mathf.Max(MenuWheelComfortProfile.MinimumPlaceholderAlpha, placeholderAlpha);
+            bool next = view.HasListener && view.Entry.displayName == suggested;
+            view.Label.text = MenuWheelComfortProfile.Label(view.Entry.displayName) + (next ? "\n<size=22>NEXT</size>" : "");
+            view.Label.rectTransform.sizeDelta = MenuWheelComfortProfile.LabelSize + new Vector2(0,next ? 28 : 0);
+            view.Wedge.color = hovered ? hoverWedgeColor : next ? ForensicUIStyle.SelectedFill : dimWedgeColor;
+            view.Label.color = hovered ? new Color(0,0,0,alpha) : next ? ForensicUIStyle.Accent : new Color(1,1,1,alpha);
         }
     }
 
@@ -239,7 +322,7 @@ public class UtilityMenuController : MonoBehaviour
 
         var rootRect = wheelRoot.GetComponent<RectTransform>();
         rootRect.sizeDelta = new Vector2(WheelDiameter, WheelDiameter);
-        wheelRoot.transform.localScale = Vector3.one * 0.0006f;
+        wheelRoot.transform.localScale = Vector3.one * MenuWheelComfortProfile.CanvasScale;
 
         var canvas = wheelRoot.GetComponent<Canvas>();
         canvas.renderMode = RenderMode.WorldSpace;
@@ -247,7 +330,7 @@ public class UtilityMenuController : MonoBehaviour
         canvas.sortingOrder = WheelSortingOrder;
 
         var hud = wheelRoot.AddComponent<HudFollowCamera>();
-        hud.Distance = 0.65f;
+        hud.Distance = MenuWheelComfortProfile.Distance;
 
         ringSprite = CreateRingSprite(256, RingInnerRadiusRatio);
 
@@ -262,10 +345,13 @@ public class UtilityMenuController : MonoBehaviour
         segmentsRoot.sizeDelta = new Vector2(WheelDiameter, WheelDiameter);
         segmentsRoot.anchoredPosition = Vector2.zero;
 
-        var bottomHint = CreateLabel(rootRect, "BottomHint", new Vector2(0f, -(WheelDiameter * 0.5f + 40f)), new Vector2(WheelDiameter * 0.7f, 40f), 16f, FontStyles.Normal);
-        bottomHint.text = "RELEASE TO OPEN";
-        bottomHint.characterSpacing = 3f;
-        bottomHint.color = new Color(1f, 1f, 1f, 0.7f);
+        var hub = CreateImageChild(rootRect, "HintBackground", new Vector2(230f, 230f), Vector2.zero);
+        hub.sprite = CreateRingSprite(256, 0f);
+        hub.color = dimWedgeColor;
+
+        var bottomHint = CreateLabel(rootRect, "BottomHint", Vector2.zero, new Vector2(190f, 64f), 20f, FontStyles.Bold);
+        bottomHint.text = "RELEASE X\nTO OPEN";
+        bottomHint.color = Color.white;
     }
 
     private void BuildSegments()
@@ -276,13 +362,15 @@ public class UtilityMenuController : MonoBehaviour
         }
         segmentViews.Clear();
 
-        int count = entries.Count;
+        var available = entries.FindAll(entry => entry.IsAvailable);
+        int count = available.Count;
+        if (count == 0) return;
         float segmentAngle = 360f / count;
-        float gapAngle = Mathf.Min(6f, segmentAngle * 0.15f);
+        float gapAngle = Mathf.Min(2f, segmentAngle * 0.15f);
 
         for (int i = 0; i < count; i++)
         {
-            CreateWedge(i, segmentAngle, gapAngle, entries[i]);
+            CreateWedge(i, segmentAngle, gapAngle, available[i]);
         }
     }
 
@@ -303,13 +391,13 @@ public class UtilityMenuController : MonoBehaviour
 
         float midAngleRad = (index * segmentAngle + segmentAngle * 0.5f) * Mathf.Deg2Rad;
         Vector2 dir = new Vector2(Mathf.Sin(midAngleRad), Mathf.Cos(midAngleRad));
-        Vector2 labelPos = dir * (WheelDiameter * LabelRadiusRatio);
+        Vector2 labelPos = dir * MenuWheelComfortProfile.LabelRadius;
 
-        var label = CreateLabel(segmentsRoot, "Label", labelPos, new Vector2(150f, 60f), 20f, FontStyles.Bold);
-        label.text = entry.displayName;
+        var label = CreateLabel(segmentsRoot, "Label", labelPos, MenuWheelComfortProfile.LabelSize, MenuWheelComfortProfile.FontSize, FontStyles.Bold);
+        label.text = MenuWheelComfortProfile.Label(entry.displayName);
         label.raycastTarget = false;
 
-        bool hasListener = entry.onSelect != null && entry.onSelect.GetPersistentEventCount() > 0;
+        bool hasListener = entry.onSelect != null && (entry.onSelect.GetPersistentEventCount() > 0 || runtimeEntries.Contains(entry));
 
         segmentViews.Add(new WheelSegmentView
         {
@@ -348,6 +436,9 @@ public class UtilityMenuController : MonoBehaviour
         var text = go.GetComponent<TextMeshProUGUI>();
         text.fontSize = fontSize;
         text.fontStyle = style;
+        text.enableAutoSizing = false;
+        text.overflowMode = TextOverflowModes.Overflow;
+        text.lineSpacing = 2f;
         text.alignment = TextAlignmentOptions.Center;
         text.color = Color.white;
         text.textWrappingMode = TextWrappingModes.Normal;

@@ -1,0 +1,8 @@
+Main starts visible=True
+Start opens identification=True mainHidden=True
+Keypad input updates=True
+Clear restores empty input=True
+Back restores main=True identificationHidden=True
+Instructor opens locked=True
+Instructor close restores main=True
+No directory/upload service=True

@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "BODY-A",
+      "number": 0,
+      "name": "John",
+      "label": "Body A – John"
+    },
+    {
+      "id": "EVD-014",
+      "number": 1,
+      "name": "Kitchen Knife",
+      "label": "Evidence 1 – Kitchen Knife"
+    },
+    {
+      "id": "EVD-015",
+      "number": 2,
+      "name": "Blood Spatter",
+      "label": "Evidence 2 – Blood Spatter"
+    },
+    {
+      "id": "EVD-018",
+      "number": 3,
+      "name": "Empty Liquor Bottle",
+      "label": "Evidence 3 – Empty Liquor Bottle"
+    }
+  ],
+  "legacyEntries": [
+    {
+      "id": "EVD-017",
+      "number": 0,
+      "name": "Victim's mobile phone",
+      "label": "Victim's mobile phone"
+    },
+    {
+      "id": "EVD-019",
+      "number": 0,
+      "name": "Disposable gloves",
+      "label": "Disposable gloves"
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+﻿{
+    "date":  "2026-10-19",
+    "totalPass":  485,
+    "totalFail":  0,
+    "isolatedSuiteProcesses":  10,
+    "uniqueSuites":  8,
+    "finalCopyFocusedRun":  "run2",
+    "reports":  [
+                    {
+                        "run":  "run1",
+                        "suite":  "ArrivalEntryTest",
+                        "pass":  26,
+                        "fail":  0,
+                        "hasPassFooter":  true,
+                        "compileErrors":  0,
+                        "nullOrMissingReferenceExceptions":  0
+                    },
+                    {
+                        "run":  "run1",
+                        "suite":  "ArrivalPPETest",
+                        "pass":  42,
+                        "fail":  0,
+                        "hasPassFooter":  true,
+                        "compileErrors":  0,
+                        "nullOrMissingReferenceExceptions":  0
+                    },
+                    {
+                        "run":  "run1",
+                        "suite":  "DialogueCatalogTest",
+                        "pass":  60,
+                        "fail":  0,
+                        "hasPassFooter":  true,
+                        "compileErrors":  0,
+                        "nullOrMissingReferenceExceptions":  0
+                    },
+                    {
+                        "run":  "run1",
+                        "suite":  "IOCAssessmentGuideTest",
+                        "pass":  35,
+                        "fail":  0,
+                        "hasPassFooter":  true,
+                        "compileErrors":  0,
+                        "nullOrMissingReferenceExceptions":  0
+                    },
+                    {
+                        "run":  "run1",
+                        "suite":  "NarrativeRoleFlowTest",
+                        "pass":  41,
+                        "fail":  0,
+                        "hasPassFooter":  true,
+                        "compileErrors":  0,
+                        "nullOrMissingReferenceExceptions":  0
+                    },
+                    {
+                        "run":  "run1",
+                        "suite":  "ScenarioPhaseFoundationTest",
+                        "pass":  19,
+                        "fail":  0,
+                        "hasPassFooter":  true,
+                        "compileErrors":  0,
+                        "nullOrMissingReferenceExceptions":  0
+                    },
+                    {
+                        "run":  "run1",
+                        "suite":  "SceneAccessRegisterTest",
+                        "pass":  40,
+                        "fail":  0,
+                        "hasPassFooter":  true,
+                        "compileErrors":  0,
+                        "nullOrMissingReferenceExceptions":  0
+                    },
+                    {
+                        "run":  "run1",
+                        "suite":  "SceneTestStartTest",
+                        "pass":  143,
+                        "fail":  0,
+                        "hasPassFooter":  true,
+                        "compileErrors":  0,
+                        "nullOrMissingReferenceExceptions":  0
+                    },
+                    {
+                        "run":  "run2",
+                        "suite":  "DialogueCatalogTest",
+                        "pass":  60,
+                        "fail":  0,
+                        "hasPassFooter":  true,
+                        "compileErrors":  0,
+                        "nullOrMissingReferenceExceptions":  0
+                    },
+                    {
+                        "run":  "run2",
+                        "suite":  "ScenarioPhaseFoundationTest",
+                        "pass":  19,
+                        "fail":  0,
+                        "hasPassFooter":  true,
+                        "compileErrors":  0,
+                        "nullOrMissingReferenceExceptions":  0
+                    }
+                ],
+    "contentAudit":  {
+                         "changedEntryIds":  [
+                                                 "ioc-assessment-guidance",
+                                                 "ioc-observation-bottle",
+                                                 "ioc-observation-survey"
+                                             ],
+                         "addedEntryIds":  [
+
+                                           ],
+                         "removedEntryIds":  [
+
+                                             ],
+                         "sceneSha256":  "91d5c8c35425cdc32fec5ecb6bbc01ebfb07c368e227d62da5e10fdf12786005",
+                         "dialogue":  [
+                                          {
+                                              "id":  "ioc-assessment-guidance",
+                                              "text":  "At the yellow highlight inside the kitchen, face John\u0027s body. Press A to Observe. Look only; don\u0027t touch surfaces or step on evidence.",
+                                              "words":  23,
+                                              "durationSeconds":  14.0,
+                                              "wordsPerMinute":  98.6
+                                          },
+                                          {
+                                              "id":  "ioc-observation-bottle",
+                                              "text":  "There\u0027s an empty liquor bottle here. It may relate to the reported drinking, but that needs examination. Observe it without handling it and leave it in place for SOCO.",
+                                              "words":  29,
+                                              "durationSeconds":  14.0,
+                                              "wordsPerMinute":  124.3
+                                          },
+                                          {
+                                              "id":  "ioc-observation-survey",
+                                              "text":  "The cordon is intact; John\u0027s body appears undisturbed. Limit contact and movement to avoid moving or transferring traces. Gloves don\u0027t prevent all contamination. Leave everything in place for SOCO.",
+                                              "words":  29,
+                                              "durationSeconds":  18.0,
+                                              "wordsPerMinute":  96.7
+                                          }
+                                      ]
+                     },
+    "nativeLayout":  {
+                         "messages":  [
+                                          {
+                                              "id":  "ioc-assessment-guidance",
+                                              "preferredHeight":  68.33999633789063,
+                                              "availableHeight":  120.0,
+                                              "fontSize":  20.0,
+                                              "lines":  3,
+                                              "fits":  true
+                                          },
+                                          {
+                                              "id":  "ioc-observation-survey",
+                                              "preferredHeight":  199.13999938964845,
+                                              "availableHeight":  239.13999938964845,
+                                              "fontSize":  29.0,
+                                              "lines":  6,
+                                              "fits":  true
+                                          },
+                                          {
+                                              "id":  "ioc-observation-bottle",
+                                              "preferredHeight":  165.7899932861328,
+                                              "availableHeight":  205.7899932861328,
+                                              "fontSize":  29.0,
+                                              "lines":  5,
+                                              "fits":  true
+                                          }
+                                      ]
+                     },
+    "sourceHashes":  [
+                         {
+                             "path":  "Assets/Resources/ViCSIDialogueCatalog.asset",
+                             "sha256":  "7254d714fa38361555faad278df38c79fc1747ded905330c623b07b425443b63"
+                         },
+                         {
+                             "path":  "Assets/_Project/Scripts/Testing/ScenarioPhaseFoundationTest.cs",
+                             "sha256":  "6834ad672db00113a5ee923ca2ea9911cb056b823dcdec42a566df6e26a47224"
+                         },
+                         {
+                             "path":  "Tools/RunIOCSurveyChecks.ps1",
+                             "sha256":  "734c3a4331e5a8efdf507dc3b8b9af7f3917531db0f45dd79bcddf818856dbda"
+                         },
+                         {
+                             "path":  "Tools/IOCSurveyPreview.cs",
+                             "sha256":  "e4a98f0bc2641c264b4464db84eb874a1197037f9936229fe04f5f4d46c240d6"
+                         },
+                         {
+                             "path":  "Tools/Audit/ioc-survey-audit.py",
+                             "sha256":  "8f78b31c008ff4343fa90e9ee70374e9f74eb45b45508f5ce70dc8b659e7beb4"
+                         }
+                     ],
+    "temporaryEditorPreviewSourcePresent":  false,
+    "pendingFileRequest":  false,
+    "pendingBatchRequest":  false,
+    "physicalQuestAcceptance":  "pending"
+}

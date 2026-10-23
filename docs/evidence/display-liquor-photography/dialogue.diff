@@ -1,0 +1,23 @@
+--- before
+
++++ after
+
+@@ -410,14 +410,13 @@
+
+     category: 1
+     type: 1
+     speaker: 
+-    text: Photograph the living area from the opposite side to complete its overall
+-      coverage.
++    text: Photograph the table beside the living room, including both liquor bottles.
+     duration: 3.5
+     priority: 1
+     skippable: 1
+     replaceBehavior: 2
+-    notes: Instruction when 'Interior overall, right side' (photo point scene-interior-right,
+-      step 50) becomes the active view.
++    notes: Instruction for Table with liquor bottles (scene-interior-right, step
++      50). Display bottles are scene decoration.
+   - id: photo-point-body-in-scene
+     category: 1
+     type: 1

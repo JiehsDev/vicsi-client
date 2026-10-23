@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using TMPro;
 
 /// <summary>
 /// Drives the photo album gallery panel. Every visual piece - background,
@@ -52,6 +53,15 @@ public class PhotoAlbumUI : MonoBehaviour
     private InputAction selectAction;
     private InputAction closeAction;
     private bool stickWasNeutral = true;
+    private RectTransform imageViewport;
+    private TMP_Text caption, controls, empty;
+    private float zoom = 1f;
+    private Vector2 pan;
+    private InputAction panAction;
+    public float Zoom => zoom;
+    public string SelectedCaption => caption != null ? caption.text : string.Empty;
+    public RectTransform DisplayedImage => bigViewImage != null ? bigViewImage.rectTransform : null;
+    public bool IsEmptyStateVisible => empty != null && empty.gameObject.activeInHierarchy;
 
     private void Awake()
     {
@@ -82,8 +92,10 @@ public class PhotoAlbumUI : MonoBehaviour
         // right controller's B (secondary) button always closes the whole
         // panel, regardless of which sub-view is showing.
         navStickAction = new InputAction("PhotoAlbum_NavStick", InputActionType.Value, "<XRController>{RightHand}/thumbstick", expectedControlType: "Vector2");
-        selectAction = new InputAction("PhotoAlbum_Select", InputActionType.Button, "<XRController>{RightHand}/primaryButton");
+        selectAction = PlayerUIGate.CreateConfirmAction(this, "PhotoAlbum_Select", () => panelRoot != null && panelRoot.activeInHierarchy, 300);
         closeAction = new InputAction("PhotoAlbum_Close", InputActionType.Button, "<XRController>{RightHand}/secondaryButton");
+        panAction = new InputAction("PhotoAlbum_Pan", InputActionType.Value, "<XRController>{LeftHand}/thumbstick", expectedControlType:"Vector2");
+        BuildPresentation();
     }
 
     private void OnEnable()
@@ -91,6 +103,7 @@ public class PhotoAlbumUI : MonoBehaviour
         navStickAction.Enable();
         selectAction.Enable();
         closeAction.Enable();
+        panAction.Enable();
 
         if (albumManager == null)
         {
@@ -100,10 +113,7 @@ public class PhotoAlbumUI : MonoBehaviour
         albumManager.OnPhotoAdded += AddThumbnail;
 
         // Catch up on anything captured before this UI existed/was enabled.
-        foreach (var photo in albumManager.Photos)
-        {
-            AddThumbnail(photo);
-        }
+        for(int i=thumbnails.Count;i<albumManager.Photos.Count;i++) AddThumbnail(albumManager.Photos[i]);
     }
 
     private void OnDisable()
@@ -111,6 +121,7 @@ public class PhotoAlbumUI : MonoBehaviour
         navStickAction.Disable();
         selectAction.Disable();
         closeAction.Disable();
+        panAction.Disable();
         PlayerUIGate.Exit(this);
 
         if (albumManager != null)
@@ -124,6 +135,7 @@ public class PhotoAlbumUI : MonoBehaviour
         navStickAction?.Dispose();
         selectAction?.Dispose();
         closeAction?.Dispose();
+        panAction?.Dispose();
     }
 
     private void Update()
@@ -140,12 +152,17 @@ public class PhotoAlbumUI : MonoBehaviour
             return;
         }
 
-        if (selectAction.WasPressedThisFrame())
+        if (PlayerUIGate.TryConsumeConfirm(this, selectAction))
         {
             ToggleBigView();
         }
 
         Vector2 stick = navStickAction.ReadValue<Vector2>();
+        if(isBigViewOpen && zoom>1f)
+        {
+            pan += panAction.ReadValue<Vector2>() * Time.unscaledDeltaTime * .6f;
+            ApplyImageFit();
+        }
         if (stick.sqrMagnitude < NavDeadzone * NavDeadzone)
         {
             stickWasNeutral = true;
@@ -163,9 +180,8 @@ public class PhotoAlbumUI : MonoBehaviour
 
         if (isBigViewOpen)
         {
-            // Flipping through pages while zoomed in - left/right only, no
-            // row concept once you're looking at a single photo full-size.
-            MoveSelection(stick.x > 0f ? 1 : -1);
+            if(Mathf.Abs(stick.y)>Mathf.Abs(stick.x)) SetZoom(stick.y>0?zoom*2:zoom*.5f);
+            else MoveSelection(stick.x > 0f ? 1 : -1);
             return;
         }
 
@@ -193,6 +209,10 @@ public class PhotoAlbumUI : MonoBehaviour
         {
             bigViewImage.gameObject.SetActive(isBigViewOpen);
         }
+        imageViewport.gameObject.SetActive(isBigViewOpen);
+        content.gameObject.SetActive(!isBigViewOpen);
+        SetZoom(1);
+        UpdatePresentation();
 
         if (isBigViewOpen)
         {
@@ -208,6 +228,7 @@ public class PhotoAlbumUI : MonoBehaviour
         }
 
         bigViewImage.texture = thumbnails[selectedIndex].texture;
+        ApplyImageFit();
     }
 
     private int GetColumnsPerRow()
@@ -222,6 +243,7 @@ public class PhotoAlbumUI : MonoBehaviour
         {
             return 1;
         }
+        if(grid.constraint==GridLayoutGroup.Constraint.FixedColumnCount)return Mathf.Max(1,grid.constraintCount);
 
         float availableWidth = content.rect.width - grid.padding.left - grid.padding.right;
         float cellWithSpacing = grid.cellSize.x + grid.spacing.x;
@@ -253,6 +275,7 @@ public class PhotoAlbumUI : MonoBehaviour
 
         if (index != selectedIndex)
         {
+            if(panelRoot!=null && panelRoot.activeInHierarchy) InteractionSfx.Play(InteractionSound.Page,panelRoot.transform.position);
             if (selectedIndex >= 0 && selectedIndex < thumbnails.Count)
             {
                 thumbnails[selectedIndex].color = unselectedTint;
@@ -260,7 +283,9 @@ public class PhotoAlbumUI : MonoBehaviour
 
             selectedIndex = Mathf.Clamp(index, 0, thumbnails.Count - 1);
             thumbnails[selectedIndex].color = selectedTint;
+            zoom=1;pan=Vector2.zero;
         }
+        UpdatePresentation();
 
         if (isBigViewOpen)
         {
@@ -275,16 +300,25 @@ public class PhotoAlbumUI : MonoBehaviour
             return;
         }
 
-        var clone = Instantiate(thumbnailTemplate, content);
+        var slot=EditableSceneVisuals.Create("Photo thumbnail",typeof(RectTransform));slot.transform.SetParent(content,false);
+        var clone = Instantiate(thumbnailTemplate, slot.transform);
         clone.gameObject.SetActive(true);
         clone.texture = photo;
         clone.color = unselectedTint;
 
         thumbnails.Add(clone);
+        var grid=content.GetComponent<GridLayoutGroup>();var cell=grid!=null?grid.cellSize:new Vector2(160,120);
+        var rect=clone.rectTransform;rect.anchorMin=rect.anchorMax=new Vector2(.5f,1);rect.pivot=new Vector2(.5f,1);
+        rect.anchoredPosition=Vector2.zero;rect.sizeDelta=Fit(new Vector2(cell.x,cell.y-42),photo.width/(float)photo.height);
+        var label=Label(slot.transform,"Photo identity",15);label.alignment=TextAlignmentOptions.Center;
+        label.rectTransform.anchorMin=new Vector2(0,0);label.rectTransform.anchorMax=new Vector2(1,0);
+        label.rectTransform.pivot=new Vector2(.5f,0);label.rectTransform.sizeDelta=new Vector2(0,42);
+        label.text=albumManager.FindRecord(photo)?.Caption??"Photograph";
         if (selectedIndex < 0)
         {
             SetSelectedIndex(0);
         }
+        UpdatePresentation();
     }
 
     public void Toggle()
@@ -315,8 +349,10 @@ public class PhotoAlbumUI : MonoBehaviour
             LocomotionSuspender.Suspend();
             PlayerUIGate.Enter(this);
         }
+        HudFollowCamera.ConfigureShared(panelRoot, this, 300);
         panelRoot.SetActive(true);
         stickWasNeutral = true;
+        UpdatePresentation();
     }
 
     public void Hide()
@@ -329,9 +365,84 @@ public class PhotoAlbumUI : MonoBehaviour
         panelRoot.SetActive(false);
 
         isBigViewOpen = false;
+        if(imageViewport!=null)imageViewport.gameObject.SetActive(false);
+        if(content!=null)content.gameObject.SetActive(true);
         if (bigViewImage != null)
         {
             bigViewImage.gameObject.SetActive(false);
         }
+    }
+
+    private TMP_Text Label(Transform parent,string name,float size)
+    {
+        var text=ForensicUIStyle.Text(parent,name,size,ForensicUIStyle.TextPrimary);
+        text.alignment=TextAlignmentOptions.Center;return text;
+    }
+    [EditableSceneBuilder]
+    private void BuildPresentation()
+    {
+        using (EditableSceneVisuals.Begin(this,"BuildPresentation"))
+        {
+        if(content==null||bigViewImage==null)return;
+        EditableSceneVisuals.Preserve(content.gameObject,bigViewImage.gameObject);
+        content.offsetMin=new Vector2(15,130);content.offsetMax=new Vector2(-15,-90);
+        var grid=content.GetComponent<GridLayoutGroup>();
+        if(grid!=null)grid.cellSize=new Vector2(grid.cellSize.x,Mathf.Max(160,grid.cellSize.y));
+        var go=EditableSceneVisuals.Create("Photo inspection viewport",typeof(RectTransform),typeof(Image),typeof(RectMask2D));
+        go.transform.SetParent(panelRoot.transform,false);imageViewport=(RectTransform)go.transform;
+        imageViewport.anchorMin=Vector2.zero;imageViewport.anchorMax=Vector2.one;
+        imageViewport.offsetMin=content.offsetMin;imageViewport.offsetMax=content.offsetMax;
+        go.GetComponent<Image>().color=Color.black;go.GetComponent<Image>().raycastTarget=false;
+        bigViewImage.transform.SetParent(imageViewport,false);
+        bigViewImage.rectTransform.anchorMin=bigViewImage.rectTransform.anchorMax=new Vector2(.5f,.5f);
+        bigViewImage.rectTransform.pivot=new Vector2(.5f,.5f);bigViewImage.uvRect=new Rect(0,0,1,1);
+        go.SetActive(false);
+        caption=Label(panelRoot.transform,"Selected photo caption",20);
+        controls=Label(panelRoot.transform,"Album controls",18);
+        foreach(var label in new[]{caption,controls})
+        {
+            label.rectTransform.anchorMin=new Vector2(0,0);label.rectTransform.anchorMax=new Vector2(1,0);
+            label.rectTransform.pivot=new Vector2(.5f,0);label.rectTransform.sizeDelta=new Vector2(-30,42);
+        }
+        caption.rectTransform.anchoredPosition=new Vector2(0,56);controls.rectTransform.anchoredPosition=new Vector2(0,4);
+        caption.rectTransform.sizeDelta=new Vector2(-30,64);controls.rectTransform.sizeDelta=new Vector2(-30,48);
+        empty=Label(panelRoot.transform,"No photos",28);empty.rectTransform.sizeDelta=new Vector2(700,140);
+        empty.text="No photographs yet\nUse the camera to capture evidence.";
+            }
+    }
+    public static Vector2 Fit(Vector2 available,float aspect)
+    {
+        return available.x/available.y>aspect?new Vector2(available.y*aspect,available.y):new Vector2(available.x,available.x/aspect);
+    }
+    public void SetZoom(float value)
+    {
+        zoom=Mathf.Clamp(value,1,4);if(zoom==1)pan=Vector2.zero;ApplyImageFit();UpdatePresentation();
+    }
+    private void ApplyImageFit()
+    {
+        if(bigViewImage==null||bigViewImage.texture==null||imageViewport==null)return;
+        Vector2 area=imageViewport.rect.size;
+        Vector2 size=Fit(area,bigViewImage.texture.width/(float)bigViewImage.texture.height)*zoom;
+        var extent=Vector2.Max(Vector2.zero,(size-area)*.5f);
+        pan=new Vector2(Mathf.Clamp(pan.x,-1,1),Mathf.Clamp(pan.y,-1,1));
+        bigViewImage.rectTransform.sizeDelta=size;
+        bigViewImage.rectTransform.anchoredPosition=Vector2.Scale(pan,extent);
+    }
+    private void UpdatePresentation()
+    {
+        if(empty==null)return;
+        empty.gameObject.SetActive(thumbnails.Count==0);
+        if(selectedIndex>=0&&selectedIndex<thumbnails.Count)
+        {
+            var record=albumManager.FindRecord(thumbnails[selectedIndex].texture as Texture2D);
+            caption.text=$"{selectedIndex+1} / {thumbnails.Count}   {record?.Caption??"Photograph"}";
+            if(record!=null)caption.text+="\n"+record.CapturedAtUtc.ToString("HH:mm:ss 'UTC'");
+        }
+        else caption.text="Photo Album";
+        controls.text=isBigViewOpen?$"Right stick: browse / zoom {zoom:0}×   Left stick: pan\nA: gallery   B: close":"Right stick: browse   A: inspect   B: close";
+        int columns=GetColumnsPerRow();var grid=content.GetComponent<GridLayoutGroup>();
+        int rows=grid!=null?Mathf.Max(1,Mathf.FloorToInt((content.rect.height-grid.padding.top-grid.padding.bottom+grid.spacing.y)/(grid.cellSize.y+grid.spacing.y))):1;
+        int count=columns*rows;int first=Mathf.Max(0,selectedIndex)/count*count;
+        for(int i=0;i<thumbnails.Count;i++)thumbnails[i].transform.parent.gameObject.SetActive(i>=first&&i<first+count);
     }
 }

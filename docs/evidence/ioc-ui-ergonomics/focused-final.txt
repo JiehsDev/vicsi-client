@@ -1,0 +1,10 @@
+PASS: Checklist stays hidden in IOC assessment; seven live checklist rows exist
+PASS: Valid survey has one lower-center hint; no target or dialogue suppresses it
+PASS: X utility opening consumes simultaneous A/trigger without observing; hint suppressed
+PASS: Release X opens centered readable world panel at 1.35 m, no head follower or text overflow
+PASS: Open checklist blocks world A/trigger; B closes and restores UI gate
+PASS: Normal A observation resumes and open checklist shows fresh secured/survey progress
+PASS: Assessment completion closes panel and removes IOC entry availability
+PASS: Evidence statuses remain unchanged
+PASS: Hint withdrawal clears ambient channel and restores authored tooltip position
+=== PASS: 9 focused IOC UI checks ===

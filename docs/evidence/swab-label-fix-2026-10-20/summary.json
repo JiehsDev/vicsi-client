@@ -1,0 +1,12 @@
+[
+    {
+        "suite":  "BiologicalSamplingTest",
+        "passed":  63,
+        "failed":  0
+    },
+    {
+        "suite":  "SamplePreparationTest",
+        "passed":  46,
+        "failed":  0
+    }
+]

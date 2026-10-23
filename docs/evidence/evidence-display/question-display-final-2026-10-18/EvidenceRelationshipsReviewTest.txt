@@ -1,0 +1,43 @@
+=== EvidenceRelationshipsReviewTest ===
+PASS: Old board canvas remains inactive and creates no connections
+PASS: Timeline interpretation cannot be answered before real vendor discovery
+PASS: Earned physical/context questions available; timeline still withheld
+PASS: All six existing IDs have four unique interpretations and one authored key
+FAIL: Existing menu adapter opens a compact review instead of the old board
+PASS: First confirmation only selects; it cannot record an answer
+PASS: Closing an unconfirmed question releases UI ownership without recording
+PASS: Reopening resumes the unanswered question
+PASS: REL-bottle-supports-brother: visible four-choice question
+PASS: REL-bottle-supports-brother: readable padding and measured answer heights
+PASS: REL-bottle-supports-brother: no correctness feedback before submission
+PASS: REL-bottle-supports-brother: confirmed response locked
+PASS: REL-knife-consistent-wound: visible four-choice question
+PASS: REL-knife-consistent-wound: readable padding and measured answer heights
+PASS: REL-knife-consistent-wound: no correctness feedback before submission
+PASS: REL-knife-consistent-wound: confirmed response locked
+PASS: REL-paul-print-handled-knife: visible four-choice question
+PASS: REL-paul-print-handled-knife: readable padding and measured answer heights
+PASS: REL-paul-print-handled-knife: no correctness feedback before submission
+PASS: REL-paul-print-handled-knife: confirmed response locked
+PASS: REL-peter-departure-supported: visible four-choice question
+PASS: REL-peter-departure-supported: readable padding and measured answer heights
+PASS: REL-peter-departure-supported: no correctness feedback before submission
+PASS: REL-peter-departure-supported: confirmed response locked
+PASS: Incorrect confirmed interpretation is locked without manufacturing conclusion support
+PASS: REL-spatter-consistent-reconstruction: visible four-choice question
+PASS: REL-spatter-consistent-reconstruction: readable padding and measured answer heights
+PASS: REL-spatter-consistent-reconstruction: no correctness feedback before submission
+PASS: REL-spatter-consistent-reconstruction: confirmed response locked
+PASS: Review completes without node manipulation and without new checkpoint answers
+PASS: Reopening cannot change locked responses
+PASS: Read-only response views cannot mutate the locked session record
+PASS: Session snapshot contains locked IDs, order and review version
+PASS: Raw-log-disabled upload preserves every locked answer as essential events
+PASS: Completed available review opens the real conclusion picker
+PASS: Late statement creates a newly required relationship question
+PASS: Final confirmation refuses to skip a newly earned review
+PASS: Picker releases ownership to the new relationship question
+PASS: Timeline choices also resize without text overflow
+PASS: New question locks before conclusion can be resubmitted
+PASS: Restart clears answers, review completion, UI and conclusion eligibility
+=== FAIL: 1 failure(s) ===

@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81025025b5ccd0343822b039b1e4dfac, type: 3}
+  m_Name: Conclusion_BROTHER-RESPONSIBLE
+  m_EditorClassIdentifier: Assembly-CSharp::ConclusionDefinition
+  conclusionId: conclusion-brother
+  displayName: Paul
+  description: Paul is a reasonable person of interest, but an accusation must rest
+    on the combined physical evidence and timeline contradiction rather than his fingerprint alone.
+  supportingEvidenceSummary: 'A supported accusation requires John''s sharp wound,
+    knife-to-wound consistency, Paul''s knife print, bloodstain reconstruction, and
+    the corresponding physical relationships on the board, and the discovered vendor
+    observation correctly linked to Paul''s no-return statement as a timeline contradiction. The bottle is context,
+    not decisive proof.'
+  availabilityRequirement:
+    kind: 0
+    operatorType: 0
+    children: []
+    requirementType: 12
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: FIND-BODY-SHARP-WOUND
+    authoringNote: 
+  level: 2
+  priority: 0
+  hidesInconclusiveWhenSupported: 1
+  inconclusiveSuppressionRequirement:
+    kind: 0
+    operatorType: 0
+    children: []
+    requirementType: 8
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 11400000, guid: e4279f15564f9234dba1f49e7833c0b5, type: 2}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    measurementRequirementId: 
+    authoringNote: 
+  references:
+    version: 2
+    RefIds: []

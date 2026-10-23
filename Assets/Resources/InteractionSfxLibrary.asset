@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e9210a8b445e447b6974a5f9250d6c, type: 3}
+  m_Name: InteractionSfxLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionSfxLibrary
+  select: {fileID: 8300000, guid: 477395f49cb34be4abaeb03b8e0d8647, type: 3}
+  confirm: {fileID: 8300000, guid: cb9f0ab6f4895dc459f8e1b2d998ebbd, type: 3}
+  blocked: {fileID: 8300000, guid: 519cac7f51ef11547a8e57112a6a809a, type: 3}
+  shutter: {fileID: 8300000, guid: 9547e221790ec7c4c972321dca255891, type: 3}
+  switchClick: {fileID: 8300000, guid: c049ff28f6533c14b909b8ab25f9d521, type: 3}
+  measure: {fileID: 8300000, guid: 7339d910f149eb7448469509f5ab98ca, type: 3}
+  chalk: {fileID: 8300000, guid: 9e3dfeb0c1d374941b79b4c89e00de14, type: 3}
+  writing: {fileID: 8300000, guid: cf46cec95698f4448b1cbe91ccb447f7, type: 3}
+  paper: {fileID: 8300000, guid: 73f1b101c27a8b54dbd34f9242fb0b3c, type: 3}
+  page: {fileID: 8300000, guid: c5f3d05978f6e9e4abbab1ee2c9a297f, type: 3}
+  tape: {fileID: 8300000, guid: c10d5f9a77bb9ba449d289455aa802e4, type: 3}
+  container: {fileID: 8300000, guid: d9907e28739a9c24fa61ae61bdbd7be1, type: 3}
+  place: {fileID: 8300000, guid: a735e166bbd1b5140a24bed91964f07a, type: 3}
+  concreteSteps:
+  - {fileID: 8300000, guid: a31470a72a16b2f4db81447a8eda6c52, type: 3}
+  - {fileID: 8300000, guid: 4563c8f24e2e02a4793e9a73a5c72303, type: 3}
+  - {fileID: 8300000, guid: 832adf7bf4725ef429d5a42222e4bd7a, type: 3}
+  woodSteps:
+  - {fileID: 8300000, guid: 7e3e0b7efa799d04b8732f5e1786e042, type: 3}
+  - {fileID: 8300000, guid: ffd973952e4062b46b98e2074f6073d9, type: 3}
+  - {fileID: 8300000, guid: 3be71efe2ea80714eac3ee53b7c980fa, type: 3}
+  grassSteps:
+  - {fileID: 8300000, guid: ea683e84f4bc02b4d9df829f3f69e224, type: 3}
+  - {fileID: 8300000, guid: dac7910f16c10164683a2ec88e91a6bf, type: 3}
+  - {fileID: 8300000, guid: 96362fbf1c6322d4c9761b77f7e97459, type: 3}
+  uiVolume: 0.16
+  physicalVolume: 0.3
+  footstepVolume: 0.16

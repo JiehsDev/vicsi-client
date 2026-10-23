@@ -1,0 +1,37 @@
+=== IOCAssessmentGuideTest ===
+PASS: Automatically attaches exactly once to IOC assessment
+PASS: Hidden before First Responder handover
+PASS: IOC phase guides to existing survey standing point
+PASS: Outside survey area uses Investigate here, distance and pin
+PASS: Offscreen and behind-head target uses an inset arrow
+PASS: Inside survey area switches to Survey the scene and correct facing direction
+PASS: Aligned survey is ready without automatically recording it
+PASS: Repeated guidance never logs observations or changes progress
+PASS: Modal ownership hides guidance
+PASS: IOC checklist hides guidance
+FAIL: Dialogue hides guidance
+PASS: Closing dialogue restores guidance
+PASS: Disabled assessment hides guidance
+PASS: Disabled guide leaves no visible canvas
+PASS: Guide has no input raycaster, colliders or hit targets
+PASS: Reuses native photography arrow/pin mesh and overlay shader
+PASS: Existing real XR A records the survey with jump suppression
+PASS: After survey, guide recommends victim using readable existing label
+PASS: Out-of-order bottle observation remains valid
+PASS: Guide continues to unfinished victim
+PASS: Within range shows Examine this and readiness matches authoritative gaze
+PASS: Occlusion prevents ready highlight and existing observation
+PASS: Existing victim observation completes normally
+PASS: After victim, recommends unfinished knife
+PASS: Out-of-range evidence says Move closer without granting eligibility
+PASS: Readable guide label fits two lines: EVD-014
+PASS: Readable guide label fits two lines: EVD-015
+PASS: Readable guide label fits two lines: EVD-018
+FAIL: Alternative evidence can satisfy quota without following knife recommendation
+FAIL: Two possible-evidence observations suffice; optional knife is not demanded
+FAIL: Existing completion action reaches IOC decision
+FAIL: IOC guide stays hidden after assessment
+FAIL: SOCO photography retains its own guide and original wording
+PASS: Survey anchor, all evidence positions and evidence states unchanged
+FAIL: Only four intentional IOC observations were recorded
+=== FAIL: 7 ===

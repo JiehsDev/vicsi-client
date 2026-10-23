@@ -1,0 +1,48 @@
+=== DialogueCatalogTest ===
+  PASS: 1. dialogue shows catalog text
+  PASS: 1. edited dialogue text is used on the next Say
+  PASS: 3. dialogue duration from catalog (3s, got 3)
+  PASS: 3. edited dialogue duration applies (4.5s, got 4.5)
+  PASS: 3. duration 0 uses the catalog default for Guidance (4s)
+  PASS: 2. tooltip shows catalog text
+  PASS: 2. edited tooltip text is used
+  PASS: 4. edited tooltip duration applies (1.4s, got 1.40)
+  PASS: 2. tooltips are not dialogue (dialogue panel untouched)
+  PASS: 2. placeholders are filled ({0} -> 3)
+  PASS: 4. duration 0 uses the tooltip default (2s)
+  PASS: 5. second and third dialogue wait in the queue
+  PASS: 6. Skip() accepted for a skippable line past protection
+  PASS: 7. skip advances to the next queued line, Error before Guidance (now 'That action is refused.')
+  PASS: 13. the skipped line stays in history exactly once
+  PASS: 13. the line now shown was recorded once
+  PASS: 6. B never skips while a panel holds the UI gate
+  PASS: 6. B never skips while a [B] world prompt is up
+  PASS: 6. B skips when nothing else owns it
+  PASS: 6. binding is the right controller B button (<XRController>{RightHand}/secondaryButton)
+  PASS: 11. a tooltip does not overwrite the Error dialogue on screen
+  PASS: 12. the tooltip shows immediately while dialogue is busy and queued
+  PASS: 8. tooltip B immediately replaces A
+  PASS: 9. tooltip A never reappears after B, and B is gone after its duration
+  PASS: 10. six identical tooltips -> one on screen, nothing queued
+  PASS: 10. ...and it is gone after one duration (no replays)
+  PASS: 14. missing id never throws
+  PASS: 14. missing id logs a warning naming the id
+  PASS: 14. development builds show a short placeholder, not stale text
+  PASS: [modal] dialogue countdown freezes while a panel is open, line stays visible
+  PASS: [modal] countdown resumes when the panel closes
+  PASS: [long] panel grew for a long line (120 -> 177)
+  PASS: [sequence] a follow-up line stays with its own conversation (Professor line A. | Professor line three. | Professor line two.)
+  PASS: IgnoreIfAlreadyShowing: a repeated refusal is not queued again
+  PASS: 15. all 222 ids used by code/scene/data resolve in the real catalog (missing: )
+  PASS: 15. real catalog has no duplicate ids ()
+  PASS: 15. no real catalog entry has empty text ()
+  PASS: 16. active spoken catalog lines avoid software/procedure-state wording
+  PASS: 16. vendor recognizes Paul near the house around three, without claiming entry or attack
+  PASS: 16. Paul denies returning and knife dialogue limits contact
+  PASS: 16. IOC observations remain preliminary and briefings preserve both forms
+  PASS: 16. all ending and HYP player-facing content is non-empty
+  PASS: 16. supported Paul combines physical findings and timeline conflict without absolute proof
+  PASS: 16. Peter remains unsupported and inconclusive remains defensible
+  PASS: 16. HYP preserves suspicion/contact limits and combined timeline reasoning
+  PASS: 16. rewritten real dialogue is displayed exactly and stored in history once
+=== PASS, 0 failures ===

@@ -1,0 +1,40 @@
+{
+  "unchangedSerializedFiles": 130,
+  "changedSerializedFiles": [],
+  "sharedMappingIdentical": true,
+  "mapping": [
+    {
+      "id": "BODY-A",
+      "number": 0,
+      "name": "John",
+      "label": "Body A – John"
+    },
+    {
+      "id": "EVD-014",
+      "number": 1,
+      "name": "Kitchen Knife",
+      "label": "Evidence 1 – Kitchen Knife"
+    },
+    {
+      "id": "EVD-015",
+      "number": 2,
+      "name": "Blood Spatter",
+      "label": "Evidence 2 – Blood Spatter"
+    },
+    {
+      "id": "EVD-018",
+      "number": 3,
+      "name": "Empty Liquor Bottle",
+      "label": "Evidence 3 – Empty Liquor Bottle"
+    }
+  ],
+  "preservedReferences": [
+    "EVD-014",
+    "EVD-015",
+    "EVD-018",
+    "BODY-A",
+    "REL-paul-timeline-contradiction",
+    "statement_vendor_paul_3am"
+  ],
+  "note": "SHA256 comparison against this task start, not Git HEAD; existing unrelated edits preserved. No database writes."
+}

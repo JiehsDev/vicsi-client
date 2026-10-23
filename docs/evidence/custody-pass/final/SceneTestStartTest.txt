@@ -1,0 +1,145 @@
+=== SceneTestStartTest ===
+PASS: Normal play: correct preset, ready, no setup failure
+PASS: Normal play: IOC gate and evidence untouched
+PASS: IOC done: correct preset, ready, no setup failure
+PASS: IOC done: sandbox before uploader/logging and no student owner
+PASS: IOC done: correct scene phase
+PASS: IOC done: photography matches milestone
+PASS: IOC done: capsule AND headset reach the selected activity
+PASS: IOC done: evidence remains undiscovered
+PASS: IOC done: previous reasoning suppressed without answer records
+PASS: IOC done: measurement state matches milestone
+PASS: IOC done: sketch state matches milestone
+PASS: IOC done: no stale checkpoint owns the UI
+PASS: Photography done: correct preset, ready, no setup failure
+PASS: Photography done: sandbox before uploader/logging and no student owner
+PASS: Photography done: correct scene phase
+PASS: Photography done: photography matches milestone
+PASS: Photography done: capsule AND headset reach the selected activity
+PASS: Photography done: evidence remains undiscovered
+PASS: Photography done: previous reasoning suppressed without answer records
+PASS: Photography done: measurement state matches milestone
+PASS: Photography done: sketch state matches milestone
+PASS: Photography done: spawn stays outside bottle discovery radius
+PASS: Photography done: actual approach still triggers bottle Found
+PASS: Photography done: restart uses fresh managers/session and removes previous Found
+PASS: Photography done: no stale checkpoint owns the UI
+PASS: All evidence procedures done: correct preset, ready, no setup failure
+PASS: All evidence procedures done: sandbox before uploader/logging and no student owner
+PASS: All evidence procedures done: correct scene phase
+PASS: All evidence procedures done: photography matches milestone
+PASS: All evidence procedures done: capsule AND headset reach the selected activity
+PASS: All evidence procedures done: evidence, custody and body handling satisfy closeout
+PASS: All evidence procedures done: measurement anchors retained for all four items
+PASS: All evidence procedures done: no skipped reasoning answer was fabricated
+PASS: All evidence procedures done: permanent body outline remains after removal
+PASS: All evidence procedures done: measurement state matches milestone
+PASS: All evidence procedures done: sketch state matches milestone
+PASS: All evidence procedures done: no queued or delayed teaching from skipped procedures
+PASS: All evidence procedures done: real measurement recording remains usable
+PASS: All evidence procedures done: no stale checkpoint owns the UI
+PASS: Measurements done: correct preset, ready, no setup failure
+PASS: Measurements done: sandbox before uploader/logging and no student owner
+PASS: Measurements done: correct scene phase
+PASS: Measurements done: photography matches milestone
+PASS: Measurements done: capsule AND headset reach the selected activity
+PASS: Measurements done: evidence, custody and body handling satisfy closeout
+PASS: Measurements done: measurement anchors retained for all four items
+PASS: Measurements done: no skipped reasoning answer was fabricated
+PASS: Measurements done: permanent body outline remains after removal
+PASS: Measurements done: measurement state matches milestone
+PASS: Measurements done: sketch state matches milestone
+PASS: Measurements done: eight real measurement cards available
+PASS: Measurements done: no stale checkpoint owns the UI
+PASS: Sketch done: correct preset, ready, no setup failure
+PASS: Sketch done: sandbox before uploader/logging and no student owner
+PASS: Sketch done: correct scene phase
+PASS: Sketch done: photography matches milestone
+PASS: Sketch done: capsule AND headset reach the selected activity
+PASS: Sketch done: evidence, custody and body handling satisfy closeout
+PASS: Sketch done: measurement anchors retained for all four items
+PASS: Sketch done: no skipped reasoning answer was fabricated
+PASS: Sketch done: permanent body outline remains after removal
+PASS: Sketch done: measurement state matches milestone
+PASS: Sketch done: sketch state matches milestone
+PASS: Sketch done: no stale checkpoint owns the UI
+PASS: Investigation submitted: correct preset, ready, no setup failure
+PASS: Investigation submitted: sandbox before uploader/logging and no student owner
+PASS: Investigation submitted: correct scene phase
+PASS: Investigation submitted: photography matches milestone
+PASS: Investigation submitted: capsule AND headset reach the selected activity
+PASS: Investigation submitted: evidence, custody and body handling satisfy closeout
+PASS: Investigation submitted: measurement anchors retained for all four items
+PASS: Investigation submitted: no skipped reasoning answer was fabricated
+PASS: Investigation submitted: permanent body outline remains after removal
+PASS: Investigation submitted: measurement state matches milestone
+PASS: Investigation submitted: sketch state matches milestone
+PASS: Knife bagging: correct preset, ready, no setup failure
+PASS: Knife bagging: sandbox before uploader/logging and no student owner
+PASS: Knife bagging: correct scene phase
+PASS: Knife bagging: photography matches milestone
+PASS: Knife bagging: capsule AND headset reach the selected activity
+PASS: Knife bagging: knife ready, grabbable and still on scene
+PASS: Knife bagging: other evidence untouched and inventory empty
+PASS: Knife bagging: bag equipped in left hand with right hand free
+PASS: Knife bagging: no scored reasoning responses fabricated
+PASS: Knife bagging: real bag insertion and sealing remain available
+PASS: Knife bagging: explicit storage completes the knife bag
+PASS: Knife bagging: restart restores loose ready knife and equipped bag
+PASS: Knife bagging: measurement state matches milestone
+PASS: Knife bagging: sketch state matches milestone
+PASS: Knife bagging: no stale checkpoint owns the UI
+PASS: Bottle fingerprinting: correct preset, ready, no setup failure
+PASS: Bottle fingerprinting: sandbox before uploader/logging and no student owner
+PASS: Bottle fingerprinting: correct scene phase
+PASS: Bottle fingerprinting: photography matches milestone
+PASS: Bottle fingerprinting: capsule AND headset reach the selected activity
+PASS: Bottle fingerprinting: final photo and bottle measurements prepared
+PASS: Bottle fingerprinting: prints remain undusted and unidentified
+PASS: Bottle fingerprinting: kit equipped and other evidence untouched (kit=True, others=EVD-014:NotFound,EVD-015:NotFound,BODY-A:NotFound)
+PASS: Bottle fingerprinting: restart prepares a fresh fingerprint exercise
+PASS: Bottle fingerprinting: measurement state matches milestone
+PASS: Bottle fingerprinting: sketch state matches milestone
+PASS: Bottle fingerprinting: no stale checkpoint owns the UI
+PASS: Body recording: correct preset, ready, no setup failure
+PASS: Body recording: sandbox before uploader/logging and no student owner
+PASS: Body recording: correct scene phase
+PASS: Body recording: photography matches milestone
+PASS: Body recording: capsule AND headset reach the selected activity
+PASS: Body recording: final photo, Marker A and all measurements prepared
+PASS: Body recording: report and removal remain for the player
+PASS: Body recording: Recorder equipped and no scored answers or samples fabricated
+PASS: Body recording: restart restores unrecorded body and equipped Recorder
+PASS: Body recording: measurement state matches milestone
+PASS: Body recording: sketch state matches milestone
+PASS: Body recording: no stale checkpoint owns the UI
+PASS: All evidence measured: correct preset, ready, no setup failure
+PASS: All evidence measured: sandbox before uploader/logging and no student owner
+PASS: All evidence measured: correct scene phase
+PASS: All evidence measured: photography matches milestone
+PASS: All evidence measured: capsule AND headset reach the selected activity
+PASS: All evidence measured: all four items measured and unrecorded
+PASS: All evidence measured: no sampling, fingerprints, custody or answers skipped
+PASS: All evidence measured: real item, trace and body markers wait for recording
+PASS: All evidence measured: spare unused tent is immediately pickable
+PASS: All evidence measured: Recorder equipped and body ready for recording
+PASS: All evidence measured: recording body unlocks only its own marker
+PASS: All evidence measured: restart restores measurements, unrecorded items and all six tents
+PASS: All evidence measured: measurement state matches milestone
+PASS: All evidence measured: sketch state matches milestone
+PASS: All evidence measured: no stale checkpoint owns the UI
+PASS: Custody pass: correct preset, ready, no setup failure
+PASS: Custody pass: sandbox before uploader/logging and no student owner
+PASS: Custody pass: correct scene phase
+PASS: Custody pass: photography matches milestone
+PASS: Custody pass: capsule AND headset reach the selected activity
+PASS: Custody pass: evidence, custody and body handling satisfy closeout
+PASS: Custody pass: measurement anchors retained for all four items
+PASS: Custody pass: no skipped reasoning answer was fabricated
+PASS: Custody pass: permanent body outline remains after removal
+PASS: Custody pass: measurement state matches milestone
+PASS: Custody pass: sketch state matches milestone
+PASS: Custody pass: no stale checkpoint owns the UI
+PASS: Normal play after presets returns to fresh IOC with no fixture
+PASS: Real assessment queue and owner records unchanged
+=== PASS, 0 failures ===

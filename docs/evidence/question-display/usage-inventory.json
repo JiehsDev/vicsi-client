@@ -1,0 +1,49 @@
+{
+  "unity-usages.txt": {
+    "lines": 66,
+    "files": [
+      "Assets\\Editor\\ScenarioGroundTruthExporter.cs",
+      "Assets\\Resources\\QuestionDisplayNames_1.json",
+      "Assets\\Resources\\ReasoningCheckpoints_LastDrink.asset",
+      "Assets\\_Project\\Data\\Scenarios\\GroundTruth_CSI_Environment.json",
+      "Assets\\_Project\\Data\\Scenarios\\HypothesisCheckpoints_CSI_Environment.asset",
+      "Assets\\_Project\\Data\\_Archive\\RemovedFromCSI_Environment\\Scenarios\\GroundTruth_CSI_Environment_1.1.0.json",
+      "Assets\\_Project\\Scripts\\Assessment\\AssessmentUploadService.cs",
+      "Assets\\_Project\\Scripts\\CaseFile\\SelectionPrerequisite.cs",
+      "Assets\\_Project\\Scripts\\Deduction\\CompletionScreenUI.cs",
+      "Assets\\_Project\\Scripts\\Deduction\\HypothesisCheckpointManager.cs",
+      "Assets\\_Project\\Scripts\\Deduction\\HypothesisCheckpointSet.cs",
+      "Assets\\_Project\\Scripts\\Deduction\\HypothesisCheckpointUI.cs",
+      "Assets\\_Project\\Scripts\\Ending\\EndingManager.cs",
+      "Assets\\_Project\\Scripts\\Testing\\BrotherPathTest.cs",
+      "Assets\\_Project\\Scripts\\Testing\\GreyboxFlowTest.cs",
+      "Assets\\_Project\\Scripts\\Testing\\MeasurementToolTest.cs",
+      "Assets\\_Project\\Scripts\\Testing\\NarrativeRoleFlowTest.cs",
+      "Assets\\_Project\\Scripts\\Testing\\ReasoningCheckpointTest.cs",
+      "Assets\\_Project\\Scripts\\Testing\\StoryContentTest.cs",
+      "Assets\\_Project\\Scripts\\UI\\RecorderReportUI.cs",
+      "Tools\\EvidenceScorer\\Program.cs",
+      "Tools\\ValidateReasoningCheckpoints.py"
+    ]
+  },
+  "dashboard-usages.txt": {
+    "lines": 43,
+    "files": [
+      "src\\lib\\__tests__\\sessionRecord.test.tsx",
+      "src\\lib\\data\\questionDisplay.v1.json",
+      "src\\lib\\scoring\\__fixtures__\\complete-correct-wife.jsonl",
+      "src\\lib\\scoring\\__fixtures__\\correct-evidence-incorrect-reasoning.jsonl",
+      "src\\lib\\scoring\\__fixtures__\\distractor-heavy.jsonl",
+      "src\\lib\\scoring\\__fixtures__\\generate-fixtures.mjs",
+      "src\\lib\\scoring\\__fixtures__\\incorrect-brother.jsonl",
+      "src\\lib\\scoring\\__fixtures__\\partial-investigation.jsonl",
+      "src\\lib\\scoring\\__tests__\\lastDrink.test.ts",
+      "src\\lib\\scoring\\__tests__\\reasoningCheckpointSeparation.test.ts",
+      "src\\lib\\scoring\\__tests__\\simplifiedScenario.test.ts",
+      "src\\lib\\scoring\\__tests__\\trainingSeparation.test.ts",
+      "src\\lib\\scoring\\data\\csiEnvironment.groundTruth.v1_1.ts",
+      "src\\lib\\scoring\\data\\csiEnvironment.groundTruth.v1_2.ts",
+      "src\\lib\\scoring\\data\\csiEnvironment.v1.ts"
+    ]
+  }
+}

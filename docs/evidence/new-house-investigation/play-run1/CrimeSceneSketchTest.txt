@@ -1,0 +1,83 @@
+=== CrimeSceneSketchTest ===
+  PASS: [authoring] template adopted by the UI
+  PASS: [authoring] definition, template and measurement set agree (0 problems)
+  PASS: [authoring] 4 required evidence elements, 8 required measurement slots
+  PASS: [leak] evidence anchors have no visuals at all
+  PASS: [leak] north arrow present (orientation requirement)
+  PASS: [template] sheet is not left floating in the scene before opening
+  PASS: [initial] state NotStarted (NotStarted)
+  PASS: [initial] no evidence elements available
+  PASS: [initial] no measurement cards
+  PASS: [initial] cannot submit
+  PASS: [initial] an undiscovered item cannot be placed (nothing logged)
+  PASS: [setup] scene photography route completed
+  PASS: [unlock] Found alone unlocks nothing (proximity would reveal evidence)
+  PASS: [unlock] knife photographed -> only the knife is available (1)
+  PASS: [open] board shows
+  PASS: [open] SketchOpened logged
+  PASS: [modal] tools and world interaction locked, UI gate held
+  PASS: [open] palette lists the knife only (EVD-014)
+  PASS: [open] no symbols or measurement boxes on the sheet yet
+  PASS: [wrong] knife picked up
+  PASS: [wrong] knife on the bottle's anchor -> Incorrect
+  PASS: [wrong] element bounces back
+  PASS: [wrong] one SketchPlacementIncorrect logged with the attempted anchor (SketchAnchor_Bottle)
+  PASS: [wrong] knife back in the palette, not placed
+  PASS: [hint] no placement hint after only one wrong drop
+  PASS: [wrong] open board -> Incorrect, logged as 'none', same message as a wrong anchor
+  PASS: [hint] after two wrong drops the knife's area is highlighted, centred on its anchor ((-270.04, 128.87) vs (-270.04, 128.87))
+  PASS: [hint] SketchPlacementHintShown logged once
+  PASS: [hint] highlight removed once the card is dropped
+  PASS: [correct] knife 1.5x its authored radius from the anchor still placed (forgiving drop) -> Placed
+  PASS: [correct] snapped exactly onto the anchor ((-270.04, 128.87) vs (-270.04, 128.87))
+  PASS: [correct] SketchEvidencePlaced logged once
+  PASS: [correct] placed element leaves the palette and is locked
+  PASS: [state] InProgress after the first placement (InProgress)
+  PASS: [slots] the knife's two measurement boxes appear only now; others stay hidden
+  PASS: [submit] Submit not available while incomplete
+  PASS: [measure] no cards before anything is recorded
+  PASS: [measure] knife reference 1 recorded with the tape-measure path
+  PASS: [measure] exactly the knife reference-1 card appears (1)
+  PASS: [measure] card shows the recorded session value at the tape's precision (0.60 m)
+  PASS: [measure wrong] reference-1 card in the reference-2 box -> Incorrect, bounces
+  PASS: [measure wrong] SketchMeasurementIncorrect logged with the attempted slot
+  PASS: [measure] a hidden box is not a target (returned, nothing logged)
+  PASS: [measure correct] card into its own box -> Placed
+  PASS: [measure correct] card leaves the palette; SketchMeasurementPlaced logged
+  PASS: [close] locks released on close
+  PASS: [incremental] knife still placed after reopening
+  PASS: [incremental] knife measurement still filed
+  PASS: [incremental] spatter now available (EVD-015)
+  PASS: [place] EVD-015 placed on its anchor -> Placed
+  PASS: [place] BODY-A placed on its anchor -> Placed
+  FAIL: [duplicate] two cards both read '0.00 m' with different identities
+  FAIL: [duplicate] body's 1.09 m in the spatter's box -> 
+  PASS: [duplicate] spatter's 1.09 m in the spatter's box -> Placed
+  FAIL: [duplicate] body's 1.09 m in the body's box -> 
+  PASS: [place] EVD-018 placed on its anchor -> Placed
+  PASS: [complete] BodyA_Ref1_Slot not ready before its card is filed
+  FAIL: [complete] BodyA_Ref1_Slot filed -> 
+  PASS: [complete] BodyA_Ref2_Slot not ready before its card is filed
+  FAIL: [complete] BodyA_Ref2_Slot filed -> 
+  PASS: [complete] Knife_Ref2_Slot not ready before its card is filed
+  PASS: [complete] Knife_Ref2_Slot filed -> Placed
+  PASS: [complete] Spatter_Ref1_Slot not ready before its card is filed
+  PASS: [complete] Spatter_Ref1_Slot filed -> Placed
+  PASS: [complete] Bottle_Ref1_Slot not ready before its card is filed
+  PASS: [complete] Bottle_Ref1_Slot filed -> Placed
+  PASS: [complete] Bottle_Ref2_Slot not ready before its card is filed
+  PASS: [complete] Bottle_Ref2_Slot filed -> Placed
+  FAIL: [ready] every required element and distance placed -> InProgress
+  PASS: [legend] legend lists the four placed items in placement order
+  FAIL: [submit] first press asks for confirmation
+  FAIL: [submit] going back leaves it unsubmitted
+  FAIL: [submit] confirm submits
+  FAIL: [submit] exactly one SketchSubmitted event
+  FAIL: [read-only] no resubmission
+  FAIL: [read-only] nothing can be moved or placed after submission
+  PASS: [scope] sketch never touched the evidence lifecycle (knife still PhotographedRaw)
+  PASS: [close] locks released after submission
+  PASS: [reset] no placements, no filed distances, no rejected attempts, not submitted
+  PASS: [reset] state back to NotStarted (NotStarted)
+  PASS: [reset] the sheet is clear again
+=== FAIL: 12 failure(s) ===

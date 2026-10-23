@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-16",
+  "outlinePoints": 135,
+  "floorHeight": 1.218,
+  "originalLineWidth": 0.022,
+  "paddingApproxMetres": 0.021,
+  "roundedJoins": true,
+  "play": {
+    "passed": 79,
+    "failed": 0,
+    "suites": [
+      {
+        "suite": "StoryContentTest",
+        "passed": 38,
+        "failed": 0,
+        "report": "play/StoryContentTest.txt"
+      },
+      {
+        "suite": "BodyRemovalTest",
+        "passed": 41,
+        "failed": 0,
+        "report": "play/BodyRemovalTest.txt"
+      }
+    ]
+  },
+  "geometry": {
+    "passed": 5,
+    "failed": 0
+  },
+  "preservation": {
+    "passed": 4,
+    "failed": 0
+  },
+  "preview": "preview.png",
+  "finalEditor": {
+    "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+    "dirty": false,
+    "playing": false,
+    "compilationFailed": false,
+    "pending": false,
+    "xrRestore": false,
+    "points": 135,
+    "allPointsAndLineEndpointsCorrect": true,
+    "guideActive": false,
+    "standaloneXR": true,
+    "androidXR": true
+  },
+  "hardwareAcceptance": "Quest tracing comfort and performance pending"
+}

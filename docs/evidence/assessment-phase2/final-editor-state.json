@@ -1,0 +1,18 @@
+﻿{
+    "success":  true,
+    "message":  "Code executed successfully.",
+    "data":  {
+                 "result":  {
+                                "playing":  false,
+                                "compiling":  false,
+                                "compilationFailed":  false,
+                                "scene":  "Assets/_Project/Scenes/Main.unity",
+                                "dirty":  false,
+                                "scoringRulesVersion":  "1.6.0",
+                                "unityVersion":  "6000.5.6f1",
+                                "target":  "Android",
+                                "trainingAssembly":  "Assembly-CSharp"
+                            },
+                 "compiler":  "codedom"
+             }
+}

@@ -1,0 +1,33 @@
+{
+  "unityVersion": "6000.5.6f1",
+  "target": "Android",
+  "compiling": false,
+  "compilationFailed": false,
+  "playing": false,
+  "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+  "sceneDirty": false,
+  "pendingRunner": false,
+  "pendingXRRestore": false,
+  "desktopXR": true,
+  "androidXR": true,
+  "iocCount": 1,
+  "iocRootActive": true,
+  "iocVisualWired": true,
+  "iocColliderWired": true,
+  "iocWorkflowWired": true,
+  "evidenceManagers": 1,
+  "vendorInterviews": 1,
+  "closeoutOwners": 1,
+  "briefing": "I've requested your assistance through operations and submitted the completed CSI Form 2 to your team leader. The scene's ready for you to take over the investigation. The First Responder will help maintain scene security.",
+  "guidance": "Paul's print confirms that he handled the knife at some point, but it doesn't tell us when he touched it or what he did with it. It isn't proof that he used it in the attack. Let's follow up with the vendor and ask whether he noticed anyone else near John's house besides Peter.",
+  "vendorQuestion": "Did you see anyone else near John's house besides Peter?",
+  "vendorAnswer": "Now that you mention it, I remember seeing Paul near John's house around three in the morning. I didn't see where he went after that.",
+  "completionSpeaker": "Professor",
+  "fingerprintObjective": {
+    "title": "Review the identified knife fingerprint",
+    "description": "Paul's fingerprint has been identified on the knife."
+  },
+  "closeoutObjective": "Confirm your investigation completion report.",
+  "leadDialogueDeferred": true,
+  "leadTrainingDeferred": true
+}

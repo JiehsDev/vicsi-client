@@ -15,6 +15,9 @@ public static class EvidenceTentPickupCoordinator
 {
     private static readonly HashSet<EvidenceTentPickup> activeTents = new();
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void Reset() => activeTents.Clear();
+
     public static void Register(EvidenceTentPickup tent) => activeTents.Add(tent);
     public static void Unregister(EvidenceTentPickup tent) => activeTents.Remove(tent);
 
@@ -26,6 +29,7 @@ public static class EvidenceTentPickupCoordinator
 
         foreach (var tent in activeTents)
         {
+            if (tent == null || !tent.isActiveAndEnabled || !tent.IsPickable()) continue;
             // Horizontal-only distance: tents are placed on the floor, so a
             // tent right at the player's feet still sits ~1.6-1.8m below a
             // standing head - that vertical gap alone shouldn't disqualify it

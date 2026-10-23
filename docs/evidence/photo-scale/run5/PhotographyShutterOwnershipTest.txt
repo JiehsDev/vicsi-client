@@ -1,0 +1,16 @@
+=== PhotographyShutterOwnershipTest ===
+PASS: evidence is a capture candidate before the route shot
+PASS: wrong-angle route retry does not photograph evidence
+PASS: future-station attempt does not photograph evidence
+PASS: route shutter completes only scene-exterior-establishing
+PASS: route shutter completes only scene-entrance-approach
+PASS: route shutter completes only scene-interior-from-entrance
+PASS: route shutter completes only scene-interior-left
+PASS: route shutter completes only scene-interior-right
+PASS: route shutter completes only scene-body-in-scene
+PASS: route shutter completes only scene-stair-incident-area
+PASS: last route shutter completes photography without leaking into evidence
+PASS: a separate shutter after the route takes the initial evidence photo
+PASS: route ownership also suppresses final evidence photography
+PASS: a separate evidence shutter still takes the final photo
+=== PASS, 0 failures ===

@@ -1,0 +1,43 @@
+PASS Plane solid and visible to player collision mask
+PASS Plane.001 solid and visible to player collision mask
+PASS Plane.002 solid and visible to player collision mask
+PASS Plane.005 solid and visible to player collision mask
+PASS Plane.006 solid and visible to player collision mask
+PASS Plane.007 solid and visible to player collision mask
+PASS Plane.008 solid and visible to player collision mask
+PASS Plane.009 solid and visible to player collision mask
+PASS Plane.010 solid and visible to player collision mask
+PASS Plane.011 solid and visible to player collision mask
+PASS Plane.012 solid and visible to player collision mask
+PASS Plane.013 solid and visible to player collision mask
+PASS Plane.014 solid and visible to player collision mask
+PASS Plane.015 solid and visible to player collision mask
+PASS Plane.017 solid and visible to player collision mask
+PASS Stairs.003 solid and visible to player collision mask
+PASS walls solid and visible to player collision mask
+PASS walls.001 solid and visible to player collision mask
+PASS walls.003 solid and visible to player collision mask
+PASS height 1.4 ascend lower flight (11.352, 2.970, 9.850)
+PASS height 1.4 ascend return flight and reach upper landing (14.350, 4.207, 10.950)
+PASS height 1.4 descend both flights (14.990, 1.205, 9.850)
+PASS height 1.4 climb exterior entrance steps (16.900, 1.205, 5.246)
+PASS height 1.4 descend exterior steps (16.900, 0.005, 2.610)
+PASS height 1.7 ascend lower flight (11.361, 2.970, 9.850)
+PASS height 1.7 ascend return flight and reach upper landing (14.340, 4.207, 10.950)
+PASS height 1.7 descend both flights (14.986, 1.205, 9.850)
+PASS height 1.7 climb exterior entrance steps (16.900, 1.205, 5.249)
+PASS height 1.7 descend exterior steps (16.900, 0.005, 2.600)
+FAIL height 2 ascend lower flight (14.639, 1.444, 9.850)
+FAIL height 2 ascend return flight and reach upper landing (13.781, 1.909, 10.295)
+PASS height 2 descend both flights (14.986, 1.205, 9.852)
+PASS height 2 climb exterior entrance steps (16.900, 1.205, 5.242)
+PASS height 2 descend exterior steps (16.900, 0.005, 2.610)
+PASS floor supports player at (13.00, 1.20, 7.00)
+PASS floor supports player at (18.00, 1.20, 9.50)
+PASS floor supports player at (17.00, 1.20, 13.00)
+PASS floor supports player at (13.00, 4.21, 7.00)
+PASS floor supports player at (18.00, 4.21, 10.00)
+PASS floor supports player at (17.00, 4.21, 13.00)
+PASS east wall blocks movement (19.149, 1.203, 9.500)
+PASS west wall blocks movement (11.139, 1.203, 7.000)
+failures=2 compilationFailed=False playing=False dirty=False

@@ -1,0 +1,8 @@
+Scene=Assets/_Project/Scenes/Scenarios/CSI_Environment.unity; dirty=False; compilationFailed=False
+Harong/Curtain/Curtain_2 (3)/CurtainA_2 scale=(-1.00, 1.00, 1.00) size=(0.56, 1.89, 0.20)
+Harong/Curtain/Curtain_2 (1)/CurtainA_2 scale=(-1.00, 1.00, 1.00) size=(0.56, 1.89, 0.20)
+Harong/Curtain/Curtain_2 (5)/CurtainA_2 scale=(-1.00, 1.00, 1.00) size=(0.56, 1.89, 0.20)
+Harong/Curtain/Curtain_2/CurtainA_2 scale=(-1.00, 1.00, 1.00) size=(0.56, 1.89, 0.20)
+Harong/Curtain/Curtain_2 (6)/CurtainA_2 scale=(-1.00, 1.00, 1.00) size=(0.56, 1.89, 0.20)
+Harong/Curtain/Curtain_2 (4)/CurtainA_2 scale=(-1.00, 1.00, 1.00) size=(0.56, 1.89, 0.20)
+Harong/Curtain/Curtain_2 (2)/CurtainA_2 scale=(-1.00, 1.00, 1.00) size=(0.56, 1.89, 0.20)

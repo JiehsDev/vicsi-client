@@ -1,0 +1,19 @@
+{
+  "passed": 41,
+  "failed": 0,
+  "report": "play/MeasurementToolTest.txt",
+  "savedSceneUnchanged": true,
+  "sceneSHA256": "dcfe33b525d9cfcfb7a5315e43a7f04d3275e70e2a94ecd5053025598e4fa194",
+  "finalEditor": {
+    "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+    "dirty": false,
+    "playing": false,
+    "compiling": false,
+    "compilationFailed": false,
+    "pending": false,
+    "xrRestore": false,
+    "requestPresent": false,
+    "standaloneXR": true,
+    "androidXR": true
+  }
+}

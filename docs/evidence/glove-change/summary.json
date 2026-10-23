@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-19",
+  "suites": [
+    {
+      "suite": "GloveChangeStationTest",
+      "passed": 51,
+      "failed": 0,
+      "report": "docs/evidence/glove-change/run4/GloveChangeStationTest.txt",
+      "log": "docs/evidence/glove-change/run4/GloveChangeStationTest.log"
+    },
+    {
+      "suite": "ArrivalPPETest",
+      "passed": 42,
+      "failed": 0,
+      "report": "docs/evidence/glove-change/run5/ArrivalPPETest.txt",
+      "log": "docs/evidence/glove-change/run5/ArrivalPPETest.log"
+    },
+    {
+      "suite": "ArrivalEntryTest",
+      "passed": 26,
+      "failed": 0,
+      "report": "docs/evidence/glove-change/run2/ArrivalEntryTest.txt",
+      "log": "docs/evidence/glove-change/run2/ArrivalEntryTest.log"
+    },
+    {
+      "suite": "SceneAccessRegisterTest",
+      "passed": 40,
+      "failed": 0,
+      "report": "docs/evidence/glove-change/run2/SceneAccessRegisterTest.txt",
+      "log": "docs/evidence/glove-change/run2/SceneAccessRegisterTest.log"
+    },
+    {
+      "suite": "BiologicalSamplingTest",
+      "passed": 60,
+      "failed": 0,
+      "report": "docs/evidence/glove-change/run5/BiologicalSamplingTest.txt",
+      "log": "docs/evidence/glove-change/run5/BiologicalSamplingTest.log"
+    },
+    {
+      "suite": "PhotographicScaleTest",
+      "passed": 61,
+      "failed": 0,
+      "report": "docs/evidence/glove-change/run2/PhotographicScaleTest.txt",
+      "log": "docs/evidence/glove-change/run2/PhotographicScaleTest.log"
+    },
+    {
+      "suite": "VendorPathGuideTest",
+      "passed": 40,
+      "failed": 0,
+      "report": "docs/evidence/glove-change/run2/VendorPathGuideTest.txt",
+      "log": "docs/evidence/glove-change/run2/VendorPathGuideTest.log"
+    },
+    {
+      "suite": "SceneTestStartTest",
+      "passed": 143,
+      "failed": 0,
+      "report": "docs/evidence/glove-change/run2/SceneTestStartTest.txt",
+      "log": "docs/evidence/glove-change/run2/SceneTestStartTest.log"
+    },
+    {
+      "suite": "DialogueCatalogTest",
+      "passed": 60,
+      "failed": 0,
+      "report": "docs/evidence/glove-change/run6/DialogueCatalogTest.txt",
+      "log": "docs/evidence/glove-change/run6/DialogueCatalogTest.log"
+    }
+  ],
+  "totalPassed": 523,
+  "totalFailed": 0,
+  "errorCsShaderNullMissingReferenceMatches": 0,
+  "newMissingDialogueWarnings": 0,
+  "catalogWarningBaselineLog": "docs/evidence/photo-scale/run7/DialogueCatalogTest.log",
+  "catalogWarningBaselineCounts": {
+    "[DialogueCatalog] Missing dialogue id 'narr-mission-body-examination-1' - add it to Resources/ViCSIDialogueCatalog.asset.": 1,
+    "[DialogueCatalog] Missing dialogue id 'narr-beat-1-initial-briefing-1' - add it to Resources/ViCSIDialogueCatalog.asset.": 1,
+    "[DialogueCatalog] Missing dialogue id 'photo-point-exterior-establishing' - add it to Resources/ViCSIDialogueCatalog.asset.": 1,
+    "[DialogueCatalog] Missing dialogue id 'does-not-exist' - add it to Resources/ViCSIDialogueCatalog.asset.": 2
+  },
+  "contentAudit": "docs/evidence/glove-change/content-audit.json",
+  "sourceSha256": {
+    "Assets/Resources/GloveStationRoute_CSI.json": "107d60b76177e62377b31d0abea53966b25946bf9c4c640f2689a8d1a87a4961",
+    "Assets/Resources/ViCSIDialogueCatalog.asset": "dc33ebfd24dd961a189cbedffa0ea91b4f0183899ab54e34563fe3e998c88960",
+    "Assets/_Project/Scripts/SceneTurnover/ArrivalPPEStation.cs": "2622f1dcec70c60ad025eb54b3ca42be0ca9ec5a3d87542154b5d184bc9fcb82",
+    "Assets/_Project/Scripts/SceneTurnover/GloveStationGuide.cs": "12bb0fb1a7ecd06920b17924fffc73566abe28439ac3440a7c8f931d2adedffb",
+    "Assets/_Project/Scripts/Interaction/SwabTool.cs": "0872c9ad59ae85448a4a0efcee9aafeab84218b5b8539162ff6639d8d971cd13",
+    "Assets/_Project/Scripts/Interaction/PhotoCaptureListener.cs": "3c254e6bdbec417162a318f27aa3067a136faee7347e53f777ab2c380f1e66ae",
+    "Assets/_Project/Scripts/Dialogue/VendorPathGuide.cs": "08627eeba6685d622750fa95a83d64e558e881c7c62e51567756d0e184fb6d5a",
+    "Assets/_Project/Scripts/Logging/SessionEventType.cs": "6486062aa3102bea39b9aa1326a00117a3397623a73ade049b3cb845b77b56be",
+    "Assets/_Project/Scripts/Testing/GloveChangeStationTest.cs": "18c8d006bcdcee2f1ca73f2122c5ca36d499d003f1237213ee4090e379849fb5",
+    "Assets/_Project/Scripts/Testing/GloveChangeTestUtil.cs": "1c4a0bcb282ed0610804b7392b306ebdeaf4d6c785cd4bac9ecb7a106206d0b7",
+    "Assets/_Project/Scripts/Testing/BiologicalSamplingTest.cs": "9a5d6b059289ffd51f5105176dad23772f0cfa3918941028d2b4f030f973f737",
+    "Assets/_Project/Scripts/Testing/GreyboxFlowTest.cs": "71b809baf345fd26cfcfa2d5ad630688fe65e50f9173597eb43992cef7f4fe59",
+    "Assets/_Project/Scripts/Testing/DialogueCatalogTest.cs": "e3f32b821ab386b396ad8ae163fa0198ea02b30cfa728d5c41f01c088280feea",
+    "Tools/RunGloveChangeChecks.ps1": "c2c186f3284a1bd6c8969f1e805b9d6490a422143eb15369df7695260213f021"
+  },
+  "manualAcceptancePending": "Physical Quest input comfort, stereo readability and Android device performance"
+}

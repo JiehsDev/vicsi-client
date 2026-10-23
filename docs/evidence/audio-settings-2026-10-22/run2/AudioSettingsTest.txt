@@ -1,0 +1,24 @@
+=== AudioSettingsTest ===
+PASS: Mixer and existing in-game Settings exist
+PASS: Settings is readable and accepts input at a clear tracked-pose fixture
+PASS: In-game Settings contains all five audio controls
+PASS: Both labels display the default 100%
+PASS: Default bus gain preserves authored mix
+PASS: Real pointer lowers ambience to 90% and saves immediately
+PASS: Ambience control changes only its mixer bus
+PASS: Real pointer independently lowers SFX to 90%
+PASS: Ambience plus restores 100% without resetting SFX
+PASS: Volume clamps independently to 0-100%
+PASS: 0% mutes the ambience bus while effects remain audible
+PASS: 0% SFX leaves the ambience bus independent
+PASS: Non-finite volumes are rejected without changing preferences
+PASS: All three ambient sources use only the ambience bus
+PASS: Active and holstered SFX sources use the SFX bus
+PASS: Repeated changes do not compound source volume
+PASS: Reopened menu displays saved volume values
+PASS: Reset restores both buses and clears preferences
+PASS: Reset refreshes both percentage labels
+PASS: Scenario reload retains both saved headset volumes
+PASS: Reload does not duplicate ambience
+PASS: Audio controls do not change deduction weights
+=== PASS, 0 failures ===

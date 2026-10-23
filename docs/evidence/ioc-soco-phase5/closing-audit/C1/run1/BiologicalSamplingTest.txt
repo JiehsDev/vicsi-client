@@ -1,0 +1,34 @@
+=== BiologicalSamplingTest ===
+  PASS: [data] knife: swab before fingerprinting
+  PASS: [data] spatter: on-scene sample that is its collection
+  PASS: [data] bottle and body: no swab requirement
+  PASS: [scene] overall scene photography completed before evidence work
+  PASS: [EVD-014] photo -> chalk -> marker -> measurement -> final photo
+  PASS: [knife wrong order] powder refused before the blood sample: print not dusted, not fingerprinted
+  PASS: [knife wrong order] reason 'Collect the blood sample before applying fingerprint powder.'
+  PASS: [knife wrong order] logged once as a blocked action (not per frame)
+  PASS: [knife wrong order] the authoritative fingerprint step refuses too
+  PASS: [knife wrong order] no ProcedureOutOfOrder added for a blocked action
+  PASS: [knife] swab the blade trace
+  PASS: [knife] sample into the container
+  PASS: [knife] fingerprint processing now allowed
+  PASS: [EVD-014] rest of the procedure through the real tools
+  PASS: [knife] print dusted, lifted and matched to Paul
+  PASS: [EVD-015] photo -> chalk -> marker -> measurement -> final photo
+  PASS: [spatter wrong order] Recorder before the sample: refused, not logged
+  PASS: [spatter] swab the pattern
+  PASS: [spatter] sample into the container
+  PASS: [spatter] Recorder still refused until the container is sealed
+  PASS: [spatter] container sealed
+  PASS: [spatter] Recorder now allowed
+  PASS: [spatter] the old swab-to-collect path is not offered (no second swab)
+  PASS: [EVD-015] rest of the procedure through the real tools
+  PASS: [spatter] sealed sample carried custody: Processed and in the inventory, one Collected / one Sealed event
+  PASS: [EVD-018] photo -> chalk -> marker -> measurement -> final photo
+  PASS: [bottle] no fingerprint gate from sampling
+  PASS: [EVD-018] rest of the procedure through the real tools
+  PASS: [bottle] Recorder -> collect -> bag -> seal -> lab print matched (Paul)
+  PASS: [BODY-A] photo -> chalk -> marker -> measurement -> final photo
+  PASS: [body] Recorder with no sample requirement; examined in place
+  PASS: [log] no ProcedureOutOfOrder in a correctly ordered session
+=== PASS, 0 failures ===

@@ -1,0 +1,34 @@
+{
+    "date":  "2026-10-21",
+    "checks":  [
+                   {
+                       "report":  "comparison-run3.txt",
+                       "passed":  58,
+                       "failed":  0
+                   },
+                   {
+                       "report":  "bottle-run1.txt",
+                       "passed":  42,
+                       "failed":  0
+                   },
+                   {
+                       "report":  "test-start-run2.txt",
+                       "passed":  208,
+                       "failed":  0
+                   }
+               ],
+    "passed":  308,
+    "failed":  0,
+    "sceneSha256":  "59BA4926A00A44E044DF7BA960F4D820096226FEA982B3972D3C5194C35C2C6C",
+    "previews":  [
+                     "comparison-complete.png",
+                     "outside-comparison-desk.png"
+                 ],
+    "notes":  [
+                  "Accepted live Editor Play-mode runs; failed earlier attempts retained.",
+                  "Real controller input covers lift, B storage, wrong and correct reference, and conclusion gating.",
+                  "Legacy FingerprintPractice event identifiers retained for compatibility; player-facing text uses casework wording.",
+                  "Missing comfort-mask child restored from existing SDK prefab after reload diagnostic failed.",
+                  "No physical headset check or external upload."
+              ]
+}

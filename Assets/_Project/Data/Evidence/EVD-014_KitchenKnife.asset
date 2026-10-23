@@ -15,6 +15,562 @@ MonoBehaviour:
   evidenceId: EVD-014
   displayName: Kitchen knife
   relevance: 0
+  interactionRadius: 1.5
   requiresFingerprinting: 1
-  description: A kitchen knife recovered from the scene; a suspected weapon requiring
-    fingerprint processing.
+  fingerprintBeforeCollection: 1
+  requiresFlipBeforeFingerprinting: 0
+  fingerprintMatchIdentity: Paul
+  description: A household kitchen knife with a blade measuring approximately 15
+    centimetres.
+  foundLocation: On the kitchen floor, approximately 1.2 metres from the victim.
+  observedCondition: The knife was lying exposed. Reddish residue was visible along
+    the blade edge; the handle was retained for latent-print processing.
+  investigativeContext: Blade dimensions, biological material and handling traces
+    can be compared with other documented evidence. These observations support the
+    knife as a possible weapon, but do not establish who used it during the attack.
+  loggingContext: 
+  progressiveFindings:
+  - text: A sample was collected from the reddish residue along the blade edge.
+    revealRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 3
+      evidenceId: EVD-014
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  - text: Fingerprint processing of the handle produced a usable latent print for
+      comparison.
+    revealRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 4
+      evidenceId: EVD-014
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  - text: The blade dimensions are consistent with the sharp-edged wound characteristics
+      documented on the body.
+    revealRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 1
+      evidenceId: EVD-014
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: knife-wound-match
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  reportLineOptions:
+  - id: knife-blade-length
+    text: Blade measures approximately 15 cm, consistent with a standard kitchen
+      knife.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  - id: knife-blood-trace
+    text: Trace blood residue observed along the blade edge.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 3
+      evidenceId: EVD-014
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  - id: knife-location
+    text: Recovered on the kitchen floor, approximately 1.2 meters from the victim.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  - id: knife-print-on-handle
+    text: A latent print was developed on the handle using powder and a brush, then
+      revealed and lifted before the knife was collected.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 4
+      evidenceId: EVD-014
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  - id: knife-owner-speculation
+    text: Paul's print on the handle shows that he handled the knife at some point.
+      It does not show when or why he handled it.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 2
+      evidenceId: EVD-014
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 2
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  - id: knife-conclusion-weapon
+    text: Paul's fingerprint proves he used this knife during the attack.
+    isAccurate: 0
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  - id: knife-wound-match
+    text: Blade dimensions are consistent with the sharp-object wound documented
+      on the body, supporting this knife as a possible weapon.
+    isAccurate: 1
+    prerequisites:
+    - type: 0
+      evidenceId: BODY-A
+      lineId: body-a-wound-sharp-object
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+  minimumLinesRequired: 3
+  chalkCircleRadius: 0.22
+  requiresChalk: 1
+  chalkPointCount: 24
+  chalkCompletionThreshold: 0.9
+  requiresSwabbing: 1
+  requiresTraceMarker: 1
+  collectedBySwab: 0
+  swabBeforeFingerprinting: 1
+  examinedInPlace: 0
+  icon: {fileID: 21300000, guid: 1582e4e6fc9adac4eacd81d2ef735f55, type: 3}
+  heldPrefab: {fileID: 4300004211397350677, guid: d73a140f0a6d25c469a25515a52252ef, type: 3}
+  heldLocalPosition: {x: -0.06, y: 0.02, z: 0.1}
+  heldLocalEulerAngles: {x: 0, y: 0, z: 0}
+  heldLocalScale: {x: 1, y: 1, z: 1}
+  depositRequirement:
+    kind: 1
+    operatorType: 0
+    children: []
+    requirementType: 0
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    measurementRequirementId: 
+    authoringNote: 
+  depositedVisual: {fileID: 0}
+  stepRequirements:
+  - stepId: final-evidence-photograph
+    action: 0
+    beforeStatus: 5
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 14
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: MEAS-EVD-014
+      authoringNote: 
+    enforcement: 0
+    messageId: step-measure-before-final-photo
+    message: 
+    expectedPrerequisite: measurement:MEAS-EVD-014
+  - stepId: evidence-distances-before-final-photo
+    action: 0
+    beforeStatus: 5
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 16
+      evidenceId: EVD-014
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    enforcement: 0
+    messageId: step-measure-distances-before-final-photo
+    message: 
+    expectedPrerequisite: evidence-distances:EVD-014
+  - stepId: scene-measurements-before-record
+    action: 0
+    beforeStatus: 6
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 17
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    enforcement: 1
+    messageId: step-measurements-before-records
+    message: 
+    expectedPrerequisite: scene-measurements
+  - stepId: scene-photos-before-evidence-photo
+    action: 0
+    beforeStatus: 2
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    enforcement: 0
+    messageId: step-scene-photos-before-evidence-photos
+    message: 
+    expectedPrerequisite: scene-photography
+  - stepId: scene-photos-before-chalk
+    action: 0
+    beforeStatus: 3
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    enforcement: 1
+    messageId: step-scene-photos-before-chalk
+    message: 
+    expectedPrerequisite: scene-photography
+  - stepId: scene-photos-before-marker
+    action: 0
+    beforeStatus: 4
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    enforcement: 1
+    messageId: step-scene-photos-before-markers
+    message: 
+    expectedPrerequisite: scene-photography
+  - stepId: scene-photos-before-sampling
+    action: 1
+    beforeStatus: 8
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    enforcement: 1
+    messageId: step-scene-photos-before-sampling
+    message: 
+    expectedPrerequisite: scene-photography
+  - stepId: scene-photos-before-fingerprinting
+    action: 2
+    beforeStatus: 8
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    enforcement: 1
+    messageId: step-scene-photos-before-fingerprints
+    message: 
+    expectedPrerequisite: scene-photography
+  - stepId: scene-photos-before-collection
+    action: 0
+    beforeStatus: 8
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    enforcement: 1
+    messageId: step-scene-photos-before-collection
+    message: 
+    expectedPrerequisite: scene-photography
+  references:
+    version: 2
+    RefIds: []

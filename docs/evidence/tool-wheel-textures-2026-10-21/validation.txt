@@ -1,0 +1,5 @@
+PASS: Backdrop sprite and texture survive reimport with correct alpha mask
+PASS: CenterHub sprite and texture survive reimport with correct alpha mask
+PASS: Wedge sprite and texture survive reimport with correct alpha mask
+PASS: Existing authored wheel builds its role wedges for a native edit-mode preview
+PASS: Original scene layout and dirty state retained; temporary preview scene closed

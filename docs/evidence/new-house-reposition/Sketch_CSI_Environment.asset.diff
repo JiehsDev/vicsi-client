@@ -1,0 +1,27 @@
+--- 
++++ 
+@@ -71,13 +71,13 @@
+     evidenceId: EVD-014
+     referenceId: REF-KNIFE-1
+     requirementId: MEAS-EVD-014
+-    relationshipText: Kitchen Knife / West Cabinet Front
++    relationshipText: Kitchen Knife / East Kitchen Wall
+     required: 1
+   - slotId: Knife_Ref2_Slot
+     evidenceId: EVD-014
+     referenceId: REF-KNIFE-CAB
+     requirementId: MEAS-EVD-014
+-    relationshipText: Kitchen Knife / Rear Cabinet Front
++    relationshipText: Kitchen Knife / Rear Kitchen Wall
+     required: 1
+   - slotId: Spatter_Ref1_Slot
+     evidenceId: EVD-015
+@@ -89,7 +89,7 @@
+     evidenceId: EVD-015
+     referenceId: REF-SPATTER-2
+     requirementId: MEAS-EVD-015
+-    relationshipText: Blood Spatter / East Kitchen Wall
++    relationshipText: Blood Spatter / West Kitchen Wall
+     required: 1
+   - slotId: Bottle_Ref1_Slot
+     evidenceId: EVD-018

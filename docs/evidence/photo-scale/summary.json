@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-19",
+  "suites": [
+    {
+      "suite": "PhotographicScaleTest",
+      "passed": 61,
+      "failed": 0,
+      "report": "docs/evidence/photo-scale/run6/PhotographicScaleTest.txt",
+      "log": "docs/evidence/photo-scale/run6/PhotographicScaleTest.log"
+    },
+    {
+      "suite": "PhotographyShutterOwnershipTest",
+      "passed": 14,
+      "failed": 0,
+      "report": "docs/evidence/photo-scale/run5/PhotographyShutterOwnershipTest.txt",
+      "log": "docs/evidence/photo-scale/run5/PhotographyShutterOwnershipTest.log"
+    },
+    {
+      "suite": "ScenePhotographyProcedureTest",
+      "passed": 47,
+      "failed": 0,
+      "report": "docs/evidence/photo-scale/run5/ScenePhotographyProcedureTest.txt",
+      "log": "docs/evidence/photo-scale/run5/ScenePhotographyProcedureTest.log"
+    },
+    {
+      "suite": "PhotographyGuideTest",
+      "passed": 26,
+      "failed": 0,
+      "report": "docs/evidence/photo-scale/run5/PhotographyGuideTest.txt",
+      "log": "docs/evidence/photo-scale/run5/PhotographyGuideTest.log"
+    },
+    {
+      "suite": "MeasurementProcedureTest",
+      "passed": 36,
+      "failed": 0,
+      "report": "docs/evidence/photo-scale/run5/MeasurementProcedureTest.txt",
+      "log": "docs/evidence/photo-scale/run5/MeasurementProcedureTest.log"
+    },
+    {
+      "suite": "BiologicalSamplingTest",
+      "passed": 59,
+      "failed": 0,
+      "report": "docs/evidence/photo-scale/run6/BiologicalSamplingTest.txt",
+      "log": "docs/evidence/photo-scale/run6/BiologicalSamplingTest.log"
+    },
+    {
+      "suite": "ChalkProcedureTest",
+      "passed": 39,
+      "failed": 0,
+      "report": "docs/evidence/photo-scale/run7/ChalkProcedureTest.txt",
+      "log": "docs/evidence/photo-scale/run7/ChalkProcedureTest.log"
+    },
+    {
+      "suite": "SceneTestStartTest",
+      "passed": 143,
+      "failed": 0,
+      "report": "docs/evidence/photo-scale/run7/SceneTestStartTest.txt",
+      "log": "docs/evidence/photo-scale/run7/SceneTestStartTest.log"
+    },
+    {
+      "suite": "DialogueCatalogTest",
+      "passed": 60,
+      "failed": 0,
+      "report": "docs/evidence/photo-scale/run7/DialogueCatalogTest.txt",
+      "log": "docs/evidence/photo-scale/run7/DialogueCatalogTest.log"
+    }
+  ],
+  "totalPassed": 485,
+  "totalFailed": 0,
+  "errorCsShaderNullMissingReferenceMatches": 0,
+  "contentAudit": "docs/evidence/photo-scale/content-audit.json",
+  "sourceSha256": {
+    "Assets/Resources/PhotographicScaleLayout.json": "f7c3d44da10ad4c7ba34af769ce0d5d1ee7676837852d098c2800320a26c6e7b",
+    "Assets/Resources/PhotographicScale.shader": "014f1c082cc7a8ad0c107c9063e7f9b1a5004de2f4ad359428dfaa77ac5d5d77",
+    "Assets/Resources/ViCSIDialogueCatalog.asset": "4f2805d37d94ab843612758a4c189f1c24a67990e4c8b2a150094d06d14fa920",
+    "Assets/_Project/Scripts/Interaction/PhotographicScaleAccessory.cs": "091b17df8d2fcf0995adb1082aa78ee587bf9416155cc9f228eb6af0e05933f5",
+    "Assets/_Project/Scripts/Interaction/PhotographicScaleGraphic.cs": "3a2f9dfabe35829d02a757f2d4ca646b8f6bc4e2f709f32213cc8a12be8843a7",
+    "Assets/_Project/Scripts/Interaction/PhotographTool.cs": "1bd9b06f94ee6fa46940541c36e4473dc4e9e25096f54d4540509d9177a0d2f9",
+    "Assets/_Project/Scripts/Interaction/PhotoCaptureListener.cs": "337c0b4bb58c75846c587f124fa220186f10c75ef3888d0da7fccbd63ed8c7c8",
+    "Assets/_Project/Scripts/Logging/SessionEventType.cs": "cad3c0a96b00077a0ef29b51dbc2a68be3dd0fe60e956e1629629b999b51c0af",
+    "Assets/_Project/Scripts/Testing/PhotographicScaleTest.cs": "fe63c672140b36674339a3de4200405464a0d3292efbd2aebd796d7ca6196b7e",
+    "Assets/_Project/Scripts/Testing/PhotoScaleTestUtil.cs": "7f1c0e0787fcef2cdd030e3363d4e36872b25b0c4e6df70dc739e74903da1d77",
+    "Assets/_Project/Scripts/Testing/PhotographyShutterOwnershipTest.cs": "8756080741e16ca890134635561b1dd222ca7bb26dc569de7b357076b9cb15fb",
+    "Assets/_Project/Scripts/Testing/ScenePhotographyProcedureTest.cs": "5b7226d770a0bfff3bf4024dcca0d50e78736124349e3050fdcfca22bdb6cc28",
+    "Assets/_Project/Scripts/Testing/MeasurementProcedureTest.cs": "641527f1180e52188e346b3482b809fb9f40db8660489cba1eca947004da7a24",
+    "Assets/_Project/Scripts/Testing/BiologicalSamplingTest.cs": "e6cc6478dc22a1f4c33e06a620436c42f9b08c3b380ad7ce7667eae4390cc9ad",
+    "Assets/_Project/Scripts/Testing/ChalkProcedureTest.cs": "cf7ece741f6f5e088f665e127cfc0fb986babcf7d1f7981b978e95278a902234",
+    "Assets/_Project/Editor/PhotoScaleAuthoring.cs": "a7ebf62304e86f932c8a7527fffcfc3c61c7e23bde580ac876db4c0223dea51d",
+    "Tools/RunPhotoScaleChecks.ps1": "b6d4be274919ad0402ea9e0944d96ca91cc9025e97d9603b995b59e7d9e41691"
+  },
+  "manualAcceptancePending": "Physical Quest input comfort, stereo readability and Android device performance"
+}

@@ -1,0 +1,357 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e77d02079bdcf42975e822ccf668f1, type: 3}
+  m_Name: BODY-A_Victimsbody
+  m_EditorClassIdentifier: Assembly-CSharp::EvidenceDefinition
+  evidenceId: BODY-A
+  displayName: John's body
+  relevance: 0
+  interactionRadius: 1.3
+  requiresFingerprinting: 0
+  fingerprintBeforeCollection: 0
+  requiresFlipBeforeFingerprinting: 0
+  fingerprintMatchIdentity: 
+  description: John's body, whose position and visible condition form part of the
+    scene examination.
+  foundLocation: On the rear ground-floor kitchen floor.
+  observedCondition: The body was documented in its original position before nearby
+    items were moved. Cause and manner were not inferred from position alone.
+  investigativeContext: Position, visible injuries and nearby physical evidence may
+    help reconstruct events when considered together. The body is examined and logged
+    in place rather than collected as a portable item.
+  loggingContext: 
+  progressiveFindings:
+  - text: Examination documented a narrow, deep penetrating wound consistent with
+      injury from a sharp-edged object. The injury identifies its likely mechanism,
+      not the person who caused it.
+    revealRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 1
+      evidenceId: BODY-A
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: body-a-wound-sharp-object
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+  reportLineOptions:
+  - id: body-a-location
+    text: Body observed on the rear ground-floor kitchen floor.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+  - id: body-a-position
+    text: John's position and orientation were documented before anything else in
+      the scene was disturbed. The body alone does not identify the attacker.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+  - id: body-a-wound-sharp-object
+    text: John has a narrow, deep penetrating wound consistent with a sharp-edged
+      object. The injury is not consistent with an ordinary accidental fall.
+    isAccurate: 1
+    prerequisites: []
+    extraRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+  minimumLinesRequired: 3
+  chalkCircleRadius: 0.5
+  requiresChalk: 1
+  chalkPointCount: 24
+  chalkCompletionThreshold: 0.9
+  requiresSwabbing: 0
+  requiresTraceMarker: 0
+  collectedBySwab: 0
+  swabBeforeFingerprinting: 0
+  examinedInPlace: 1
+  requiresBodyRemoval: 1
+  icon: {fileID: 21300000, guid: 58a89d2b1c370474b851a87f7efd5660, type: 3}
+  heldPrefab: {fileID: 0}
+  heldLocalPosition: {x: 0, y: 0, z: 0}
+  heldLocalEulerAngles: {x: 0, y: 0, z: 0}
+  heldLocalScale: {x: 1, y: 1, z: 1}
+  depositRequirement:
+    kind: 1
+    operatorType: 0
+    children: []
+    requirementType: 0
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    measurementRequirementId: 
+    scenarioPhase: 0
+    authoringNote: 
+  depositedVisual: {fileID: 0}
+  stepRequirements:
+  - stepId: measurement-before-body-record
+    action: 0
+    beforeStatus: 6
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 14
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: MEAS-BODY-A
+      scenarioPhase: 0
+      authoringNote: 
+    enforcement: 1
+    messageId: 
+    message: Measure/document the body position and required evidence distances before
+      recording BODY-A findings.
+    expectedPrerequisite: measurement:MEAS-BODY-A
+  - stepId: evidence-distances-before-body-record
+    action: 0
+    beforeStatus: 6
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 16
+      evidenceId: BODY-A
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    enforcement: 1
+    messageId: 
+    message: Measure/document the body position and required evidence distances before
+      recording BODY-A findings.
+    expectedPrerequisite: evidence-distances:BODY-A
+  - stepId: scene-measurements-before-record
+    action: 0
+    beforeStatus: 6
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 17
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    enforcement: 1
+    messageId: step-measurements-before-records
+    message: 
+    expectedPrerequisite: scene-measurements
+  - stepId: scene-photos-before-evidence-photo
+    action: 0
+    beforeStatus: 2
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    enforcement: 0
+    messageId: step-scene-photos-before-evidence-photos
+    message: 
+    expectedPrerequisite: scene-photography
+  - stepId: scene-photos-before-chalk
+    action: 0
+    beforeStatus: 3
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    enforcement: 1
+    messageId: step-scene-photos-before-chalk
+    message: 
+    expectedPrerequisite: scene-photography
+  - stepId: scene-photos-before-marker
+    action: 0
+    beforeStatus: 4
+    requirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    enforcement: 1
+    messageId: step-scene-photos-before-markers
+    message: 
+    expectedPrerequisite: scene-photography
+  references:
+    version: 2
+    RefIds: []

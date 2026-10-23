@@ -1,0 +1,23 @@
+{
+  "unity": "6000.5.6f1",
+  "buildTarget": "Android",
+  "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+  "dirty": false,
+  "playing": false,
+  "compiling": false,
+  "compilationFailed": false,
+  "bodyAction": true,
+  "visualReference": "BODY_100K",
+  "bodyVisible": true,
+  "fadeOnMainCamera": true,
+  "fadeOnStart": false,
+  "fadeShader": "ViCSI/Training Screen Fade",
+  "shaderSupported": true,
+  "shaderMessages": [],
+  "evidenceManagers": 1,
+  "bodyActions": 1,
+  "standaloneXR": true,
+  "androidXR": true,
+  "pending": false,
+  "xrRestorePending": false
+}

@@ -1,0 +1,2 @@
+Cordon tape z=0.15; posts at=(14.50, 0.50, 0.15) / (20.80, 0.50, 0.15); vendor font=1.7; cordon colliders=0; scene dirty=True
+Final scene saved; dirty=False

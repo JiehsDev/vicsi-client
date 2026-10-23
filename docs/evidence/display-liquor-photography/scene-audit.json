@@ -1,0 +1,67 @@
+{
+  "added": [
+    {
+      "id": "822761717",
+      "kind": "4"
+    },
+    {
+      "id": "1847736246",
+      "kind": "23"
+    },
+    {
+      "id": "822761716",
+      "kind": "1"
+    },
+    {
+      "id": "1847736247",
+      "kind": "33"
+    },
+    {
+      "id": "1847736244",
+      "kind": "1"
+    },
+    {
+      "id": "1153768942",
+      "kind": "1"
+    },
+    {
+      "id": "1153768945",
+      "kind": "33"
+    },
+    {
+      "id": "1153768944",
+      "kind": "23"
+    },
+    {
+      "id": "1847736245",
+      "kind": "4"
+    },
+    {
+      "id": "1153768943",
+      "kind": "4"
+    }
+  ],
+  "removed": [],
+  "changed": [
+    {
+      "id": "494733377",
+      "kind": "114",
+      "diff": "--- \n\n+++ \n\n@@ -12,7 +12,8 @@\n\n   m_EditorClassIdentifier: Assembly-CSharp::ScenePhotoPoint\n   photoPointId: scene-interior-right\n-  displayName: Interior overall, right side\n+  displayName: Table with liquor bottles\n   instructionId: photo-point-interior-right\n-  instructionText: \n+  instructionText: Photograph the table beside the living room, including both liquor\n+    bottles.\n   sequenceIndex: 50\n   phase: 2"
+    },
+    {
+      "id": "1608894996",
+      "kind": "1001",
+      "diff": "--- \n\n+++ \n\n@@ -298,4 +298,7 @@\n\n       insertIndex: -1\n       addedObject: {fileID: 747250259}\n+    - targetCorrespondingSourceObject: {fileID: -4964759427570983226, guid: cc01465ef86b269469c9504bcfa2f4f9, type: 3}\n+      insertIndex: -1\n+      addedObject: {fileID: 822761717}\n     m_AddedComponents:\n     - targetCorrespondingSourceObject: {fileID: -4372222083093481482, guid: cc01465ef86b269469c9504bcfa2f4f9, type: 3}"
+    },
+    {
+      "id": "897640323",
+      "kind": "4",
+      "diff": "--- \n\n+++ \n\n@@ -8,5 +8,5 @@\n\n   serializedVersion: 2\n   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}\n-  m_LocalPosition: {x: 1.3439744, y: 0.79999995, z: 2.1991448}\n+  m_LocalPosition: {x: 0, y: 0.94533205, z: 1.8660127}\n   m_LocalScale: {x: 1, y: 1, z: 1}\n   m_ConstrainProportionsScale: 0"
+    },
+    {
+      "id": "494733376",
+      "kind": "4",
+      "diff": "--- \n\n+++ \n\n@@ -7,6 +7,6 @@\n\n   m_GameObject: {fileID: 494733375}\n   serializedVersion: 2\n-  m_LocalRotation: {x: -0, y: 0.9382336, z: -0, w: -0.3460025}\n-  m_LocalPosition: {x: 18.85, y: 1.2, z: 9.6}\n+  m_LocalRotation: {x: -0, y: 0.9856947, z: -0, w: -0.16854092}\n+  m_LocalPosition: {x: 14.1, y: 1.2, z: 8.75}\n   m_LocalScale: {x: 1, y: 1, z: 1}\n   m_ConstrainProportionsScale: 0"
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f500bcc9a84344fbeccf54ca8ee7ae, type: 3}
+  m_Name: Endings_CSI_Environment
+  m_EditorClassIdentifier: Assembly-CSharp::EndingSet
+  scenarioId: CSI_Environment
+  submissionRequirement:
+    kind: 1
+    operatorType: 0
+    children:
+    - rid: 7267690769340170763
+    - rid: 7267690769340170764
+    requirementType: 0
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    measurementRequirementId: 
+    authoringNote: 
+  conclusionOptions:
+  - conclusionId: conclusion-brother
+    text: Paul
+  - conclusionId: conclusion-peter
+    text: Peter
+  - conclusionId: CONCLUSION-INCONCLUSIVE
+    text: Inconclusive
+  endings:
+  - endingId: ending-brother-accused
+    title: Paul — Supported Accusation
+    priority: 80
+    resolutionRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 8
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 11400000, guid: e4279f15564f9234dba1f49e7833c0b5, type: 2}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    requiredConclusionId: conclusion-brother
+    endingText: "Professor: You didn't stop at the first suspicious clue. Paul's fingerprint showed contact with the knife, not when or how he used it.\n\nProfessor: The knife fits John's wound, and the blood pattern supports an attack near where he was found. Paul said he went home and never returned, but the vendor recognized him near John's house around 3:00 AM.\n\nProfessor: That conflict in his timeline, combined with the physical findings, makes Paul the strongest supported suspect. The vendor didn't see the attack, so this still isn't absolute proof.\n\nDispatch: We'll continue the investigation with Paul as the primary suspect, based on the combined findings and the conflict in his timeline."
+    panelImage: {fileID: 0}
+    endingAudioClip: {fileID: 0}
+    followUpNarrativeEventId: 
+    postSessionExplanation: 'Paul was selected after the full physical case was developed:
+      sharp wound, knife consistency, Paul''s knife print, bloodstain reconstruction,
+      the three physical deduction-board relationships, and the discovered vendor
+      observation correctly linked to Paul''s no-return statement as a timeline contradiction.'
+    isFallback: 0
+  - endingId: ending-inconclusive
+    title: Inconclusive
+    priority: 40
+    resolutionRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    requiredConclusionId: CONCLUSION-INCONCLUSIVE
+    endingText: "Professor: You don't have enough reliable evidence to support an accusation against either person. Leaving the case open is better than forcing a conclusion the evidence can't support."
+    panelImage: {fileID: 0}
+    endingAudioClip: {fileID: 0}
+    followUpNarrativeEventId: 
+    postSessionExplanation: The player left an incomplete case unresolved rather than
+      accusing a person without sufficient physical support.
+    isFallback: 1
+  - endingId: ending-peter-unsupported
+    title: Peter — Unsupported Accusation
+    priority: 60
+    resolutionRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    requiredConclusionId: conclusion-peter
+    endingText: "Professor: Peter's departure and behavior gave you reasons to ask questions, but they don't connect him to the attack. The vendor saw him leave, not what happened inside.\n\nProfessor: Nothing you've found ties Peter to the attack strongly enough to support this accusation."
+    panelImage: {fileID: 0}
+    endingAudioClip: {fileID: 0}
+    followUpNarrativeEventId: 
+    postSessionExplanation: Peter was selected from circumstantial suspicion without
+      evidence connecting him to the attack.
+    isFallback: 0
+  - endingId: ending-premature-submission
+    title: Paul — Insufficiently Supported Accusation
+    priority: 70
+    resolutionRequirement:
+      kind: 1
+      operatorType: 2
+      children:
+      - rid: 2142348962394538239
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    requiredConclusionId: conclusion-brother
+    endingText: "Professor: Paul is worth looking at, but you haven't built enough of a case to support the accusation. His fingerprint shows contact with the knife, not when he touched it or whether he used it in the attack.\n\nProfessor: Weigh the wound and scene reconstruction alongside independently checked accounts. Show how those findings connect on the board before making the accusation."
+    panelImage: {fileID: 0}
+    endingAudioClip: {fileID: 0}
+    followUpNarrativeEventId: 
+    postSessionExplanation: Paul was selected without the complete physical case,
+      discovered timeline contradiction, and required board relationships needed for
+      a supported accusation.
+    isFallback: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 2142348962394538239
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 8
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 11400000, guid: e4279f15564f9234dba1f49e7833c0b5, type: 2}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 2142348962394538240
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: BODY-A
+        evidenceReference: {fileID: 0}
+        requiredStatus: 6
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 2142348962394538241
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: EVD-014
+        evidenceReference: {fileID: 0}
+        requiredStatus: 6
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 2142348962394538242
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: EVD-015
+        evidenceReference: {fileID: 0}
+        requiredStatus: 6
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 7267690769340170763
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: BODY-A
+        evidenceReference: {fileID: 0}
+        requiredStatus: 6
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 7267690769340170764
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: EVD-014
+        evidenceReference: {fileID: 0}
+        requiredStatus: 6
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 

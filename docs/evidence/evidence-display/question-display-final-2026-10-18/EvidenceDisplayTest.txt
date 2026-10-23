@@ -1,0 +1,44 @@
+=== EvidenceDisplayTest ===
+PASS: Scene photography completes through existing gates
+PASS: EVD-018 resolves to its new visible label
+PASS: EVD-018 retains its serialized identity
+PASS: EVD-018 note uses display label without raw roster IDs
+PASS: EVD-018 rejects recording before prerequisites
+PASS: EVD-018 preview uses assigned number before placement
+PASS: EVD-018 actual marker matches its display number despite bottle-first order
+PASS: EVD-018 physical marker mesh matches its numbered scene template
+PASS: EVD-015 resolves to its new visible label
+PASS: EVD-015 retains its serialized identity
+PASS: EVD-015 note uses display label without raw roster IDs
+PASS: EVD-015 rejects recording before prerequisites
+PASS: EVD-015 preview uses assigned number before placement
+PASS: EVD-015 actual marker matches its display number despite bottle-first order
+PASS: EVD-015 physical marker mesh matches its numbered scene template
+PASS: EVD-014 resolves to its new visible label
+PASS: EVD-014 retains its serialized identity
+PASS: EVD-014 note uses display label without raw roster IDs
+PASS: EVD-014 rejects recording before prerequisites
+PASS: EVD-014 preview uses assigned number before placement
+PASS: EVD-014 actual marker matches its display number despite bottle-first order
+PASS: EVD-014 physical marker mesh matches its numbered scene template
+PASS: BODY-A resolves to its new visible label
+PASS: BODY-A retains its serialized identity
+PASS: BODY-A note uses display label without raw roster IDs
+PASS: BODY-A rejects recording before prerequisites
+PASS: Body still accepts letter A through its original procedure
+PASS: Body remains letter-marked, examined in place
+PASS: Sample names retain source meaning
+PASS: Unknown future content retains authored fallback
+PASS: Prose preserves Body A convention and resolves raw IDs
+PASS: Longer unrelated IDs are not rewritten
+PASS: Current question uses authored position 1
+PASS: Current question uses authored position 2
+PASS: Current question uses authored position 3
+PASS: Current question uses authored position 4
+PASS: Current question uses authored position 5
+PASS: Current question uses authored position 6
+PASS: Legacy labels retain historical numbering
+PASS: Relationship IDs resolve to authored readable names
+PASS: Legacy terminology resolves in visible prose
+PASS: Original logger targets remain internal IDs
+=== PASS, 0 failures ===

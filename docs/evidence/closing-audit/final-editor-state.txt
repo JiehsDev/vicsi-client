@@ -1,0 +1,18 @@
+playing=False; compiling=False
+scene=Assets/_Project/Scenes/Scenarios/CSI_Environment.unity; dirty=False; loadedScenes=1
+ViCSI.Phase5.Pending=False
+ViCSI.Phase5.Pending.xrRestore=False
+ViCSI.Phase5.Pending.exitRequested=False
+nextSuite=
+Standalone.XR.InitManagerOnStart=True
+Android.XR.InitManagerOnStart=True
+VendorFollowupInterview=1
+EvidenceStateManager=1
+FirstResponderTurnover=1
+SOCOWorkflowInteraction=1
+NPCPresentation=3
+SubtleTapeMotion=1
+Animators.total=31; activeEnabled=25
+negativeBoxColliders=0
+tunnelingMeshAssigned=True
+Console.errors=0; warnings=11; logs=10

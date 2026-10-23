@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-16",
+  "layoutId": "new-house-v2",
+  "play": {
+    "passed": 195,
+    "failed": 0,
+    "suites": [
+      {
+        "name": "CabinetReferenceTest",
+        "passed": 25,
+        "failed": 0,
+        "report": "play/CabinetReferenceTest.txt"
+      },
+      {
+        "name": "CrimeSceneSketchTest",
+        "passed": 80,
+        "failed": 0,
+        "report": "play/CrimeSceneSketchTest.txt"
+      },
+      {
+        "name": "MeasurementToolTest",
+        "passed": 37,
+        "failed": 0,
+        "report": "play/MeasurementToolTest.txt"
+      },
+      {
+        "name": "PerEvidenceMeasurementTest",
+        "passed": 34,
+        "failed": 0,
+        "report": "play/PerEvidenceMeasurementTest.txt"
+      },
+      {
+        "name": "ScenarioPhaseFoundationTest",
+        "passed": 19,
+        "failed": 0,
+        "report": "play/ScenarioPhaseFoundationTest.txt"
+      }
+    ]
+  },
+  "layout": {
+    "passed": 62,
+    "failed": 0
+  },
+  "preservation": {
+    "passed": 23,
+    "failed": 0
+  },
+  "backend": {
+    "passed": 6,
+    "failed": 0,
+    "typescript": "passed",
+    "scopedEslint": "passed",
+    "deployed": false
+  },
+  "finalEditor": {
+    "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+    "dirty": false,
+    "playing": false,
+    "compilationFailed": false,
+    "pending": false,
+    "xrRestore": false,
+    "nextSuite": "",
+    "requestPresent": false,
+    "standaloneXR": true,
+    "androidXR": true,
+    "positions": [
+      {
+        "name": "Evidence_KitchenKnife",
+        "position": "(18.627000, 1.205983, 12.885000)",
+        "rotation": "(90.000000, 0.000000, 0.000000)"
+      },
+      {
+        "name": "Evidence_Bloodspatterpattern",
+        "position": "(16.823000, 1.204000, 12.647000)",
+        "rotation": "(90.000000, 0.000000, 0.000000)"
+      },
+      {
+        "name": "IOC_Observe_Point",
+        "position": "(15.592700, 1.200000, 11.960780)",
+        "rotation": "(0.000000, 57.728860, 0.000000)"
+      }
+    ]
+  }
+}

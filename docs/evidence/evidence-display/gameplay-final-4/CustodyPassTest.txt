@@ -1,0 +1,53 @@
+=== CustodyPassTest ===
+PASS: Custody preset ready
+INFO: setup= phase=EvidenceInventoryReview range=False eye=(16.90, -0.15, 0.70)
+PASS: Six real entries; two bags, two blood containers, two fingerprint cards
+PASS: No tool or body in custody roster
+FAIL: Preset beside empty box
+PASS: Review cannot open away from box
+PASS: Closeout blocked before pass
+PASS: Stale reviewed set cannot partially transfer
+PASS: Unsealed sample blocks entire set
+PASS: Stored evidence can be held before pass
+PASS: Held evidence blocks entire pass
+FAIL: Review opens with explicit student action
+PASS: Opening alone moves nothing
+PASS: Opening press cannot confirm immediately
+PASS: Cancel releases UI and keeps all items
+FAIL: Reopen after cancel
+PASS: Confirmation revalidates live sealing
+FAIL: Review reopens after validation failure
+FAIL: Review lists every item by its player label without exposing internal IDs
+PASS: Flexible padded review uses existing scroll layout
+FAIL: Long item list expands without text overflow
+PASS: Rotating the review preserves uniform readable scale
+PASS: Confirmation revalidates box proximity
+FAIL: Confirm transfers whole set
+PASS: Inventory observer sees complete transaction
+FAIL: Pass complete and inventory no longer selectable
+FAIL: blood-sample:EVD-014: tracked custody and box provenance retained
+FAIL: blood-sample:EVD-014: visible representation inside box
+FAIL: EVD-014: tracked custody and box provenance retained
+FAIL: EVD-014: visible representation inside box
+FAIL: EVD-015: tracked custody and box provenance retained
+FAIL: EVD-015: visible representation inside box
+FAIL: EVD-018: tracked custody and box provenance retained
+FAIL: EVD-018: visible representation inside box
+FAIL: fingerprint-sample:EVD-014: tracked custody and box provenance retained
+FAIL: fingerprint-sample:EVD-014: visible representation inside box
+FAIL: fingerprint-sample:EVD-018: tracked custody and box provenance retained
+FAIL: fingerprint-sample:EVD-018: visible representation inside box
+FAIL: Visible stacks and rows do not overlap
+PASS: Display has no evidence gameplay behaviours
+PASS: Derived sample source identities preserved
+PASS: Body stays outside evidence-box custody
+FAIL: Deposited bags and samples cannot be re-equipped
+FAIL: Double confirmation and empty retry do nothing
+FAIL: Exactly one deposit per actual item and one pass event
+PASS: Per-item custody events record box, time, source and non-scored flag
+FAIL: Essential upload retains custody with raw events disabled
+FAIL: Custody completion enables existing final inventory review
+FAIL: Final review shows box custody
+PASS: Restart restores six stored items and empty box
+PASS: Restart releases prior modal input
+=== FAIL: 27 failures ===

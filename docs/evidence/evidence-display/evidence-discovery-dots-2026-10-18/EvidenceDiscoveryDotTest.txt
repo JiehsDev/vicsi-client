@@ -1,0 +1,47 @@
+=== EvidenceDiscoveryDotTest ===
+PASS: All four physical items auto-attach exactly one dot
+PASS: Hidden fingerprint targets stay excluded
+PASS: Held tool placeholders stay excluded
+PASS: No dots before completed scene photography
+PASS: Initial discovery states are unchanged
+PASS: Original photo route completes through real shutter gates
+PASS: All undiscovered dots appear together on the completion event
+PASS: Dot refresh never discovers evidence or writes session events
+PASS: BODY-A: small constant 5 cm world diameter
+PASS: BODY-A: dot floats above physical item
+PASS: BODY-A: no text, arrows, hit targets or colliders
+PASS: BODY-A: native circle mesh and supported depth-tested shader
+PASS: EVD-014: small constant 5 cm world diameter
+PASS: EVD-014: dot floats above physical item
+PASS: EVD-014: no text, arrows, hit targets or colliders
+PASS: EVD-014: native circle mesh and supported depth-tested shader
+PASS: EVD-015: small constant 5 cm world diameter
+PASS: EVD-015: dot floats above physical item
+PASS: EVD-015: no text, arrows, hit targets or colliders
+PASS: EVD-015: native circle mesh and supported depth-tested shader
+PASS: EVD-018: small constant 5 cm world diameter
+PASS: EVD-018: dot floats above physical item
+PASS: EVD-018: no text, arrows, hit targets or colliders
+PASS: EVD-018: native circle mesh and supported depth-tested shader
+PASS: Dots billboard toward headset without moving evidence
+PASS: Synchronous capture scope hides every dot
+PASS: Nested capture remains hidden
+PASS: Inner disposal does not restore outer capture
+PASS: Capture scope restores still-undiscovered dots
+PASS: Actual album render excludes dots and restores the live view
+PASS: Rendered highlighted dot is visible in open view
+PASS: Opaque geometry occludes the dot (no through-wall highlight)
+PASS: IOC phase cannot reveal SOCO evidence dots
+PASS: Returning to allowed investigation restores all remaining dots
+PASS: Disabled evidence hides its dot
+PASS: Disabling dot immediately hides standalone visual
+PASS: Re-enabling undiscovered evidence restores its dot
+PASS: Existing discovery call still applies
+PASS: Discovery immediately hides only the matching dot
+PASS: Repeated discovery does not create extra events
+PASS: Capture restoration never resurrects a newly discovered item
+PASS: Missing photo completion hides remaining dots
+PASS: Already discovered items never relight when photo readiness returns
+PASS: All dots disappear once all evidence is discovered
+PASS: Evidence positions and imported model scales are unchanged
+=== PASS ===

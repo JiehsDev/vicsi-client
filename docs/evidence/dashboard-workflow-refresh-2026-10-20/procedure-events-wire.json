@@ -1,0 +1,119 @@
+{
+    "payloadVersion": 1,
+    "sessionId": "",
+    "studentId": "",
+    "classId": "",
+    "scenarioId": "",
+    "scenarioVersion": "",
+    "scoringRulesVersion": "1.7.0",
+    "groundTruthVersion": "",
+    "clientVersion": "",
+    "isTestSession": false,
+    "includesRawEventLog": false,
+    "hasDeductionAssessment": false,
+    "startedAtUtc": "",
+    "completedAtUtc": "",
+    "selectedConclusionId": "",
+    "resolvedEndingId": "",
+    "durationSeconds": 0.0,
+    "deductionAssessment": {
+        "scoringRulesVersion": "",
+        "status": "",
+        "hasFinalScore": false,
+        "totalScore": 0.0,
+        "reasoningCheckpoints": 0.0,
+        "deductionRelationships": 0.0,
+        "finalConclusion": 0.0,
+        "reasoningComponent": 0.0,
+        "relationshipComponent": 0.0,
+        "conclusionComponent": 0.0,
+        "relationshipEarned": 0.0,
+        "relationshipMaximum": 0.0,
+        "checkpointEarned": 0,
+        "checkpointMaximum": 0,
+        "answeredCount": 0,
+        "eligibleUnansweredCount": 0,
+        "undiscoveredCount": 0,
+        "unsupportedRelationships": 0,
+        "reviewReasons": []
+    },
+    "orderedEvents": [
+        {
+            "sequenceNumber": 2,
+            "timestampMs": 500,
+            "eventType": "SceneLogSigned",
+            "targetId": "EVD-015",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 5,
+            "timestampMs": 1500,
+            "eventType": "PPEEquipped",
+            "targetId": "EVD-015",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 8,
+            "timestampMs": 2500,
+            "eventType": "UsedGlovesDisposed",
+            "targetId": "EVD-015",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 11,
+            "timestampMs": 3500,
+            "eventType": "FreshGlovesEquipped",
+            "targetId": "EVD-015",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 14,
+            "timestampMs": 4500,
+            "eventType": "FreshSwabLoaded",
+            "targetId": "EVD-015",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 17,
+            "timestampMs": 5500,
+            "eventType": "PhotographicScaleCaptured",
+            "targetId": "EVD-015",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 20,
+            "timestampMs": 6500,
+            "eventType": "SampleDryingCompleted",
+            "targetId": "EVD-015",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 23,
+            "timestampMs": 7500,
+            "eventType": "SamplePackaged",
+            "targetId": "EVD-015",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 26,
+            "timestampMs": 8500,
+            "eventType": "FingerprintPracticeCompleted",
+            "targetId": "EVD-015",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 29,
+            "timestampMs": 9500,
+            "eventType": "SampleDryingCompleted",
+            "targetId": "EVD-014",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 32,
+            "timestampMs": 10500,
+            "eventType": "SamplePackaged",
+            "targetId": "EVD-014",
+            "payload": []
+        }
+    ]
+}

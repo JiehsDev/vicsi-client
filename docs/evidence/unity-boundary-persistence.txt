@@ -1,0 +1,45 @@
+=== EvidenceBoundaryTest ===
+PASS: null evidence ID returns no record
+PASS: unknown evidence cannot be collected
+PASS: null evidence cannot be collected
+PASS: unknown lifecycle status cannot advance
+PASS: skipping photo/notes blocks collection
+PASS: numbered body marker rejected without mutation
+PASS: ordinary object rejects letter marker
+PASS: blank body marker rejected
+PASS: numeric body letter rejected
+PASS: body accepts A
+PASS: same body marker is a safe duplicate
+PASS: zero numbered marker rejected
+PASS: negative numbered marker rejected
+PASS: object accepts numbered marker
+PASS: same marker is a safe duplicate
+PASS: marker cannot be reassigned by duplicate call
+PASS: number cannot mark two objects
+PASS: body terminates at Logged
+PASS: body cannot advance to collection readiness
+PASS: body collection reason is explicit
+PASS: body cannot be collected
+PASS: body cannot be sealed
+PASS: ordinary logged item becomes ready
+PASS: ordinary evidence can be collected and sealed
+PASS: duplicate sealing preserves completed state
+PASS: unswabbed trace blocks logging
+PASS: swab applies once
+PASS: required on-scene print blocks logging
+=== PASS: 28 passed, 0 failed ===
+
+=== SessionPersistenceTest ===
+PASS: session start immediately persisted
+PASS: start UTC timestamp parses
+PASS: event buffered before pause
+PASS: pause persists pending event
+PASS: session end is idempotent and rejects later events
+PASS: JSONL sequence and session ID are consistent
+PASS: end UTC timestamp persisted
+PASS: storage failure retains buffered event
+PASS: retry persists retained event exactly once
+PASS: repeated flush does not duplicate lines
+PASS: writer cannot switch sessions and lose buffered data
+PASS: path traversal session ID rejected
+=== PASS: 12 passed, 0 failed ===

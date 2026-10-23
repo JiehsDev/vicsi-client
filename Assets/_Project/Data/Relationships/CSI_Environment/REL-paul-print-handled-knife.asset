@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7941d3d8dcd78524bb2f63dfb82c2834, type: 3}
+  m_Name: REL-paul-print-handled-knife
+  m_EditorClassIdentifier: Assembly-CSharp::RelationshipDefinition
+  relationshipId: REL-paul-print-handled-knife
+  displayName: Paul's Print Shows Prior Knife Handling
+  sourceId: EVD-014
+  targetId: statement_paul_knife_contact
+  relationshipType: Supports
+  unlockRequirement:
+    kind: 0
+    operatorType: 0
+    children: []
+    requirementType: 2
+    evidenceId: EVD-014
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 2
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    authoringNote: 
+  isCorrect: 1
+  scoreWeight: 1
+  explanation: Paul's fingerprint on the handle shows he handled the knife at some
+    point. It does not establish when or why he handled it, or that he used it during
+    the attack.
+  narrativeEventTriggerId: 
+  references:
+    version: 2
+    RefIds: []

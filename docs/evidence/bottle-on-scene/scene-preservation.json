@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "no_removed_records": true,
+    "changed_records_scoped_to_bottle_station_and_dialogue": true,
+    "new_records_are_bottle_print_children": true,
+    "bottle_prefab_placement_and_visual_overrides_preserved": true
+  },
+  "changed": [
+    "1422889315",
+    "1470932444",
+    "513733658"
+  ],
+  "addedCount": 25,
+  "removed": [],
+  "unexpectedChanged": [],
+  "addedOutsideBottle": []
+}

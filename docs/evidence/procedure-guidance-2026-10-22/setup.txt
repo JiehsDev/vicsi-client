@@ -1,0 +1,1 @@
+Saved editable procedure waypoint canvas, arrow, instruction label and material. Existing specialized guides retained.

@@ -1,0 +1,12 @@
+=== InconclusivePathTest ===
+  PASS: evidence lifecycle
+  PASS: spatter reconstruction finding NOT reached
+  PASS: Paul and Peter remain selectable while the case is incomplete
+  PASS: Inconclusive available
+  PASS: picker shows Inconclusive with Paul and Peter (got CONCLUSION-INCONCLUSIVE,conclusion-brother,conclusion-peter)
+  PASS: Inconclusive confirm accepted
+  PASS: completion screen shown
+  PASS: Inconclusive resolves ending-inconclusive
+  PASS: [isolation] the completed session was queued to the isolated test queue (would have uploaded)
+  PASS: [isolation] real upload queue and real session owners unchanged
+=== PASS, 0 failures ===

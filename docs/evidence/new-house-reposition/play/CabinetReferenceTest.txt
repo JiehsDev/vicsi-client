@@ -1,0 +1,27 @@
+=== CabinetReferenceTest ===
+  PASS: [config] knife = East Kitchen Wall + Rear Kitchen Wall
+  PASS: [config] spatter = Rear Cabinet Front + West Kitchen Wall
+  PASS: [config] both cabinet references resolve as planes with zones
+  PASS: [label] student-facing name 'Rear Kitchen Wall' (no ids)
+  PASS: [config] tolerance unchanged (0.10 m)
+  PASS: [old] REF-KNIFE-2 / REF-SPATTER-1 no longer exist in the scene
+  PASS: [old] recording against the old wall ids is refused (UnknownReference, UnknownReference) and records nothing
+  PASS: [old] tape held at the old wall spot (-4.11, 1.40, 14.73) selects no reference
+  PASS: [old] tape held at the old wall spot (-3.16, 1.40, 14.73) selects no reference
+  PASS: [old] tape held at the old wall spot (-4.11, 1.10, 14.95) selects no reference
+  PASS: [zone] REF-KNIFE-CAB: in front of the cabinet face, waist height, compact (c=(18.63, 1.95, 14.53), size=(0.40, 0.60, 0.16))
+  PASS: [zone] REF-KNIFE-CAB: the hook point selects it
+  PASS: [zone] REF-SPATTER-CAB: in front of the cabinet face, waist height, compact (c=(16.83, 1.80, 13.98), size=(0.35, 0.60, 0.16))
+  PASS: [zone] REF-SPATTER-CAB: the hook point selects it
+  PASS: [zone] the two cabinet zones do not overlap
+  PASS: [value] knife -> cabinet edge 1.747 m equals the baked expected 1.747 m
+  PASS: [value] spatter -> cabinet edge 1.435 m equals the baked expected 1.435 m
+  PASS: [angle] knife pair 90.0°, spatter pair 90.0° - no warning
+  PASS: [angle] global tolerance still 15°
+  PASS: [specific] spatter cannot use the knife's cabinet reference
+  PASS: [specific] knife cannot use the spatter's cabinet reference
+  PASS: [partial] cabinet edge alone -> Partial, not complete
+  PASS: [full] second reference completes the knife
+  PASS: [full] spatter completes with cabinet edge + cabinet end
+  PASS: [assessment] client assessment uses the new pairs
+=== PASS, 0 failures ===

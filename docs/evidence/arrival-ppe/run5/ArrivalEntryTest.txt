@@ -1,0 +1,28 @@
+=== ArrivalEntryTest ===
+PASS: Player starts outside the visible entrance with full capsule clearance
+PASS: Authored arrival is outside both warning areas
+PASS: Opening objective uses the requested briefing wording
+PASS: Initial phase is IOC turnover with tools still locked
+PASS: One world-space controlled-entry sign is authored on the existing cordon
+PASS: Sign has the short high-contrast label
+PASS: Two-line label fits without shrinking or clipping
+PASS: Physical sign remains compact and readable
+PASS: Sign owns no input, raycaster or collider
+PASS: Existing cordon is intact and passable
+PASS: Responder and entrance sit within 30 horizontal degrees of initial forward gaze
+PASS: Sign and responder label are visible together in the initial view
+PASS: Existing NPC guide is reused and initial briefing is in interaction range
+PASS: Arrival does not start the conversation or unlock scene processing
+PASS: Prompt asks the player to deliberately receive the briefing
+PASS: Crossing the visible entrance is detected before the old protected-area boundary
+PASS: Early entry requests the exact warning once
+PASS: After entry return the NPC guide still targets the briefing
+FAIL: Early entry returns outside without opening a modal
+PASS: Early entry unlocks no observations, photography or evidence discovery
+PASS: Remaining inside does not spam warnings
+PASS: Returning outside restores ordinary NPC approach guidance
+PASS: A separate early reentry produces one new warning
+PASS: Original Form 1 handover still enters IOC assessment and hides the FR guide
+PASS: The arrival change does not prematurely start SOCO processing
+PASS: After handover and gloves, crossing produces no entry warning
+=== FAIL: 1 failure(s) ===

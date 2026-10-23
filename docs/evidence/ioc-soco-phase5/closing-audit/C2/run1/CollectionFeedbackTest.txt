@@ -1,0 +1,21 @@
+=== CollectionFeedbackTest ===
+  PASS: scene photography route completed (precondition)
+  PASS: [NotFound] grip names the missing step: 'Kitchen knife isn't ready for collection. Find this evidence first.'
+  PASS: [Found] grip names the missing step: 'Kitchen knife isn't ready for collection. Photograph this evidence before continuing.'
+  PASS: [PhotographedRaw] grip names the missing step: 'Kitchen knife isn't ready for collection. Mark the evidence position with chalk first.'
+  PASS: [ChalkMarked] grip names the missing step: 'Kitchen knife isn't ready for collection. Place an evidence marker before continuing.'
+  PASS: [Marked, blood trace not tented] grip names the missing step: 'Kitchen knife isn't ready for collection. Mark the blood trace on the blade with its own evidence tent before the final photograph.'
+  PASS: [Marked, both tents down] grip names the missing step: 'Kitchen knife isn't ready for collection. Take a final photograph before continuing.'
+  PASS: knife reached PhotographedFinal [PhotographedFinal]
+  PASS: [PhotographedFinal, not swabbed] grip names the missing step: 'Kitchen knife isn't ready for collection. Collect the blood sample before completing the evidence record.'
+  PASS: knife swabbed [True]
+  PASS: [swabbed, print not lifted] grip names the missing step: 'Kitchen knife isn't ready for collection. Process the fingerprint before completing the evidence record.'
+  PASS: knife fingerprinted on scene [True]
+  PASS: [measurements incomplete] grip names the missing step: 'Kitchen knife isn't ready for collection. Complete all scene measurements before finalizing evidence records.'
+  PASS: the Logged step's wording names the Recorder ['Record this evidence with the Recorder before continuing.']
+  PASS: [not recorded yet] grip names the missing step: 'Kitchen knife isn't ready for collection. Record this evidence with the Recorder before continuing.'
+  PASS: grab still off before recording
+  PASS: recorded -> ReadyForCollection [ReadyForCollection]
+  PASS: grab switched on once ready
+  PASS: nothing to explain once ready
+=== PASS, 0 failures ===

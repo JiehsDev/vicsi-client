@@ -1,0 +1,47 @@
+=== SceneAccessRegisterTest ===
+PASS: Fresh identity flow rejects ownerless check-in
+PASS: Unlocked lobby flow still rejects ownerless check-in
+PASS: Explicit ownerless direct run permits its own check-in
+PASS: Direct-run permission cannot carry into a different session
+PASS: Locked direct run cannot check in
+PASS: One runtime access register is installed outside the cordon
+PASS: Fresh session has no authorization or invented NPC visits
+PASS: Register cannot open before briefing
+PASS: Security briefing names keeper and explains access purpose
+PASS: Briefing alone does not open register without gloves
+PASS: Gloves alone do not authorize entry or IOC observation
+PASS: Denied SDK crossing returns both head and capsule with no visit
+PASS: Other modal UI prevents registration
+PASS: Actual A opens review without signing
+PASS: Holding opening A cannot confirm
+PASS: Actual B cancels with no authorization or signature event
+PASS: Review can reopen
+PASS: Walking away cancels without signing
+PASS: Separate actual A confirms check-in
+PASS: Confirmation freezes existing session identity
+PASS: Signing means awaiting entry, not an invented visit
+PASS: Registration sidecar exists beside the isolated session log
+PASS: Confirmed register can be reviewed
+PASS: Repeated confirmation cannot sign twice
+PASS: First observed entry creates exactly one open visit
+PASS: Remaining inside never duplicates visits
+PASS: Yard-to-house boundary join is not a physical exit
+PASS: Actual exit closes the visit with ordered elapsed times
+PASS: Small boundary jitter creates no additional visit
+PASS: Re-entry opens a new visit without another check-in
+PASS: Original scripted SOCO arrival remains available
+PASS: Scripted reposition records no invented physical exit
+PASS: IOC/SOCO handover retains one identity and authorization
+PASS: Vendor destination lies outside the secured footprint
+PASS: Vendor trip records a genuine exit
+PASS: Return from vendor records a fourth visit for same student
+PASS: Visit review opens outside
+PASS: Register uses bounded scrolling for visit history
+PASS: Readable rows show name, role, purpose, times and status without markup interpretation
+PASS: Native register review is rendered with active world-space panel
+PASS: Session end labels presence without inventing an exit
+PASS: Full finalized register survives local JSON round trip
+PASS: Frozen register ignores later boundary samples
+PASS: Cordon and scene evidence stay secured and unprocessed
+PASS: Fresh investigation resets registration and all visit records
+=== PASS ===

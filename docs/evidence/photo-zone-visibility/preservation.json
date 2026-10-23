@@ -1,0 +1,13 @@
+{
+  "changed_existing_files": [
+    "Assets/_Project/Scripts/ScenePhotography/ScenePhotoPoint.cs",
+    "Assets/_Project/Scripts/Testing/FirstResponderTurnoverTest.cs",
+    "Assets/_Project/Scripts/Testing/ScenarioPhaseFoundationTest.cs"
+  ],
+  "unchanged_existing_files": 1390,
+  "scene_and_prefab_changes": [],
+  "new_files": [
+    "Assets/_Project/Scripts/Testing/ScenePhotoZoneVisibilityTest.cs",
+    "Assets/_Project/Scripts/Testing/ScenePhotoZoneVisibilityTest.cs.meta"
+  ]
+}

@@ -1,0 +1,3 @@
+DisplayLiquorBottles components=Transform
+DisplayLiquorBottle_1 components=Transform,MeshFilter,MeshRenderer
+DisplayLiquorBottle_2 components=Transform,MeshFilter,MeshRenderer

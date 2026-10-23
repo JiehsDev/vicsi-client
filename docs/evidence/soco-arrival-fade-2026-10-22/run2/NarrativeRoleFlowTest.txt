@@ -1,0 +1,49 @@
+=== NarrativeRoleFlowTest ===
+  PASS: Fresh session has one existing IOC actor and locked vendor follow-up
+  PASS: IOC starting ground marker is visible at the start of a fresh scenario
+  PASS: IOC ground marker is a standalone, editable scene object
+  PASS: IOC guidance settings are serialized with editable defaults
+  PASS: Existing arrival acknowledges into opening IOC briefing
+  PASS: Arrival holds gameplay input and rejects a second arrival
+  PASS: Arrival reaches opaque black before repositioning
+  PASS: Fade ends clear and releases its UI lock
+  PASS: Arrival capsule is grounded at the authored entrance floor
+  PASS: Revealed view has no settling drop
+  PASS: IOC visible and collider enabled for required briefing
+  PASS: Manually moving the marker remains authoritative at runtime
+  PASS: IOC briefing prompt stays unavailable outside the editable interaction radius
+  PASS: Approach shows the editable IOC guidance and existing interaction prompt
+  PASS: Real IOC briefing starts with actor still present and hides its ground marker
+  PASS: IOC stays visible through every opening sentence
+  PASS: Dialogue completion enters investigation and hides rendering/interaction
+  PASS: Ground marker stays hidden through the role handoff
+  PASS: Actor/root references remain alive while student processes evidence
+  PASS: Reporting no longer depends on the physical IOC
+  PASS: Paul question still unavailable before knife identification
+  PASS: Real lab match confirms Paul and makes the fingerprint checkpoint eligible
+  PASS: Identification alone cannot unlock vendor question or release interpretation
+  PASS: Fingerprint reasoning prompt appears before investigative hints
+  PASS: Selection alone does not unlock or teach the next step
+  PASS: Confirmation locks the response and unlocks the vendor condition
+  PASS: Same-session response cannot be replaced or repeated
+  PASS: Existing fingerprint lesson is delivered before the new vendor lead
+  PASS: Nearby evidence prompt cannot indefinitely delay post-checkpoint guidance
+  PASS: Post-checkpoint lead preserves contact/timing/purpose limits without revealing sighting
+  PASS: IOC remains retired after fingerprint reasoning and teaching
+  PASS: Physical vendor now exposes the existing follow-up
+  PASS: Question uses the non-spoiling anyone-else/besides-Peter wording
+  PASS: Vendor answer begins before its discovery flag is set
+  PASS: Delivered answer records the existing 3AM statement once
+  PASS: Vendor only reports a sighting and explicitly limits further knowledge
+  PASS: Statement unlocks the unchanged timeline contradiction relationship
+  PASS: Existing semantic relationship completes through normal board-state API
+  PASS: Lead/dialogue cannot repeat the discovery or award procedural score
+  PASS: Active case roster is still exactly the four current evidence items
+  PASS: Persisted response precedes vendor question and statement discovery
+  PASS: New session clears vendor unlock, discovery and locked fingerprint response
+  PASS: New session resets timeline relationship and learned history
+  PASS: New session restores the marker and default guidance settings
+  PASS: Disabling during fade clears the view and releases transition state
+  PASS: Restart restores the IOC for the next required briefing
+  PASS: Restart restores editable marker transform and guidance approach state
+=== PASS ===

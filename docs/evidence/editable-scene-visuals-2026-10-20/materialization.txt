@@ -1,0 +1,71 @@
+OK Arrival PPE station / ArrivalPPEStation.BuildVisuals
+OK BODY_100K / BodyRemovalInteraction.BuildPanel
+OK CompletionScreen / CompletionScreenUI.BuildRuntimeUI
+OK CrimeSceneSketch / CrimeSceneSketchUI.BuildRuntimeUI
+OK DialogueHistory / DialogueHistoryUI.BuildRuntimeUI
+OK _Managers / EndingManager.BuildPickerUIIfNeeded
+OK EvidenceHoldingCrate / EvidenceBoxContentsDisplay.BuildTray
+OK EvidenceHoldingCrate / EvidenceBoxDepositZone.BuildUI
+OK EvidenceHoldingCrate / EvidenceBoxWaypoint.Awake
+OK EvidenceProcedure / EvidenceProcedureUI.BuildRuntimeUI
+OK Fingerprint Comparison - Training Station / FingerprintComparisonStation.BuildDesk
+OK Fingerprint Comparison - Training Station / FingerprintComparisonStation.BuildUI
+OK Arrival PPE station / GloveStationGuide.Awake
+OK _Managers / HypothesisCheckpointUI.BuildRuntimeUI
+OK _Managers / HypothesisCheckpointUI.BuildInteractionVisuals
+OK InsightsUI / InsightsUI.BuildRuntimeUI
+OK NPC_FirstResponder / IOCAssessmentGuide.Awake
+OK NPC_FirstResponder / IOCAssessmentInteraction.BuildChecklist
+OK NPC_IOC / NPCApproachGuide.Awake
+OK NPC_FirstResponder / NPCApproachGuide.Awake
+OK PhotoAlbum / PhotoAlbumUI.BuildPresentation
+OK PhotographerCamera / PhotographicScaleAccessory.BuildHint
+OK RecorderReport / RecorderReportUI.BuildRuntimeUI
+OK Protected sample preparation station / SamplePreparationStation.BuildVisuals
+OK Scene access register / SceneAccessRegisterUI.BuildPanel
+OK Scene access register / SceneAccessRegisterUI.BuildLoggingTable
+OK _Managers / ScenePhotographyGuide.Awake
+OK NPC_FirstResponder / SettingsPauseMenu.BuildShell
+OK NPC_FirstResponder / SettingsPauseMenu.BuildSettings
+OK _Managers / SOCOCloseout.BuildUI
+OK NPC_FirstResponder / SOCOWorkflowInteraction.BuildPanel
+OK _Managers / VendorFollowupInterview.BuildPanel
+OK NPC_Vendor_PLACEHOLDER / VendorPathGuide.Awake
+OK _Managers / WitnessAccountsUI.BuildPanel
+OK Settings restart and lobby confirmation templates
+GROUP CrimeSceneSketchUI.BuildRuntimeUI = 31 scene objects
+GROUP IOCAssessmentInteraction.BuildChecklist = 4 scene objects
+GROUP SettingsPauseMenu.BuildSettings = 20 scene objects
+GROUP SOCOWorkflowInteraction.BuildPanel = 39 scene objects
+GROUP IOCAssessmentGuide.Awake = 4 scene objects
+GROUP NPCApproachGuide.Awake = 4 scene objects
+GROUP SettingsPauseMenu.BuildShell = 31 scene objects
+GROUP SettingsPauseMenu.Confirmation-restart = 8 scene objects
+GROUP SettingsPauseMenu.Confirmation-lobby = 8 scene objects
+GROUP NPCApproachGuide.Awake = 4 scene objects
+GROUP EvidenceBoxContentsDisplay.BuildTray = 7 scene objects
+GROUP EvidenceBoxDepositZone.BuildUI = 40 scene objects
+GROUP EvidenceBoxWaypoint.Awake = 4 scene objects
+GROUP SamplePreparationStation.BuildVisuals = 15 scene objects
+GROUP EndingManager.BuildPickerUIIfNeeded = 6 scene objects
+GROUP HypothesisCheckpointUI.BuildRuntimeUI = 7 scene objects
+GROUP SOCOCloseout.BuildUI = 41 scene objects
+GROUP VendorFollowupInterview.BuildPanel = 37 scene objects
+GROUP WitnessAccountsUI.BuildPanel = 6 scene objects
+GROUP HypothesisCheckpointUI.BuildInteractionVisuals = 30 scene objects
+GROUP ScenePhotographyGuide.Awake = 4 scene objects
+GROUP DialogueHistoryUI.BuildRuntimeUI = 10 scene objects
+GROUP VendorPathGuide.Awake = 1 scene objects
+GROUP SceneAccessRegisterUI.BuildPanel = 39 scene objects
+GROUP SceneAccessRegisterUI.BuildLoggingTable = 16 scene objects
+GROUP PhotoAlbumUI.BuildPresentation = 4 scene objects
+GROUP PhotographicScaleAccessory.BuildHint = 2 scene objects
+GROUP ArrivalPPEStation.BuildVisuals = 21 scene objects
+GROUP GloveStationGuide.Awake = 5 scene objects
+GROUP BodyRemovalInteraction.BuildPanel = 39 scene objects
+GROUP RecorderReportUI.BuildRuntimeUI = 39 scene objects
+GROUP FingerprintComparisonStation.BuildDesk = 12 scene objects
+GROUP FingerprintComparisonStation.BuildUI = 43 scene objects
+GROUP CompletionScreenUI.BuildRuntimeUI = 4 scene objects
+GROUP EvidenceProcedureUI.BuildRuntimeUI = 31 scene objects
+GROUP InsightsUI.BuildRuntimeUI = 11 scene objects

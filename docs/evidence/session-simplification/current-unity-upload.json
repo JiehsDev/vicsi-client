@@ -1,0 +1,2110 @@
+{
+    "payloadVersion": 1,
+    "sessionId": "3156834b-034a-4d93-a0cf-c4bd61c4b527",
+    "studentId": "",
+    "classId": "",
+    "scenarioId": "CSI-ENVIRONMENT-001",
+    "scenarioVersion": "1.1.0",
+    "scoringRulesVersion": "1.7.0",
+    "groundTruthVersion": "1.2.0",
+    "clientVersion": "0.1.0",
+    "isTestSession": false,
+    "includesRawEventLog": false,
+    "hasDeductionAssessment": true,
+    "startedAtUtc": "2026-10-21T05:11:44.9629275Z",
+    "completedAtUtc": "2026-10-21T05:12:14.6848275Z",
+    "selectedConclusionId": "conclusion-brother",
+    "resolvedEndingId": "ending-brother-accused",
+    "durationSeconds": 29.723,
+    "deductionAssessment": {
+        "scoringRulesVersion": "1.7.0",
+        "status": "complete",
+        "hasFinalScore": true,
+        "totalScore": 100.0,
+        "reasoningCheckpoints": 1.0,
+        "deductionRelationships": 1.0,
+        "finalConclusion": 1.0,
+        "reasoningComponent": 60.0,
+        "relationshipComponent": 25.0,
+        "conclusionComponent": 15.0,
+        "relationshipEarned": 6.0,
+        "relationshipMaximum": 6.0,
+        "checkpointEarned": 24,
+        "checkpointMaximum": 24,
+        "answeredCount": 6,
+        "eligibleUnansweredCount": 0,
+        "undiscoveredCount": 0,
+        "unsupportedRelationships": 0,
+        "reviewReasons": []
+    },
+    "orderedEvents": [
+        {
+            "sequenceNumber": 0,
+            "timestampMs": 3,
+            "eventType": "SessionStarted",
+            "targetId": "CSI_Environment",
+            "payload": [
+                {
+                    "key": "startedAtUtc",
+                    "value": "2026-10-21T05:11:44.9629275Z"
+                },
+                {
+                    "key": "applicationVersion",
+                    "value": "0.1.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 7,
+            "timestampMs": 21240,
+            "eventType": "CSIForm1Received",
+            "targetId": "CSI-Form-1",
+            "payload": [
+                {
+                    "key": "receivingRole",
+                    "value": "IOC"
+                },
+                {
+                    "key": "via",
+                    "value": "Bypass"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 8,
+            "timestampMs": 21241,
+            "eventType": "SceneTurnoverCompleted",
+            "targetId": "first-responder-turnover",
+            "payload": [
+                {
+                    "key": "via",
+                    "value": "Bypass"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "21.2"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 12,
+            "timestampMs": 21256,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-01-PETER",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "21.257"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "EVIDENCE_CAUTION"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 13,
+            "timestampMs": 21260,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-victim",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 14,
+            "timestampMs": 21260,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-possible-weapon",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 15,
+            "timestampMs": 21260,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-bloodstain-area",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 16,
+            "timestampMs": 21260,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-drinking-context",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 17,
+            "timestampMs": 21261,
+            "eventType": "IOCObservationRecorded",
+            "targetId": "ioc-main-scene-survey",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 18,
+            "timestampMs": 21261,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-02-SCENE",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "21.262"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "SCENE_INTERPRETATION"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 19,
+            "timestampMs": 21262,
+            "eventType": "IOCAssessmentCompleted",
+            "targetId": "ioc-assessment",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 22,
+            "timestampMs": 21278,
+            "eventType": "SOCORequested",
+            "targetId": "soco-request",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 25,
+            "timestampMs": 21279,
+            "eventType": "CSIForm2Completed",
+            "targetId": "CSI-Form-2",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 29,
+            "timestampMs": 21293,
+            "eventType": "SOCOTurnoverCompleted",
+            "targetId": "ioc-soco-turnover",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 37,
+            "timestampMs": 21349,
+            "eventType": "ReasoningCheckpointSubmitted",
+            "targetId": "RC-01-PETER",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "RC-01-PETER-C"
+                },
+                {
+                    "key": "weight",
+                    "value": "4"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "EVIDENCE_CAUTION"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "1"
+                },
+                {
+                    "key": "eligibleSeconds",
+                    "value": "21.256"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "21.349"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 38,
+            "timestampMs": 21351,
+            "eventType": "ReasoningCheckpointSubmitted",
+            "targetId": "RC-02-SCENE",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "RC-02-SCENE-B"
+                },
+                {
+                    "key": "weight",
+                    "value": "4"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "SCENE_INTERPRETATION"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "2"
+                },
+                {
+                    "key": "eligibleSeconds",
+                    "value": "21.262"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "21.352"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 41,
+            "timestampMs": 27473,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-exterior-establishing",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Exterior"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "10"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 42,
+            "timestampMs": 27477,
+            "eventType": "ScenePhotographyPhaseCompleted",
+            "targetId": "Exterior",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 44,
+            "timestampMs": 27521,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-entrance-approach",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Entrance"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "20"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 45,
+            "timestampMs": 27522,
+            "eventType": "ScenePhotographyPhaseCompleted",
+            "targetId": "Entrance",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 47,
+            "timestampMs": 27543,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-interior-from-entrance",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Overall"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "30"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 49,
+            "timestampMs": 27566,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-interior-left",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Overall"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "40"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 51,
+            "timestampMs": 27592,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-interior-right",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Overall"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "50"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 52,
+            "timestampMs": 27592,
+            "eventType": "ScenePhotographyPhaseCompleted",
+            "targetId": "Overall",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 54,
+            "timestampMs": 27613,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-body-in-scene",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Context"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "60"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 56,
+            "timestampMs": 27636,
+            "eventType": "ScenePhotoCompleted",
+            "targetId": "scene-stair-incident-area",
+            "payload": [
+                {
+                    "key": "phase",
+                    "value": "Context"
+                },
+                {
+                    "key": "sequenceIndex",
+                    "value": "70"
+                },
+                {
+                    "key": "angle",
+                    "value": "0.0"
+                },
+                {
+                    "key": "inOrder",
+                    "value": "True"
+                },
+                {
+                    "key": "required",
+                    "value": "True"
+                },
+                {
+                    "key": "scoreWeight",
+                    "value": "1.00"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 57,
+            "timestampMs": 27637,
+            "eventType": "ScenePhotographyPhaseCompleted",
+            "targetId": "Context",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 58,
+            "timestampMs": 27637,
+            "eventType": "ScenePhotographyCompleted",
+            "targetId": "",
+            "payload": [
+                {
+                    "key": "completedCount",
+                    "value": "7"
+                },
+                {
+                    "key": "outOfSequenceAttempts",
+                    "value": "0"
+                },
+                {
+                    "key": "wrongAngleAttempts",
+                    "value": "0"
+                },
+                {
+                    "key": "wrongPositionAttempts",
+                    "value": "0"
+                },
+                {
+                    "key": "completionSeconds",
+                    "value": "0.2"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 63,
+            "timestampMs": 27683,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "PhotographedRaw"
+                },
+                {
+                    "key": "tool",
+                    "value": "Photographer"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 64,
+            "timestampMs": 27689,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "ChalkMarked"
+                },
+                {
+                    "key": "tool",
+                    "value": "ChalkMark"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 65,
+            "timestampMs": 27694,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Marked"
+                },
+                {
+                    "key": "tool",
+                    "value": "EvidenceMarker"
+                },
+                {
+                    "key": "tentNumber",
+                    "value": "1"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 66,
+            "timestampMs": 27696,
+            "eventType": "EvidenceTraceMarked",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "tentNumber",
+                    "value": "2"
+                },
+                {
+                    "key": "itemTentNumber",
+                    "value": "1"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 68,
+            "timestampMs": 27700,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "PhotographedFinal"
+                },
+                {
+                    "key": "tool",
+                    "value": "Photographer"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 71,
+            "timestampMs": 27713,
+            "eventType": "EvidenceSwabbed",
+            "targetId": "EVD-014",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 76,
+            "timestampMs": 27742,
+            "eventType": "SampleDryingCompleted",
+            "targetId": "EVD-014",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 77,
+            "timestampMs": 27742,
+            "eventType": "SamplePackaged",
+            "targetId": "EVD-014",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 79,
+            "timestampMs": 27771,
+            "eventType": "EvidenceAddedToInventory",
+            "targetId": "blood-sample:EVD-014",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 82,
+            "timestampMs": 27778,
+            "eventType": "EvidenceFingerprintProcessed",
+            "targetId": "EVD-014",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 83,
+            "timestampMs": 27780,
+            "eventType": "EvidenceAddedToInventory",
+            "targetId": "fingerprint-sample:EVD-014",
+            "payload": [
+                {
+                    "key": "sourceEvidenceId",
+                    "value": "EVD-014"
+                },
+                {
+                    "key": "sampleType",
+                    "value": "Fingerprint"
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 87,
+            "timestampMs": 27822,
+            "eventType": "FingerprintIdentified",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "matches",
+                    "value": "{\"identities\":[\"Paul\"]}"
+                },
+                {
+                    "key": "sourceSampleId",
+                    "value": "fingerprint-sample:EVD-014"
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 95,
+            "timestampMs": 27824,
+            "eventType": "FingerprintPracticeCompleted",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "scored",
+                    "value": "false"
+                },
+                {
+                    "key": "sampleId",
+                    "value": "fingerprint-sample:EVD-014"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 100,
+            "timestampMs": 27856,
+            "eventType": "MeasurementCompleted",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "requirementId",
+                    "value": "MEAS-EVD-014"
+                },
+                {
+                    "key": "evidenceId",
+                    "value": "EVD-014"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "0.395"
+                },
+                {
+                    "key": "layoutId",
+                    "value": "new-house-v3"
+                },
+                {
+                    "key": "measuredDistanceA",
+                    "value": "0.790"
+                },
+                {
+                    "key": "measuredDistanceB",
+                    "value": "1.747"
+                },
+                {
+                    "key": "errorA",
+                    "value": "0.000"
+                },
+                {
+                    "key": "errorB",
+                    "value": "0.000"
+                },
+                {
+                    "key": "withinTolerance",
+                    "value": "True"
+                },
+                {
+                    "key": "takenBeforeDisturbance",
+                    "value": "True"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 101,
+            "timestampMs": 27889,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Logged"
+                },
+                {
+                    "key": "tool",
+                    "value": "Recorder"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 103,
+            "timestampMs": 27894,
+            "eventType": "ReportLinesSelected",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "lineIds",
+                    "value": "rec-knife-use-v1,rec-knife-location-v1,rec-knife-residue-v1"
+                },
+                {
+                    "key": "lineCount",
+                    "value": "3"
+                },
+                {
+                    "key": "documentationVersion",
+                    "value": "1"
+                },
+                {
+                    "key": "documentation",
+                    "value": "{\"version\":1,\"subjectId\":\"EVD-014\",\"subjectLabel\":\"Evidence 1 – Kitchen Knife\",\"statements\":[{\"id\":\"rec-knife-use-v1\",\"text\":\"Paul used this knife to stab John.\",\"selected\":true,\"weight\":0,\"earnedPoints\":0},{\"id\":\"rec-knife-location-v1\",\"text\":\"The kitchen knife was found on the kitchen floor.\",\"selected\":true,\"weight\":2,\"earnedPoints\":2},{\"id\":\"rec-knife-residue-v1\",\"text\":\"Reddish residue is visible along the knife blade.\",\"selected\":true,\"weight\":2,\"earnedPoints\":2},{\"id\":\"rec-knife-death-v1\",\"text\":\"This knife has been conclusively established as the cause of John's death.\",\"selected\":false,\"weight\":0,\"earnedPoints\":0},{\"id\":\"rec-knife-time-v1\",\"text\":\"The recovered fingerprint establishes the exact time the knife was used.\",\"selected\":false,\"weight\":0,\"earnedPoints\":0},{\"id\":\"rec-knife-print-v1\",\"text\":\"A latent fingerprint was developed on the knife handle and recovered with lifting tape.\",\"selected\":false,\"weight\":2,\"earnedPoints\":0}],\"earnedPoints\":4,\"maximumPossiblePoints\":6}"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 104,
+            "timestampMs": 27908,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Collected"
+                },
+                {
+                    "key": "tool",
+                    "value": "EvidenceCollector"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 105,
+            "timestampMs": 27914,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Sealed"
+                },
+                {
+                    "key": "tool",
+                    "value": "EvidenceCollector"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 106,
+            "timestampMs": 27916,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Processed"
+                },
+                {
+                    "key": "tool",
+                    "value": "EvidenceCollector"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 108,
+            "timestampMs": 27921,
+            "eventType": "EvidenceAddedToInventory",
+            "targetId": "EVD-014",
+            "payload": [
+                {
+                    "key": "previousCustodyLocation",
+                    "value": "Held"
+                },
+                {
+                    "key": "newCustodyLocation",
+                    "value": "Inventory"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 110,
+            "timestampMs": 27923,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-03-FINGERPRINT",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "27.923"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "LIMITATION_RECOGNITION"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 111,
+            "timestampMs": 27923,
+            "eventType": "ReasoningCheckpointSubmitted",
+            "targetId": "RC-03-FINGERPRINT",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "RC-03-FINGERPRINT-C"
+                },
+                {
+                    "key": "weight",
+                    "value": "4"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "LIMITATION_RECOGNITION"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "3"
+                },
+                {
+                    "key": "eligibleSeconds",
+                    "value": "27.923"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "27.923"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 113,
+            "timestampMs": 28042,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "PhotographedRaw"
+                },
+                {
+                    "key": "tool",
+                    "value": "None"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 114,
+            "timestampMs": 28044,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "ChalkMarked"
+                },
+                {
+                    "key": "tool",
+                    "value": "ChalkMark"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 115,
+            "timestampMs": 28046,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Marked"
+                },
+                {
+                    "key": "tool",
+                    "value": "LetterTentMarker"
+                },
+                {
+                    "key": "tentLetter",
+                    "value": "A"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 116,
+            "timestampMs": 28047,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "PhotographedFinal"
+                },
+                {
+                    "key": "tool",
+                    "value": "None"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 132,
+            "timestampMs": 28056,
+            "eventType": "MeasurementCompleted",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "requirementId",
+                    "value": "MEAS-BODY-A"
+                },
+                {
+                    "key": "evidenceId",
+                    "value": "BODY-A"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "0.801"
+                },
+                {
+                    "key": "layoutId",
+                    "value": "new-house-v3"
+                },
+                {
+                    "key": "measuredDistanceA",
+                    "value": "2.067"
+                },
+                {
+                    "key": "measuredDistanceB",
+                    "value": "1.268"
+                },
+                {
+                    "key": "errorA",
+                    "value": "0.000"
+                },
+                {
+                    "key": "errorB",
+                    "value": "0.000"
+                },
+                {
+                    "key": "withinTolerance",
+                    "value": "True"
+                },
+                {
+                    "key": "takenBeforeDisturbance",
+                    "value": "True"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 133,
+            "timestampMs": 28063,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Logged"
+                },
+                {
+                    "key": "tool",
+                    "value": "None"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 135,
+            "timestampMs": 28063,
+            "eventType": "BodyDocumentationRecorded",
+            "targetId": "BODY-A",
+            "payload": [
+                {
+                    "key": "procedureId",
+                    "value": "body-documentation"
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 137,
+            "timestampMs": 28069,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "PhotographedRaw"
+                },
+                {
+                    "key": "tool",
+                    "value": "Photographer"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 138,
+            "timestampMs": 28073,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "ChalkMarked"
+                },
+                {
+                    "key": "tool",
+                    "value": "ChalkMark"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 139,
+            "timestampMs": 28076,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Marked"
+                },
+                {
+                    "key": "tool",
+                    "value": "EvidenceMarker"
+                },
+                {
+                    "key": "tentNumber",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 140,
+            "timestampMs": 28079,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "PhotographedFinal"
+                },
+                {
+                    "key": "tool",
+                    "value": "Photographer"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 144,
+            "timestampMs": 28083,
+            "eventType": "MeasurementCompleted",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "requirementId",
+                    "value": "MEAS-EVD-018"
+                },
+                {
+                    "key": "evidenceId",
+                    "value": "EVD-018"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "0.801"
+                },
+                {
+                    "key": "layoutId",
+                    "value": "new-house-v3"
+                },
+                {
+                    "key": "measuredDistanceA",
+                    "value": "0.332"
+                },
+                {
+                    "key": "measuredDistanceB",
+                    "value": "0.591"
+                },
+                {
+                    "key": "errorA",
+                    "value": "0.000"
+                },
+                {
+                    "key": "errorB",
+                    "value": "0.000"
+                },
+                {
+                    "key": "withinTolerance",
+                    "value": "True"
+                },
+                {
+                    "key": "takenBeforeDisturbance",
+                    "value": "True"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 145,
+            "timestampMs": 28085,
+            "eventType": "EvidencePairMeasured",
+            "targetId": "BODY-A|EVD-018",
+            "payload": [
+                {
+                    "key": "pairKey",
+                    "value": "BODY-A|EVD-018"
+                },
+                {
+                    "key": "evidenceA",
+                    "value": "BODY-A"
+                },
+                {
+                    "key": "evidenceB",
+                    "value": "EVD-018"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "0.801"
+                },
+                {
+                    "key": "measuredDistance",
+                    "value": "1.456"
+                },
+                {
+                    "key": "expectedDistance",
+                    "value": "1.456"
+                },
+                {
+                    "key": "tolerance",
+                    "value": "0.100"
+                },
+                {
+                    "key": "withinTolerance",
+                    "value": "True"
+                },
+                {
+                    "key": "afterDisturbance",
+                    "value": "False"
+                },
+                {
+                    "key": "order",
+                    "value": "1"
+                },
+                {
+                    "key": "measuredFrom",
+                    "value": "BODY-A"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 147,
+            "timestampMs": 28089,
+            "eventType": "EvidenceFingerprintProcessed",
+            "targetId": "EVD-018",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 148,
+            "timestampMs": 28092,
+            "eventType": "EvidenceAddedToInventory",
+            "targetId": "fingerprint-sample:EVD-018",
+            "payload": [
+                {
+                    "key": "sourceEvidenceId",
+                    "value": "EVD-018"
+                },
+                {
+                    "key": "sampleType",
+                    "value": "Fingerprint"
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 152,
+            "timestampMs": 28116,
+            "eventType": "FingerprintIdentified",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "matches",
+                    "value": "{\"identities\":[\"John\",\"Peter\",\"Paul\"]}"
+                },
+                {
+                    "key": "sourceSampleId",
+                    "value": "fingerprint-sample:EVD-018"
+                },
+                {
+                    "key": "scored",
+                    "value": "false"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 153,
+            "timestampMs": 28117,
+            "eventType": "FingerprintPracticeCompleted",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "scored",
+                    "value": "false"
+                },
+                {
+                    "key": "sampleId",
+                    "value": "fingerprint-sample:EVD-018"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 155,
+            "timestampMs": 28142,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Logged"
+                },
+                {
+                    "key": "tool",
+                    "value": "Recorder"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 157,
+            "timestampMs": 28145,
+            "eventType": "ReportLinesSelected",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "lineIds",
+                    "value": "rec-bottle-presence-v1,rec-bottle-location-v1,rec-bottle-condition-v1"
+                },
+                {
+                    "key": "lineCount",
+                    "value": "3"
+                },
+                {
+                    "key": "documentationVersion",
+                    "value": "1"
+                },
+                {
+                    "key": "documentation",
+                    "value": "{\"version\":1,\"subjectId\":\"EVD-018\",\"subjectLabel\":\"Evidence 3 – Empty Liquor Bottle\",\"statements\":[{\"id\":\"rec-bottle-presence-v1\",\"text\":\"The fingerprints prove that Peter was present when John was attacked.\",\"selected\":true,\"weight\":0,\"earnedPoints\":0},{\"id\":\"rec-bottle-location-v1\",\"text\":\"The bottle was found on the rear ground-floor kitchen counter.\",\"selected\":true,\"weight\":2,\"earnedPoints\":2},{\"id\":\"rec-bottle-condition-v1\",\"text\":\"The glass liquor bottle is empty and visibly intact.\",\"selected\":true,\"weight\":2,\"earnedPoints\":2},{\"id\":\"rec-bottle-intoxication-v1\",\"text\":\"The empty bottle proves that John was intoxicated when he died.\",\"selected\":false,\"weight\":0,\"earnedPoints\":0},{\"id\":\"rec-bottle-prints-v1\",\"text\":\"Fingerprints were developed on the bottle and recovered with lifting tape.\",\"selected\":false,\"weight\":2,\"earnedPoints\":0},{\"id\":\"rec-bottle-time-v1\",\"text\":\"The recovered fingerprints establish when each person handled the bottle.\",\"selected\":false,\"weight\":0,\"earnedPoints\":0}],\"earnedPoints\":4,\"maximumPossiblePoints\":6}"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 158,
+            "timestampMs": 28148,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Collected"
+                },
+                {
+                    "key": "tool",
+                    "value": "EvidenceCollector"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 159,
+            "timestampMs": 28151,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Sealed"
+                },
+                {
+                    "key": "tool",
+                    "value": "EvidenceCollector"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 160,
+            "timestampMs": 28153,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Processed"
+                },
+                {
+                    "key": "tool",
+                    "value": "EvidenceCollector"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 164,
+            "timestampMs": 28157,
+            "eventType": "EvidenceAddedToInventory",
+            "targetId": "EVD-018",
+            "payload": [
+                {
+                    "key": "previousCustodyLocation",
+                    "value": "Held"
+                },
+                {
+                    "key": "newCustodyLocation",
+                    "value": "Inventory"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 166,
+            "timestampMs": 28159,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-04-KNIFE-WOUND",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "28.160"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "RELATIONSHIP_REASONING"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 167,
+            "timestampMs": 28160,
+            "eventType": "ReasoningCheckpointSubmitted",
+            "targetId": "RC-04-KNIFE-WOUND",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "RC-04-KNIFE-WOUND-B"
+                },
+                {
+                    "key": "weight",
+                    "value": "4"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "RELATIONSHIP_REASONING"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "4"
+                },
+                {
+                    "key": "eligibleSeconds",
+                    "value": "28.160"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "28.160"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 168,
+            "timestampMs": 28257,
+            "eventType": "RelationshipInterpretationSubmitted",
+            "targetId": "REL-bottle-supports-brother",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "REL-bottle-supports-brother-C"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "1"
+                },
+                {
+                    "key": "reviewVersion",
+                    "value": "1"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "28.2571048736572"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 169,
+            "timestampMs": 28260,
+            "eventType": "RelationshipInterpretationSubmitted",
+            "targetId": "REL-knife-consistent-wound",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "REL-knife-consistent-wound-C"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "2"
+                },
+                {
+                    "key": "reviewVersion",
+                    "value": "1"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "28.2601013183594"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 170,
+            "timestampMs": 28266,
+            "eventType": "RelationshipInterpretationSubmitted",
+            "targetId": "REL-paul-print-handled-knife",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "REL-paul-print-handled-knife-B"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "3"
+                },
+                {
+                    "key": "reviewVersion",
+                    "value": "1"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "28.2667789459229"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 171,
+            "timestampMs": 28273,
+            "eventType": "RelationshipInterpretationSubmitted",
+            "targetId": "REL-peter-departure-supported",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "REL-peter-departure-supported-A"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "4"
+                },
+                {
+                    "key": "reviewVersion",
+                    "value": "1"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "28.2733325958252"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 173,
+            "timestampMs": 29404,
+            "eventType": "WitnessStatementDiscovered",
+            "targetId": "statement_vendor_paul_3am",
+            "payload": [
+                {
+                    "key": "questionId",
+                    "value": "vendor-followup-anyone-else"
+                },
+                {
+                    "key": "answerId",
+                    "value": "statement-vendor-paul-3am"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 175,
+            "timestampMs": 29405,
+            "eventType": "RelationshipInterpretationSubmitted",
+            "targetId": "REL-paul-timeline-contradiction",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "REL-paul-timeline-contradiction-A"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "5"
+                },
+                {
+                    "key": "reviewVersion",
+                    "value": "1"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "29.4056720733643"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 177,
+            "timestampMs": 29442,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-05-TIMELINE",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "29.443"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "TIMELINE_REASONING"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 178,
+            "timestampMs": 29442,
+            "eventType": "ReasoningCheckpointSubmitted",
+            "targetId": "RC-05-TIMELINE",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "RC-05-TIMELINE-B"
+                },
+                {
+                    "key": "weight",
+                    "value": "4"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "TIMELINE_REASONING"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "5"
+                },
+                {
+                    "key": "eligibleSeconds",
+                    "value": "29.443"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "29.443"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 181,
+            "timestampMs": 29532,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-015",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "PhotographedRaw"
+                },
+                {
+                    "key": "tool",
+                    "value": "None"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 182,
+            "timestampMs": 29534,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-015",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "ChalkMarked"
+                },
+                {
+                    "key": "tool",
+                    "value": "ChalkMark"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 183,
+            "timestampMs": 29535,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-015",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Marked"
+                },
+                {
+                    "key": "tool",
+                    "value": "EvidenceMarker"
+                },
+                {
+                    "key": "tentNumber",
+                    "value": "3"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 186,
+            "timestampMs": 29536,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-015",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "PhotographedFinal"
+                },
+                {
+                    "key": "tool",
+                    "value": "None"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 187,
+            "timestampMs": 29536,
+            "eventType": "EvidenceSwabbed",
+            "targetId": "EVD-015",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 199,
+            "timestampMs": 29546,
+            "eventType": "MeasurementCompleted",
+            "targetId": "EVD-015",
+            "payload": [
+                {
+                    "key": "requirementId",
+                    "value": "MEAS-EVD-015"
+                },
+                {
+                    "key": "evidenceId",
+                    "value": "EVD-015"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "2.298"
+                },
+                {
+                    "key": "layoutId",
+                    "value": "new-house-v3"
+                },
+                {
+                    "key": "measuredDistanceA",
+                    "value": "1.012"
+                },
+                {
+                    "key": "measuredDistanceB",
+                    "value": "1.758"
+                },
+                {
+                    "key": "errorA",
+                    "value": "0.000"
+                },
+                {
+                    "key": "errorB",
+                    "value": "0.000"
+                },
+                {
+                    "key": "withinTolerance",
+                    "value": "True"
+                },
+                {
+                    "key": "takenBeforeDisturbance",
+                    "value": "False"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 200,
+            "timestampMs": 29547,
+            "eventType": "EvidencePairMeasured",
+            "targetId": "BODY-A|EVD-015",
+            "payload": [
+                {
+                    "key": "pairKey",
+                    "value": "BODY-A|EVD-015"
+                },
+                {
+                    "key": "evidenceA",
+                    "value": "BODY-A"
+                },
+                {
+                    "key": "evidenceB",
+                    "value": "EVD-015"
+                },
+                {
+                    "key": "sessionTimeSeconds",
+                    "value": "2.298"
+                },
+                {
+                    "key": "measuredDistance",
+                    "value": "0.584"
+                },
+                {
+                    "key": "expectedDistance",
+                    "value": "0.584"
+                },
+                {
+                    "key": "tolerance",
+                    "value": "0.100"
+                },
+                {
+                    "key": "withinTolerance",
+                    "value": "True"
+                },
+                {
+                    "key": "afterDisturbance",
+                    "value": "True"
+                },
+                {
+                    "key": "order",
+                    "value": "2"
+                },
+                {
+                    "key": "measuredFrom",
+                    "value": "BODY-A"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 201,
+            "timestampMs": 29548,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-015",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Logged"
+                },
+                {
+                    "key": "tool",
+                    "value": "None"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 203,
+            "timestampMs": 29551,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-015",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Collected"
+                },
+                {
+                    "key": "tool",
+                    "value": "Swab"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 204,
+            "timestampMs": 29552,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-015",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Sealed"
+                },
+                {
+                    "key": "tool",
+                    "value": "Swab"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 205,
+            "timestampMs": 29553,
+            "eventType": "EvidenceStatusChanged",
+            "targetId": "EVD-015",
+            "payload": [
+                {
+                    "key": "status",
+                    "value": "Processed"
+                },
+                {
+                    "key": "tool",
+                    "value": "Swab"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 208,
+            "timestampMs": 29554,
+            "eventType": "EvidenceAddedToInventory",
+            "targetId": "EVD-015",
+            "payload": [
+                {
+                    "key": "previousCustodyLocation",
+                    "value": "Scene"
+                },
+                {
+                    "key": "newCustodyLocation",
+                    "value": "Inventory"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 209,
+            "timestampMs": 29555,
+            "eventType": "ReasoningCheckpointEligible",
+            "targetId": "RC-06-BLOODSTAIN",
+            "payload": [
+                {
+                    "key": "eligibleSeconds",
+                    "value": "29.556"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "EVIDENCE_INTEGRATION"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 210,
+            "timestampMs": 29555,
+            "eventType": "ReasoningCheckpointSubmitted",
+            "targetId": "RC-06-BLOODSTAIN",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "RC-06-BLOODSTAIN-B"
+                },
+                {
+                    "key": "weight",
+                    "value": "4"
+                },
+                {
+                    "key": "maximumWeight",
+                    "value": "4"
+                },
+                {
+                    "key": "reasoningCategory",
+                    "value": "EVIDENCE_INTEGRATION"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "6"
+                },
+                {
+                    "key": "eligibleSeconds",
+                    "value": "29.556"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "29.556"
+                },
+                {
+                    "key": "contentVersion",
+                    "value": "1.0.0"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 213,
+            "timestampMs": 29612,
+            "eventType": "RelationshipInterpretationSubmitted",
+            "targetId": "REL-spatter-consistent-reconstruction",
+            "payload": [
+                {
+                    "key": "responseId",
+                    "value": "REL-spatter-consistent-reconstruction-B"
+                },
+                {
+                    "key": "responseOrder",
+                    "value": "6"
+                },
+                {
+                    "key": "reviewVersion",
+                    "value": "1"
+                },
+                {
+                    "key": "answeredSeconds",
+                    "value": "29.6126899719238"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 215,
+            "timestampMs": 29634,
+            "eventType": "ConclusionSelected",
+            "targetId": "conclusion-brother",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 216,
+            "timestampMs": 29656,
+            "eventType": "EndingSelected",
+            "targetId": "ending-brother-accused",
+            "payload": [
+                {
+                    "key": "rule",
+                    "value": "PriorityMatch"
+                },
+                {
+                    "key": "selectedConclusionId",
+                    "value": "conclusion-brother"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 217,
+            "timestampMs": 29663,
+            "eventType": "DeductionAssessmentSnapshot",
+            "targetId": "conclusion-brother",
+            "payload": [
+                {
+                    "key": "assessment",
+                    "value": "{\"scoringRulesVersion\":\"1.7.0\",\"contentVersion\":\"1.0.0\",\"selectedConclusionId\":\"conclusion-brother\",\"resolvedEndingId\":\"ending-brother-accused\",\"atConclusion\":true,\"requiresSceneRelease\":true,\"checkpointSystemReady\":true,\"form1Received\":true,\"victimObserved\":true,\"sceneSecurityAcknowledged\":true,\"iocObservationIds\":[\"ioc-victim\",\"ioc-possible-weapon\",\"ioc-bloodstain-area\",\"ioc-drinking-context\",\"ioc-main-scene-survey\"],\"confirmedFindingIds\":[\"FIND-BODY-SHARP-WOUND\",\"FIND-KNIFE-WOUND-CONSISTENT\",\"FIND-KNIFE-PRINT-BROTHER\",\"FIND-KNIFE-BLOOD-SAMPLED\",\"FIND-SPATTER-RECONSTRUCTION\"],\"discoveredStatementIds\":[\"statement_vendor_paul_3am\"],\"observedEvidenceIds\":[\"EVD-014\",\"EVD-015\",\"EVD-018\",\"BODY-A\"],\"checkpoints\":[{\"checkpointId\":\"RC-01-PETER\",\"responseId\":\"RC-01-PETER-C\",\"wasEligible\":true,\"responseOrder\":1,\"eligibleSeconds\":21.255996704101564,\"answeredSeconds\":21.34905433654785},{\"checkpointId\":\"RC-02-SCENE\",\"responseId\":\"RC-02-SCENE-B\",\"wasEligible\":true,\"responseOrder\":2,\"eligibleSeconds\":21.26195526123047,\"answeredSeconds\":21.35196304321289},{\"checkpointId\":\"RC-03-FINGERPRINT\",\"responseId\":\"RC-03-FINGERPRINT-C\",\"wasEligible\":true,\"responseOrder\":3,\"eligibleSeconds\":27.923376083374025,\"answeredSeconds\":27.9234561920166},{\"checkpointId\":\"RC-04-KNIFE-WOUND\",\"responseId\":\"RC-04-KNIFE-WOUND-B\",\"wasEligible\":true,\"responseOrder\":4,\"eligibleSeconds\":28.159534454345704,\"answeredSeconds\":28.16001319885254},{\"checkpointId\":\"RC-05-TIMELINE\",\"responseId\":\"RC-05-TIMELINE-B\",\"wasEligible\":true,\"responseOrder\":5,\"eligibleSeconds\":29.44279670715332,\"answeredSeconds\":29.442882537841798},{\"checkpointId\":\"RC-06-BLOODSTAIN\",\"responseId\":\"RC-06-BLOODSTAIN-B\",\"wasEligible\":true,\"responseOrder\":6,\"eligibleSeconds\":29.5555362701416,\"answeredSeconds\":29.555591583251954}],\"completedRelationshipIds\":[\"REL-paul-timeline-contradiction\",\"REL-bottle-supports-brother\",\"REL-knife-consistent-wound\",\"REL-spatter-consistent-reconstruction\",\"REL-paul-print-handled-knife\",\"REL-peter-departure-supported\"],\"boardConnections\":[],\"relationshipReviewVersion\":1,\"relationshipResponses\":[{\"relationshipId\":\"REL-bottle-supports-brother\",\"responseId\":\"REL-bottle-supports-brother-C\",\"responseOrder\":1,\"answeredSeconds\":28.257104873657228},{\"relationshipId\":\"REL-knife-consistent-wound\",\"responseId\":\"REL-knife-consistent-wound-C\",\"responseOrder\":2,\"answeredSeconds\":28.260101318359376},{\"relationshipId\":\"REL-paul-print-handled-knife\",\"responseId\":\"REL-paul-print-handled-knife-B\",\"responseOrder\":3,\"answeredSeconds\":28.26677894592285},{\"relationshipId\":\"REL-peter-departure-supported\",\"responseId\":\"REL-peter-departure-supported-A\",\"responseOrder\":4,\"answeredSeconds\":28.273332595825197},{\"relationshipId\":\"REL-paul-timeline-contradiction\",\"responseId\":\"REL-paul-timeline-contradiction-A\",\"responseOrder\":5,\"answeredSeconds\":29.405672073364259},{\"relationshipId\":\"REL-spatter-consistent-reconstruction\",\"responseId\":\"REL-spatter-consistent-reconstruction-B\",\"responseOrder\":6,\"answeredSeconds\":29.612689971923829}],\"questionRecordVersion\":1,\"questionRecords\":[{\"id\":\"RC-01-PETER\",\"category\":\"Reasoning\",\"dimension\":\"EVIDENCE_CAUTION\",\"question\":\"Based on what you know so far, what do you make of Peter leaving the house looking nervous?\",\"selectedAnswerId\":\"RC-01-PETER-C\",\"wasAvailable\":true,\"answeredSeconds\":21.34905433654785,\"selectedAnswerWeight\":4.0,\"maximumWeight\":4.0,\"options\":[{\"id\":\"RC-01-PETER-A\",\"text\":\"Peter probably did it. Leaving nervously after being with John is enough to make him the main suspect.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"RC-01-PETER-B\",\"text\":\"Peter could be involved. His behavior makes him worth looking into, but I need more information.\",\"endingId\":\"\",\"weight\":3.0},{\"id\":\"RC-01-PETER-C\",\"text\":\"I would not treat nervous behavior as proof of guilt. It gives me a reason to ask questions, not a reason to accuse him.\",\"endingId\":\"\",\"weight\":4.0},{\"id\":\"RC-01-PETER-D\",\"text\":\"I don't think Peter matters to the investigation.\",\"endingId\":\"\",\"weight\":2.0}]},{\"id\":\"RC-02-SCENE\",\"category\":\"Reasoning\",\"dimension\":\"SCENE_INTERPRETATION\",\"question\":\"What can you reasonably conclude from the scene at this point?\",\"selectedAnswerId\":\"RC-02-SCENE-B\",\"wasAvailable\":true,\"answeredSeconds\":21.35196304321289,\"selectedAnswerWeight\":4.0,\"maximumWeight\":4.0,\"options\":[{\"id\":\"RC-02-SCENE-A\",\"text\":\"The knife near John must be the murder weapon.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"RC-02-SCENE-B\",\"text\":\"The knife and blood are important, but they still need proper examination before I can say what happened.\",\"endingId\":\"\",\"weight\":4.0},{\"id\":\"RC-02-SCENE-C\",\"text\":\"There isn't enough here to justify further forensic examination.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"RC-02-SCENE-D\",\"text\":\"The scene suggests a violent incident, but I still need the physical evidence to understand it.\",\"endingId\":\"\",\"weight\":3.0}]},{\"id\":\"RC-03-FINGERPRINT\",\"category\":\"Reasoning\",\"dimension\":\"LIMITATION_RECOGNITION\",\"question\":\"Paul's fingerprint was recovered from the knife. What does that tell you?\",\"selectedAnswerId\":\"RC-03-FINGERPRINT-C\",\"wasAvailable\":true,\"answeredSeconds\":27.9234561920166,\"selectedAnswerWeight\":4.0,\"maximumWeight\":4.0,\"options\":[{\"id\":\"RC-03-FINGERPRINT-A\",\"text\":\"Paul must have used the knife to attack John.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"RC-03-FINGERPRINT-B\",\"text\":\"It makes Paul more suspicious, but I still need other evidence before deciding what the print means in this case.\",\"endingId\":\"\",\"weight\":3.0},{\"id\":\"RC-03-FINGERPRINT-C\",\"text\":\"It shows Paul handled the knife at some point, but the print alone doesn't tell me when he touched it or what he did with it.\",\"endingId\":\"\",\"weight\":4.0},{\"id\":\"RC-03-FINGERPRINT-D\",\"text\":\"The fingerprint doesn't matter because Paul knew John.\",\"endingId\":\"\",\"weight\":2.0}]},{\"id\":\"RC-04-KNIFE-WOUND\",\"category\":\"Reasoning\",\"dimension\":\"RELATIONSHIP_REASONING\",\"question\":\"The knife is consistent with John's wound. How should that finding be interpreted?\",\"selectedAnswerId\":\"RC-04-KNIFE-WOUND-B\",\"wasAvailable\":true,\"answeredSeconds\":28.16001319885254,\"selectedAnswerWeight\":4.0,\"maximumWeight\":4.0,\"options\":[{\"id\":\"RC-04-KNIFE-WOUND-A\",\"text\":\"This proves the knife was used to kill John.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"RC-04-KNIFE-WOUND-B\",\"text\":\"The knife could be the weapon because its characteristics are consistent with the wound, but that relationship alone does not prove who used it.\",\"endingId\":\"\",\"weight\":4.0},{\"id\":\"RC-04-KNIFE-WOUND-C\",\"text\":\"The knife is probably involved, but I would still want the other findings before relying on it.\",\"endingId\":\"\",\"weight\":3.0},{\"id\":\"RC-04-KNIFE-WOUND-D\",\"text\":\"If the knife fits the wound, whoever touched it must be the attacker.\",\"endingId\":\"\",\"weight\":1.0}]},{\"id\":\"RC-05-TIMELINE\",\"category\":\"Reasoning\",\"dimension\":\"TIMELINE_REASONING\",\"question\":\"I went straight home. I didn't come back after that.\\n\\nThe vendor says he saw Paul near John's house around three in the morning. How does that affect Paul's account?\",\"selectedAnswerId\":\"RC-05-TIMELINE-B\",\"wasAvailable\":true,\"answeredSeconds\":29.442882537841798,\"selectedAnswerWeight\":4.0,\"maximumWeight\":4.0,\"options\":[{\"id\":\"RC-05-TIMELINE-A\",\"text\":\"It proves Paul came back and killed John.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"RC-05-TIMELINE-B\",\"text\":\"It makes Paul's story questionable because the vendor's observation conflicts with his claim that he never returned.\",\"endingId\":\"\",\"weight\":4.0},{\"id\":\"RC-05-TIMELINE-C\",\"text\":\"It makes Paul more suspicious, but the vendor still did not see him enter the house or attack John.\",\"endingId\":\"\",\"weight\":3.0},{\"id\":\"RC-05-TIMELINE-D\",\"text\":\"It doesn't matter because the vendor didn't witness the attack.\",\"endingId\":\"\",\"weight\":2.0}]},{\"id\":\"RC-06-BLOODSTAIN\",\"category\":\"Reasoning\",\"dimension\":\"EVIDENCE_INTEGRATION\",\"question\":\"What does the bloodstain finding contribute to the case?\",\"selectedAnswerId\":\"RC-06-BLOODSTAIN-B\",\"wasAvailable\":true,\"answeredSeconds\":29.555591583251954,\"selectedAnswerWeight\":4.0,\"maximumWeight\":4.0,\"options\":[{\"id\":\"RC-06-BLOODSTAIN-A\",\"text\":\"It identifies Paul as the attacker.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"RC-06-BLOODSTAIN-B\",\"text\":\"It helps establish where the attack occurred, but it does not identify the attacker by itself.\",\"endingId\":\"\",\"weight\":4.0},{\"id\":\"RC-06-BLOODSTAIN-C\",\"text\":\"It supports the physical reconstruction of what happened near John, but it still needs to be considered with the other evidence.\",\"endingId\":\"\",\"weight\":3.0},{\"id\":\"RC-06-BLOODSTAIN-D\",\"text\":\"The blood only confirms that John was injured, so it adds nothing else.\",\"endingId\":\"\",\"weight\":2.0}]},{\"id\":\"REL-bottle-supports-brother\",\"category\":\"Evidence Relationships\",\"dimension\":\"\",\"question\":\"EVD-018 Bottle + the reported drinking gathering\\nHow should this contextual evidence be used?\",\"selectedAnswerId\":\"REL-bottle-supports-brother-C\",\"wasAvailable\":true,\"answeredSeconds\":28.257104873657228,\"selectedAnswerWeight\":1.0,\"maximumWeight\":1.0,\"options\":[{\"id\":\"REL-bottle-supports-brother-A\",\"text\":\"Handling the bottle proves that a person remained in the house until the attack.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-bottle-supports-brother-B\",\"text\":\"The bottle shows the attack was accidental because the gathering involved drinking.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-bottle-supports-brother-C\",\"text\":\"The bottle is consistent with the reported gathering and shared handling. It does not establish who was present during the attack or who committed it.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"REL-bottle-supports-brother-D\",\"text\":\"The bottle establishes the order and time at which each participant handled it.\",\"endingId\":\"\",\"weight\":-1.0}]},{\"id\":\"REL-knife-consistent-wound\",\"category\":\"Evidence Relationships\",\"dimension\":\"\",\"question\":\"EVD-014 Kitchen Knife + John's injury\\nWhat can be concluded from their consistency?\",\"selectedAnswerId\":\"REL-knife-consistent-wound-C\",\"wasAvailable\":true,\"answeredSeconds\":28.260101318359376,\"selectedAnswerWeight\":1.0,\"maximumWeight\":1.0,\"options\":[{\"id\":\"REL-knife-consistent-wound-A\",\"text\":\"The injury proves this particular knife was used and excludes every other sharp object.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-knife-consistent-wound-B\",\"text\":\"The injury and knife together identify Paul as the person who inflicted the wound.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-knife-consistent-wound-C\",\"text\":\"The knife is consistent with John's injury and could have caused it, but this relationship alone does not identify who used it.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"REL-knife-consistent-wound-D\",\"text\":\"A compatible injury establishes the attack sequence and the time at which the knife was used.\",\"endingId\":\"\",\"weight\":-1.0}]},{\"id\":\"REL-paul-print-handled-knife\",\"category\":\"Evidence Relationships\",\"dimension\":\"\",\"question\":\"Paul's fingerprint + EVD-014 Kitchen Knife\\nWhat does this relationship support?\",\"selectedAnswerId\":\"REL-paul-print-handled-knife-B\",\"wasAvailable\":true,\"answeredSeconds\":28.26677894592285,\"selectedAnswerWeight\":1.0,\"maximumWeight\":1.0,\"options\":[{\"id\":\"REL-paul-print-handled-knife-A\",\"text\":\"Paul's print identifies him as the person who used the knife during the attack.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-paul-print-handled-knife-B\",\"text\":\"Paul handled the knife at some point, but the print alone does not establish when, why, or whether he used it during the attack.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"REL-paul-print-handled-knife-C\",\"text\":\"The print shows Paul handled the knife only during the earlier gathering and excludes later handling.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-paul-print-handled-knife-D\",\"text\":\"Because the print cannot be dated, it provides no evidence that Paul handled the knife.\",\"endingId\":\"\",\"weight\":-1.0}]},{\"id\":\"REL-paul-timeline-contradiction\",\"category\":\"Evidence Relationships\",\"dimension\":\"\",\"question\":\"Paul's statement + the vendor's observation around 3:00 AM\\nHow should these accounts be interpreted?\",\"selectedAnswerId\":\"REL-paul-timeline-contradiction-A\",\"wasAvailable\":true,\"answeredSeconds\":29.405672073364259,\"selectedAnswerWeight\":1.0,\"maximumWeight\":1.0,\"options\":[{\"id\":\"REL-paul-timeline-contradiction-A\",\"text\":\"The vendor's observation contradicts Paul's claim that he went home around midnight and did not return. The vendor did not witness the attack.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"REL-paul-timeline-contradiction-B\",\"text\":\"The observation confirms Paul's claim because it occurred after the earlier gathering.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-paul-timeline-contradiction-C\",\"text\":\"The observation proves Paul attacked John at exactly 3:00 AM.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-paul-timeline-contradiction-D\",\"text\":\"The accounts cannot be compared unless the vendor also saw what happened inside the house.\",\"endingId\":\"\",\"weight\":-1.0}]},{\"id\":\"REL-peter-departure-supported\",\"category\":\"Evidence Relationships\",\"dimension\":\"\",\"question\":\"Peter's departure account + the vendor's observation around 2:00 AM\\nWhat is supported by the two accounts?\",\"selectedAnswerId\":\"REL-peter-departure-supported-A\",\"wasAvailable\":true,\"answeredSeconds\":28.273332595825197,\"selectedAnswerWeight\":1.0,\"maximumWeight\":1.0,\"options\":[{\"id\":\"REL-peter-departure-supported-A\",\"text\":\"The vendor broadly corroborates Peter leaving around 2:00 AM, but did not witness the attack or establish everything Peter did afterward.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"REL-peter-departure-supported-B\",\"text\":\"The observation establishes Peter's location for the rest of the night and rules out every possible involvement.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-peter-departure-supported-C\",\"text\":\"Leaving around 2:00 AM proves Peter left because he had attacked John.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-peter-departure-supported-D\",\"text\":\"The accounts are contradictory because the vendor did not observe what happened inside the house.\",\"endingId\":\"\",\"weight\":-1.0}]},{\"id\":\"REL-spatter-consistent-reconstruction\",\"category\":\"Evidence Relationships\",\"dimension\":\"\",\"question\":\"EVD-015 Blood Spatter + the attack area\\nWhat does the bloodstain evidence support?\",\"selectedAnswerId\":\"REL-spatter-consistent-reconstruction-B\",\"wasAvailable\":true,\"answeredSeconds\":29.612689971923829,\"selectedAnswerWeight\":1.0,\"maximumWeight\":1.0,\"options\":[{\"id\":\"REL-spatter-consistent-reconstruction-A\",\"text\":\"The blood pattern independently identifies the attacker and establishes intent.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-spatter-consistent-reconstruction-B\",\"text\":\"The bloodstain evidence supports reconstruction of the attack area but does not independently identify the attacker.\",\"endingId\":\"\",\"weight\":1.0},{\"id\":\"REL-spatter-consistent-reconstruction-C\",\"text\":\"The pattern establishes one exact sequence of movements and excludes all other sequences.\",\"endingId\":\"\",\"weight\":-1.0},{\"id\":\"REL-spatter-consistent-reconstruction-D\",\"text\":\"The pattern proves the knife was held by Paul when the blood was deposited.\",\"endingId\":\"\",\"weight\":-1.0}]},{\"id\":\"FINAL-CONCLUSION\",\"category\":\"Final Conclusion\",\"dimension\":\"\",\"question\":\"Submit your conclusion:\",\"selectedAnswerId\":\"conclusion-brother\",\"wasAvailable\":true,\"answeredSeconds\":29.660991668701173,\"selectedAnswerWeight\":1.0,\"maximumWeight\":1.0,\"options\":[{\"id\":\"conclusion-brother\",\"text\":\"Paul\\nPaul is a reasonable person of interest, but an accusation must rest on the combined physical evidence and timeline contradiction rather than his fingerprint alone.\",\"endingId\":\"ending-brother-accused\",\"weight\":1.0},{\"id\":\"conclusion-peter\",\"text\":\"Peter\\nPeter's late departure and uneasy appearance justify further investigation, but an accusation still requires evidence connecting him to the attack.\",\"endingId\":\"ending-peter-unsupported\",\"weight\":0.0}]}]}"
+                }
+            ]
+        },
+        {
+            "sequenceNumber": 220,
+            "timestampMs": 29707,
+            "eventType": "FinalSceneSurveyCompleted",
+            "targetId": "fixture-survey",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 221,
+            "timestampMs": 29707,
+            "eventType": "SceneReleaseConfirmed",
+            "targetId": "fixture-release",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 222,
+            "timestampMs": 29707,
+            "eventType": "InvestigationCompleted",
+            "targetId": "fixture-closeout",
+            "payload": []
+        },
+        {
+            "sequenceNumber": 224,
+            "timestampMs": 29723,
+            "eventType": "SessionEnded",
+            "targetId": "",
+            "payload": [
+                {
+                    "key": "endedAtUtc",
+                    "value": "2026-10-21T05:12:14.6848275Z"
+                }
+            ]
+        }
+    ]
+}

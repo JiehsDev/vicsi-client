@@ -1,0 +1,14 @@
+PASS: IOC Observe owns A at its actionable observation point
+PASS: Actual XR A records IOC observation and consumes the held press against jump
+PASS: Editor-configured IOC observation point, radius, facing gate and editable A – Observe prompt are active
+PASS: Observation prompt is unavailable outside the point radius or when facing away, then records and clears the scene-survey objective
+FAIL: IOC startup, real FR/Form 1 handover and intentional IOC assessment preserve evidence and reach the decision with SOCO locked
+FAIL: Actual choice pointer rejects Continue without SOCO, offers reconsideration, logs that choice once and leaves gates intact
+FAIL: Request choice advances only to SOCORequested, records decision/request once and activates Await arrival
+INFO: arrival=False; rig=(-2.00, 0.01, 10.00); expected entrance=(0.00, 0.01, 0.00); phase=IOCAssessment; form2=False; gated=True; await=Hidden; briefing objective=Hidden; cordon=True
+FAIL: Automatic arrival completes Form 2 once, restores entrance position/yaw while preserving settled height and enters locked IOC-role SOCOTurnover
+FAIL: Complete three-line IOC briefing displays/skips normally with SOCO locked throughout, records history once and enters investigation once
+INFO: SOCO role=IOC; tools locked=True; timer=0; photo=null; marker=False; body objective=Hidden; evidence=EVD-014:NotFound,EVD-015:NotFound,EVD-018:NotFound,BODY-A:NotFound
+FAIL: SOCO boundary changes role, unlocks tools, activates the original first photo marker/objectives and starts timing without processing evidence
+PASS: Fresh-session reload restores IOC turnover and clears request/Form 2/assessment/timer with SOCO locked
+=== FAIL: IOC SOCO transition ===

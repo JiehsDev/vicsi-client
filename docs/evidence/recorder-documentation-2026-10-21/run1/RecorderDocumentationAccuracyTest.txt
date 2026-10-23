@@ -1,0 +1,57 @@
+=== RecorderDocumentationAccuracyTest ===
+PASS: Only the four current Recorder subjects are assessed
+PASS: Catalog maximum is separate 24 points
+PASS: Existing deduction weights remain 60/25/15
+PASS: BODY-A has six stable distinct statements
+PASS: BODY-A has three 2-point and three 0-point statements
+PASS: BODY-A earns 6 for supported and 0 for unsupported selections
+PASS: BODY-A rejects duplicates, foreign IDs and incorrect counts
+PASS: EVD-014 has six stable distinct statements
+PASS: EVD-014 has three 2-point and three 0-point statements
+PASS: EVD-014 earns 6 for supported and 0 for unsupported selections
+PASS: EVD-014 rejects duplicates, foreign IDs and incorrect counts
+PASS: EVD-015 has six stable distinct statements
+PASS: EVD-015 has three 2-point and three 0-point statements
+PASS: EVD-015 earns 6 for supported and 0 for unsupported selections
+PASS: EVD-015 rejects duplicates, foreign IDs and incorrect counts
+PASS: EVD-018 has six stable distinct statements
+PASS: EVD-018 has three 2-point and three 0-point statements
+PASS: EVD-018 earns 6 for supported and 0 for unsupported selections
+PASS: EVD-018 rejects duplicates, foreign IDs and incorrect counts
+PASS: Four perfect entries total 24
+PASS: BODY-A real Recorder opens
+PASS: BODY-A selects rec-body-fall-v1
+PASS: BODY-A selects rec-body-attacker-v1
+PASS: BODY-A selects rec-body-time-v1
+PASS: BODY-A three choices confirm and lock
+PASS: BODY-A freezes six statements and exactly three selections
+PASS: BODY-A stores only actual choices
+PASS: EVD-014 real Recorder opens
+PASS: EVD-014 selects rec-knife-location-v1
+PASS: EVD-014 selects rec-knife-residue-v1
+PASS: EVD-014 selects rec-knife-print-v1
+PASS: EVD-014 three choices confirm and lock
+PASS: EVD-014 freezes six statements and exactly three selections
+PASS: EVD-014 stores only actual choices
+PASS: EVD-015 real Recorder opens
+PASS: EVD-015 selects rec-spatter-location-v1
+PASS: EVD-015 selects rec-spatter-appearance-v1
+PASS: EVD-015 selects rec-spatter-swab-v1
+PASS: EVD-015 three choices confirm and lock
+PASS: EVD-015 freezes six statements and exactly three selections
+PASS: EVD-015 stores only actual choices
+PASS: EVD-018 real Recorder opens
+PASS: EVD-018 selects rec-bottle-location-v1
+PASS: EVD-018 selects rec-bottle-condition-v1
+PASS: EVD-018 selects rec-bottle-prints-v1
+PASS: EVD-018 three choices confirm and lock
+PASS: EVD-018 freezes six statements and exactly three selections
+PASS: EVD-018 stores only actual choices
+PASS: Zero-point body documentation does not block body removal
+PASS: Baseline body finding remains independent of Recorder points
+PASS: No scoring feedback is displayed in Recorder UI
+PASS: Deduction snapshot excludes Recorder points
+PASS: Minimal upload preserves four versioned Recorder snapshots
+PASS: Uploaded Recorder total is 18/24 without a combined grade
+PASS: Wire upload retains selected text, weights and points
+=== PASS ===

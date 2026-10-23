@@ -1,0 +1,16 @@
+﻿{
+    "observedAtUtc":  "2026-10-17T12:51:27.9854464Z",
+    "unityVersion":  "6000.5.6f1",
+    "compiling":  false,
+    "compilationFailed":  false,
+    "cSharpConsoleErrorCount":  0,
+    "isPlaying":  false,
+    "scene":  "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+    "sceneDirty":  false,
+    "savedStartingPoint":  0,
+    "selectedTest":  11,
+    "diagnosticPending":  false,
+    "xrRestorePending":  false,
+    "standaloneXr":  true,
+    "androidXr":  true
+}

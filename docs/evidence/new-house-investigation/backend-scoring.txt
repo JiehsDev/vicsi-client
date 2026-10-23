@@ -1,0 +1,3147 @@
+﻿
+> dashboard@0.1.0 test:scoring
+> node --conditions=react-server --experimental-strip-types --test src/lib/scoring/__tests__/*.test.ts
+
+TAP version 13
+# (node:31848) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/cabinetMeasurementReference.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: 1.5.0 = 1.4.0 except the knife and spatter cabinet references (same weights, formula, tolerance)
+ok 1 - 1.5.0 = 1.4.0 except the knife and spatter cabinet references (same weights, formula, tolerance)
+  ---
+  duration_ms: 26.3556
+  type: 'test'
+  ...
+# Subtest: 1.5.0 answer key matches the Unity bake; still 8 distinct references
+ok 2 - 1.5.0 answer key matches the Unity bake; still 8 distinct references
+  ---
+  duration_ms: 0.686
+  type: 'test'
+  ...
+# Subtest: 1.4.0 answer key untouched (North Wall references and distances)
+ok 3 - 1.4.0 answer key untouched (North Wall references and distances)
+  ---
+  duration_ms: 0.3111
+  type: 'test'
+  ...
+# Subtest: perfect: every item from its own pair (cabinet edges included) -> measurement 1.0
+ok 4 - perfect: every item from its own pair (cabinet edges included) -> measurement 1.0
+  ---
+  duration_ms: 1.953
+  type: 'test'
+  ...
+# Subtest: knife and spatter complete with the cabinet front edge
+ok 5 - knife and spatter complete with the cabinet front edge
+  ---
+  duration_ms: 0.8705
+  type: 'test'
+  ...
+# Subtest: old hidden-wall references no longer count under 1.5.0 (only the other side scores)
+ok 6 - old hidden-wall references no longer count under 1.5.0 (only the other side scores)
+  ---
+  duration_ms: 0.7107
+  type: 'test'
+  ...
+# Subtest: a session stamped 1.4.0 keeps scoring the North Wall references exactly as before
+ok 7 - a session stamped 1.4.0 keeps scoring the North Wall references exactly as before
+  ---
+  duration_ms: 0.3045
+  type: 'test'
+  ...
+# Subtest: cabinet references are evidence-specific: the knife's edge does not count for the spatter
+ok 8 - cabinet references are evidence-specific: the knife's edge does not count for the spatter
+  ---
+  duration_ms: 0.3144
+  type: 'test'
+  ...
+# Subtest: partial: cabinet edge only -> incomplete (0.6)
+ok 9 - partial: cabinet edge only -> incomplete (0.6)
+  ---
+  duration_ms: 0.578
+  type: 'test'
+  ...
+# Subtest: accuracy: 0.10 m tolerance against the new cabinet distances
+ok 10 - accuracy: 0.10 m tolerance against the new cabinet distances
+  ---
+  duration_ms: 0.7132
+  type: 'test'
+  ...
+# (node:31444) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/deductionIntegration.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: new rules are explicit 60/25/15 with no legacy category contributions
+ok 11 - new rules are explicit 60/25/15 with no legacy category contributions
+  ---
+  duration_ms: 1.7194
+  type: 'test'
+  ...
+# Subtest: six maximum responses earn 60, supported six relationships 25, conclusion 15, total 100
+ok 12 - six maximum responses earn 60, supported six relationships 25, conclusion 15, total 100
+  ---
+  duration_ms: 2.1941
+  type: 'test'
+  ...
+# Subtest: mixed locked weights normalize against 24 without bonuses
+ok 13 - mixed locked weights normalize against 24 without bonuses
+  ---
+  duration_ms: 1.2455
+  type: 'test'
+  ...
+# Subtest: weak assumptions and unsupported Peter accusation earn low deduction grade
+ok 14 - weak assumptions and unsupported Peter accusation earn low deduction grade
+  ---
+  duration_ms: 0.5662
+  type: 'test'
+  ...
+# Subtest: eligible unanswered response remains in fixed denominator
+ok 15 - eligible unanswered response remains in fixed denominator
+  ---
+  duration_ms: 0.6572
+  type: 'test'
+  ...
+# Subtest: concluding before later discovery retains missing opportunity in denominator
+ok 16 - concluding before later discovery retains missing opportunity in denominator
+  ---
+  duration_ms: 1.1601
+  type: 'test'
+  ...
+# Subtest: facts reached but missing eligibility is a technical review, not a zero grade
+ok 17 - facts reached but missing eligibility is a technical review, not a zero grade
+  ---
+  duration_ms: 0.4569
+  type: 'test'
+  ...
+# Subtest: unavailable checkpoint system/content suppresses final grade
+ok 18 - unavailable checkpoint system/content suppresses final grade
+  ---
+  duration_ms: 0.3206
+  type: 'test'
+  ...
+# Subtest: supported relationship quality uses all six authored IDs including timeline contradiction
+ok 19 - supported relationship quality uses all six authored IDs including timeline contradiction
+  ---
+  duration_ms: 0.6671
+  type: 'test'
+  ...
+# Subtest: relationships connected without supporting facts earn no credit
+ok 20 - relationships connected without supporting facts earn no credit
+  ---
+  duration_ms: 0.7049
+  type: 'test'
+  ...
+# Subtest: unsupported current connections reduce quality; corrected/removed attempts do not
+ok 21 - unsupported current connections reduce quality; corrected/removed attempts do not
+  ---
+  duration_ms: 0.3996
+  type: 'test'
+  ...
+# Subtest: duplicate completed IDs/pairs never create extra relationship credit or penalty
+ok 22 - duplicate completed IDs/pairs never create extra relationship credit or penalty
+  ---
+  duration_ms: 0.2294
+  type: 'test'
+  ...
+# Subtest: Supported Paul requires full evidence/relationship/physical Vendor chain
+ok 23 - Supported Paul requires full evidence/relationship/physical Vendor chain
+  ---
+  duration_ms: 0.253
+  type: 'test'
+  ...
+# Subtest: Premature Paul is partial support, not suspect-guess full credit
+ok 24 - Premature Paul is partial support, not suspect-guess full credit
+  ---
+  duration_ms: 0.1832
+  type: 'test'
+  ...
+# Subtest: Peter unsupported conclusion has zero conclusion credit
+ok 25 - Peter unsupported conclusion has zero conclusion credit
+  ---
+  duration_ms: 0.1438
+  type: 'test'
+  ...
+# Subtest: Inconclusive is strong with insufficient support, lower with full chain
+ok 26 - Inconclusive is strong with insufficient support, lower with full chain
+  ---
+  duration_ms: 0.2494
+  type: 'test'
+  ...
+# Subtest: incomplete session/absent conclusion emits no polished final grade
+ok 27 - incomplete session/absent conclusion emits no polished final grade
+  ---
+  duration_ms: 1.0578
+  type: 'test'
+  ...
+# Subtest: no relationships, no responses and missing data never divide by zero/crash
+ok 28 - no relationships, no responses and missing data never divide by zero/crash
+  ---
+  duration_ms: 0.2854
+  type: 'test'
+  ...
+# Subtest: invalid scoring configuration is rejected instead of concealed by a 100 clamp
+ok 29 - invalid scoring configuration is rejected instead of concealed by a 100 clamp
+  ---
+  duration_ms: 0.1322
+  type: 'test'
+  ...
+# Subtest: stable IDs resolve weights on server even when every uploaded weight claims 999
+ok 30 - stable IDs resolve weights on server even when every uploaded weight claims 999
+  ---
+  duration_ms: 1.3333
+  type: 'test'
+  ...
+# Subtest: original locked submission rejects altered later response in snapshot
+ok 31 - original locked submission rejects altered later response in snapshot
+  ---
+  duration_ms: 0.6158
+  type: 'test'
+  ...
+# Subtest: procedures, ProcedureOutOfOrder, time and old HYP/report answers do not affect new aggregate
+ok 32 - procedures, ProcedureOutOfOrder, time and old HYP/report answers do not affect new aggregate
+  ---
+  duration_ms: 2.0477
+  type: 'test'
+  ...
+# Subtest: missing scene release/completion event leaves incomplete session ungraded
+ok 33 - missing scene release/completion event leaves incomplete session ungraded
+  ---
+  duration_ms: 15.0239
+  type: 'test'
+  ...
+# Subtest: malformed snapshots and mismatched stored endings require review without crash
+ok 34 - malformed snapshots and mismatched stored endings require review without crash
+  ---
+  duration_ms: 1.391
+  type: 'test'
+  ...
+# Subtest: essential envelope preserves records with raw log disabled/capped and ignores client scores
+ok 35 - essential envelope preserves records with raw log disabled/capped and ignores client scores
+  ---
+  duration_ms: 55.9854
+  type: 'test'
+  ...
+# Subtest: envelope refuses conflicting duplicates/unexpected essential event types
+ok 36 - envelope refuses conflicting duplicates/unexpected essential event types
+  ---
+  duration_ms: 0.7956
+  type: 'test'
+  ...
+# Subtest: all response combinations produce totals within 0-100
+ok 37 - all response combinations produce totals within 0-100
+  ---
+  duration_ms: 109.0375
+  type: 'test'
+  ...
+# Subtest: 1.6.0 formula and missing-version historical fallbacks remain unchanged
+ok 38 - 1.6.0 formula and missing-version historical fallbacks remain unchanged
+  ---
+  duration_ms: 0.71
+  type: 'test'
+  ...
+# Subtest: authored maximum/response range prevents hidden extra bonuses
+ok 39 - authored maximum/response range prevents hidden extra bonuses
+  ---
+  duration_ms: 0.3093
+  type: 'test'
+  ...
+# (node:8320) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/lastDrink.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: 1.2.0 display maps Peter and distinguishes the supported and premature Paul outcomes
+ok 40 - 1.2.0 display maps Peter and distinguishes the supported and premature Paul outcomes
+  ---
+  duration_ms: 2.8803
+  type: 'test'
+  ...
+# Subtest: historical outcome display semantics remain unchanged
+ok 41 - historical outcome display semantics remain unchanged
+  ---
+  duration_ms: 0.3866
+  type: 'test'
+  ...
+# Subtest: The Last Drink resolves with unchanged scoring 1.5.0
+ok 42 - The Last Drink resolves with unchanged scoring 1.5.0
+  ---
+  duration_ms: 0.3881
+  type: 'test'
+  ...
+# Subtest: 1.2.0 outcome conclusion-brother/ending-brother-accused receives 1
+ok 43 - 1.2.0 outcome conclusion-brother/ending-brother-accused receives 1
+  ---
+  duration_ms: 0.2528
+  type: 'test'
+  ...
+# Subtest: 1.2.0 outcome conclusion-brother/ending-premature-submission receives 0
+ok 44 - 1.2.0 outcome conclusion-brother/ending-premature-submission receives 0
+  ---
+  duration_ms: 0.1537
+  type: 'test'
+  ...
+# Subtest: 1.2.0 outcome conclusion-peter/ending-peter-unsupported receives 0
+ok 45 - 1.2.0 outcome conclusion-peter/ending-peter-unsupported receives 0
+  ---
+  duration_ms: 0.1317
+  type: 'test'
+  ...
+# Subtest: 1.2.0 outcome CONCLUSION-INCONCLUSIVE/ending-inconclusive receives 0
+ok 46 - 1.2.0 outcome CONCLUSION-INCONCLUSIVE/ending-inconclusive receives 0
+  ---
+  duration_ms: 0.1022
+  type: 'test'
+  ...
+# Subtest: 1.2.0 outcome conclusion-peter/ending-brother-accused receives 0
+ok 47 - 1.2.0 outcome conclusion-peter/ending-brother-accused receives 0
+  ---
+  duration_ms: 0.0957
+  type: 'test'
+  ...
+# Subtest: all three checkpoints classify the intentional answer and distractors
+ok 48 - all three checkpoints classify the intentional answer and distractors
+  ---
+  duration_ms: 4.9794
+  type: 'test'
+  ...
+# Subtest: BODY-A documentation is classified without adding a collectible recall item
+ok 49 - BODY-A documentation is classified without adding a collectible recall item
+  ---
+  duration_ms: 0.925
+  type: 'test'
+  ...
+# Subtest: five active board relationships determine the 1.2.0 denominator
+ok 50 - five active board relationships determine the 1.2.0 denominator
+  ---
+  duration_ms: 0.6014
+  type: 'test'
+  ...
+# Subtest: historical explicit and missing versions retain their original keys
+ok 51 - historical explicit and missing versions retain their original keys
+  ---
+  duration_ms: 0.25
+  type: 'test'
+  ...
+# Subtest: active key excludes retired evidence and outcome semantics
+ok 52 - active key excludes retired evidence and outcome semantics
+  ---
+  duration_ms: 1.6021
+  type: 'test'
+  ...
+# Subtest: server key exactly matches the current Unity scoring export
+not ok 53 - server key exactly matches the current Unity scoring export
+  ---
+  duration_ms: 83.3461
+  type: 'test'
+  location: 'C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\src\\lib\\scoring\\__tests__\\lastDrink.test.ts:74:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    ... Skipped lines
+    
+      {
+        conclusion: {
+          correctConclusionId: 'conclusion-brother',
+          correctEndingId: 'ending-brother-accused'
+        },
+    ...
+        ],
+    +   generatedAt: '2026-10-08T00:00:00Z',
+    -   generatedAt: '2026-10-09T00:00:00Z',
+        groundTruthVersion: '1.2.0',
+        hypothesisCheckpoints: [
+          {
+            id: 'HYP-01',
+            reasoningOptions: [
+    ...
+          },
+    -     {
+    -       relationshipId: 'REL-paul-timeline-contradiction',
+    -       scoreWeight: 1
+    -     }
+        ],
+        scenarioId: 'CSI-ENVIRONMENT-001',
+        scenarioVersion: '1.1.0'
+      }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    scenarioId: 'CSI-ENVIRONMENT-001'
+    generatedAt: '2026-10-09T00:00:00Z'
+    lifecycleSequence:
+      0: 'NotFound'
+      1: 'Found'
+      2: 'PhotographedRaw'
+      3: 'ChalkMarked'
+      4: 'Marked'
+      5: 'PhotographedFinal'
+      6: 'Logged'
+      7: 'ReadyForCollection'
+      8: 'Collected'
+      9: 'Sealed'
+      10: 'Processed'
+    evidence:
+      0:
+        evidenceId: 'EVD-014'
+        relevance: 'Critical'
+      1:
+        evidenceId: 'EVD-015'
+        relevance: 'Critical'
+      2:
+        evidenceId: 'EVD-018'
+        relevance: 'Relevant'
+    hypothesisCheckpoints:
+      0:
+        id: 'HYP-01'
+        reasoningOptions:
+          0:
+            id: 'hyp01-peter-departure-proves-guilt'
+            isCorrect: false
+          1:
+            id: 'hyp01-paul-argument-proves-guilt'
+            isCorrect: false
+          2:
+            id: 'hyp01-evidence-not-yet-developed'
+            isCorrect: true
+          3:
+            id: 'hyp01-drinking-explains-attack'
+            isCorrect: false
+      1:
+        id: 'HYP-02'
+        reasoningOptions:
+          0:
+            id: 'hyp02-print-proves-attacker'
+            isCorrect: false
+          1:
+            id: 'hyp02-bottle-intoxication'
+            isCorrect: false
+          2:
+            id: 'hyp02-print-needs-reconstruction'
+            isCorrect: true
+          3:
+            id: 'hyp02-knife-routine-use'
+            isCorrect: false
+      2:
+        id: 'HYP-03'
+        reasoningOptions:
+          0:
+            id: 'hyp03-knife-print-implicates-brother'
+            isCorrect: false
+          1:
+            id: 'hyp03-wound-alone'
+            isCorrect: false
+          2:
+            id: 'hyp03-bottle-premature-closure'
+            isCorrect: false
+          3:
+            id: 'hyp03-combined-physical-evidence'
+            isCorrect: true
+          4:
+            id: 'hyp03-no-contradicting-evidence'
+            isCorrect: false
+    evidenceReportLines:
+      0:
+        evidenceId: 'BODY-A'
+        reportLineOptions:
+          0:
+            id: 'body-a-location'
+            isAccurate: true
+          1:
+            id: 'body-a-position'
+            isAccurate: true
+          2:
+            id: 'body-a-wound-sharp-object'
+            isAccurate: true
+      1:
+        evidenceId: 'EVD-014'
+        reportLineOptions:
+          0:
+            id: 'knife-blade-length'
+            isAccurate: true
+          1:
+            id: 'knife-blood-trace'
+            isAccurate: true
+          2:
+            id: 'knife-location'
+            isAccurate: true
+          3:
+            id: 'knife-print-on-handle'
+            isAccurate: true
+          4:
+            id: 'knife-owner-speculation'
+            isAccurate: true
+          5:
+            id: 'knife-conclusion-weapon'
+            isAccurate: false
+          6:
+            id: 'knife-wound-match'
+            isAccurate: true
+      2:
+        evidenceId: 'EVD-015'
+        reportLineOptions:
+          0:
+            id: 'blood-spatter-location'
+            isAccurate: true
+          1:
+            id: 'blood-spatter-droplet-pattern'
+            isAccurate: true
+          2:
+            id: 'blood-spatter-swab-collection'
+            isAccurate: true
+          3:
+            id: 'blood-spatter-mechanism-only'
+            isAccurate: true
+          4:
+            id: 'blood-spatter-fall-confirmed'
+            isAccurate: false
+          5:
+            id: 'blood-spatter-identity-assumed'
+            isAccurate: false
+      3:
+        evidenceId: 'EVD-018'
+        reportLineOptions:
+          0:
+            id: 'bottle-location'
+            isAccurate: true
+          1:
+            id: 'bottle-first-encountered'
+            isAccurate: true
+          2:
+            id: 'bottle-standard-procedure'
+            isAccurate: true
+          3:
+            id: 'bottle-fingerprint-pending'
+            isAccurate: true
+          4:
+            id: 'bottle-intoxication-explains-fall'
+            isAccurate: false
+          5:
+            id: 'bottle-recent-drinking-assumed'
+            isAccurate: false
+    scenarioVersion: '1.1.0'
+    groundTruthVersion: '1.2.0'
+    relationships:
+      0:
+        relationshipId: 'REL-bottle-supports-brother'
+        scoreWeight: 1
+      1:
+        relationshipId: 'REL-knife-consistent-wound'
+        scoreWeight: 1
+      2:
+        relationshipId: 'REL-paul-print-handled-knife'
+        scoreWeight: 1
+      3:
+        relationshipId: 'REL-peter-departure-supported'
+        scoreWeight: 1
+      4:
+        relationshipId: 'REL-spatter-consistent-reconstruction'
+        scoreWeight: 1
+      5:
+        relationshipId: 'REL-paul-timeline-contradiction'
+        scoreWeight: 1
+    conclusion:
+      correctConclusionId: 'conclusion-brother'
+      correctEndingId: 'ending-brother-accused'
+  actual:
+    scenarioId: 'CSI-ENVIRONMENT-001'
+    generatedAt: '2026-10-08T00:00:00Z'
+    lifecycleSequence:
+      0: 'NotFound'
+      1: 'Found'
+      2: 'PhotographedRaw'
+      3: 'ChalkMarked'
+      4: 'Marked'
+      5: 'PhotographedFinal'
+      6: 'Logged'
+      7: 'ReadyForCollection'
+      8: 'Collected'
+      9: 'Sealed'
+      10: 'Processed'
+    evidence:
+      0:
+        evidenceId: 'EVD-014'
+        relevance: 'Critical'
+      1:
+        evidenceId: 'EVD-015'
+        relevance: 'Critical'
+      2:
+        evidenceId: 'EVD-018'
+        relevance: 'Relevant'
+    hypothesisCheckpoints:
+      0:
+        id: 'HYP-01'
+        reasoningOptions:
+          0:
+            id: 'hyp01-peter-departure-proves-guilt'
+            isCorrect: false
+          1:
+            id: 'hyp01-paul-argument-proves-guilt'
+            isCorrect: false
+          2:
+            id: 'hyp01-evidence-not-yet-developed'
+            isCorrect: true
+          3:
+            id: 'hyp01-drinking-explains-attack'
+            isCorrect: false
+      1:
+        id: 'HYP-02'
+        reasoningOptions:
+          0:
+            id: 'hyp02-print-proves-attacker'
+            isCorrect: false
+          1:
+            id: 'hyp02-bottle-intoxication'
+            isCorrect: false
+          2:
+            id: 'hyp02-print-needs-reconstruction'
+            isCorrect: true
+          3:
+            id: 'hyp02-knife-routine-use'
+            isCorrect: false
+      2:
+        id: 'HYP-03'
+        reasoningOptions:
+          0:
+            id: 'hyp03-knife-print-implicates-brother'
+            isCorrect: false
+          1:
+            id: 'hyp03-wound-alone'
+            isCorrect: false
+          2:
+            id: 'hyp03-bottle-premature-closure'
+            isCorrect: false
+          3:
+            id: 'hyp03-combined-physical-evidence'
+            isCorrect: true
+          4:
+            id: 'hyp03-no-contradicting-evidence'
+            isCorrect: false
+    evidenceReportLines:
+      0:
+        evidenceId: 'BODY-A'
+        reportLineOptions:
+          0:
+            id: 'body-a-location'
+            isAccurate: true
+          1:
+            id: 'body-a-position'
+            isAccurate: true
+          2:
+            id: 'body-a-wound-sharp-object'
+            isAccurate: true
+      1:
+        evidenceId: 'EVD-014'
+        reportLineOptions:
+          0:
+            id: 'knife-blade-length'
+            isAccurate: true
+          1:
+            id: 'knife-blood-trace'
+            isAccurate: true
+          2:
+            id: 'knife-location'
+            isAccurate: true
+          3:
+            id: 'knife-print-on-handle'
+            isAccurate: true
+          4:
+            id: 'knife-owner-speculation'
+            isAccurate: true
+          5:
+            id: 'knife-conclusion-weapon'
+            isAccurate: false
+          6:
+            id: 'knife-wound-match'
+            isAccurate: true
+      2:
+        evidenceId: 'EVD-015'
+        reportLineOptions:
+          0:
+            id: 'blood-spatter-location'
+            isAccurate: true
+          1:
+            id: 'blood-spatter-droplet-pattern'
+            isAccurate: true
+          2:
+            id: 'blood-spatter-swab-collection'
+            isAccurate: true
+          3:
+            id: 'blood-spatter-mechanism-only'
+            isAccurate: true
+          4:
+            id: 'blood-spatter-fall-confirmed'
+            isAccurate: false
+          5:
+            id: 'blood-spatter-identity-assumed'
+            isAccurate: false
+      3:
+        evidenceId: 'EVD-018'
+        reportLineOptions:
+          0:
+            id: 'bottle-location'
+            isAccurate: true
+          1:
+            id: 'bottle-first-encountered'
+            isAccurate: true
+          2:
+            id: 'bottle-standard-procedure'
+            isAccurate: true
+          3:
+            id: 'bottle-fingerprint-pending'
+            isAccurate: true
+          4:
+            id: 'bottle-intoxication-explains-fall'
+            isAccurate: false
+          5:
+            id: 'bottle-recent-drinking-assumed'
+            isAccurate: false
+    scenarioVersion: '1.1.0'
+    groundTruthVersion: '1.2.0'
+    relationships:
+      0:
+        relationshipId: 'REL-bottle-supports-brother'
+        scoreWeight: 1
+      1:
+        relationshipId: 'REL-knife-consistent-wound'
+        scoreWeight: 1
+      2:
+        relationshipId: 'REL-paul-print-handled-knife'
+        scoreWeight: 1
+      3:
+        relationshipId: 'REL-peter-departure-supported'
+        scoreWeight: 1
+      4:
+        relationshipId: 'REL-spatter-consistent-reconstruction'
+        scoreWeight: 1
+    conclusion:
+      correctConclusionId: 'conclusion-brother'
+      correctEndingId: 'ending-brother-accused'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/lastDrink.test.ts:76:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: mixed historical/current summaries keep shared IDs and labels separate
+ok 54 - mixed historical/current summaries keep shared IDs and labels separate
+  ---
+  duration_ms: 0.3802
+  type: 'test'
+  ...
+# (node:31604) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/measurement.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: rules 1.2.0 resolve with measurement weighted 1 and all four requirements; 1.1.0 untouched
+ok 55 - rules 1.2.0 resolve with measurement weighted 1 and all four requirements; 1.1.0 untouched
+  ---
+  duration_ms: 11.495
+  type: 'test'
+  ...
+# Subtest: perfect: every item measured from both references, in tolerance, before disturbance -> 1
+ok 56 - perfect: every item measured from both references, in tolerance, before disturbance -> 1
+  ---
+  duration_ms: 2.4314
+  type: 'test'
+  ...
+# Subtest: missing one reference: completion 0.5, accuracy 0.5, timing 1 -> item 0.6
+ok 57 - missing one reference: completion 0.5, accuracy 0.5, timing 1 -> item 0.6
+  ---
+  duration_ms: 0.6065
+  type: 'test'
+  ...
+# Subtest: outside tolerance: B off by 0.15 m -> accuracy 0.5 -> item 0.75; exactly 0.100 m still passes
+ok 58 - outside tolerance: B off by 0.15 m -> accuracy 0.5 -> item 0.75; exactly 0.100 m still passes
+  ---
+  duration_ms: 0.6723
+  type: 'test'
+  ...
+# Subtest: late: both sides accurate but taken after disturbance -> timing 0 -> item 0.8
+ok 59 - late: both sides accurate but taken after disturbance -> timing 0 -> item 0.8
+  ---
+  duration_ms: 0.4416
+  type: 'test'
+  ...
+# Subtest: mixed: one perfect, one incomplete, one inaccurate, one late -> exactly 0.7875
+ok 60 - mixed: one perfect, one incomplete, one inaccurate, one late -> exactly 0.7875
+  ---
+  duration_ms: 0.5821
+  type: 'test'
+  ...
+# Subtest: server ignores the client's withinTolerance claim and uses its own expected distances
+ok 61 - server ignores the client's withinTolerance claim and uses its own expected distances
+  ---
+  duration_ms: 0.3395
+  type: 'test'
+  ...
+# Subtest: re-measuring a side replaces it: out of tolerance, then corrected -> accurate
+ok 62 - re-measuring a side replaces it: out of tolerance, then corrected -> accurate
+  ---
+  duration_ms: 0.3549
+  type: 'test'
+  ...
+# Subtest: unknown requirement / wrong reference / non-measurement events (incl. ProcedureOutOfOrder) are ignored
+ok 63 - unknown requirement / wrong reference / non-measurement events (incl. ProcedureOutOfOrder) are ignored
+  ---
+  duration_ms: 0.6214
+  type: 'test'
+  ...
+# Subtest: 1.2.0 session that measured nothing -> 0 (four required items, none measured)
+ok 64 - 1.2.0 session that measured nothing -> 0 (four required items, none measured)
+  ---
+  duration_ms: 0.6847
+  type: 'test'
+  ...
+# Subtest: no measurement section under 1.1.0 / 1.0.0 -> undefined, whatever events exist
+ok 65 - no measurement section under 1.1.0 / 1.0.0 -> undefined, whatever events exist
+  ---
+  duration_ms: 0.5067
+  type: 'test'
+  ...
+# Subtest: overall: 1.1.0 ignores measurement; 1.2.0 adds it with weight 1 (1/14 nominal, 1/13 with no distractors)
+ok 66 - overall: 1.1.0 ignores measurement; 1.2.0 adds it with weight 1 (1/14 nominal, 1/13 with no distractors)
+  ---
+  duration_ms: 0.7332
+  type: 'test'
+  ...
+# (node:25128) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/newCategories.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: relationshipScorer: all 7 completed -> accuracy 1.0
+ok 67 - relationshipScorer: all 7 completed -> accuracy 1.0
+  ---
+  duration_ms: 1.462
+  type: 'test'
+  ...
+# Subtest: relationshipScorer: none completed -> accuracy 0.0, not undefined
+ok 68 - relationshipScorer: none completed -> accuracy 0.0, not undefined
+  ---
+  duration_ms: 0.3175
+  type: 'test'
+  ...
+# Subtest: relationshipScorer: 'Available' (not 'Completed') does not count
+ok 69 - relationshipScorer: 'Available' (not 'Completed') does not count
+  ---
+  duration_ms: 20.8254
+  type: 'test'
+  ...
+# Subtest: proceduralScorer: zero violations -> compliance 1.0
+ok 70 - proceduralScorer: zero violations -> compliance 1.0
+  ---
+  duration_ms: 1.4115
+  type: 'test'
+  ...
+# Subtest: proceduralScorer: violations at exactly the budget -> compliance floors at 0
+ok 71 - proceduralScorer: violations at exactly the budget -> compliance floors at 0
+  ---
+  duration_ms: 0.3461
+  type: 'test'
+  ...
+# Subtest: proceduralScorer: violations beyond the budget never go negative
+ok 72 - proceduralScorer: violations beyond the budget never go negative
+  ---
+  duration_ms: 0.3416
+  type: 'test'
+  ...
+# Subtest: proceduralScorer: unweighted event types contribute nothing
+ok 73 - proceduralScorer: unweighted event types contribute nothing
+  ---
+  duration_ms: 0.1989
+  type: 'test'
+  ...
+# Subtest: conclusionScorer: correct conclusion AND ending -> 1
+ok 74 - conclusionScorer: correct conclusion AND ending -> 1
+  ---
+  duration_ms: 0.1983
+  type: 'test'
+  ...
+# Subtest: conclusionScorer: wrong conclusion -> 0
+ok 75 - conclusionScorer: wrong conclusion -> 0
+  ---
+  duration_ms: 0.4607
+  type: 'test'
+  ...
+# Subtest: conclusionScorer: right conclusion but wrong/insufficient ending -> 0 (divergence is meaningful)
+ok 76 - conclusionScorer: right conclusion but wrong/insufficient ending -> 0 (divergence is meaningful)
+  ---
+  duration_ms: 2.7565
+  type: 'test'
+  ...
+# Subtest: overallScore: a category with undefined value is excluded from both numerator and weight-sum
+ok 77 - overallScore: a category with undefined value is excluded from both numerator and weight-sum
+  ---
+  duration_ms: 1.6239
+  type: 'test'
+  ...
+# Subtest: overallScore: all categories undefined -> undefined, never 0
+ok 78 - overallScore: all categories undefined -> undefined, never 0
+  ---
+  duration_ms: 0.3674
+  type: 'test'
+  ...
+# Subtest: overallScore: a perfect session scores 1.0 exactly
+ok 79 - overallScore: a perfect session scores 1.0 exactly
+  ---
+  duration_ms: 0.2836
+  type: 'test'
+  ...
+# (node:28800) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/newHouseMeasurementLayout.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: new-house-v1 measurements use registered new geometry with unchanged tolerance
+ok 80 - new-house-v1 measurements use registered new geometry with unchanged tolerance
+  ---
+  duration_ms: 2.5877
+  type: 'test'
+  ...
+# Subtest: untagged historical sessions retain their previous key and exact output
+ok 81 - untagged historical sessions retain their previous key and exact output
+  ---
+  duration_ms: 1.7394
+  type: 'test'
+  ...
+# Subtest: client expected-distance/accuracy claims cannot override the registered layout
+ok 82 - client expected-distance/accuracy claims cannot override the registered layout
+  ---
+  duration_ms: 0.521
+  type: 'test'
+  ...
+# Subtest: unknown or mixed layouts leave measurement analytics unavailable instead of using the wrong house
+ok 83 - unknown or mixed layouts leave measurement analytics unavailable instead of using the wrong house
+  ---
+  duration_ms: 0.3495
+  type: 'test'
+  ...
+# Subtest: server profile matches the saved Unity layout, references and expected distances
+ok 84 - server profile matches the saved Unity layout, references and expected distances
+  ---
+  duration_ms: 169.078
+  type: 'test'
+  ...
+# (node:19712) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/parity.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: parity 1.0.0: complete-correct-wife
+ok 85 - parity 1.0.0: complete-correct-wife
+  ---
+  duration_ms: 7095.4815
+  type: 'test'
+  ...
+# Subtest: parity 1.0.0: incorrect-brother
+ok 86 - parity 1.0.0: incorrect-brother
+  ---
+  duration_ms: 2066.5982
+  type: 'test'
+  ...
+# Subtest: parity 1.0.0: partial-investigation
+ok 87 - parity 1.0.0: partial-investigation
+  ---
+  duration_ms: 2562.0003
+  type: 'test'
+  ...
+# Subtest: parity 1.0.0: premature-submission
+ok 88 - parity 1.0.0: premature-submission
+  ---
+  duration_ms: 2413.5968
+  type: 'test'
+  ...
+# Subtest: parity 1.0.0: distractor-heavy
+ok 89 - parity 1.0.0: distractor-heavy
+  ---
+  duration_ms: 4053.3724
+  type: 'test'
+  ...
+# Subtest: parity 1.0.0: procedural-violation-heavy
+ok 90 - parity 1.0.0: procedural-violation-heavy
+  ---
+  duration_ms: 7863.5663
+  type: 'test'
+  ...
+# Subtest: parity 1.0.0: missing-critical-evidence
+ok 91 - parity 1.0.0: missing-critical-evidence
+  ---
+  duration_ms: 4438.3667
+  type: 'test'
+  ...
+# Subtest: parity 1.0.0: correct-evidence-incorrect-reasoning
+ok 92 - parity 1.0.0: correct-evidence-incorrect-reasoning
+  ---
+  duration_ms: 3183.0645
+  type: 'test'
+  ...
+# Subtest: parity 1.1.0: complete-correct-wife
+ok 93 - parity 1.1.0: complete-correct-wife
+  ---
+  duration_ms: 3730.1281
+  type: 'test'
+  ...
+# Subtest: parity 1.1.0: incorrect-brother
+ok 94 - parity 1.1.0: incorrect-brother
+  ---
+  duration_ms: 6971.3788
+  type: 'test'
+  ...
+# Subtest: parity 1.1.0: partial-investigation
+ok 95 - parity 1.1.0: partial-investigation
+  ---
+  duration_ms: 2405.115
+  type: 'test'
+  ...
+# Subtest: parity 1.1.0: premature-submission
+ok 96 - parity 1.1.0: premature-submission
+  ---
+  duration_ms: 1868.9666
+  type: 'test'
+  ...
+# Subtest: parity 1.1.0: distractor-heavy
+ok 97 - parity 1.1.0: distractor-heavy
+  ---
+  duration_ms: 2074.4396
+  type: 'test'
+  ...
+# Subtest: parity 1.1.0: procedural-violation-heavy
+ok 98 - parity 1.1.0: procedural-violation-heavy
+  ---
+  duration_ms: 2245.55
+  type: 'test'
+  ...
+# Subtest: parity 1.1.0: missing-critical-evidence
+ok 99 - parity 1.1.0: missing-critical-evidence
+  ---
+  duration_ms: 3335.8354
+  type: 'test'
+  ...
+# Subtest: parity 1.1.0: correct-evidence-incorrect-reasoning
+ok 100 - parity 1.1.0: correct-evidence-incorrect-reasoning
+  ---
+  duration_ms: 2025.773
+  type: 'test'
+  ...
+# Subtest: parity 1.2.0: complete-correct-wife
+ok 101 - parity 1.2.0: complete-correct-wife
+  ---
+  duration_ms: 2081.7368
+  type: 'test'
+  ...
+# Subtest: parity 1.2.0: incorrect-brother
+ok 102 - parity 1.2.0: incorrect-brother
+  ---
+  duration_ms: 2219.2268
+  type: 'test'
+  ...
+# Subtest: parity 1.2.0: partial-investigation
+ok 103 - parity 1.2.0: partial-investigation
+  ---
+  duration_ms: 1984.4959
+  type: 'test'
+  ...
+# Subtest: parity 1.2.0: premature-submission
+ok 104 - parity 1.2.0: premature-submission
+  ---
+  duration_ms: 3166.8275
+  type: 'test'
+  ...
+# Subtest: parity 1.2.0: distractor-heavy
+ok 105 - parity 1.2.0: distractor-heavy
+  ---
+  duration_ms: 2417.8102
+  type: 'test'
+  ...
+# Subtest: parity 1.2.0: procedural-violation-heavy
+ok 106 - parity 1.2.0: procedural-violation-heavy
+  ---
+  duration_ms: 1869.9244
+  type: 'test'
+  ...
+# Subtest: parity 1.2.0: missing-critical-evidence
+ok 107 - parity 1.2.0: missing-critical-evidence
+  ---
+  duration_ms: 2092.2559
+  type: 'test'
+  ...
+# Subtest: parity 1.2.0: correct-evidence-incorrect-reasoning
+ok 108 - parity 1.2.0: correct-evidence-incorrect-reasoning
+  ---
+  duration_ms: 2356.083
+  type: 'test'
+  ...
+# (node:31496) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/perEvidenceMeasurement.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: 1.4.0 = 1.3.0 except the measurement answer key (same weights, formula, tolerance)
+ok 109 - 1.4.0 = 1.3.0 except the measurement answer key (same weights, formula, tolerance)
+  ---
+  duration_ms: 2.1725
+  type: 'test'
+  ...
+# Subtest: 1.4.0: every item has its own two references - no reference shared between items
+ok 110 - 1.4.0: every item has its own two references - no reference shared between items
+  ---
+  duration_ms: 0.9032
+  type: 'test'
+  ...
+# Subtest: 1.3.0 answer key unchanged (shared corners REF-A / REF-B)
+ok 111 - 1.3.0 answer key unchanged (shared corners REF-A / REF-B)
+  ---
+  duration_ms: 0.3503
+  type: 'test'
+  ...
+# Subtest: perfect: each item measured from its own pair -> measurement 1.0
+ok 112 - perfect: each item measured from its own pair -> measurement 1.0
+  ---
+  duration_ms: 1.285
+  type: 'test'
+  ...
+# Subtest: BODY-A completes only with its own pair
+ok 113 - BODY-A completes only with its own pair
+  ---
+  duration_ms: 0.4922
+  type: 'test'
+  ...
+# Subtest: EVD-014 completes only with its own pair
+ok 114 - EVD-014 completes only with its own pair
+  ---
+  duration_ms: 0.333
+  type: 'test'
+  ...
+# Subtest: EVD-015 completes only with its own pair
+ok 115 - EVD-015 completes only with its own pair
+  ---
+  duration_ms: 0.2481
+  type: 'test'
+  ...
+# Subtest: EVD-018 completes only with its own pair
+ok 116 - EVD-018 completes only with its own pair
+  ---
+  duration_ms: 0.2697
+  type: 'test'
+  ...
+# Subtest: knife measured from the bottle's references (with the knife's correct distances) earns nothing
+ok 117 - knife measured from the bottle's references (with the knife's correct distances) earns nothing
+  ---
+  duration_ms: 0.6012
+  type: 'test'
+  ...
+# Subtest: knife using a spatter reference: refused side counts for nothing; own side still counts
+ok 118 - knife using a spatter reference: refused side counts for nothing; own side still counts
+  ---
+  duration_ms: 0.675
+  type: 'test'
+  ...
+# Subtest: partial: reference 1 only -> incomplete (0.6)
+ok 119 - partial: reference 1 only -> incomplete (0.6)
+  ---
+  duration_ms: 0.3936
+  type: 'test'
+  ...
+# Subtest: accuracy: 0.10 m tolerance against each item's own expected distances
+ok 120 - accuracy: 0.10 m tolerance against each item's own expected distances
+  ---
+  duration_ms: 0.3184
+  type: 'test'
+  ...
+# Subtest: late: taken after disturbance -> timing 0 (item 0.8)
+ok 121 - late: taken after disturbance -> timing 0 (item 0.8)
+  ---
+  duration_ms: 0.2704
+  type: 'test'
+  ...
+# Subtest: old corner-reference events (REF-A/REF-B) do not count under 1.4.0
+ok 122 - old corner-reference events (REF-A/REF-B) do not count under 1.4.0
+  ---
+  duration_ms: 0.2127
+  type: 'test'
+  ...
+# (node:29272) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/procedureOrder.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: rules 1.3.0: weight 1, 0.1 per warning, allowlist = the two authored Warn rules; 1.2.0 untouched
+ok 123 - rules 1.3.0: weight 1, 0.1 per warning, allowlist = the two authored Warn rules; 1.2.0 untouched
+  ---
+  duration_ms: 2.7517
+  type: 'test'
+  ...
+# Subtest: no warnings -> 100%
+ok 124 - no warnings -> 100%
+  ---
+  duration_ms: 1.1223
+  type: 'test'
+  ...
+# Subtest: one unique countable warning -> 90%
+ok 125 - one unique countable warning -> 90%
+  ---
+  duration_ms: 0.6586
+  type: 'test'
+  ...
+# Subtest: the same logical warning repeated -> one penalty
+ok 126 - the same logical warning repeated -> one penalty
+  ---
+  duration_ms: 0.3201
+  type: 'test'
+  ...
+# Subtest: two different warnings -> 80% (different rule, or same rule on another item)
+ok 127 - two different warnings -> 80% (different rule, or same rule on another item)
+  ---
+  duration_ms: 0.3634
+  type: 'test'
+  ...
+# Subtest: many warnings -> floor 0%
+ok 128 - many warnings -> floor 0%
+  ---
+  duration_ms: 0.681
+  type: 'test'
+  ...
+# Subtest: non-allowlisted procedureId never counts
+ok 129 - non-allowlisted procedureId never counts
+  ---
+  duration_ms: 0.2999
+  type: 'test'
+  ...
+# Subtest: final photo before measuring, measurement NEVER completed -> Measurement penalizes, procedure order does not
+ok 130 - final photo before measuring, measurement NEVER completed -> Measurement penalizes, procedure order does not
+  ---
+  duration_ms: 4.7656
+  type: 'test'
+  ...
+# Subtest: late measurement: Measurement timing applies its penalty; no extra procedure order penalty
+ok 131 - late measurement: Measurement timing applies its penalty; no extra procedure order penalty
+  ---
+  duration_ms: 1.014
+  type: 'test'
+  ...
+# Subtest: final photo first, then measured correctly on time -> Measurement 1.0, procedure order 90% (one penalty, here)
+ok 132 - final photo first, then measured correctly on time -> Measurement 1.0, procedure order 90% (one penalty, here)
+  ---
+  duration_ms: 1.0025
+  type: 'test'
+  ...
+# Subtest: early evidence photo on the SAME shutter press as a scene wrong-angle -> Scene Photography owns it
+ok 133 - early evidence photo on the SAME shutter press as a scene wrong-angle -> Scene Photography owns it
+  ---
+  duration_ms: 0.9761
+  type: 'test'
+  ...
+# Subtest: early evidence photo on a SEPARATE press (no scene event) -> counts
+ok 134 - early evidence photo on a SEPARATE press (no scene event) -> counts
+  ---
+  duration_ms: 0.3091
+  type: 'test'
+  ...
+# Subtest: events out of storage order are sorted before the same-press check
+ok 135 - events out of storage order are sorted before the same-press check
+  ---
+  duration_ms: 0.2448
+  type: 'test'
+  ...
+# Subtest: under 1.2.0 / 1.1.0 / 1.0.0 the category is undefined whatever the events
+ok 136 - under 1.2.0 / 1.1.0 / 1.0.0 the category is undefined whatever the events
+  ---
+  duration_ms: 0.2901
+  type: 'test'
+  ...
+# Subtest: overall: 1.2.0 score unchanged by the new category; 1.3.0 adds it with weight 1
+ok 137 - overall: 1.2.0 score unchanged by the new category; 1.3.0 adds it with weight 1
+  ---
+  duration_ms: 0.6227
+  type: 'test'
+  ...
+# Subtest: session resolution: 1.3.0 supported; unsupported 1.7.0 still requires review
+not ok 138 - session resolution: 1.3.0 supported; unsupported 1.7.0 still requires review
+  ---
+  duration_ms: 13.305
+  type: 'test'
+  location: 'C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\src\\lib\\scoring\\__tests__\\procedureOrder.test.ts:188:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + {
+    +   categoryWeights: {
+    +     criticalRecall: 0,
+    +     distractorFallRate: 0,
+    +     documentationAccuracy: 0,
+    +     finalConclusionAccuracy: 0,
+    +     measurement: 0,
+    +     precision: 0,
+    +     proceduralCompliance: 0,
+    +     procedureOrderCompliance: 0,
+    +     reasoningAccuracy: 0,
+    +     relationshipAccuracy: 0,
+    +     relevantRecall: 0,
+    +     scenePhotography: 0
+    +   },
+    +   deduction: {
+    +     checkpointWeight: 60,
+    +     checkpoints: [
+    +       {
+    +         category: 'EVIDENCE_CAUTION',
+    +         findingId: '',
+    +         id: 'RC-01-PETER',
+    +         responses: [
+    +           {
+    +             id: 'RC-01-PETER-A',
+    +             weight: 1
+    +           },
+    +           {
+    +             id: 'RC-01-PETER-B',
+    +             weight: 3
+    +           },
+    +           {
+    +             id: 'RC-01-PETER-C',
+    +             weight: 4
+    +           },
+    +           {
+    +             id: 'RC-01-PETER-D',
+    +             weight: 2
+    +           }
+    +         ],
+    +         trigger: 0
+    +       },
+    +       {
+    +         category: 'SCENE_INTERPRETATION',
+    +         findingId: '',
+    +         id: 'RC-02-SCENE',
+    +         responses: [
+    +           {
+    +             id: 'RC-02-SCENE-A',
+    +             weight: 1
+    +           },
+    +           {
+    +             id: 'RC-02-SCENE-B',
+    +             weight: 4
+    +           },
+    +           {
+    +             id: 'RC-02-SCENE-C',
+    +             weight: 1
+    +           },
+    +           {
+    +             id: 'RC-02-SCENE-D',
+    +             weight: 3
+    +           }
+    +         ],
+    +         trigger: 1
+    +       },
+    +       {
+    +         category: 'LIMITATION_RECOGNITION',
+    +         findingId: 'FIND-KNIFE-PRINT-BROTHER',
+    +         id: 'RC-03-FINGERPRINT',
+    +         responses: [
+    +           {
+    +             id: 'RC-03-FINGERPRINT-A',
+    +             weight: 1
+    +           },
+    +           {
+    +             id: 'RC-03-FINGERPRINT-B',
+    +             weight: 3
+    +           },
+    +           {
+    +             id: 'RC-03-FINGERPRINT-C',
+    +             weight: 4
+    +           },
+    +           {
+    +             id: 'RC-03-FINGERPRINT-D',
+    +             weight: 2
+    +           }
+    +         ],
+    +         trigger: 2
+    +       },
+    +       {
+    +         category: 'RELATIONSHIP_REASONING',
+    +         findingId: 'FIND-KNIFE-WOUND-CONSISTENT',
+    +         id: 'RC-04-KNIFE-WOUND',
+    +         responses: [
+    +           {
+    +             id: 'RC-04-KNIFE-WOUND-A',
+    +             weight: 1
+    +           },
+    +           {
+    +             id: 'RC-04-KNIFE-WOUND-B',
+    +             weight: 4
+    +           },
+    +           {
+    +             id: 'RC-04-KNIFE-WOUND-C',
+    +             weight: 3
+    +           },
+    +           {
+    +             id: 'RC-04-KNIFE-WOUND-D',
+    +             weight: 1
+    +           }
+    +         ],
+    +         trigger: 2
+    +       },
+    +       {
+    +         category: 'TIMELINE_REASONING',
+    +         findingId: '',
+    +         id: 'RC-05-TIMELINE',
+    +         responses: [
+    +           {
+    +             id: 'RC-05-TIMELINE-A',
+    +             weight: 1
+    +           },
+    +           {
+    +             id: 'RC-05-TIMELINE-B',
+    +             weight: 4
+    +           },
+    +           {
+    +             id: 'RC-05-TIMELINE-C',
+    +             weight: 3
+    +           },
+    +           {
+    +             id: 'RC-05-TIMELINE-D',
+    +             weight: 2
+    +           }
+    +         ],
+    +         trigger: 3
+    +       },
+    +       {
+    +         category: 'EVIDENCE_INTEGRATION',
+    +         findingId: 'FIND-SPATTER-RECONSTRUCTION',
+    +         id: 'RC-06-BLOODSTAIN',
+    +         responses: [
+    +           {
+    +             id: 'RC-06-BLOODSTAIN-A',
+    +             weight: 1
+    +           },
+    +           {
+    +             id: 'RC-06-BLOODSTAIN-B',
+    +             weight: 4
+    +           },
+    +           {
+    +             id: 'RC-06-BLOODSTAIN-C',
+    +             weight: 3
+    +           },
+    +           {
+    +             id: 'RC-06-BLOODSTAIN-D',
+    +             weight: 2
+    +           }
+    +         ],
+    +         trigger: 2
+    +       }
+    +     ],
+    +     conclusionWeight: 15,
+    +     contentVersion: '1.0.0',
+    +     groundTruthVersion: '1.2.0',
+    +     inconclusiveConclusionId: 'CONCLUSION-INCONCLUSIVE',
+    +     inconclusiveEndingId: 'ending-inconclusive',
+    +     inconclusiveInsufficientCredit: 1,
+    +     inconclusiveSupportedCredit: 0.25,
+    +     maximumCheckpointWeight: 4,
+    +     peterConclusionCredit: 0,
+    +     peterConclusionId: 'conclusion-peter',
+    +     peterEndingId: 'ending-peter-unsupported',
+    +     prematureConclusionCredit: 0.25,
+    +     prematureEndingId: 'ending-premature-submission',
+    +     relationshipWeight: 25,
+    +     relationships: [
+    +       {
+    +         evidenceId: 'EVD-018',
+    +         findingIds: [],
+    +         id: 'REL-bottle-supports-brother',
+    +         requiresForm1: false,
+    +         sourceId: 'EVD-018',
+    +         statementId: '',
+    +         targetId: 'statement_brother_drinking',
+    +         weight: 1
+    +       },
+    +       {
+    +         evidenceId: '',
+    +         findingIds: [
+    +           'FIND-BODY-SHARP-WOUND',
+    +           'FIND-KNIFE-WOUND-CONSISTENT'
+    +         ],
+    +         id: 'REL-knife-consistent-wound',
+    +         requiresForm1: false,
+    +         sourceId: 'EVD-014',
+    +         statementId: '',
+    +         targetId: 'BODY-A',
+    +         weight: 1
+    +       },
+    +       {
+    +         evidenceId: '',
+    +         findingIds: [
+    +           'FIND-KNIFE-PRINT-BROTHER'
+    +         ],
+    +         id: 'REL-paul-print-handled-knife',
+    +         requiresForm1: false,
+    +         sourceId: 'EVD-014',
+    +         statementId: '',
+    +         targetId: 'statement_paul_knife_contact',
+    +         weight: 1
+    +       },
+    +       {
+    +         evidenceId: '',
+    +         findingIds: [],
+    +         id: 'REL-paul-timeline-contradiction',
+    +         requiresForm1: false,
+    +         sourceId: 'statement_paul_timeline',
+    +         statementId: 'statement_vendor_paul_3am',
+    +         targetId: 'statement_vendor_paul_3am',
+    +         weight: 1
+    +       },
+    +       {
+    +         evidenceId: '',
+    +         findingIds: [],
+    +         id: 'REL-peter-departure-supported',
+    +         requiresForm1: true,
+    +         sourceId: 'statement_peter_timeline',
+    +         statementId: '',
+    +         targetId: 'statement_vendor_observation',
+    +         weight: 1
+    +       },
+    +       {
+    +         evidenceId: '',
+    +         findingIds: [
+    +           'FIND-SPATTER-RECONSTRUCTION'
+    +         ],
+    +         id: 'REL-spatter-consistent-reconstruction',
+    +         requiresForm1: false,
+    +         sourceId: 'EVD-015',
+    +         statementId: '',
+    +         targetId: 'reconstruction_attack_sequence',
+    +         weight: 1
+    +       }
+    +     ],
+    +     scenarioId: 'CSI-ENVIRONMENT-001',
+    +     scenarioVersion: '1.1.0',
+    +     scoringRulesVersion: '1.7.0',
+    +     supportedConclusionCredit: 1,
+    +     supportedConclusionId: 'conclusion-brother',
+    +     supportedEndingId: 'ending-brother-accused',
+    +     supportedFindingIds: [
+    +       'FIND-BODY-SHARP-WOUND',
+    +       'FIND-KNIFE-WOUND-CONSISTENT',
+    +       'FIND-KNIFE-PRINT-BROTHER',
+    +       'FIND-SPATTER-RECONSTRUCTION'
+    +     ],
+    +     supportedRelationshipIds: [
+    +       'REL-knife-consistent-wound',
+    +       'REL-spatter-consistent-reconstruction',
+    +       'REL-paul-print-handled-knife',
+    +       'REL-paul-timeline-contradiction'
+    +     ],
+    +     supportedStatementId: 'statement_vendor_paul_3am',
+    +     unsupportedRelationshipPenalty: 1,
+    +     validationStatus: 'RESEARCH_CONFIGURATION_REQUIRES_EXPERT_VALIDATION'
+    +   },
+    +   measurement: {
+    +     accuracyWeight: 0.5,
+    +     completionWeight: 0.3,
+    +     layoutProfiles: {
+    +       'new-house-v1': [
+    +         {
+    +           evidenceId: 'BODY-A',
+    +           expectedDistanceA: 2.067,
+    +           expectedDistanceB: 1.171,
+    +           referenceAId: 'REF-BODYA-1',
+    +           referenceBId: 'REF-BODYA-2',
+    +           requirementId: 'MEAS-BODY-A',
+    +           tolerance: 0.1
+    +         },
+    +         {
+    +           evidenceId: 'EVD-014',
+    +           expectedDistanceA: 0.596588,
+    +           expectedDistanceB: 0.65503,
+    +           referenceAId: 'REF-KNIFE-1',
+    +           referenceBId: 'REF-KNIFE-CAB',
+    +           requirementId: 'MEAS-EVD-014',
+    +           tolerance: 0.1
+    +         },
+    +         {
+    +           evidenceId: 'EVD-015',
+    +           expectedDistanceA: 0.954001,
+    +           expectedDistanceB: 1.094999,
+    +           referenceAId: 'REF-SPATTER-CAB',
+    +           referenceBId: 'REF-SPATTER-2',
+    +           requirementId: 'MEAS-EVD-015',
+    +           tolerance: 0.1
+    +         },
+    +         {
+    +           evidenceId: 'EVD-018',
+    +           expectedDistanceA: 0.332,
+    +           expectedDistanceB: 0.594,
+    +           referenceAId: 'REF-BOTTLE-1',
+    +           referenceBId: 'REF-BOTTLE-2',
+    +           requirementId: 'MEAS-EVD-018',
+    +           tolerance: 0.1
+    +         }
+    +       ]
+    +     },
+    +     requirements: [
+    +       {
+    +         evidenceId: 'BODY-A',
+    +         expectedDistanceA: 2.449,
+    +         expectedDistanceB: 1.131,
+    +         referenceAId: 'REF-BODYA-1',
+    +         referenceBId: 'REF-BODYA-2',
+    +         requirementId: 'MEAS-BODY-A',
+    +         tolerance: 0.1
+    +       },
+    +       {
+    +         evidenceId: 'EVD-014',
+    +         expectedDistanceA: 1.341,
+    +         expectedDistanceB: 1.079,
+    +         referenceAId: 'REF-KNIFE-1',
+    +         referenceBId: 'REF-KNIFE-CAB',
+    +         requirementId: 'MEAS-EVD-014',
+    +         tolerance: 0.1
+    +       },
+    +       {
+    +         evidenceId: 'EVD-015',
+    +         expectedDistanceA: 1.382,
+    +         expectedDistanceB: 1.042,
+    +         referenceAId: 'REF-SPATTER-CAB',
+    +         referenceBId: 'REF-SPATTER-2',
+    +         requirementId: 'MEAS-EVD-015',
+    +         tolerance: 0.1
+    +       },
+    +       {
+    +         evidenceId: 'EVD-018',
+    +         expectedDistanceA: 0.353,
+    +         expectedDistanceB: 0.405,
+    +         referenceAId: 'REF-BOTTLE-1',
+    +         referenceBId: 'REF-BOTTLE-2',
+    +         requirementId: 'MEAS-EVD-018',
+    +         tolerance: 0.1
+    +       }
+    +     ],
+    +     timingWeight: 0.2
+    +   },
+    +   procedural: {
+    +     violationBudget: 10,
+    +     violationWeights: {
+    +       EvidenceMarkerRejected: 1,
+    +       EvidenceTransitionBlocked: 1,
+    +       MarkerReclaimBlocked: 0.5,
+    +       NonEvidenceMarked: 1
+    +     }
+    +   },
+    +   procedureOrder: {
+    +     countable: [
+    +       {
+    +         excludeWhen: 'sceneAttemptSamePress',
+    +         procedureId: 'scene-photos-before-evidence-photo'
+    +       },
+    +       {
+    +         excludeWhen: 'measurementNotCompletedOnTime',
+    +         procedureId: 'final-evidence-photograph'
+    +       }
+    +     ],
+    +     penaltyPerWarning: 0.1,
+    +     samePressWindowMs: 250
+    +   },
+    +   scenePhotography: {
+    +     accuracyWeight: 0.2,
+    +     coverageWeight: 0.5,
+    +     sequenceWeight: 0.3
+    +   },
+    +   scoringRulesVersion: '1.7.0',
+    +   trainingReportLines: [
+    +     {
+    +       evidenceId: 'EVD-014',
+    +       lineId: 'knife-print-on-handle'
+    +     },
+    +     {
+    +       evidenceId: 'EVD-015',
+    +       lineId: 'blood-spatter-swab-collection'
+    +     },
+    +     {
+    +       evidenceId: 'EVD-018',
+    +       lineId: 'bottle-standard-procedure'
+    +     }
+    +   ]
+    + }
+    - null
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: ~
+  actual:
+    scoringRulesVersion: '1.7.0'
+    procedural:
+      violationWeights:
+        EvidenceTransitionBlocked: 1
+        NonEvidenceMarked: 1
+        MarkerReclaimBlocked: 0.5
+        EvidenceMarkerRejected: 1
+      violationBudget: 10
+    categoryWeights:
+      criticalRecall: 0
+      relevantRecall: 0
+      precision: 0
+      distractorFallRate: 0
+      reasoningAccuracy: 0
+      documentationAccuracy: 0
+      relationshipAccuracy: 0
+      proceduralCompliance: 0
+      finalConclusionAccuracy: 0
+      scenePhotography: 0
+      measurement: 0
+      procedureOrderCompliance: 0
+    scenePhotography:
+      coverageWeight: 0.5
+      sequenceWeight: 0.3
+      accuracyWeight: 0.2
+    measurement:
+      completionWeight: 0.3
+      accuracyWeight: 0.5
+      timingWeight: 0.2
+      requirements:
+        0:
+          requirementId: 'MEAS-BODY-A'
+          evidenceId: 'BODY-A'
+          referenceAId: 'REF-BODYA-1'
+          referenceBId: 'REF-BODYA-2'
+          expectedDistanceA: 2.449
+          expectedDistanceB: 1.131
+          tolerance: 0.1
+        1:
+          requirementId: 'MEAS-EVD-014'
+          evidenceId: 'EVD-014'
+          referenceAId: 'REF-KNIFE-1'
+          referenceBId: 'REF-KNIFE-CAB'
+          expectedDistanceA: 1.341
+          expectedDistanceB: 1.079
+          tolerance: 0.1
+        2:
+          requirementId: 'MEAS-EVD-015'
+          evidenceId: 'EVD-015'
+          referenceAId: 'REF-SPATTER-CAB'
+          referenceBId: 'REF-SPATTER-2'
+          expectedDistanceA: 1.382
+          expectedDistanceB: 1.042
+          tolerance: 0.1
+        3:
+          requirementId: 'MEAS-EVD-018'
+          evidenceId: 'EVD-018'
+          referenceAId: 'REF-BOTTLE-1'
+          referenceBId: 'REF-BOTTLE-2'
+          expectedDistanceA: 0.353
+          expectedDistanceB: 0.405
+          tolerance: 0.1
+      layoutProfiles:
+        new-house-v1:
+          0:
+            requirementId: 'MEAS-BODY-A'
+            evidenceId: 'BODY-A'
+            referenceAId: 'REF-BODYA-1'
+            referenceBId: 'REF-BODYA-2'
+            expectedDistanceA: 2.067
+            expectedDistanceB: 1.171
+            tolerance: 0.1
+          1:
+            requirementId: 'MEAS-EVD-014'
+            evidenceId: 'EVD-014'
+            referenceAId: 'REF-KNIFE-1'
+            referenceBId: 'REF-KNIFE-CAB'
+            expectedDistanceA: 0.596588
+            expectedDistanceB: 0.65503
+            tolerance: 0.1
+          2:
+            requirementId: 'MEAS-EVD-015'
+            evidenceId: 'EVD-015'
+            referenceAId: 'REF-SPATTER-CAB'
+            referenceBId: 'REF-SPATTER-2'
+            expectedDistanceA: 0.954001
+            expectedDistanceB: 1.094999
+            tolerance: 0.1
+          3:
+            requirementId: 'MEAS-EVD-018'
+            evidenceId: 'EVD-018'
+            referenceAId: 'REF-BOTTLE-1'
+            referenceBId: 'REF-BOTTLE-2'
+            expectedDistanceA: 0.332
+            expectedDistanceB: 0.594
+            tolerance: 0.1
+    procedureOrder:
+      penaltyPerWarning: 0.1
+      samePressWindowMs: 250
+      countable:
+        0:
+          procedureId: 'scene-photos-before-evidence-photo'
+          excludeWhen: 'sceneAttemptSamePress'
+        1:
+          procedureId: 'final-evidence-photograph'
+          excludeWhen: 'measurementNotCompletedOnTime'
+    trainingReportLines:
+      0:
+        evidenceId: 'EVD-014'
+        lineId: 'knife-print-on-handle'
+      1:
+        evidenceId: 'EVD-015'
+        lineId: 'blood-spatter-swab-collection'
+      2:
+        evidenceId: 'EVD-018'
+        lineId: 'bottle-standard-procedure'
+    deduction:
+      scoringRulesVersion: '1.7.0'
+      scenarioId: 'CSI-ENVIRONMENT-001'
+      scenarioVersion: '1.1.0'
+      groundTruthVersion: '1.2.0'
+      contentVersion: '1.0.0'
+      validationStatus: 'RESEARCH_CONFIGURATION_REQUIRES_EXPERT_VALIDATION'
+      checkpointWeight: 60
+      relationshipWeight: 25
+      conclusionWeight: 15
+      maximumCheckpointWeight: 4
+      unsupportedRelationshipPenalty: 1
+      checkpoints:
+        0:
+          id: 'RC-01-PETER'
+          trigger: 0
+          findingId: ''
+          category: 'EVIDENCE_CAUTION'
+          responses:
+            0:
+              id: 'RC-01-PETER-A'
+              weight: 1
+            1:
+              id: 'RC-01-PETER-B'
+              weight: 3
+            2:
+              id: 'RC-01-PETER-C'
+              weight: 4
+            3:
+              id: 'RC-01-PETER-D'
+              weight: 2
+        1:
+          id: 'RC-02-SCENE'
+          trigger: 1
+          findingId: ''
+          category: 'SCENE_INTERPRETATION'
+          responses:
+            0:
+              id: 'RC-02-SCENE-A'
+              weight: 1
+            1:
+              id: 'RC-02-SCENE-B'
+              weight: 4
+            2:
+              id: 'RC-02-SCENE-C'
+              weight: 1
+            3:
+              id: 'RC-02-SCENE-D'
+              weight: 3
+        2:
+          id: 'RC-03-FINGERPRINT'
+          trigger: 2
+          findingId: 'FIND-KNIFE-PRINT-BROTHER'
+          category: 'LIMITATION_RECOGNITION'
+          responses:
+            0:
+              id: 'RC-03-FINGERPRINT-A'
+              weight: 1
+            1:
+              id: 'RC-03-FINGERPRINT-B'
+              weight: 3
+            2:
+              id: 'RC-03-FINGERPRINT-C'
+              weight: 4
+            3:
+              id: 'RC-03-FINGERPRINT-D'
+              weight: 2
+        3:
+          id: 'RC-04-KNIFE-WOUND'
+          trigger: 2
+          findingId: 'FIND-KNIFE-WOUND-CONSISTENT'
+          category: 'RELATIONSHIP_REASONING'
+          responses:
+            0:
+              id: 'RC-04-KNIFE-WOUND-A'
+              weight: 1
+            1:
+              id: 'RC-04-KNIFE-WOUND-B'
+              weight: 4
+            2:
+              id: 'RC-04-KNIFE-WOUND-C'
+              weight: 3
+            3:
+              id: 'RC-04-KNIFE-WOUND-D'
+              weight: 1
+        4:
+          id: 'RC-05-TIMELINE'
+          trigger: 3
+          findingId: ''
+          category: 'TIMELINE_REASONING'
+          responses:
+            0:
+              id: 'RC-05-TIMELINE-A'
+              weight: 1
+            1:
+              id: 'RC-05-TIMELINE-B'
+              weight: 4
+            2:
+              id: 'RC-05-TIMELINE-C'
+              weight: 3
+            3:
+              id: 'RC-05-TIMELINE-D'
+              weight: 2
+        5:
+          id: 'RC-06-BLOODSTAIN'
+          trigger: 2
+          findingId: 'FIND-SPATTER-RECONSTRUCTION'
+          category: 'EVIDENCE_INTEGRATION'
+          responses:
+            0:
+              id: 'RC-06-BLOODSTAIN-A'
+              weight: 1
+            1:
+              id: 'RC-06-BLOODSTAIN-B'
+              weight: 4
+            2:
+              id: 'RC-06-BLOODSTAIN-C'
+              weight: 3
+            3:
+              id: 'RC-06-BLOODSTAIN-D'
+              weight: 2
+      relationships:
+        0:
+          id: 'REL-bottle-supports-brother'
+          sourceId: 'EVD-018'
+          targetId: 'statement_brother_drinking'
+          weight: 1
+          findingIds:
+          statementId: ''
+          evidenceId: 'EVD-018'
+          requiresForm1: false
+        1:
+          id: 'REL-knife-consistent-wound'
+          sourceId: 'EVD-014'
+          targetId: 'BODY-A'
+          weight: 1
+          findingIds:
+            0: 'FIND-BODY-SHARP-WOUND'
+            1: 'FIND-KNIFE-WOUND-CONSISTENT'
+          statementId: ''
+          evidenceId: ''
+          requiresForm1: false
+        2:
+          id: 'REL-paul-print-handled-knife'
+          sourceId: 'EVD-014'
+          targetId: 'statement_paul_knife_contact'
+          weight: 1
+          findingIds:
+            0: 'FIND-KNIFE-PRINT-BROTHER'
+          statementId: ''
+          evidenceId: ''
+          requiresForm1: false
+        3:
+          id: 'REL-paul-timeline-contradiction'
+          sourceId: 'statement_paul_timeline'
+          targetId: 'statement_vendor_paul_3am'
+          weight: 1
+          findingIds:
+          statementId: 'statement_vendor_paul_3am'
+          evidenceId: ''
+          requiresForm1: false
+        4:
+          id: 'REL-peter-departure-supported'
+          sourceId: 'statement_peter_timeline'
+          targetId: 'statement_vendor_observation'
+          weight: 1
+          findingIds:
+          statementId: ''
+          evidenceId: ''
+          requiresForm1: true
+        5:
+          id: 'REL-spatter-consistent-reconstruction'
+          sourceId: 'EVD-015'
+          targetId: 'reconstruction_attack_sequence'
+          weight: 1
+          findingIds:
+            0: 'FIND-SPATTER-RECONSTRUCTION'
+          statementId: ''
+          evidenceId: ''
+          requiresForm1: false
+      supportedFindingIds:
+        0: 'FIND-BODY-SHARP-WOUND'
+        1: 'FIND-KNIFE-WOUND-CONSISTENT'
+        2: 'FIND-KNIFE-PRINT-BROTHER'
+        3: 'FIND-SPATTER-RECONSTRUCTION'
+      supportedRelationshipIds:
+        0: 'REL-knife-consistent-wound'
+        1: 'REL-spatter-consistent-reconstruction'
+        2: 'REL-paul-print-handled-knife'
+        3: 'REL-paul-timeline-contradiction'
+      supportedStatementId: 'statement_vendor_paul_3am'
+      supportedConclusionId: 'conclusion-brother'
+      supportedEndingId: 'ending-brother-accused'
+      prematureEndingId: 'ending-premature-submission'
+      peterConclusionId: 'conclusion-peter'
+      peterEndingId: 'ending-peter-unsupported'
+      inconclusiveConclusionId: 'CONCLUSION-INCONCLUSIVE'
+      inconclusiveEndingId: 'ending-inconclusive'
+      supportedConclusionCredit: 1
+      prematureConclusionCredit: 0.25
+      peterConclusionCredit: 0
+      inconclusiveInsufficientCredit: 1
+      inconclusiveSupportedCredit: 0.25
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/procedureOrder.test.ts:190:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# (node:32152) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/reasoningCheckpointSeparation.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: all new 1-4 weights remain outside 1.6.0 evidence and aggregate scores
+ok 139 - all new 1-4 weights remain outside 1.6.0 evidence and aggregate scores
+  ---
+  duration_ms: 4.6689
+  type: 'test'
+  ...
+# Subtest: checkpoint records alone generate no active reasoning score
+ok 140 - checkpoint records alone generate no active reasoning score
+  ---
+  duration_ms: 0.7051
+  type: 'test'
+  ...
+# Subtest: integrated HYP-02 retains legacy justification scoring with new stable first-choice IDs
+ok 141 - integrated HYP-02 retains legacy justification scoring with new stable first-choice IDs
+  ---
+  duration_ms: 0.7175
+  type: 'test'
+  ...
+# Subtest: historical 1.0.0-1.5.0 scoring also ignores the additive checkpoint event
+ok 142 - historical 1.0.0-1.5.0 scoring also ignores the additive checkpoint event
+  ---
+  duration_ms: 0.3168
+  type: 'test'
+  ...
+# Subtest: eligible but unanswered checkpoints do not alter score or its denominator
+ok 143 - eligible but unanswered checkpoints do not alter score or its denominator
+  ---
+  duration_ms: 0.2213
+  type: 'test'
+  ...
+# (node:31620) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/relationalPayload.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: pair events and the new Warn step leave the measurement score unchanged
+ok 144 - pair events and the new Warn step leave the measurement score unchanged
+  ---
+  duration_ms: 4.5679
+  type: 'test'
+  ...
+# Subtest: the evidence-distances Warn step is not a countable procedure-order warning
+ok 145 - the evidence-distances Warn step is not a countable procedure-order warning
+  ---
+  duration_ms: 1.0769
+  type: 'test'
+  ...
+# Subtest: no scoring rules version knows the pair events (not scored yet)
+ok 146 - no scoring rules version knows the pair events (not scored yet)
+  ---
+  duration_ms: 0.9649
+  type: 'test'
+  ...
+# (node:21040) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/scenePhotography.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: perfect route -> 100/100/100, score 1
+ok 147 - perfect route -> 100/100/100, score 1
+  ---
+  duration_ms: 2.4332
+  type: 'test'
+  ...
+# Subtest: one wrong-order attempt -> coverage 1, sequence 7/8, score 0.9625
+ok 148 - one wrong-order attempt -> coverage 1, sequence 7/8, score 0.9625
+  ---
+  duration_ms: 0.5206
+  type: 'test'
+  ...
+# Subtest: one wrong-angle attempt -> accuracy 7/8, score 0.975
+ok 149 - one wrong-angle attempt -> accuracy 7/8, score 0.975
+  ---
+  duration_ms: 0.5079
+  type: 'test'
+  ...
+# Subtest: incomplete route (5 of 7) -> coverage 5/7, no completion time
+ok 150 - incomplete route (5 of 7) -> coverage 5/7, no completion time
+  ---
+  duration_ms: 0.406
+  type: 'test'
+  ...
+# Subtest: duplicate completion events are counted once
+ok 151 - duplicate completion events are counted once
+  ---
+  duration_ms: 0.3214
+  type: 'test'
+  ...
+# Subtest: route started but nothing documented -> score 0, not undefined
+ok 152 - route started but nothing documented -> score 0, not undefined
+  ---
+  duration_ms: 0.2306
+  type: 'test'
+  ...
+# Subtest: no ScenePhotographyStarted event (older client) -> undefined, not 0
+ok 153 - no ScenePhotographyStarted event (older client) -> undefined, not 0
+  ---
+  duration_ms: 0.1978
+  type: 'test'
+  ...
+# Subtest: rules 1.0.0: overall score unchanged by a scene photography category
+ok 154 - rules 1.0.0: overall score unchanged by a scene photography category
+  ---
+  duration_ms: 0.4984
+  type: 'test'
+  ...
+# Subtest: rules 1.1.0: no scene photography data -> same overall as 1.0.0
+ok 155 - rules 1.1.0: no scene photography data -> same overall as 1.0.0
+  ---
+  duration_ms: 0.5884
+  type: 'test'
+  ...
+# Subtest: rules 1.1.0: scene photography is weight 1 of 13
+ok 156 - rules 1.1.0: scene photography is weight 1 of 13
+  ---
+  duration_ms: 0.8991
+  type: 'test'
+  ...
+# (node:32488) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/scoringVersion.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: session stamped 1.1.0 / 1.1.0 resolves rules 1.1.0 with scene photography weighted
+ok 157 - session stamped 1.1.0 / 1.1.0 resolves rules 1.1.0 with scene photography weighted
+  ---
+  duration_ms: 1.9181
+  type: 'test'
+  ...
+# Subtest: historical session stamped 1.0.0 stays on 1.0.0 (no scene photography weight)
+ok 158 - historical session stamped 1.0.0 stays on 1.0.0 (no scene photography weight)
+  ---
+  duration_ms: 0.389
+  type: 'test'
+  ...
+# Subtest: scoring version and answer-key version are independent
+ok 159 - scoring version and answer-key version are independent
+  ---
+  duration_ms: 0.3143
+  type: 'test'
+  ...
+# Subtest: missing scoring version (older client) falls back to the historical 1.0.0, not the newest
+ok 160 - missing scoring version (older client) falls back to the historical 1.0.0, not the newest
+  ---
+  duration_ms: 0.2624
+  type: 'test'
+  ...
+# Subtest: unsupported or malformed scoring version resolves to nothing (requires_review), never the newest rules
+not ok 161 - unsupported or malformed scoring version resolves to nothing (requires_review), never the newest rules
+  ---
+  duration_ms: 9.1307
+  type: 'test'
+  location: 'C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\src\\lib\\scoring\\__tests__\\scoringVersion.test.ts:49:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    1.7.0
+    + actual - expected
+    
+    + {
+    +   categoryWeights: {
+    +     criticalRecall: 0,
+    +     distractorFallRate: 0,
+    +     documentationAccuracy: 0,
+    +     finalConclusionAccuracy: 0,
+    +     measurement: 0,
+    +     precision: 0,
+    +     proceduralCompliance: 0,
+    +     procedureOrderCompliance: 0,
+    +     reasoningAccuracy: 0,
+    +     relationshipAccuracy: 0,
+    +     relevantRecall: 0,
+    +     scenePhotography: 0
+    +   },
+    +   deduction: {
+    +     checkpointWeight: 60,
+    +     checkpoints: [
+    +       {
+    +         category: 'EVIDENCE_CAUTION',
+    +         findingId: '',
+    +         id: 'RC-01-PETER',
+    +         responses: [
+    +           {
+    +             id: 'RC-01-PETER-A',
+    +             weight: 1
+    +           },
+    +           {
+    +             id: 'RC-01-PETER-B',
+    +             weight: 3
+    +           },
+    +           {
+    +             id: 'RC-01-PETER-C',
+    +             weight: 4
+    +           },
+    +           {
+    +             id: 'RC-01-PETER-D',
+    +             weight: 2
+    +           }
+    +         ],
+    +         trigger: 0
+    +       },
+    +       {
+    +         category: 'SCENE_INTERPRETATION',
+    +         findingId: '',
+    +         id: 'RC-02-SCENE',
+    +         responses: [
+    +           {
+    +             id: 'RC-02-SCENE-A',
+    +             weight: 1
+    +           },
+    +           {
+    +             id: 'RC-02-SCENE-B',
+    +             weight: 4
+    +           },
+    +           {
+    +             id: 'RC-02-SCENE-C',
+    +             weight: 1
+    +           },
+    +           {
+    +             id: 'RC-02-SCENE-D',
+    +             weight: 3
+    +           }
+    +         ],
+    +         trigger: 1
+    +       },
+    +       {
+    +         category: 'LIMITATION_RECOGNITION',
+    +         findingId: 'FIND-KNIFE-PRINT-BROTHER',
+    +         id: 'RC-03-FINGERPRINT',
+    +         responses: [
+    +           {
+    +             id: 'RC-03-FINGERPRINT-A',
+    +             weight: 1
+    +           },
+    +           {
+    +             id: 'RC-03-FINGERPRINT-B',
+    +             weight: 3
+    +           },
+    +           {
+    +             id: 'RC-03-FINGERPRINT-C',
+    +             weight: 4
+    +           },
+    +           {
+    +             id: 'RC-03-FINGERPRINT-D',
+    +             weight: 2
+    +           }
+    +         ],
+    +         trigger: 2
+    +       },
+    +       {
+    +         category: 'RELATIONSHIP_REASONING',
+    +         findingId: 'FIND-KNIFE-WOUND-CONSISTENT',
+    +         id: 'RC-04-KNIFE-WOUND',
+    +         responses: [
+    +           {
+    +             id: 'RC-04-KNIFE-WOUND-A',
+    +             weight: 1
+    +           },
+    +           {
+    +             id: 'RC-04-KNIFE-WOUND-B',
+    +             weight: 4
+    +           },
+    +           {
+    +             id: 'RC-04-KNIFE-WOUND-C',
+    +             weight: 3
+    +           },
+    +           {
+    +             id: 'RC-04-KNIFE-WOUND-D',
+    +             weight: 1
+    +           }
+    +         ],
+    +         trigger: 2
+    +       },
+    +       {
+    +         category: 'TIMELINE_REASONING',
+    +         findingId: '',
+    +         id: 'RC-05-TIMELINE',
+    +         responses: [
+    +           {
+    +             id: 'RC-05-TIMELINE-A',
+    +             weight: 1
+    +           },
+    +           {
+    +             id: 'RC-05-TIMELINE-B',
+    +             weight: 4
+    +           },
+    +           {
+    +             id: 'RC-05-TIMELINE-C',
+    +             weight: 3
+    +           },
+    +           {
+    +             id: 'RC-05-TIMELINE-D',
+    +             weight: 2
+    +           }
+    +         ],
+    +         trigger: 3
+    +       },
+    +       {
+    +         category: 'EVIDENCE_INTEGRATION',
+    +         findingId: 'FIND-SPATTER-RECONSTRUCTION',
+    +         id: 'RC-06-BLOODSTAIN',
+    +         responses: [
+    +           {
+    +             id: 'RC-06-BLOODSTAIN-A',
+    +             weight: 1
+    +           },
+    +           {
+    +             id: 'RC-06-BLOODSTAIN-B',
+    +             weight: 4
+    +           },
+    +           {
+    +             id: 'RC-06-BLOODSTAIN-C',
+    +             weight: 3
+    +           },
+    +           {
+    +             id: 'RC-06-BLOODSTAIN-D',
+    +             weight: 2
+    +           }
+    +         ],
+    +         trigger: 2
+    +       }
+    +     ],
+    +     conclusionWeight: 15,
+    +     contentVersion: '1.0.0',
+    +     groundTruthVersion: '1.2.0',
+    +     inconclusiveConclusionId: 'CONCLUSION-INCONCLUSIVE',
+    +     inconclusiveEndingId: 'ending-inconclusive',
+    +     inconclusiveInsufficientCredit: 1,
+    +     inconclusiveSupportedCredit: 0.25,
+    +     maximumCheckpointWeight: 4,
+    +     peterConclusionCredit: 0,
+    +     peterConclusionId: 'conclusion-peter',
+    +     peterEndingId: 'ending-peter-unsupported',
+    +     prematureConclusionCredit: 0.25,
+    +     prematureEndingId: 'ending-premature-submission',
+    +     relationshipWeight: 25,
+    +     relationships: [
+    +       {
+    +         evidenceId: 'EVD-018',
+    +         findingIds: [],
+    +         id: 'REL-bottle-supports-brother',
+    +         requiresForm1: false,
+    +         sourceId: 'EVD-018',
+    +         statementId: '',
+    +         targetId: 'statement_brother_drinking',
+    +         weight: 1
+    +       },
+    +       {
+    +         evidenceId: '',
+    +         findingIds: [
+    +           'FIND-BODY-SHARP-WOUND',
+    +           'FIND-KNIFE-WOUND-CONSISTENT'
+    +         ],
+    +         id: 'REL-knife-consistent-wound',
+    +         requiresForm1: false,
+    +         sourceId: 'EVD-014',
+    +         statementId: '',
+    +         targetId: 'BODY-A',
+    +         weight: 1
+    +       },
+    +       {
+    +         evidenceId: '',
+    +         findingIds: [
+    +           'FIND-KNIFE-PRINT-BROTHER'
+    +         ],
+    +         id: 'REL-paul-print-handled-knife',
+    +         requiresForm1: false,
+    +         sourceId: 'EVD-014',
+    +         statementId: '',
+    +         targetId: 'statement_paul_knife_contact',
+    +         weight: 1
+    +       },
+    +       {
+    +         evidenceId: '',
+    +         findingIds: [],
+    +         id: 'REL-paul-timeline-contradiction',
+    +         requiresForm1: false,
+    +         sourceId: 'statement_paul_timeline',
+    +         statementId: 'statement_vendor_paul_3am',
+    +         targetId: 'statement_vendor_paul_3am',
+    +         weight: 1
+    +       },
+    +       {
+    +         evidenceId: '',
+    +         findingIds: [],
+    +         id: 'REL-peter-departure-supported',
+    +         requiresForm1: true,
+    +         sourceId: 'statement_peter_timeline',
+    +         statementId: '',
+    +         targetId: 'statement_vendor_observation',
+    +         weight: 1
+    +       },
+    +       {
+    +         evidenceId: '',
+    +         findingIds: [
+    +           'FIND-SPATTER-RECONSTRUCTION'
+    +         ],
+    +         id: 'REL-spatter-consistent-reconstruction',
+    +         requiresForm1: false,
+    +         sourceId: 'EVD-015',
+    +         statementId: '',
+    +         targetId: 'reconstruction_attack_sequence',
+    +         weight: 1
+    +       }
+    +     ],
+    +     scenarioId: 'CSI-ENVIRONMENT-001',
+    +     scenarioVersion: '1.1.0',
+    +     scoringRulesVersion: '1.7.0',
+    +     supportedConclusionCredit: 1,
+    +     supportedConclusionId: 'conclusion-brother',
+    +     supportedEndingId: 'ending-brother-accused',
+    +     supportedFindingIds: [
+    +       'FIND-BODY-SHARP-WOUND',
+    +       'FIND-KNIFE-WOUND-CONSISTENT',
+    +       'FIND-KNIFE-PRINT-BROTHER',
+    +       'FIND-SPATTER-RECONSTRUCTION'
+    +     ],
+    +     supportedRelationshipIds: [
+    +       'REL-knife-consistent-wound',
+    +       'REL-spatter-consistent-reconstruction',
+    +       'REL-paul-print-handled-knife',
+    +       'REL-paul-timeline-contradiction'
+    +     ],
+    +     supportedStatementId: 'statement_vendor_paul_3am',
+    +     unsupportedRelationshipPenalty: 1,
+    +     validationStatus: 'RESEARCH_CONFIGURATION_REQUIRES_EXPERT_VALIDATION'
+    +   },
+    +   measurement: {
+    +     accuracyWeight: 0.5,
+    +     completionWeight: 0.3,
+    +     layoutProfiles: {
+    +       'new-house-v1': [
+    +         {
+    +           evidenceId: 'BODY-A',
+    +           expectedDistanceA: 2.067,
+    +           expectedDistanceB: 1.171,
+    +           referenceAId: 'REF-BODYA-1',
+    +           referenceBId: 'REF-BODYA-2',
+    +           requirementId: 'MEAS-BODY-A',
+    +           tolerance: 0.1
+    +         },
+    +         {
+    +           evidenceId: 'EVD-014',
+    +           expectedDistanceA: 0.596588,
+    +           expectedDistanceB: 0.65503,
+    +           referenceAId: 'REF-KNIFE-1',
+    +           referenceBId: 'REF-KNIFE-CAB',
+    +           requirementId: 'MEAS-EVD-014',
+    +           tolerance: 0.1
+    +         },
+    +         {
+    +           evidenceId: 'EVD-015',
+    +           expectedDistanceA: 0.954001,
+    +           expectedDistanceB: 1.094999,
+    +           referenceAId: 'REF-SPATTER-CAB',
+    +           referenceBId: 'REF-SPATTER-2',
+    +           requirementId: 'MEAS-EVD-015',
+    +           tolerance: 0.1
+    +         },
+    +         {
+    +           evidenceId: 'EVD-018',
+    +           expectedDistanceA: 0.332,
+    +           expectedDistanceB: 0.594,
+    +           referenceAId: 'REF-BOTTLE-1',
+    +           referenceBId: 'REF-BOTTLE-2',
+    +           requirementId: 'MEAS-EVD-018',
+    +           tolerance: 0.1
+    +         }
+    +       ]
+    +     },
+    +     requirements: [
+    +       {
+    +         evidenceId: 'BODY-A',
+    +         expectedDistanceA: 2.449,
+    +         expectedDistanceB: 1.131,
+    +         referenceAId: 'REF-BODYA-1',
+    +         referenceBId: 'REF-BODYA-2',
+    +         requirementId: 'MEAS-BODY-A',
+    +         tolerance: 0.1
+    +       },
+    +       {
+    +         evidenceId: 'EVD-014',
+    +         expectedDistanceA: 1.341,
+    +         expectedDistanceB: 1.079,
+    +         referenceAId: 'REF-KNIFE-1',
+    +         referenceBId: 'REF-KNIFE-CAB',
+    +         requirementId: 'MEAS-EVD-014',
+    +         tolerance: 0.1
+    +       },
+    +       {
+    +         evidenceId: 'EVD-015',
+    +         expectedDistanceA: 1.382,
+    +         expectedDistanceB: 1.042,
+    +         referenceAId: 'REF-SPATTER-CAB',
+    +         referenceBId: 'REF-SPATTER-2',
+    +         requirementId: 'MEAS-EVD-015',
+    +         tolerance: 0.1
+    +       },
+    +       {
+    +         evidenceId: 'EVD-018',
+    +         expectedDistanceA: 0.353,
+    +         expectedDistanceB: 0.405,
+    +         referenceAId: 'REF-BOTTLE-1',
+    +         referenceBId: 'REF-BOTTLE-2',
+    +         requirementId: 'MEAS-EVD-018',
+    +         tolerance: 0.1
+    +       }
+    +     ],
+    +     timingWeight: 0.2
+    +   },
+    +   procedural: {
+    +     violationBudget: 10,
+    +     violationWeights: {
+    +       EvidenceMarkerRejected: 1,
+    +       EvidenceTransitionBlocked: 1,
+    +       MarkerReclaimBlocked: 0.5,
+    +       NonEvidenceMarked: 1
+    +     }
+    +   },
+    +   procedureOrder: {
+    +     countable: [
+    +       {
+    +         excludeWhen: 'sceneAttemptSamePress',
+    +         procedureId: 'scene-photos-before-evidence-photo'
+    +       },
+    +       {
+    +         excludeWhen: 'measurementNotCompletedOnTime',
+    +         procedureId: 'final-evidence-photograph'
+    +       }
+    +     ],
+    +     penaltyPerWarning: 0.1,
+    +     samePressWindowMs: 250
+    +   },
+    +   scenePhotography: {
+    +     accuracyWeight: 0.2,
+    +     coverageWeight: 0.5,
+    +     sequenceWeight: 0.3
+    +   },
+    +   scoringRulesVersion: '1.7.0',
+    +   trainingReportLines: [
+    +     {
+    +       evidenceId: 'EVD-014',
+    +       lineId: 'knife-print-on-handle'
+    +     },
+    +     {
+    +       evidenceId: 'EVD-015',
+    +       lineId: 'blood-spatter-swab-collection'
+    +     },
+    +     {
+    +       evidenceId: 'EVD-018',
+    +       lineId: 'bottle-standard-procedure'
+    +     }
+    +   ]
+    + }
+    - null
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: ~
+  actual:
+    scoringRulesVersion: '1.7.0'
+    procedural:
+      violationWeights:
+        EvidenceTransitionBlocked: 1
+        NonEvidenceMarked: 1
+        MarkerReclaimBlocked: 0.5
+        EvidenceMarkerRejected: 1
+      violationBudget: 10
+    categoryWeights:
+      criticalRecall: 0
+      relevantRecall: 0
+      precision: 0
+      distractorFallRate: 0
+      reasoningAccuracy: 0
+      documentationAccuracy: 0
+      relationshipAccuracy: 0
+      proceduralCompliance: 0
+      finalConclusionAccuracy: 0
+      scenePhotography: 0
+      measurement: 0
+      procedureOrderCompliance: 0
+    scenePhotography:
+      coverageWeight: 0.5
+      sequenceWeight: 0.3
+      accuracyWeight: 0.2
+    measurement:
+      completionWeight: 0.3
+      accuracyWeight: 0.5
+      timingWeight: 0.2
+      requirements:
+        0:
+          requirementId: 'MEAS-BODY-A'
+          evidenceId: 'BODY-A'
+          referenceAId: 'REF-BODYA-1'
+          referenceBId: 'REF-BODYA-2'
+          expectedDistanceA: 2.449
+          expectedDistanceB: 1.131
+          tolerance: 0.1
+        1:
+          requirementId: 'MEAS-EVD-014'
+          evidenceId: 'EVD-014'
+          referenceAId: 'REF-KNIFE-1'
+          referenceBId: 'REF-KNIFE-CAB'
+          expectedDistanceA: 1.341
+          expectedDistanceB: 1.079
+          tolerance: 0.1
+        2:
+          requirementId: 'MEAS-EVD-015'
+          evidenceId: 'EVD-015'
+          referenceAId: 'REF-SPATTER-CAB'
+          referenceBId: 'REF-SPATTER-2'
+          expectedDistanceA: 1.382
+          expectedDistanceB: 1.042
+          tolerance: 0.1
+        3:
+          requirementId: 'MEAS-EVD-018'
+          evidenceId: 'EVD-018'
+          referenceAId: 'REF-BOTTLE-1'
+          referenceBId: 'REF-BOTTLE-2'
+          expectedDistanceA: 0.353
+          expectedDistanceB: 0.405
+          tolerance: 0.1
+      layoutProfiles:
+        new-house-v1:
+          0:
+            requirementId: 'MEAS-BODY-A'
+            evidenceId: 'BODY-A'
+            referenceAId: 'REF-BODYA-1'
+            referenceBId: 'REF-BODYA-2'
+            expectedDistanceA: 2.067
+            expectedDistanceB: 1.171
+            tolerance: 0.1
+          1:
+            requirementId: 'MEAS-EVD-014'
+            evidenceId: 'EVD-014'
+            referenceAId: 'REF-KNIFE-1'
+            referenceBId: 'REF-KNIFE-CAB'
+            expectedDistanceA: 0.596588
+            expectedDistanceB: 0.65503
+            tolerance: 0.1
+          2:
+            requirementId: 'MEAS-EVD-015'
+            evidenceId: 'EVD-015'
+            referenceAId: 'REF-SPATTER-CAB'
+            referenceBId: 'REF-SPATTER-2'
+            expectedDistanceA: 0.954001
+            expectedDistanceB: 1.094999
+            tolerance: 0.1
+          3:
+            requirementId: 'MEAS-EVD-018'
+            evidenceId: 'EVD-018'
+            referenceAId: 'REF-BOTTLE-1'
+            referenceBId: 'REF-BOTTLE-2'
+            expectedDistanceA: 0.332
+            expectedDistanceB: 0.594
+            tolerance: 0.1
+    procedureOrder:
+      penaltyPerWarning: 0.1
+      samePressWindowMs: 250
+      countable:
+        0:
+          procedureId: 'scene-photos-before-evidence-photo'
+          excludeWhen: 'sceneAttemptSamePress'
+        1:
+          procedureId: 'final-evidence-photograph'
+          excludeWhen: 'measurementNotCompletedOnTime'
+    trainingReportLines:
+      0:
+        evidenceId: 'EVD-014'
+        lineId: 'knife-print-on-handle'
+      1:
+        evidenceId: 'EVD-015'
+        lineId: 'blood-spatter-swab-collection'
+      2:
+        evidenceId: 'EVD-018'
+        lineId: 'bottle-standard-procedure'
+    deduction:
+      scoringRulesVersion: '1.7.0'
+      scenarioId: 'CSI-ENVIRONMENT-001'
+      scenarioVersion: '1.1.0'
+      groundTruthVersion: '1.2.0'
+      contentVersion: '1.0.0'
+      validationStatus: 'RESEARCH_CONFIGURATION_REQUIRES_EXPERT_VALIDATION'
+      checkpointWeight: 60
+      relationshipWeight: 25
+      conclusionWeight: 15
+      maximumCheckpointWeight: 4
+      unsupportedRelationshipPenalty: 1
+      checkpoints:
+        0:
+          id: 'RC-01-PETER'
+          trigger: 0
+          findingId: ''
+          category: 'EVIDENCE_CAUTION'
+          responses:
+            0:
+              id: 'RC-01-PETER-A'
+              weight: 1
+            1:
+              id: 'RC-01-PETER-B'
+              weight: 3
+            2:
+              id: 'RC-01-PETER-C'
+              weight: 4
+            3:
+              id: 'RC-01-PETER-D'
+              weight: 2
+        1:
+          id: 'RC-02-SCENE'
+          trigger: 1
+          findingId: ''
+          category: 'SCENE_INTERPRETATION'
+          responses:
+            0:
+              id: 'RC-02-SCENE-A'
+              weight: 1
+            1:
+              id: 'RC-02-SCENE-B'
+              weight: 4
+            2:
+              id: 'RC-02-SCENE-C'
+              weight: 1
+            3:
+              id: 'RC-02-SCENE-D'
+              weight: 3
+        2:
+          id: 'RC-03-FINGERPRINT'
+          trigger: 2
+          findingId: 'FIND-KNIFE-PRINT-BROTHER'
+          category: 'LIMITATION_RECOGNITION'
+          responses:
+            0:
+              id: 'RC-03-FINGERPRINT-A'
+              weight: 1
+            1:
+              id: 'RC-03-FINGERPRINT-B'
+              weight: 3
+            2:
+              id: 'RC-03-FINGERPRINT-C'
+              weight: 4
+            3:
+              id: 'RC-03-FINGERPRINT-D'
+              weight: 2
+        3:
+          id: 'RC-04-KNIFE-WOUND'
+          trigger: 2
+          findingId: 'FIND-KNIFE-WOUND-CONSISTENT'
+          category: 'RELATIONSHIP_REASONING'
+          responses:
+            0:
+              id: 'RC-04-KNIFE-WOUND-A'
+              weight: 1
+            1:
+              id: 'RC-04-KNIFE-WOUND-B'
+              weight: 4
+            2:
+              id: 'RC-04-KNIFE-WOUND-C'
+              weight: 3
+            3:
+              id: 'RC-04-KNIFE-WOUND-D'
+              weight: 1
+        4:
+          id: 'RC-05-TIMELINE'
+          trigger: 3
+          findingId: ''
+          category: 'TIMELINE_REASONING'
+          responses:
+            0:
+              id: 'RC-05-TIMELINE-A'
+              weight: 1
+            1:
+              id: 'RC-05-TIMELINE-B'
+              weight: 4
+            2:
+              id: 'RC-05-TIMELINE-C'
+              weight: 3
+            3:
+              id: 'RC-05-TIMELINE-D'
+              weight: 2
+        5:
+          id: 'RC-06-BLOODSTAIN'
+          trigger: 2
+          findingId: 'FIND-SPATTER-RECONSTRUCTION'
+          category: 'EVIDENCE_INTEGRATION'
+          responses:
+            0:
+              id: 'RC-06-BLOODSTAIN-A'
+              weight: 1
+            1:
+              id: 'RC-06-BLOODSTAIN-B'
+              weight: 4
+            2:
+              id: 'RC-06-BLOODSTAIN-C'
+              weight: 3
+            3:
+              id: 'RC-06-BLOODSTAIN-D'
+              weight: 2
+      relationships:
+        0:
+          id: 'REL-bottle-supports-brother'
+          sourceId: 'EVD-018'
+          targetId: 'statement_brother_drinking'
+          weight: 1
+          findingIds:
+          statementId: ''
+          evidenceId: 'EVD-018'
+          requiresForm1: false
+        1:
+          id: 'REL-knife-consistent-wound'
+          sourceId: 'EVD-014'
+          targetId: 'BODY-A'
+          weight: 1
+          findingIds:
+            0: 'FIND-BODY-SHARP-WOUND'
+            1: 'FIND-KNIFE-WOUND-CONSISTENT'
+          statementId: ''
+          evidenceId: ''
+          requiresForm1: false
+        2:
+          id: 'REL-paul-print-handled-knife'
+          sourceId: 'EVD-014'
+          targetId: 'statement_paul_knife_contact'
+          weight: 1
+          findingIds:
+            0: 'FIND-KNIFE-PRINT-BROTHER'
+          statementId: ''
+          evidenceId: ''
+          requiresForm1: false
+        3:
+          id: 'REL-paul-timeline-contradiction'
+          sourceId: 'statement_paul_timeline'
+          targetId: 'statement_vendor_paul_3am'
+          weight: 1
+          findingIds:
+          statementId: 'statement_vendor_paul_3am'
+          evidenceId: ''
+          requiresForm1: false
+        4:
+          id: 'REL-peter-departure-supported'
+          sourceId: 'statement_peter_timeline'
+          targetId: 'statement_vendor_observation'
+          weight: 1
+          findingIds:
+          statementId: ''
+          evidenceId: ''
+          requiresForm1: true
+        5:
+          id: 'REL-spatter-consistent-reconstruction'
+          sourceId: 'EVD-015'
+          targetId: 'reconstruction_attack_sequence'
+          weight: 1
+          findingIds:
+            0: 'FIND-SPATTER-RECONSTRUCTION'
+          statementId: ''
+          evidenceId: ''
+          requiresForm1: false
+      supportedFindingIds:
+        0: 'FIND-BODY-SHARP-WOUND'
+        1: 'FIND-KNIFE-WOUND-CONSISTENT'
+        2: 'FIND-KNIFE-PRINT-BROTHER'
+        3: 'FIND-SPATTER-RECONSTRUCTION'
+      supportedRelationshipIds:
+        0: 'REL-knife-consistent-wound'
+        1: 'REL-spatter-consistent-reconstruction'
+        2: 'REL-paul-print-handled-knife'
+        3: 'REL-paul-timeline-contradiction'
+      supportedStatementId: 'statement_vendor_paul_3am'
+      supportedConclusionId: 'conclusion-brother'
+      supportedEndingId: 'ending-brother-accused'
+      prematureEndingId: 'ending-premature-submission'
+      peterConclusionId: 'conclusion-peter'
+      peterEndingId: 'ending-peter-unsupported'
+      inconclusiveConclusionId: 'CONCLUSION-INCONCLUSIVE'
+      inconclusiveEndingId: 'ending-inconclusive'
+      supportedConclusionCredit: 1
+      prematureConclusionCredit: 0.25
+      peterConclusionCredit: 0
+      inconclusiveInsufficientCredit: 1
+      inconclusiveSupportedCredit: 0.25
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/scoringVersion.test.ts:51:12)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: perfect route under 1.1.0 -> scene photography 100%
+ok 162 - perfect route under 1.1.0 -> scene photography 100%
+  ---
+  duration_ms: 0.951
+  type: 'test'
+  ...
+# Subtest: one wrong-position attempt -> accuracy 7/8, score 0.975
+ok 163 - one wrong-position attempt -> accuracy 7/8, score 0.975
+  ---
+  duration_ms: 0.49
+  type: 'test'
+  ...
+# Subtest: mixed: one wrong-order + one wrong-angle + one wrong-position -> 0.9225 (matches Unity's ScenePhotographyScoring)
+ok 164 - mixed: one wrong-order + one wrong-angle + one wrong-position -> 0.9225 (matches Unity's ScenePhotographyScoring)
+  ---
+  duration_ms: 0.4896
+  type: 'test'
+  ...
+# Subtest: same session: 1.0.0 ignores scene photography; 1.1.0 weights it 1 of 13
+ok 165 - same session: 1.0.0 ignores scene photography; 1.1.0 weights it 1 of 13
+  ---
+  duration_ms: 1.1011
+  type: 'test'
+  ...
+# Subtest: session stamped 1.1.0 / 1.2.0 resolves rules 1.2.0: scene photography and measurement weighted
+ok 166 - session stamped 1.1.0 / 1.2.0 resolves rules 1.2.0: scene photography and measurement weighted
+  ---
+  duration_ms: 1.3732
+  type: 'test'
+  ...
+# (node:31084) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/simplifiedScenario.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: both versions resolve (historical sessions stay readable)
+ok 167 - both versions resolve (historical sessions stay readable)
+  ---
+  duration_ms: 3.6034
+  type: 'test'
+  ...
+# Subtest: 1.1.0 roster excludes the phone and gloves; 1.0.0 is untouched
+ok 168 - 1.1.0 roster excludes the phone and gloves; 1.0.0 is untouched
+  ---
+  duration_ms: 1.2796
+  type: 'test'
+  ...
+# Subtest: 1.1.0 removes the phone/gloves HYP-03 options and wife relationships
+ok 169 - 1.1.0 removes the phone/gloves HYP-03 options and wife relationships
+  ---
+  duration_ms: 0.4313
+  type: 'test'
+  ...
+# Subtest: 1.1.0 HYP-02 and HYP-03 each have exactly one correct reasoning option
+ok 170 - 1.1.0 HYP-02 and HYP-03 each have exactly one correct reasoning option
+  ---
+  duration_ms: 0.4024
+  type: 'test'
+  ...
+# Subtest: 1.1.0 treats the bottle as supporting context, not a distractor; 1.0.0 unchanged
+ok 171 - 1.1.0 treats the bottle as supporting context, not a distractor; 1.0.0 unchanged
+  ---
+  duration_ms: 1.1672
+  type: 'test'
+  ...
+# Subtest: 1.1.0: the brother conclusion + ending is the supported outcome
+ok 172 - 1.1.0: the brother conclusion + ending is the supported outcome
+  ---
+  duration_ms: 0.2911
+  type: 'test'
+  ...
+# Subtest: removed evidence no longer affects the recall denominator
+ok 173 - removed evidence no longer affects the recall denominator
+  ---
+  duration_ms: 0.5046
+  type: 'test'
+  ...
+# Subtest: a historical session that marked EVD-017/EVD-019 still scores under 1.0.0 without error
+ok 174 - a historical session that marked EVD-017/EVD-019 still scores under 1.0.0 without error
+  ---
+  duration_ms: 0.4972
+  type: 'test'
+  ...
+# (node:28020) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/trainingSeparation.test.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: 1.6.0 classifies training with zero weights and preserves all four assessment weights
+ok 175 - 1.6.0 classifies training with zero weights and preserves all four assessment weights
+  ---
+  duration_ms: 1.3281
+  type: 'test'
+  ...
+# Subtest: procedures alone generate no deduction credit: no assessment category available means undefined
+ok 176 - procedures alone generate no deduction credit: no assessment category available means undefined
+  ---
+  duration_ms: 0.3602
+  type: 'test'
+  ...
+# Subtest: criticalRecall cannot change overall score or its denominator
+ok 177 - criticalRecall cannot change overall score or its denominator
+  ---
+  duration_ms: 0.2555
+  type: 'test'
+  ...
+# Subtest: relevantRecall cannot change overall score or its denominator
+ok 178 - relevantRecall cannot change overall score or its denominator
+  ---
+  duration_ms: 0.1018
+  type: 'test'
+  ...
+# Subtest: precision cannot change overall score or its denominator
+ok 179 - precision cannot change overall score or its denominator
+  ---
+  duration_ms: 0.1629
+  type: 'test'
+  ...
+# Subtest: distractorFallRate cannot change overall score or its denominator
+ok 180 - distractorFallRate cannot change overall score or its denominator
+  ---
+  duration_ms: 0.1153
+  type: 'test'
+  ...
+# Subtest: proceduralCompliance cannot change overall score or its denominator
+ok 181 - proceduralCompliance cannot change overall score or its denominator
+  ---
+  duration_ms: 0.1224
+  type: 'test'
+  ...
+# Subtest: scenePhotography cannot change overall score or its denominator
+ok 182 - scenePhotography cannot change overall score or its denominator
+  ---
+  duration_ms: 0.6325
+  type: 'test'
+  ...
+# Subtest: measurement cannot change overall score or its denominator
+ok 183 - measurement cannot change overall score or its denominator
+  ---
+  duration_ms: 0.3695
+  type: 'test'
+  ...
+# Subtest: procedureOrderCompliance cannot change overall score or its denominator
+ok 184 - procedureOrderCompliance cannot change overall score or its denominator
+  ---
+  duration_ms: 0.4159
+  type: 'test'
+  ...
+# Subtest: photography, markers, all EvidenceStatus transitions, processing, custody and closeout never add credit
+ok 185 - photography, markers, all EvidenceStatus transitions, processing, custody and closeout never add credit
+  ---
+  duration_ms: 4.0961
+  type: 'test'
+  ...
+# Subtest: repeated blocked attempts change training analytics without reducing deduction
+ok 186 - repeated blocked attempts change training analytics without reducing deduction
+  ---
+  duration_ms: 0.4493
+  type: 'test'
+  ...
+# Subtest: ProcedureOutOfOrder remains counted and deduplicated as training analytics
+ok 187 - ProcedureOutOfOrder remains counted and deduplicated as training analytics
+  ---
+  duration_ms: 0.2701
+  type: 'test'
+  ...
+# Subtest: non-evidence marker/reclaim/rejection attempts cannot reduce the grade through precision or compliance
+ok 188 - non-evidence marker/reclaim/rejection attempts cannot reduce the grade through precision or compliance
+  ---
+  duration_ms: 0.2047
+  type: 'test'
+  ...
+# Subtest: pure report completion statements are ignored in both assessment numerator and denominator
+ok 189 - pure report completion statements are ignored in both assessment numerator and denominator
+  ---
+  duration_ms: 0.3473
+  type: 'test'
+  ...
+# Subtest: every other authored report observation, interpretation and unsupported claim remains assessed
+ok 190 - every other authored report observation, interpretation and unsupported claim remains assessed
+  ---
+  duration_ms: 0.3949
+  type: 'test'
+  ...
+# Subtest: all existing hypothesis reasoning options still change assessment
+ok 191 - all existing hypothesis reasoning options still change assessment
+  ---
+  duration_ms: 0.2803
+  type: 'test'
+  ...
+# Subtest: deduction relationship weights/formula still change assessment
+ok 192 - deduction relationship weights/formula still change assessment
+  ---
+  duration_ms: 0.2129
+  type: 'test'
+  ...
+# Subtest: unchanged exact conclusion/ending pair still determines assessment
+ok 193 - unchanged exact conclusion/ending pair still determines assessment
+  ---
+  duration_ms: 0.1456
+  type: 'test'
+  ...
+# Subtest: 1.0.0 through 1.5.0 and missing-version fallback preserve procedural scoring semantics
+ok 194 - 1.0.0 through 1.5.0 and missing-version fallback preserve procedural scoring semantics
+  ---
+  duration_ms: 0.0964
+  type: 'test'
+  ...
+# Subtest: training exclusions cannot hide mismatched evidence IDs or unknown report selections
+ok 195 - training exclusions cannot hide mismatched evidence IDs or unknown report selections
+  ---
+  duration_ms: 0.0846
+  type: 'test'
+  ...
+# Subtest: historical definitions, all procedure gates, payload and ending logic remain byte-identical
+not ok 196 - historical definitions, all procedure gates, payload and ending logic remain byte-identical
+  ---
+  duration_ms: 14.1272
+  type: 'test'
+  location: 'C:\\Users\\Roduf Eleu\\Desktop\\vicsi-dashboard\\src\\lib\\scoring\\__tests__\\trainingSeparation.test.ts:147:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    C:\Users\Roduf Eleu\My project (1)\Assets\_Project\Scripts\CaseFile\EvidenceStateManager.cs
+    + actual - expected
+    
+    + '9f280847c7b8872f15fe3d95b72986f660dbc46c5ba2b9c9b1e3a4734f98fa46'
+    - '28748488fb5b71782a82dc0d424643ab775fde88300cda5c75fb61d19d3eab9f'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '28748488fb5b71782a82dc0d424643ab775fde88300cda5c75fb61d19d3eab9f'
+  actual: '9f280847c7b8872f15fe3d95b72986f660dbc46c5ba2b9c9b1e3a4734f98fa46'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///C:/Users/Roduf%20Eleu/Desktop/vicsi-dashboard/src/lib/scoring/__tests__/trainingSeparation.test.ts:153:12)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..196
+# tests 196
+# suites 0
+# pass 192
+# fail 4
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 77933.2247
+npm.cmd : npm notice
+At line:2 char:132
++ ... ers/Roduf Eleu/My project (1)'; npm.cmd run test:scoring 2>&1 | Out-F ...
++                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm notice:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+npm notice New major version of npm available! 10.9.4 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

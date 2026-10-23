@@ -1,0 +1,96 @@
+{
+  "reports": [
+    {
+      "file": "step3-rerun/GloveChangeStationTest.txt",
+      "passed": 59,
+      "failed": 0
+    },
+    {
+      "file": "step6-rerun/SamplePreparationTest.txt",
+      "passed": 51,
+      "failed": 0
+    },
+    {
+      "file": "step6/FingerprintStorageTest.txt",
+      "passed": 41,
+      "failed": 0
+    },
+    {
+      "file": "step4/BottleFingerprintProcedureTest.txt",
+      "passed": 43,
+      "failed": 0
+    },
+    {
+      "file": "step5/EarlyCustodyPassTest.txt",
+      "passed": 9,
+      "failed": 0
+    },
+    {
+      "file": "step5/CustodyPassTest.txt",
+      "passed": 62,
+      "failed": 0
+    },
+    {
+      "file": "step7/UIWorkflowRefreshTest.txt",
+      "passed": 25,
+      "failed": 0
+    },
+    {
+      "file": "step7/SOCOCloseoutTest.txt",
+      "passed": 51,
+      "failed": 0
+    },
+    {
+      "file": "step7/SceneTestStartTest.txt",
+      "passed": 208,
+      "failed": 0
+    },
+    {
+      "file": "final/ProcedureDestinationGuideTest.txt",
+      "passed": 18,
+      "failed": 0
+    },
+    {
+      "file": "final/EvidenceProcedureMapTest.txt",
+      "passed": 75,
+      "failed": 0
+    },
+    {
+      "file": "final/BiologicalSamplingTest.txt",
+      "passed": 69,
+      "failed": 0
+    },
+    {
+      "file": "final-ui/BodyRemovalTest.txt",
+      "passed": 49,
+      "failed": 0
+    },
+    {
+      "file": "final-ui/FingerprintComparisonTest.txt",
+      "passed": 61,
+      "failed": 0
+    }
+  ],
+  "csharpErrors": 0,
+  "headsetReview": "manual check pending",
+  "committed": false,
+  "productionDataModified": false,
+  "totalPassed": 821,
+  "totalFailed": 0,
+  "unrelatedRectTransformsRestored": [
+    "1030116788",
+    "11060113",
+    "1545811980",
+    "1810766057",
+    "2120155145",
+    "249239485",
+    "441566301",
+    "715956252",
+    "922176587"
+  ],
+  "existingSceneChangesByClass": {
+    "1660057539": 1,
+    "114": 1
+  },
+  "newSceneBlocks": 18
+}

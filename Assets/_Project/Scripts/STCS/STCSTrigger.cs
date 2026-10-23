@@ -11,6 +11,11 @@ using UnityEngine;
 public class STCSTrigger
 {
     public string triggerId;
+
+    [Tooltip("Lines to play, as ViCSIDialogueCatalog ids (text and timing are edited in the catalog).")]
+    public string[] lineIds;
+
+    [Tooltip("Legacy: used only when lineIds is empty. Content now lives in ViCSIDialogueCatalog.")]
     public DialogueLinePool pool;
     public bool firedOnce;
 

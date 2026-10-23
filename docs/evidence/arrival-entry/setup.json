@@ -1,0 +1,51 @@
+{
+    "originalRig": {
+        "x": 16.899999618530275,
+        "y": -0.15000000596046449,
+        "z": 0.699999988079071
+    },
+    "arrivalRig": {
+        "x": 16.900001525878908,
+        "y": -0.12000000476837158,
+        "z": -0.6000000238418579
+    },
+    "originalHotspot": {
+        "x": 16.899999618530275,
+        "y": 0.0,
+        "z": 0.699999988079071
+    },
+    "arrivalHotspot": {
+        "x": 16.900001525878908,
+        "y": 0.030000004917383195,
+        "z": -0.6000000238418579
+    },
+    "entry": {
+        "x": 16.900001525878908,
+        "y": 0.5,
+        "z": 0.15000000596046449
+    },
+    "responder": {
+        "x": 18.149999618530275,
+        "y": 0.029999999329447748,
+        "z": 0.800000011920929
+    },
+    "sign": {
+        "x": 17.600000381469728,
+        "y": 1.1600000858306885,
+        "z": 0.09000000357627869
+    },
+    "arrivalYaw": 20.880125045776368,
+    "responderAngle": 20.880128860473634,
+    "entryAngle": 20.880128860473634,
+    "groundHeight": 0.030000004917383195,
+    "standingClear": true,
+    "footprintSupported": true,
+    "outsideProtectedArea": true,
+    "outsideEntryApproach": true,
+    "compilationFailed": false,
+    "changedExistingLocalTransforms": [
+        "[BuildingBlock] Camera Rig",
+        "Teleport Hotspot"
+    ],
+    "standingObstructions": []
+}

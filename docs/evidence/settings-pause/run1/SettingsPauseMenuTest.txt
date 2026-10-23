@@ -1,0 +1,31 @@
+PASS: Settings owner bootstraps into scenario without manual wiring
+PASS: Existing utility wheel has exactly one functional Settings entry
+PASS: Actual left X opens the existing utility wheel
+PASS: X release opens Settings and simultaneous held A cannot immediately select Close
+PASS: Settings owns A at modal priority and suppresses jump/tools
+PASS: Tablet panel enrolls in wall-safe shared layout above dialogue
+PASS: Settings remains readable on the near side of a wall
+PASS: Height plus increases configured height by 0.05 m
+PASS: Head and both hands receive the same translation without changing tracking poses or scale
+PASS: Height minus decreases configured height by 0.05 m
+PASS: Height clamps to 2.00 m
+PASS: Height clamps to 1.40 m
+PASS: Invalid height values are rejected
+PASS: Reset Height restores calibrated/default height and clears preference
+PASS: Height increase is refused under a low ceiling
+PASS: Restart shows the requested warning and keeps progress until confirmed
+PASS: Restart Cancel returns to Settings without changing session
+PASS: Lobby Cancel leaves current scenario active
+PASS: B closes Settings without lingering modal/tool ownership
+PASS: Locomotion remains enabled and transforms remain finite after closing
+PASS: Fresh A selects height plus once and remains suppressed against jumping
+PASS: Confirmed restart fully reloads the scenario and creates a fresh session
+PASS: Height preference persists through actual scenario restart
+PASS: Restart restores IOC/observation, vendor, BODY-A, all evidence, reasoning and closeout
+PASS: Incomplete restart attempt is not added to upload queue
+PASS: Confirmed return uses the authored Main lobby route and releases all modal state
+PASS: Height preference persists into Main without uploading an incomplete attempt
+PASS: Existing lobby Start route creates another fresh scenario session
+PASS: Next lobby-started session restores IOC/observation, vendor, BODY-A, all evidence, reasoning and closeout
+PASS: Height preference survives starting another session
+=== PASS: SettingsPauseMenuTest ===

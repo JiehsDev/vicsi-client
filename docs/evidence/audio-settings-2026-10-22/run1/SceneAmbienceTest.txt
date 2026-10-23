@@ -1,0 +1,30 @@
+=== SceneAmbienceTest ===
+PASS: Exactly one scene-authored ambience controller
+PASS: Three distinct saved sources and clips exist
+PASS: Exterior - residential birds: stereo streamed clip exceeds 15 seconds
+PASS: Exterior - residential birds: diffuse stereo loop does not pre-empt tool voices
+PASS: Exterior - residential birds: belongs to this scene/controller
+PASS: Interior - quiet room tone: stereo streamed clip exceeds 15 seconds
+PASS: Interior - quiet room tone: diffuse stereo loop does not pre-empt tool voices
+PASS: Interior - quiet room tone: belongs to this scene/controller
+PASS: Exterior - tree rustle: stereo streamed clip exceeds 15 seconds
+PASS: Exterior - tree rustle: diffuse stereo loop does not pre-empt tool voices
+PASS: Exterior - tree rustle: belongs to this scene/controller
+PASS: Ambience owns no collision or UI geometry
+PASS: Yard has restrained outdoor birds/rustle and no interior bed
+PASS: Exterior beds are full-band outside
+PASS: Crossing doorway blends rather than instantly cutting tracks
+PASS: Interior room tone becomes the main bed
+PASS: Outdoor beds are muffled through the house
+PASS: Upper storey uses indoor ambience
+PASS: Projecting front wing uses indoor ambience
+PASS: Dialogue smoothly ducks every ambience bed
+PASS: Closing dialogue restores the quiet mix
+PASS: Returning outside restores outdoor mix and removes room tone
+PASS: Mixing creates no timeline or scoring events
+PASS: Existing modal UI ownership triggers automatic ducking
+PASS: Mix transitions remain functional while scaled game time is paused
+PASS: Disabling the scene controller stops all ambience voices
+PASS: Re-enabling starts exactly the three existing loops
+PASS: Deduction remains 60/25/15
+=== PASS, 0 failures ===

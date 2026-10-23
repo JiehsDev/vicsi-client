@@ -1,0 +1,1 @@
+FAIL: Synthetic controller grip needs FLT format; fixture corrected before rerun.

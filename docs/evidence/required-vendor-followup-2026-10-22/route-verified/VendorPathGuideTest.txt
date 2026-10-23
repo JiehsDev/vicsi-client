@@ -1,0 +1,46 @@
+=== VendorPathGuideTest ===
+PASS: Scene photography is complete before the matched-print route fixture
+PASS: Only the physical vendor owns one path guide
+PASS: Scene-specific route starts at the rear kitchen and exits toward the actual vendor
+PASS: No vendor navigation before knife fingerprint identification
+PASS: Real knife lab identification still resolves Paul
+PASS: Confirmed comparison activates vendor trail and labelled waypoint before any reasoning response
+PASS: A different reasoning answer leaves the confirmed vendor lead active
+PASS: Current fingerprint question still integrates with its stable hypothesis
+PASS: Reasoning modal temporarily hides navigation without relocking the vendor lead
+PASS: A low-weight reasoning answer preserves the already confirmed lead and its original scoring
+PASS: Trail has readable ground chevrons with a finite render mesh
+PASS: Breadcrumbs have no collision, input or UI raycaster
+PASS: Existing stereo-safe depth-tested cue shader is reused
+PASS: Repeated navigation refresh preserves all evidence transforms
+PASS: Visual refresh writes no session events and changes no score
+PASS: Modal ownership hides path without acquiring input locks
+PASS: Path returns when the modal closes
+PASS: Spoken guidance hides navigation
+PASS: Photo capture hides arrows synchronously
+PASS: Nested capture stays hidden
+PASS: Inner disposal does not restore outer capture
+PASS: After capture arrows return
+PASS: Actual photo render excludes path and waypoint and restores them afterward
+PASS: Every generated arrow has floor support and points toward the next exit-route leg
+PASS: Real player capsule can follow the exit route to (15.55, 1.20, 11.90) actual=(15.55, 1.20, 11.90)
+PASS: Real player capsule can follow the exit route to (15.55, 1.20, 10.80) actual=(15.55, 1.20, 10.80)
+PASS: Real player capsule can follow the exit route to (15.55, 1.20, 7.30) actual=(15.55, 1.20, 7.30)
+PASS: Real player capsule can follow the exit route to (16.70, 1.20, 7.30) actual=(16.70, 1.20, 7.30)
+PASS: Real player capsule can follow the exit route to (16.90, 1.20, 5.20) actual=(16.90, 1.20, 5.20)
+PASS: Real player capsule can follow the exit route to (16.90, 0.03, 2.70) actual=(16.90, 0.01, 2.70)
+PASS: Real player capsule can follow the exit route to (16.90, 0.03, 0.70) actual=(16.90, 0.00, 0.70)
+INFO: vendor arrival feet=(14.764, 0.003, 0.166); target=(14.100, 0.030, 0.000); interaction=(12.205, 2.010, -0.530); distance=2.652
+FAIL: Real player capsule reaches the vendor's interaction radius without entering the NPC collider
+PASS: Walking outside trims the interior trail behind the player
+PASS: Another floor cannot create a shortcut through the house
+PASS: Arriving within the unchanged vendor interaction radius hides the path
+PASS: Leaving without interviewing restores the path
+PASS: Original physical vendor prompt/panel still opens without arrows
+PASS: Follow-up uses original question and hides path throughout speaking
+PASS: Discovered vendor statement retires arrows permanently for this session
+PASS: Delivered vendor answer also retires the waypoint and completion requirement
+PASS: Disable hides the world visual immediately
+PASS: Vendor interaction remains at its authored position
+PASS: Scene restart resets both the lead gate and path visibility
+=== FAIL: 1 failure(s) ===

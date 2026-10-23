@@ -1,0 +1,27 @@
+PASS: TRAIN-SOCO-TEAM authored as skippable Professor guidance
+PASS: TRAIN-PHOTOGRAPHY authored as skippable Professor guidance
+PASS: TRAIN-MARKER authored as skippable Professor guidance
+PASS: TRAIN-TRACE-SOURCE authored as skippable Professor guidance
+PASS: TRAIN-MEASUREMENT authored as skippable Professor guidance
+PASS: TRAIN-FINGERPRINT authored as skippable Professor guidance
+PASS: TRAIN-BIOLOGICAL-SAMPLE authored as skippable Professor guidance
+PASS: TRAIN-PACKAGING authored as skippable Professor guidance
+PASS: TRAIN-CUSTODY authored as skippable Professor guidance
+PASS: closeout-start authored as skippable Professor guidance
+PASS: closeout-survey-guidance authored as skippable Professor guidance
+PASS: Catalog ids are unique
+PASS: TRAIN-SOCO-TEAM contains no score language or case-specific answers
+PASS: TRAIN-PHOTOGRAPHY contains no score language or case-specific answers
+PASS: TRAIN-MARKER contains no score language or case-specific answers
+PASS: TRAIN-TRACE-SOURCE contains no score language or case-specific answers
+PASS: TRAIN-MEASUREMENT contains no score language or case-specific answers
+PASS: TRAIN-FINGERPRINT contains no score language or case-specific answers
+PASS: TRAIN-BIOLOGICAL-SAMPLE contains no score language or case-specific answers
+PASS: TRAIN-PACKAGING contains no score language or case-specific answers
+PASS: TRAIN-CUSTODY contains no score language or case-specific answers
+PASS: closeout-start contains no score language or case-specific answers
+PASS: closeout-survey-guidance contains no score language or case-specific answers
+PASS: Assessment, deduction code, all authored procedure/objective data and historical scoring files unchanged
+PASS: Training adapter has no score, evidence mutation or session-upload calls
+PASS: Active scenario remains scoring 1.6.0
+26 passed, 0 failed; 195 protected files compared.

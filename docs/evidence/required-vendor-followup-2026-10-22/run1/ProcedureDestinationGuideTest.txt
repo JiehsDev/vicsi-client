@@ -1,0 +1,20 @@
+=== ProcedureDestinationGuideTest ===
+PASS: One editable scene guide and saved canvas exist
+PASS: FR approach stays with its existing guide
+PASS: Initial gloves remain the first destination
+PASS: Clean gloves lead to the entry-register waypoint
+PASS: Modal panels hide navigation
+PASS: Photographs suppress the destination marker
+PASS: Nested capture remains hidden
+PASS: Outer capture continues suppressing the marker
+PASS: Navigation returns after capture without owning input
+PASS: Disable hides the authored canvas
+PASS: Authorization retires register guidance for IOC assessment
+PASS: Scene photography keeps its existing guide priority
+PASS: Actual photograph route completes
+PASS: Local evidence work has no waypoint: Body A – John
+PASS: Local evidence work has no waypoint: Evidence 1 – Kitchen Knife
+PASS: Local evidence work has no waypoint: Evidence 2 – Blood Spatter
+PASS: Local evidence work has no waypoint: Evidence 3 – Empty Liquor Bottle
+PASS: Navigation leaves assessment values unchanged
+=== PASS ===

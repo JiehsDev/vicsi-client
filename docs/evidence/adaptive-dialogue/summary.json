@@ -1,0 +1,48 @@
+{
+  "results": [
+    {
+      "suite": "AdaptiveDialogueLayoutTest",
+      "attempt": "run2",
+      "passed": 26,
+      "failed": 0,
+      "runner_exit": 0
+    },
+    {
+      "suite": "DialogueCatalogTest",
+      "attempt": "run1",
+      "passed": 60,
+      "failed": 0,
+      "runner_exit": 0
+    },
+    {
+      "suite": "DialogueHistoryTest",
+      "attempt": "run1",
+      "passed": 24,
+      "failed": 0,
+      "runner_exit": 0
+    },
+    {
+      "suite": "DialoguePlacementTest",
+      "attempt": "run5",
+      "passed": 13,
+      "failed": 0,
+      "runner_exit": 0
+    }
+  ],
+  "passed": 123,
+  "failed": 0,
+  "existing_baseline_files": 367,
+  "changed_existing_files": [
+    "Assets/_Project/Scripts/STCS/STCSNotificationUI.cs",
+    "Assets/_Project/Scripts/UI/DialogueCountdown.cs",
+    "Assets/_Project/Scripts/UI/DialogueTimingSettings.cs",
+    "Assets/_Project/Scripts/UI/NotificationUI.cs"
+  ],
+  "unchanged_baseline_files": 363,
+  "scene_sha256": "91d5c8c35425cdc32fec5ecb6bbc01ebfb07c368e227d62da5e10fdf12786005",
+  "notes": [
+    "Broad UIComfortInputTest hit a stale Notes fixture and its extracted prefix reported 18 failures; these attempts remain unresolved. Isolated current dialogue placement is checked separately.",
+    "Catalog missing-ID warnings exactly match the prior fixture baseline.",
+    "No hardware VR readability claim; unusually long external passages create tall panels."
+  ]
+}

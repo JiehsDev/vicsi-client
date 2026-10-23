@@ -1,0 +1,66 @@
+Tools\EvidenceScorer\Program.cs:68:/// which skips HYP-01-shaped checkpoints (requiresReasoning false) rather than writing
+Tools\EvidenceScorer\Program.cs:156:    /// A checkpoint with no reasoning step (HYP-01: requiresReasoning false) never
+Tools\EvidenceScorer\Program.cs:470:                    // (HYP-01: requiresReasoning false - HypothesisCheckpointUI never
+Assets\Editor\ScenarioGroundTruthExporter.cs:80:            // (HYP-03's "N items processed" threshold semantics, documentationAccuracy,
+Assets\Editor\ScenarioGroundTruthExporter.cs:219:            // HYP-01-shaped checkpoints (requiresReasoning false, no reasoningOptions)
+Assets\Editor\ScenarioGroundTruthExporter.cs:292:        // Same "no reportLineOptions authored" skip as HYP-01-shaped checkpoints get
+Assets\Editor\ScenarioGroundTruthExporter.cs:315:        // HYP-01-shaped checkpoints above, one level up.
+Assets\Resources\ReasoningCheckpoints_LastDrink.asset:66:    integratedHypothesisId: HYP-02
+Assets\_Project\Scripts\UI\RecorderReportUI.cs:13:/// keyboard" reasoning already applied to the Hypothesis Checkpoint panel.
+Assets\_Project\Scripts\UI\RecorderReportUI.cs:34:/// no other UI in this project (Tool Wheel, Hypothesis Checkpoint, the Deduction Board
+Assets\_Project\Scripts\UI\RecorderReportUI.cs:263:        // Hypothesis Checkpoint panel.
+Assets\Resources\QuestionDisplayNames_1.json:12:    "HYP-01",
+Assets\Resources\QuestionDisplayNames_1.json:13:    "HYP-02",
+Assets\Resources\QuestionDisplayNames_1.json:14:    "HYP-03"
+Assets\_Project\Data\_Archive\RemovedFromCSI_Environment\Scenarios\GroundTruth_CSI_Environment_1.1.0.json:13:    { "id": "HYP-02", "reasoningOptions": [
+Assets\_Project\Data\_Archive\RemovedFromCSI_Environment\Scenarios\GroundTruth_CSI_Environment_1.1.0.json:17:    { "id": "HYP-03", "reasoningOptions": [
+Tools\ValidateReasoningCheckpoints.py:21:check('Fingerprint integrates HYP-02 and withholds Phase 2 lesson', 'integratedHypothesisId: HYP-02' in blocks[2] and '- TRAIN-FINGERPRINT' in blocks[2])
+Assets\_Project\Data\Scenarios\HypothesisCheckpoints_CSI_Environment.asset:17:  - id: HYP-01
+Assets\_Project\Data\Scenarios\HypothesisCheckpoints_CSI_Environment.asset:131:  - id: HYP-02
+Assets\_Project\Data\Scenarios\HypothesisCheckpoints_CSI_Environment.asset:244:  - id: HYP-03
+Assets\_Project\Data\Scenarios\GroundTruth_CSI_Environment.json:36:      "id": "HYP-01",
+Assets\_Project\Data\Scenarios\GroundTruth_CSI_Environment.json:57:      "id": "HYP-02",
+Assets\_Project\Data\Scenarios\GroundTruth_CSI_Environment.json:78:      "id": "HYP-03",
+Assets\_Project\Scripts\Testing\StoryContentTest.cs:138:        // Full evidence processing can leave HYP-03 open. Finish that real modal
+Assets\_Project\Scripts\Testing\StoryContentTest.cs:209:        // HYP-03 now fires at the processed-evidence threshold, before submission.
+Assets\_Project\Scripts\Testing\StoryContentTest.cs:223:        // Submit opens any SubmissionInitiated checkpoint (HYP-03) first; the picker only
+Assets\_Project\Scripts\Testing\GreyboxFlowTest.cs:9:/// Hypothesis Checkpoint. Exists because the previous version of this walkthrough was
+Assets\_Project\Scripts\Testing\GreyboxFlowTest.cs:622:                // HYP-01 or HYP-02, both still CountThreshold - can fire at exactly
+Assets\_Project\Scripts\Testing\GreyboxFlowTest.cs:628:                // HYP-03 itself no longer fires here at all: its trigger is now
+Assets\_Project\Scripts\Testing\GreyboxFlowTest.cs:640:        // HYP-03's trigger is SubmissionInitiated (fired as a side effect of the real
+Assets\_Project\Scripts\Testing\GreyboxFlowTest.cs:959:    /// (e.g. HYP-01's "3 items at Found") fires the instant enough items in THIS
+Assets\_Project\Scripts\Testing\ReasoningCheckpointTest.cs:114:        Check("Scene interpretation records independently of HYP-01", manager.IsAnswered("RC-02-SCENE")
+Assets\_Project\Scripts\Testing\ReasoningCheckpointTest.cs:133:        Check("Integrated HYP-02 also queues behind a modal without releasing lesson", !ui.IsShowing && manager.HoldsTraining("TRAIN-FINGERPRINT"));
+Assets\_Project\Scripts\Testing\ReasoningCheckpointTest.cs:141:        Check("Fingerprint appears as HYP-02's single contextual first question", ui.IsShowing && ui.DisplayedPrompt.Contains(manager.Definitions.checkpoints[2].prompt));
+Assets\_Project\Scripts\Testing\ReasoningCheckpointTest.cs:148:        Check("HYP-02 completion is emitted exactly once for the single explicit response", SessionLogger.Instance.EventCounts.TryGetValue(SessionEventType.HypothesisSubmitted,out int hyps) && hyps==1);
+Assets\_Project\Scripts\Testing\ReasoningCheckpointTest.cs:151:            .Where(e=>e.eventType=="HypothesisSubmitted"&&e.targetId=="HYP-02").ToArray();
+Assets\_Project\Scripts\Testing\ReasoningCheckpointTest.cs:217:        Check("HYP-01 still asks its unchanged broad working-theory question", ui.IsShowing
+Assets\_Project\Scripts\Testing\ReasoningCheckpointTest.cs:218:            && ui.DisplayedPrompt==hypSet.checkpoints.Find(c=>c.id=="HYP-01").promptText);
+Assets\_Project\Scripts\Testing\ReasoningCheckpointTest.cs:221:        Check("Existing HYP-03 fires at its authored three-Processed threshold", ui.IsShowing
+Assets\_Project\Scripts\Testing\ReasoningCheckpointTest.cs:222:            && ui.DisplayedPrompt==hypSet.checkpoints.Find(c=>c.id=="HYP-03").promptText);
+Assets\_Project\Scripts\Testing\ReasoningCheckpointTest.cs:224:        Check("HYP-03 still submits original justification without changing checkpoint stream or conclusion", manager.Records.Count==6
+Assets\_Project\Scripts\CaseFile\SelectionPrerequisite.cs:26:/// gating HYP-03's correct reasoning option on the gloves' lab match actually
+Assets\_Project\Scripts\Testing\NarrativeRoleFlowTest.cs:121:        ui.AnswerForTest(2); // Finish unchanged HYP-02 justification so explanatory dialogue can run.
+Assets\_Project\Scripts\Testing\MeasurementToolTest.cs:67:        // HYP-01 opens at 3 items Found and holds the UI gate (which would block the
+Assets\_Project\Scripts\Ending\EndingManager.cs:13:/// internally as step one, preserving HYP-03's existing behavior exactly).
+Assets\_Project\Scripts\Ending\EndingManager.cs:16:/// "not available immediately unless explicitly enabled" gate) -> fire HYP-03-style
+Assets\_Project\Scripts\Ending\EndingManager.cs:24:/// comment. CompletionScreenUI no longer triggers off HYP-03 answering at all; this is
+Assets\_Project\Scripts\Ending\EndingManager.cs:127:    // frame between HYP-03, the picker and the ending where the player can move or open
+Assets\_Project\Scripts\Ending\EndingManager.cs:340:        // Anything FireSubmissionInitiatedCheckpoints just opened (HYP-03) occupies the
+Assets\_Project\Scripts\Ending\EndingManager.cs:362:        // Re-read after HYP-03 has closed rather than trusting the list taken at
+Assets\_Project\Scripts\Testing\BrotherPathTest.cs:94:        // collection is also what reaches HYP-02's "2 items Collected" trigger.
+Assets\_Project\Scripts\Testing\BrotherPathTest.cs:141:        yield return Settle(); // HYP-01's three discovered collectible items are now present
+Assets\_Project\Scripts\Testing\BrotherPathTest.cs:152:        yield return Settle(); // HYP-03 triggers after processing, not on earlier submission
+Assets\_Project\Scripts\Testing\BrotherPathTest.cs:197:        Check(failures, report, "HYP-01, HYP-02 and HYP-03 each define exactly one correct option", ExactlyOneCorrect("HYP-01") && ExactlyOneCorrect("HYP-02") && ExactlyOneCorrect("HYP-03"));
+Assets\_Project\Scripts\Testing\BrotherPathTest.cs:283:        string theoryId = current.id == "HYP-01" ? "theory-undetermined" : "theory-homicide";
+Assets\_Project\Scripts\Deduction\HypothesisCheckpointUI.cs:363:    /// fires mid-flow - a CountThreshold trigger (e.g. HYP-01's "3 items at Found")
+Assets\_Project\Scripts\Deduction\HypothesisCheckpointSet.cs:45:/// so the same handful of ids (e.g. "theory-homicide") are shared across HYP-01/02/03
+Assets\_Project\Scripts\Deduction\HypothesisCheckpointSet.cs:86:    [Tooltip("Optional cross-item unlock, same shape and registry as ReportLineOption.prerequisites (see SelectionPrerequisite): every entry must already be satisfied - that evidenceId's report line was selected earlier this session - before a checkpoint may fire, IF this option is marked isCorrect. Checked only on isCorrect options; a wrong option's own prerequisites (if it ever had any) would never gate anything, since the checkpoint must be answerable with a correct option actually present the moment it opens. Empty = no gating, the unchanged default for every option authored before this field existed - including every option on HYP-01/02/03 today.")]
+Assets\_Project\Scripts\Deduction\HypothesisCheckpointSet.cs:103:    [Tooltip("Stable, author-set identifier for this checkpoint (e.g. \"HYP-01\"). Used as the targetId on the logged HypothesisSubmitted event, so it must NOT be derived from list position - reordering checkpoints would silently repoint every past session's data at the wrong checkpoint.")]
+Assets\_Project\Scripts\Deduction\HypothesisCheckpointSet.cs:129:[CreateAssetMenu(fileName = "HypothesisCheckpoints_", menuName = "VR-CSI/Hypothesis Checkpoint Set")]
+Assets\_Project\Scripts\Deduction\HypothesisCheckpointManager.cs:47:    [Tooltip("The checkpoints for the scenario in this scene. Authored as a VR-CSI/Hypothesis Checkpoint Set asset (see Data/Scenarios).")]
+Assets\_Project\Scripts\Deduction\HypothesisCheckpointManager.cs:235:    /// at all, which is worse: HYP-03 must always open the instant the player submits,
+Assets\_Project\Scripts\Deduction\HypothesisCheckpointManager.cs:237:    /// resolution for HYP-03 specifically happens independently of the reasoning pick
+Assets\_Project\Scripts\Deduction\HypothesisCheckpointManager.cs:287:            // EndingManager already owns the submission hold and expects HYP-03
+Assets\_Project\Scripts\Assessment\AssessmentUploadService.cs:318:        // submission - HYP-03, which fires on Submit Conclusion itself - are routinely
+Assets\_Project\Scripts\Deduction\CompletionScreenUI.cs:338:    /// GreyboxFlowTest to call after HYP-03 fires mid-run, the same way it already

@@ -1,0 +1,19 @@
+=== VendorFollowupTest ===
+PASS: Utility replaces global Vendor Follow-up with Witness Accounts; no accounts before turnover
+PASS: Before follow-up: no statement/card/relationship, and IOC cannot ask
+PASS: Review shows only known grouped accounts; remote opening/question are refused
+PASS: Paul follow-up stays locked without the identified print and locked reasoning response
+PASS: Identified print alone does not unlock the Paul question
+PASS: Locked fingerprint response unlocks the existing Paul question
+PASS: Actual vendor-opening A is consumed against jump until release
+PASS: Physical vendor range shows contextual prompt and A opening does not also ask
+PASS: One question delivers the answer and discovers/logs exactly once; repeats refused
+PASS: Read-only vendor panel does not register an unavailable A question
+PASS: Discovered statement is available in Statements and on the board, with observation limits
+INFO: discovered review showing=True; owners=WitnessAccountsUI; dialogue=; account count=1; summary present=True; question present=False
+PASS: Witness Accounts adds discovered 3AM account once without interviewing or duplicating history
+PASS: Vendor sighting plus identified knife print cannot support Paul without the other findings
+PASS: Full physical chain plus discovery still resolves premature Paul without timeline deduction
+PASS: Actual board link completes timeline contradiction; combined chain supports Paul, Peter stays unsupported
+PASS: New investigation resets statement, card, dialogue history and timeline relationship
+=== PASS: 16 focused checks, 0 failures ===

@@ -1,0 +1,1 @@
+Saved 1 filtered wall-mask controller(s). Triggers, Canvas/RectTransform UI, player hierarchy, Ignore Raycast and the photography entry barrier excluded. No ahead-of-head ray extension. Wall renderer starts hidden; real wall protection retained.

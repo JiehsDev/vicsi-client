@@ -1,0 +1,73 @@
+{
+  "unity": {
+    "suites": [
+      {
+        "suite": "EvidenceDisplayTest",
+        "passed": 42,
+        "failed": 0,
+        "csharpErrors": 0,
+        "report": "docs/evidence/evidence-display/question-display-final-2026-10-18/EvidenceDisplayTest.txt"
+      },
+      {
+        "suite": "ReasoningCheckpointTest",
+        "passed": 62,
+        "failed": 0,
+        "csharpErrors": 0,
+        "report": "docs/evidence/evidence-display/question-display-final-2026-10-18/ReasoningCheckpointTest.txt"
+      },
+      {
+        "suite": "EvidenceRelationshipsReviewTest",
+        "passed": 41,
+        "failed": 0,
+        "csharpErrors": 0,
+        "report": "docs/evidence/evidence-display/question-display-final-2-2026-10-18/EvidenceRelationshipsReviewTest.txt"
+      },
+      {
+        "suite": "EducationalSessionRecordTest",
+        "passed": 70,
+        "failed": 0,
+        "csharpErrors": 0,
+        "report": "docs/evidence/evidence-display/question-display-final-2-2026-10-18/EducationalSessionRecordTest.txt"
+      },
+      {
+        "suite": "AssessmentUploadServiceTest",
+        "passed": 33,
+        "failed": 0,
+        "csharpErrors": 0,
+        "report": "docs/evidence/evidence-display/question-display-final-2-2026-10-18/AssessmentUploadServiceTest.txt"
+      },
+      {
+        "suite": "ResponsiveOptionLayoutTest",
+        "passed": 41,
+        "failed": 0,
+        "csharpErrors": 0,
+        "report": "docs/evidence/evidence-display/question-display-final-3-2026-10-18/ResponsiveOptionLayoutTest.txt"
+      },
+      {
+        "suite": "DialogueHistoryTest",
+        "passed": 24,
+        "failed": 0,
+        "csharpErrors": 0,
+        "report": "docs/evidence/evidence-display/question-display-final-3-2026-10-18/DialogueHistoryTest.txt"
+      }
+    ],
+    "passed": 313,
+    "failed": 0,
+    "csharpErrors": 0
+  },
+  "dashboard": {
+    "dashboardTests": 52,
+    "sessionUploadTests": 18,
+    "browserChecks": 21,
+    "scoringTests": 219,
+    "scoringNote": "212 general plus all 7 optional checks with Unity and wire paths supplied",
+    "typescript": "pass",
+    "scopedLint": "pass",
+    "productionBuild": "pass"
+  },
+  "internalIdentifiersChanged": false,
+  "productionDataWrites": false,
+  "committed": false,
+  "pushed": false,
+  "deployed": false
+}

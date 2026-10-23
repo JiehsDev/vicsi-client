@@ -1,0 +1,70 @@
+{
+  "addedRecords": 199,
+  "removedRecords": 0,
+  "changedRecords": [
+    {
+      "id": "1140351990",
+      "type": "1001",
+      "name": ""
+    },
+    {
+      "id": "1527484290",
+      "type": "1001",
+      "name": ""
+    },
+    {
+      "id": "1544773066",
+      "type": "1001",
+      "name": ""
+    },
+    {
+      "id": "160611797",
+      "type": "1001",
+      "name": ""
+    },
+    {
+      "id": "1608894996",
+      "type": "1001",
+      "name": ""
+    },
+    {
+      "id": "1732604689",
+      "type": "1001",
+      "name": ""
+    },
+    {
+      "id": "173730346",
+      "type": "1001",
+      "name": ""
+    },
+    {
+      "id": "506386969",
+      "type": "1001",
+      "name": ""
+    },
+    {
+      "id": "884311674",
+      "type": "1",
+      "name": "InteriorCeilingLining"
+    },
+    {
+      "id": "884311677",
+      "type": "33",
+      "name": ""
+    }
+  ],
+  "changedRecordTypes": {
+    "1": 1,
+    "1001": 8,
+    "33": 1
+  },
+  "addedRecordTypes": {
+    "1": 98,
+    "4": 3,
+    "64": 98
+  },
+  "originalTransformMaterialOverridesPreserved": true,
+  "unexpectedChanges": [],
+  "changesOutsideVicsiHouse": 0,
+  "sourceGlbSha256": "9abb37fec719fe205017f7c9ef0b8507ac5732f9967afb6fdda3e4ffdb03f2ab"
+}

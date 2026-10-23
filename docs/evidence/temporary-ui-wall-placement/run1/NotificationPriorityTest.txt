@@ -1,0 +1,6 @@
+=== Notification priority test ===
+  PASS: refusal displayed on the dialogue panel while a [B] prompt was up
+  PASS: the [B] prompt stayed on the tooltip panel meanwhile (shown whenever no tooltip covers it) [prompt=True tooltip='' label='[B] Pick Up Evidence Tent']
+  PASS: a timed tooltip takes the tooltip label over the prompt
+  FAIL: the prompt resumed after the tooltip expired (context still true) [prompt=True tooltip='Begin by documenting the scene from outside before entering. Photograph the whole house.' label='Begin by documenting the scene from outside before entering. Photograph the whole house.']
+=== FAILED with 1 problem(s) ===

@@ -1,0 +1,129 @@
+{
+  "suites": [
+    {
+      "suite": "BiologicalSamplingTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/run1/BiologicalSamplingTest.txt",
+      "passed": 73,
+      "failed": 0
+    },
+    {
+      "suite": "BottleFingerprintProcedureTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/run1/BottleFingerprintProcedureTest.txt",
+      "passed": 45,
+      "failed": 0
+    },
+    {
+      "suite": "BrotherPathTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/final/BrotherPathTest.txt",
+      "passed": 56,
+      "failed": 0
+    },
+    {
+      "suite": "CollectionFeedbackTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/final/CollectionFeedbackTest.txt",
+      "passed": 46,
+      "failed": 0
+    },
+    {
+      "suite": "CrimeSceneSketchTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/accepted/CrimeSceneSketchTest.txt",
+      "passed": 90,
+      "failed": 0
+    },
+    {
+      "suite": "EvidenceNotesTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/accepted/EvidenceNotesTest.txt",
+      "passed": 33,
+      "failed": 0
+    },
+    {
+      "suite": "EvidenceProcedureMapTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/run1/EvidenceProcedureMapTest.txt",
+      "passed": 83,
+      "failed": 0
+    },
+    {
+      "suite": "EvidenceTentPickupTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/final/EvidenceTentPickupTest.txt",
+      "passed": 21,
+      "failed": 0
+    },
+    {
+      "suite": "EvidenceTraceMarkerTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/final/EvidenceTraceMarkerTest.txt",
+      "passed": 21,
+      "failed": 0
+    },
+    {
+      "suite": "FingerprintComparisonTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/run1/FingerprintComparisonTest.txt",
+      "passed": 63,
+      "failed": 0
+    },
+    {
+      "suite": "FingerprintStorageTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/run1/FingerprintStorageTest.txt",
+      "passed": 42,
+      "failed": 0
+    },
+    {
+      "suite": "GloveChangeStationTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/run1/GloveChangeStationTest.txt",
+      "passed": 61,
+      "failed": 0
+    },
+    {
+      "suite": "MeasurementToolTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/final/MeasurementToolTest.txt",
+      "passed": 41,
+      "failed": 0
+    },
+    {
+      "suite": "PerEvidenceMeasurementTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/final/PerEvidenceMeasurementTest.txt",
+      "passed": 34,
+      "failed": 0
+    },
+    {
+      "suite": "SOCOCloseoutTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/run1/SOCOCloseoutTest.txt",
+      "passed": 51,
+      "failed": 0
+    },
+    {
+      "suite": "SamplePreparationTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/run1/SamplePreparationTest.txt",
+      "passed": 53,
+      "failed": 0
+    },
+    {
+      "suite": "ScenePhotographyProcedureTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/accepted/ScenePhotographyProcedureTest.txt",
+      "passed": 47,
+      "failed": 0
+    },
+    {
+      "suite": "SceneRelationalMeasurementTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/final/SceneRelationalMeasurementTest.txt",
+      "passed": 58,
+      "failed": 0
+    },
+    {
+      "suite": "SceneTestStartTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/final/SceneTestStartTest.txt",
+      "passed": 208,
+      "failed": 0
+    },
+    {
+      "suite": "UIWorkflowRefreshTest",
+      "report": "docs/evidence/required-sketch-2026-10-22/final/UIWorkflowRefreshTest.txt",
+      "passed": 27,
+      "failed": 0
+    }
+  ],
+  "suite_count": 20,
+  "passed": 1153,
+  "failed": 0,
+  "csharp_errors": 0,
+  "note": "Latest accepted report per suite. Earlier failing expectations are retained in prior attempts."
+}

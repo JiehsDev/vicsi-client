@@ -1,0 +1,9 @@
+--- before
++++ after
+@@ -13,5 +13,5 @@
+   m_Name: DialoguePool_Evidence018Logged
+   m_EditorClassIdentifier: Assembly-CSharp::DialogueLinePool
+   lines:
+-  - "Dispatch: Position by the entry — logged. First thing anyone would see."
++  - "Dispatch: Position on the rear kitchen counter \u2014 logged."
+   - 'Recorder: Copy that. Liquor bottle is in the log.'

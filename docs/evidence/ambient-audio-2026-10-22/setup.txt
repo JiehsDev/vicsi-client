@@ -1,0 +1,1 @@
+Saved three editable stereo streaming/Vorbis ambience sources, two exterior low-pass filters, house-footprint crossfade and dialogue/menu ducking. Scene-owned, no colliders, no lobby bootstrap.

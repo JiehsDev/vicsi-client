@@ -1,0 +1,19 @@
+# Scene test starting points ? 2026-10-16
+
+Added Tools > ViCSI > Scene Test Start with seven selections: Normal play; IOC done; Photography done; All evidence procedures done; Measurements done; Sketch done; Investigation submitted. The selection is local to the current Editor session. The saved scene contains one _DevelopmentTesting object with Normal Play selected; release builds ignore preset choices. Development headset builds can use the component's Inspector setting.
+
+The selector starts the real remaining workflow with prerequisites prepared. IOC done starts at photo point one. Evidence presets start on the clear kitchen approach at (15.55,1.2,10.8), outside discovery radii. The SDK locomotor teleports the capsule and tracked rig together. Photography done leaves evidence undiscovered, so bottle Found still requires an actual approach.
+
+Later presets prepare evidence flags, original anchors, secured bags/blood samples, body removal and permanent chalk outlines, report facts and the vendor follow-up. Measurements done supplies all four evidence elements and eight distance cards to an empty sketch. Sketch done submits the sketch and leaves final reasoning/theory/conclusion work to the tester. Investigation submitted uses a fallback ending fixture to enter real closeout without creating a scored conclusion submission.
+
+Restart selected test reloads the entire scene, from the Editor window or X > Settings > Restart selected test. No partial live reset is exposed. Returning to normal play requires stopping Play and starting a fresh Normal play session. A gold TEST MODE indicator names the preset and states that uploads are disabled.
+
+The existing temporary offline sandbox isolates ownership, raw logs, queue and transport before the default uploader's Awake/OnEnable recovery. Explicitly configured test queues/transports keep their existing seams. Skipped checkpoint IDs suppress past prompts without adding scored answer records. Preparation also completes eligible past narrative gates and suppresses their delayed presentation, STCS lines and teaching queues. Future activity guidance remains active.
+
+The measuring fixture retains original evidence props/anchors despite completed collection. Normal late-measurement warnings/rules remain active; use Photography done to test genuine before-collection ordering. No authored evidence, map, reference geometry, house placement, photo route, dialogue catalogue or scoring rules changed. Scene audit: three new records for the opt-in object/component and one root-list addition, zero removed records.
+
+Validation results are recorded in docs/evidence/scene-test-start/summary.json and the suite reports. SceneTestStartTest reloads every preset, checks capsule/headset placement, actual bottle discovery, fresh restart, stage availability, empty sketch/cards, chalk retention, delayed-dialogue quietness, absence of fabricated reasoning responses, normal-mode restoration and unchanged real queue/owner counts. Normal photography, reasoning, Settings, narrative and uploader regressions are also exercised. An initial spawn check and mock-queue conflict were corrected before final verification; earlier attempt reports are retained separately.
+
+Usage: docs/DEVELOPMENT_TEST_STARTS.md. Evidence: docs/evidence/scene-test-start/. Device/Quest verification remains pending. No build/install, real upload, commit, push or deployment.
+
+Final verification: 264 PASS, zero failures across six suites. SceneTestStartTest 77, ScenePhotographyProcedureTest 47, ReasoningCheckpointTest 62, SettingsPauseMenuTest 35, NarrativeEventManagerTest 10, AssessmentUploadServiceTest 33. Saved CSI scene clean outside Play; compilation successful; no pending runner/request/XR restore; Standalone and Android XR startup restored. Editor window opened with Normal play selected.

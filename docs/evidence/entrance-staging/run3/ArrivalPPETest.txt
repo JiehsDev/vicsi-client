@@ -1,0 +1,45 @@
+=== ArrivalPPETest ===
+PASS: Exactly one clean-glove station is installed
+PASS: Fresh session requires briefing and gloves
+PASS: Station is outside the controlled boundary
+PASS: Station uses the authored clean glove meshes
+PASS: Gloves cannot be picked up before briefing
+PASS: Actual Direct3D camera renders the glove pair [changed pixels=2503]
+PASS: Pre-briefing crossing returns the head outside
+PASS: Pre-briefing crossing requests the briefing instruction
+PASS: Actual SDK teleport cannot bypass the gate or separate capsule/head
+PASS: Actual responder interaction starts
+PASS: PPE explanation is inserted once before Form 1 handover
+PASS: All briefing lines including security render before IOC assessment
+PASS: Both PPE teaching lines are recorded in history
+PASS: PPE teaches contamination, glove changes and limits
+PASS: Briefing alone cannot unlock entry or observations
+PASS: Interior direction guide waits for gloves
+PASS: Next instruction points to gloves, not into the kitchen
+PASS: Post-briefing bare-handed crossing also returns outside
+PASS: Student reaches the glove table's front-yard service position
+PASS: Other modal UI prevents pickup
+PASS: Actual A picks up the pair without equipping it
+PASS: Picked-up gloves follow the right hand
+PASS: Holding A never auto-confirms wearing
+PASS: Actual B returns the pair and releases the UI gate
+PASS: Pair can be picked up again
+PASS: Leaving the station cancels pickup
+PASS: Second deliberate A equips the gloves and frees the gate
+PASS: Equipping records exactly one non-scored PPE event
+PASS: Both animated hand meshes receive glove materials
+PASS: Gloves occupy no tool or evidence slot
+PASS: Holstering preserves gloves and worn-hand materials
+PASS: Repeated equip cannot log twice
+PASS: Gloves still require check-in, with cordon closed and visible
+PASS: Register opens after gloves
+PASS: Confirmed check-in unlocks entry
+PASS: Equipped student can cross without forced return
+PASS: Equipped student can record the existing IOC observation
+PASS: No forensic processing or discovery was seeded
+PASS: Survey guidance follows glove confirmation
+PASS: Actual Recorder equip preserves gloves
+PASS: Actual Recorder holster leaves gloves on both hands
+PASS: Restart restores briefing, glove pair and locked entry
+PASS: Restart leaves one station and no carried pair
+=== PASS, 0 failures ===

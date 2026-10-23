@@ -1,0 +1,12 @@
+{
+  "playing": false,
+  "compiling": false,
+  "compilationFailed": false,
+  "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+  "dirty": false,
+  "pending": false,
+  "xrRestore": false,
+  "requiredLines": 3,
+  "standaloneXR": true,
+  "androidXR": true
+}

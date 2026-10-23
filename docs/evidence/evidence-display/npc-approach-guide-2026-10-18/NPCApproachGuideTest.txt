@@ -1,0 +1,35 @@
+=== NPCApproachGuideTest ===
+PASS: Both NPCs auto-attach exactly one guide
+PASS: Vendor presentation remains excluded
+PASS: Pending handover shows only First Responder guide
+PASS: FR guide uses authored NPC anchor, readable role and horizontal distance
+PASS: Guidance alone never logs events or advances handover
+PASS: Looking away gives stable inset arrow
+PASS: Modal UI hides NPC guidance
+PASS: Spoken dialogue hides NPC guidance
+PASS: Guide returns after dialogue closes
+PASS: Disabled interaction cannot advertise an available NPC
+PASS: Disabling guide immediately hides canvas
+PASS: NPC HUD adds no raycaster, collider or hit targets: NPC_FirstResponder
+PASS: NPC HUD adds no raycaster, collider or hit targets: NPC_IOC
+PASS: Actual A outside FR range does not start conversation
+PASS: In-range FR pin uses original range check and Speak with them
+PASS: FR instruction fits two readable lines
+PASS: Native arrow/pin mesh uses supported existing overlay shader
+PASS: Existing real A begins FR dialogue once and hides guide
+PASS: FR dialogue completes original handover and switches to assessment guide
+PASS: Existing assessment completion and SOCO request remain available
+PASS: Existing arrival enters IOC briefing phase
+PASS: Only visible IOC actor gets approach guidance before briefing
+PASS: IOC pin targets actual NPC label anchor, not the FR host
+PASS: Guide does not bypass existing IOC marker radius
+PASS: Disabled IOC workflow hides guidance
+PASS: IOC guide respects modal ownership
+PASS: IOC approach guidance restores after modal closes
+PASS: Existing briefing panel takes over inside radius without overlay clutter
+PASS: Actual A still starts original IOC briefing and keeps guide hidden
+PASS: Completed briefing retires IOC and leaves both NPC guides hidden
+PASS: Original photography guide remains active after NPC handoffs
+PASS: NPCs, IOC interaction marker and all evidence positions/states preserved
+PASS: Existing Form 1/Form 2 and investigation events remain once-only
+=== PASS ===

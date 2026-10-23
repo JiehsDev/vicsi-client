@@ -35,6 +35,16 @@ public static class LocomotionSuspender
         {
             suspendedObjects.Add(slider.gameObject);
         }
+        // The rig's stock "Jump" child (A button -> LocomotionActionsBroadcaster.Jump) is a
+        // separate object the turner/slider lookups above never reach.
+        foreach (var actions in Object.FindObjectsByType<LocomotionActionsBroadcaster>(FindObjectsInactive.Exclude))
+        {
+            var jump = actions.transform.Find("Jump");
+            if (jump != null && jump.gameObject.activeSelf)
+            {
+                suspendedObjects.Add(jump.gameObject);
+            }
+        }
 
         foreach (var go in suspendedObjects)
         {

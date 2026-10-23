@@ -1,0 +1,140 @@
+{
+  "completed": "2026-10-16",
+  "unityPlay": {
+    "passed": 570,
+    "failed": 0,
+    "suites": [
+      {
+        "suite": "ScenePhotographyProcedureTest",
+        "passed": 47,
+        "failed": 0,
+        "report": "docs/evidence/new-house-investigation/play-run1/ScenePhotographyProcedureTest.txt"
+      },
+      {
+        "suite": "SceneRelationalMeasurementTest",
+        "passed": 57,
+        "failed": 0,
+        "report": "docs/evidence/new-house-investigation/play-run1/SceneRelationalMeasurementTest.txt"
+      },
+      {
+        "suite": "MeasurementToolTest",
+        "passed": 37,
+        "failed": 0,
+        "report": "docs/evidence/new-house-investigation/play-run1/MeasurementToolTest.txt"
+      },
+      {
+        "suite": "CabinetReferenceTest",
+        "passed": 25,
+        "failed": 0,
+        "report": "docs/evidence/new-house-investigation/play-run1/CabinetReferenceTest.txt"
+      },
+      {
+        "suite": "BodyRemovalTest",
+        "passed": 41,
+        "failed": 0,
+        "report": "docs/evidence/new-house-investigation/play-run1/BodyRemovalTest.txt"
+      },
+      {
+        "suite": "NarrativeRoleFlowTest",
+        "passed": 41,
+        "failed": 0,
+        "report": "docs/evidence/new-house-investigation/play-run1/NarrativeRoleFlowTest.txt"
+      },
+      {
+        "suite": "StoryContentTest",
+        "passed": 38,
+        "failed": 0,
+        "report": "docs/evidence/new-house-investigation/play-run1/StoryContentTest.txt"
+      },
+      {
+        "suite": "ScenarioPhaseFoundationTest",
+        "passed": 19,
+        "failed": 0,
+        "report": "docs/evidence/new-house-investigation/play-run2/ScenarioPhaseFoundationTest.txt"
+      },
+      {
+        "suite": "CrimeSceneSketchTest",
+        "passed": 80,
+        "failed": 0,
+        "report": "docs/evidence/new-house-investigation/play-run2/CrimeSceneSketchTest.txt"
+      },
+      {
+        "suite": "SOCOCloseoutTest",
+        "passed": 48,
+        "failed": 0,
+        "report": "docs/evidence/new-house-investigation/play-run2/SOCOCloseoutTest.txt"
+      },
+      {
+        "suite": "UIComfortInputTest",
+        "passed": 57,
+        "failed": 0,
+        "report": "docs/evidence/new-house-investigation/play-run2/UIComfortInputTest.txt"
+      },
+      {
+        "suite": "DialogueCatalogTest",
+        "passed": 46,
+        "failed": 0,
+        "report": "docs/evidence/new-house-investigation/play-run2/DialogueCatalogTest.txt"
+      },
+      {
+        "suite": "PerEvidenceMeasurementTest",
+        "passed": 34,
+        "failed": 0,
+        "report": "docs/evidence/new-house-investigation/play-run3/PerEvidenceMeasurementTest.txt"
+      }
+    ]
+  },
+  "layout": {
+    "passed": 63,
+    "failed": 0,
+    "report": "layout-validation.txt"
+  },
+  "stairs": {
+    "passed": 42,
+    "failed": 0,
+    "report": "stair-regression.txt"
+  },
+  "preservation": {
+    "passed": 29,
+    "failed": 0,
+    "report": "preservation-audit.json"
+  },
+  "backend": {
+    "layoutProfileTests": {
+      "passed": 5,
+      "failed": 0
+    },
+    "fullScoringSuite": {
+      "passed": 192,
+      "failed": 4,
+      "skipped": 0,
+      "report": "backend-scoring.txt",
+      "existingFailures": [
+        "lastDrink: historical Unity export/server key mismatch",
+        "procedureOrder: obsolete unsupported-1.7.0 fixture",
+        "scoringVersion: obsolete unsupported-1.7.0 fixture",
+        "trainingSeparation: historical Phase 1 source hash mismatch"
+      ]
+    },
+    "typescript": "passed",
+    "scopedEslint": "passed",
+    "deployment": "not performed"
+  },
+  "finalEditor": {
+    "scene": "Assets/_Project/Scenes/Scenarios/CSI_Environment.unity",
+    "playing": false,
+    "compiling": false,
+    "compilationFailed": false,
+    "dirty": false,
+    "oldHouseActive": false,
+    "newHouseActive": true,
+    "layoutId": "new-house-v1",
+    "pending": false,
+    "xrRestore": false,
+    "nextSuite": "",
+    "requestPresent": false,
+    "standaloneXRInitializeOnStart": true,
+    "androidXRInitializeOnStart": true
+  },
+  "hardwareAcceptance": "Quest controller, tracking, stereo readability, comfort and performance pending"
+}

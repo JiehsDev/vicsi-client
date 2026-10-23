@@ -1,0 +1,211 @@
+{
+  "unity": [
+    {
+      "suite": "EvidenceDisplayTest",
+      "passed": 33,
+      "failed": 0,
+      "report": "docs/evidence/evidence-display/gameplay-final/EvidenceDisplayTest.txt",
+      "compilerErrors": 0
+    },
+    {
+      "suite": "EvidenceTentPickupTest",
+      "passed": 21,
+      "failed": 0,
+      "report": "docs/evidence/evidence-display/markers-final/EvidenceTentPickupTest.txt",
+      "compilerErrors": 0
+    },
+    {
+      "suite": "EvidenceTraceMarkerTest",
+      "passed": 21,
+      "failed": 0,
+      "report": "docs/evidence/evidence-display/markers-final/EvidenceTraceMarkerTest.txt",
+      "compilerErrors": 0
+    },
+    {
+      "suite": "EvidenceProcedurePanelTest",
+      "passed": 45,
+      "failed": 0,
+      "report": "docs/evidence/evidence-display/gameplay-final-2/EvidenceProcedurePanelTest.txt",
+      "compilerErrors": 0
+    },
+    {
+      "suite": "InventoryUILayoutTest",
+      "passed": 22,
+      "failed": 0,
+      "report": "docs/evidence/evidence-display/gameplay-final-2/InventoryUILayoutTest.txt",
+      "compilerErrors": 0
+    },
+    {
+      "suite": "BottleFingerprintProcedureTest",
+      "passed": 40,
+      "failed": 0,
+      "report": "docs/evidence/evidence-display/gameplay-final-4/BottleFingerprintProcedureTest.txt",
+      "compilerErrors": 0
+    },
+    {
+      "suite": "ReasoningCheckpointTest",
+      "passed": 62,
+      "failed": 0,
+      "report": "docs/evidence/evidence-display/gameplay-final-4/ReasoningCheckpointTest.txt",
+      "compilerErrors": 0
+    },
+    {
+      "suite": "EvidenceRelationshipsReviewTest",
+      "passed": 41,
+      "failed": 0,
+      "report": "docs/evidence/evidence-display/gameplay-final-4/EvidenceRelationshipsReviewTest.txt",
+      "compilerErrors": 0
+    },
+    {
+      "suite": "AssessmentUploadServiceTest",
+      "passed": 33,
+      "failed": 0,
+      "report": "docs/evidence/evidence-display/gameplay-final-4/AssessmentUploadServiceTest.txt",
+      "compilerErrors": 0
+    },
+    {
+      "suite": "SOCOCloseoutTest",
+      "passed": 50,
+      "failed": 0,
+      "report": "docs/evidence/evidence-display/gameplay-final-4/SOCOCloseoutTest.txt",
+      "compilerErrors": 0
+    },
+    {
+      "suite": "CustodyPassTest",
+      "passed": 50,
+      "failed": 0,
+      "report": "docs/evidence/evidence-display/gameplay-final-5/CustodyPassTest.txt",
+      "compilerErrors": 0
+    },
+    {
+      "suite": "EducationalSessionRecordTest",
+      "passed": 70,
+      "failed": 0,
+      "report": "docs/evidence/evidence-display/gameplay-final-5/EducationalSessionRecordTest.txt",
+      "compilerErrors": 0
+    },
+    {
+      "suite": "MeasurementToolTest",
+      "passed": 41,
+      "failed": 0,
+      "report": "docs/evidence/evidence-display/gameplay-final-5/MeasurementToolTest.txt",
+      "compilerErrors": 0
+    },
+    {
+      "suite": "SceneRelationalMeasurementTest",
+      "passed": 58,
+      "failed": 0,
+      "report": "docs/evidence/evidence-display/gameplay-final-6/SceneRelationalMeasurementTest.txt",
+      "compilerErrors": 0
+    },
+    {
+      "suite": "CrimeSceneSketchTest",
+      "passed": 85,
+      "failed": 0,
+      "report": "docs/evidence/evidence-display/gameplay-final-7/CrimeSceneSketchTest.txt",
+      "compilerErrors": 0
+    }
+  ],
+  "unityAssertions": 672,
+  "web": {
+    "sessionApiDisplay": {
+      "file": "docs/evidence/evidence-display/fresh-upload-api-tests.txt",
+      "tests": 21,
+      "passed": 21,
+      "failed": 0,
+      "skipped": 0
+    },
+    "dashboard": {
+      "file": "docs/evidence/evidence-display/dashboard-regression.txt",
+      "tests": 42,
+      "passed": 42,
+      "failed": 0,
+      "skipped": 0
+    },
+    "scoring": {
+      "file": "docs/evidence/evidence-display/scoring-regression.txt",
+      "tests": 219,
+      "passed": 217,
+      "failed": 0,
+      "skipped": 2
+    },
+    "freshBottleWire": {
+      "file": "docs/evidence/evidence-display/bottle-wire-tests.txt",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0
+    },
+    "freshCustodyWire": {
+      "file": "docs/evidence/evidence-display/custody-wire-tests.txt",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "browser": {
+      "file": "docs/evidence/evidence-display/browser-tests-final.txt",
+      "tests": 21,
+      "passed": 21,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "checks": {
+    "typescript": "passed",
+    "scopedEslint": "passed",
+    "productionNextBuild": "passed",
+    "xrStartupSettings": [
+      1,
+      1,
+      1
+    ],
+    "pendingFileRequest": false
+  },
+  "preservation": {
+    "unchangedSerializedFiles": 130,
+    "changedSerializedFiles": [],
+    "sharedMappingIdentical": true,
+    "mapping": [
+      {
+        "id": "BODY-A",
+        "number": 0,
+        "name": "John",
+        "label": "Body A – John"
+      },
+      {
+        "id": "EVD-014",
+        "number": 1,
+        "name": "Kitchen Knife",
+        "label": "Evidence 1 – Kitchen Knife"
+      },
+      {
+        "id": "EVD-015",
+        "number": 2,
+        "name": "Blood Spatter",
+        "label": "Evidence 2 – Blood Spatter"
+      },
+      {
+        "id": "EVD-018",
+        "number": 3,
+        "name": "Empty Liquor Bottle",
+        "label": "Evidence 3 – Empty Liquor Bottle"
+      }
+    ],
+    "preservedReferences": [
+      "EVD-014",
+      "EVD-015",
+      "EVD-018",
+      "BODY-A",
+      "REL-paul-timeline-contradiction",
+      "statement_vendor_paul_3am"
+    ],
+    "note": "SHA256 comparison against this task start, not Git HEAD; existing unrelated edits preserved. No database writes."
+  },
+  "notes": [
+    "Accepted reports only; earlier failures, test-only compilation correction and interrupted attempts are retained separately.",
+    "Two optional fixtures skipped in the general scoring run were subsequently run with fresh actual Unity bottle/custody payloads; both dedicated wire suites passed without skips.",
+    "Headset/production database acceptance was not performed. No commit, push, deployment, seed or production write.",
+    "Existing diagnostics refresh shared local capture files; task copies are listed in capture-preservation.json."
+  ]
+}

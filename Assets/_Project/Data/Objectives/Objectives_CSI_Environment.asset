@@ -1,0 +1,1244 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8d2db37e5b80e43b44d5a77ade5306, type: 3}
+  m_Name: Objectives_CSI_Environment
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectiveSet
+  scenarioId: CSI_Environment
+  objectives:
+  - objectiveId: obj-talk-first-responder
+    title: "Receive the First Responder's briefing"
+    description: Receive the preliminary briefing and CSI Form 1 before entering the scene as IOC.
+    unlockRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    completionRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 18
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: FR turnover and CSI Form 1 receipt start IOC assessment, not SOCO processing.
+    failureRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    order: -1
+    showInObjectiveList: 1
+    narrativeEventOnUnlockId: 
+    narrativeEventOnCompletionId: 
+    excludeFromScoring: 1
+  - objectiveId: obj-ioc-initial-assessment
+    title: Complete the IOC initial assessment
+    description: Enter through the controlled entrance and assess the scene while preserving the cordon and evidence.
+    phaseScope: 2
+    requiredPhase: 1
+    unlockRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+    completionRequirement:
+      kind: 0
+      requirementType: 19
+      children: []
+      authoringNote: IOC assessment accepted by SceneTurnover; separate from forensic evidence status.
+    failureRequirement:
+      kind: 1
+      operatorType: 1
+      children: []
+    order: -1
+    showInObjectiveList: 1
+    narrativeEventOnUnlockId:
+    narrativeEventOnCompletionId:
+    excludeFromScoring: 1
+  - objectiveId: obj-ioc-soco-decision
+    title: Determine whether SOCO assistance is required
+    description: Decide whether this scene requires specialized forensic assistance.
+    phaseScope: 2
+    requiredPhase: 2
+    unlockRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+    completionRequirement:
+      kind: 0
+      requirementType: 20
+      scenarioPhase: 3
+      children: []
+    failureRequirement:
+      kind: 1
+      operatorType: 1
+      children: []
+    order: -1
+    showInObjectiveList: 1
+    excludeFromScoring: 1
+  - objectiveId: obj-await-soco-arrival
+    title: Await SOCO arrival
+    description: Maintain scene control while the requested SOCO team arrives.
+    phaseScope: 2
+    requiredPhase: 3
+    unlockRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+    completionRequirement:
+      kind: 0
+      requirementType: 20
+      scenarioPhase: 4
+      children: []
+    failureRequirement:
+      kind: 1
+      operatorType: 1
+      children: []
+    order: -1
+    showInObjectiveList: 1
+    excludeFromScoring: 1
+  - objectiveId: obj-receive-ioc-briefing
+    title: Receive IOC scene briefing
+    description: Receive the scene assessment and confirm CSI Form 2 submission before processing.
+    phaseScope: 2
+    requiredPhase: 4
+    unlockRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+    completionRequirement:
+      kind: 0
+      requirementType: 20
+      scenarioPhase: 5
+      children: []
+    failureRequirement:
+      kind: 1
+      operatorType: 1
+      children: []
+    order: -1
+    showInObjectiveList: 1
+    excludeFromScoring: 1
+  - objectiveId: obj-document-body
+    title: Document the victim's body
+    description: Take the initial photograph, chalk the position, place Body Marker A,
+      complete the final photograph, then measure and record BODY-A findings before
+      preparing the body for removal.
+    unlockRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 18
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: FR turnover and CSI Form 1 receipt start IOC assessment, not SOCO processing.
+    completionRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: BODY-A
+      evidenceReference: {fileID: 0}
+      requiredStatus: 6
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    failureRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    order: 1
+    showInObjectiveList: 1
+    narrativeEventOnUnlockId: 
+    narrativeEventOnCompletionId: 
+    excludeFromScoring: 0
+  - objectiveId: obj-identify-poi
+    title: Establish an initial person of interest
+    description: Review the accounts given by Paul, Peter, and the reporting witness.
+    unlockRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 18
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: FR turnover and CSI Form 1 receipt start IOC assessment, not SOCO processing.
+    completionRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    failureRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    order: 2
+    showInObjectiveList: 1
+    narrativeEventOnUnlockId: 
+    narrativeEventOnCompletionId: 
+    excludeFromScoring: 0
+  - objectiveId: obj-identify-murder-weapon
+    title: Identify the possible murder weapon
+    description: Find an item consistent with the victim's wound.
+    unlockRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 1
+      evidenceId: BODY-A
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: body-a-wound-sharp-object
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    completionRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 1
+      evidenceId: EVD-014
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: knife-wound-match
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    failureRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    order: 3
+    showInObjectiveList: 1
+    narrativeEventOnUnlockId: 
+    narrativeEventOnCompletionId: 
+    excludeFromScoring: 0
+  - objectiveId: obj-verify-fingerprint-timing
+    title: Review the identified knife fingerprint
+    description: Paul's fingerprint has been identified on the knife.
+    unlockRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 2
+      evidenceId: EVD-014
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 2
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    completionRequirement:
+      kind: 1
+      operatorType: 0
+      children:
+      - rid: 2142348962394538233
+      - rid: 2142348962394538234
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    failureRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    order: 4
+    showInObjectiveList: 1
+    narrativeEventOnUnlockId: 
+    narrativeEventOnCompletionId: 
+    excludeFromScoring: 0
+  - objectiveId: obj-reconstruct-crime
+    title: Reconstruct the attack
+    description: Use the blood pattern to work out where and how the attack happened.
+    unlockRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 12
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: FIND-BODY-SHARP-WOUND
+      measurementRequirementId: 
+      authoringNote: 
+    completionRequirement:
+      kind: 1
+      operatorType: 0
+      children:
+      - rid: 7267690769340170761
+      - rid: 7267690769340170762
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    failureRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    order: 6
+    showInObjectiveList: 1
+    narrativeEventOnUnlockId: 
+    narrativeEventOnCompletionId: 
+    excludeFromScoring: 0
+  - objectiveId: obj-document-scene
+    title: Begin documenting the crime scene
+    description: Photograph the whole scene, from outside in, before you disturb
+      anything.
+    unlockRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 18
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: FR turnover and CSI Form 1 receipt start IOC assessment, not SOCO processing.
+    completionRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 13
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    failureRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    order: 0
+    showInObjectiveList: 1
+    narrativeEventOnUnlockId: mission-scene-start
+    narrativeEventOnCompletionId: 
+    excludeFromScoring: 0
+  - objectiveId: obj-knife-fingerprint
+    title: Process the Knife for Prints
+    description: Find out who handled the knife.
+    unlockRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 6
+      evidenceId: EVD-014
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    completionRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 12
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: FIND-KNIFE-PRINT-BROTHER
+      measurementRequirementId: 
+      authoringNote: 
+    failureRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    order: 110
+    showInObjectiveList: 1
+    narrativeEventOnUnlockId: mission-knife-fingerprint-before
+    narrativeEventOnCompletionId: 
+    excludeFromScoring: 0
+  - objectiveId: obj-submit-theory
+    title: Submit Your Theory
+    description: Connect the evidence, then submit your theory when you're confident
+      in it.
+    unlockRequirement:
+      kind: 1
+      operatorType: 1
+      children:
+      - rid: 2142348962394538235
+      - rid: 2142348962394538236
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    completionRequirement:
+      kind: 1
+      operatorType: 0
+      children:
+      - rid: 2142348962394538160
+      - rid: 2142348962394538161
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    failureRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      authoringNote: 
+    order: 140
+    showInObjectiveList: 1
+    narrativeEventOnUnlockId: mission-deduction-first-connection
+    narrativeEventOnCompletionId: 
+    excludeFromScoring: 0
+  - objectiveId: obj-soco-closeout
+    phaseScope: 2
+    requiredPhase: 7
+    title: Complete scene processing and secure all evidence.
+    description: 
+    unlockRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    completionRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 20
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 8
+      authoringNote: 
+    failureRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    order: 0
+    showInObjectiveList: 1
+    narrativeEventOnUnlockId: 
+    narrativeEventOnCompletionId: 
+    excludeFromScoring: 1
+  - objectiveId: obj-evidence-inventory-review
+    phaseScope: 2
+    requiredPhase: 8
+    title: Review and confirm the evidence inventory.
+    description: 
+    unlockRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    completionRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 20
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 9
+      authoringNote: 
+    failureRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    order: 0
+    showInObjectiveList: 1
+    narrativeEventOnUnlockId: 
+    narrativeEventOnCompletionId: 
+    excludeFromScoring: 1
+  - objectiveId: obj-final-scene-survey
+    phaseScope: 2
+    requiredPhase: 9
+    title: Conduct a final survey of the crime scene.
+    description: 
+    unlockRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    completionRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 20
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 10
+      authoringNote: 
+    failureRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    order: 0
+    showInObjectiveList: 1
+    narrativeEventOnUnlockId: 
+    narrativeEventOnCompletionId: 
+    excludeFromScoring: 1
+  - objectiveId: obj-ioc-completion-report
+    phaseScope: 2
+    requiredPhase: 10
+    title: Confirm your investigation completion report.
+    description: 
+    unlockRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    completionRequirement:
+      kind: 0
+      operatorType: 0
+      children: []
+      requirementType: 20
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 11
+      authoringNote: 
+    failureRequirement:
+      kind: 1
+      operatorType: 0
+      children: []
+      requirementType: 0
+      evidenceId: 
+      evidenceReference: {fileID: 0}
+      requiredStatus: 0
+      requiredLabStatus: 0
+      reportLineId: 
+      legacyPrerequisite:
+        type: 0
+        evidenceId: 
+        lineId: 
+      requirementAsset: {fileID: 0}
+      narrativeEventId: 
+      objectiveId: 
+      relationshipId: 
+      findingId: 
+      measurementRequirementId: 
+      scenarioPhase: 0
+      authoringNote: 
+    order: 0
+    showInObjectiveList: 1
+    narrativeEventOnUnlockId: 
+    narrativeEventOnCompletionId: 
+    excludeFromScoring: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 2142348962394538160
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 11
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: REL-knife-consistent-wound
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 2142348962394538161
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 11
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: REL-spatter-consistent-reconstruction
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 2142348962394538233
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-KNIFE-WOUND-CONSISTENT
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 2142348962394538234
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-SPATTER-RECONSTRUCTION
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 2142348962394538235
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-KNIFE-WOUND-CONSISTENT
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 2142348962394538236
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 12
+        evidenceId: 
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: FIND-SPATTER-RECONSTRUCTION
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 7267690769340170761
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 0
+        evidenceId: EVD-015
+        evidenceReference: {fileID: 0}
+        requiredStatus: 10
+        requiredLabStatus: 0
+        reportLineId: 
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 
+    - rid: 7267690769340170762
+      type: {class: RequirementNode, ns: , asm: Assembly-CSharp}
+      data:
+        kind: 0
+        operatorType: 0
+        children: []
+        requirementType: 1
+        evidenceId: EVD-015
+        evidenceReference: {fileID: 0}
+        requiredStatus: 0
+        requiredLabStatus: 0
+        reportLineId: blood-spatter-mechanism-only
+        legacyPrerequisite:
+          type: 0
+          evidenceId: 
+          lineId: 
+        requirementAsset: {fileID: 0}
+        narrativeEventId: 
+        objectiveId: 
+        relationshipId: 
+        findingId: 
+        measurementRequirementId: 
+        authoringNote: 

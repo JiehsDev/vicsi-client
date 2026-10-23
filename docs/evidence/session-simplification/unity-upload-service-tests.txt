@@ -1,0 +1,35 @@
+=== AssessmentUploadServiceTest ===
+  PASS: DTO round-trips through JsonUtility (sessionId)
+  PASS: DTO round-trips through JsonUtility (nested list)
+  PASS: DTO round-trips through JsonUtility (nested optional section)
+  PASS: Minimal/older-shaped JSON parses without throwing (backward compatibility)
+  PASS: IOC/SOCO events export in order with current versions/outcome/timing and unchanged assessment sections
+  PASS: QueueSessionForUpload returns a Pending/Uploading entry
+  PASS: Successful upload reaches Uploaded
+  PASS: Successful upload records a serverReceiptId
+  PASS: Re-queueing the same sessionId does not create a second entry
+  PASS: Identical duplicate (200, duplicate=true) with matching sessionId is treated as Uploaded
+  PASS: A duplicate response for a MISMATCHED sessionId is NOT trusted as success
+  PASS: HTTP 409 SESSION_PAYLOAD_CONFLICT reaches Rejected without retrying
+  PASS: HTTP 400 validation failure reaches Rejected
+  PASS: HTTP 400 failure does NOT retry (attemptCount == 1)
+  PASS: HTTP 401 reaches FailedPermanently without exhausting retries
+  PASS: HTTP 413 reaches FailedPermanently without exhausting retries
+  PASS: HTTP 429 then success eventually reaches Uploaded
+  PASS: HTTP 429 retry incremented attemptCount
+  PASS: No-network failure recovers to Uploaded once connectivity returns
+  PASS: Persistent 500s exhaust maxRetryAttempts and reach FailedPermanently (attempts=3)
+  PASS: Retry loop stops AT maxRetryAttempts, not beyond
+  PASS: Invalid server response is retried, not treated as permanent
+  PASS: Original local session .jsonl logs are never deleted, including after permanent failure/rejection
+  PASS: A corrupted queue index degrades to an empty queue instead of throwing
+  PASS: A Pending entry left over from a previous run is resumed and uploaded on the next launch
+  PASS: ClearCompletedEntries removes the now-Uploaded session-k entry (cleared=7)
+  PASS: Session queued while paired as Student A captures that identity
+  PASS: Attempting upload without pairing is blocked safely (AwaitingPairing)
+  PASS: The blocked attempt never reached the transport (no network call)
+  PASS: Pairing as the SAME student resumes and completes the upload
+  PASS: Second session queued while (still) paired as Student A captures that identity
+  PASS: A DIFFERENT student pairing does NOT upload the earlier student's queued session
+  PASS: Student A's queued session was never sent under Student B's token
+=== PASS, 0 failures ===

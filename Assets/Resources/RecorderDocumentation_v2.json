@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "requiredSelections": 3,
+  "maximumPerSubject": 6,
+  "maximumTotal": 24,
+  "subjects": [
+    {"id":"BODY-A","label":"Body A – John","statements":[
+      {"id":"rec-body-location-v1","text":"I found John lying face up on the kitchen floor.","weight":2},
+      {"id":"rec-body-fall-v1","text":"I found John lying at the foot of the stairs.","weight":0},
+      {"id":"rec-body-position-v1","text":"I photographed and measured John's position before his removal.","weight":2},
+      {"id":"rec-body-attacker-v1","text":"I collected John's clothing for examination.","weight":0},
+      {"id":"rec-body-staining-v1","text":"I observed blood on John's shirt around the abdomen.","weight":2},
+      {"id":"rec-body-time-v1","text":"I moved John's body before photographing its position.","weight":0}
+    ]},
+    {"id":"EVD-014","label":"Evidence 1 – Kitchen Knife","statements":[
+      {"id":"rec-knife-use-v1","text":"I found the knife in John's hand.","weight":0},
+      {"id":"rec-knife-location-v1","text":"I found a kitchen knife on the kitchen floor.","weight":2},
+      {"id":"rec-knife-residue-v1","text":"I observed blood on the knife blade.","weight":2},
+      {"id":"rec-knife-death-v1","text":"I collected the knife before photographing it.","weight":0},
+      {"id":"rec-knife-time-v1","text":"I lifted a fingerprint from the knife blade.","weight":0},
+      {"id":"rec-knife-print-v1","text":"I lifted a fingerprint from the knife handle using lifting tape.","weight":2}
+    ]},
+    {"id":"EVD-015","label":"Evidence 2 – Blood Spatter","statements":[
+      {"id":"rec-spatter-location-v1","text":"I found bloodstains on the kitchen floor near John's body.","weight":2},
+      {"id":"rec-spatter-attacker-v1","text":"I found the bloodstains on the kitchen wall.","weight":0},
+      {"id":"rec-spatter-dna-v1","text":"I collected the blood sample from John's clothing.","weight":0},
+      {"id":"rec-spatter-appearance-v1","text":"I photographed the bloodstain pattern before collecting a sample.","weight":2},
+      {"id":"rec-spatter-swab-v1","text":"I collected a blood sample from the floor using a swab.","weight":2},
+      {"id":"rec-spatter-time-v1","text":"I collected the blood sample using lifting tape.","weight":0}
+    ]},
+    {"id":"EVD-018","label":"Evidence 3 – Empty Liquor Bottle","statements":[
+      {"id":"rec-bottle-presence-v1","text":"I found the bottle on the floor beside John's body.","weight":0},
+      {"id":"rec-bottle-location-v1","text":"I found an empty liquor bottle on the kitchen counter.","weight":2},
+      {"id":"rec-bottle-condition-v1","text":"I examined the bottle and found no visible cracks or broken glass.","weight":2},
+      {"id":"rec-bottle-intoxication-v1","text":"I collected a sample of liquid from inside the bottle.","weight":0},
+      {"id":"rec-bottle-prints-v1","text":"I recovered fingerprints from the bottle using lifting tape.","weight":2},
+      {"id":"rec-bottle-time-v1","text":"I recovered fingerprints from inside the bottle.","weight":0}
+    ]}
+  ]
+}

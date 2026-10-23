@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81025025b5ccd0343822b039b1e4dfac, type: 3}
+  m_Name: Conclusion_PETER-ACCUSATION
+  m_EditorClassIdentifier: Assembly-CSharp::ConclusionDefinition
+  conclusionId: conclusion-peter
+  displayName: Peter
+  description: Peter's late departure and uneasy appearance justify further investigation,
+    but an accusation still requires evidence connecting him to the attack.
+  supportingEvidenceSummary: The vendor corroborates Peter leaving around 2:00 AM but
+    did not witness what happened inside.
+  availabilityRequirement:
+    kind: 0
+    operatorType: 0
+    children: []
+    requirementType: 12
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: FIND-BODY-SHARP-WOUND
+    measurementRequirementId: 
+    authoringNote: 
+  level: 2
+  priority: 0
+  hidesInconclusiveWhenSupported: 0
+  inconclusiveSuppressionRequirement:
+    kind: 1
+    operatorType: 0
+    children: []
+    requirementType: 0
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    measurementRequirementId: 
+    authoringNote: 
+  references:
+    version: 2
+    RefIds: []

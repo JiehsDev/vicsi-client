@@ -1,0 +1,476 @@
+[
+  {
+    "id": "REF-BODYA-1",
+    "evidence": "BODY-A",
+    "label": "East Kitchen Wall",
+    "point": {
+      "x": 19.41683,
+      "y": 1.95,
+      "z": 12.9,
+      "normalized": {
+        "x": 0.830032468,
+        "y": 0.08335878,
+        "z": 0.5514504,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.00000012
+      },
+      "magnitude": 23.3928566,
+      "sqrMagnitude": 547.225769
+    },
+    "normal": {
+      "x": -1.0,
+      "y": 0.0,
+      "z": -1.19209275E-07,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "zoneSize": {
+      "x": 0.8,
+      "y": 0.9,
+      "z": 0.4,
+      "normalized": {
+        "x": 0.630488336,
+        "y": 0.7092994,
+        "z": 0.315244168,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 1.26885772,
+      "sqrMagnitude": 1.61
+    },
+    "evidencePoint": {
+      "x": 17.35,
+      "y": 1.21258485,
+      "z": 12.9,
+      "normalized": {
+        "x": 0.801231563,
+        "y": 0.0559977666,
+        "z": 0.595728338,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 21.6541653,
+      "sqrMagnitude": 468.902863
+    }
+  },
+  {
+    "id": "REF-BODYA-2",
+    "evidence": "BODY-A",
+    "label": "Foot-side Kitchen Wall",
+    "point": {
+      "x": 17.35,
+      "y": 1.95,
+      "z": 11.6320114,
+      "normalized": {
+        "x": 0.8270079,
+        "y": 0.09294901,
+        "z": 0.5544533,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 20.9792442,
+      "sqrMagnitude": 440.1287
+    },
+    "normal": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "zoneSize": {
+      "x": 0.8,
+      "y": 0.9,
+      "z": 0.4,
+      "normalized": {
+        "x": 0.630488336,
+        "y": 0.7092994,
+        "z": 0.315244168,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 1.26885772,
+      "sqrMagnitude": 1.61
+    },
+    "evidencePoint": {
+      "x": 17.35,
+      "y": 1.21258485,
+      "z": 12.9,
+      "normalized": {
+        "x": 0.801231563,
+        "y": 0.0559977666,
+        "z": 0.595728338,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 21.6541653,
+      "sqrMagnitude": 468.902863
+    }
+  },
+  {
+    "id": "REF-KNIFE-1",
+    "evidence": "EVD-014",
+    "label": "East Kitchen Wall",
+    "point": {
+      "x": 19.41683,
+      "y": 1.95,
+      "z": 12.885,
+      "normalized": {
+        "x": 0.830325842,
+        "y": 0.08338825,
+        "z": 0.5510039,
+        "normalized": {
+          "x": 0.8303259,
+          "y": 0.083388254,
+          "z": 0.551003933,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 0.99999994,
+        "sqrMagnitude": 0.9999999
+      },
+      "magnitude": 23.38459,
+      "sqrMagnitude": 546.83905
+    },
+    "normal": {
+      "x": -1.0,
+      "y": 0.0,
+      "z": -1.19209275E-07,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "zoneSize": {
+      "x": 0.8,
+      "y": 0.9,
+      "z": 0.4,
+      "normalized": {
+        "x": 0.630488336,
+        "y": 0.7092994,
+        "z": 0.315244168,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 1.26885772,
+      "sqrMagnitude": 1.61
+    },
+    "evidencePoint": {
+      "x": 18.627,
+      "y": 1.195983,
+      "z": 12.885,
+      "normalized": {
+        "x": 0.8212673,
+        "y": 0.0527310744,
+        "z": 0.568101645,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 22.6808014,
+      "sqrMagnitude": 514.418762
+    }
+  },
+  {
+    "id": "REF-KNIFE-CAB",
+    "evidence": "EVD-014",
+    "label": "Rear Kitchen Wall",
+    "point": {
+      "x": 18.627,
+      "y": 1.95,
+      "z": 14.63201,
+      "normalized": {
+        "x": 0.783738554,
+        "y": 0.08204704,
+        "z": 0.615647733,
+        "magnitude": 1.0,
+        "sqrMagnitude": 0.99999994
+      },
+      "magnitude": 23.7668552,
+      "sqrMagnitude": 564.8634
+    },
+    "normal": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": -1.0,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "zoneSize": {
+      "x": 0.8,
+      "y": 0.9,
+      "z": 0.4,
+      "normalized": {
+        "x": 0.630488336,
+        "y": 0.7092994,
+        "z": 0.315244168,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 1.26885772,
+      "sqrMagnitude": 1.61
+    },
+    "evidencePoint": {
+      "x": 18.627,
+      "y": 1.195983,
+      "z": 12.885,
+      "normalized": {
+        "x": 0.8212673,
+        "y": 0.0527310744,
+        "z": 0.568101645,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 22.6808014,
+      "sqrMagnitude": 514.418762
+    }
+  },
+  {
+    "id": "REF-SPATTER-CAB",
+    "evidence": "EVD-015",
+    "label": "Foot-side Kitchen Wall",
+    "point": {
+      "x": 16.825,
+      "y": 1.95,
+      "z": 11.6320114,
+      "normalized": {
+        "x": 0.818846941,
+        "y": 0.09490351,
+        "z": 0.566112161,
+        "magnitude": 1.0,
+        "sqrMagnitude": 0.99999994
+      },
+      "magnitude": 20.5471859,
+      "sqrMagnitude": 422.186829
+    },
+    "normal": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "zoneSize": {
+      "x": 0.8,
+      "y": 0.9,
+      "z": 0.4,
+      "normalized": {
+        "x": 0.630488336,
+        "y": 0.7092994,
+        "z": 0.315244168,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 1.26885772,
+      "sqrMagnitude": 1.61
+    },
+    "evidencePoint": {
+      "x": 16.825,
+      "y": 1.173,
+      "z": 12.644,
+      "normalized": {
+        "x": 0.79818505,
+        "y": 0.0556476079,
+        "z": 0.599836648,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 21.079073,
+      "sqrMagnitude": 444.327332
+    }
+  },
+  {
+    "id": "REF-SPATTER-2",
+    "evidence": "EVD-015",
+    "label": "West Kitchen Wall",
+    "point": {
+      "x": 15.06683,
+      "y": 1.95,
+      "z": 12.644,
+      "normalized": {
+        "x": 0.7622718,
+        "y": 0.0986558,
+        "z": 0.6396943,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.00000012
+      },
+      "magnitude": 19.7656918,
+      "sqrMagnitude": 390.6826
+    },
+    "normal": {
+      "x": 1.0,
+      "y": 0.0,
+      "z": -1.19209275E-07,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "zoneSize": {
+      "x": 0.8,
+      "y": 0.9,
+      "z": 0.4,
+      "normalized": {
+        "x": 0.630488336,
+        "y": 0.7092994,
+        "z": 0.315244168,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 1.26885772,
+      "sqrMagnitude": 1.61
+    },
+    "evidencePoint": {
+      "x": 16.825,
+      "y": 1.173,
+      "z": 12.644,
+      "normalized": {
+        "x": 0.79818505,
+        "y": 0.0556476079,
+        "z": 0.599836648,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 21.079073,
+      "sqrMagnitude": 444.327332
+    }
+  },
+  {
+    "id": "REF-BOTTLE-1",
+    "evidence": "EVD-018",
+    "label": "Rear Kitchen Wall",
+    "point": {
+      "x": 17.75,
+      "y": 2.25,
+      "z": 14.6320114,
+      "normalized": {
+        "x": 0.7679589,
+        "y": 0.0973469,
+        "z": 0.6330582,
+        "normalized": {
+          "x": 0.767958939,
+          "y": 0.09734691,
+          "z": 0.63305825,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 0.99999994,
+        "sqrMagnitude": 0.99999994
+      },
+      "magnitude": 23.1132164,
+      "sqrMagnitude": 534.220764
+    },
+    "normal": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": -1.0,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "zoneSize": {
+      "x": 0.8,
+      "y": 0.9,
+      "z": 0.4,
+      "normalized": {
+        "x": 0.630488336,
+        "y": 0.7092994,
+        "z": 0.315244168,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 1.26885772,
+      "sqrMagnitude": 1.61
+    },
+    "evidencePoint": {
+      "x": 17.75,
+      "y": 2.117,
+      "z": 14.3,
+      "normalized": {
+        "x": 0.7753871,
+        "y": 0.0924785659,
+        "z": 0.6246781,
+        "normalized": {
+          "x": 0.775387,
+          "y": 0.09247856,
+          "z": 0.624678,
+          "normalized": {
+            "x": 0.775387049,
+            "y": 0.0924785659,
+            "z": 0.6246781,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999999
+        },
+        "magnitude": 1.00000012,
+        "sqrMagnitude": 1.00000012
+      },
+      "magnitude": 22.8917923,
+      "sqrMagnitude": 524.0342
+    }
+  },
+  {
+    "id": "REF-BOTTLE-2",
+    "evidence": "EVD-018",
+    "label": "Right Cabinet End",
+    "point": {
+      "x": 18.3412724,
+      "y": 1.80000091,
+      "z": 14.2999992,
+      "normalized": {
+        "x": 0.78628,
+        "y": 0.07716502,
+        "z": 0.6130329,
+        "magnitude": 1.0,
+        "sqrMagnitude": 0.99999994
+      },
+      "magnitude": 23.326643,
+      "sqrMagnitude": 544.132263
+    },
+    "normal": {
+      "x": 1.0,
+      "y": 0.0,
+      "z": -1.19209275E-07,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "zoneSize": {
+      "x": 0.8,
+      "y": 0.9,
+      "z": 0.4,
+      "normalized": {
+        "x": 0.630488336,
+        "y": 0.7092994,
+        "z": 0.315244168,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 1.26885772,
+      "sqrMagnitude": 1.61
+    },
+    "evidencePoint": {
+      "x": 17.75,
+      "y": 2.117,
+      "z": 14.3,
+      "normalized": {
+        "x": 0.7753871,
+        "y": 0.0924785659,
+        "z": 0.6246781,
+        "normalized": {
+          "x": 0.775387,
+          "y": 0.09247856,
+          "z": 0.624678,
+          "normalized": {
+            "x": 0.775387049,
+            "y": 0.0924785659,
+            "z": 0.6246781,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999999
+        },
+        "magnitude": 1.00000012,
+        "sqrMagnitude": 1.00000012
+      },
+      "magnitude": 22.8917923,
+      "sqrMagnitude": 524.0342
+    }
+  }
+]

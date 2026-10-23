@@ -1,0 +1,35 @@
+{
+  "utc": "2026-10-11T15:02:53.588650+00:00",
+  "checks": [
+    {
+      "suite": "ProceduralTrainingGuidanceTest",
+      "passed": 20,
+      "failed": 0
+    },
+    {
+      "suite": "BiologicalSamplingTest",
+      "passed": 59,
+      "failed": 0
+    },
+    {
+      "suite": "SOCOCloseoutTest",
+      "passed": 47,
+      "failed": 0
+    },
+    {
+      "suite": "DialogueCatalogTest",
+      "passed": 46,
+      "failed": 0
+    },
+    {
+      "suite": "ValidateProceduralTraining.py",
+      "passed": 26,
+      "failed": 0
+    }
+  ],
+  "passed": 198,
+  "failed": 0,
+  "csharpCompilerErrorsInEditorLog": 0,
+  "protectedFilesCompared": 195,
+  "scoringVersion": "1.6.0"
+}

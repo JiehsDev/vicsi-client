@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7941d3d8dcd78524bb2f63dfb82c2834, type: 3}
+  m_Name: REL-gloves-fingerprint-identifies-wife
+  m_EditorClassIdentifier: Assembly-CSharp::RelationshipDefinition
+  relationshipId: REL-gloves-fingerprint-identifies-wife
+  displayName: Gloves Fingerprint Identifies Wife
+  sourceId: EVD-019
+  targetId: suspect_wife
+  relationshipType: Identifies
+  unlockRequirement:
+    kind: 0
+    operatorType: 0
+    children: []
+    requirementType: 12
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: FIND-GLOVES-PRINT-WIFE
+    authoringNote: 
+  isCorrect: 1
+  scoreWeight: 1
+  explanation: The latent print recovered from inside the gloves identifies who wore
+    them.
+  narrativeEventTriggerId: 
+  references:
+    version: 2
+    RefIds: []

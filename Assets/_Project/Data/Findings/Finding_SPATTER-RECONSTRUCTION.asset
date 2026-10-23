@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f8d02f05a0c4340a5ebca0f2d34f71, type: 3}
+  m_Name: Finding_SPATTER-RECONSTRUCTION
+  m_EditorClassIdentifier: Assembly-CSharp::FindingDefinition
+  findingId: FIND-SPATTER-RECONSTRUCTION
+  displayName: Blood Pattern Supports Attack-Area Reconstruction
+  description: The documented bloodstain pattern is consistent with blood being deposited
+    during an attack near John's position in the kitchen. It can help reconstruct
+    the incident, but does not identify the attacker.
+  sourceEvidenceId: EVD-015
+  sourceEvidenceReference: {fileID: 11400000, guid: 087731dff73a97d458a3340e832c025d, type: 2}
+  unlockRequirement:
+    kind: 0
+    operatorType: 0
+    children: []
+    requirementType: 1
+    evidenceId: EVD-015
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: blood-spatter-mechanism-only
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    authoringNote: Mechanism-only line - does not identify a suspect.
+  category: physical
+  references:
+    version: 2
+    RefIds: []

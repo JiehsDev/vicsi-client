@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7941d3d8dcd78524bb2f63dfb82c2834, type: 3}
+  m_Name: REL-peter-departure-supported
+  m_EditorClassIdentifier: Assembly-CSharp::RelationshipDefinition
+  relationshipId: REL-peter-departure-supported
+  displayName: Vendor Observation Supports Peter's Departure Account
+  sourceId: statement_peter_timeline
+  targetId: statement_vendor_observation
+  relationshipType: Corroborates
+  unlockRequirement:
+    kind: 1
+    operatorType: 0
+    children: []
+    requirementType: 0
+    evidenceId: 
+    evidenceReference: {fileID: 0}
+    requiredStatus: 0
+    requiredLabStatus: 0
+    reportLineId: 
+    legacyPrerequisite:
+      type: 0
+      evidenceId: 
+      lineId: 
+    requirementAsset: {fileID: 0}
+    narrativeEventId: 
+    objectiveId: 
+    relationshipId: 
+    findingId: 
+    authoringNote: 
+  isCorrect: 1
+  scoreWeight: 1
+  explanation: The vendor's observation broadly supports Peter leaving around 2:00 AM.
+    The vendor did not witness what happened inside, so this does not establish guilt.
+  narrativeEventTriggerId: 
+  references:
+    version: 2
+    RefIds: []
