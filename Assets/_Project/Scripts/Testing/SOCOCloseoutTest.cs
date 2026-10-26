@@ -172,10 +172,25 @@ public sealed class SOCOCloseoutTest : MonoBehaviour
         Check("Completion report still requires explicit confirmation before release", !SceneTurnover.TryAdvance(ScenarioPhase.SceneRelease));
         var ioc = (Transform)typeof(SOCOCloseout).GetField("ioc", Private).GetValue(flow);
         head.position = ioc.position + new Vector3(20, 1.6f, 20);
-        Check("Completion report opens without approaching or restoring the retired IOC", flow.BeginIOCReport()
-            && !ioc.GetComponent<NPCPresentation>().IsVisible);
-        yield return null; yield return DrainDialogue(); yield return null;
-        Check("IOC asks the authored question before explicit confirmation", flow.IsShowing && flow.ConfirmIOCReport() && SceneTurnover.Phase == ScenarioPhase.SceneRelease && flow.IOCConfirmed);
+        int duplicateQuestionRequests = 0;
+        System.Action<DialogueRequest> observeQuestion = request => { if (request.id == "closeout-ioc-question") duplicateQuestionRequests++; };
+        GameDialogue.OnRequested += observeQuestion;
+        try
+        {
+            Check("Completion report opens directly without approaching or restoring the retired IOC", flow.BeginIOCReport()
+                && flow.IsShowing && !ioc.GetComponent<NPCPresentation>().IsVisible);
+            var questionBody = (TMPro.TMP_Text)typeof(SOCOCloseout).GetField("body", Private).GetValue(flow);
+            Check("Satisfaction question appears once in the confirmation panel, never as preceding dialogue",
+                questionBody.text == GameDialogue.Text("closeout-ioc-question") && duplicateQuestionRequests == 0
+                && !STCSNotificationUI.Instance.HasLinesFrom("soco-closeout-ioc"));
+            Check("Repeated open requests cannot queue another question", !flow.BeginIOCReport() && duplicateQuestionRequests == 0);
+            flow.HidePanel();
+            yield return null;
+            Check("Cancelling keeps the report unconfirmed and permits reopening the same panel", !flow.IOCConfirmed
+                && flow.BeginIOCReport() && flow.IsShowing && duplicateQuestionRequests == 0);
+        }
+        finally { GameDialogue.OnRequested -= observeQuestion; }
+        Check("IOC report still needs explicit confirmation", flow.IsShowing && flow.ConfirmIOCReport() && SceneTurnover.Phase == ScenarioPhase.SceneRelease && flow.IOCConfirmed);
         Check("Scene release precedes completion and cordon persists through IOC reply", !flow.ReleaseCompleted && cordon.CordonVisible && !SceneTurnover.TryAdvance(ScenarioPhase.InvestigationComplete));
         yield return null; yield return DrainDialogue(); yield return null;
         Check("Administrative closeout completes investigation with cordon still visible and closed", SceneTurnover.Phase == ScenarioPhase.InvestigationComplete && flow.ReleaseCompleted && cordon.CordonVisible && !cordon.EntranceIsOpen);
@@ -234,6 +249,7 @@ public sealed class SOCOCloseoutTest : MonoBehaviour
     private void CaptureReview(SOCOCloseout flow)
     {
 #if UNITY_EDITOR
+        if (SystemInfo.graphicsDeviceType == UnityEngine.Rendering.GraphicsDeviceType.Null) return;
         var camera = Camera.main;
         var target = new RenderTexture(1100, 1000, 24);
         var old = camera.targetTexture; var active = RenderTexture.active;
@@ -247,6 +263,7 @@ public sealed class SOCOCloseoutTest : MonoBehaviour
     private void CaptureFinalReview(string filename)
     {
 #if UNITY_EDITOR
+        if (SystemInfo.graphicsDeviceType == UnityEngine.Rendering.GraphicsDeviceType.Null) return;
         var camera=Camera.main; var old=camera.targetTexture; var active=RenderTexture.active;
         var target=RenderTexture.GetTemporary(1200,900,24); var texture=new Texture2D(1200,900,TextureFormat.RGB24,false);
         try

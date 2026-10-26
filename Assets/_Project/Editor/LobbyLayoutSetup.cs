@@ -75,6 +75,7 @@ public static class LobbyLayoutSetup
         Find(code,"Key_Clear_Label").GetComponent<TMP_Text>().fontSize = 20;
         Find(code,"Key_Del_Label").GetComponent<TMP_Text>().fontSize = 20;
         Find(menu,"Text (TMP)").GetComponent<TMP_Text>().color = new Color(.82f,.68f,.36f,1);
+        LobbyMenuPolishSetup.Apply();
         EditorSceneManager.MarkSceneDirty(scene); EditorSceneManager.SaveScene(scene);
     }
     static RectTransform Find(Transform parent,string name) => parent.GetComponentsInChildren<RectTransform>(true).First(t=>t.name==name);

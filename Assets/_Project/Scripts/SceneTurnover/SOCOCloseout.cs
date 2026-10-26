@@ -33,12 +33,12 @@ public sealed class SOCOCloseout : MonoBehaviour
     private TMP_Text title, body, actionLabel, objective;
     private WorldPanelPointer pointer;
     private string prompt;
-    private bool queuedReview, iocQuestionResolved, talking, holdingUI;
+    private bool queuedReview, iocQuestionResolved, holdingUI;
     private int closedFrame = -1;
     private float inputAfter;
     private ScenarioPhase? authorizedTransition;
     public bool IsShowing => panel != null && panel.activeSelf;
-    public bool IsTalking => talking || (IsShowing && SceneTurnover.Phase == ScenarioPhase.IOCCompletionReport);
+    public bool IsTalking => IsShowing && SceneTurnover.Phase == ScenarioPhase.IOCCompletionReport;
     public bool InventoryConfirmed => SceneTurnover.HasReachedPhase(ScenarioPhase.FinalSceneSurvey);
     public bool FinalSurveyCompleted => SceneTurnover.HasReachedPhase(ScenarioPhase.IOCCompletionReport);
     public Vector3 FinalSurveyPosition => finalSurveyArea.center;
@@ -93,7 +93,7 @@ public sealed class SOCOCloseout : MonoBehaviour
     {
         SceneTurnover.OnPhaseChanged -= PhaseChanged;
         HidePanel(); ClearPrompt(); objectivePanel.SetActive(false);
-        StopAllCoroutines(); talking = false;
+        StopAllCoroutines();
         accept.Disable(); close.Disable(); utility.Disable();
     }
     private void OnDestroy()
@@ -198,24 +198,12 @@ public sealed class SOCOCloseout : MonoBehaviour
     public bool BeginIOCReport()
     {
         if (SceneTurnover.Phase != ScenarioPhase.IOCCompletionReport || !WorldInputAvailable || !CanReportCompletion()
-            || !AllAccountedFor || !CustodyPassComplete || talking || IsShowing || STCSNotificationUI.Instance == null) return false;
-        talking = true; iocQuestionResolved = false; ClearPrompt();
-        AcquireUI();
-        GameDialogue.SayLine("closeout-ioc-question", "Professor", "soco-closeout-ioc");
-        StartCoroutine(WaitForIOCQuestion());
+            || !AllAccountedFor || !CustodyPassComplete || IsShowing) return false;
+        // The confirmation panel owns this question. Narrating it first made the
+        // player read the same question twice before they could confirm the report.
+        iocQuestionResolved = true;
+        ShowPanel("closeout-ioc-heading", GameDialogue.Text("closeout-ioc-question"), "closeout-ioc-confirm");
         return true;
-    }
-    private IEnumerator WaitForIOCQuestion()
-    {
-        yield return null;
-        while (STCSNotificationUI.Instance != null && STCSNotificationUI.Instance.HasLinesFrom("soco-closeout-ioc")) yield return null;
-        talking = false;
-        ReleaseUI();
-        if (SceneTurnover.Phase == ScenarioPhase.IOCCompletionReport && WorldInputAvailable && CanReportCompletion())
-        {
-            iocQuestionResolved = true;
-            ShowPanel("closeout-ioc-heading", GameDialogue.Text("closeout-ioc-question"), "closeout-ioc-confirm");
-        }
     }
     public bool ConfirmIOCReport()
     {
@@ -263,7 +251,7 @@ public sealed class SOCOCloseout : MonoBehaviour
         if (queuedReview && phase == ScenarioPhase.EvidenceInventoryReview) { queuedReview = false; ShowInventoryReview(); return; }
         string nextPrompt = phase == ScenarioPhase.EvidenceInventoryReview && CustodyPassComplete ? GameDialogue.Text("closeout-review-prompt")
             : phase == ScenarioPhase.FinalSceneSurvey && SurveyAvailable() ? GameDialogue.Text("closeout-survey-prompt")
-            : phase == ScenarioPhase.IOCCompletionReport && CanReportCompletion() && !talking ? GameDialogue.Text("closeout-ioc-prompt") : null;
+            : phase == ScenarioPhase.IOCCompletionReport && CanReportCompletion() ? GameDialogue.Text("closeout-ioc-prompt") : null;
         if (prompt != nextPrompt)
         {
             ClearPrompt(); prompt = nextPrompt;
