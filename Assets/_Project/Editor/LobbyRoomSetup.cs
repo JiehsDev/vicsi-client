@@ -75,6 +75,9 @@ public static class LobbyRoomSetup
             Box("Oak fluting right",new Vector3(.45f+i*.10f,1.85f,1.78f),new Vector3(.05f,3.5f,.07f),oak);
         }
         // The menu supplies the branding; keep its background quiet and readable.
+        // Close the short openings where the modular side walls stop before the front wall.
+        Box("West front wall infill",new Vector3(-5.715f,2,1.8f),new Vector3(.19f,4,.8f),wall,true);
+        Box("East front wall infill",new Vector3(2.15f,2,1.8f),new Vector3(.18f,4,.8f),wall,true);
         foreach(float x in new[]{-5.59f,1.90f})
         {
             Box("Side wall lower panel",new Vector3(x,.48f,5.72f),new Vector3(.08f,.9f,7.70f),navy);
@@ -129,6 +132,8 @@ public static class LobbyRoomSetup
         }
         LightAt("Reception fill",new Vector3(-1.85f,3.2f,7.65f),new Color(.87f,.93f,1),2.2f,5.5f);
         LightAt("Feature wall wash",new Vector3(-1.85f,3.2f,2.7f),new Color(1,.89f,.75f),1.5f,4.5f);
+        LobbyFlagSetup.CreateOrReplace(scene);
+        LobbyChairSetup.CreateOrReplace(scene);
         RenderSettings.ambientMode=AmbientMode.Flat;
         RenderSettings.ambientLight=new Color(.44f,.47f,.49f);
         RenderSettings.reflectionIntensity=.45f;
@@ -191,10 +196,7 @@ public static class LobbyRoomSetup
         var g=Box("Framed forensic print",p,new Vector3(.95f,1.3f,.055f),oak);g.transform.rotation=Quaternion.Euler(0,yaw,0);
         Vector3 f=g.transform.forward;
         var paper=Box("Print paper",p+f*.04f,new Vector3(.86f,1.2f,.012f),wall);paper.transform.rotation=g.transform.rotation;
-        for(int i=0;i<5;i++)
-        {
-            var line=Box("Abstract evidence line",p+f*.05f+Vector3.up*(i-2)*.13f,new Vector3(.5f-i*.055f,.028f,.009f),i%2==0?navy:brass);line.transform.rotation=g.transform.rotation;
-        }
+        LobbyPaintingSetup.CreatePainting(g.transform);
     }
     static void LightAt(string name,Vector3 p,Color color,float intensity,float range)
     {

@@ -1,0 +1,42 @@
+[
+  {
+    "file": "VanGogh_SelfPortrait.jpg",
+    "title": "Self-Portrait with a Straw Hat (obverse: The Potato Peeler)",
+    "artist": "Vincent van Gogh",
+    "date": "1887",
+    "source": "https://www.metmuseum.org/art/collection/search/436532",
+    "image": "https://images.metmuseum.org/CRDImages/ep/web-large/DT1502_cropped2.jpg",
+    "isPublicDomain": true,
+    "bytes": 299280
+  },
+  {
+    "file": "VanGogh_Roses.jpg",
+    "title": "Roses",
+    "artist": "Vincent van Gogh",
+    "date": "1890",
+    "source": "https://www.metmuseum.org/art/collection/search/436534",
+    "image": "https://images.metmuseum.org/CRDImages/ep/web-large/DP346475.jpg",
+    "isPublicDomain": true,
+    "bytes": 128833
+  },
+  {
+    "file": "VanGogh_Cypresses.jpg",
+    "title": "Cypresses",
+    "artist": "Vincent van Gogh",
+    "date": "1889",
+    "source": "https://www.metmuseum.org/art/collection/search/437980",
+    "image": "https://images.metmuseum.org/CRDImages/ep/web-large/DP130999.jpg",
+    "isPublicDomain": true,
+    "bytes": 364858
+  },
+  {
+    "file": "Manet_MonetFamilyGarden.jpg",
+    "title": "The Monet Family in Their Garden at Argenteuil",
+    "artist": "Edouard Manet",
+    "date": "1874",
+    "source": "https://www.metmuseum.org/art/collection/search/436965",
+    "image": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-25465-001.jpg",
+    "isPublicDomain": true,
+    "bytes": 109986
+  }
+]

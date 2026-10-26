@@ -6,8 +6,8 @@ using UnityEngine.UI;
 /// <summary>Presentation-only, reusable label/value rows. Owns no student or session state.</summary>
 public static class LobbyTableLayout
 {
-    public static readonly Color LabelColor = new Color(.66f, .67f, .68f, 1);
-    public static readonly Color ValueColor = new Color(.93f, .92f, .88f, 1);
+    public static readonly Color LabelColor = new Color(.72f, .80f, .86f, 1);
+    public static readonly Color ValueColor = new Color(.95f, .97f, .99f, 1);
 
     public static RectTransform Create(Transform parent, string name)
     {
@@ -34,13 +34,13 @@ public static class LobbyTableLayout
         }
     }
 
-    public static void Row(RectTransform host, string label, string value, TMP_FontAsset font, float labelWidth = 180, float textSize = 24)
+    public static void Row(RectTransform host, string label, string value, TMP_FontAsset font, float labelWidth = 180, float textSize = 24, int verticalPadding = 10)
     {
         var row = new GameObject("Row", typeof(RectTransform), typeof(Image), typeof(HorizontalLayoutGroup));
         row.layer = host.gameObject.layer; row.transform.SetParent(host, false);
         var image = row.GetComponent<Image>(); image.color = new Color(.12f,.13f,.16f,1); image.raycastTarget = false;
         var layout = row.GetComponent<HorizontalLayoutGroup>();
-        layout.padding = new RectOffset(14,14,10,10); layout.spacing = 16;
+        layout.padding = new RectOffset(14,14,verticalPadding,verticalPadding); layout.spacing = 16;
         layout.childControlWidth = true; layout.childControlHeight = true;
         layout.childForceExpandWidth = false; layout.childForceExpandHeight = false;
         if (!string.IsNullOrEmpty(label))

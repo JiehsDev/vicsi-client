@@ -91,9 +91,9 @@ public class StartMenuController : MonoBehaviour
         {
             statusLine.alpha = 0;
             LobbyTableLayout.Clear(statusTable);
-            LobbyTableLayout.Row(statusTable, "Connection", s.ConnectionLabel, statusLine.font);
-            LobbyTableLayout.Row(statusTable, "Upload queue", $"{waiting} session{(waiting == 1 ? "" : "s")} waiting to upload", statusLine.font);
-            LobbyTableLayout.Row(statusTable, "Student directory", sync, statusLine.font);
+            LobbyTableLayout.Row(statusTable, "Connection", s.ConnectionLabel, statusLine.font, labelWidth: 140, textSize: 26, verticalPadding: 4);
+            LobbyTableLayout.Row(statusTable, "Upload queue", $"{waiting} session{(waiting == 1 ? "" : "s")} waiting to upload", statusLine.font, labelWidth: 140, textSize: 26, verticalPadding: 4);
+            LobbyTableLayout.Row(statusTable, "Student directory", sync, statusLine.font, labelWidth: 140, textSize: 26, verticalPadding: 4);
         }
         statusLine.text = $"{s.ConnectionLabel}   ·   {waiting} session{(waiting == 1 ? "" : "s")} waiting to upload   ·   {sync}";
     }
